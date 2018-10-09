@@ -1,0 +1,55 @@
+// $--main-font-size: 10px !default;
+
+// size (不再修改)
+$--ot-big-size: 1.6rem !default;
+$--ot-normal-size: 1.4rem !default;
+$--ot-small-size: 1.2rem !default;
+$--ot-mini-size: 1rem !default;
+
+// switch size (不再修改)
+$--ot-big-default: 2.4rem !default;
+$--ot-normal-default: 2rem !default;
+$--ot-small-default: 1.8rem !default;
+$--ot-mini-default: 1.6rem !default;
+$--ot-offset-default: 0.4rem !default;
+
+// height (input\button) (不再修改)
+$--ot-big-height: 4rem !default;
+$--ot-normal-height: 3.2rem !default;
+$--ot-small-height: 2.8rem !default;
+$--ot-mini-height: 2.4rem !default;
+
+// width
+// input width
+$--ot-big-input-width: 14.8rem !default;
+$--ot-normal-input-width: 14.0rem !default;
+$--ot-small-input-width: 13.2rem !default;
+$--ot-mini-input-width: 12.4rem !default;
+
+// round (不再修改)
+$--ot-big-radius: 0.8rem !default;
+$--ot-normal-radius: 0.6rem !default;
+$--ot-small-radius: 0.6rem !default;
+$--ot-mini-radius: 0.4rem !default;
+
+
+
+// 公共方法
+// size
+@mixin __ot_size__ {
+    &[size=mini] {
+        font-size: $--ot-mini-size;
+    }
+
+    &[size=small] {
+        font-size: $--ot-small-size;
+    }
+
+    &[size=normal] {
+        font-size: $--ot-normal-size;
+    }
+
+    &[size=big] {
+        font-size: $--ot-big-size;
+    }
+}

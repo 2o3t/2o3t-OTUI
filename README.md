@@ -1,4 +1,4 @@
-# 2o3t-otui
+# ot-ui
 
 ## Project setup
 ```
