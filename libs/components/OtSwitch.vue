@@ -104,6 +104,7 @@ export default {
     position: relative;
     box-sizing: border-box;
     vertical-align: middle;
+    line-height: 1;
 
     .label {
         display: inline-block;

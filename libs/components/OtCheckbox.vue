@@ -1,5 +1,5 @@
 <template>
-    <label ot v-bind="$otColors" class="ot-checkbox" :class="$style.root" :size="$otSize" :selected="current===value" :disabled="disabled" :border="border" :round="round">
+    <label ot v-bind="$otColors" @click="$emit('click', $event)" class="ot-checkbox" :class="$style.root" :size="$otSize" :selected="current===value" :disabled="disabled" :border="border" :round="round">
         <span ot v-bind="$otColors.front" :class="$style.front" :selected="current===value">
             <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current===value" :indeterminate="indeterminate"></span>
         </span>
@@ -160,7 +160,7 @@ export default {
       height: 0;
       transform: rotate(0deg) scaleY(0);
       transform-origin: center;
-      transition: transform 0.3s 0.15s;
+      transition: transform 0.3s;
       text-align: center;
 
       &[selected] {
@@ -183,6 +183,7 @@ export default {
     position: relative;
     box-sizing: border-box;
     vertical-align: middle;
+    padding: 0 5px;
   }
 
   &[size="mini"] {

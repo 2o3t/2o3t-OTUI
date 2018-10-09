@@ -85,7 +85,7 @@ export default {
 .root {
   position: relative;
   box-sizing: border-box;
-  min-height: 80px;
+  min-height: 100px;
   min-width: 200px;
   font-size: 14px;
   text-align: center;

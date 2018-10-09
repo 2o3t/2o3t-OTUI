@@ -1,21 +1,21 @@
 <template>
     <div :class="$style.root">
-        <ot-section :theme="otTheme" label="Colors Table" :level="2">
-            <ot-section :theme="otTheme" label="Grep" prefix="#" section>
+        <ot-section :theme="$otTheme" label="Colors Table" :level="2">
+            <ot-section :theme="$otTheme" label="Grep" prefix="#" section>
                 <div :class="$style.box" v-for="({ name, color }) in greys" :key="name">
                     <span :class="$style.title">{{ name }}:</span>
                     <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
                 </div>
             </ot-section>
-            <ot-section :theme="otTheme" :label="camelCase(title)" prefix="#" section v-for="({title, main}) in names" :key="title">
-                <ot-line :theme="otTheme"></ot-line>
-                <ot-section :theme="otTheme" prefix="#" :label="`${camelCase(title)} - Light`" :level="4">
+            <ot-section :theme="$otTheme" :label="camelCase(title)" prefix="#" section v-for="({title, main}) in names" :key="title">
+                <ot-line :theme="$otTheme"></ot-line>
+                <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(title)} - Light`" :level="4">
                     <div :class="$style.box" v-for="({ name, color }) in parseLight(title, main)" :key="name">
                         <span :class="$style.title">{{ name }}:</span>
                         <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
                     </div>
                 </ot-section>
-                <ot-section :theme="otTheme" prefix="#" :label="`${camelCase(title)} - Dark`" :level="4">
+                <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(title)} - Dark`" :level="4">
                     <div :class="$style.box" v-for="({ name, color }) in parseDark(title, main)" :key="name">
                         <span :class="$style.title">{{ name }}:</span>
                         <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
@@ -70,9 +70,6 @@ export default {
                 name: 'black',
                 color: '#000000',
             });
-        },
-        otTheme() {
-            return this.otStores.theme;
         },
     },
     methods: {

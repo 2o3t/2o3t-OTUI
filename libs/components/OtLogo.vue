@@ -33,8 +33,7 @@ export default {
         icon: [ String ],
         url: [ String ],
     },
-
-}
+};
 </script>
 
 <style lang="scss" module>

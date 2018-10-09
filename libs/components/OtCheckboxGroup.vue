@@ -29,8 +29,10 @@ export default {
                 }
             }
         },
-        all(newV) {
-            this._all(newV);
+        all(newV, oldV) {
+            if (newV !== oldV) {
+                this._all(newV);
+            }
         },
     },
     methods: {
@@ -73,9 +75,20 @@ export default {
         },
         _all(checked) {
             const children = this.$children;
+            const current = [];
             for (const child of children) {
-                child.updateSelected(checked && child.value);
+                if (checked) {
+                    if (!this.max || this.max > current.length) {
+                        current.push(child.value);
+                    }
+                } else {
+                    if (this.min && this.min > current.length) {
+                        current.push(child.value);
+                    }
+                }
             }
+            this.current = current;
+            this.checkSelected();
         },
         checkSelected() {
             const curr = this.current;
@@ -86,22 +99,25 @@ export default {
                 });
                 if (one) {
                     child.updateSelected(child.value);
+                } else {
+                    child.updateSelected();
                 }
             }
             this.handleInput();
         },
         handleInput() {
             const curr = this.current;
-            const children = this.$children;
-            if (curr.length === children.length) {
-                this.$emit('changeStatus', 'all');
-            } else if (curr.length <= 0) {
-                this.$emit('changeStatus', null);
-            } else {
-                this.$emit('changeStatus', 'half');
-            }
             this.$emit('input', curr);
             this.$emit('change', curr);
+
+            const children = this.$children;
+            if (curr.length === children.length) {
+                this.$emit('changeStatus', 'all', curr);
+            } else if (curr.length <= 0) {
+                this.$emit('changeStatus', null, curr);
+            } else {
+                this.$emit('changeStatus', 'half', curr);
+            }
         },
     },
     mounted() {
@@ -116,7 +132,6 @@ export default {
 </script>
 
 <style lang="scss" module>
-// FIXME: 状态图标未处理
 .root {
     display: inline-block;
     vertical-align: middle;
@@ -199,5 +214,4 @@ export default {
     }
 }
 </style>
-
 

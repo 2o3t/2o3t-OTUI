@@ -41,9 +41,9 @@ export default {
             if (this.router && this.$router) {
                 this.$router.push(this.router);
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style lang="scss" module>

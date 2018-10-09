@@ -14,7 +14,7 @@
         </ot-nav>
     </header>
     <div :class="$style.sidebar">
-        <router-view name="sidebar"></router-view>
+        <router-view :theme="otTheme" name="sidebar"></router-view>
     </div>
     <div :class="$style.pager">
         <router-view :theme="otTheme" :class="$style.content"></router-view>
@@ -27,28 +27,29 @@ import Shared from './shared';
 const SideBar = Shared.SideBar;
 export default {
     name: 'app',
-    data () {
+    data() {
         return {
             isCollapse: false,
             isDark: false,
-        }
+        };
     },
     watch: {
         isDark(newV, oldV) {
             if (newV !== oldV && this.otStores) { // test
-                this.otStores.theme = newV ? 'dark' : 'light';
+                // this.otStores.theme = newV ? 'dark' : 'light';
+                this.$set(this.otStores, 'theme', newV ? 'dark' : 'light');
             }
-        }
+        },
     },
     computed: {
         headers() {
             return SideBar.header;
         },
         otTheme() {
-            return this.otStores.theme;
+            return this.$otStores.theme;
         },
-    }
-}
+    },
+};
 </script>
 
 <style lang="scss" module>

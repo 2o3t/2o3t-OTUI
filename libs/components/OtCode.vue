@@ -103,11 +103,12 @@ export default {
     padding: 0;
     width: 100%;
     height: 100%;
-    line-height: 1;
+    line-height: 1.2;
     display: flex;
     margin: 0;
 
     .code {
+        width: 100%;
         overflow-x: auto;
         margin: 0px 0px 0 40px !important;
     }
@@ -133,6 +134,7 @@ export default {
 
 <style lang="scss">
 pre[code] {
+
   .code-block[ot] {
     position: absolute;
     list-style: decimal;

@@ -1,5 +1,5 @@
 import './styles/normalize.css';
-import'./styles/main.css';
+import './styles/main.css';
 
 import components from './components';
 import createMixin from './mixins';

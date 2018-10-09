@@ -8,8 +8,8 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "lint:libs": "eslint ./libs",
-        "lint:libs:fix": "eslint ./libs --fix",
+        "lint:libs": "vue-cli-service lint ./libs",
+        "lint:libs:fix": "vue-cli-service lint ./libs --fix",
         "sass:main": "node_modules/node-sass/bin/node-sass --watch sass/main.scss libs/styles/main.css",
         "sass:test": "node_modules/node-sass/bin/node-sass --watch sass/test/test.scss sass/test/test.css"
     },
@@ -26,6 +26,8 @@
         "@vue/cli-plugin-babel": "^3.0.4",
         "@vue/cli-plugin-eslint": "^3.0.4",
         "@vue/cli-service": "^3.0.4",
+        "eslint-config-2o3t": "^1.1.1",
+        "eslint-loader": "^2.1.1",
         "node-sass": "^4.9.3",
         "sass-loader": "^7.1.0",
         "vue-template-compiler": "^2.5.17"
@@ -37,28 +39,8 @@
             "node": true
         },
         "extends": [
-            "plugin:vue/essential",
-            "eslint:recommended"
+            "eslint-config-2o3t/vue"
         ],
-        "rules": {
-            "no-console": [
-                "error",
-                {
-                    "allow": [
-                        "warn",
-                        "error"
-                    ]
-                }
-            ],
-            "indent": [
-                "error",
-                4,
-                {
-                    "SwitchCase": 1,
-                    "VariableDeclarator": 1
-                }
-            ]
-        },
         "parserOptions": {
             "parser": "babel-eslint"
         }

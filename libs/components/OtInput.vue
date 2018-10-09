@@ -1,17 +1,44 @@
 <template>
-    <span ot v-bind="$otColors" class="ot-input" :class="$style.root" :size="$otSize" :round="round">
+    <span v-if="type !== 'textarea'" ot v-bind="$otColors" class="ot-input" :class="$style.root" :size="$otSize" :round="round">
         <div ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round">
             <slot name="prefix"></slot>
         </div>
         <div ot v-bind="$otColors.subfix" v-if="$slots.subfix" :class="$style.subfix" :round="round">
             <slot name="subfix"></slot>
         </div>
-        <input ot v-bind="$otColors.input" :round="round"
-            :class="$style.input" :placeholder="placeholder" :type="type" :disabled="disabled"
+        <input ot v-bind="$otColors.input" :round="round" :clearable="clearable" :logo="icon" :_type="type"
+            :class="$style.input" :placeholder="placeholder" :type="_type" :disabled="disabled"
+            :autocomplete="autocomplete" :maxlength="Number(maxlength)"
+            :readonly="readonly"
             :name="name"
             @change="handleChange"
             :value="value"
             @input="handleInput">
+        <span :class="$style.clearable" :type="type" v-if="!$slots.subfix && clearable" @click="handleClearClick">
+            <ot-icon ot v-bind="$otColors.icon" icon="close"></ot-icon>
+        </span>
+        <span :class="$style.password" v-if="!$slots.subfix && type === 'password'" @click="handlePasswordEyeClick">
+            <ot-icon ot v-bind="$otColors.icon" :icon="showPwd ? 'eye' : 'eye-slash'"></ot-icon>
+        </span>
+        <span :class="$style.logo" v-if="!$slots.prefix && icon">
+            <ot-icon ot v-bind="$otColors.logo" :icon="icon"></ot-icon>
+        </span>
+    </span>
+    <span v-else ot v-bind="$otColors" class="ot-input ot-textarea" :class="[$style.root]" textarea :size="$otSize" :round="round">
+        <textarea ot v-bind="$otColors.input" :round="round"  :disabled="disabled"
+            :autocomplete="autocomplete" :maxlength="Number(maxlength)"
+            :name="name"
+            :class="[$style.input, $style.textarea]" :cols="Number(cols)" :rows="Number(rows)"
+            :readonly="readonly"
+            :placeholder="placeholder"
+            @change="handleChange"
+            :value="value"
+            @input="handleInput">
+        </textarea>
+        <span v-if="lastLength !== null" :class="$style.lastLength">剩余
+            <span ot v-bind="$otColors.last" v-if="lastLength <= 10">{{ lastLength }}</span>
+            <span v-else>{{ lastLength }}</span>
+        个字符</span>
     </span>
 </template>
 
@@ -32,6 +59,13 @@ export default {
                         focus: [ 'pri-b-f' ],
                         disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
                     },
+                    icon: {
+                        normal: 'pri-f',
+                        hover: 'light-f-h',
+                        active: 'pri-f-a',
+                    },
+                    logo: 'pri-f',
+                    last: 'danger-f',
                 };
             case 'light':
             default:
@@ -46,6 +80,13 @@ export default {
                         focus: [ 'pri-b-f' ],
                         disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
                     },
+                    icon: {
+                        normal: 'def-f',
+                        hover: 'pri-f-h',
+                        active: 'def-f-a',
+                    },
+                    logo: 'def-f',
+                    last: 'danger-f',
                 };
         }
     },
@@ -58,13 +99,58 @@ export default {
         disabled: [ Boolean ],
         value: [ String ],
         name: [ String ],
+        clearable: [ Boolean ],
+        icon: [ String ],
+        cols: [ Number, String ],
+        rows: [ Number, String ],
+        readonly: [ Boolean ],
+        autocomplete: [ String, Boolean ],
+        maxlength: [ Number, String ],
+
+    },
+    data() {
+        return {
+            showPwd: false,
+        };
+    },
+    computed: {
+        _type() {
+            if (this.showPwd && this.type === 'password') {
+                return 'text';
+            }
+            return this.type;
+        },
+        lastLength() {
+            if (this.maxlength) {
+                const len = this.value.length;
+                const last = this.maxlength - len;
+                return last >= 0 ? last : null;
+            }
+            return null;
+        },
     },
     methods: {
         handleInput(e) {
+            if (this.maxlength) {
+                const value = e.target.value;
+                const len = value.length;
+                const max = Number(this.maxlength);
+                if (max <= len) {
+                    const v = value.substr(0, max);
+                    this.$emit('input', v);
+                    return;
+                }
+            }
             this.$emit('input', e.target.value);
         },
         handleChange(e) {
             this.$emit('onChange', e);
+        },
+        handleClearClick() {
+            this.$emit('input', '');
+        },
+        handlePasswordEyeClick() {
+            this.showPwd = !this.showPwd;
         },
     },
 };
@@ -118,22 +204,112 @@ export default {
         flex: 1 1 auto;
         outline: none;
         cursor: auto !important;
-        padding: 2px 5px;
+        padding: 2px 1em;
         position: relative;
         box-sizing: border-box;
         height: 100%;
         width: 100%;
         vertical-align: middle;
         overflow: hidden;
+        line-height: 1;
 
         &:focus {
             outline: none;
         }
+
+        &[clearable] {
+            padding-right: 2em;
+
+            &:focus, &:hover {
+
+                &+.clearable {
+                    visibility: visible;
+                }
+            }
+        }
+
+        &[_type=password] {
+            padding-right: 2em;
+
+            &[clearable] {
+                padding-right: 3.4em;
+            }
+        }
+
+        &[logo] {
+            padding-left: 2em;
+        }
     }
+
+    .textarea {
+        padding: .6em 1em;
+        width: 100%;
+        height: 100%;
+        line-height: 1.2;
+        box-sizing: border-box;
+
+        &[maxlength] {
+            padding-bottom: 1.2em;
+        }
+    }
+
+    .lastLength {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        line-height: 1px;
+        font-size: 1rem;
+        padding: 2px;
+        user-select: none;
+    }
+
+    .clearable {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        right: 8px;
+        text-align: center;
+        transition: all .3s;
+        z-index: 2;
+        cursor: pointer;
+        vertical-align: middle;
+
+        &:focus, &:hover {
+            visibility: visible;
+        }
+
+        &[type=password] {
+            right: 2.2em;
+        }
+    }
+
+    .password {
+        position: absolute;
+        top: 0;
+        right: 8px;
+        text-align: center;
+        transition: all .3s;
+        z-index: 2;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 8px;
+        text-align: center;
+        transition: all .3s;
+        z-index: 2;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    $offset: 0rem;
 
     &[size=mini] {
         height: $--ot-mini-height;
-        line-height: $--ot-mini-height - 0.2rem;
+        line-height: $--ot-mini-height - $offset;
         min-width: $--ot-mini-input-width;
         font-size: $--ot-mini-size;
 
@@ -154,7 +330,7 @@ export default {
 
     &[size=small] {
         height: $--ot-small-height;
-        line-height: $--ot-small-height - 0.2rem;
+        line-height: $--ot-small-height - $offset;
         min-width: $--ot-small-input-width;
         font-size: $--ot-small-size;
 
@@ -175,7 +351,7 @@ export default {
 
     &[size=normal] {
         height: $--ot-normal-height;
-        line-height: $--ot-normal-height - 0.2rem;
+        line-height: $--ot-normal-height - $offset;
         min-width: $--ot-normal-input-width;
         font-size: $--ot-normal-size;
 
@@ -196,7 +372,7 @@ export default {
 
     &[size=big] {
         height: $--ot-big-height;
-        line-height: $--ot-big-height - 0.2rem;
+        line-height: $--ot-big-height - $offset;
         min-width: $--ot-big-input-width;
         font-size: $--ot-big-size;
 
@@ -213,6 +389,11 @@ export default {
             margin-left: -$--ot-big-radius;
             padding-left: 1.5rem + $--ot-big-radius;
         }
+    }
+
+    &[textarea] {
+        height: auto;
+        width: auto;
     }
 }
 </style>

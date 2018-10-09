@@ -1,5 +1,5 @@
 <template>
-    <i ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click')"></i>
+    <i ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
 </template>
 
 <script>
@@ -25,7 +25,6 @@ export default {
 @import './globals';
 .root {
     display: inline-block;
-    vertical-align: middle;
     margin: 0;
     padding: 0;
     list-style: none;

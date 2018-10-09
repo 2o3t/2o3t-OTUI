@@ -65,6 +65,7 @@ export default {
         model: {
             type: [ String, Number, Boolean ],
             // required: true,
+            default: null,
         },
         checked: {
             type: Boolean,
@@ -90,6 +91,7 @@ export default {
     },
     mounted() {
         if (this.checked === true) {
+            this.current = this.value;
             this.updateVal(this.value);
         }
     },
@@ -105,6 +107,7 @@ export default {
         },
         handleChange(e) {
             const value = e.target.value;
+            console.log(value);
             this.updateVal(value);
         },
     },
@@ -170,6 +173,7 @@ export default {
     position: relative;
     box-sizing: border-box;
     vertical-align: middle;
+    padding: 0 5px;
   }
 
   &[size="mini"] {

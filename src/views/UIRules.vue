@@ -1,9 +1,9 @@
 <template>
     <div :class="$style.root">
-        <ot-section label="OT-UI Rules" :level="2" :theme="otTheme">
+        <ot-section label="UI Rules" :level="2" :theme="otTheme">
             <ot-section :theme="otTheme" prefix="#" :label="camelCase(name)" v-for="(name) in otUINameMap" :key="name" section>
                 <ot-line :theme="otTheme"></ot-line>
-                <div v-for="(subfix) in otUISubfixMap" :key="subfix">
+                <div :class="$style.item" v-for="(subfix) in otUISubfixMap" :key="subfix">
                     <ot-section :theme="otTheme" prefix="#" :label="`${camelCase(name)} - ${camelCase(subfix)}`" :level="6">
                         <div ot :class="$style.box" v-for="sx in otUISxMap" :key="sx">
                             <span :id="`ot__color__${name}__${subfix}__${sx}`" :class="$style.color">{{ String.prototype.toUpperCase.call(sx) }}</span>
@@ -35,7 +35,7 @@ export default {
     },
     computed: {
         otTheme() {
-            return this.otStores.theme;
+            return this.$otStores.theme;
         },
     },
     methods: {
@@ -95,6 +95,11 @@ export default {
                 color: #fff;
             }
         }
+    }
+
+    .item {
+        display: inline-block;
+        min-width: 500px;
     }
 }
 </style>

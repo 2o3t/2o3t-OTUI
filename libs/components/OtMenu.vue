@@ -23,7 +23,7 @@ export default {
         line: {
             type: [ Boolean ],
             default: true,
-        }
+        },
     },
 };
 </script>

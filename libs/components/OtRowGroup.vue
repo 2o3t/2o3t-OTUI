@@ -3,7 +3,7 @@
         <div :class="$style.childs">
             <slot></slot>
         </div>
-        <ot-button v-if="code" :theme="$otTheme" @click="showCode">{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
+        <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode">{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <transition name="collapse">
             <ot-code ot v-bind="$otColors.code" :class="$style.code" v-if="code" v-show="bShow" lang="html" :value="code"></ot-code>
         </transition>
@@ -89,6 +89,14 @@ export default {
       flex: 0 0 auto;
       margin: 5px 20px;
     }
+  }
+
+  .codeBtn {
+      margin: 20px 10px 0;
+  }
+
+  .code {
+      margin: 0 10px 20px;
   }
 }
 </style>

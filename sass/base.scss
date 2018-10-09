@@ -2,11 +2,11 @@
 @import './globals.scss';
 html {
     min-height: 100%;
+    font-size: $--main-font-size;
 }
 html,
 body {
   height: 100%;
-  font-size: $--main-font-size;
   color: $--color-default;
   background: $--color-white;
 }
@@ -20,4 +20,5 @@ body {
   transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
 }

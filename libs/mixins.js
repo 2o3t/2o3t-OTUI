@@ -172,17 +172,17 @@ function createMixin(options) {
                 }
             },
             '$attrs.size': function(newV, oldV) {
-                if (newV !== oldV) {
+                if (newV !== oldV && isStr(this.$attrs.size)) {
                     this.size = newV;
                 }
             },
             '$attrs.theme': function(newV, oldV) {
-                if (newV !== oldV) {
+                if (newV !== oldV && isStr(this.$attrs.theme)) {
                     this.theme = newV;
                 }
             },
             '$attrs.color': function(newV, oldV) {
-                if (newV !== oldV) {
+                if (newV !== oldV && isStr(this.$attrs.color)) {
                     this.color = newV || 'default';
                 }
             },
@@ -192,10 +192,10 @@ function createMixin(options) {
         },
         mounted() {
             // test
-            this.updateChildren()
+            this.updateChildren();
         },
         methods: {
-            updateChildren(){
+            updateChildren() {
                 const children = this.$children;
                 if (children && children.length) {
                     for (const child of children) {
@@ -207,7 +207,7 @@ function createMixin(options) {
                         }
                     }
                 }
-            }
+            },
         },
         computed: {
             $otTheme() {

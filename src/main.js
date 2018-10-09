@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 
 import OTUI from '../libs';
-Vue.use(OTUI)
+Vue.use(OTUI);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 import router from './router';
 
@@ -14,5 +14,5 @@ Vue.use(Shared.Stores);
 
 new Vue({
     router,
-    render: h => h(App)
-}).$mount('#app')
+    render: h => h(App),
+}).$mount('#app');

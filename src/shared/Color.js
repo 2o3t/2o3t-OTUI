@@ -49,5 +49,5 @@ function hexToRgba(hex, opacity = 1) {
 
 
 export default {
-    mix, random, hexToRgba
-}
+    mix, random, hexToRgba,
+};

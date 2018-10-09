@@ -1,18 +1,18 @@
 <template>
-    <ot-section :theme="otTheme" label="Radio 单选框 + 边框" prefix="#" section>
-        <ot-row-group :theme="otTheme" :code="code">
+    <ot-section :theme="$otTheme" label="Radio 单选框 + 边框" prefix="#" section>
+        <ot-row-group :theme="$otTheme" :code="code">
             <!-- 有边框 border -->
-            <ot-radio :theme="otTheme" size="mini" v-model="radioValue" value="1" border>
-                <span>label</span>
+            <ot-radio :theme="$otTheme" size="mini" v-model="radioValue" value="1" border>
+                <span>Mini</span>
             </ot-radio>
-            <ot-radio :theme="otTheme" size="small" v-model="radioValue" value="2" border>
-                <span>2O3T</span>
+            <ot-radio :theme="$otTheme" size="small" v-model="radioValue" value="2" border>
+                <span>Small</span>
             </ot-radio>
-            <ot-radio :theme="otTheme" size="normal" v-model="radioValue" value="3" :checked="true" border>
-                <span>OT</span>
+            <ot-radio :theme="$otTheme" size="normal" v-model="radioValue" value="3" :checked="true" border>
+                <span>Normal</span>
             </ot-radio>
-            <ot-radio :theme="otTheme" size="big" v-model="radioValue" value="4" border>
-                <span>zyao89.cn</span>
+            <ot-radio :theme="$otTheme" size="big" v-model="radioValue" value="4" border>
+                <span>Big</span>
             </ot-radio>
         </ot-row-group>
     </ot-section>
@@ -20,16 +20,11 @@
 
 <script>
 export default {
-    data () {
+    data() {
         return {
-            radioValue: 'abc',
-            code: decodeURIComponent(`<%=__otSourceCode__=%>`),
-        }
+            radioValue: '3',
+            code: decodeURIComponent(`<%=${'otSourceCode'}=%>`),
+        };
     },
-    computed: {
-        otTheme() {
-            return this.otStores.theme;
-        },
-    }
 };
 </script>

@@ -8,31 +8,32 @@ files.keys().forEach(key => {
             file = file.default;
         }
     }
-    modules[key.replace(/\/index(\.\/|\.js)/ig, '').replace(/^\.\//ig, '')] = file;
+    const name = key.replace(/\/index(\.\/|\.js)/ig, '').replace(/^\.\//ig, '').replace(/^[\d_-]+/g, '');
+    modules[name] = file;
 });
 
 const sides = Object.keys(modules).map(key => {
     return {
         name: key,
         router: `/${key}`,
-    }
-})
+    };
+});
 
 export default {
     header: [],
     menu: [
         {
-            name: "UI",
-            router: "/UI",
+            name: 'UI',
+            router: '/UI',
         },
         {
-            name: "Colors Table",
-            router: "/ColorsTable",
+            name: 'Colors Table',
+            router: '/ColorsTable',
         },
         {
-            name: "UI Rule",
-            router: "/UIRules",
+            name: 'UI Rule',
+            router: '/UIRules',
         },
         ...sides,
-    ]
-}
+    ],
+};

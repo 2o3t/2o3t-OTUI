@@ -63,7 +63,7 @@ export default {
                 const s = this.$parent.value;
                 result = (s === this.index);
             } else if (this.$route && this.router) {
-                if (typeof this.router === 'string'){
+                if (typeof this.router === 'string') {
                     result = (this.$route.fullPath === this.router);
                 } else if (typeof this.router === 'object' && this.router.name) {
                     result = (this.$route.name === this.router.name);
@@ -84,7 +84,7 @@ export default {
             }
         },
     },
-}
+};
 </script>
 
 <style lang="scss" module>
@@ -105,6 +105,10 @@ export default {
         border: none !important;
         width: 100%;
         height: 100%;
+
+        &:hover {
+            color: inherit;
+        }
     }
 
     @include __ot_size__;

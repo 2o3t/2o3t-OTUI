@@ -13,7 +13,7 @@ function createSideBarView(view) {
     return {
         default: () => asyncImport(view()),
         sidebar: () => asyncImport(SideBar()),
-    }
+    };
 }
 
 Vue.use(Router);
@@ -27,7 +27,7 @@ menu.forEach(item => {
         name: item.name,
         path: item.router,
         components: createSideBarView(() => import(`../components${item.router}/Index.js`)),
-    })
+    });
 });
 
 export default new Router({
