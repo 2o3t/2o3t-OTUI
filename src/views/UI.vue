@@ -8,10 +8,10 @@
             </ot-row-group>
         </ot-section>
 
-        <ot-section :theme="$otTheme" label="OT-LazyLoad" v-for="(item, index) in 100" :key="index">
+        <ot-section :theme="$otTheme" label="OT-LazyLoad">
             <ot-lazy-load>
                 <ot-row-group :theme="$otTheme">
-                    <span>abc {{ index }}</span>
+                    <span>abc</span>
                 </ot-row-group>
             </ot-lazy-load>
         </ot-section>

@@ -61,7 +61,7 @@ export default {
         },
         direction: {
             type: [ String ],
-            default: 'row',
+            default: 'horizontal',
         },
     },
     data() {
@@ -93,7 +93,7 @@ export default {
     align-items: flex-start;
     box-sizing: border-box;
 
-    &[direction=column] {
+    &[direction=vertical] {
         flex-direction: column;
     }
 

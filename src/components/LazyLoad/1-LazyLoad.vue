@@ -1,6 +1,6 @@
 <template>
     <ot-section :theme="$otTheme" label="LazyLoad 懒加载容器" prefix="#" section>
-        <ot-row-group :theme="$otTheme" :code="code" direction="column">
+        <ot-row-group :theme="$otTheme" :code="code" direction="vertical">
             <div v-for="(item, index) in 20" :key="index">
                 <ot-lazy-load :theme="$otTheme" :delay="delay * index">
                     <div :class="$style.box">
