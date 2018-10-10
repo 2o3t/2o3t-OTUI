@@ -6,8 +6,6 @@ const SideBar = () => import('@v/SideBar');
 // views
 const Home = () => import('@v/Home');
 const UI = () => import('@v/UI');
-const UIRules = () => import('@v/UIRules');
-const ColorsTable = () => import('@v/ColorsTable');
 
 function createSideBarView(view) {
     return {
@@ -18,15 +16,14 @@ function createSideBarView(view) {
 
 Vue.use(Router);
 
-import Shared from '../shared';
-const { menu } = Shared.SideBar;
-const routers = [
-];
-menu.forEach(item => {
+import modules from '@/components';
+// const { menu } = require('../shared/SideBar').default;
+const routers = [];
+modules.forEach(item => {
     routers.push({
         name: item.name,
         path: item.router,
-        components: createSideBarView(() => import(`../components${item.router}/Index.js`)),
+        components: createSideBarView(() => import(`@c/${item.index}`)),
     });
 });
 
@@ -44,18 +41,6 @@ export default new Router({
             // component: UI,
             // component: () => asyncImport(UI()),
             components: createSideBarView(UI),
-        },
-        {
-            path: '/ColorsTable',
-            name: 'ColorsTable-page',
-            // component: UI,
-            // component: () => asyncImport(ColorsTable()),
-            components: createSideBarView(ColorsTable),
-        },
-        {
-            path: '/UIRules',
-            name: 'UIRules-page',
-            components: createSideBarView(UIRules),
         },
         ...routers,
         {

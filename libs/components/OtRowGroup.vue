@@ -5,7 +5,11 @@
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode">{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <transition name="collapse">
-            <ot-code ot v-bind="$otColors.code" :class="$style.code" v-if="code" v-show="bShow" lang="html" :value="code"></ot-code>
+            <ot-code ot v-bind="$otColors.code" :class="$style.code"
+                :size="$otSize"
+                v-if="code" v-show="bShow" lang="html"
+                :value="code">
+            </ot-code>
         </transition>
     </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
     <div :class="$style.root">
-        loading....
-        <el-loading type="push" size="big" label="2O3T Loading"></el-loading>
+        <ot-loading type="push" size="big" label="2O3T Loading"></ot-loading>
     </div>
 </template>
 
@@ -19,6 +18,7 @@ export default {
     right: 0;
     bottom: 0;
     background-color: rgba(255, 255, 255, .6);
+    margin: auto;
 }
 </style>
 

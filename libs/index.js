@@ -12,7 +12,7 @@ export default {
         for (const key in components) {
             if (components.hasOwnProperty(key)) {
                 const element = components[key];
-                if (process.env.NODE_DEV === 'production') {
+                if (options.global !== true) {
                     if (!element.mixins) {
                         element.mixins = [];
                     }

@@ -12,4 +12,10 @@ files.keys().forEach(key => {
     modules[key.replace(/(\.\/|\.js)/g, '')] = file;
 });
 
-export default modules;
+export default {
+    install(Vue) {
+        console.log(modules);
+        Vue.prototype.$shared = modules;
+        Vue.$shared = modules;
+    },
+};

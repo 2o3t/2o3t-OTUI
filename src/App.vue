@@ -23,30 +23,29 @@
 </template>
 
 <script>
-import Shared from './shared';
-const SideBar = Shared.SideBar;
 export default {
     name: 'app',
     data() {
         return {
             isCollapse: false,
             isDark: false,
+            theme: this.$shared.Stores.theme,
         };
     },
     watch: {
         isDark(newV, oldV) {
-            if (newV !== oldV && this.otStores) { // test
+            if (newV !== oldV && this.$shared) { // test
                 // this.otStores.theme = newV ? 'dark' : 'light';
-                this.$set(this.otStores, 'theme', newV ? 'dark' : 'light');
+                this.theme = newV ? 'dark' : 'light';
             }
         },
     },
     computed: {
         headers() {
-            return SideBar.header;
+            return this.$shared.HeaderMenu;
         },
         otTheme() {
-            return this.$otStores.theme;
+            return this.theme;
         },
     },
 };
@@ -58,7 +57,7 @@ export default {
     min-height: 100%;
 
     &[theme='dark'] {
-        background-color: #000000;
+        background-color: #242424;
     }
 }
 .header {
@@ -71,7 +70,7 @@ export default {
     z-index: 10;
 
     &[theme='dark'] {
-        background-color: rgba($color: #000000, $alpha: .75);
+        background-color: rgba($color: #242424, $alpha: .75);
     }
 }
 .sidebar {

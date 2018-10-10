@@ -227,6 +227,11 @@ function createMixin(options) {
                 return colors;
             },
         },
+        beforeDestroy() {
+            delete this._otColorsData;
+            delete this._otColors;
+            delete this._ot_color;
+        },
     };
 }
 

@@ -6,7 +6,7 @@
         <h4 :class="$style.label" :level="level" :section="section" v-if="level === 4 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h4>
         <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
         <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
-        <p :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
+        <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
         <slot></slot>
     </section>
 </template>
@@ -151,6 +151,10 @@ export default {
 
   .desc {
     font-weight: 300;
+
+    &[prefix] {
+      margin-left: 20px;
+    }
 
     $offset: 0.8rem;
 

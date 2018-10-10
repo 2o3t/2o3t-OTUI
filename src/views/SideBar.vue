@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import Shared from '../shared';
-const SideBar = Shared.SideBar;
 export default {
     name: 'side-bar-pager',
     data() {
@@ -16,7 +14,7 @@ export default {
     },
     computed: {
         slides() {
-            return SideBar.menu;
+            return this.$shared.SideBarMenu;
         },
     },
 };

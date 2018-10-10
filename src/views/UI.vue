@@ -8,23 +8,6 @@
             </ot-row-group>
         </ot-section>
 
-        <ot-section :theme="otTheme" label="OT-Icon">
-            <ot-row-group :theme="otTheme">
-                <ot-icon :theme="otTheme" size="mini" icon="apple"></ot-icon>
-                <ot-icon :theme="otTheme" size="small" icon="apple"></ot-icon>
-                <ot-icon :theme="otTheme" size="normal" icon="apple"></ot-icon>
-                <ot-icon :theme="otTheme" size="big" icon="apple"></ot-icon>
-                <ot-icon :theme="otTheme" size="mini" icon="android"></ot-icon>
-                <ot-icon :theme="otTheme" size="small" icon="android"></ot-icon>
-                <ot-icon :theme="otTheme" size="normal" icon="android"></ot-icon>
-                <ot-icon :theme="otTheme" size="big" icon="android"></ot-icon>
-                <ot-icon :theme="otTheme" size="mini" icon="flag"></ot-icon>
-                <ot-icon :theme="otTheme" size="small" icon="flag"></ot-icon>
-                <ot-icon :theme="otTheme" size="normal" icon="flag"></ot-icon>
-                <ot-icon :theme="otTheme" size="big" icon="flag"></ot-icon>
-            </ot-row-group>
-        </ot-section>
-
         <ot-section :theme="otTheme" label="OT-Tabs">
             <ot-row-group :theme="otTheme">
                 <ot-tabs :theme="otTheme" :list="tabs" :select="selectTab"></ot-tabs>
@@ -44,13 +27,11 @@ export default {
                 title: 'OT',
                 name: 'OT',
             }],
-            radioSelect: 'A',
-            switchValue: false,
         };
     },
     computed: {
         otTheme() {
-            return this.$otStores.theme;
+            return this.$shared.Stores.theme;
         },
     },
     methods: {
