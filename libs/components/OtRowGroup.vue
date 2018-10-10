@@ -1,6 +1,6 @@
 <template>
     <div ot :class="$style.root" class="ot-row-group">
-        <div :class="$style.childs">
+        <div :class="$style.childs" :direction="direction">
             <slot></slot>
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode">{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
@@ -59,6 +59,10 @@ export default {
             type: [ String ],
             default: 'html',
         },
+        direction: {
+            type: [ String ],
+            default: 'row',
+        },
     },
     data() {
         return {
@@ -88,6 +92,10 @@ export default {
     flex-wrap: wrap;
     align-items: flex-start;
     box-sizing: border-box;
+
+    &[direction=column] {
+        flex-direction: column;
+    }
 
     & > [ot] {
       flex: 0 0 auto;

@@ -2,20 +2,24 @@
     <div :class="$style.root">
         <ot-section :theme="$otTheme" :label="camelCase(title)" prefix="#" section v-for="({title, main}) in names" :key="title">
             <!-- <ot-line :theme="$otTheme"></ot-line> -->
-            <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(title)} - Light`" :level="4">
-                <div :class="$style.box" v-for="({ name, color }) in parseLight(title, main)" :key="name">
-                    <span :class="$style.title">{{ name }}</span>
-                    <span> : </span>
-                    <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
-                </div>
-            </ot-section>
-            <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(title)} - Dark`" :level="4">
-                <div :class="$style.box" v-for="({ name, color }) in parseDark(title, main)" :key="name">
-                    <span :class="$style.title">{{ name }}</span>
-                    <span> : </span>
-                    <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
-                </div>
-            </ot-section>
+            <ot-lazy-load :theme="$otTheme">
+                <ot-row-group :theme="$otTheme">
+                    <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(title)} - Light`" :level="4">
+                        <div :class="$style.box" v-for="({ name, color }) in parseLight(title, main)" :key="name">
+                            <span :class="$style.title">{{ name }}</span>
+                            <span> : </span>
+                            <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
+                        </div>
+                    </ot-section>
+                    <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(title)} - Dark`" :level="4">
+                        <div :class="$style.box" v-for="({ name, color }) in parseDark(title, main)" :key="name">
+                            <span :class="$style.title">{{ name }}</span>
+                            <span> : </span>
+                            <span :class="$style.color" :style="bgColor(color)">{{ String.prototype.toUpperCase.call(color) }}</span>
+                        </div>
+                    </ot-section>
+                </ot-row-group>
+            </ot-lazy-load>
         </ot-section>
     </div>
 </template>
@@ -105,7 +109,7 @@ export default {
 .root {
 
     .box {
-        display: inline-block;
+        // display: inline-block;
         width: 200px;
         text-align: right;
         font-size: 12px;

@@ -142,6 +142,7 @@ function initColors($vm) {
     return _otColorsInstance;
 }
 
+import othersColors from './colors';
 function createMixin(options) {
     return {
         props: {
@@ -188,6 +189,14 @@ function createMixin(options) {
             },
         },
         beforeCreate() {
+            if (this.$options.otDefaultColors) {
+                const cs = othersColors(this.$options.otDefaultColors, this);
+                Object.keys(cs).forEach(key => {
+                    if (!this[key]) {
+                        this.$options[key] = cs[key].bind(this);
+                    }
+                });
+            }
             hookBeforeCreate(this);
         },
         mounted() {

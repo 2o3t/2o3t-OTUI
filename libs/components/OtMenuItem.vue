@@ -25,9 +25,9 @@ export default {
             default:
                 return {
                     normal: [ 'def-f' ],
-                    hover: [ 'pri-f-h', 'def-bg-h' ],
-                    active: [ 'pri-f-a', 'def-bg-a' ],
-                    selected: [ 'pri-f-s', 'def-bg-s', 'def-br-s', 'after' ],
+                    hover: [ 'pri-f-h' ],
+                    active: [ 'pri-f-a' ],
+                    selected: [ 'pri-f-s', 'pri-br-s', 'after' ],
                     // disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
                 };
         }

@@ -1,19 +1,28 @@
 <template>
-    <ul ot :class="[$style.root]" class="ot-tabs">
-        <li ot v-bind="$otColors" :class="[$style.item]"
-            :selected="item.name === select.name" v-for="(item, index) in list" :key="index" @click="handleTabsActive(item)">
-            <span :class="$style.text">{{item.title}}</span>
-            <ot-icon v-bind="$otColors.icon" :class="$style.icon" :size="$otSize" icon="close" v-show="index!==0" @click="handleTabsClose(item)"></ot-icon>
-        </li>
-    </ul>
+    <div ot :class="[$style.root]">
+        <ul ot :class="[$style.tabs]" class="ot-tabs">
+            <li ot v-bind="$otColors" :class="[$style.item]"
+                :selected="item.name === select.name" v-for="(item, index) in _list" :key="index" @click="handleTabsActive(item)">
+                <span :class="$style.text">{{item.title}}</span>
+                <ot-icon v-if="clearable" v-bind="$otColors.icon" :class="$style.icon" :size="$otSize" icon="close" v-show="index!==0" @click="handleTabsClose($event, item)"></ot-icon>
+            </li>
+        </ul>
+        <div v-if="$slots.default" :class="$style.content">
+            <slot></slot>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'ot-tabs',
     props: {
-        list: [ Array ],
+        list: {
+            type: [ Array ],
+            required: true,
+        },
         select: [ Object ],
+        clearable: [ Boolean ],
     },
     otDefaultColors(theme) {
         switch (theme) {
@@ -45,14 +54,31 @@ export default {
                 };
         }
     },
-    mounted() {
-        // console.error(this.$otColors.icon);
+    computed: {
+        _list() {
+            return this.list.map(item => {
+                if (typeof item === 'string') {
+                    return {
+                        title: item,
+                        name: item,
+                    };
+                } else if (typeof item === 'object') {
+                    if (!item.title) {
+                        item.title = item.name || 'Must be has <title> <name>';
+                    } else if (!item.name) {
+                        item.name = item.title || 'Must be has <title> <name>';
+                    }
+                }
+                return item;
+            });
+        },
     },
     methods: {
         handleTabsActive(tab) {
             this.$emit('action', 'active', tab);
         },
-        handleTabsClose(tab) {
+        handleTabsClose(e, tab) {
+            e.stopPropagation();
             this.$emit('action', 'close', tab);
         },
     },
@@ -60,8 +86,13 @@ export default {
 </script>
 
 <style lang="scss" module>
-    .root {
-        height: 100%;
+.root {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    .tabs {
         padding: 0;
         margin: 0;
         list-style: none;
@@ -126,4 +157,9 @@ export default {
             }
         }
     }
+
+    .content {
+        padding: 10px 0;
+    }
+}
 </style>

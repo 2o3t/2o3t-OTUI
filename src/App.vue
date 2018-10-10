@@ -1,23 +1,25 @@
 <template>
-  <div id="app" :class="$style.root" :theme="otTheme">
+  <div id="app" :class="$style.root" :theme="$otTheme">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <header :class="$style.header" :theme="otTheme">
-        <ot-nav :isCollapse="isCollapse" :theme="otTheme">
-            <ot-logo :theme="otTheme" slot="left" icon="apple">
+    <header :class="$style.header" :theme="$otTheme">
+        <ot-nav :isCollapse="isCollapse" :theme="$otTheme">
+            <ot-logo :theme="$otTheme" slot="left" icon="apple">
                 <span>OT-UI</span>
             </ot-logo>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :router="item.router">{{item.name}}</ot-nav-item>
-            <ot-switch :theme="otTheme" slot="right" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
+            <ot-switch :theme="$otTheme" slot="right" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
                 <span slot="inactive">Light</span>
                 <span slot="active">Dark</span>
             </ot-switch>
         </ot-nav>
     </header>
     <div :class="$style.sidebar">
-        <router-view :theme="otTheme" name="sidebar"></router-view>
+        <router-view :theme="$otTheme" name="sidebar"></router-view>
     </div>
     <div :class="$style.pager">
-        <router-view :theme="otTheme" :class="$style.content"></router-view>
+        <!-- <keep-alive> -->
+            <router-view :theme="$otTheme" :class="$style.content"></router-view>
+        <!-- </keep-alive> -->
     </div>
   </div>
 </template>
@@ -43,9 +45,6 @@ export default {
     computed: {
         headers() {
             return this.$shared.HeaderMenu;
-        },
-        otTheme() {
-            return this.theme;
         },
     },
 };

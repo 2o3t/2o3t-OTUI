@@ -26,7 +26,7 @@
                 <ot-radio-button :theme="$otTheme" name="A" round>A</ot-radio-button>
                 <ot-radio-button :theme="$otTheme" name="B" round disabled>B</ot-radio-button>
                 <ot-radio-button :theme="$otTheme" name="C" round>C</ot-radio-button>
-                <ot-radio-button :theme="$otTheme" name="D" round>D</ot-radio-button>
+                <ot-radio-button :theme="$otTheme" name="D" round disabled>D</ot-radio-button>
                 <ot-radio-button :theme="$otTheme" name="E" round>E</ot-radio-button>
             </ot-radio-button-group>
         </ot-row-group>

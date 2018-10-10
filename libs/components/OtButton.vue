@@ -27,14 +27,11 @@ export default {
             default:
                 return {
                     normal: [ 'def-f', 'light-bg', 'grey-b' ],
-                    hover: [ 'pri-f-hov', 'def-bg-hov', 'def-b-hov' ],
-                    active: [ 'pri-f-act', 'def-bg-act', 'pri-b-act' ],
+                    hover: [ 'pri-f-hov', 'pri-b-hov' ],
+                    active: [ 'pri-f-act', 'pri-b-act' ],
                     disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                 };
         }
-    },
-    otPrimeryColors() {
-        return [ 'a', 'hov', 'sel' ];
     },
     methods: {
         handleClick(e) {

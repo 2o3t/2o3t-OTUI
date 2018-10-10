@@ -9,15 +9,15 @@ const UI = () => import('@v/UI');
 
 function createSideBarView(view) {
     return {
-        default: () => asyncImport(view()),
         sidebar: () => asyncImport(SideBar()),
+        default: () => asyncImport(view()),
     };
 }
 
 Vue.use(Router);
 
 import modules from '@/components';
-// const { menu } = require('../shared/SideBar').default;
+
 const routers = [];
 modules.forEach(item => {
     routers.push({
