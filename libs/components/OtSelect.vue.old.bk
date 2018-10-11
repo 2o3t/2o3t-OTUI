@@ -1,0 +1,101 @@
+<template>
+    <div ot :class="$style.root" class="ot-select">
+        <ot-input :fixable="false"
+            :round="round"
+            :readonly="readonly"
+            :disabled="disabled"
+            :name="name"
+            :model="model"
+            @input="handleInput"
+            @change="$emit('change', $event)"
+            type="text">
+            <ot-link :class="$style.icon" slot="subfix" @click="handleShowSelectList">
+                <ot-icon :size="$otSize" icon="angle-down"></ot-icon>
+            </ot-link>
+        </ot-input>
+        <div :class="$style.select" v-if="elHandler" ref="select">
+            <slot></slot>
+        </div>
+    </div>
+</template>
+
+<script>
+let INDEX = 0;
+export default {
+    name: 'ot-select',
+    model: {
+        prop: 'model',
+        event: 'update',
+    },
+    props: {
+        placeholder: [ String ],
+        type: {
+            type: [ String ],
+            default: 'text',
+        },
+        disabled: [ Boolean ],
+        model: {
+            type: [ String ],
+            required: true,
+        },
+        name: [ String ],
+        readonly: [ Boolean ],
+    },
+    data() {
+        return {
+            elHandler: null,
+            className: `ot-select-${INDEX++}`,
+        };
+    },
+    methods: {
+        createSelectPoper() {
+            const $root = this.$root;
+            const $rootEl = $root.$el;
+            const handle = document.createElement('div');
+            handle.className = this.className;
+            const $s = this.$refs.select;
+            debugger;
+            $rootEl.appendChild(handle);
+            return handle;
+        },
+        removePoper() {
+            if (this.elHandler) {
+                const $root = this.$root;
+                const $rootEl = $root.$el;
+                $rootEl.removeChild(this.elHandler);
+                this.elHandler = null;
+            }
+        },
+        handleShowSelectList() {
+            if (this.elHandler === null) {
+                this.elHandler = this.createSelectPoper();
+            }
+        },
+        handleInput(e) {
+            const value = e.target.value;
+            console.log(value);
+            this.$emit('update', value);
+        },
+    },
+    beforeDestroy() {
+        this.removePoper();
+    },
+};
+</script>
+
+<style lang="scss" module>
+.root {
+    position: relative;
+    box-sizing: border-box;
+
+    .icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .select {
+
+    }
+}
+</style>

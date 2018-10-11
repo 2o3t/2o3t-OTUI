@@ -1,19 +1,19 @@
 <template>
     <span v-if="type !== 'textarea'" ot v-bind="$otColors" class="ot-input" :class="$style.root" :size="$otSize" :round="round">
-        <div ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round">
+        <span ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :fixable="fixable">
             <slot name="prefix"></slot>
-        </div>
-        <div ot v-bind="$otColors.subfix" v-if="$slots.subfix" :class="$style.subfix" :round="round">
+        </span>
+        <span ot v-bind="$otColors.subfix" v-if="$slots.subfix" :class="$style.subfix" :round="round" :fixable="fixable">
             <slot name="subfix"></slot>
-        </div>
+        </span>
         <input ot v-bind="$otColors.input" :round="round" :clearable="clearable" :logo="icon" :_type="type"
             :class="$style.input" :placeholder="placeholder" :type="_type" :disabled="disabled"
             :autocomplete="autocomplete" :maxlength="Number(maxlength)"
             :readonly="readonly"
             :name="name"
             @change="handleChange"
-            :value="value"
-            @input="handleInput">
+            :value="model"
+            @input="handleInput" v-on="$listeners">
         <span :class="$style.clearable" :type="type" v-if="!$slots.subfix && clearable" @click="handleClearClick">
             <ot-icon ot v-bind="$otColors.icon" icon="close"></ot-icon>
         </span>
@@ -32,8 +32,8 @@
             :readonly="readonly"
             :placeholder="placeholder"
             @change="handleChange"
-            :value="value"
-            @input="handleInput">
+            :value="model"
+            @input="handleInput" v-on="$listeners">
         </textarea>
         <span v-if="lastLength !== null" :class="$style.lastLength">剩余
             <span ot v-bind="$otColors.last" v-if="lastLength <= 10">{{ lastLength }}</span>
@@ -90,6 +90,10 @@ export default {
                 };
         }
     },
+    model: {
+        prop: 'model',
+        event: 'update',
+    },
     props: {
         placeholder: [ String ],
         type: {
@@ -97,7 +101,7 @@ export default {
             default: 'text',
         },
         disabled: [ Boolean ],
-        value: [ String ],
+        model: [ String, Number ],
         name: [ String ],
         clearable: [ Boolean ],
         icon: [ String ],
@@ -106,7 +110,10 @@ export default {
         readonly: [ Boolean ],
         autocomplete: [ String, Boolean ],
         maxlength: [ Number, String ],
-
+        fixable: {
+            type: [ Boolean ],
+            default: true,
+        },
     },
     data() {
         return {
@@ -122,7 +129,7 @@ export default {
         },
         lastLength() {
             if (this.maxlength) {
-                const len = this.value.length;
+                const len = this.model.length;
                 const last = this.maxlength - len;
                 return last >= 0 ? last : null;
             }
@@ -137,17 +144,17 @@ export default {
                 const max = Number(this.maxlength);
                 if (max <= len) {
                     const v = value.substr(0, max);
-                    this.$emit('input', v);
+                    this.$emit('update', v);
                     return;
                 }
             }
-            this.$emit('input', e.target.value);
+            this.$emit('update', e.target.value);
         },
         handleChange(e) {
-            this.$emit('onChange', e);
+            this.$emit('change', e);
         },
         handleClearClick() {
-            this.$emit('input', '');
+            this.$emit('update', '');
         },
         handlePasswordEyeClick() {
             this.showPwd = !this.showPwd;
@@ -169,9 +176,10 @@ export default {
         display: inline-block;
         flex: 0 0 auto;
         vertical-align: middle;
-        padding: 0 15px;
+        min-width: 3em;
         position: relative;
         box-sizing: border-box;
+        text-align: center;
 
         &+.input[round] {
             border-top-left-radius: 0 !important;
@@ -188,10 +196,11 @@ export default {
         display: inline-block;
         flex: 0 0 auto;
         vertical-align: middle;
-        padding: 0 15px;
+        min-width: 3em;
         order: 3;
         position: relative;
         box-sizing: border-box;
+        text-align: center;
 
         &+.input[round] {
             border-top-right-radius: 0 !important;
@@ -319,12 +328,22 @@ export default {
 
         .prefix {
             margin-right: -$--ot-mini-radius;
-            padding-right: 1.5rem + $--ot-mini-radius;
+            padding-right: $--ot-mini-radius;
+
+            &[fixable] {
+                padding-left: $--ot-mini-radius;
+                padding-right: $--ot-mini-radius * 2;
+            }
         }
 
         .subfix {
             margin-left: -$--ot-mini-radius;
-            padding-left: 1.5rem + $--ot-mini-radius;
+            padding-left: $--ot-mini-radius;
+
+            &[fixable] {
+                padding-left: $--ot-mini-radius * 2;
+                padding-right: $--ot-mini-radius;
+            }
         }
     }
 
@@ -340,12 +359,22 @@ export default {
 
         .prefix {
             margin-right: -$--ot-small-radius;
-            padding-right: 1.5rem + $--ot-small-radius;
+            padding-right: $--ot-small-radius;
+
+            &[fixable] {
+                padding-left: $--ot-small-radius;
+                padding-right: $--ot-small-radius * 2;
+            }
         }
 
         .subfix {
             margin-left: -$--ot-small-radius;
-            padding-left: 1.5rem + $--ot-small-radius;
+            padding-left: $--ot-small-radius;
+
+            &[fixable] {
+                padding-left: $--ot-small-radius * 2;
+                padding-right: $--ot-small-radius;
+            }
         }
     }
 
@@ -361,12 +390,22 @@ export default {
 
         .prefix {
             margin-right: -$--ot-normal-radius;
-            padding-right: 1.5rem + $--ot-normal-radius;
+            padding-right: $--ot-normal-radius;
+
+            &[fixable] {
+                padding-left: $--ot-normal-radius;
+                padding-right: $--ot-normal-radius * 2;
+            }
         }
 
         .subfix {
             margin-left: -$--ot-normal-radius;
-            padding-left: 1.5rem + $--ot-normal-radius;
+            padding-left: $--ot-normal-radius;
+
+            &[fixable] {
+                padding-left: $--ot-normal-radius * 2;;
+                padding-right: $--ot-normal-radius;
+            }
         }
     }
 
@@ -382,12 +421,22 @@ export default {
 
         .prefix {
             margin-right: -$--ot-big-radius;
-            padding-right: 1.5rem + $--ot-big-radius;
+            padding-right: $--ot-big-radius;
+
+            &[fixable] {
+                padding-left: $--ot-big-radius;
+                padding-right: $--ot-big-radius * 2;
+            }
         }
 
         .subfix {
             margin-left: -$--ot-big-radius;
-            padding-left: 1.5rem + $--ot-big-radius;
+            padding-left: $--ot-big-radius;
+
+            &[fixable] {
+                padding-left: $--ot-big-radius * 2;
+                padding-right: $--ot-big-radius;
+            }
         }
     }
 

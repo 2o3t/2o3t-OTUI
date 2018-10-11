@@ -6,10 +6,17 @@ const isDef = v => v !== undefined;
 const isFunc = v => typeof v === 'function';
 const isObj = v => Object.prototype.toString.call(v) === '[object Object]';
 const isStr = v => Object.prototype.toString.call(v) === '[object String]';
+const isTrue = v => (!!v);
 
 function hookBeforeCreate($vm) {
-    // init
     $vm._ot_color = {};
+}
+
+function hookCreated($vm) {
+    // init
+    if (!$vm._ot_color) {
+        $vm._ot_color = {};
+    }
     for (const key in $vm.$options) {
         const fn = $vm.$options[key];
         if (isDef(fn) && isFunc(fn)) {
@@ -154,8 +161,8 @@ function createMixin(options) {
         },
         data() {
             return {
-                border: isDef(this.$attrs.border),
-                round: isDef(this.$attrs.round),
+                border: this.$attrs.border,
+                round: this.$attrs.round,
                 size: isStr(this.$attrs.size) ? this.$attrs.size : '',
                 theme: isStr(this.$attrs.theme) ? this.$attrs.theme : '',
                 color: isStr(this.$attrs.color) ? this.$attrs.color : 'default',
@@ -164,12 +171,12 @@ function createMixin(options) {
         watch: {
             '$attrs.border': function(newV, oldV) {
                 if (newV !== oldV) {
-                    this.border = isDef(newV);
+                    this.border = isTrue(newV);
                 }
             },
             '$attrs.round': function(newV, oldV) {
                 if (newV !== oldV) {
-                    this.round = isDef(newV);
+                    this.round = isTrue(newV);
                 }
             },
             '$attrs.size': function(newV, oldV) {
@@ -189,6 +196,9 @@ function createMixin(options) {
             },
         },
         beforeCreate() {
+            hookBeforeCreate(this);
+        },
+        created() {
             if (this.$options.otDefaultColors) {
                 const cs = othersColors(this.$options.otDefaultColors, this);
                 Object.keys(cs).forEach(key => {
@@ -197,23 +207,30 @@ function createMixin(options) {
                     }
                 });
             }
-            hookBeforeCreate(this);
+            hookCreated(this);
         },
         mounted() {
             // test
-            this.updateChildren();
+            const $options = this.$options;
+            if ($options.__OT__) { // self
+                const children = this.$children;
+                this._otUpdateChildren(children);
+            }
         },
         methods: {
-            updateChildren() {
-                const children = this.$children;
+            _otUpdateChildren(children) {
                 if (children && children.length) {
                     for (const child of children) {
-                        if (this.theme && !child.theme) {
-                            child.theme = this.$otTheme;
+                        const $options = child.$options;
+                        if ($options.__OT__) { // 自己人
+                            if (this.theme && !child.theme) {
+                                child.theme = this.$otTheme;
+                            }
+                            if (this.size && !child.size) {
+                                child.size = this.$otSize;
+                            }
                         }
-                        if (this.size && !child.size) {
-                            child.size = this.$otSize;
-                        }
+                        this._otUpdateChildren(child.$children);
                     }
                 }
             },

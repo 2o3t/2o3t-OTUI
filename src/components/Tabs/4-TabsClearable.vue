@@ -1,9 +1,16 @@
 <template>
-    <ot-section :theme="$otTheme" label="Tabs 标签组" prefix="#" section>
+    <ot-section :theme="$otTheme" label="Tabs 标签组 + 可增删" prefix="#" section>
         <ot-row-group :theme="$otTheme" :code="code">
-            <ot-tabs :theme="$otTheme" :list="tabs" :select="selectTab" @action="handleAction">
-                <span>{{ selectTab && selectTab.title }}</span>
-            </ot-tabs>
+            <div ot :class="$style.tabs">
+                <ot-tabs :theme="$otTheme"
+                    :list="tabs" :select="selectTab" @action="handleAction"
+                    clearable :offset="20">
+                    <ot-link slot="prefix" @click="handleAddClick">
+                        <ot-icon :class="$style.icon" icon="plus"></ot-icon>
+                    </ot-link>
+                    <span>{{ selectTab && selectTab.title }}</span>
+                </ot-tabs>
+            </div>
         </ot-row-group>
     </ot-section>
 </template>
@@ -22,13 +29,20 @@ export default {
     },
     methods: {
         initTabs() {
-            for (let i = 0; i < 9; i++) {
+            for (let i = 0; i < 2; i++) {
                 this.tabs.push({
                     title: `Tabs ${i}`,
                     name: i + '',
                 });
             }
             this.selectTab = this.tabs[0];
+        },
+        handleAddClick() {
+            const i = Date.now();
+            this.tabs.push({
+                title: `Tabs ${i}`,
+                name: i + '',
+            });
         },
         handleAction(action, tab) {
             console.log(action, tab);
@@ -64,3 +78,15 @@ export default {
     },
 };
 </script>
+
+<style lang="scss" module>
+.tabs {
+    margin: 0 !important;
+    padding: 5px 20px;
+    width: 100%;
+}
+.icon {
+    padding: 10px 0;
+}
+</style>
+

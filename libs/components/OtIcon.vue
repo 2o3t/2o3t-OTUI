@@ -1,5 +1,9 @@
 <template>
-    <i ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
+    <span ot :class="$style.root" v-else>
+        <i ot :class="[$style.label, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
+        <slot></slot>
+    </span>
 </template>
 
 <script>
@@ -33,6 +37,10 @@ export default {
     text-align: center;
     line-height: 1;
     box-sizing: border-box;
+
+    .label {
+        padding-right: 5px;
+    }
 
     @include __ot_size__;
 

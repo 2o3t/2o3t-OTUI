@@ -1,12 +1,21 @@
 <template>
     <div ot :class="[$style.root]">
-        <ul ot :class="[$style.tabs]" class="ot-tabs">
-            <li ot v-bind="$otColors" :class="[$style.item]"
-                :selected="item.name === select.name" v-for="(item, index) in _list" :key="index" @click="handleTabsActive(item)">
-                <span :class="$style.text">{{item.title}}</span>
-                <ot-icon v-if="clearable" v-bind="$otColors.icon" :class="$style.icon" :size="$otSize" icon="close" v-show="index!==0" @click="handleTabsClose($event, item)"></ot-icon>
-            </li>
-        </ul>
+        <div v-if="$slots.prefix" :class="$style.prefix">
+            <slot name="prefix"></slot>
+        </div>
+        <div :class="$style.box" :style="{ marginLeft: `${Number(offset)}px` }">
+            <ul ot :class="[$style.tabs]" class="ot-tabs">
+                <li ot v-bind="$otColors" :class="[$style.item]"
+                    v-ot-title
+                    :selected="item.name === select.name" v-for="(item, index) in _list" :key="index" @click="handleTabsActive(item)">
+                    <slot name="title" :item="item" :index="index">
+                        <ot-icon :class="$style.titleIcon" v-if="item.icon" :icon="item.icon"></ot-icon>
+                        <span :class="$style.text">{{item.title}}</span>
+                    </slot>
+                    <ot-icon v-if="clearable" v-bind="$otColors.icon" :class="$style.clearable" :size="$otSize" icon="close" v-show="index!==0" @click="handleTabsClose($event, item)"></ot-icon>
+                </li>
+            </ul>
+        </div>
         <div v-if="$slots.default" :class="$style.content">
             <slot></slot>
         </div>
@@ -23,6 +32,7 @@ export default {
         },
         select: [ Object ],
         clearable: [ Boolean ],
+        offset: [ Number, String ],
     },
     otDefaultColors(theme) {
         switch (theme) {
@@ -88,9 +98,30 @@ export default {
 <style lang="scss" module>
 .root {
     height: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+
+    .prefix {
+        position: absolute;
+        left: 0;
+        top: 0;
+        vertical-align: middle;
+    }
+
+    .box {
+        position: relative;
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+        box-sizing: border-box;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 
     .tabs {
         padding: 0;
@@ -132,6 +163,11 @@ export default {
                 width: 100%;
             }
 
+            .titleIcon {
+                padding-right: 5px;
+                vertical-align: middle;
+            }
+
             .text {
                 min-width: 40px;
                 max-width: 100px;
@@ -142,7 +178,7 @@ export default {
                 vertical-align: middle;
             }
 
-            .icon {
+            .clearable {
                 font-size: 14px;
                 line-height: 32px;
                 margin-right: -14px;
@@ -151,8 +187,9 @@ export default {
                 vertical-align: middle;
             }
 
-            &:hover .icon {
+            &:hover .clearable {
                 margin-right: 0px;
+                margin-left: 5px;
                 transform: scale(1);
             }
         }

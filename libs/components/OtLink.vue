@@ -1,5 +1,6 @@
 <template>
-    <a ot v-bind="$otColors" class="ot-link" :class="$style.root" :href="href" @click="handleClick">
+    <a ot v-bind="$otColors" class="ot-link" :class="$style.root" :href="href" @click="handleClick" :line="line"
+        v-on="$listeners" :disabled="disabled">
         <slot></slot>
     </a>
 </template>
@@ -9,21 +10,37 @@ export default {
     name: 'ot-link',
     otDefaultColors(theme) {
         switch (theme) {
-            case 'dark':
-                return {
+            case 'dark': {
+                const c = {
                     normal: [ 'pri-f' ],
-                    hover: [ 'pri-f-h', 'pri-bb-h' ],
-                    active: [ 'pri-f-a', 'light-bb-a' ],
+                    hover: [ 'pri-f-h' ],
+                    active: [ 'pri-f-a' ],
                     disabled: [ 'pri-f-dis' ],
                 };
+                if (this.line) {
+                    c.normal.push('pri-bb');
+                    c.hover.push('pri-bb-h');
+                    c.active.push('light-bb-a');
+                    c.disabled.push('pri-bb-dis');
+                }
+                return c;
+            }
             case 'light':
-            default:
-                return {
+            default: {
+                const c = {
                     normal: [ 'def-f' ],
-                    hover: [ 'pri-f-hov', 'def-bb-hov' ],
-                    active: [ 'pri-f-act', 'pri-bb-act' ],
+                    hover: [ 'pri-f-hov' ],
+                    active: [ 'pri-f-act' ],
                     disabled: [ 'def-f-dis' ],
                 };
+                if (this.line) {
+                    c.normal.push('def-bb');
+                    c.hover.push('def-bb-hov');
+                    c.active.push('pri-bb-act');
+                    c.disabled.push('def-bb-dis');
+                }
+                return c;
+            }
         }
     },
     props: {
@@ -35,6 +52,8 @@ export default {
             type: [ String, Object ],
             default: null,
         },
+        line: [ Boolean ],
+        disabled: [ Boolean ],
     },
     methods: {
         handleClick() {

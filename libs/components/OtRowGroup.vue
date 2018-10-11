@@ -85,8 +85,10 @@ export default {
   flex-wrap: nowrap;
   box-sizing: border-box;
   margin-bottom: 20px;
+  position: relative;
 
   .childs {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -98,8 +100,9 @@ export default {
     }
 
     & > [ot] {
-      flex: 0 0 auto;
-      margin: 5px 20px;
+        flex: 0 0 auto;
+        margin: 5px 20px;
+        box-sizing: border-box;
     }
   }
 

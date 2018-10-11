@@ -9,7 +9,8 @@ const UI = () => import('@v/UI');
 
 function createSideBarView(view) {
     return {
-        sidebar: () => asyncImport(SideBar()),
+        // sidebar: () => asyncImport(SideBar()),
+        sidebar: SideBar,
         default: () => asyncImport(view()),
     };
 }

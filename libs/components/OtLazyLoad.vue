@@ -1,9 +1,11 @@
 <template>
     <div ot class="ot-lazy-load" :class="$style.root">
         <ot-loading v-if="!finish" :theme="$otTheme" :size="$otSize"></ot-loading>
-        <transition name="fade">
-            <slot v-if="finish"></slot>
-        </transition>
+        <div v-if="finish && $slots.default">
+            <transition name="fade">
+                <slot></slot>
+            </transition>
+        </div>
     </div>
 </template>
 
@@ -46,7 +48,11 @@ export default {
                     });
                     startTime = curTime;
                 } else { // 没达到触发间隔，重新设定定时器
-                    timeout = setTimeout(fun, delay);
+                    timeout = setTimeout(() => {
+                        context.$nextTick(() => {
+                            fun(args);
+                        });
+                    }, delay);
                 }
             };
         },
@@ -55,10 +61,12 @@ export default {
         lazyLoad() {
             const scrollTop = window.scrollY;
             const item = this.$el;
+            const offsetTop = item.offsetTop;
+            const innerHeight = window.innerHeight;
 
-            if (scrollTop === 0 && !this.finish && item.offsetTop < window.innerHeight + scrollTop) {
+            if (scrollTop === 0 && !this.finish && offsetTop < innerHeight + scrollTop) {
                 this.finish = true;
-            } else if (!this.finish && item.offsetTop < window.innerHeight + scrollTop && item.offsetTop > scrollTop) {
+            } else if (!this.finish && offsetTop < innerHeight + scrollTop && offsetTop > scrollTop) {
                 this.finish = true;
             }
             if (this.finish) {
@@ -69,7 +77,7 @@ export default {
             this.lazyLoad();
             // 采用了节流函数
             const time = this.time;
-            this.fn = this.throttle(this.lazyLoad, 500, time);
+            this.fn = this.throttle(this.lazyLoad, 520, time);
             window.addEventListener('scroll', this.fn);
         },
         unload() {

@@ -1,5 +1,5 @@
 <template>
-    <ot-section :theme="$otTheme" label="Input 开关" prefix="#" section>
+    <ot-section :theme="$otTheme" label="基本使用" prefix="#" section>
         <ot-row-group :theme="$otTheme">
             <div ot>输入: {{ inputValue }}</div>
         </ot-row-group>
