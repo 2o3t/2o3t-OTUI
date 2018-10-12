@@ -6,10 +6,13 @@ const isDef = v => v !== undefined;
 const isFunc = v => typeof v === 'function';
 const isObj = v => Object.prototype.toString.call(v) === '[object Object]';
 const isStr = v => Object.prototype.toString.call(v) === '[object String]';
-const isTrue = v => (!!v);
+const isTrue = v => (isStr(v) || !!v);
 
+import utils from '../utils';
 function hookBeforeCreate($vm) {
     $vm._ot_color = {};
+    // 工具类
+    $vm.$otUtils = utils;
 }
 
 function hookCreated($vm) {
@@ -161,8 +164,8 @@ function createMixin(options) {
         },
         data() {
             return {
-                border: this.$attrs.border,
-                round: this.$attrs.round,
+                border: isTrue(this.$attrs.border),
+                round: isTrue(this.$attrs.round),
                 size: isStr(this.$attrs.size) ? this.$attrs.size : '',
                 theme: isStr(this.$attrs.theme) ? this.$attrs.theme : '',
                 color: isStr(this.$attrs.color) ? this.$attrs.color : 'default',

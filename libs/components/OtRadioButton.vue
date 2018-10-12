@@ -33,7 +33,7 @@ export default {
         }
     },
     props: {
-        name: {
+        value: {
             type: [ String ],
             required: true,
         },
@@ -47,7 +47,7 @@ export default {
         handleClick(e) {
             this.$emit('click', e);
             if (this.$parent) {
-                this.$parent.$emit('update:ot:radio:group', this.name);
+                this.$parent.$emit('update:ot:radio:group', this.value);
             }
         },
         updateSelected(isSelected) {

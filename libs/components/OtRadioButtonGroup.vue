@@ -16,26 +16,45 @@ export default {
             this.checkSelected(newV);
         },
     },
+    created() {
+        this.updateChild();
+    },
+    beforeUpdate() {
+        this.updateChild();
+    },
     methods: {
-        checkSelected(name) {
+        updateChild() {
+            const $slots = this.$slots && this.$slots.default;
+            if ($slots) {
+                $slots.forEach(item => {
+                    if (item.data) {
+                        if (!item.data.attrs) {
+                            item.data.attrs = {};
+                        }
+                        item.data.attrs.round = this.round;
+                    }
+                });
+            }
+        },
+        checkSelected(value) {
             const children = this.$children;
             for (const child of children) {
-                if (child.name === name) {
+                if (child.value === value) {
                     child.updateSelected(true);
                 } else {
                     child.updateSelected(false);
                 }
             }
         },
-        handleInput(name) {
-            this.$emit('input', name);
-            this.$emit('change', name);
+        handleInput(value) {
+            this.$emit('input', value);
+            this.$emit('change', value);
         },
     },
     mounted() {
-        this.$on('update:ot:radio:group', name => {
-            this.checkSelected(name);
-            this.handleInput(name);
+        this.$on('update:ot:radio:group', value => {
+            this.checkSelected(value);
+            this.handleInput(value);
         });
         this.checkSelected(this.value);
     },
@@ -123,7 +142,7 @@ export default {
     }
 
     &:hover, &:active {
-        z-index: 10;
+        z-index: 1;
     }
 }
 </style>

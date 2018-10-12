@@ -14,11 +14,11 @@
             :disabled="disabled">
             <ot-icon icon="minus"></ot-icon>
         </ot-link>
-        <ot-link v-if="!double" :class="$style.icon" slot="subfix" @click="handlePlusClick"
+        <ot-link v-if="!double" :class="$style.icon" slot="suffix" @click="handlePlusClick"
             :disabled="disabled">
             <ot-icon icon="plus"></ot-icon>
         </ot-link>
-        <div v-if="double" :class="$style.double" slot="subfix">
+        <div v-if="double" :class="$style.double" slot="suffix">
             <ot-link :class="$style.icon" @click="handlePlusClick"
                 :disabled="disabled">
                 <ot-icon icon="plus"></ot-icon>

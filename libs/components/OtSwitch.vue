@@ -1,18 +1,19 @@
 <template>
-    <div ot :class="$style.root" v-bind="$otColors" :size="$otSize">
-        <span ot v-bind="$otColors.activeLabel" v-if="$slots.inactive" :class="[$style.left, $style.label]" :selected="!value">
+    <div ot :class="$style.root" v-bind="$otColors" :size="$otSize" :disabled="disabled">
+        <span ot v-bind="$otColors.activeLabel" v-if="$slots.inactive" :class="[$style.left, $style.label]" :selected="!value" :disabled="disabled">
             <slot name="inactive"></slot>
         </span>
-        <div ot v-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle">
+        <div ot v-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle" :disabled="disabled">
             <div ot v-bind="$otColors.front" :class="$style.front" :selected="value"></div>
             <input :class="$style.input" type="checkbox" name=""
+                :disabled="disabled"
                 @change="handleChange"
                 :checked="value">
         </div>
-        <span ot v-bind="$otColors.activeLabel" v-if="$slots.active" :class="[$style.right, $style.label]" :selected="value">
+        <span ot v-bind="$otColors.activeLabel" v-if="$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
             <slot name="active"></slot>
         </span>
-        <span ot v-bind="$otColors.activeLabel" v-else-if="$slots.default && !$slots.active" :class="[$style.right, $style.label]" :selected="value">
+        <span ot v-bind="$otColors.activeLabel" v-else-if="$slots.default && !$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
             <slot></slot>
         </span>
     </div>
@@ -33,11 +34,12 @@ export default {
                         hover: [ 'pri-f-h', 'pri-b-h' ],
                         active: [ 'pri-bg-a', 'light-b-a' ],
                         selected: [ 'pri-f-sel', 'pri-bg-sel', 'pri-b-sel' ],
-                        disabled: [], // TODO dis
+                        disabled: [ 'pri-f-dis', 'pri-bg-dis', 'pri-b-dis' ],
                     },
                     activeLabel: {
                         normal: [ 'grey-f' ],
                         selected: [ 'pri-f-sel' ],
+                        disabled: [ 'def-f-dis' ],
                     },
                     normal: [ 'light-f' ],
                 };
@@ -52,11 +54,12 @@ export default {
                         hover: [ 'pri-f-hov', 'pri-b-hov' ],
                         active: [ 'pri-bg-a', 'dark-b-a' ],
                         selected: [ 'pri-f-sel', 'pri-bg-sel' ],
-                        disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                        disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     activeLabel: {
                         normal: [ 'grey-f' ],
                         selected: [ 'pri-f-sel' ],
+                        disabled: [ 'def-f-dis' ],
                     },
                     normal: [ 'def-f' ],
                 };
@@ -139,6 +142,10 @@ export default {
             margin: 0;
             padding: 0;
             cursor: pointer;
+
+            &[disabled] {
+                cursor: not-allowed;
+            }
         }
 
         .front {

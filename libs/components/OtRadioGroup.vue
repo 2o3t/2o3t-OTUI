@@ -93,7 +93,9 @@ export default {
     position: relative;
     margin-left: -1px;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 0.6em 1.5em 0.6em 1.2em;
+
+    @include __ot_size__;
 
     &[round] {
         border-radius: 0;

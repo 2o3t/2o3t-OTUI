@@ -7,8 +7,12 @@
 <script>
 export default {
     name: 'ot-checkbox-group',
+    model: {
+        prop: 'model',
+        event: 'update',
+    },
     props: {
-        value: {
+        model: {
             type: [ Array ],
             required: true,
         },
@@ -16,17 +20,10 @@ export default {
         max: [ Number ],
         all: [ Boolean ],
     },
-    data() {
-        return {
-            current: this.value,
-        };
-    },
     watch: {
-        value(newV, oldV) {
-            if (newV !== oldV) {
-                if (Array.isArray(newV)) {
-                    this.current = newV;
-                }
+        model(newV) {
+            if (Array.isArray(newV)) {
+                this.checkSelected();
             }
         },
         all(newV, oldV) {
@@ -50,23 +47,26 @@ export default {
                 }
             }
         },
-        _on() {
-            this.$on('update:ot:checkbox:group', (name, checked) => {
-                const curr = this.current;
-                if (checked) {
-                    if (!this.max || this.max > curr.length) {
-                        if (!Array.prototype.includes.call(curr, name)) {
-                            curr.push(name);
-                        }
-                    }
-                } else {
-                    if (!this.min || this.min < curr.length) {
-                        const index = Array.prototype.indexOf.call(curr, name);
-                        if (index >= 0) {
-                            Array.prototype.splice.call(curr, index, 1);
-                        }
+        _selectOne(value, checked) {
+            const curr = this.model;
+            if (checked) {
+                if (!this.max || this.max > curr.length) {
+                    if (!Array.prototype.includes.call(curr, value)) {
+                        curr.push(value);
                     }
                 }
+            } else {
+                if (!this.min || this.min < curr.length) {
+                    const index = Array.prototype.indexOf.call(curr, value);
+                    if (index >= 0) {
+                        curr.splice(index, 1);
+                    }
+                }
+            }
+        },
+        _on() {
+            this.$on('update:ot:checkbox:group', (value, checked) => {
+                this._selectOne(value, checked);
                 this.checkSelected();
             });
         },
@@ -75,23 +75,14 @@ export default {
         },
         _all(checked) {
             const children = this.$children;
-            const current = [];
             for (const child of children) {
-                if (checked) {
-                    if (!this.max || this.max > current.length) {
-                        current.push(child.value);
-                    }
-                } else {
-                    if (this.min && this.min > current.length) {
-                        current.push(child.value);
-                    }
-                }
+                const value = child.value;
+                this._selectOne(value, checked);
             }
-            this.current = current;
             this.checkSelected();
         },
         checkSelected() {
-            const curr = this.current;
+            const curr = this.model;
             const children = this.$children;
             for (const child of children) {
                 const one = curr.find(v => {
@@ -106,9 +97,8 @@ export default {
             this.handleInput();
         },
         handleInput() {
-            const curr = this.current;
-            this.$emit('input', curr);
-            this.$emit('change', curr);
+            const curr = this.model;
+            this.$emit('update', curr);
 
             const children = this.$children;
             if (curr.length === children.length) {
@@ -118,6 +108,8 @@ export default {
             } else {
                 this.$emit('changeStatus', 'half', curr);
             }
+
+            this.$emit('change', curr);
         },
     },
     mounted() {
@@ -153,7 +145,9 @@ export default {
     position: relative;
     margin-left: -1px;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 0.6em 1.5em 0.6em 1.2em;
+
+    @include __ot_size__;
 
     &[round] {
         border-radius: 0;
@@ -210,7 +204,7 @@ export default {
     }
 
     &:hover, &:active {
-        z-index: 10;
+        z-index: 1;
     }
 }
 </style>

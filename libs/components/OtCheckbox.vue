@@ -1,12 +1,13 @@
 <template>
     <label ot v-bind="$otColors" @click="$emit('click', $event)" class="ot-checkbox" :class="$style.root" :size="$otSize" :selected="current===value" :disabled="disabled" :border="border" :round="round">
-        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current===value">
-            <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current===value" :indeterminate="indeterminate"></span>
+        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current===value" :disabled="disabled">
+            <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current===value" :disabled="disabled" :indeterminate="indeterminate"></span>
         </span>
         <div v-if="$slots.default" :class="$style.label">
             <slot></slot>
         </div>
         <input :class="$style.input" type="checkbox"
+            :disabled="disabled"
             :name="name"
             v-model="current"
             @change="handleChange"
@@ -18,21 +19,23 @@
 export default {
     name: 'ot-checkbox',
     otDefaultColors(theme) {
-        const border = this.border ? [ 'pri-b' ] : [];
+        const borderNormal = this.border ? [ 'pri-b' ] : [];
+        const borderDarkDisabled = this.border ? [ 'def-b-dis' ] : [];
+        const borderLightDisabled = this.border ? [ 'def-bg-dis', 'def-b-dis' ] : [];
         switch (theme) {
             case 'dark': {
                 return {
                     front: {
                         normal: [ 'pri-b' ],
+                        disabled: [ 'pri-b-dis' ],
                     },
                     point: {
-                        // normal: [ 'dark-bg' ],
                         selected: [ 'pri-br-sel', 'pri-bb-sel' ],
                     },
-                    normal: [ 'light-f', ...border ],
+                    normal: [ 'light-f', ...borderNormal ],
                     hover: [ 'pri-f-h' ],
                     selected: [ 'pri-f-sel' ],
-                    disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                    disabled: [ 'def-f-dis', ...borderDarkDisabled ],
                 };
             }
             case 'light':
@@ -41,15 +44,15 @@ export default {
                     front: {
                         normal: [ 'light-bg', 'pri-b' ],
                         selected: [ 'pri-bg-sel' ],
+                        disabled: [ 'def-bg-dis', 'def-b-dis' ],
                     },
                     point: {
-                        normal: [ 'pri-bg' ],
                         selected: [ 'light-br-sel', 'light-bb-sel' ],
                     },
-                    normal: [ 'def-f', ...border ],
+                    normal: [ 'def-f', ...borderNormal ],
                     hover: [ 'pri-f-hov' ],
                     selected: [ 'pri-f-sel' ],
-                    disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                    disabled: [ 'def-f-dis', ...borderLightDisabled ],
                 };
             }
         }
@@ -101,6 +104,7 @@ export default {
             this.current = now;
         },
         updateVal(value, checked) {
+            if (this.disabled) return;
             this.$emit('change', checked && value);
             if (this.$parent) {
                 this.$parent.$emit('update:ot:checkbox:group', value, checked);
@@ -134,6 +138,10 @@ export default {
     margin: 0;
     padding: 0;
     cursor: pointer;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
   }
 
   .front {
@@ -186,10 +194,15 @@ export default {
     padding: 0 5px;
   }
 
+  &[border] {
+    padding: 0.5em 1.5em 0.5em 1.2em;
+  }
+
+  @include __ot_size__;
+
   &[size="mini"] {
     // font-size: $--ot-mini-size;
     &[border] {
-      padding: 5px 15px 5px 12px;
       min-height: $--ot-mini-height;
     }
     &[round] {
@@ -205,7 +218,6 @@ export default {
   &[size="small"] {
     // font-size: $--ot-small-size;
     &[border] {
-      padding: 8px 20px 8px 16px;
       min-height: $--ot-small-height;
     }
     &[round] {
@@ -221,7 +233,6 @@ export default {
   &[size="normal"] {
     // font-size: $--ot-normal-size;
     &[border] {
-      padding: 10px 20px 10px 16px;
       min-height: $--ot-normal-height;
     }
     &[round] {
@@ -242,7 +253,6 @@ export default {
   &[size="big"] {
     // font-size: $--ot-big-size;
     &[border] {
-      padding: 10px 20px 10px 16px;
       min-height: $--ot-big-height;
     }
     &[round] {

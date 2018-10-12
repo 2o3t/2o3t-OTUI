@@ -95,8 +95,8 @@ export default {
     position: relative;
     white-space: nowrap;
     list-style: none;
-    height: 5.6rem;
-    line-height: 5.6rem;
+    height: 4em;
+    line-height: 4em;
 
     .link {
         display: inline-block;

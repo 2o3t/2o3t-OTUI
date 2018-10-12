@@ -20,11 +20,14 @@ const requireModules = files => {
 const getTemplate = (config, modules) => {
     const LABEL = config.LABEL;
     const DESC = config.DESC;
+    const COMPONENTS = config.COMPONENTS || {};
     const template = `
     <ot-section :theme="$otTheme" :level="2" label="${LABEL}" desc="${DESC}">
     ${
     Object.keys(modules).map(key => {
-        return `<${key} :theme="$otTheme"/>`;
+        const name = key.replace(/^OT-/igm, '');
+        const comp = COMPONENTS[name] || {};
+        return `<${key} :theme="$otTheme" label="${comp.LABEL || ''}" desc="${comp.DESC || ''}" prefix="#"/>`;
     }).join('\n')}
     </ot-section>
     `;

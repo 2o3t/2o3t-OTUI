@@ -10,6 +10,7 @@
 </template>
 
 <script>
+let INDEX = 0;
 export default {
     name: 'ot-lazy-load',
     props: {
@@ -23,6 +24,7 @@ export default {
         return {
             finish: false,
             fn: null,
+            index: INDEX++,
         };
     },
     mounted() {
@@ -31,43 +33,20 @@ export default {
         });
     },
     methods: {
-        throttle(fun, delay, time) {
-            let timeout;
-            let startTime = new Date();
-            const context = this;
-            fun = fun.bind(this);
-            return function() {
-                const args = arguments;
-                const curTime = new Date();
-                clearTimeout(timeout);
-                // 如果达到了规定的触发时间间隔，触发 handler
-                // console.log(curTime - startTime);
-                if (curTime - startTime >= time) {
-                    context.$nextTick(() => {
-                        fun(args);
-                    });
-                    startTime = curTime;
-                } else { // 没达到触发间隔，重新设定定时器
-                    timeout = setTimeout(() => {
-                        context.$nextTick(() => {
-                            fun(args);
-                        });
-                    }, delay);
-                }
-            };
-        },
         // 实际想绑定在 scroll 事件上的 handler
         // 需要访问到imgs ,  scroll
         lazyLoad() {
-            const scrollTop = window.scrollY;
+            const scrollTop = this.$otUtils.getScrollTop();
             const item = this.$el;
-            const offsetTop = item.offsetTop;
+            const offsetTop = this.$otUtils.getOffsetTop(item);
             const innerHeight = window.innerHeight;
 
-            if (scrollTop === 0 && !this.finish && offsetTop < innerHeight + scrollTop) {
+            if (scrollTop === 0 && !this.finish && offsetTop <= (innerHeight + scrollTop)) {
                 this.finish = true;
-            } else if (!this.finish && offsetTop < innerHeight + scrollTop && offsetTop > scrollTop) {
+            } else if (!this.finish && offsetTop < (innerHeight + scrollTop) && offsetTop > scrollTop) {
                 this.finish = true;
+
+                console.log(this.index);
             }
             if (this.finish) {
                 this.unload();
@@ -77,7 +56,8 @@ export default {
             this.lazyLoad();
             // 采用了节流函数
             const time = this.time;
-            this.fn = this.throttle(this.lazyLoad, 520, time);
+            this.fn = this.$otUtils.throttle(this.lazyLoad, 520, time, this);
+            this.fn.id = this.index;
             window.addEventListener('scroll', this.fn);
         },
         unload() {

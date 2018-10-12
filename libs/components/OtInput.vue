@@ -3,8 +3,8 @@
         <span ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :fixable="fixable">
             <slot name="prefix"></slot>
         </span>
-        <span ot v-bind="$otColors.subfix" v-if="$slots.subfix" :class="$style.subfix" :round="round" :fixable="fixable">
-            <slot name="subfix"></slot>
+        <span ot v-bind="$otColors.suffix" v-if="$slots.suffix" :class="$style.suffix" :round="round" :fixable="fixable" ref="suffix">
+            <slot name="suffix"></slot>
         </span>
         <input ot v-bind="$otColors.input" :round="round" :clearable="clearable" :logo="icon" :_type="type"
             :class="$style.input" :placeholder="placeholder" :type="_type" :disabled="disabled"
@@ -13,11 +13,12 @@
             :name="name"
             @change="handleChange"
             :value="model"
-            @input="handleInput" v-on="$listeners">
-        <span :class="$style.clearable" :type="type" v-if="!$slots.subfix && clearable" @click="handleClearClick">
+            @input="handleInput" v-on="$listeners"
+            :suffix-clearable="$slots.suffix && clearable">
+        <span :class="$style.clearable" :type="type" v-if="clearable" @click="handleClearClick" :style="suffixClearableStyle">
             <ot-icon ot v-bind="$otColors.icon" icon="close"></ot-icon>
         </span>
-        <span :class="$style.password" v-if="!$slots.subfix && type === 'password'" @click="handlePasswordEyeClick">
+        <span :class="$style.password" v-if="!$slots.suffix && type === 'password'" @click="handlePasswordEyeClick">
             <ot-icon ot v-bind="$otColors.icon" :icon="showPwd ? 'eye' : 'eye-slash'"></ot-icon>
         </span>
         <span :class="$style.logo" v-if="!$slots.prefix && icon">
@@ -51,7 +52,7 @@ export default {
                 return {
                     normal: [ 'light-f' ],
                     prefix: [ 'grey-bg', 'light-bl', 'light-bt', 'light-bb' ],
-                    subfix: [ 'grey-bg', 'light-bt', 'light-br', 'light-bb' ],
+                    suffix: [ 'grey-bg', 'light-bt', 'light-br', 'light-bb' ],
                     input: {
                         normal: [ 'light-f', 'dark-bg', 'light-b' ],
                         hover: [ 'gery-bg-hov', 'pri-b-hov' ],
@@ -72,7 +73,7 @@ export default {
                 return {
                     normal: [ 'def-f' ],
                     prefix: [ 'def-bg', 'grey-bl', 'grey-bt', 'grey-bb' ],
-                    subfix: [ 'def-bg', 'grey-bt', 'grey-br', 'grey-bb' ],
+                    suffix: [ 'def-bg', 'grey-bt', 'grey-br', 'grey-bb' ],
                     input: {
                         normal: [ 'light-bg', 'grey-b' ],
                         hover: [ 'def-bg-hov', 'pri-b-hov' ],
@@ -118,6 +119,7 @@ export default {
     data() {
         return {
             showPwd: false,
+            suffixClearableStyle: {},
         };
     },
     computed: {
@@ -137,6 +139,19 @@ export default {
         },
     },
     methods: {
+        _initSuffixClearableStyle() {
+            if (this.$slots.suffix && this.clearable) {
+                const $suffixEl = this.$refs.suffix;
+                if ($suffixEl) {
+                    const width = $suffixEl.offsetWidth;
+                    this.suffixClearableStyle = {
+                        right: `${width}px`,
+                    };
+                    return;
+                }
+            }
+            this.suffixClearableStyle = {};
+        },
         handleInput(e) {
             if (this.maxlength) {
                 const value = e.target.value;
@@ -153,12 +168,16 @@ export default {
         handleChange(e) {
             this.$emit('change', e);
         },
-        handleClearClick() {
+        handleClearClick(e) {
             this.$emit('update', '');
+            this.$emit('clear', e);
         },
         handlePasswordEyeClick() {
             this.showPwd = !this.showPwd;
         },
+    },
+    mounted() {
+        this._initSuffixClearableStyle();
     },
 };
 </script>
@@ -186,13 +205,13 @@ export default {
             border-bottom-left-radius: 0 !important;
         }
 
-        &+.subfix+.input[round] {
+        &+.suffix+.input[round] {
             border-top-left-radius: 0 !important;
             border-bottom-left-radius: 0 !important;
         }
     }
 
-    .subfix {
+    .suffix {
         display: inline-block;
         flex: 0 0 auto;
         vertical-align: middle;
@@ -336,7 +355,7 @@ export default {
             }
         }
 
-        .subfix {
+        .suffix {
             margin-left: -$--ot-mini-radius;
             padding-left: $--ot-mini-radius;
 
@@ -367,7 +386,7 @@ export default {
             }
         }
 
-        .subfix {
+        .suffix {
             margin-left: -$--ot-small-radius;
             padding-left: $--ot-small-radius;
 
@@ -398,7 +417,7 @@ export default {
             }
         }
 
-        .subfix {
+        .suffix {
             margin-left: -$--ot-normal-radius;
             padding-left: $--ot-normal-radius;
 
@@ -429,7 +448,7 @@ export default {
             }
         }
 
-        .subfix {
+        .suffix {
             margin-left: -$--ot-big-radius;
             padding-left: $--ot-big-radius;
 

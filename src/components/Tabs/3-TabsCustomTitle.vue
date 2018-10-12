@@ -1,5 +1,5 @@
 <template>
-    <ot-section :theme="$otTheme" label="Tabs 标签页 + 自定义标签" prefix="#" section>
+    <ot-section v-bind="$attrs" :theme="$otTheme" label="Tabs 标签页 + 自定义标签" section>
         <ot-row-group :theme="$otTheme" :code="code">
             <ot-tabs :class="$style.tabs" :theme="$otTheme" :list="tabs" :select="selectTab" @action="handleAction">
                 <span slot="title" slot-scope="{ item }">

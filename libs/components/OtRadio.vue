@@ -1,12 +1,16 @@
 <template>
-    <label ot v-bind="$otColors" class="ot-radio" :class="$style.root" :size="$otSize" :selected="current==value" :disabled="disabled" :border="border" :round="round">
-        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current==value">
-            <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current==value"></span>
+    <label ot v-bind="$otColors" class="ot-radio" :class="$style.root" :size="$otSize"
+        :selected="current==value"
+        :disabled="disabled"
+        :border="border" :round="round">
+        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current==value" :disabled="disabled">
+            <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current==value" :disabled="disabled"></span>
         </span>
         <div v-if="$slots.default" :class="$style.label">
             <slot></slot>
         </div>
         <input :class="$style.input" type="radio"
+            :disabled="disabled"
             :name="name"
             @click="handleChange"
             :value="value">
@@ -17,21 +21,23 @@
 export default {
     name: 'ot-radio',
     otDefaultColors(theme) {
-        const border = this.border ? [ 'pri-b' ] : [];
+        const borderNormal = this.border ? [ 'pri-b' ] : [];
+        const borderDarkDisabled = this.border ? [ 'def-b-dis' ] : [];
+        const borderLightDisabled = this.border ? [ 'def-bg-dis', 'def-b-dis' ] : [];
         switch (theme) {
             case 'dark': {
                 return {
                     front: {
                         normal: [ 'pri-b' ],
+                        disabled: [ 'pri-b-dis' ],
                     },
                     point: {
-                        // normal: [ 'dark-bg' ],
                         selected: [ 'pri-bg-sel' ],
                     },
-                    normal: [ 'light-f', ...border ],
+                    normal: [ 'light-f', ...borderNormal ],
                     hover: [ 'pri-f-h' ],
                     selected: [ 'pri-f-sel' ],
-                    disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                    disabled: [ 'def-f-dis', ...borderDarkDisabled ],
                 };
             }
             case 'light':
@@ -40,15 +46,16 @@ export default {
                     front: {
                         normal: [ 'light-bg', 'pri-b' ],
                         selected: [ 'pri-bg-sel' ],
+                        disabled: [ 'def-bg-dis', 'pri-b-dis' ],
                     },
                     point: {
                         normal: [ 'pri-bg' ],
                         selected: [ 'light-bg-sel' ],
                     },
-                    normal: [ 'def-f', ...border ],
+                    normal: [ 'def-f', ...borderNormal ],
                     hover: [ 'pri-f-hov' ],
                     selected: [ 'pri-f-sel' ],
-                    disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                    disabled: [ 'def-f-dis', ...borderLightDisabled ],
                 };
             }
         }
@@ -79,7 +86,7 @@ export default {
     },
     data() {
         return {
-            current: '',
+            current: this.model,
         };
     },
     watch: {
@@ -106,6 +113,7 @@ export default {
             }
         },
         handleChange(e) {
+            if (this.disabled) return;
             const value = e.target.value;
             this.updateVal(value);
         },
@@ -133,6 +141,10 @@ export default {
     margin: 0;
     padding: 0;
     cursor: pointer;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
   }
 
   .front {
@@ -175,10 +187,14 @@ export default {
     padding: 0 5px;
   }
 
+  &[border] {
+    padding: 0.5em 1.5em 0.5em 1.2em;
+  }
+
+  @include __ot_size__;
+
   &[size="mini"] {
-    // font-size: $--ot-mini-size;
     &[border] {
-        padding: 5px 15px 5px 12px;
         min-height: $--ot-mini-height;
     }
     &[round] {
@@ -192,9 +208,7 @@ export default {
   }
 
   &[size="small"] {
-    // font-size: $--ot-small-size;
     &[border] {
-        padding: 8px 20px 8px 16px;
         min-height: $--ot-small-height;
     }
     &[round] {
@@ -208,9 +222,7 @@ export default {
   }
 
   &[size="normal"] {
-    // font-size: $--ot-normal-size;
     &[border] {
-        padding: 10px 20px 10px 16px;
         min-height: $--ot-normal-height;
     }
     &[round] {
@@ -229,9 +241,7 @@ export default {
   }
 
   &[size="big"] {
-    // font-size: $--ot-big-size;
     &[border] {
-        padding: 10px 20px 10px 16px;
         min-height: $--ot-big-height;
     }
     &[round] {

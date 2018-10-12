@@ -43,9 +43,10 @@ export default {
     },
     methods: {
         handlePrefixClick(e) {
-            const current = e.target.offsetTop - 80;
-            document.documentElement.scrollTop = current;
-            document.body.scrollTop = current;
+            const targetY = this.$otUtils.getOffsetTop(e.target) - 80;
+            // 获取当前位置方法
+            const currentY = this.$otUtils.getScrollTop();
+            this.$otUtils.scrollAnimation(currentY, targetY);
         },
     },
 };

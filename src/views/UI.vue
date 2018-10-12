@@ -1,18 +1,31 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
-        <ot-section :theme="$otTheme" label="OT-Select-DOWN">
+        <ot-section :theme="$otTheme" label="OT-Slider">
             <ot-row-group :theme="$otTheme">
-                <ot-select :theme="$otTheme" v-model="selectValue">
-                    <span>lsit</span>
-                </ot-select>
+                <ot-slider :theme="$otTheme" v-model="sliderValue"></ot-slider>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-slider :theme="$otTheme" v-model="sliderValue" disabled></ot-slider>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-slider :theme="$otTheme" v-model="sliderStepValue" :step="10" showStep></ot-slider>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-slider :theme="$otTheme" v-model="sliderRangeValue" range></ot-slider>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-slider :theme="$otTheme" v-model="sliderRangeStepValue" :step="4" showStep range></ot-slider>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-slider :theme="$otTheme" v-model="sliderValue" vertical></ot-slider>
             </ot-row-group>
         </ot-section>
 
         <ot-section :theme="$otTheme" label="OT-Select-UP">
             <ot-row-group :theme="$otTheme">
                 <ot-select :theme="$otTheme" v-model="selectValue">
-                    <span>lsit</span>
+                    <span name="up">lsit</span>
                 </ot-select>
             </ot-row-group>
         </ot-section>
@@ -40,6 +53,10 @@ export default {
             number: 0,
             selectValue: '',
             selectList: [ '我是大名', '我是二名', '我是小明' ],
+            sliderValue: 0,
+            sliderStepValue: 0,
+            sliderRangeValue: [ 0, 1 ],
+            sliderRangeStepValue: [ 0, 1 ],
         };
     },
 };

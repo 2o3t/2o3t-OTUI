@@ -1,19 +1,19 @@
 <template>
     <div :class="$style.root">
-        <ot-section :theme="$otTheme" prefix="#" :label="camelCase(name)" v-for="(name) in otUINameMap" :key="name" section>
+        <ot-section v-bind="$attrs" :theme="$otTheme" prefix="#" :label="camelCase(name)" v-for="(name) in otUINameMap" :key="name" section>
             <ot-line :theme="$otTheme"></ot-line>
             <ot-lazy-load :theme="$otTheme">
                 <ot-row-group :theme="$otTheme">
-                    <div ot :class="$style.item" v-for="(subfix) in otUISubfixMap" :key="subfix">
-                        <ot-section :theme="$otTheme" prefix="#" :label="`${camelCase(name)} - ${camelCase(subfix)}`" :level="6">
+                    <div ot :class="$style.item" v-for="(suffix) in otUISubfixMap" :key="suffix">
+                        <ot-section v-bind="$attrs" :theme="$otTheme" prefix="#" :label="`${camelCase(name)} - ${camelCase(suffix)}`" :level="6">
                             <div ot :class="$style.box" v-for="sx in otUISxMap" :key="sx">
-                                <span :id="`ot__color__${name}__${subfix}__${sx}`" :class="$style.color">{{ String.prototype.toUpperCase.call(sx) }}</span>
+                                <span :id="`ot__color__${name}__${suffix}__${sx}`" :class="$style.color">{{ String.prototype.toUpperCase.call(sx) }}</span>
                                 <span>: </span>
-                                <span :class="$style.title">{{ name }}-{{ subfix }}-{{ sx }}</span>
+                                <span :class="$style.title">{{ name }}-{{ suffix }}-{{ sx }}</span>
 
                                 <span :class="[$style.title, $style.name]">
                                     <span ot v-bind="$otColors.name" :class="$style.sLeft">[</span>
-                                    ot-{{ parseSubName(name,3) }}-{{ parseSubName(subfix,1) }}{{ parseSubSXName(sx,1) }}
+                                    ot-{{ parseSubName(name,3) }}-{{ parseSubName(suffix,1) }}{{ parseSubSXName(sx,1) }}
                                     <span ot v-bind="$otColors.name" :class="$style.sRight">]</span>
                                 </span>
                             </div>

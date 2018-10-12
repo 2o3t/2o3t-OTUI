@@ -1,6 +1,8 @@
 <template>
     <ot-menu :isCollapse="isCollapse" :theme="$otTheme">
-        <ot-menu-item :theme="$otTheme" v-for="(item) in slides" :key="item.name" :router="item.router">{{item.name}}</ot-menu-item>
+        <ot-menu-group :label="key" v-for="key in Object.keys(slides)" :key="key">
+            <ot-menu-item :theme="$otTheme" :router="item.router" v-for="item in slides[key]" :key="item.name">{{item.name}}</ot-menu-item>
+        </ot-menu-group>
     </ot-menu>
 </template>
 

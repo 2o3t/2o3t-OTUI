@@ -9,7 +9,7 @@
             @input="handleInput"
             @change="$emit('change', $event)"
             type="text">
-            <ot-link :class="$style.icon" slot="subfix" @click="handleShowSelectList">
+            <ot-link :class="$style.icon" slot="suffix" @click="handleShowSelectList">
                 <ot-icon :size="$otSize" icon="angle-down"></ot-icon>
             </ot-link>
         </ot-input>

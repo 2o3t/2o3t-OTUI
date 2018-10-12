@@ -1,15 +1,16 @@
 <template>
-    <div ot :class="$style.root" class="ot-select" @click="handleFirstClick">
+    <div ot :class="$style.root" class="ot-select" @click="handleFirstClick"
+        :size="$otSize" :theme="$otTheme">
 
         <transition name="otSelectCollapse">
-            <div :class="$style.up" v-if="bShown && ($slots.up || isUp) && !list">
-                <div ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown">
+            <div :class="$style.up" v-if="bShown && ($slots.up || isUp) && !$slots.down && !list" :style="{ width: `${autoWidth}px` }">
+                <div ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="up"></slot>
                     <slot></slot>
                 </div>
             </div>
-            <div :class="$style.up" v-else-if="bShown && isUp && !$slots.up && list">
-                <ul ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" list>
+            <div :class="$style.up" v-else-if="bShown && isUp && !$slots.up && !$slots.down && list" :style="{ width: `${autoWidth}px` }">
+                <ul ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
                     <li ot v-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item === 'string') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
@@ -20,29 +21,32 @@
             </div>
         </transition>
 
-        <ot-input :fixable="false"
+        <ot-input :fixable="false" :theme="$otTheme"
             :round="round"
+            :placeholder="placeholder"
             :readonly="readonly"
             :disabled="disabled"
             :name="name"
             :model="model"
             @input="handleInput"
             @change="$emit('change', $event)"
+            :clearable="clearable"
+            @clear="handleClear"
             type="text">
-            <ot-link :class="$style.link" slot="subfix" @click="handleShowSelectList">
+            <ot-link :class="$style.link" slot="suffix" @click="handleShowSelectList" :disabled="disabled">
                 <ot-icon :class="$style.icon" :size="$otSize" icon="angle-down" :shown="bShown"></ot-icon>
             </ot-link>
         </ot-input>
 
         <transition name="otSelectCollapse">
-            <div :class="$style.down" v-if="bShown && ($slots.down || !isUp) && !list">
-                <div ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown">
+            <div :class="$style.down" v-if="bShown && ($slots.down || !isUp) && !$slots.up && !list" :style="{ width: `${autoWidth}px` }">
+                <div ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="down"></slot>
                     <slot></slot>
                 </div>
             </div>
-            <div :class="$style.down" v-else-if="bShown && !isUp && !$slots.down && list">
-                <ul ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" list>
+            <div :class="$style.down" v-else-if="bShown && !isUp && !$slots.down && !$slots.up && list" :style="{ width: `${autoWidth}px` }">
+                <ul ot v-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
                     <li ot v-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item === 'string') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
@@ -110,6 +114,8 @@ export default {
         name: [ String ],
         readonly: [ Boolean ],
         list: [ Array ],
+        direction: [ String ],
+        clearable: [ Boolean ],
     },
     data() {
         return {
@@ -117,6 +123,12 @@ export default {
             isUp: false,
             iListenerHandle: null,
         };
+    },
+    computed: {
+        autoWidth() {
+            const $el = this.$el;
+            return $el.offsetWidth;
+        },
     },
     methods: {
         handleFirstClick(e) {
@@ -153,20 +165,23 @@ export default {
                 delete this.$slots.up;
                 delete this.$slots.down;
             }
-            if (!this.$slots.down && !this.$slots.down) {
-                ev = ev || window.event;
-                const offsetTop = ev.clientY;
-                const innerHeight = window.innerHeight;
-                const offset = offsetTop - innerHeight / 2;
+            if (!this.$slots.down && !this.$slots.up) {
+                let isUp = false;
 
-                if (offset > 0) {
-                    this.isUp = true;
+                if (!this.direction) {
+                    ev = ev || window.event;
+                    const offsetTop = ev.clientY;
+                    const innerHeight = window.innerHeight;
+                    const offset = offsetTop - innerHeight / 2;
+                    isUp = offset > 0;
                 } else {
-                    this.isUp = false;
+                    isUp = this.direction === 'up';
                 }
+
+                this.isUp = isUp;
             }
 
-            this.bShown = true;
+            this._show();
         },
         handleInput(e) {
             const value = e.target.value;
@@ -175,7 +190,12 @@ export default {
 
             this._show();
         },
+        handleClear() {
+            this.$emit('update', '');
+            this._show();
+        },
         _show() {
+            if (this.disabled) return;
             if (!this.bShown) {
                 this.bShown = true;
             }
@@ -205,9 +225,12 @@ export default {
 </script>
 
 <style lang="scss" module>
+@import './globals';
 .root {
     position: relative;
     box-sizing: border-box;
+
+    @include __ot_size__;
 
     .link {
         display: block;
@@ -226,9 +249,17 @@ export default {
 
     .select {
         display: block;
+        box-sizing: border-box;
         padding: 0.5rem 1rem;
-        // width: 100%;
+        width: 100%;
         margin: 0;
+        z-index: 100;
+
+        @include __ot_input_width__;
+
+        &[round] {
+            @include __ot_round__;
+        }
 
         &>li {
             list-style: none;
@@ -273,6 +304,7 @@ export default {
 .otSelectCollapse-leave-active {
     transform-origin: 50% 0%;
     transition: transform 0.3s;
+    z-index: 100;
 }
 
 .otSelectCollapse-enter,

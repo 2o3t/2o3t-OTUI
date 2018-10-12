@@ -1,5 +1,5 @@
 <template>
-    <ot-section :theme="$otTheme" label="Tabs 标签组 + 可增删" prefix="#" section>
+    <ot-section v-bind="$attrs" :theme="$otTheme" label="Tabs 标签组 + 可增删" section>
         <ot-row-group :theme="$otTheme" :code="code">
             <div ot :class="$style.tabs">
                 <ot-tabs :theme="$otTheme"

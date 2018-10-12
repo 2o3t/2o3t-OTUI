@@ -1,7 +1,7 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
     <span ot :class="$style.root" v-else>
-        <i ot :class="[$style.label, {[`fa fa-${icon}`]: !!icon}]" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
+        <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)"></i>
         <slot></slot>
     </span>
 </template>
@@ -12,12 +12,24 @@ export default {
     props: {
         icon: [ String ],
         url: [ String ],
+        width: [ String ],
+        height: [ String ],
     },
     computed: {
         imageUrl() {
             const style = {};
             if (this.url) {
                 style.backgroundImage = `url('${this.url}')`;
+                if (this.$otSize) {
+                    style.width = '1em';
+                    style.height = '1em';
+                }
+                if (this.width) {
+                    style.width = this.width;
+                }
+                if (this.height) {
+                    style.height = this.height;
+                }
             }
             return style;
         },
@@ -38,27 +50,22 @@ export default {
     line-height: 1;
     box-sizing: border-box;
 
-    .label {
-        padding-right: 5px;
+    &[url] {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
     }
 
     @include __ot_size__;
 
-    // &[size=mini] {
-    //     font-size: $--ot-mini-size;
-    // }
+    .label {
+        margin-right: 5px;
+        vertical-align: middle;
 
-    // &[size=small] {
-    //     font-size: $--ot-small-size;
-    // }
-
-    // &[size=normal] {
-    //     font-size: $--ot-normal-size;
-    // }
-
-    // &[size=big] {
-    //     font-size: $--ot-big-size;
-    // }
+        &~* {
+            vertical-align: middle;
+        }
+    }
 }
 </style>
 

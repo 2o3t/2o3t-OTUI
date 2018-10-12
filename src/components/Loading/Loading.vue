@@ -1,5 +1,5 @@
 <template>
-    <ot-section :theme="$otTheme" label="Loading" prefix="#" section>
+    <ot-section v-bind="$attrs" :theme="$otTheme" label="Loading" section>
         <ot-row-group :theme="$otTheme" :code="code">
             <ot-loading :theme="$otTheme" size="mini"></ot-loading>
             <ot-loading :theme="$otTheme" size="small"></ot-loading>

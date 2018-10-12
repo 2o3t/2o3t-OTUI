@@ -1,5 +1,5 @@
 <template>
-    <div ot :class="$style.root" class="ot-button-group">
+    <div ot :class="$style.root" class="ot-button-group" :round="round">
         <slot></slot>
     </div>
 </template>
@@ -7,6 +7,27 @@
 <script>
 export default {
     name: 'ot-button-group',
+    created() {
+        this.updateChild();
+    },
+    beforeUpdate() {
+        this.updateChild();
+    },
+    methods: {
+        updateChild() {
+            const $slots = this.$slots && this.$slots.default;
+            if ($slots) {
+                $slots.forEach(item => {
+                    if (item.data) {
+                        if (!item.data.attrs) {
+                            item.data.attrs = {};
+                        }
+                        item.data.attrs.round = this.round;
+                    }
+                });
+            }
+        },
+    },
 };
 </script>
 
