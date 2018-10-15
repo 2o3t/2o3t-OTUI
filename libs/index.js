@@ -20,6 +20,7 @@ export default {
         for (const key in components) {
             if (components.hasOwnProperty(key)) {
                 const element = components[key];
+                element.__OT_Vue__ = Vue; // 内用
                 element.__OT__ = true;
                 if (options.global !== true) {
                     if (!element.mixins) {

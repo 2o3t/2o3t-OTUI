@@ -1,6 +1,6 @@
 <template>
     <div ot :class="$style.root" class="ot-row-group">
-        <div :class="$style.childs" :vertical="vertical">
+        <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable">
             <slot></slot>
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode">{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
@@ -60,6 +60,10 @@ export default {
             default: 'html',
         },
         vertical: [ Boolean ],
+        fixable: {
+            type: [ Boolean ],
+            default: true,
+        },
     },
     data() {
         return {
@@ -89,7 +93,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: baseline;
     box-sizing: border-box;
 
     &[vertical] {
@@ -97,9 +101,12 @@ export default {
     }
 
     & > [ot] {
-        flex: 0 0 auto;
-        margin: 5px 20px;
         box-sizing: border-box;
+        flex: 0 0 auto;
+    }
+
+    &[fixable] > [ot] {
+        margin: 5px 20px;
     }
   }
 

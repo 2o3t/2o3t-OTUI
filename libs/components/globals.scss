@@ -139,3 +139,29 @@ $--ot-h6-size: 1.2rem !default;
         border-radius: $--ot-big-radius;
     }
 }
+
+
+// 动画
+.fade {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.6s ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

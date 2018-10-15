@@ -16,6 +16,13 @@ export const scrollAnimation = function scrollAnimation(currentY, targetY) {
     }, 10);
 };
 
+export const getStyle = function(element, attr) {
+    if (element.currentStyle) {
+        return element.currentStyle[attr];
+    }
+    return getComputedStyle(element, false)[attr];
+};
+
 export const getOffsetTop = function(el) {
     let offsetTop = el.offsetTop;
     let parent = el.offsetParent;
@@ -24,6 +31,16 @@ export const getOffsetTop = function(el) {
         parent = parent.offsetParent;
     }
     return offsetTop;
+};
+
+export const getOffsetLeft = function(el) {
+    let offsetLeft = el.offsetLeft;
+    let parent = el.offsetParent;
+    while (parent !== null) {
+        offsetLeft += parent.offsetLeft;
+        parent = parent.offsetParent;
+    }
+    return offsetLeft;
 };
 
 export const getScrollTop = function() {

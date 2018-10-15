@@ -9,14 +9,19 @@
                 @mousedown="handleDown"
                 :style="wrapperStyle"
                 >
-                <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
+                <ot-title-tip placement="top-start" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : offsetY" :width="width" :disabled="!tip">
+                    <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled" ref="wrapper"></div>
+                </ot-title-tip>
+                <!-- <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div> -->
             </div>
             <!-- range -->
             <div v-if="range" ot v-bind="$otColors.wrapper" :class="$style.wrapper" :size="$otSize" :disabled="disabled" :vertical="vertical"
                 @mousedown="handleRangeDown"
                 :style="wrapperRangeStyle"
                 >
-                <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
+                <ot-title-tip placement="top-start" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : offsetY" :width="width" :disabled="!tip">
+                    <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
+                </ot-title-tip>
             </div>
             <!-- step -->
             <ul :class="$style.step" v-if="showStep"
@@ -50,6 +55,18 @@ export default {
         showStep: [ Boolean ],
         range: [ Boolean ],
         vertical: [ Boolean ],
+        min: {
+            type: [ Number ],
+            default: 0,
+        },
+        max: {
+            type: [ Number ],
+            default: 100,
+        },
+        tip: {
+            type: [ Boolean ],
+            default: true,
+        },
     },
     otDefaultColors(theme) {
         switch (theme) {
@@ -92,44 +109,40 @@ export default {
     },
     watch: {
         model(newV) {
-            if (Array.isArray(newV)) {
-                if (this.range) {
-                    const one = newV[0];
-                    if (isNaN(one)) return;
-                    const two = newV[1];
-                    if (isNaN(two)) return;
-                    const minX = this.calcLeftX(Math.min(one, two) * this._allWidth);
-                    const maxX = this.calcLeftX(Math.max(one, two) * this._allWidth);
-                    if (this.leftX < this.leftRangeX) {
-                        this.leftX = minX;
-                        this.leftRangeX = maxX;
-                    } else {
-                        this.leftX = maxX;
-                        this.leftRangeX = minX;
-                    }
-                } else {
-                    const one = newV[0];
-                    if (isNaN(one)) return;
-                    this.leftX = this.calcLeftX(one * this._allWidth);
-                }
-            } else {
-                if (isNaN(newV)) return;
-                this.leftX = this.calcLeftX(newV * this._allWidth);
-            }
+            this._initData_(newV);
         },
     },
     data() {
         return {
             fn: null,
+            upFn: null,
             lastX: 0,
             leftX: 0,
             bMove: false,
             lastRangeX: 0,
             leftRangeX: 0,
             bRangeMove: false,
+            // tip 相关
+            refreshTip: 0,
+            offsetX: 0,
+            offsetY: 0,
+            width: 60,
         };
     },
     computed: {
+        tipContent() {
+            // tip 显示精度
+            const left = this.calcXPercent(this.leftX);
+            return this.calcOutputValue(left);
+        },
+        tipRangeContent() {
+            // tip 显示精度
+            const left = this.calcXPercent(this.leftRangeX);
+            return this.calcOutputValue(left);
+        },
+        verticalOffsetY() {
+            return -this.offsetY - 10;
+        },
         wrapperStyle() {
             const left = this.calcXPercent(this.leftX);
             const perX = left * 100;
@@ -187,12 +200,52 @@ export default {
             }
             return this.$el.offsetWidth;
         },
+        _rangeLength() {
+            return Math.abs(this.max - this.min);
+        },
     },
     methods: {
+        _moveTip(/* action, x1, x2 */) {
+            // console.log('action: ', action, x1, x2);
+            this.refreshTip++;
+        },
+        _initData_(newV = this.model) {
+            if (Array.isArray(newV)) {
+                if (this.range) {
+                    const one = newV[0];
+                    if (isNaN(one)) return;
+                    const two = newV[1];
+                    if (isNaN(two)) return;
+                    const preMinV = Math.min(one, two) / this._rangeLength;
+                    const minX = this.calcLeftX(preMinV * this._allWidth);
+                    const preMaxV = Math.max(one, two) / this._rangeLength;
+                    const maxX = this.calcLeftX(preMaxV * this._allWidth);
+                    if (this.leftX < this.leftRangeX) {
+                        this.leftX = minX;
+                        this.leftRangeX = maxX;
+                    } else {
+                        this.leftX = maxX;
+                        this.leftRangeX = minX;
+                    }
+                } else {
+                    const one = newV[0];
+                    if (isNaN(one)) return;
+                    const preV = one / this._rangeLength;
+                    this.leftX = this.calcLeftX(preV * this._allWidth);
+                }
+            } else {
+                if (isNaN(newV)) return;
+                const preV = newV / this._rangeLength;
+                this.leftX = this.calcLeftX(preV * this._allWidth);
+            }
+        },
         handleUp() {
-            this.bMove = false;
-            this.bRangeMove = false;
-            this.updateModel();
+            if (this.bMove || this.bRangeMove) {
+                this.bMove = false;
+                this.bRangeMove = false;
+                this.updateModel();
+                this._moveTip('up', this.leftX, this.leftRangeX);
+            }
         },
         handleDown(e) {
             if (this.disabled) return;
@@ -208,6 +261,8 @@ export default {
 
             this.bMove = true;
             e.stopPropagation();
+
+            this._moveTip('down', this.leftX, this.leftRangeX);
         },
         handleRangeDown(e) {
             if (this.disabled) return;
@@ -223,13 +278,14 @@ export default {
 
             this.bRangeMove = true;
             e.stopPropagation();
+
+            this._moveTip('down', this.leftX, this.leftRangeX);
         },
         handleMouseMove(e) {
             if (this.bMove) {
                 const leftX = this._mouseMove(e, this.lastX);
                 if (isNaN(leftX)) return;
                 this.leftX = leftX;
-                console.log(this.leftX);
             }
             // range
             if (this.range) {
@@ -238,6 +294,10 @@ export default {
                     if (isNaN(leftX)) return;
                     this.leftRangeX = leftX;
                 }
+            }
+
+            if (this.bMove || this.bRangeMove) {
+                this._moveTip('move', this.leftX, this.leftRangeX);
             }
         },
         _mouseMove(e, lastX) {
@@ -254,7 +314,6 @@ export default {
             if (!clientY) return;
             const bottom = -(clientY - lastX);
             return this.calcLeftX(bottom);
-
         },
         handleRunwayClick(e) { // 判断临近点
             this._clickJump(e);
@@ -273,7 +332,6 @@ export default {
             e = e || window.event;
             const bVertical = this.vertical;
             let offsetX = bVertical ? e.offsetY : e.offsetX;
-            console.log(offsetX);
             if (bVertical) {
                 offsetX = this._allWidth - offsetX;
                 if (bStep) {
@@ -298,6 +356,8 @@ export default {
                 }
             }
             e.stopPropagation();
+
+            this.updateModel();
         },
         calcLeftX(leftX) {
             if (!leftX) return 0;
@@ -319,16 +379,23 @@ export default {
             const allW = this._allWidth;
             return leftX / allW;
         },
+        calcOutputValue(v) {
+            return Math.round(v * this._rangeLength);
+        },
         registerListener() {
             if (this.fn) return;
             this.fn = this.$otUtils.throttle(this.handleMouseMove, 100, 10, this);
-            document.addEventListener('mousemove', this.fn);
-            document.addEventListener('mouseup', this.handleUp.bind(this));
+            this.$otUtils.addEventListener('mousemove', this.fn);
+            if (this.upFn) return;
+            this.upFn = this.$otUtils.throttle(this.handleUp, 100, 10, this);
+            this.$otUtils.addEventListener('mouseup', this.upFn);
         },
         unregisterListener() {
             if (this.fn) {
-                document.removeEventListener('mousemove', this.fn);
-                document.removeEventListener('mouseup', this.handleUp.bind(this));
+                this.$otUtils.removeEventListener('mousemove', this.fn);
+            }
+            if (this.upFn) {
+                this.$otUtils.removeEventListener('mouseup', this.upFn);
             }
         },
         updateModel() {
@@ -338,11 +405,25 @@ export default {
                 const two = this.calcXPercent(this.leftRangeX);
                 left = [ Math.min(one, two), Math.max(one, two) ];
             }
-            this.$emit('update', left);
+            if (Array.isArray(left)) {
+                this.$emit('update', [ this.calcOutputValue(left[0]), this.calcOutputValue(left[1]) ]);
+            } else {
+                this.$emit('update', this.calcOutputValue(left));
+            }
+        },
+        initFontSize() {
+            if (this.$refs.wrapper) {
+                const width = this.$otUtils.getStyle(this.$refs.wrapper, 'width');
+                const height = this.$otUtils.getStyle(this.$refs.wrapper, 'height');
+                this.offsetX = -parseInt(width) - this.width / 2 + 4;
+                this.offsetY = -parseInt(height);
+            }
         },
     },
     mounted() {
         this.registerListener();
+        this._initData_();
+        this.initFontSize();
     },
     beforeDestroy() {
         this.unregisterListener();
@@ -365,7 +446,7 @@ export default {
     .runway {
         width: 100%;
         height: 0.6em;
-        margin: 1.6em 0;
+        margin: 1.2em 0;
         padding: 0;
         position: relative;
         border-radius: 0.3em;
@@ -376,7 +457,7 @@ export default {
         &[vertical] {
             width: 0.6em;
             height: 100%;
-            margin: 0 1.6em;
+            margin: 0 1.2em;
         }
 
         &:after {
@@ -424,6 +505,10 @@ export default {
             cursor: pointer;
             vertical-align: middle;
 
+            &:hover {
+                cursor: grab;
+            }
+
             &[vertical] {
                 left: 50%;
                 top: auto;
@@ -437,8 +522,8 @@ export default {
 
             .btn {
                 display: block;
-                height: 60%;
-                width: 60%;
+                height: 1.5em;
+                width: 1.5em;
                 margin: auto;
                 box-sizing: border-box;
                 border-radius: 50%;
@@ -459,7 +544,7 @@ export default {
                 }
             }
 
-            &:hover>.btn {
+            &:hover .btn {
                 transform: scale(1.2);
             }
         }

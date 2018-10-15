@@ -1,6 +1,41 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-Form">
+            <ot-row-group :theme="$otTheme">
+                <ot-form v-model="formValue" :rules="formRules">
+                    <ot-form-item label="name" name="name">
+                        <ot-input :theme="$otTheme" v-model="formValue.name"></ot-input>
+                    </ot-form-item>
+                    <ot-form-item label="sex" name="sex">
+                        <ot-radio :theme="$otTheme" v-model="formValue.sex" value="m">m</ot-radio>
+                        <ot-radio :theme="$otTheme" v-model="formValue.sex" value="w">w</ot-radio>
+                    </ot-form-item>
+                </ot-form>
+            </ot-row-group>
+        </ot-section>
+
+        <ot-section :theme="$otTheme" label="OT-Tip">
+            <ot-row-group :theme="$otTheme">
+                <ot-tip :class="$style.test" :theme="$otTheme">
+                    <span>Hover</span>
+                    <div slot="tip">
+                        <div>tip!!!</div>
+                        <div>tip!!!</div>
+                        <div>tip!!!</div>
+                    </div>
+                </ot-tip>
+                <ot-title-tip :theme="$otTheme" round>
+                    <span>Hover</span>
+                    <div slot="title">
+                        <div>tip!!!</div>
+                        <div>tip!!!</div>
+                        <div>tip!!!</div>
+                    </div>
+                </ot-title-tip>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-Slider">
             <ot-row-group :theme="$otTheme">
                 <ot-slider :theme="$otTheme" v-model="sliderValue"></ot-slider>
@@ -19,14 +54,6 @@
             </ot-row-group>
             <ot-row-group :theme="$otTheme">
                 <ot-slider :theme="$otTheme" v-model="sliderValue" vertical></ot-slider>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-Select-UP">
-            <ot-row-group :theme="$otTheme">
-                <ot-select :theme="$otTheme" v-model="selectValue">
-                    <span name="up">lsit</span>
-                </ot-select>
             </ot-row-group>
         </ot-section>
 
@@ -57,6 +84,21 @@ export default {
             sliderStepValue: 0,
             sliderRangeValue: [ 0, 1 ],
             sliderRangeStepValue: [ 0, 1 ],
+
+            formValue: {
+                name: '',
+                sex: '',
+            },
+            formRules: {
+                name: [{
+                    required: true,
+                    trigger: [ 'blur' ],
+                }],
+                sex: [{
+                    required: true,
+                    trigger: [ 'blur' ],
+                }],
+            },
         };
     },
 };
@@ -69,5 +111,10 @@ export default {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+
+    .test {
+        position: fixed;
+        z-index: 1000;
+    }
 }
 </style>

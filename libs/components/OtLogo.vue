@@ -15,17 +15,11 @@ export default {
             case 'dark':
                 return {
                     normal: [ 'pri-f' ],
-                    hover: [ 'pri-f-h' ],
-                    active: [ 'pri-f-a' ],
-                    disabled: [ 'pri-f-dis' ],
                 };
             case 'light':
             default:
                 return {
                     normal: [ 'def-f' ],
-                    hover: [ 'pri-f-hov' ],
-                    active: [ 'pri-f-act' ],
-                    disabled: [ 'def-f-dis' ],
                 };
         }
     },

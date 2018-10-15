@@ -32,6 +32,7 @@
             @change="$emit('change', $event)"
             :clearable="clearable"
             @clear="handleClear"
+            v-on="$listeners"
             type="text">
             <ot-link :class="$style.link" slot="suffix" @click="handleShowSelectList" :disabled="disabled">
                 <ot-icon :class="$style.icon" :size="$otSize" icon="angle-down" :shown="bShown"></ot-icon>

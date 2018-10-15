@@ -4,7 +4,7 @@ export default {
     COMPONENTS: {
         Base: {
             LABEL: '基础用法',
-            DESC: '',
+            DESC: '以按钮组的方式出现，常用于多项类似操作。',
         },
         Round: {
             LABEL: '圆角',

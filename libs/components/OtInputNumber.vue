@@ -9,6 +9,7 @@
         @change="$emit('change', $event)"
         type="text"
         @blur="handleBlur"
+        v-on="$listeners"
         >
         <ot-link v-if="!double" :class="$style.icon" slot="prefix" @click="handleMinusClick"
             :disabled="disabled">

@@ -10,6 +10,7 @@
             <slot></slot>
         </div>
         <input :class="$style.input" type="radio"
+            v-on="$listeners"
             :disabled="disabled"
             :name="name"
             @click="handleChange"
@@ -62,18 +63,14 @@ export default {
     },
     model: {
         prop: 'model',
-        event: 'change',
+        event: 'update',
     },
     props: {
         value: {
             type: [ String, Number, Boolean ],
             required: true,
         },
-        model: {
-            type: [ String, Number, Boolean ],
-            // required: true,
-            default: null,
-        },
+        model: [ String, Number, Boolean ],
         checked: {
             type: Boolean,
             default: false,
@@ -107,7 +104,7 @@ export default {
             this.current = now;
         },
         updateVal(value) {
-            this.$emit('change', value);
+            this.$emit('update', value);
             if (this.$parent) {
                 this.$parent.$emit('update:ot:radio:group', value);
             }

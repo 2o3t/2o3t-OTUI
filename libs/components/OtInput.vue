@@ -1,5 +1,6 @@
 <template>
-    <span v-if="type !== 'textarea'" ot v-bind="$otColors" class="ot-input" :class="$style.root" :size="$otSize" :round="round">
+    <span v-if="type !== 'textarea'" ot v-bind="$otColors" class="ot-input" :class="$style.root"
+        :size="$otSize" :round="round">
         <span ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :fixable="fixable">
             <slot name="prefix"></slot>
         </span>
@@ -12,6 +13,7 @@
             :readonly="readonly"
             :name="name"
             @change="handleChange"
+            @blur="handleBlur"
             :value="model"
             @input="handleInput" v-on="$listeners"
             :suffix-clearable="$slots.suffix && clearable">
@@ -167,6 +169,9 @@ export default {
         },
         handleChange(e) {
             this.$emit('change', e);
+        },
+        handleBlur(e) {
+            this.$emit('blur', e);
         },
         handleClearClick(e) {
             this.$emit('update', '');

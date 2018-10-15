@@ -7,6 +7,7 @@
             <slot></slot>
         </div>
         <input :class="$style.input" type="checkbox"
+            v-on="$listeners"
             :disabled="disabled"
             :name="name"
             v-model="current"
@@ -59,7 +60,7 @@ export default {
     },
     model: {
         prop: 'model',
-        event: 'change',
+        event: 'update',
     },
     props: {
         value: {
@@ -105,7 +106,7 @@ export default {
         },
         updateVal(value, checked) {
             if (this.disabled) return;
-            this.$emit('change', checked && value);
+            this.$emit('update', checked && value);
             if (this.$parent) {
                 this.$parent.$emit('update:ot:checkbox:group', value, checked);
             }

@@ -5,7 +5,9 @@
         </span>
         <div ot v-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle" :disabled="disabled">
             <div ot v-bind="$otColors.front" :class="$style.front" :selected="value"></div>
-            <input :class="$style.input" type="checkbox" name=""
+            <input :class="$style.input" type="checkbox"
+                :name="name"
+                v-on="$listeners"
                 :disabled="disabled"
                 @change="handleChange"
                 :checked="value">
@@ -66,6 +68,7 @@ export default {
         }
     },
     props: {
+        name: [ String ],
         disabled: {
             type: Boolean,
             default: false,

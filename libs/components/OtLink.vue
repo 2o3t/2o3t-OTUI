@@ -1,6 +1,7 @@
 <template>
     <a ot v-bind="$otColors" class="ot-link" :class="$style.root" :href="href" @click="handleClick" :line="line"
-        v-on="$listeners" :disabled="disabled">
+        v-on="$listeners" :disabled="disabled"
+        :target="target">
         <slot></slot>
     </a>
 </template>
@@ -54,6 +55,10 @@ export default {
         },
         line: [ Boolean ],
         disabled: [ Boolean ],
+        target: {
+            type: [ String ],
+            default: '_blank',
+        },
     },
     methods: {
         handleClick() {
