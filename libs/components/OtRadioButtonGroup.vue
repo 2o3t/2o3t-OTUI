@@ -1,5 +1,5 @@
 <template>
-    <div ot :class="$style.root" class="ot-radio-button-group">
+    <div ot :class="$style.root" class="ot-radio-button-group" :round="round" :circle="circle">
         <slot></slot>
     </div>
 </template>
@@ -9,6 +9,7 @@ export default {
     name: 'ot-radio-button-group',
     props: {
         value: [ String ],
+        circle: [ Boolean ],
     },
     watch: {
         value(newV, oldV) {
@@ -32,6 +33,7 @@ export default {
                             item.data.attrs = {};
                         }
                         item.data.attrs.round = this.round;
+                        item.data.attrs.circle = this.circle;
                     }
                 });
             }
@@ -137,6 +139,60 @@ export default {
             &[size=big] {
                 border-top-right-radius: $--ot-big-radius;
                 border-bottom-right-radius: $--ot-big-radius;
+            }
+        }
+    }
+
+    &[circle] {
+        border-radius: 0;
+
+        &:first-child {
+            border-top-left-radius: $--ot-normal-height;
+            border-bottom-left-radius: $--ot-normal-height;
+
+            &[size=mini] {
+                border-top-left-radius: $--ot-mini-height;
+                border-bottom-left-radius: $--ot-mini-height;
+            }
+
+            &[size=small] {
+                border-top-left-radius: $--ot-small-height;
+                border-bottom-left-radius: $--ot-small-height;
+            }
+
+            &[size=normal] {
+                border-top-left-radius: $--ot-normal-height;
+                border-bottom-left-radius: $--ot-normal-height;
+            }
+
+            &[size=big] {
+                border-top-left-radius: $--ot-big-height;
+                border-bottom-left-radius: $--ot-big-height;
+            }
+        }
+
+        &:last-child {
+            border-top-right-radius: $--ot-normal-height;
+            border-bottom-right-radius: $--ot-normal-height;
+
+            &[size=mini] {
+                border-top-right-radius: $--ot-mini-height;
+                border-bottom-right-radius: $--ot-mini-height;
+            }
+
+            &[size=small] {
+                border-top-right-radius: $--ot-small-height;
+                border-bottom-right-radius: $--ot-small-height;
+            }
+
+            &[size=normal] {
+                border-top-right-radius: $--ot-normal-height;
+                border-bottom-right-radius: $--ot-normal-height;
+            }
+
+            &[size=big] {
+                border-top-right-radius: $--ot-big-height;
+                border-bottom-right-radius: $--ot-big-height;
             }
         }
     }

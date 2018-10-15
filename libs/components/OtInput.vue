@@ -78,8 +78,8 @@ export default {
                     suffix: [ 'def-bg', 'grey-bt', 'grey-br', 'grey-bb' ],
                     input: {
                         normal: [ 'light-bg', 'grey-b' ],
-                        hover: [ 'def-bg-hov', 'pri-b-hov' ],
-                        active: [ 'def-bg-act', 'pri-b-act' ],
+                        hover: [ 'def-b-hov' ],
+                        active: [ 'def-b-act' ],
                         focus: [ 'pri-b-f' ],
                         disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
                     },

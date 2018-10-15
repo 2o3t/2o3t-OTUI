@@ -1,5 +1,5 @@
 const THEMES = [ 'light', 'dark' ];
-const COLORS = [ 'light', 'dark', 'grey', 'default', 'primary', 'success', 'warning', 'danger', 'info' ];
+const COLORS = [ /* 'light', 'dark', */ 'default', 'primary', 'success', 'warning', 'danger', 'info' ];
 
 const clone = (otDefaultColorsFn, ctx) => {
     if (typeof otDefaultColorsFn !== 'function') {
@@ -18,7 +18,7 @@ const clone = (otDefaultColorsFn, ctx) => {
             const themeColors = themes[t];
             const s = JSON.stringify(themeColors);
             // 开始替换
-            const r = s.replace(/(pri|primary)-/igm, `${name}-`);
+            const r = s.replace(/(def|default)-/igm, `${name}-`);
             return JSON.parse(r);
         };
         return obj;

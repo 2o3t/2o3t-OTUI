@@ -5,7 +5,7 @@
                 <ot-tabs :theme="$otTheme"
                     :list="tabs" :select="selectTab" @action="handleAction"
                     clearable :offset="20">
-                    <ot-link slot="prefix" @click="handleAddClick">
+                    <ot-link slot="prefix" :theme="$otTheme" @click="handleAddClick">
                         <ot-icon :class="$style.icon" icon="plus"></ot-icon>
                     </ot-link>
                     <span>{{ selectTab && selectTab.title }}</span>

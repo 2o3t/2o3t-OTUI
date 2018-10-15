@@ -2,14 +2,14 @@
     <div ot v-bind="$otColors" class="ot-slider" :class="$style.root" :size="$otSize" :theme="$otTheme" :disabled="disabled" :vertical="vertical">
         <div ot v-bind="$otColors.runway" :class="$style.runway" :disabled="disabled" :vertical="vertical"
             @mousedown="handleRunwayClick">
-            <div ot v-bind="$otColors.bar" :class="$style.bar" :disabled="disabled" :vertical="vertical"
+            <div ot v-bind="$otColors.bar" :class="$style.bar" :disabled="disabled" :vertical="vertical" selected
                 :style="barStyle"
                 @mousedown="handleBarClick"></div>
             <div ot v-bind="$otColors.wrapper" :class="$style.wrapper" :size="$otSize" :disabled="disabled" :vertical="vertical"
                 @mousedown="handleDown"
                 :style="wrapperStyle"
                 >
-                <ot-title-tip placement="top-start" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : offsetY" :width="width" :disabled="!tip">
+                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : offsetY" :width="width" :disabled="!tip" transition="">
                     <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled" ref="wrapper"></div>
                 </ot-title-tip>
                 <!-- <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div> -->
@@ -19,7 +19,7 @@
                 @mousedown="handleRangeDown"
                 :style="wrapperRangeStyle"
                 >
-                <ot-title-tip placement="top-start" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : offsetY" :width="width" :disabled="!tip">
+                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : offsetY" :width="width" :disabled="!tip" transition="">
                     <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
                 </ot-title-tip>
             </div>
@@ -76,7 +76,7 @@ export default {
                         normal: [ 'light-f', 'light-b' ],
                     },
                     bar: {
-                        normal: [ 'def-f', 'pri-bg' ],
+                        selected: [ 'def-f-sel', 'pri-bg-sel' ],
                         disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     btn: {
@@ -91,10 +91,10 @@ export default {
             default:
                 return {
                     runway: {
-                        normal: [ 'def-f', 'def-bg' ],
+                        normal: [ 'def-f', 'grey-bg' ],
                     },
                     bar: {
-                        normal: [ 'def-f', 'pri-bg' ],
+                        selected: [ 'def-f-sel', 'pri-bg-sel' ],
                         disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     btn: {

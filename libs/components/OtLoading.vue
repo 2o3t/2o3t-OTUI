@@ -2,31 +2,31 @@
     <div :class="$style.root" :size="$otSize">
         <figure :class="$style.pushing" v-if="type === 'push'">
             <h2>{{ label }}</h2>
-            <span ot v-bind="$otColors.pushPri"></span>
-            <span ot v-bind="$otColors.pushDef"></span>
-            <span ot v-bind="$otColors.pushThe"></span>
-            <span ot v-bind="$otColors.pushSuc"></span>
-            <span ot v-bind="$otColors.pushWar"></span>
-            <span ot v-bind="$otColors.pushDan"></span>
-            <span ot v-bind="$otColors.pushInf"></span>
+            <span ot v-bind="$otColors.pushPri" selected></span>
+            <span ot v-bind="$otColors.pushDef" selected></span>
+            <span ot v-bind="$otColors.pushThe" selected></span>
+            <span ot v-bind="$otColors.pushSuc" selected></span>
+            <span ot v-bind="$otColors.pushWar" selected></span>
+            <span ot v-bind="$otColors.pushDan" selected></span>
+            <span ot v-bind="$otColors.pushInf" selected></span>
         </figure>
         <figure :class="$style.vsco" v-if="type === 'vsco'">
-            <span ot v-bind="$otColors.vsco" :class='$style.a'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.b'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.c'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.d'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.e'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.f'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.g'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.h'></span>
-            <span ot v-bind="$otColors.vsco" :class='$style.i'></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.a' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.b' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.c' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.d' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.e' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.f' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.g' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.h' selected></span>
+            <span ot v-bind="$otColors.vsco" :class='$style.i' selected></span>
         </figure>
         <figure :class="$style.circle" v-if="type === 'circle'">
             <div :class="[$style.dot, $style.white]"></div>
-            <div ot v-bind="$otColors.one" :class="$style.dot"></div>
-            <div ot v-bind="$otColors.two" :class="$style.dot"></div>
-            <div ot v-bind="$otColors.three" :class="$style.dot"></div>
-            <div ot v-bind="$otColors.four" :class="$style.dot"></div>
+            <div ot v-bind="$otColors.one" :class="$style.dot" selected></div>
+            <div ot v-bind="$otColors.two" :class="$style.dot" selected></div>
+            <div ot v-bind="$otColors.three" :class="$style.dot" selected></div>
+            <div ot v-bind="$otColors.four" :class="$style.dot" selected></div>
         </figure>
     </div>
 </template>
@@ -38,34 +38,34 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    vsco: [ 'def-bg' ],
-                    one: [ 'success-bg' ],
-                    two: [ 'warning-bg' ],
-                    three: [ 'danger-bg' ],
-                    four: [ 'info-bg' ],
-                    pushPri: 'pri-bg',
-                    pushDef: 'def-bg',
-                    pushThe: 'lig-bg',
-                    pushSuc: 'suc-bg',
-                    pushWar: 'war-bg',
-                    pushDan: 'dan-bg',
-                    pushInf: 'inf-bg',
+                    vsco: [ 'def-bg-sel' ],
+                    one: [ 'success-bg-sel' ],
+                    two: [ 'warning-bg-sel' ],
+                    three: [ 'danger-bg-sel' ],
+                    four: [ 'info-bg-sel' ],
+                    pushPri: [ 'pri-bg-sel' ],
+                    pushDef: [ 'def-bg-sel' ],
+                    pushThe: [ 'lig-bg-sel' ],
+                    pushSuc: [ 'suc-bg-sel' ],
+                    pushWar: [ 'war-bg-sel' ],
+                    pushDan: [ 'dan-bg-sel' ],
+                    pushInf: [ 'inf-bg-sel' ],
                 };
             case 'light':
             default:
                 return {
-                    vsco: [ 'pri-bg' ],
-                    one: [ 'def-bg' ],
-                    two: [ 'success-bg' ],
-                    three: [ 'dark-bg' ],
-                    four: [ 'pri-bg' ],
-                    pushPri: 'pri-bg',
-                    pushDef: 'def-bg',
-                    pushThe: 'dar-bg',
-                    pushSuc: 'suc-bg',
-                    pushWar: 'war-bg',
-                    pushDan: 'dan-bg',
-                    pushInf: 'inf-bg',
+                    vsco: [ 'pri-bg-sel' ],
+                    one: [ 'def-bg-sel' ],
+                    two: [ 'success-bg-sel' ],
+                    three: [ 'dark-bg-sel' ],
+                    four: [ 'pri-bg-sel' ],
+                    pushPri: [ 'pri-bg-sel' ],
+                    pushDef: [ 'def-bg-sel' ],
+                    pushThe: [ 'dar-bg-sel' ],
+                    pushSuc: [ 'suc-bg-sel' ],
+                    pushWar: [ 'war-bg-sel' ],
+                    pushDan: [ 'dan-bg-sel' ],
+                    pushInf: [ 'inf-bg-sel' ],
                 };
         }
     },

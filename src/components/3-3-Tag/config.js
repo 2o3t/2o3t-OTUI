@@ -1,6 +1,6 @@
 export default {
-    LABEL: 'Button 按钮',
-    DESC: '常用的操作按钮。',
+    LABEL: 'Tag 标签',
+    DESC: '用于标记和选择。',
     COMPONENTS: {
         Base: {
             LABEL: '基础用法',
@@ -21,14 +21,6 @@ export default {
         Circle: {
             LABEL: '圆形矩形',
             DESC: '提供弧度感觉的圆角矩形',
-        },
-        Icon: {
-            LABEL: '图标',
-            DESC: '提供带有图标的弧度感觉的圆角矩形',
-        },
-        CircleIcon: {
-            LABEL: '圆形图标',
-            DESC: '提供圆形图标按钮',
         },
     },
 };

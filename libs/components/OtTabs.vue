@@ -39,9 +39,9 @@ export default {
             case 'dark':
                 return {
                     normal: [ 'light-f' ],
-                    hover: [ 'pri-bg-h' ],
-                    active: [ 'pri-bg-a' ],
-                    selected: [ 'pri-bb-s', 'after' ],
+                    hover: [ 'def-bg-h' ],
+                    active: [ 'def-bg-a' ],
+                    selected: [ 'def-bb-s', 'after' ],
                     icon: {
                         normal: 'def-f',
                         hover: 'light-f-h',
@@ -52,14 +52,14 @@ export default {
             default:
                 return {
                     normal: [ 'def-f' ],
-                    hover: [ 'def-bg-hov', 'pri-f-hov' ],
-                    active: [ 'pri-f-act', 'def-bg-act' ],
-                    selected: [ 'pri-bb-sel', 'after' ],
+                    hover: [ 'def-f-hov', 'light-bg-hov' ],
+                    active: [ 'light-f-act', 'def-bg-act' ],
+                    selected: [ 'def-bb-sel', 'after' ],
                     // disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
                     icon: {
                         normal: 'def-f',
-                        hover: 'pri-f-h',
-                        active: 'def-f-a',
+                        hover: 'def-f-h',
+                        active: 'light-f-a',
                     },
                 };
         }

@@ -18,5 +18,9 @@ export default {
             LABEL: '大小',
             DESC: '提供了 mini、small、normal、big 四种尺寸.',
         },
+        Circle: {
+            LABEL: '圆形矩形',
+            DESC: '提供弧度感觉的圆角矩形',
+        },
     },
 };

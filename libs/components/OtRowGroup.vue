@@ -22,9 +22,9 @@ export default {
             case 'dark':
                 return {
                     code: {
-                        normal: [ 'light-f', 'light-bl', 'light-br', 'light-bb' ],
-                        hover: [ 'pri-bg-h', 'pri-bl-h', 'pri-br-h', 'pri-bb-h' ],
-                        active: [ 'pri-bg-a', 'light-bl-a', 'light-br-a', 'light-bb-a' ],
+                        normal: [ 'light-f', 'def-bl', 'def-br', 'def-bb' ],
+                        hover: [ 'light-f-hov', 'def-bg-h', 'def-bl-h', 'def-br-h', 'def-bb-h' ],
+                        active: [ 'def-bg-a', 'light-bl-a', 'light-br-a', 'light-bb-a' ],
                     },
                 };
             case 'light':
@@ -33,18 +33,18 @@ export default {
                     code: {
                         normal: [ 'def-f', 'grey-bl', 'grey-br', 'grey-bb' ],
                         hover: [
-                            'pri-f-hov',
-                            'def-bg-hov',
+                            'def-f-hov',
+                            'light-bg-hov',
                             'def-bl-hov',
                             'def-br-hov',
                             'def-bb-hov',
                         ],
                         active: [
-                            'pri-f-act',
+                            'light-f-act',
                             'def-bg-act',
-                            'pri-bl-act',
-                            'pri-br-act',
-                            'pri-bb-act',
+                            'def-bl-act',
+                            'def-br-act',
+                            'def-bb-act',
                         ],
                     },
                 };

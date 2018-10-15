@@ -44,7 +44,7 @@ export default {
         transition: {
             type: [ String ],
             default: 'all .3s',
-        }
+        },
     },
     data() {
         return {

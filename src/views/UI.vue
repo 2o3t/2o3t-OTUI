@@ -1,6 +1,19 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-Pagination">
+            <ot-row-group :theme="$otTheme">
+                <ot-pagination :theme="$otTheme" :total="100" background></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="88" round></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="78" background round></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="66" size="mini" round></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="56"></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="30"></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="10"></ot-pagination>
+                <ot-pagination :theme="$otTheme" :total="9"></ot-pagination>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-Form">
             <ot-row-group :theme="$otTheme">
                 <ot-form v-model="formValue" :rules="formRules">

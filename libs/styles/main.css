@@ -56,23 +56,7 @@ ot__color__light__font__hover, [ot][ot-lig-font-h]:hover,
 [ot][ot_light_font_h]:hover, [ot][ot-light-font-hov]:hover,
 [ot][ot_light_font_hov]:hover, [ot][ot-light-font-hover]:hover,
 [ot][ot_light_font_hover]:hover, #ot__color__light__font__hover {
-  color: #e6e6e6;
-  cursor: pointer; }
-
-ot__color__light__font__active, [ot][ot-lig-font-a]:active,
-[ot][ot_lig_font_a]:active, [ot][ot-lig-font-act]:active,
-[ot][ot_lig_font_act]:active, [ot][ot-lig-font-active]:active,
-[ot][ot_lig_font_active]:active, [ot][ot-lig-f-a]:active,
-[ot][ot_lig_f_a]:active, [ot][ot-lig-f-act]:active,
-[ot][ot_lig_f_act]:active, [ot][ot-lig-f-active]:active,
-[ot][ot_lig_f_active]:active, [ot][ot-light-f-a]:active,
-[ot][ot_light_f_a]:active, [ot][ot-light-f-act]:active,
-[ot][ot_light_f_act]:active, [ot][ot-light-f-active]:active,
-[ot][ot_light_f_active]:active, [ot][ot-light-font-a]:active,
-[ot][ot_light_font_a]:active, [ot][ot-light-font-act]:active,
-[ot][ot_light_font_act]:active, [ot][ot-light-font-active]:active,
-[ot][ot_light_font_active]:active, #ot__color__light__font__active {
-  color: #cccccc;
+  color: #FFFFFF;
   cursor: pointer; }
 
 ot__color__light__font__focus, [ot][ot-lig-font-f]:focus,
@@ -111,23 +95,7 @@ ot__color__light__background__hover, [ot][ot-lig-background-h]:hover,
 [ot][ot_light_background_h]:hover, [ot][ot-light-background-hov]:hover,
 [ot][ot_light_background_hov]:hover, [ot][ot-light-background-hover]:hover,
 [ot][ot_light_background_hover]:hover, #ot__color__light__background__hover {
-  background-color: #e6e6e6;
-  cursor: pointer; }
-
-ot__color__light__background__active, [ot][ot-lig-background-a]:active,
-[ot][ot_lig_background_a]:active, [ot][ot-lig-background-act]:active,
-[ot][ot_lig_background_act]:active, [ot][ot-lig-background-active]:active,
-[ot][ot_lig_background_active]:active, [ot][ot-lig-bg-a]:active,
-[ot][ot_lig_bg_a]:active, [ot][ot-lig-bg-act]:active,
-[ot][ot_lig_bg_act]:active, [ot][ot-lig-bg-active]:active,
-[ot][ot_lig_bg_active]:active, [ot][ot-light-bg-a]:active,
-[ot][ot_light_bg_a]:active, [ot][ot-light-bg-act]:active,
-[ot][ot_light_bg_act]:active, [ot][ot-light-bg-active]:active,
-[ot][ot_light_bg_active]:active, [ot][ot-light-background-a]:active,
-[ot][ot_light_background_a]:active, [ot][ot-light-background-act]:active,
-[ot][ot_light_background_act]:active, [ot][ot-light-background-active]:active,
-[ot][ot_light_background_active]:active, #ot__color__light__background__active {
-  background-color: #cccccc;
+  background-color: #FFFFFF;
   cursor: pointer; }
 
 ot__color__light__background__focus, [ot][ot-lig-background-f]:focus,
@@ -168,25 +136,7 @@ ot__color__light__border__hover, [ot][ot-lig-border-h]:hover,
 [ot][ot_light_border_h]:hover, [ot][ot-light-border-hov]:hover,
 [ot][ot_light_border_hov]:hover, [ot][ot-light-border-hover]:hover,
 [ot][ot_light_border_hover]:hover, #ot__color__light__border__hover {
-  border-color: #e6e6e6;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__light__border__active, [ot][ot-lig-border-a]:active,
-[ot][ot_lig_border_a]:active, [ot][ot-lig-border-act]:active,
-[ot][ot_lig_border_act]:active, [ot][ot-lig-border-active]:active,
-[ot][ot_lig_border_active]:active, [ot][ot-lig-b-a]:active,
-[ot][ot_lig_b_a]:active, [ot][ot-lig-b-act]:active,
-[ot][ot_lig_b_act]:active, [ot][ot-lig-b-active]:active,
-[ot][ot_lig_b_active]:active, [ot][ot-light-b-a]:active,
-[ot][ot_light_b_a]:active, [ot][ot-light-b-act]:active,
-[ot][ot_light_b_act]:active, [ot][ot-light-b-active]:active,
-[ot][ot_light_b_active]:active, [ot][ot-light-border-a]:active,
-[ot][ot_light_border_a]:active, [ot][ot-light-border-act]:active,
-[ot][ot_light_border_act]:active, [ot][ot-light-border-active]:active,
-[ot][ot_light_border_active]:active, #ot__color__light__border__active {
-  border-color: #cccccc;
+  border-color: #FFFFFF;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -231,25 +181,7 @@ ot__color__light__border-left__hover, [ot][ot-lig-border-left-h]:hover,
 [ot][ot_light_border-left_h]:hover, [ot][ot-light-border-left-hov]:hover,
 [ot][ot_light_border-left_hov]:hover, [ot][ot-light-border-left-hover]:hover,
 [ot][ot_light_border-left_hover]:hover, #ot__color__light__border-left__hover {
-  border-left-color: #e6e6e6;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
-ot__color__light__border-left__active, [ot][ot-lig-border-left-a]:active,
-[ot][ot_lig_border-left_a]:active, [ot][ot-lig-border-left-act]:active,
-[ot][ot_lig_border-left_act]:active, [ot][ot-lig-border-left-active]:active,
-[ot][ot_lig_border-left_active]:active, [ot][ot-lig-bl-a]:active,
-[ot][ot_lig_bl_a]:active, [ot][ot-lig-bl-act]:active,
-[ot][ot_lig_bl_act]:active, [ot][ot-lig-bl-active]:active,
-[ot][ot_lig_bl_active]:active, [ot][ot-light-bl-a]:active,
-[ot][ot_light_bl_a]:active, [ot][ot-light-bl-act]:active,
-[ot][ot_light_bl_act]:active, [ot][ot-light-bl-active]:active,
-[ot][ot_light_bl_active]:active, [ot][ot-light-border-left-a]:active,
-[ot][ot_light_border-left_a]:active, [ot][ot-light-border-left-act]:active,
-[ot][ot_light_border-left_act]:active, [ot][ot-light-border-left-active]:active,
-[ot][ot_light_border-left_active]:active, #ot__color__light__border-left__active {
-  border-left-color: #cccccc;
+  border-left-color: #FFFFFF;
   cursor: pointer;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -294,25 +226,7 @@ ot__color__light__border-right__hover, [ot][ot-lig-border-right-h]:hover,
 [ot][ot_light_border-right_h]:hover, [ot][ot-light-border-right-hov]:hover,
 [ot][ot_light_border-right_hov]:hover, [ot][ot-light-border-right-hover]:hover,
 [ot][ot_light_border-right_hover]:hover, #ot__color__light__border-right__hover {
-  border-right-color: #e6e6e6;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__light__border-right__active, [ot][ot-lig-border-right-a]:active,
-[ot][ot_lig_border-right_a]:active, [ot][ot-lig-border-right-act]:active,
-[ot][ot_lig_border-right_act]:active, [ot][ot-lig-border-right-active]:active,
-[ot][ot_lig_border-right_active]:active, [ot][ot-lig-br-a]:active,
-[ot][ot_lig_br_a]:active, [ot][ot-lig-br-act]:active,
-[ot][ot_lig_br_act]:active, [ot][ot-lig-br-active]:active,
-[ot][ot_lig_br_active]:active, [ot][ot-light-br-a]:active,
-[ot][ot_light_br_a]:active, [ot][ot-light-br-act]:active,
-[ot][ot_light_br_act]:active, [ot][ot-light-br-active]:active,
-[ot][ot_light_br_active]:active, [ot][ot-light-border-right-a]:active,
-[ot][ot_light_border-right_a]:active, [ot][ot-light-border-right-act]:active,
-[ot][ot_light_border-right_act]:active, [ot][ot-light-border-right-active]:active,
-[ot][ot_light_border-right_active]:active, #ot__color__light__border-right__active {
-  border-right-color: #cccccc;
+  border-right-color: #FFFFFF;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -357,25 +271,7 @@ ot__color__light__border-top__hover, [ot][ot-lig-border-top-h]:hover,
 [ot][ot_light_border-top_h]:hover, [ot][ot-light-border-top-hov]:hover,
 [ot][ot_light_border-top_hov]:hover, [ot][ot-light-border-top-hover]:hover,
 [ot][ot_light_border-top_hover]:hover, #ot__color__light__border-top__hover {
-  border-top-color: #e6e6e6;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
-ot__color__light__border-top__active, [ot][ot-lig-border-top-a]:active,
-[ot][ot_lig_border-top_a]:active, [ot][ot-lig-border-top-act]:active,
-[ot][ot_lig_border-top_act]:active, [ot][ot-lig-border-top-active]:active,
-[ot][ot_lig_border-top_active]:active, [ot][ot-lig-bt-a]:active,
-[ot][ot_lig_bt_a]:active, [ot][ot-lig-bt-act]:active,
-[ot][ot_lig_bt_act]:active, [ot][ot-lig-bt-active]:active,
-[ot][ot_lig_bt_active]:active, [ot][ot-light-bt-a]:active,
-[ot][ot_light_bt_a]:active, [ot][ot-light-bt-act]:active,
-[ot][ot_light_bt_act]:active, [ot][ot-light-bt-active]:active,
-[ot][ot_light_bt_active]:active, [ot][ot-light-border-top-a]:active,
-[ot][ot_light_border-top_a]:active, [ot][ot-light-border-top-act]:active,
-[ot][ot_light_border-top_act]:active, [ot][ot-light-border-top-active]:active,
-[ot][ot_light_border-top_active]:active, #ot__color__light__border-top__active {
-  border-top-color: #cccccc;
+  border-top-color: #FFFFFF;
   cursor: pointer;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -420,25 +316,7 @@ ot__color__light__border-bottom__hover, [ot][ot-lig-border-bottom-h]:hover,
 [ot][ot_light_border-bottom_h]:hover, [ot][ot-light-border-bottom-hov]:hover,
 [ot][ot_light_border-bottom_hov]:hover, [ot][ot-light-border-bottom-hover]:hover,
 [ot][ot_light_border-bottom_hover]:hover, #ot__color__light__border-bottom__hover {
-  border-bottom-color: #e6e6e6;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
-ot__color__light__border-bottom__active, [ot][ot-lig-border-bottom-a]:active,
-[ot][ot_lig_border-bottom_a]:active, [ot][ot-lig-border-bottom-act]:active,
-[ot][ot_lig_border-bottom_act]:active, [ot][ot-lig-border-bottom-active]:active,
-[ot][ot_lig_border-bottom_active]:active, [ot][ot-lig-bb-a]:active,
-[ot][ot_lig_bb_a]:active, [ot][ot-lig-bb-act]:active,
-[ot][ot_lig_bb_act]:active, [ot][ot-lig-bb-active]:active,
-[ot][ot_lig_bb_active]:active, [ot][ot-light-bb-a]:active,
-[ot][ot_light_bb_a]:active, [ot][ot-light-bb-act]:active,
-[ot][ot_light_bb_act]:active, [ot][ot-light-bb-active]:active,
-[ot][ot_light_bb_active]:active, [ot][ot-light-border-bottom-a]:active,
-[ot][ot_light_border-bottom_a]:active, [ot][ot-light-border-bottom-act]:active,
-[ot][ot_light_border-bottom_act]:active, [ot][ot-light-border-bottom-active]:active,
-[ot][ot_light_border-bottom_active]:active, #ot__color__light__border-bottom__active {
-  border-bottom-color: #cccccc;
+  border-bottom-color: #FFFFFF;
   cursor: pointer;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -484,22 +362,6 @@ ot__color__dark__font__hover, [ot][ot-dar-font-h]:hover,
   color: #4d4d4d;
   cursor: pointer; }
 
-ot__color__dark__font__active, [ot][ot-dar-font-a]:active,
-[ot][ot_dar_font_a]:active, [ot][ot-dar-font-act]:active,
-[ot][ot_dar_font_act]:active, [ot][ot-dar-font-active]:active,
-[ot][ot_dar_font_active]:active, [ot][ot-dar-f-a]:active,
-[ot][ot_dar_f_a]:active, [ot][ot-dar-f-act]:active,
-[ot][ot_dar_f_act]:active, [ot][ot-dar-f-active]:active,
-[ot][ot_dar_f_active]:active, [ot][ot-dark-f-a]:active,
-[ot][ot_dark_f_a]:active, [ot][ot-dark-f-act]:active,
-[ot][ot_dark_f_act]:active, [ot][ot-dark-f-active]:active,
-[ot][ot_dark_f_active]:active, [ot][ot-dark-font-a]:active,
-[ot][ot_dark_font_a]:active, [ot][ot-dark-font-act]:active,
-[ot][ot_dark_font_act]:active, [ot][ot-dark-font-active]:active,
-[ot][ot_dark_font_active]:active, #ot__color__dark__font__active {
-  color: #333333;
-  cursor: pointer; }
-
 ot__color__dark__font__focus, [ot][ot-dar-font-f]:focus,
 [ot][ot_dar_font_f]:focus, [ot][ot-dar-font-foc]:focus,
 [ot][ot_dar_font_foc]:focus, [ot][ot-dar-font-focus]:focus,
@@ -537,22 +399,6 @@ ot__color__dark__background__hover, [ot][ot-dar-background-h]:hover,
 [ot][ot_dark_background_hov]:hover, [ot][ot-dark-background-hover]:hover,
 [ot][ot_dark_background_hover]:hover, #ot__color__dark__background__hover {
   background-color: #4d4d4d;
-  cursor: pointer; }
-
-ot__color__dark__background__active, [ot][ot-dar-background-a]:active,
-[ot][ot_dar_background_a]:active, [ot][ot-dar-background-act]:active,
-[ot][ot_dar_background_act]:active, [ot][ot-dar-background-active]:active,
-[ot][ot_dar_background_active]:active, [ot][ot-dar-bg-a]:active,
-[ot][ot_dar_bg_a]:active, [ot][ot-dar-bg-act]:active,
-[ot][ot_dar_bg_act]:active, [ot][ot-dar-bg-active]:active,
-[ot][ot_dar_bg_active]:active, [ot][ot-dark-bg-a]:active,
-[ot][ot_dark_bg_a]:active, [ot][ot-dark-bg-act]:active,
-[ot][ot_dark_bg_act]:active, [ot][ot-dark-bg-active]:active,
-[ot][ot_dark_bg_active]:active, [ot][ot-dark-background-a]:active,
-[ot][ot_dark_background_a]:active, [ot][ot-dark-background-act]:active,
-[ot][ot_dark_background_act]:active, [ot][ot-dark-background-active]:active,
-[ot][ot_dark_background_active]:active, #ot__color__dark__background__active {
-  background-color: #333333;
   cursor: pointer; }
 
 ot__color__dark__background__focus, [ot][ot-dar-background-f]:focus,
@@ -594,24 +440,6 @@ ot__color__dark__border__hover, [ot][ot-dar-border-h]:hover,
 [ot][ot_dark_border_hov]:hover, [ot][ot-dark-border-hover]:hover,
 [ot][ot_dark_border_hover]:hover, #ot__color__dark__border__hover {
   border-color: #4d4d4d;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__dark__border__active, [ot][ot-dar-border-a]:active,
-[ot][ot_dar_border_a]:active, [ot][ot-dar-border-act]:active,
-[ot][ot_dar_border_act]:active, [ot][ot-dar-border-active]:active,
-[ot][ot_dar_border_active]:active, [ot][ot-dar-b-a]:active,
-[ot][ot_dar_b_a]:active, [ot][ot-dar-b-act]:active,
-[ot][ot_dar_b_act]:active, [ot][ot-dar-b-active]:active,
-[ot][ot_dar_b_active]:active, [ot][ot-dark-b-a]:active,
-[ot][ot_dark_b_a]:active, [ot][ot-dark-b-act]:active,
-[ot][ot_dark_b_act]:active, [ot][ot-dark-b-active]:active,
-[ot][ot_dark_b_active]:active, [ot][ot-dark-border-a]:active,
-[ot][ot_dark_border_a]:active, [ot][ot-dark-border-act]:active,
-[ot][ot_dark_border_act]:active, [ot][ot-dark-border-active]:active,
-[ot][ot_dark_border_active]:active, #ot__color__dark__border__active {
-  border-color: #333333;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -661,24 +489,6 @@ ot__color__dark__border-left__hover, [ot][ot-dar-border-left-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__dark__border-left__active, [ot][ot-dar-border-left-a]:active,
-[ot][ot_dar_border-left_a]:active, [ot][ot-dar-border-left-act]:active,
-[ot][ot_dar_border-left_act]:active, [ot][ot-dar-border-left-active]:active,
-[ot][ot_dar_border-left_active]:active, [ot][ot-dar-bl-a]:active,
-[ot][ot_dar_bl_a]:active, [ot][ot-dar-bl-act]:active,
-[ot][ot_dar_bl_act]:active, [ot][ot-dar-bl-active]:active,
-[ot][ot_dar_bl_active]:active, [ot][ot-dark-bl-a]:active,
-[ot][ot_dark_bl_a]:active, [ot][ot-dark-bl-act]:active,
-[ot][ot_dark_bl_act]:active, [ot][ot-dark-bl-active]:active,
-[ot][ot_dark_bl_active]:active, [ot][ot-dark-border-left-a]:active,
-[ot][ot_dark_border-left_a]:active, [ot][ot-dark-border-left-act]:active,
-[ot][ot_dark_border-left_act]:active, [ot][ot-dark-border-left-active]:active,
-[ot][ot_dark_border-left_active]:active, #ot__color__dark__border-left__active {
-  border-left-color: #333333;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__dark__border-left__focus, [ot][ot-dar-border-left-f]:focus,
 [ot][ot_dar_border-left_f]:focus, [ot][ot-dar-border-left-foc]:focus,
 [ot][ot_dar_border-left_foc]:focus, [ot][ot-dar-border-left-focus]:focus,
@@ -720,24 +530,6 @@ ot__color__dark__border-right__hover, [ot][ot-dar-border-right-h]:hover,
 [ot][ot_dark_border-right_hov]:hover, [ot][ot-dark-border-right-hover]:hover,
 [ot][ot_dark_border-right_hover]:hover, #ot__color__dark__border-right__hover {
   border-right-color: #4d4d4d;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__dark__border-right__active, [ot][ot-dar-border-right-a]:active,
-[ot][ot_dar_border-right_a]:active, [ot][ot-dar-border-right-act]:active,
-[ot][ot_dar_border-right_act]:active, [ot][ot-dar-border-right-active]:active,
-[ot][ot_dar_border-right_active]:active, [ot][ot-dar-br-a]:active,
-[ot][ot_dar_br_a]:active, [ot][ot-dar-br-act]:active,
-[ot][ot_dar_br_act]:active, [ot][ot-dar-br-active]:active,
-[ot][ot_dar_br_active]:active, [ot][ot-dark-br-a]:active,
-[ot][ot_dark_br_a]:active, [ot][ot-dark-br-act]:active,
-[ot][ot_dark_br_act]:active, [ot][ot-dark-br-active]:active,
-[ot][ot_dark_br_active]:active, [ot][ot-dark-border-right-a]:active,
-[ot][ot_dark_border-right_a]:active, [ot][ot-dark-border-right-act]:active,
-[ot][ot_dark_border-right_act]:active, [ot][ot-dark-border-right-active]:active,
-[ot][ot_dark_border-right_active]:active, #ot__color__dark__border-right__active {
-  border-right-color: #333333;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -787,24 +579,6 @@ ot__color__dark__border-top__hover, [ot][ot-dar-border-top-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__dark__border-top__active, [ot][ot-dar-border-top-a]:active,
-[ot][ot_dar_border-top_a]:active, [ot][ot-dar-border-top-act]:active,
-[ot][ot_dar_border-top_act]:active, [ot][ot-dar-border-top-active]:active,
-[ot][ot_dar_border-top_active]:active, [ot][ot-dar-bt-a]:active,
-[ot][ot_dar_bt_a]:active, [ot][ot-dar-bt-act]:active,
-[ot][ot_dar_bt_act]:active, [ot][ot-dar-bt-active]:active,
-[ot][ot_dar_bt_active]:active, [ot][ot-dark-bt-a]:active,
-[ot][ot_dark_bt_a]:active, [ot][ot-dark-bt-act]:active,
-[ot][ot_dark_bt_act]:active, [ot][ot-dark-bt-active]:active,
-[ot][ot_dark_bt_active]:active, [ot][ot-dark-border-top-a]:active,
-[ot][ot_dark_border-top_a]:active, [ot][ot-dark-border-top-act]:active,
-[ot][ot_dark_border-top_act]:active, [ot][ot-dark-border-top-active]:active,
-[ot][ot_dark_border-top_active]:active, #ot__color__dark__border-top__active {
-  border-top-color: #333333;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__dark__border-top__focus, [ot][ot-dar-border-top-f]:focus,
 [ot][ot_dar_border-top_f]:focus, [ot][ot-dar-border-top-foc]:focus,
 [ot][ot_dar_border-top_foc]:focus, [ot][ot-dar-border-top-focus]:focus,
@@ -850,24 +624,6 @@ ot__color__dark__border-bottom__hover, [ot][ot-dar-border-bottom-h]:hover,
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
-ot__color__dark__border-bottom__active, [ot][ot-dar-border-bottom-a]:active,
-[ot][ot_dar_border-bottom_a]:active, [ot][ot-dar-border-bottom-act]:active,
-[ot][ot_dar_border-bottom_act]:active, [ot][ot-dar-border-bottom-active]:active,
-[ot][ot_dar_border-bottom_active]:active, [ot][ot-dar-bb-a]:active,
-[ot][ot_dar_bb_a]:active, [ot][ot-dar-bb-act]:active,
-[ot][ot_dar_bb_act]:active, [ot][ot-dar-bb-active]:active,
-[ot][ot_dar_bb_active]:active, [ot][ot-dark-bb-a]:active,
-[ot][ot_dark_bb_a]:active, [ot][ot-dark-bb-act]:active,
-[ot][ot_dark_bb_act]:active, [ot][ot-dark-bb-active]:active,
-[ot][ot_dark_bb_active]:active, [ot][ot-dark-border-bottom-a]:active,
-[ot][ot_dark_border-bottom_a]:active, [ot][ot-dark-border-bottom-act]:active,
-[ot][ot_dark_border-bottom_act]:active, [ot][ot-dark-border-bottom-active]:active,
-[ot][ot_dark_border-bottom_active]:active, #ot__color__dark__border-bottom__active {
-  border-bottom-color: #333333;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
 ot__color__dark__border-bottom__focus, [ot][ot-dar-border-bottom-f]:focus,
 [ot][ot_dar_border-bottom_f]:focus, [ot][ot-dar-border-bottom-foc]:focus,
 [ot][ot_dar_border-bottom_foc]:focus, [ot][ot-dar-border-bottom-focus]:focus,
@@ -901,16 +657,6 @@ ot__color__grey__font__hover, [ot][ot-grey-f-h]:hover,
   color: #cccccc;
   cursor: pointer; }
 
-ot__color__grey__font__active, [ot][ot-grey-f-a]:active,
-[ot][ot_grey_f_a]:active, [ot][ot-grey-f-act]:active,
-[ot][ot_grey_f_act]:active, [ot][ot-grey-f-active]:active,
-[ot][ot_grey_f_active]:active, [ot][ot-grey-font-a]:active,
-[ot][ot_grey_font_a]:active, [ot][ot-grey-font-act]:active,
-[ot][ot_grey_font_act]:active, [ot][ot-grey-font-active]:active,
-[ot][ot_grey_font_active]:active, #ot__color__grey__font__active {
-  color: #1a1a1a;
-  cursor: pointer; }
-
 ot__color__grey__font__focus, [ot][ot-grey-f-f]:focus,
 [ot][ot_grey_f_f]:focus, [ot][ot-grey-f-foc]:focus,
 [ot][ot_grey_f_foc]:focus, [ot][ot-grey-f-focus]:focus,
@@ -924,7 +670,7 @@ ot__color__grey__font__focus, [ot][ot-grey-f-f]:focus,
 ot__color__grey__background__normal, [ot][ot-grey-bg],
 [ot][ot_grey_bg], [ot][ot-grey-background],
 [ot][ot_grey_background], #ot__color__grey__background__normal {
-  background-color: #b3b3b3; }
+  background-color: #e6e6e6; }
 
 ot__color__grey__background__hover, [ot][ot-grey-bg-h]:hover,
 [ot][ot_grey_bg_h]:hover, [ot][ot-grey-bg-hov]:hover,
@@ -934,16 +680,6 @@ ot__color__grey__background__hover, [ot][ot-grey-bg-h]:hover,
 [ot][ot_grey_background_hov]:hover, [ot][ot-grey-background-hover]:hover,
 [ot][ot_grey_background_hover]:hover, #ot__color__grey__background__hover {
   background-color: #cccccc;
-  cursor: pointer; }
-
-ot__color__grey__background__active, [ot][ot-grey-bg-a]:active,
-[ot][ot_grey_bg_a]:active, [ot][ot-grey-bg-act]:active,
-[ot][ot_grey_bg_act]:active, [ot][ot-grey-bg-active]:active,
-[ot][ot_grey_bg_active]:active, [ot][ot-grey-background-a]:active,
-[ot][ot_grey_background_a]:active, [ot][ot-grey-background-act]:active,
-[ot][ot_grey_background_act]:active, [ot][ot-grey-background-active]:active,
-[ot][ot_grey_background_active]:active, #ot__color__grey__background__active {
-  background-color: #1a1a1a;
   cursor: pointer; }
 
 ot__color__grey__background__focus, [ot][ot-grey-bg-f]:focus,
@@ -971,18 +707,6 @@ ot__color__grey__border__hover, [ot][ot-grey-b-h]:hover,
 [ot][ot_grey_border_hov]:hover, [ot][ot-grey-border-hover]:hover,
 [ot][ot_grey_border_hover]:hover, #ot__color__grey__border__hover {
   border-color: #cccccc;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__grey__border__active, [ot][ot-grey-b-a]:active,
-[ot][ot_grey_b_a]:active, [ot][ot-grey-b-act]:active,
-[ot][ot_grey_b_act]:active, [ot][ot-grey-b-active]:active,
-[ot][ot_grey_b_active]:active, [ot][ot-grey-border-a]:active,
-[ot][ot_grey_border_a]:active, [ot][ot-grey-border-act]:active,
-[ot][ot_grey_border_act]:active, [ot][ot-grey-border-active]:active,
-[ot][ot_grey_border_active]:active, #ot__color__grey__border__active {
-  border-color: #1a1a1a;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -1018,18 +742,6 @@ ot__color__grey__border-left__hover, [ot][ot-grey-bl-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__grey__border-left__active, [ot][ot-grey-bl-a]:active,
-[ot][ot_grey_bl_a]:active, [ot][ot-grey-bl-act]:active,
-[ot][ot_grey_bl_act]:active, [ot][ot-grey-bl-active]:active,
-[ot][ot_grey_bl_active]:active, [ot][ot-grey-border-left-a]:active,
-[ot][ot_grey_border-left_a]:active, [ot][ot-grey-border-left-act]:active,
-[ot][ot_grey_border-left_act]:active, [ot][ot-grey-border-left-active]:active,
-[ot][ot_grey_border-left_active]:active, #ot__color__grey__border-left__active {
-  border-left-color: #1a1a1a;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__grey__border-left__focus, [ot][ot-grey-bl-f]:focus,
 [ot][ot_grey_bl_f]:focus, [ot][ot-grey-bl-foc]:focus,
 [ot][ot_grey_bl_foc]:focus, [ot][ot-grey-bl-focus]:focus,
@@ -1057,18 +769,6 @@ ot__color__grey__border-right__hover, [ot][ot-grey-br-h]:hover,
 [ot][ot_grey_border-right_hov]:hover, [ot][ot-grey-border-right-hover]:hover,
 [ot][ot_grey_border-right_hover]:hover, #ot__color__grey__border-right__hover {
   border-right-color: #cccccc;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__grey__border-right__active, [ot][ot-grey-br-a]:active,
-[ot][ot_grey_br_a]:active, [ot][ot-grey-br-act]:active,
-[ot][ot_grey_br_act]:active, [ot][ot-grey-br-active]:active,
-[ot][ot_grey_br_active]:active, [ot][ot-grey-border-right-a]:active,
-[ot][ot_grey_border-right_a]:active, [ot][ot-grey-border-right-act]:active,
-[ot][ot_grey_border-right_act]:active, [ot][ot-grey-border-right-active]:active,
-[ot][ot_grey_border-right_active]:active, #ot__color__grey__border-right__active {
-  border-right-color: #1a1a1a;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -1104,18 +804,6 @@ ot__color__grey__border-top__hover, [ot][ot-grey-bt-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__grey__border-top__active, [ot][ot-grey-bt-a]:active,
-[ot][ot_grey_bt_a]:active, [ot][ot-grey-bt-act]:active,
-[ot][ot_grey_bt_act]:active, [ot][ot-grey-bt-active]:active,
-[ot][ot_grey_bt_active]:active, [ot][ot-grey-border-top-a]:active,
-[ot][ot_grey_border-top_a]:active, [ot][ot-grey-border-top-act]:active,
-[ot][ot_grey_border-top_act]:active, [ot][ot-grey-border-top-active]:active,
-[ot][ot_grey_border-top_active]:active, #ot__color__grey__border-top__active {
-  border-top-color: #1a1a1a;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__grey__border-top__focus, [ot][ot-grey-bt-f]:focus,
 [ot][ot_grey_bt_f]:focus, [ot][ot-grey-bt-foc]:focus,
 [ot][ot_grey_bt_foc]:focus, [ot][ot-grey-bt-focus]:focus,
@@ -1143,18 +831,6 @@ ot__color__grey__border-bottom__hover, [ot][ot-grey-bb-h]:hover,
 [ot][ot_grey_border-bottom_hov]:hover, [ot][ot-grey-border-bottom-hover]:hover,
 [ot][ot_grey_border-bottom_hover]:hover, #ot__color__grey__border-bottom__hover {
   border-bottom-color: #cccccc;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
-ot__color__grey__border-bottom__active, [ot][ot-grey-bb-a]:active,
-[ot][ot_grey_bb_a]:active, [ot][ot-grey-bb-act]:active,
-[ot][ot_grey_bb_act]:active, [ot][ot-grey-bb-active]:active,
-[ot][ot_grey_bb_active]:active, [ot][ot-grey-border-bottom-a]:active,
-[ot][ot_grey_border-bottom_a]:active, [ot][ot-grey-border-bottom-act]:active,
-[ot][ot_grey_border-bottom_act]:active, [ot][ot-grey-border-bottom-active]:active,
-[ot][ot_grey_border-bottom_active]:active, #ot__color__grey__border-bottom__active {
-  border-bottom-color: #1a1a1a;
   cursor: pointer;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -1191,23 +867,7 @@ ot__color__default__font__hover, [ot][ot-def-font-h]:hover,
 [ot][ot_default_font_h]:hover, [ot][ot-default-font-hov]:hover,
 [ot][ot_default_font_hov]:hover, [ot][ot-default-font-hover]:hover,
 [ot][ot_default_font_hover]:hover, #ot__color__default__font__hover {
-  color: #5a6b7a;
-  cursor: pointer; }
-
-ot__color__default__font__active, [ot][ot-def-font-a]:active,
-[ot][ot_def_font_a]:active, [ot][ot-def-font-act]:active,
-[ot][ot_def_font_act]:active, [ot][ot-def-font-active]:active,
-[ot][ot_def_font_active]:active, [ot][ot-def-f-a]:active,
-[ot][ot_def_f_a]:active, [ot][ot-def-f-act]:active,
-[ot][ot_def_f_act]:active, [ot][ot-def-f-active]:active,
-[ot][ot_def_f_active]:active, [ot][ot-default-f-a]:active,
-[ot][ot_default_f_a]:active, [ot][ot-default-f-act]:active,
-[ot][ot_default_f_act]:active, [ot][ot-default-f-active]:active,
-[ot][ot_default_f_active]:active, [ot][ot-default-font-a]:active,
-[ot][ot_default_font_a]:active, [ot][ot-default-font-act]:active,
-[ot][ot_default_font_act]:active, [ot][ot-default-font-active]:active,
-[ot][ot_default_font_active]:active, #ot__color__default__font__active {
-  color: #2c3f50;
+  color: #409EFF;
   cursor: pointer; }
 
 ot__color__default__font__focus, [ot][ot-def-font-f]:focus,
@@ -1231,7 +891,7 @@ ot__color__default__background__normal, [ot][ot-def-background],
 [ot][ot_def_bg], [ot][ot-default-bg],
 [ot][ot_default_bg], [ot][ot-default-background],
 [ot][ot_default_background], #ot__color__default__background__normal {
-  background-color: #eaedee; }
+  background-color: #FFFFFF; }
 
 ot__color__default__background__hover, [ot][ot-def-background-h]:hover,
 [ot][ot_def_background_h]:hover, [ot][ot-def-background-hov]:hover,
@@ -1246,23 +906,7 @@ ot__color__default__background__hover, [ot][ot-def-background-h]:hover,
 [ot][ot_default_background_h]:hover, [ot][ot-default-background-hov]:hover,
 [ot][ot_default_background_hov]:hover, [ot][ot-default-background-hover]:hover,
 [ot][ot_default_background_hover]:hover, #ot__color__default__background__hover {
-  background-color: #ecf5ff;
-  cursor: pointer; }
-
-ot__color__default__background__active, [ot][ot-def-background-a]:active,
-[ot][ot_def_background_a]:active, [ot][ot-def-background-act]:active,
-[ot][ot_def_background_act]:active, [ot][ot-def-background-active]:active,
-[ot][ot_def_background_active]:active, [ot][ot-def-bg-a]:active,
-[ot][ot_def_bg_a]:active, [ot][ot-def-bg-act]:active,
-[ot][ot_def_bg_act]:active, [ot][ot-def-bg-active]:active,
-[ot][ot_def_bg_active]:active, [ot][ot-default-bg-a]:active,
-[ot][ot_default_bg_a]:active, [ot][ot-default-bg-act]:active,
-[ot][ot_default_bg_act]:active, [ot][ot-default-bg-active]:active,
-[ot][ot_default_bg_active]:active, [ot][ot-default-background-a]:active,
-[ot][ot_default_background_a]:active, [ot][ot-default-background-act]:active,
-[ot][ot_default_background_act]:active, [ot][ot-default-background-active]:active,
-[ot][ot_default_background_active]:active, #ot__color__default__background__active {
-  background-color: #d9ecff;
+  background-color: #409EFF;
   cursor: pointer; }
 
 ot__color__default__background__focus, [ot][ot-def-background-f]:focus,
@@ -1286,7 +930,7 @@ ot__color__default__border__normal, [ot][ot-def-border],
 [ot][ot_def_b], [ot][ot-default-b],
 [ot][ot_default_b], [ot][ot-default-border],
 [ot][ot_default_border], #ot__color__default__border__normal {
-  border-color: #314659;
+  border-color: #98a3ac;
   border-style: solid;
   border-width: 1px; }
 
@@ -1303,25 +947,7 @@ ot__color__default__border__hover, [ot][ot-def-border-h]:hover,
 [ot][ot_default_border_h]:hover, [ot][ot-default-border-hov]:hover,
 [ot][ot_default_border_hov]:hover, [ot][ot-default-border-hover]:hover,
 [ot][ot_default_border_hover]:hover, #ot__color__default__border__hover {
-  border-color: #c6e2ff;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__default__border__active, [ot][ot-def-border-a]:active,
-[ot][ot_def_border_a]:active, [ot][ot-def-border-act]:active,
-[ot][ot_def_border_act]:active, [ot][ot-def-border-active]:active,
-[ot][ot_def_border_active]:active, [ot][ot-def-b-a]:active,
-[ot][ot_def_b_a]:active, [ot][ot-def-b-act]:active,
-[ot][ot_def_b_act]:active, [ot][ot-def-b-active]:active,
-[ot][ot_def_b_active]:active, [ot][ot-default-b-a]:active,
-[ot][ot_default_b_a]:active, [ot][ot-default-b-act]:active,
-[ot][ot_default_b_act]:active, [ot][ot-default-b-active]:active,
-[ot][ot_default_b_active]:active, [ot][ot-default-border-a]:active,
-[ot][ot_default_border_a]:active, [ot][ot-default-border-act]:active,
-[ot][ot_default_border_act]:active, [ot][ot-default-border-active]:active,
-[ot][ot_default_border_active]:active, #ot__color__default__border__active {
-  border-color: #3a8ee6;
+  border-color: #79bbff;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -1349,7 +975,7 @@ ot__color__default__border-left__normal, [ot][ot-def-border-left],
 [ot][ot_def_bl], [ot][ot-default-bl],
 [ot][ot_default_bl], [ot][ot-default-border-left],
 [ot][ot_default_border-left], #ot__color__default__border-left__normal {
-  border-left-color: #314659;
+  border-left-color: #98a3ac;
   border-left-style: solid;
   border-left-width: 1px; }
 
@@ -1366,25 +992,7 @@ ot__color__default__border-left__hover, [ot][ot-def-border-left-h]:hover,
 [ot][ot_default_border-left_h]:hover, [ot][ot-default-border-left-hov]:hover,
 [ot][ot_default_border-left_hov]:hover, [ot][ot-default-border-left-hover]:hover,
 [ot][ot_default_border-left_hover]:hover, #ot__color__default__border-left__hover {
-  border-left-color: #c6e2ff;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
-ot__color__default__border-left__active, [ot][ot-def-border-left-a]:active,
-[ot][ot_def_border-left_a]:active, [ot][ot-def-border-left-act]:active,
-[ot][ot_def_border-left_act]:active, [ot][ot-def-border-left-active]:active,
-[ot][ot_def_border-left_active]:active, [ot][ot-def-bl-a]:active,
-[ot][ot_def_bl_a]:active, [ot][ot-def-bl-act]:active,
-[ot][ot_def_bl_act]:active, [ot][ot-def-bl-active]:active,
-[ot][ot_def_bl_active]:active, [ot][ot-default-bl-a]:active,
-[ot][ot_default_bl_a]:active, [ot][ot-default-bl-act]:active,
-[ot][ot_default_bl_act]:active, [ot][ot-default-bl-active]:active,
-[ot][ot_default_bl_active]:active, [ot][ot-default-border-left-a]:active,
-[ot][ot_default_border-left_a]:active, [ot][ot-default-border-left-act]:active,
-[ot][ot_default_border-left_act]:active, [ot][ot-default-border-left-active]:active,
-[ot][ot_default_border-left_active]:active, #ot__color__default__border-left__active {
-  border-left-color: #3a8ee6;
+  border-left-color: #79bbff;
   cursor: pointer;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -1412,7 +1020,7 @@ ot__color__default__border-right__normal, [ot][ot-def-border-right],
 [ot][ot_def_br], [ot][ot-default-br],
 [ot][ot_default_br], [ot][ot-default-border-right],
 [ot][ot_default_border-right], #ot__color__default__border-right__normal {
-  border-right-color: #314659;
+  border-right-color: #98a3ac;
   border-right-style: solid;
   border-right-width: 1px; }
 
@@ -1429,25 +1037,7 @@ ot__color__default__border-right__hover, [ot][ot-def-border-right-h]:hover,
 [ot][ot_default_border-right_h]:hover, [ot][ot-default-border-right-hov]:hover,
 [ot][ot_default_border-right_hov]:hover, [ot][ot-default-border-right-hover]:hover,
 [ot][ot_default_border-right_hover]:hover, #ot__color__default__border-right__hover {
-  border-right-color: #c6e2ff;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__default__border-right__active, [ot][ot-def-border-right-a]:active,
-[ot][ot_def_border-right_a]:active, [ot][ot-def-border-right-act]:active,
-[ot][ot_def_border-right_act]:active, [ot][ot-def-border-right-active]:active,
-[ot][ot_def_border-right_active]:active, [ot][ot-def-br-a]:active,
-[ot][ot_def_br_a]:active, [ot][ot-def-br-act]:active,
-[ot][ot_def_br_act]:active, [ot][ot-def-br-active]:active,
-[ot][ot_def_br_active]:active, [ot][ot-default-br-a]:active,
-[ot][ot_default_br_a]:active, [ot][ot-default-br-act]:active,
-[ot][ot_default_br_act]:active, [ot][ot-default-br-active]:active,
-[ot][ot_default_br_active]:active, [ot][ot-default-border-right-a]:active,
-[ot][ot_default_border-right_a]:active, [ot][ot-default-border-right-act]:active,
-[ot][ot_default_border-right_act]:active, [ot][ot-default-border-right-active]:active,
-[ot][ot_default_border-right_active]:active, #ot__color__default__border-right__active {
-  border-right-color: #3a8ee6;
+  border-right-color: #79bbff;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -1475,7 +1065,7 @@ ot__color__default__border-top__normal, [ot][ot-def-border-top],
 [ot][ot_def_bt], [ot][ot-default-bt],
 [ot][ot_default_bt], [ot][ot-default-border-top],
 [ot][ot_default_border-top], #ot__color__default__border-top__normal {
-  border-top-color: #314659;
+  border-top-color: #98a3ac;
   border-top-style: solid;
   border-top-width: 1px; }
 
@@ -1492,25 +1082,7 @@ ot__color__default__border-top__hover, [ot][ot-def-border-top-h]:hover,
 [ot][ot_default_border-top_h]:hover, [ot][ot-default-border-top-hov]:hover,
 [ot][ot_default_border-top_hov]:hover, [ot][ot-default-border-top-hover]:hover,
 [ot][ot_default_border-top_hover]:hover, #ot__color__default__border-top__hover {
-  border-top-color: #c6e2ff;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
-ot__color__default__border-top__active, [ot][ot-def-border-top-a]:active,
-[ot][ot_def_border-top_a]:active, [ot][ot-def-border-top-act]:active,
-[ot][ot_def_border-top_act]:active, [ot][ot-def-border-top-active]:active,
-[ot][ot_def_border-top_active]:active, [ot][ot-def-bt-a]:active,
-[ot][ot_def_bt_a]:active, [ot][ot-def-bt-act]:active,
-[ot][ot_def_bt_act]:active, [ot][ot-def-bt-active]:active,
-[ot][ot_def_bt_active]:active, [ot][ot-default-bt-a]:active,
-[ot][ot_default_bt_a]:active, [ot][ot-default-bt-act]:active,
-[ot][ot_default_bt_act]:active, [ot][ot-default-bt-active]:active,
-[ot][ot_default_bt_active]:active, [ot][ot-default-border-top-a]:active,
-[ot][ot_default_border-top_a]:active, [ot][ot-default-border-top-act]:active,
-[ot][ot_default_border-top_act]:active, [ot][ot-default-border-top-active]:active,
-[ot][ot_default_border-top_active]:active, #ot__color__default__border-top__active {
-  border-top-color: #3a8ee6;
+  border-top-color: #79bbff;
   cursor: pointer;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -1538,7 +1110,7 @@ ot__color__default__border-bottom__normal, [ot][ot-def-border-bottom],
 [ot][ot_def_bb], [ot][ot-default-bb],
 [ot][ot_default_bb], [ot][ot-default-border-bottom],
 [ot][ot_default_border-bottom], #ot__color__default__border-bottom__normal {
-  border-bottom-color: #314659;
+  border-bottom-color: #98a3ac;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
@@ -1555,25 +1127,7 @@ ot__color__default__border-bottom__hover, [ot][ot-def-border-bottom-h]:hover,
 [ot][ot_default_border-bottom_h]:hover, [ot][ot-default-border-bottom-hov]:hover,
 [ot][ot_default_border-bottom_hov]:hover, [ot][ot-default-border-bottom-hover]:hover,
 [ot][ot_default_border-bottom_hover]:hover, #ot__color__default__border-bottom__hover {
-  border-bottom-color: #c6e2ff;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
-ot__color__default__border-bottom__active, [ot][ot-def-border-bottom-a]:active,
-[ot][ot_def_border-bottom_a]:active, [ot][ot-def-border-bottom-act]:active,
-[ot][ot_def_border-bottom_act]:active, [ot][ot-def-border-bottom-active]:active,
-[ot][ot_def_border-bottom_active]:active, [ot][ot-def-bb-a]:active,
-[ot][ot_def_bb_a]:active, [ot][ot-def-bb-act]:active,
-[ot][ot_def_bb_act]:active, [ot][ot-def-bb-active]:active,
-[ot][ot_def_bb_active]:active, [ot][ot-default-bb-a]:active,
-[ot][ot_default_bb_a]:active, [ot][ot-default-bb-act]:active,
-[ot][ot_default_bb_act]:active, [ot][ot-default-bb-active]:active,
-[ot][ot_default_bb_active]:active, [ot][ot-default-border-bottom-a]:active,
-[ot][ot_default_border-bottom_a]:active, [ot][ot-default-border-bottom-act]:active,
-[ot][ot_default_border-bottom_act]:active, [ot][ot-default-border-bottom-active]:active,
-[ot][ot_default_border-bottom_active]:active, #ot__color__default__border-bottom__active {
-  border-bottom-color: #3a8ee6;
+  border-bottom-color: #79bbff;
   cursor: pointer;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -1619,22 +1173,6 @@ ot__color__primary__font__hover, [ot][ot-pri-font-h]:hover,
   color: #66b1ff;
   cursor: pointer; }
 
-ot__color__primary__font__active, [ot][ot-pri-font-a]:active,
-[ot][ot_pri_font_a]:active, [ot][ot-pri-font-act]:active,
-[ot][ot_pri_font_act]:active, [ot][ot-pri-font-active]:active,
-[ot][ot_pri_font_active]:active, [ot][ot-pri-f-a]:active,
-[ot][ot_pri_f_a]:active, [ot][ot-pri-f-act]:active,
-[ot][ot_pri_f_act]:active, [ot][ot-pri-f-active]:active,
-[ot][ot_pri_f_active]:active, [ot][ot-primary-f-a]:active,
-[ot][ot_primary_f_a]:active, [ot][ot-primary-f-act]:active,
-[ot][ot_primary_f_act]:active, [ot][ot-primary-f-active]:active,
-[ot][ot_primary_f_active]:active, [ot][ot-primary-font-a]:active,
-[ot][ot_primary_font_a]:active, [ot][ot-primary-font-act]:active,
-[ot][ot_primary_font_act]:active, [ot][ot-primary-font-active]:active,
-[ot][ot_primary_font_active]:active, #ot__color__primary__font__active {
-  color: #3a8ee6;
-  cursor: pointer; }
-
 ot__color__primary__font__focus, [ot][ot-pri-font-f]:focus,
 [ot][ot_pri_font_f]:focus, [ot][ot-pri-font-foc]:focus,
 [ot][ot_pri_font_foc]:focus, [ot][ot-pri-font-focus]:focus,
@@ -1656,7 +1194,7 @@ ot__color__primary__background__normal, [ot][ot-pri-background],
 [ot][ot_pri_bg], [ot][ot-primary-bg],
 [ot][ot_primary_bg], [ot][ot-primary-background],
 [ot][ot_primary_background], #ot__color__primary__background__normal {
-  background-color: #409EFF; }
+  background-color: #ecf5ff; }
 
 ot__color__primary__background__hover, [ot][ot-pri-background-h]:hover,
 [ot][ot_pri_background_h]:hover, [ot][ot-pri-background-hov]:hover,
@@ -1674,22 +1212,6 @@ ot__color__primary__background__hover, [ot][ot-pri-background-h]:hover,
   background-color: #66b1ff;
   cursor: pointer; }
 
-ot__color__primary__background__active, [ot][ot-pri-background-a]:active,
-[ot][ot_pri_background_a]:active, [ot][ot-pri-background-act]:active,
-[ot][ot_pri_background_act]:active, [ot][ot-pri-background-active]:active,
-[ot][ot_pri_background_active]:active, [ot][ot-pri-bg-a]:active,
-[ot][ot_pri_bg_a]:active, [ot][ot-pri-bg-act]:active,
-[ot][ot_pri_bg_act]:active, [ot][ot-pri-bg-active]:active,
-[ot][ot_pri_bg_active]:active, [ot][ot-primary-bg-a]:active,
-[ot][ot_primary_bg_a]:active, [ot][ot-primary-bg-act]:active,
-[ot][ot_primary_bg_act]:active, [ot][ot-primary-bg-active]:active,
-[ot][ot_primary_bg_active]:active, [ot][ot-primary-background-a]:active,
-[ot][ot_primary_background_a]:active, [ot][ot-primary-background-act]:active,
-[ot][ot_primary_background_act]:active, [ot][ot-primary-background-active]:active,
-[ot][ot_primary_background_active]:active, #ot__color__primary__background__active {
-  background-color: #3a8ee6;
-  cursor: pointer; }
-
 ot__color__primary__background__focus, [ot][ot-pri-background-f]:focus,
 [ot][ot_pri_background_f]:focus, [ot][ot-pri-background-foc]:focus,
 [ot][ot_pri_background_foc]:focus, [ot][ot-pri-background-focus]:focus,
@@ -1703,7 +1225,7 @@ ot__color__primary__background__focus, [ot][ot-pri-background-f]:focus,
 [ot][ot_primary_background_f]:focus, [ot][ot-primary-background-foc]:focus,
 [ot][ot_primary_background_foc]:focus, [ot][ot-primary-background-focus]:focus,
 [ot][ot_primary_background_focus]:focus, #ot__color__primary__background__focus {
-  background-color: #409EFF;
+  background-color: #ecf5ff;
   cursor: pointer; }
 
 ot__color__primary__border__normal, [ot][ot-pri-border],
@@ -1729,24 +1251,6 @@ ot__color__primary__border__hover, [ot][ot-pri-border-h]:hover,
 [ot][ot_primary_border_hov]:hover, [ot][ot-primary-border-hover]:hover,
 [ot][ot_primary_border_hover]:hover, #ot__color__primary__border__hover {
   border-color: #66b1ff;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__primary__border__active, [ot][ot-pri-border-a]:active,
-[ot][ot_pri_border_a]:active, [ot][ot-pri-border-act]:active,
-[ot][ot_pri_border_act]:active, [ot][ot-pri-border-active]:active,
-[ot][ot_pri_border_active]:active, [ot][ot-pri-b-a]:active,
-[ot][ot_pri_b_a]:active, [ot][ot-pri-b-act]:active,
-[ot][ot_pri_b_act]:active, [ot][ot-pri-b-active]:active,
-[ot][ot_pri_b_active]:active, [ot][ot-primary-b-a]:active,
-[ot][ot_primary_b_a]:active, [ot][ot-primary-b-act]:active,
-[ot][ot_primary_b_act]:active, [ot][ot-primary-b-active]:active,
-[ot][ot_primary_b_active]:active, [ot][ot-primary-border-a]:active,
-[ot][ot_primary_border_a]:active, [ot][ot-primary-border-act]:active,
-[ot][ot_primary_border_act]:active, [ot][ot-primary-border-active]:active,
-[ot][ot_primary_border_active]:active, #ot__color__primary__border__active {
-  border-color: #3a8ee6;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -1796,24 +1300,6 @@ ot__color__primary__border-left__hover, [ot][ot-pri-border-left-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__primary__border-left__active, [ot][ot-pri-border-left-a]:active,
-[ot][ot_pri_border-left_a]:active, [ot][ot-pri-border-left-act]:active,
-[ot][ot_pri_border-left_act]:active, [ot][ot-pri-border-left-active]:active,
-[ot][ot_pri_border-left_active]:active, [ot][ot-pri-bl-a]:active,
-[ot][ot_pri_bl_a]:active, [ot][ot-pri-bl-act]:active,
-[ot][ot_pri_bl_act]:active, [ot][ot-pri-bl-active]:active,
-[ot][ot_pri_bl_active]:active, [ot][ot-primary-bl-a]:active,
-[ot][ot_primary_bl_a]:active, [ot][ot-primary-bl-act]:active,
-[ot][ot_primary_bl_act]:active, [ot][ot-primary-bl-active]:active,
-[ot][ot_primary_bl_active]:active, [ot][ot-primary-border-left-a]:active,
-[ot][ot_primary_border-left_a]:active, [ot][ot-primary-border-left-act]:active,
-[ot][ot_primary_border-left_act]:active, [ot][ot-primary-border-left-active]:active,
-[ot][ot_primary_border-left_active]:active, #ot__color__primary__border-left__active {
-  border-left-color: #3a8ee6;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__primary__border-left__focus, [ot][ot-pri-border-left-f]:focus,
 [ot][ot_pri_border-left_f]:focus, [ot][ot-pri-border-left-foc]:focus,
 [ot][ot_pri_border-left_foc]:focus, [ot][ot-pri-border-left-focus]:focus,
@@ -1855,24 +1341,6 @@ ot__color__primary__border-right__hover, [ot][ot-pri-border-right-h]:hover,
 [ot][ot_primary_border-right_hov]:hover, [ot][ot-primary-border-right-hover]:hover,
 [ot][ot_primary_border-right_hover]:hover, #ot__color__primary__border-right__hover {
   border-right-color: #66b1ff;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__primary__border-right__active, [ot][ot-pri-border-right-a]:active,
-[ot][ot_pri_border-right_a]:active, [ot][ot-pri-border-right-act]:active,
-[ot][ot_pri_border-right_act]:active, [ot][ot-pri-border-right-active]:active,
-[ot][ot_pri_border-right_active]:active, [ot][ot-pri-br-a]:active,
-[ot][ot_pri_br_a]:active, [ot][ot-pri-br-act]:active,
-[ot][ot_pri_br_act]:active, [ot][ot-pri-br-active]:active,
-[ot][ot_pri_br_active]:active, [ot][ot-primary-br-a]:active,
-[ot][ot_primary_br_a]:active, [ot][ot-primary-br-act]:active,
-[ot][ot_primary_br_act]:active, [ot][ot-primary-br-active]:active,
-[ot][ot_primary_br_active]:active, [ot][ot-primary-border-right-a]:active,
-[ot][ot_primary_border-right_a]:active, [ot][ot-primary-border-right-act]:active,
-[ot][ot_primary_border-right_act]:active, [ot][ot-primary-border-right-active]:active,
-[ot][ot_primary_border-right_active]:active, #ot__color__primary__border-right__active {
-  border-right-color: #3a8ee6;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -1922,24 +1390,6 @@ ot__color__primary__border-top__hover, [ot][ot-pri-border-top-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__primary__border-top__active, [ot][ot-pri-border-top-a]:active,
-[ot][ot_pri_border-top_a]:active, [ot][ot-pri-border-top-act]:active,
-[ot][ot_pri_border-top_act]:active, [ot][ot-pri-border-top-active]:active,
-[ot][ot_pri_border-top_active]:active, [ot][ot-pri-bt-a]:active,
-[ot][ot_pri_bt_a]:active, [ot][ot-pri-bt-act]:active,
-[ot][ot_pri_bt_act]:active, [ot][ot-pri-bt-active]:active,
-[ot][ot_pri_bt_active]:active, [ot][ot-primary-bt-a]:active,
-[ot][ot_primary_bt_a]:active, [ot][ot-primary-bt-act]:active,
-[ot][ot_primary_bt_act]:active, [ot][ot-primary-bt-active]:active,
-[ot][ot_primary_bt_active]:active, [ot][ot-primary-border-top-a]:active,
-[ot][ot_primary_border-top_a]:active, [ot][ot-primary-border-top-act]:active,
-[ot][ot_primary_border-top_act]:active, [ot][ot-primary-border-top-active]:active,
-[ot][ot_primary_border-top_active]:active, #ot__color__primary__border-top__active {
-  border-top-color: #3a8ee6;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__primary__border-top__focus, [ot][ot-pri-border-top-f]:focus,
 [ot][ot_pri_border-top_f]:focus, [ot][ot-pri-border-top-foc]:focus,
 [ot][ot_pri_border-top_foc]:focus, [ot][ot-pri-border-top-focus]:focus,
@@ -1985,24 +1435,6 @@ ot__color__primary__border-bottom__hover, [ot][ot-pri-border-bottom-h]:hover,
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
-ot__color__primary__border-bottom__active, [ot][ot-pri-border-bottom-a]:active,
-[ot][ot_pri_border-bottom_a]:active, [ot][ot-pri-border-bottom-act]:active,
-[ot][ot_pri_border-bottom_act]:active, [ot][ot-pri-border-bottom-active]:active,
-[ot][ot_pri_border-bottom_active]:active, [ot][ot-pri-bb-a]:active,
-[ot][ot_pri_bb_a]:active, [ot][ot-pri-bb-act]:active,
-[ot][ot_pri_bb_act]:active, [ot][ot-pri-bb-active]:active,
-[ot][ot_pri_bb_active]:active, [ot][ot-primary-bb-a]:active,
-[ot][ot_primary_bb_a]:active, [ot][ot-primary-bb-act]:active,
-[ot][ot_primary_bb_act]:active, [ot][ot-primary-bb-active]:active,
-[ot][ot_primary_bb_active]:active, [ot][ot-primary-border-bottom-a]:active,
-[ot][ot_primary_border-bottom_a]:active, [ot][ot-primary-border-bottom-act]:active,
-[ot][ot_primary_border-bottom_act]:active, [ot][ot-primary-border-bottom-active]:active,
-[ot][ot_primary_border-bottom_active]:active, #ot__color__primary__border-bottom__active {
-  border-bottom-color: #3a8ee6;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
 ot__color__primary__border-bottom__focus, [ot][ot-pri-border-bottom-f]:focus,
 [ot][ot_pri_border-bottom_f]:focus, [ot][ot-pri-border-bottom-foc]:focus,
 [ot][ot_pri_border-bottom_foc]:focus, [ot][ot-pri-border-bottom-focus]:focus,
@@ -2044,22 +1476,6 @@ ot__color__success__font__hover, [ot][ot-suc-font-h]:hover,
   color: #85ce61;
   cursor: pointer; }
 
-ot__color__success__font__active, [ot][ot-suc-font-a]:active,
-[ot][ot_suc_font_a]:active, [ot][ot-suc-font-act]:active,
-[ot][ot_suc_font_act]:active, [ot][ot-suc-font-active]:active,
-[ot][ot_suc_font_active]:active, [ot][ot-suc-f-a]:active,
-[ot][ot_suc_f_a]:active, [ot][ot-suc-f-act]:active,
-[ot][ot_suc_f_act]:active, [ot][ot-suc-f-active]:active,
-[ot][ot_suc_f_active]:active, [ot][ot-success-f-a]:active,
-[ot][ot_success_f_a]:active, [ot][ot-success-f-act]:active,
-[ot][ot_success_f_act]:active, [ot][ot-success-f-active]:active,
-[ot][ot_success_f_active]:active, [ot][ot-success-font-a]:active,
-[ot][ot_success_font_a]:active, [ot][ot-success-font-act]:active,
-[ot][ot_success_font_act]:active, [ot][ot-success-font-active]:active,
-[ot][ot_success_font_active]:active, #ot__color__success__font__active {
-  color: #5daf34;
-  cursor: pointer; }
-
 ot__color__success__font__focus, [ot][ot-suc-font-f]:focus,
 [ot][ot_suc_font_f]:focus, [ot][ot-suc-font-foc]:focus,
 [ot][ot_suc_font_foc]:focus, [ot][ot-suc-font-focus]:focus,
@@ -2081,7 +1497,7 @@ ot__color__success__background__normal, [ot][ot-suc-background],
 [ot][ot_suc_bg], [ot][ot-success-bg],
 [ot][ot_success_bg], [ot][ot-success-background],
 [ot][ot_success_background], #ot__color__success__background__normal {
-  background-color: #67c23a; }
+  background-color: #f0f9eb; }
 
 ot__color__success__background__hover, [ot][ot-suc-background-h]:hover,
 [ot][ot_suc_background_h]:hover, [ot][ot-suc-background-hov]:hover,
@@ -2099,22 +1515,6 @@ ot__color__success__background__hover, [ot][ot-suc-background-h]:hover,
   background-color: #85ce61;
   cursor: pointer; }
 
-ot__color__success__background__active, [ot][ot-suc-background-a]:active,
-[ot][ot_suc_background_a]:active, [ot][ot-suc-background-act]:active,
-[ot][ot_suc_background_act]:active, [ot][ot-suc-background-active]:active,
-[ot][ot_suc_background_active]:active, [ot][ot-suc-bg-a]:active,
-[ot][ot_suc_bg_a]:active, [ot][ot-suc-bg-act]:active,
-[ot][ot_suc_bg_act]:active, [ot][ot-suc-bg-active]:active,
-[ot][ot_suc_bg_active]:active, [ot][ot-success-bg-a]:active,
-[ot][ot_success_bg_a]:active, [ot][ot-success-bg-act]:active,
-[ot][ot_success_bg_act]:active, [ot][ot-success-bg-active]:active,
-[ot][ot_success_bg_active]:active, [ot][ot-success-background-a]:active,
-[ot][ot_success_background_a]:active, [ot][ot-success-background-act]:active,
-[ot][ot_success_background_act]:active, [ot][ot-success-background-active]:active,
-[ot][ot_success_background_active]:active, #ot__color__success__background__active {
-  background-color: #5daf34;
-  cursor: pointer; }
-
 ot__color__success__background__focus, [ot][ot-suc-background-f]:focus,
 [ot][ot_suc_background_f]:focus, [ot][ot-suc-background-foc]:focus,
 [ot][ot_suc_background_foc]:focus, [ot][ot-suc-background-focus]:focus,
@@ -2128,7 +1528,7 @@ ot__color__success__background__focus, [ot][ot-suc-background-f]:focus,
 [ot][ot_success_background_f]:focus, [ot][ot-success-background-foc]:focus,
 [ot][ot_success_background_foc]:focus, [ot][ot-success-background-focus]:focus,
 [ot][ot_success_background_focus]:focus, #ot__color__success__background__focus {
-  background-color: #67c23a;
+  background-color: #f0f9eb;
   cursor: pointer; }
 
 ot__color__success__border__normal, [ot][ot-suc-border],
@@ -2154,24 +1554,6 @@ ot__color__success__border__hover, [ot][ot-suc-border-h]:hover,
 [ot][ot_success_border_hov]:hover, [ot][ot-success-border-hover]:hover,
 [ot][ot_success_border_hover]:hover, #ot__color__success__border__hover {
   border-color: #85ce61;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__success__border__active, [ot][ot-suc-border-a]:active,
-[ot][ot_suc_border_a]:active, [ot][ot-suc-border-act]:active,
-[ot][ot_suc_border_act]:active, [ot][ot-suc-border-active]:active,
-[ot][ot_suc_border_active]:active, [ot][ot-suc-b-a]:active,
-[ot][ot_suc_b_a]:active, [ot][ot-suc-b-act]:active,
-[ot][ot_suc_b_act]:active, [ot][ot-suc-b-active]:active,
-[ot][ot_suc_b_active]:active, [ot][ot-success-b-a]:active,
-[ot][ot_success_b_a]:active, [ot][ot-success-b-act]:active,
-[ot][ot_success_b_act]:active, [ot][ot-success-b-active]:active,
-[ot][ot_success_b_active]:active, [ot][ot-success-border-a]:active,
-[ot][ot_success_border_a]:active, [ot][ot-success-border-act]:active,
-[ot][ot_success_border_act]:active, [ot][ot-success-border-active]:active,
-[ot][ot_success_border_active]:active, #ot__color__success__border__active {
-  border-color: #5daf34;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -2221,24 +1603,6 @@ ot__color__success__border-left__hover, [ot][ot-suc-border-left-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__success__border-left__active, [ot][ot-suc-border-left-a]:active,
-[ot][ot_suc_border-left_a]:active, [ot][ot-suc-border-left-act]:active,
-[ot][ot_suc_border-left_act]:active, [ot][ot-suc-border-left-active]:active,
-[ot][ot_suc_border-left_active]:active, [ot][ot-suc-bl-a]:active,
-[ot][ot_suc_bl_a]:active, [ot][ot-suc-bl-act]:active,
-[ot][ot_suc_bl_act]:active, [ot][ot-suc-bl-active]:active,
-[ot][ot_suc_bl_active]:active, [ot][ot-success-bl-a]:active,
-[ot][ot_success_bl_a]:active, [ot][ot-success-bl-act]:active,
-[ot][ot_success_bl_act]:active, [ot][ot-success-bl-active]:active,
-[ot][ot_success_bl_active]:active, [ot][ot-success-border-left-a]:active,
-[ot][ot_success_border-left_a]:active, [ot][ot-success-border-left-act]:active,
-[ot][ot_success_border-left_act]:active, [ot][ot-success-border-left-active]:active,
-[ot][ot_success_border-left_active]:active, #ot__color__success__border-left__active {
-  border-left-color: #5daf34;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__success__border-left__focus, [ot][ot-suc-border-left-f]:focus,
 [ot][ot_suc_border-left_f]:focus, [ot][ot-suc-border-left-foc]:focus,
 [ot][ot_suc_border-left_foc]:focus, [ot][ot-suc-border-left-focus]:focus,
@@ -2280,24 +1644,6 @@ ot__color__success__border-right__hover, [ot][ot-suc-border-right-h]:hover,
 [ot][ot_success_border-right_hov]:hover, [ot][ot-success-border-right-hover]:hover,
 [ot][ot_success_border-right_hover]:hover, #ot__color__success__border-right__hover {
   border-right-color: #85ce61;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__success__border-right__active, [ot][ot-suc-border-right-a]:active,
-[ot][ot_suc_border-right_a]:active, [ot][ot-suc-border-right-act]:active,
-[ot][ot_suc_border-right_act]:active, [ot][ot-suc-border-right-active]:active,
-[ot][ot_suc_border-right_active]:active, [ot][ot-suc-br-a]:active,
-[ot][ot_suc_br_a]:active, [ot][ot-suc-br-act]:active,
-[ot][ot_suc_br_act]:active, [ot][ot-suc-br-active]:active,
-[ot][ot_suc_br_active]:active, [ot][ot-success-br-a]:active,
-[ot][ot_success_br_a]:active, [ot][ot-success-br-act]:active,
-[ot][ot_success_br_act]:active, [ot][ot-success-br-active]:active,
-[ot][ot_success_br_active]:active, [ot][ot-success-border-right-a]:active,
-[ot][ot_success_border-right_a]:active, [ot][ot-success-border-right-act]:active,
-[ot][ot_success_border-right_act]:active, [ot][ot-success-border-right-active]:active,
-[ot][ot_success_border-right_active]:active, #ot__color__success__border-right__active {
-  border-right-color: #5daf34;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -2347,24 +1693,6 @@ ot__color__success__border-top__hover, [ot][ot-suc-border-top-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__success__border-top__active, [ot][ot-suc-border-top-a]:active,
-[ot][ot_suc_border-top_a]:active, [ot][ot-suc-border-top-act]:active,
-[ot][ot_suc_border-top_act]:active, [ot][ot-suc-border-top-active]:active,
-[ot][ot_suc_border-top_active]:active, [ot][ot-suc-bt-a]:active,
-[ot][ot_suc_bt_a]:active, [ot][ot-suc-bt-act]:active,
-[ot][ot_suc_bt_act]:active, [ot][ot-suc-bt-active]:active,
-[ot][ot_suc_bt_active]:active, [ot][ot-success-bt-a]:active,
-[ot][ot_success_bt_a]:active, [ot][ot-success-bt-act]:active,
-[ot][ot_success_bt_act]:active, [ot][ot-success-bt-active]:active,
-[ot][ot_success_bt_active]:active, [ot][ot-success-border-top-a]:active,
-[ot][ot_success_border-top_a]:active, [ot][ot-success-border-top-act]:active,
-[ot][ot_success_border-top_act]:active, [ot][ot-success-border-top-active]:active,
-[ot][ot_success_border-top_active]:active, #ot__color__success__border-top__active {
-  border-top-color: #5daf34;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__success__border-top__focus, [ot][ot-suc-border-top-f]:focus,
 [ot][ot_suc_border-top_f]:focus, [ot][ot-suc-border-top-foc]:focus,
 [ot][ot_suc_border-top_foc]:focus, [ot][ot-suc-border-top-focus]:focus,
@@ -2410,24 +1738,6 @@ ot__color__success__border-bottom__hover, [ot][ot-suc-border-bottom-h]:hover,
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
-ot__color__success__border-bottom__active, [ot][ot-suc-border-bottom-a]:active,
-[ot][ot_suc_border-bottom_a]:active, [ot][ot-suc-border-bottom-act]:active,
-[ot][ot_suc_border-bottom_act]:active, [ot][ot-suc-border-bottom-active]:active,
-[ot][ot_suc_border-bottom_active]:active, [ot][ot-suc-bb-a]:active,
-[ot][ot_suc_bb_a]:active, [ot][ot-suc-bb-act]:active,
-[ot][ot_suc_bb_act]:active, [ot][ot-suc-bb-active]:active,
-[ot][ot_suc_bb_active]:active, [ot][ot-success-bb-a]:active,
-[ot][ot_success_bb_a]:active, [ot][ot-success-bb-act]:active,
-[ot][ot_success_bb_act]:active, [ot][ot-success-bb-active]:active,
-[ot][ot_success_bb_active]:active, [ot][ot-success-border-bottom-a]:active,
-[ot][ot_success_border-bottom_a]:active, [ot][ot-success-border-bottom-act]:active,
-[ot][ot_success_border-bottom_act]:active, [ot][ot-success-border-bottom-active]:active,
-[ot][ot_success_border-bottom_active]:active, #ot__color__success__border-bottom__active {
-  border-bottom-color: #5daf34;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
 ot__color__success__border-bottom__focus, [ot][ot-suc-border-bottom-f]:focus,
 [ot][ot_suc_border-bottom_f]:focus, [ot][ot-suc-border-bottom-foc]:focus,
 [ot][ot_suc_border-bottom_foc]:focus, [ot][ot-suc-border-bottom-focus]:focus,
@@ -2469,22 +1779,6 @@ ot__color__warning__font__hover, [ot][ot-war-font-h]:hover,
   color: #ebb563;
   cursor: pointer; }
 
-ot__color__warning__font__active, [ot][ot-war-font-a]:active,
-[ot][ot_war_font_a]:active, [ot][ot-war-font-act]:active,
-[ot][ot_war_font_act]:active, [ot][ot-war-font-active]:active,
-[ot][ot_war_font_active]:active, [ot][ot-war-f-a]:active,
-[ot][ot_war_f_a]:active, [ot][ot-war-f-act]:active,
-[ot][ot_war_f_act]:active, [ot][ot-war-f-active]:active,
-[ot][ot_war_f_active]:active, [ot][ot-warning-f-a]:active,
-[ot][ot_warning_f_a]:active, [ot][ot-warning-f-act]:active,
-[ot][ot_warning_f_act]:active, [ot][ot-warning-f-active]:active,
-[ot][ot_warning_f_active]:active, [ot][ot-warning-font-a]:active,
-[ot][ot_warning_font_a]:active, [ot][ot-warning-font-act]:active,
-[ot][ot_warning_font_act]:active, [ot][ot-warning-font-active]:active,
-[ot][ot_warning_font_active]:active, #ot__color__warning__font__active {
-  color: #cf9236;
-  cursor: pointer; }
-
 ot__color__warning__font__focus, [ot][ot-war-font-f]:focus,
 [ot][ot_war_font_f]:focus, [ot][ot-war-font-foc]:focus,
 [ot][ot_war_font_foc]:focus, [ot][ot-war-font-focus]:focus,
@@ -2506,7 +1800,7 @@ ot__color__warning__background__normal, [ot][ot-war-background],
 [ot][ot_war_bg], [ot][ot-warning-bg],
 [ot][ot_warning_bg], [ot][ot-warning-background],
 [ot][ot_warning_background], #ot__color__warning__background__normal {
-  background-color: #e6a23c; }
+  background-color: #fdf6ec; }
 
 ot__color__warning__background__hover, [ot][ot-war-background-h]:hover,
 [ot][ot_war_background_h]:hover, [ot][ot-war-background-hov]:hover,
@@ -2524,22 +1818,6 @@ ot__color__warning__background__hover, [ot][ot-war-background-h]:hover,
   background-color: #ebb563;
   cursor: pointer; }
 
-ot__color__warning__background__active, [ot][ot-war-background-a]:active,
-[ot][ot_war_background_a]:active, [ot][ot-war-background-act]:active,
-[ot][ot_war_background_act]:active, [ot][ot-war-background-active]:active,
-[ot][ot_war_background_active]:active, [ot][ot-war-bg-a]:active,
-[ot][ot_war_bg_a]:active, [ot][ot-war-bg-act]:active,
-[ot][ot_war_bg_act]:active, [ot][ot-war-bg-active]:active,
-[ot][ot_war_bg_active]:active, [ot][ot-warning-bg-a]:active,
-[ot][ot_warning_bg_a]:active, [ot][ot-warning-bg-act]:active,
-[ot][ot_warning_bg_act]:active, [ot][ot-warning-bg-active]:active,
-[ot][ot_warning_bg_active]:active, [ot][ot-warning-background-a]:active,
-[ot][ot_warning_background_a]:active, [ot][ot-warning-background-act]:active,
-[ot][ot_warning_background_act]:active, [ot][ot-warning-background-active]:active,
-[ot][ot_warning_background_active]:active, #ot__color__warning__background__active {
-  background-color: #cf9236;
-  cursor: pointer; }
-
 ot__color__warning__background__focus, [ot][ot-war-background-f]:focus,
 [ot][ot_war_background_f]:focus, [ot][ot-war-background-foc]:focus,
 [ot][ot_war_background_foc]:focus, [ot][ot-war-background-focus]:focus,
@@ -2553,7 +1831,7 @@ ot__color__warning__background__focus, [ot][ot-war-background-f]:focus,
 [ot][ot_warning_background_f]:focus, [ot][ot-warning-background-foc]:focus,
 [ot][ot_warning_background_foc]:focus, [ot][ot-warning-background-focus]:focus,
 [ot][ot_warning_background_focus]:focus, #ot__color__warning__background__focus {
-  background-color: #e6a23c;
+  background-color: #fdf6ec;
   cursor: pointer; }
 
 ot__color__warning__border__normal, [ot][ot-war-border],
@@ -2579,24 +1857,6 @@ ot__color__warning__border__hover, [ot][ot-war-border-h]:hover,
 [ot][ot_warning_border_hov]:hover, [ot][ot-warning-border-hover]:hover,
 [ot][ot_warning_border_hover]:hover, #ot__color__warning__border__hover {
   border-color: #ebb563;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__warning__border__active, [ot][ot-war-border-a]:active,
-[ot][ot_war_border_a]:active, [ot][ot-war-border-act]:active,
-[ot][ot_war_border_act]:active, [ot][ot-war-border-active]:active,
-[ot][ot_war_border_active]:active, [ot][ot-war-b-a]:active,
-[ot][ot_war_b_a]:active, [ot][ot-war-b-act]:active,
-[ot][ot_war_b_act]:active, [ot][ot-war-b-active]:active,
-[ot][ot_war_b_active]:active, [ot][ot-warning-b-a]:active,
-[ot][ot_warning_b_a]:active, [ot][ot-warning-b-act]:active,
-[ot][ot_warning_b_act]:active, [ot][ot-warning-b-active]:active,
-[ot][ot_warning_b_active]:active, [ot][ot-warning-border-a]:active,
-[ot][ot_warning_border_a]:active, [ot][ot-warning-border-act]:active,
-[ot][ot_warning_border_act]:active, [ot][ot-warning-border-active]:active,
-[ot][ot_warning_border_active]:active, #ot__color__warning__border__active {
-  border-color: #cf9236;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -2646,24 +1906,6 @@ ot__color__warning__border-left__hover, [ot][ot-war-border-left-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__warning__border-left__active, [ot][ot-war-border-left-a]:active,
-[ot][ot_war_border-left_a]:active, [ot][ot-war-border-left-act]:active,
-[ot][ot_war_border-left_act]:active, [ot][ot-war-border-left-active]:active,
-[ot][ot_war_border-left_active]:active, [ot][ot-war-bl-a]:active,
-[ot][ot_war_bl_a]:active, [ot][ot-war-bl-act]:active,
-[ot][ot_war_bl_act]:active, [ot][ot-war-bl-active]:active,
-[ot][ot_war_bl_active]:active, [ot][ot-warning-bl-a]:active,
-[ot][ot_warning_bl_a]:active, [ot][ot-warning-bl-act]:active,
-[ot][ot_warning_bl_act]:active, [ot][ot-warning-bl-active]:active,
-[ot][ot_warning_bl_active]:active, [ot][ot-warning-border-left-a]:active,
-[ot][ot_warning_border-left_a]:active, [ot][ot-warning-border-left-act]:active,
-[ot][ot_warning_border-left_act]:active, [ot][ot-warning-border-left-active]:active,
-[ot][ot_warning_border-left_active]:active, #ot__color__warning__border-left__active {
-  border-left-color: #cf9236;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__warning__border-left__focus, [ot][ot-war-border-left-f]:focus,
 [ot][ot_war_border-left_f]:focus, [ot][ot-war-border-left-foc]:focus,
 [ot][ot_war_border-left_foc]:focus, [ot][ot-war-border-left-focus]:focus,
@@ -2705,24 +1947,6 @@ ot__color__warning__border-right__hover, [ot][ot-war-border-right-h]:hover,
 [ot][ot_warning_border-right_hov]:hover, [ot][ot-warning-border-right-hover]:hover,
 [ot][ot_warning_border-right_hover]:hover, #ot__color__warning__border-right__hover {
   border-right-color: #ebb563;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__warning__border-right__active, [ot][ot-war-border-right-a]:active,
-[ot][ot_war_border-right_a]:active, [ot][ot-war-border-right-act]:active,
-[ot][ot_war_border-right_act]:active, [ot][ot-war-border-right-active]:active,
-[ot][ot_war_border-right_active]:active, [ot][ot-war-br-a]:active,
-[ot][ot_war_br_a]:active, [ot][ot-war-br-act]:active,
-[ot][ot_war_br_act]:active, [ot][ot-war-br-active]:active,
-[ot][ot_war_br_active]:active, [ot][ot-warning-br-a]:active,
-[ot][ot_warning_br_a]:active, [ot][ot-warning-br-act]:active,
-[ot][ot_warning_br_act]:active, [ot][ot-warning-br-active]:active,
-[ot][ot_warning_br_active]:active, [ot][ot-warning-border-right-a]:active,
-[ot][ot_warning_border-right_a]:active, [ot][ot-warning-border-right-act]:active,
-[ot][ot_warning_border-right_act]:active, [ot][ot-warning-border-right-active]:active,
-[ot][ot_warning_border-right_active]:active, #ot__color__warning__border-right__active {
-  border-right-color: #cf9236;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -2772,24 +1996,6 @@ ot__color__warning__border-top__hover, [ot][ot-war-border-top-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__warning__border-top__active, [ot][ot-war-border-top-a]:active,
-[ot][ot_war_border-top_a]:active, [ot][ot-war-border-top-act]:active,
-[ot][ot_war_border-top_act]:active, [ot][ot-war-border-top-active]:active,
-[ot][ot_war_border-top_active]:active, [ot][ot-war-bt-a]:active,
-[ot][ot_war_bt_a]:active, [ot][ot-war-bt-act]:active,
-[ot][ot_war_bt_act]:active, [ot][ot-war-bt-active]:active,
-[ot][ot_war_bt_active]:active, [ot][ot-warning-bt-a]:active,
-[ot][ot_warning_bt_a]:active, [ot][ot-warning-bt-act]:active,
-[ot][ot_warning_bt_act]:active, [ot][ot-warning-bt-active]:active,
-[ot][ot_warning_bt_active]:active, [ot][ot-warning-border-top-a]:active,
-[ot][ot_warning_border-top_a]:active, [ot][ot-warning-border-top-act]:active,
-[ot][ot_warning_border-top_act]:active, [ot][ot-warning-border-top-active]:active,
-[ot][ot_warning_border-top_active]:active, #ot__color__warning__border-top__active {
-  border-top-color: #cf9236;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__warning__border-top__focus, [ot][ot-war-border-top-f]:focus,
 [ot][ot_war_border-top_f]:focus, [ot][ot-war-border-top-foc]:focus,
 [ot][ot_war_border-top_foc]:focus, [ot][ot-war-border-top-focus]:focus,
@@ -2835,24 +2041,6 @@ ot__color__warning__border-bottom__hover, [ot][ot-war-border-bottom-h]:hover,
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
-ot__color__warning__border-bottom__active, [ot][ot-war-border-bottom-a]:active,
-[ot][ot_war_border-bottom_a]:active, [ot][ot-war-border-bottom-act]:active,
-[ot][ot_war_border-bottom_act]:active, [ot][ot-war-border-bottom-active]:active,
-[ot][ot_war_border-bottom_active]:active, [ot][ot-war-bb-a]:active,
-[ot][ot_war_bb_a]:active, [ot][ot-war-bb-act]:active,
-[ot][ot_war_bb_act]:active, [ot][ot-war-bb-active]:active,
-[ot][ot_war_bb_active]:active, [ot][ot-warning-bb-a]:active,
-[ot][ot_warning_bb_a]:active, [ot][ot-warning-bb-act]:active,
-[ot][ot_warning_bb_act]:active, [ot][ot-warning-bb-active]:active,
-[ot][ot_warning_bb_active]:active, [ot][ot-warning-border-bottom-a]:active,
-[ot][ot_warning_border-bottom_a]:active, [ot][ot-warning-border-bottom-act]:active,
-[ot][ot_warning_border-bottom_act]:active, [ot][ot-warning-border-bottom-active]:active,
-[ot][ot_warning_border-bottom_active]:active, #ot__color__warning__border-bottom__active {
-  border-bottom-color: #cf9236;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
 ot__color__warning__border-bottom__focus, [ot][ot-war-border-bottom-f]:focus,
 [ot][ot_war_border-bottom_f]:focus, [ot][ot-war-border-bottom-foc]:focus,
 [ot][ot_war_border-bottom_foc]:focus, [ot][ot-war-border-bottom-focus]:focus,
@@ -2894,22 +2082,6 @@ ot__color__danger__font__hover, [ot][ot-dan-font-h]:hover,
   color: #f78989;
   cursor: pointer; }
 
-ot__color__danger__font__active, [ot][ot-dan-font-a]:active,
-[ot][ot_dan_font_a]:active, [ot][ot-dan-font-act]:active,
-[ot][ot_dan_font_act]:active, [ot][ot-dan-font-active]:active,
-[ot][ot_dan_font_active]:active, [ot][ot-dan-f-a]:active,
-[ot][ot_dan_f_a]:active, [ot][ot-dan-f-act]:active,
-[ot][ot_dan_f_act]:active, [ot][ot-dan-f-active]:active,
-[ot][ot_dan_f_active]:active, [ot][ot-danger-f-a]:active,
-[ot][ot_danger_f_a]:active, [ot][ot-danger-f-act]:active,
-[ot][ot_danger_f_act]:active, [ot][ot-danger-f-active]:active,
-[ot][ot_danger_f_active]:active, [ot][ot-danger-font-a]:active,
-[ot][ot_danger_font_a]:active, [ot][ot-danger-font-act]:active,
-[ot][ot_danger_font_act]:active, [ot][ot-danger-font-active]:active,
-[ot][ot_danger_font_active]:active, #ot__color__danger__font__active {
-  color: #dd6161;
-  cursor: pointer; }
-
 ot__color__danger__font__focus, [ot][ot-dan-font-f]:focus,
 [ot][ot_dan_font_f]:focus, [ot][ot-dan-font-foc]:focus,
 [ot][ot_dan_font_foc]:focus, [ot][ot-dan-font-focus]:focus,
@@ -2931,7 +2103,7 @@ ot__color__danger__background__normal, [ot][ot-dan-background],
 [ot][ot_dan_bg], [ot][ot-danger-bg],
 [ot][ot_danger_bg], [ot][ot-danger-background],
 [ot][ot_danger_background], #ot__color__danger__background__normal {
-  background-color: #f56c6c; }
+  background-color: #fef0f0; }
 
 ot__color__danger__background__hover, [ot][ot-dan-background-h]:hover,
 [ot][ot_dan_background_h]:hover, [ot][ot-dan-background-hov]:hover,
@@ -2949,22 +2121,6 @@ ot__color__danger__background__hover, [ot][ot-dan-background-h]:hover,
   background-color: #f78989;
   cursor: pointer; }
 
-ot__color__danger__background__active, [ot][ot-dan-background-a]:active,
-[ot][ot_dan_background_a]:active, [ot][ot-dan-background-act]:active,
-[ot][ot_dan_background_act]:active, [ot][ot-dan-background-active]:active,
-[ot][ot_dan_background_active]:active, [ot][ot-dan-bg-a]:active,
-[ot][ot_dan_bg_a]:active, [ot][ot-dan-bg-act]:active,
-[ot][ot_dan_bg_act]:active, [ot][ot-dan-bg-active]:active,
-[ot][ot_dan_bg_active]:active, [ot][ot-danger-bg-a]:active,
-[ot][ot_danger_bg_a]:active, [ot][ot-danger-bg-act]:active,
-[ot][ot_danger_bg_act]:active, [ot][ot-danger-bg-active]:active,
-[ot][ot_danger_bg_active]:active, [ot][ot-danger-background-a]:active,
-[ot][ot_danger_background_a]:active, [ot][ot-danger-background-act]:active,
-[ot][ot_danger_background_act]:active, [ot][ot-danger-background-active]:active,
-[ot][ot_danger_background_active]:active, #ot__color__danger__background__active {
-  background-color: #dd6161;
-  cursor: pointer; }
-
 ot__color__danger__background__focus, [ot][ot-dan-background-f]:focus,
 [ot][ot_dan_background_f]:focus, [ot][ot-dan-background-foc]:focus,
 [ot][ot_dan_background_foc]:focus, [ot][ot-dan-background-focus]:focus,
@@ -2978,7 +2134,7 @@ ot__color__danger__background__focus, [ot][ot-dan-background-f]:focus,
 [ot][ot_danger_background_f]:focus, [ot][ot-danger-background-foc]:focus,
 [ot][ot_danger_background_foc]:focus, [ot][ot-danger-background-focus]:focus,
 [ot][ot_danger_background_focus]:focus, #ot__color__danger__background__focus {
-  background-color: #f56c6c;
+  background-color: #fef0f0;
   cursor: pointer; }
 
 ot__color__danger__border__normal, [ot][ot-dan-border],
@@ -3004,24 +2160,6 @@ ot__color__danger__border__hover, [ot][ot-dan-border-h]:hover,
 [ot][ot_danger_border_hov]:hover, [ot][ot-danger-border-hover]:hover,
 [ot][ot_danger_border_hover]:hover, #ot__color__danger__border__hover {
   border-color: #f78989;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__danger__border__active, [ot][ot-dan-border-a]:active,
-[ot][ot_dan_border_a]:active, [ot][ot-dan-border-act]:active,
-[ot][ot_dan_border_act]:active, [ot][ot-dan-border-active]:active,
-[ot][ot_dan_border_active]:active, [ot][ot-dan-b-a]:active,
-[ot][ot_dan_b_a]:active, [ot][ot-dan-b-act]:active,
-[ot][ot_dan_b_act]:active, [ot][ot-dan-b-active]:active,
-[ot][ot_dan_b_active]:active, [ot][ot-danger-b-a]:active,
-[ot][ot_danger_b_a]:active, [ot][ot-danger-b-act]:active,
-[ot][ot_danger_b_act]:active, [ot][ot-danger-b-active]:active,
-[ot][ot_danger_b_active]:active, [ot][ot-danger-border-a]:active,
-[ot][ot_danger_border_a]:active, [ot][ot-danger-border-act]:active,
-[ot][ot_danger_border_act]:active, [ot][ot-danger-border-active]:active,
-[ot][ot_danger_border_active]:active, #ot__color__danger__border__active {
-  border-color: #dd6161;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -3071,24 +2209,6 @@ ot__color__danger__border-left__hover, [ot][ot-dan-border-left-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__danger__border-left__active, [ot][ot-dan-border-left-a]:active,
-[ot][ot_dan_border-left_a]:active, [ot][ot-dan-border-left-act]:active,
-[ot][ot_dan_border-left_act]:active, [ot][ot-dan-border-left-active]:active,
-[ot][ot_dan_border-left_active]:active, [ot][ot-dan-bl-a]:active,
-[ot][ot_dan_bl_a]:active, [ot][ot-dan-bl-act]:active,
-[ot][ot_dan_bl_act]:active, [ot][ot-dan-bl-active]:active,
-[ot][ot_dan_bl_active]:active, [ot][ot-danger-bl-a]:active,
-[ot][ot_danger_bl_a]:active, [ot][ot-danger-bl-act]:active,
-[ot][ot_danger_bl_act]:active, [ot][ot-danger-bl-active]:active,
-[ot][ot_danger_bl_active]:active, [ot][ot-danger-border-left-a]:active,
-[ot][ot_danger_border-left_a]:active, [ot][ot-danger-border-left-act]:active,
-[ot][ot_danger_border-left_act]:active, [ot][ot-danger-border-left-active]:active,
-[ot][ot_danger_border-left_active]:active, #ot__color__danger__border-left__active {
-  border-left-color: #dd6161;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__danger__border-left__focus, [ot][ot-dan-border-left-f]:focus,
 [ot][ot_dan_border-left_f]:focus, [ot][ot-dan-border-left-foc]:focus,
 [ot][ot_dan_border-left_foc]:focus, [ot][ot-dan-border-left-focus]:focus,
@@ -3130,24 +2250,6 @@ ot__color__danger__border-right__hover, [ot][ot-dan-border-right-h]:hover,
 [ot][ot_danger_border-right_hov]:hover, [ot][ot-danger-border-right-hover]:hover,
 [ot][ot_danger_border-right_hover]:hover, #ot__color__danger__border-right__hover {
   border-right-color: #f78989;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__danger__border-right__active, [ot][ot-dan-border-right-a]:active,
-[ot][ot_dan_border-right_a]:active, [ot][ot-dan-border-right-act]:active,
-[ot][ot_dan_border-right_act]:active, [ot][ot-dan-border-right-active]:active,
-[ot][ot_dan_border-right_active]:active, [ot][ot-dan-br-a]:active,
-[ot][ot_dan_br_a]:active, [ot][ot-dan-br-act]:active,
-[ot][ot_dan_br_act]:active, [ot][ot-dan-br-active]:active,
-[ot][ot_dan_br_active]:active, [ot][ot-danger-br-a]:active,
-[ot][ot_danger_br_a]:active, [ot][ot-danger-br-act]:active,
-[ot][ot_danger_br_act]:active, [ot][ot-danger-br-active]:active,
-[ot][ot_danger_br_active]:active, [ot][ot-danger-border-right-a]:active,
-[ot][ot_danger_border-right_a]:active, [ot][ot-danger-border-right-act]:active,
-[ot][ot_danger_border-right_act]:active, [ot][ot-danger-border-right-active]:active,
-[ot][ot_danger_border-right_active]:active, #ot__color__danger__border-right__active {
-  border-right-color: #dd6161;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -3197,24 +2299,6 @@ ot__color__danger__border-top__hover, [ot][ot-dan-border-top-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__danger__border-top__active, [ot][ot-dan-border-top-a]:active,
-[ot][ot_dan_border-top_a]:active, [ot][ot-dan-border-top-act]:active,
-[ot][ot_dan_border-top_act]:active, [ot][ot-dan-border-top-active]:active,
-[ot][ot_dan_border-top_active]:active, [ot][ot-dan-bt-a]:active,
-[ot][ot_dan_bt_a]:active, [ot][ot-dan-bt-act]:active,
-[ot][ot_dan_bt_act]:active, [ot][ot-dan-bt-active]:active,
-[ot][ot_dan_bt_active]:active, [ot][ot-danger-bt-a]:active,
-[ot][ot_danger_bt_a]:active, [ot][ot-danger-bt-act]:active,
-[ot][ot_danger_bt_act]:active, [ot][ot-danger-bt-active]:active,
-[ot][ot_danger_bt_active]:active, [ot][ot-danger-border-top-a]:active,
-[ot][ot_danger_border-top_a]:active, [ot][ot-danger-border-top-act]:active,
-[ot][ot_danger_border-top_act]:active, [ot][ot-danger-border-top-active]:active,
-[ot][ot_danger_border-top_active]:active, #ot__color__danger__border-top__active {
-  border-top-color: #dd6161;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__danger__border-top__focus, [ot][ot-dan-border-top-f]:focus,
 [ot][ot_dan_border-top_f]:focus, [ot][ot-dan-border-top-foc]:focus,
 [ot][ot_dan_border-top_foc]:focus, [ot][ot-dan-border-top-focus]:focus,
@@ -3260,24 +2344,6 @@ ot__color__danger__border-bottom__hover, [ot][ot-dan-border-bottom-h]:hover,
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
-ot__color__danger__border-bottom__active, [ot][ot-dan-border-bottom-a]:active,
-[ot][ot_dan_border-bottom_a]:active, [ot][ot-dan-border-bottom-act]:active,
-[ot][ot_dan_border-bottom_act]:active, [ot][ot-dan-border-bottom-active]:active,
-[ot][ot_dan_border-bottom_active]:active, [ot][ot-dan-bb-a]:active,
-[ot][ot_dan_bb_a]:active, [ot][ot-dan-bb-act]:active,
-[ot][ot_dan_bb_act]:active, [ot][ot-dan-bb-active]:active,
-[ot][ot_dan_bb_active]:active, [ot][ot-danger-bb-a]:active,
-[ot][ot_danger_bb_a]:active, [ot][ot-danger-bb-act]:active,
-[ot][ot_danger_bb_act]:active, [ot][ot-danger-bb-active]:active,
-[ot][ot_danger_bb_active]:active, [ot][ot-danger-border-bottom-a]:active,
-[ot][ot_danger_border-bottom_a]:active, [ot][ot-danger-border-bottom-act]:active,
-[ot][ot_danger_border-bottom_act]:active, [ot][ot-danger-border-bottom-active]:active,
-[ot][ot_danger_border-bottom_active]:active, #ot__color__danger__border-bottom__active {
-  border-bottom-color: #dd6161;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
 ot__color__danger__border-bottom__focus, [ot][ot-dan-border-bottom-f]:focus,
 [ot][ot_dan_border-bottom_f]:focus, [ot][ot-dan-border-bottom-foc]:focus,
 [ot][ot_dan_border-bottom_foc]:focus, [ot][ot-dan-border-bottom-focus]:focus,
@@ -3319,22 +2385,6 @@ ot__color__info__font__hover, [ot][ot-inf-font-h]:hover,
   color: #a6a9ad;
   cursor: pointer; }
 
-ot__color__info__font__active, [ot][ot-inf-font-a]:active,
-[ot][ot_inf_font_a]:active, [ot][ot-inf-font-act]:active,
-[ot][ot_inf_font_act]:active, [ot][ot-inf-font-active]:active,
-[ot][ot_inf_font_active]:active, [ot][ot-inf-f-a]:active,
-[ot][ot_inf_f_a]:active, [ot][ot-inf-f-act]:active,
-[ot][ot_inf_f_act]:active, [ot][ot-inf-f-active]:active,
-[ot][ot_inf_f_active]:active, [ot][ot-info-f-a]:active,
-[ot][ot_info_f_a]:active, [ot][ot-info-f-act]:active,
-[ot][ot_info_f_act]:active, [ot][ot-info-f-active]:active,
-[ot][ot_info_f_active]:active, [ot][ot-info-font-a]:active,
-[ot][ot_info_font_a]:active, [ot][ot-info-font-act]:active,
-[ot][ot_info_font_act]:active, [ot][ot-info-font-active]:active,
-[ot][ot_info_font_active]:active, #ot__color__info__font__active {
-  color: #82848a;
-  cursor: pointer; }
-
 ot__color__info__font__focus, [ot][ot-inf-font-f]:focus,
 [ot][ot_inf_font_f]:focus, [ot][ot-inf-font-foc]:focus,
 [ot][ot_inf_font_foc]:focus, [ot][ot-inf-font-focus]:focus,
@@ -3356,7 +2406,7 @@ ot__color__info__background__normal, [ot][ot-inf-background],
 [ot][ot_inf_bg], [ot][ot-info-bg],
 [ot][ot_info_bg], [ot][ot-info-background],
 [ot][ot_info_background], #ot__color__info__background__normal {
-  background-color: #909399; }
+  background-color: #f4f4f5; }
 
 ot__color__info__background__hover, [ot][ot-inf-background-h]:hover,
 [ot][ot_inf_background_h]:hover, [ot][ot-inf-background-hov]:hover,
@@ -3374,22 +2424,6 @@ ot__color__info__background__hover, [ot][ot-inf-background-h]:hover,
   background-color: #a6a9ad;
   cursor: pointer; }
 
-ot__color__info__background__active, [ot][ot-inf-background-a]:active,
-[ot][ot_inf_background_a]:active, [ot][ot-inf-background-act]:active,
-[ot][ot_inf_background_act]:active, [ot][ot-inf-background-active]:active,
-[ot][ot_inf_background_active]:active, [ot][ot-inf-bg-a]:active,
-[ot][ot_inf_bg_a]:active, [ot][ot-inf-bg-act]:active,
-[ot][ot_inf_bg_act]:active, [ot][ot-inf-bg-active]:active,
-[ot][ot_inf_bg_active]:active, [ot][ot-info-bg-a]:active,
-[ot][ot_info_bg_a]:active, [ot][ot-info-bg-act]:active,
-[ot][ot_info_bg_act]:active, [ot][ot-info-bg-active]:active,
-[ot][ot_info_bg_active]:active, [ot][ot-info-background-a]:active,
-[ot][ot_info_background_a]:active, [ot][ot-info-background-act]:active,
-[ot][ot_info_background_act]:active, [ot][ot-info-background-active]:active,
-[ot][ot_info_background_active]:active, #ot__color__info__background__active {
-  background-color: #82848a;
-  cursor: pointer; }
-
 ot__color__info__background__focus, [ot][ot-inf-background-f]:focus,
 [ot][ot_inf_background_f]:focus, [ot][ot-inf-background-foc]:focus,
 [ot][ot_inf_background_foc]:focus, [ot][ot-inf-background-focus]:focus,
@@ -3403,7 +2437,7 @@ ot__color__info__background__focus, [ot][ot-inf-background-f]:focus,
 [ot][ot_info_background_f]:focus, [ot][ot-info-background-foc]:focus,
 [ot][ot_info_background_foc]:focus, [ot][ot-info-background-focus]:focus,
 [ot][ot_info_background_focus]:focus, #ot__color__info__background__focus {
-  background-color: #909399;
+  background-color: #f4f4f5;
   cursor: pointer; }
 
 ot__color__info__border__normal, [ot][ot-inf-border],
@@ -3429,24 +2463,6 @@ ot__color__info__border__hover, [ot][ot-inf-border-h]:hover,
 [ot][ot_info_border_hov]:hover, [ot][ot-info-border-hover]:hover,
 [ot][ot_info_border_hover]:hover, #ot__color__info__border__hover {
   border-color: #a6a9ad;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px; }
-
-ot__color__info__border__active, [ot][ot-inf-border-a]:active,
-[ot][ot_inf_border_a]:active, [ot][ot-inf-border-act]:active,
-[ot][ot_inf_border_act]:active, [ot][ot-inf-border-active]:active,
-[ot][ot_inf_border_active]:active, [ot][ot-inf-b-a]:active,
-[ot][ot_inf_b_a]:active, [ot][ot-inf-b-act]:active,
-[ot][ot_inf_b_act]:active, [ot][ot-inf-b-active]:active,
-[ot][ot_inf_b_active]:active, [ot][ot-info-b-a]:active,
-[ot][ot_info_b_a]:active, [ot][ot-info-b-act]:active,
-[ot][ot_info_b_act]:active, [ot][ot-info-b-active]:active,
-[ot][ot_info_b_active]:active, [ot][ot-info-border-a]:active,
-[ot][ot_info_border_a]:active, [ot][ot-info-border-act]:active,
-[ot][ot_info_border_act]:active, [ot][ot-info-border-active]:active,
-[ot][ot_info_border_active]:active, #ot__color__info__border__active {
-  border-color: #82848a;
   cursor: pointer;
   border-style: solid;
   border-width: 1px; }
@@ -3496,24 +2512,6 @@ ot__color__info__border-left__hover, [ot][ot-inf-border-left-h]:hover,
   border-left-style: solid;
   border-left-width: 1px; }
 
-ot__color__info__border-left__active, [ot][ot-inf-border-left-a]:active,
-[ot][ot_inf_border-left_a]:active, [ot][ot-inf-border-left-act]:active,
-[ot][ot_inf_border-left_act]:active, [ot][ot-inf-border-left-active]:active,
-[ot][ot_inf_border-left_active]:active, [ot][ot-inf-bl-a]:active,
-[ot][ot_inf_bl_a]:active, [ot][ot-inf-bl-act]:active,
-[ot][ot_inf_bl_act]:active, [ot][ot-inf-bl-active]:active,
-[ot][ot_inf_bl_active]:active, [ot][ot-info-bl-a]:active,
-[ot][ot_info_bl_a]:active, [ot][ot-info-bl-act]:active,
-[ot][ot_info_bl_act]:active, [ot][ot-info-bl-active]:active,
-[ot][ot_info_bl_active]:active, [ot][ot-info-border-left-a]:active,
-[ot][ot_info_border-left_a]:active, [ot][ot-info-border-left-act]:active,
-[ot][ot_info_border-left_act]:active, [ot][ot-info-border-left-active]:active,
-[ot][ot_info_border-left_active]:active, #ot__color__info__border-left__active {
-  border-left-color: #82848a;
-  cursor: pointer;
-  border-left-style: solid;
-  border-left-width: 1px; }
-
 ot__color__info__border-left__focus, [ot][ot-inf-border-left-f]:focus,
 [ot][ot_inf_border-left_f]:focus, [ot][ot-inf-border-left-foc]:focus,
 [ot][ot_inf_border-left_foc]:focus, [ot][ot-inf-border-left-focus]:focus,
@@ -3555,24 +2553,6 @@ ot__color__info__border-right__hover, [ot][ot-inf-border-right-h]:hover,
 [ot][ot_info_border-right_hov]:hover, [ot][ot-info-border-right-hover]:hover,
 [ot][ot_info_border-right_hover]:hover, #ot__color__info__border-right__hover {
   border-right-color: #a6a9ad;
-  cursor: pointer;
-  border-right-style: solid;
-  border-right-width: 1px; }
-
-ot__color__info__border-right__active, [ot][ot-inf-border-right-a]:active,
-[ot][ot_inf_border-right_a]:active, [ot][ot-inf-border-right-act]:active,
-[ot][ot_inf_border-right_act]:active, [ot][ot-inf-border-right-active]:active,
-[ot][ot_inf_border-right_active]:active, [ot][ot-inf-br-a]:active,
-[ot][ot_inf_br_a]:active, [ot][ot-inf-br-act]:active,
-[ot][ot_inf_br_act]:active, [ot][ot-inf-br-active]:active,
-[ot][ot_inf_br_active]:active, [ot][ot-info-br-a]:active,
-[ot][ot_info_br_a]:active, [ot][ot-info-br-act]:active,
-[ot][ot_info_br_act]:active, [ot][ot-info-br-active]:active,
-[ot][ot_info_br_active]:active, [ot][ot-info-border-right-a]:active,
-[ot][ot_info_border-right_a]:active, [ot][ot-info-border-right-act]:active,
-[ot][ot_info_border-right_act]:active, [ot][ot-info-border-right-active]:active,
-[ot][ot_info_border-right_active]:active, #ot__color__info__border-right__active {
-  border-right-color: #82848a;
   cursor: pointer;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -3622,24 +2602,6 @@ ot__color__info__border-top__hover, [ot][ot-inf-border-top-h]:hover,
   border-top-style: solid;
   border-top-width: 1px; }
 
-ot__color__info__border-top__active, [ot][ot-inf-border-top-a]:active,
-[ot][ot_inf_border-top_a]:active, [ot][ot-inf-border-top-act]:active,
-[ot][ot_inf_border-top_act]:active, [ot][ot-inf-border-top-active]:active,
-[ot][ot_inf_border-top_active]:active, [ot][ot-inf-bt-a]:active,
-[ot][ot_inf_bt_a]:active, [ot][ot-inf-bt-act]:active,
-[ot][ot_inf_bt_act]:active, [ot][ot-inf-bt-active]:active,
-[ot][ot_inf_bt_active]:active, [ot][ot-info-bt-a]:active,
-[ot][ot_info_bt_a]:active, [ot][ot-info-bt-act]:active,
-[ot][ot_info_bt_act]:active, [ot][ot-info-bt-active]:active,
-[ot][ot_info_bt_active]:active, [ot][ot-info-border-top-a]:active,
-[ot][ot_info_border-top_a]:active, [ot][ot-info-border-top-act]:active,
-[ot][ot_info_border-top_act]:active, [ot][ot-info-border-top-active]:active,
-[ot][ot_info_border-top_active]:active, #ot__color__info__border-top__active {
-  border-top-color: #82848a;
-  cursor: pointer;
-  border-top-style: solid;
-  border-top-width: 1px; }
-
 ot__color__info__border-top__focus, [ot][ot-inf-border-top-f]:focus,
 [ot][ot_inf_border-top_f]:focus, [ot][ot-inf-border-top-foc]:focus,
 [ot][ot_inf_border-top_foc]:focus, [ot][ot-inf-border-top-focus]:focus,
@@ -3685,24 +2647,6 @@ ot__color__info__border-bottom__hover, [ot][ot-inf-border-bottom-h]:hover,
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
-ot__color__info__border-bottom__active, [ot][ot-inf-border-bottom-a]:active,
-[ot][ot_inf_border-bottom_a]:active, [ot][ot-inf-border-bottom-act]:active,
-[ot][ot_inf_border-bottom_act]:active, [ot][ot-inf-border-bottom-active]:active,
-[ot][ot_inf_border-bottom_active]:active, [ot][ot-inf-bb-a]:active,
-[ot][ot_inf_bb_a]:active, [ot][ot-inf-bb-act]:active,
-[ot][ot_inf_bb_act]:active, [ot][ot-inf-bb-active]:active,
-[ot][ot_inf_bb_active]:active, [ot][ot-info-bb-a]:active,
-[ot][ot_info_bb_a]:active, [ot][ot-info-bb-act]:active,
-[ot][ot_info_bb_act]:active, [ot][ot-info-bb-active]:active,
-[ot][ot_info_bb_active]:active, [ot][ot-info-border-bottom-a]:active,
-[ot][ot_info_border-bottom_a]:active, [ot][ot-info-border-bottom-act]:active,
-[ot][ot_info_border-bottom_act]:active, [ot][ot-info-border-bottom-active]:active,
-[ot][ot_info_border-bottom_active]:active, #ot__color__info__border-bottom__active {
-  border-bottom-color: #82848a;
-  cursor: pointer;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
 ot__color__info__border-bottom__focus, [ot][ot-inf-border-bottom-f]:focus,
 [ot][ot_inf_border-bottom_f]:focus, [ot][ot-inf-border-bottom-foc]:focus,
 [ot][ot_inf_border-bottom_foc]:focus, [ot][ot-inf-border-bottom-focus]:focus,
@@ -3717,6 +2661,1062 @@ ot__color__info__border-bottom__focus, [ot][ot-inf-border-bottom-f]:focus,
 [ot][ot_info_border-bottom_foc]:focus, [ot][ot-info-border-bottom-focus]:focus,
 [ot][ot_info_border-bottom_focus]:focus, #ot__color__info__border-bottom__focus {
   border-bottom-color: #909399;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__light__font__active, [ot][ot-lig-font-a]:active,
+[ot][ot_lig_font_a]:active, [ot][ot-lig-font-act]:active,
+[ot][ot_lig_font_act]:active, [ot][ot-lig-font-active]:active,
+[ot][ot_lig_font_active]:active, [ot][ot-lig-f-a]:active,
+[ot][ot_lig_f_a]:active, [ot][ot-lig-f-act]:active,
+[ot][ot_lig_f_act]:active, [ot][ot-lig-f-active]:active,
+[ot][ot_lig_f_active]:active, [ot][ot-light-f-a]:active,
+[ot][ot_light_f_a]:active, [ot][ot-light-f-act]:active,
+[ot][ot_light_f_act]:active, [ot][ot-light-f-active]:active,
+[ot][ot_light_f_active]:active, [ot][ot-light-font-a]:active,
+[ot][ot_light_font_a]:active, [ot][ot-light-font-act]:active,
+[ot][ot_light_font_act]:active, [ot][ot-light-font-active]:active,
+[ot][ot_light_font_active]:active, #ot__color__light__font__active {
+  color: #FFFFFF;
+  cursor: pointer; }
+
+ot__color__light__background__active, [ot][ot-lig-background-a]:active,
+[ot][ot_lig_background_a]:active, [ot][ot-lig-background-act]:active,
+[ot][ot_lig_background_act]:active, [ot][ot-lig-background-active]:active,
+[ot][ot_lig_background_active]:active, [ot][ot-lig-bg-a]:active,
+[ot][ot_lig_bg_a]:active, [ot][ot-lig-bg-act]:active,
+[ot][ot_lig_bg_act]:active, [ot][ot-lig-bg-active]:active,
+[ot][ot_lig_bg_active]:active, [ot][ot-light-bg-a]:active,
+[ot][ot_light_bg_a]:active, [ot][ot-light-bg-act]:active,
+[ot][ot_light_bg_act]:active, [ot][ot-light-bg-active]:active,
+[ot][ot_light_bg_active]:active, [ot][ot-light-background-a]:active,
+[ot][ot_light_background_a]:active, [ot][ot-light-background-act]:active,
+[ot][ot_light_background_act]:active, [ot][ot-light-background-active]:active,
+[ot][ot_light_background_active]:active, #ot__color__light__background__active {
+  background-color: #FFFFFF;
+  cursor: pointer; }
+
+ot__color__light__border__active, [ot][ot-lig-border-a]:active,
+[ot][ot_lig_border_a]:active, [ot][ot-lig-border-act]:active,
+[ot][ot_lig_border_act]:active, [ot][ot-lig-border-active]:active,
+[ot][ot_lig_border_active]:active, [ot][ot-lig-b-a]:active,
+[ot][ot_lig_b_a]:active, [ot][ot-lig-b-act]:active,
+[ot][ot_lig_b_act]:active, [ot][ot-lig-b-active]:active,
+[ot][ot_lig_b_active]:active, [ot][ot-light-b-a]:active,
+[ot][ot_light_b_a]:active, [ot][ot-light-b-act]:active,
+[ot][ot_light_b_act]:active, [ot][ot-light-b-active]:active,
+[ot][ot_light_b_active]:active, [ot][ot-light-border-a]:active,
+[ot][ot_light_border_a]:active, [ot][ot-light-border-act]:active,
+[ot][ot_light_border_act]:active, [ot][ot-light-border-active]:active,
+[ot][ot_light_border_active]:active, #ot__color__light__border__active {
+  border-color: #FFFFFF;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__light__border-left__active, [ot][ot-lig-border-left-a]:active,
+[ot][ot_lig_border-left_a]:active, [ot][ot-lig-border-left-act]:active,
+[ot][ot_lig_border-left_act]:active, [ot][ot-lig-border-left-active]:active,
+[ot][ot_lig_border-left_active]:active, [ot][ot-lig-bl-a]:active,
+[ot][ot_lig_bl_a]:active, [ot][ot-lig-bl-act]:active,
+[ot][ot_lig_bl_act]:active, [ot][ot-lig-bl-active]:active,
+[ot][ot_lig_bl_active]:active, [ot][ot-light-bl-a]:active,
+[ot][ot_light_bl_a]:active, [ot][ot-light-bl-act]:active,
+[ot][ot_light_bl_act]:active, [ot][ot-light-bl-active]:active,
+[ot][ot_light_bl_active]:active, [ot][ot-light-border-left-a]:active,
+[ot][ot_light_border-left_a]:active, [ot][ot-light-border-left-act]:active,
+[ot][ot_light_border-left_act]:active, [ot][ot-light-border-left-active]:active,
+[ot][ot_light_border-left_active]:active, #ot__color__light__border-left__active {
+  border-left-color: #FFFFFF;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__light__border-right__active, [ot][ot-lig-border-right-a]:active,
+[ot][ot_lig_border-right_a]:active, [ot][ot-lig-border-right-act]:active,
+[ot][ot_lig_border-right_act]:active, [ot][ot-lig-border-right-active]:active,
+[ot][ot_lig_border-right_active]:active, [ot][ot-lig-br-a]:active,
+[ot][ot_lig_br_a]:active, [ot][ot-lig-br-act]:active,
+[ot][ot_lig_br_act]:active, [ot][ot-lig-br-active]:active,
+[ot][ot_lig_br_active]:active, [ot][ot-light-br-a]:active,
+[ot][ot_light_br_a]:active, [ot][ot-light-br-act]:active,
+[ot][ot_light_br_act]:active, [ot][ot-light-br-active]:active,
+[ot][ot_light_br_active]:active, [ot][ot-light-border-right-a]:active,
+[ot][ot_light_border-right_a]:active, [ot][ot-light-border-right-act]:active,
+[ot][ot_light_border-right_act]:active, [ot][ot-light-border-right-active]:active,
+[ot][ot_light_border-right_active]:active, #ot__color__light__border-right__active {
+  border-right-color: #FFFFFF;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__light__border-top__active, [ot][ot-lig-border-top-a]:active,
+[ot][ot_lig_border-top_a]:active, [ot][ot-lig-border-top-act]:active,
+[ot][ot_lig_border-top_act]:active, [ot][ot-lig-border-top-active]:active,
+[ot][ot_lig_border-top_active]:active, [ot][ot-lig-bt-a]:active,
+[ot][ot_lig_bt_a]:active, [ot][ot-lig-bt-act]:active,
+[ot][ot_lig_bt_act]:active, [ot][ot-lig-bt-active]:active,
+[ot][ot_lig_bt_active]:active, [ot][ot-light-bt-a]:active,
+[ot][ot_light_bt_a]:active, [ot][ot-light-bt-act]:active,
+[ot][ot_light_bt_act]:active, [ot][ot-light-bt-active]:active,
+[ot][ot_light_bt_active]:active, [ot][ot-light-border-top-a]:active,
+[ot][ot_light_border-top_a]:active, [ot][ot-light-border-top-act]:active,
+[ot][ot_light_border-top_act]:active, [ot][ot-light-border-top-active]:active,
+[ot][ot_light_border-top_active]:active, #ot__color__light__border-top__active {
+  border-top-color: #FFFFFF;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__light__border-bottom__active, [ot][ot-lig-border-bottom-a]:active,
+[ot][ot_lig_border-bottom_a]:active, [ot][ot-lig-border-bottom-act]:active,
+[ot][ot_lig_border-bottom_act]:active, [ot][ot-lig-border-bottom-active]:active,
+[ot][ot_lig_border-bottom_active]:active, [ot][ot-lig-bb-a]:active,
+[ot][ot_lig_bb_a]:active, [ot][ot-lig-bb-act]:active,
+[ot][ot_lig_bb_act]:active, [ot][ot-lig-bb-active]:active,
+[ot][ot_lig_bb_active]:active, [ot][ot-light-bb-a]:active,
+[ot][ot_light_bb_a]:active, [ot][ot-light-bb-act]:active,
+[ot][ot_light_bb_act]:active, [ot][ot-light-bb-active]:active,
+[ot][ot_light_bb_active]:active, [ot][ot-light-border-bottom-a]:active,
+[ot][ot_light_border-bottom_a]:active, [ot][ot-light-border-bottom-act]:active,
+[ot][ot_light_border-bottom_act]:active, [ot][ot-light-border-bottom-active]:active,
+[ot][ot_light_border-bottom_active]:active, #ot__color__light__border-bottom__active {
+  border-bottom-color: #FFFFFF;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__dark__font__active, [ot][ot-dar-font-a]:active,
+[ot][ot_dar_font_a]:active, [ot][ot-dar-font-act]:active,
+[ot][ot_dar_font_act]:active, [ot][ot-dar-font-active]:active,
+[ot][ot_dar_font_active]:active, [ot][ot-dar-f-a]:active,
+[ot][ot_dar_f_a]:active, [ot][ot-dar-f-act]:active,
+[ot][ot_dar_f_act]:active, [ot][ot-dar-f-active]:active,
+[ot][ot_dar_f_active]:active, [ot][ot-dark-f-a]:active,
+[ot][ot_dark_f_a]:active, [ot][ot-dark-f-act]:active,
+[ot][ot_dark_f_act]:active, [ot][ot-dark-f-active]:active,
+[ot][ot_dark_f_active]:active, [ot][ot-dark-font-a]:active,
+[ot][ot_dark_font_a]:active, [ot][ot-dark-font-act]:active,
+[ot][ot_dark_font_act]:active, [ot][ot-dark-font-active]:active,
+[ot][ot_dark_font_active]:active, #ot__color__dark__font__active {
+  color: #333333;
+  cursor: pointer; }
+
+ot__color__dark__background__active, [ot][ot-dar-background-a]:active,
+[ot][ot_dar_background_a]:active, [ot][ot-dar-background-act]:active,
+[ot][ot_dar_background_act]:active, [ot][ot-dar-background-active]:active,
+[ot][ot_dar_background_active]:active, [ot][ot-dar-bg-a]:active,
+[ot][ot_dar_bg_a]:active, [ot][ot-dar-bg-act]:active,
+[ot][ot_dar_bg_act]:active, [ot][ot-dar-bg-active]:active,
+[ot][ot_dar_bg_active]:active, [ot][ot-dark-bg-a]:active,
+[ot][ot_dark_bg_a]:active, [ot][ot-dark-bg-act]:active,
+[ot][ot_dark_bg_act]:active, [ot][ot-dark-bg-active]:active,
+[ot][ot_dark_bg_active]:active, [ot][ot-dark-background-a]:active,
+[ot][ot_dark_background_a]:active, [ot][ot-dark-background-act]:active,
+[ot][ot_dark_background_act]:active, [ot][ot-dark-background-active]:active,
+[ot][ot_dark_background_active]:active, #ot__color__dark__background__active {
+  background-color: #333333;
+  cursor: pointer; }
+
+ot__color__dark__border__active, [ot][ot-dar-border-a]:active,
+[ot][ot_dar_border_a]:active, [ot][ot-dar-border-act]:active,
+[ot][ot_dar_border_act]:active, [ot][ot-dar-border-active]:active,
+[ot][ot_dar_border_active]:active, [ot][ot-dar-b-a]:active,
+[ot][ot_dar_b_a]:active, [ot][ot-dar-b-act]:active,
+[ot][ot_dar_b_act]:active, [ot][ot-dar-b-active]:active,
+[ot][ot_dar_b_active]:active, [ot][ot-dark-b-a]:active,
+[ot][ot_dark_b_a]:active, [ot][ot-dark-b-act]:active,
+[ot][ot_dark_b_act]:active, [ot][ot-dark-b-active]:active,
+[ot][ot_dark_b_active]:active, [ot][ot-dark-border-a]:active,
+[ot][ot_dark_border_a]:active, [ot][ot-dark-border-act]:active,
+[ot][ot_dark_border_act]:active, [ot][ot-dark-border-active]:active,
+[ot][ot_dark_border_active]:active, #ot__color__dark__border__active {
+  border-color: #333333;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__dark__border-left__active, [ot][ot-dar-border-left-a]:active,
+[ot][ot_dar_border-left_a]:active, [ot][ot-dar-border-left-act]:active,
+[ot][ot_dar_border-left_act]:active, [ot][ot-dar-border-left-active]:active,
+[ot][ot_dar_border-left_active]:active, [ot][ot-dar-bl-a]:active,
+[ot][ot_dar_bl_a]:active, [ot][ot-dar-bl-act]:active,
+[ot][ot_dar_bl_act]:active, [ot][ot-dar-bl-active]:active,
+[ot][ot_dar_bl_active]:active, [ot][ot-dark-bl-a]:active,
+[ot][ot_dark_bl_a]:active, [ot][ot-dark-bl-act]:active,
+[ot][ot_dark_bl_act]:active, [ot][ot-dark-bl-active]:active,
+[ot][ot_dark_bl_active]:active, [ot][ot-dark-border-left-a]:active,
+[ot][ot_dark_border-left_a]:active, [ot][ot-dark-border-left-act]:active,
+[ot][ot_dark_border-left_act]:active, [ot][ot-dark-border-left-active]:active,
+[ot][ot_dark_border-left_active]:active, #ot__color__dark__border-left__active {
+  border-left-color: #333333;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__dark__border-right__active, [ot][ot-dar-border-right-a]:active,
+[ot][ot_dar_border-right_a]:active, [ot][ot-dar-border-right-act]:active,
+[ot][ot_dar_border-right_act]:active, [ot][ot-dar-border-right-active]:active,
+[ot][ot_dar_border-right_active]:active, [ot][ot-dar-br-a]:active,
+[ot][ot_dar_br_a]:active, [ot][ot-dar-br-act]:active,
+[ot][ot_dar_br_act]:active, [ot][ot-dar-br-active]:active,
+[ot][ot_dar_br_active]:active, [ot][ot-dark-br-a]:active,
+[ot][ot_dark_br_a]:active, [ot][ot-dark-br-act]:active,
+[ot][ot_dark_br_act]:active, [ot][ot-dark-br-active]:active,
+[ot][ot_dark_br_active]:active, [ot][ot-dark-border-right-a]:active,
+[ot][ot_dark_border-right_a]:active, [ot][ot-dark-border-right-act]:active,
+[ot][ot_dark_border-right_act]:active, [ot][ot-dark-border-right-active]:active,
+[ot][ot_dark_border-right_active]:active, #ot__color__dark__border-right__active {
+  border-right-color: #333333;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__dark__border-top__active, [ot][ot-dar-border-top-a]:active,
+[ot][ot_dar_border-top_a]:active, [ot][ot-dar-border-top-act]:active,
+[ot][ot_dar_border-top_act]:active, [ot][ot-dar-border-top-active]:active,
+[ot][ot_dar_border-top_active]:active, [ot][ot-dar-bt-a]:active,
+[ot][ot_dar_bt_a]:active, [ot][ot-dar-bt-act]:active,
+[ot][ot_dar_bt_act]:active, [ot][ot-dar-bt-active]:active,
+[ot][ot_dar_bt_active]:active, [ot][ot-dark-bt-a]:active,
+[ot][ot_dark_bt_a]:active, [ot][ot-dark-bt-act]:active,
+[ot][ot_dark_bt_act]:active, [ot][ot-dark-bt-active]:active,
+[ot][ot_dark_bt_active]:active, [ot][ot-dark-border-top-a]:active,
+[ot][ot_dark_border-top_a]:active, [ot][ot-dark-border-top-act]:active,
+[ot][ot_dark_border-top_act]:active, [ot][ot-dark-border-top-active]:active,
+[ot][ot_dark_border-top_active]:active, #ot__color__dark__border-top__active {
+  border-top-color: #333333;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__dark__border-bottom__active, [ot][ot-dar-border-bottom-a]:active,
+[ot][ot_dar_border-bottom_a]:active, [ot][ot-dar-border-bottom-act]:active,
+[ot][ot_dar_border-bottom_act]:active, [ot][ot-dar-border-bottom-active]:active,
+[ot][ot_dar_border-bottom_active]:active, [ot][ot-dar-bb-a]:active,
+[ot][ot_dar_bb_a]:active, [ot][ot-dar-bb-act]:active,
+[ot][ot_dar_bb_act]:active, [ot][ot-dar-bb-active]:active,
+[ot][ot_dar_bb_active]:active, [ot][ot-dark-bb-a]:active,
+[ot][ot_dark_bb_a]:active, [ot][ot-dark-bb-act]:active,
+[ot][ot_dark_bb_act]:active, [ot][ot-dark-bb-active]:active,
+[ot][ot_dark_bb_active]:active, [ot][ot-dark-border-bottom-a]:active,
+[ot][ot_dark_border-bottom_a]:active, [ot][ot-dark-border-bottom-act]:active,
+[ot][ot_dark_border-bottom_act]:active, [ot][ot-dark-border-bottom-active]:active,
+[ot][ot_dark_border-bottom_active]:active, #ot__color__dark__border-bottom__active {
+  border-bottom-color: #333333;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__grey__font__active, [ot][ot-grey-f-a]:active,
+[ot][ot_grey_f_a]:active, [ot][ot-grey-f-act]:active,
+[ot][ot_grey_f_act]:active, [ot][ot-grey-f-active]:active,
+[ot][ot_grey_f_active]:active, [ot][ot-grey-font-a]:active,
+[ot][ot_grey_font_a]:active, [ot][ot-grey-font-act]:active,
+[ot][ot_grey_font_act]:active, [ot][ot-grey-font-active]:active,
+[ot][ot_grey_font_active]:active, #ot__color__grey__font__active {
+  color: #1a1a1a;
+  cursor: pointer; }
+
+ot__color__grey__background__active, [ot][ot-grey-bg-a]:active,
+[ot][ot_grey_bg_a]:active, [ot][ot-grey-bg-act]:active,
+[ot][ot_grey_bg_act]:active, [ot][ot-grey-bg-active]:active,
+[ot][ot_grey_bg_active]:active, [ot][ot-grey-background-a]:active,
+[ot][ot_grey_background_a]:active, [ot][ot-grey-background-act]:active,
+[ot][ot_grey_background_act]:active, [ot][ot-grey-background-active]:active,
+[ot][ot_grey_background_active]:active, #ot__color__grey__background__active {
+  background-color: #1a1a1a;
+  cursor: pointer; }
+
+ot__color__grey__border__active, [ot][ot-grey-b-a]:active,
+[ot][ot_grey_b_a]:active, [ot][ot-grey-b-act]:active,
+[ot][ot_grey_b_act]:active, [ot][ot-grey-b-active]:active,
+[ot][ot_grey_b_active]:active, [ot][ot-grey-border-a]:active,
+[ot][ot_grey_border_a]:active, [ot][ot-grey-border-act]:active,
+[ot][ot_grey_border_act]:active, [ot][ot-grey-border-active]:active,
+[ot][ot_grey_border_active]:active, #ot__color__grey__border__active {
+  border-color: #1a1a1a;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__grey__border-left__active, [ot][ot-grey-bl-a]:active,
+[ot][ot_grey_bl_a]:active, [ot][ot-grey-bl-act]:active,
+[ot][ot_grey_bl_act]:active, [ot][ot-grey-bl-active]:active,
+[ot][ot_grey_bl_active]:active, [ot][ot-grey-border-left-a]:active,
+[ot][ot_grey_border-left_a]:active, [ot][ot-grey-border-left-act]:active,
+[ot][ot_grey_border-left_act]:active, [ot][ot-grey-border-left-active]:active,
+[ot][ot_grey_border-left_active]:active, #ot__color__grey__border-left__active {
+  border-left-color: #1a1a1a;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__grey__border-right__active, [ot][ot-grey-br-a]:active,
+[ot][ot_grey_br_a]:active, [ot][ot-grey-br-act]:active,
+[ot][ot_grey_br_act]:active, [ot][ot-grey-br-active]:active,
+[ot][ot_grey_br_active]:active, [ot][ot-grey-border-right-a]:active,
+[ot][ot_grey_border-right_a]:active, [ot][ot-grey-border-right-act]:active,
+[ot][ot_grey_border-right_act]:active, [ot][ot-grey-border-right-active]:active,
+[ot][ot_grey_border-right_active]:active, #ot__color__grey__border-right__active {
+  border-right-color: #1a1a1a;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__grey__border-top__active, [ot][ot-grey-bt-a]:active,
+[ot][ot_grey_bt_a]:active, [ot][ot-grey-bt-act]:active,
+[ot][ot_grey_bt_act]:active, [ot][ot-grey-bt-active]:active,
+[ot][ot_grey_bt_active]:active, [ot][ot-grey-border-top-a]:active,
+[ot][ot_grey_border-top_a]:active, [ot][ot-grey-border-top-act]:active,
+[ot][ot_grey_border-top_act]:active, [ot][ot-grey-border-top-active]:active,
+[ot][ot_grey_border-top_active]:active, #ot__color__grey__border-top__active {
+  border-top-color: #1a1a1a;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__grey__border-bottom__active, [ot][ot-grey-bb-a]:active,
+[ot][ot_grey_bb_a]:active, [ot][ot-grey-bb-act]:active,
+[ot][ot_grey_bb_act]:active, [ot][ot-grey-bb-active]:active,
+[ot][ot_grey_bb_active]:active, [ot][ot-grey-border-bottom-a]:active,
+[ot][ot_grey_border-bottom_a]:active, [ot][ot-grey-border-bottom-act]:active,
+[ot][ot_grey_border-bottom_act]:active, [ot][ot-grey-border-bottom-active]:active,
+[ot][ot_grey_border-bottom_active]:active, #ot__color__grey__border-bottom__active {
+  border-bottom-color: #1a1a1a;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__default__font__active, [ot][ot-def-font-a]:active,
+[ot][ot_def_font_a]:active, [ot][ot-def-font-act]:active,
+[ot][ot_def_font_act]:active, [ot][ot-def-font-active]:active,
+[ot][ot_def_font_active]:active, [ot][ot-def-f-a]:active,
+[ot][ot_def_f_a]:active, [ot][ot-def-f-act]:active,
+[ot][ot_def_f_act]:active, [ot][ot-def-f-active]:active,
+[ot][ot_def_f_active]:active, [ot][ot-default-f-a]:active,
+[ot][ot_default_f_a]:active, [ot][ot-default-f-act]:active,
+[ot][ot_default_f_act]:active, [ot][ot-default-f-active]:active,
+[ot][ot_default_f_active]:active, [ot][ot-default-font-a]:active,
+[ot][ot_default_font_a]:active, [ot][ot-default-font-act]:active,
+[ot][ot_default_font_act]:active, [ot][ot-default-font-active]:active,
+[ot][ot_default_font_active]:active, #ot__color__default__font__active {
+  color: #2c3f50;
+  cursor: pointer; }
+
+ot__color__default__background__active, [ot][ot-def-background-a]:active,
+[ot][ot_def_background_a]:active, [ot][ot-def-background-act]:active,
+[ot][ot_def_background_act]:active, [ot][ot-def-background-active]:active,
+[ot][ot_def_background_active]:active, [ot][ot-def-bg-a]:active,
+[ot][ot_def_bg_a]:active, [ot][ot-def-bg-act]:active,
+[ot][ot_def_bg_act]:active, [ot][ot-def-bg-active]:active,
+[ot][ot_def_bg_active]:active, [ot][ot-default-bg-a]:active,
+[ot][ot_default_bg_a]:active, [ot][ot-default-bg-act]:active,
+[ot][ot_default_bg_act]:active, [ot][ot-default-bg-active]:active,
+[ot][ot_default_bg_active]:active, [ot][ot-default-background-a]:active,
+[ot][ot_default_background_a]:active, [ot][ot-default-background-act]:active,
+[ot][ot_default_background_act]:active, [ot][ot-default-background-active]:active,
+[ot][ot_default_background_active]:active, #ot__color__default__background__active {
+  background-color: #3a8ee6;
+  cursor: pointer; }
+
+ot__color__default__border__active, [ot][ot-def-border-a]:active,
+[ot][ot_def_border_a]:active, [ot][ot-def-border-act]:active,
+[ot][ot_def_border_act]:active, [ot][ot-def-border-active]:active,
+[ot][ot_def_border_active]:active, [ot][ot-def-b-a]:active,
+[ot][ot_def_b_a]:active, [ot][ot-def-b-act]:active,
+[ot][ot_def_b_act]:active, [ot][ot-def-b-active]:active,
+[ot][ot_def_b_active]:active, [ot][ot-default-b-a]:active,
+[ot][ot_default_b_a]:active, [ot][ot-default-b-act]:active,
+[ot][ot_default_b_act]:active, [ot][ot-default-b-active]:active,
+[ot][ot_default_b_active]:active, [ot][ot-default-border-a]:active,
+[ot][ot_default_border_a]:active, [ot][ot-default-border-act]:active,
+[ot][ot_default_border_act]:active, [ot][ot-default-border-active]:active,
+[ot][ot_default_border_active]:active, #ot__color__default__border__active {
+  border-color: #3a8ee6;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__default__border-left__active, [ot][ot-def-border-left-a]:active,
+[ot][ot_def_border-left_a]:active, [ot][ot-def-border-left-act]:active,
+[ot][ot_def_border-left_act]:active, [ot][ot-def-border-left-active]:active,
+[ot][ot_def_border-left_active]:active, [ot][ot-def-bl-a]:active,
+[ot][ot_def_bl_a]:active, [ot][ot-def-bl-act]:active,
+[ot][ot_def_bl_act]:active, [ot][ot-def-bl-active]:active,
+[ot][ot_def_bl_active]:active, [ot][ot-default-bl-a]:active,
+[ot][ot_default_bl_a]:active, [ot][ot-default-bl-act]:active,
+[ot][ot_default_bl_act]:active, [ot][ot-default-bl-active]:active,
+[ot][ot_default_bl_active]:active, [ot][ot-default-border-left-a]:active,
+[ot][ot_default_border-left_a]:active, [ot][ot-default-border-left-act]:active,
+[ot][ot_default_border-left_act]:active, [ot][ot-default-border-left-active]:active,
+[ot][ot_default_border-left_active]:active, #ot__color__default__border-left__active {
+  border-left-color: #3a8ee6;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__default__border-right__active, [ot][ot-def-border-right-a]:active,
+[ot][ot_def_border-right_a]:active, [ot][ot-def-border-right-act]:active,
+[ot][ot_def_border-right_act]:active, [ot][ot-def-border-right-active]:active,
+[ot][ot_def_border-right_active]:active, [ot][ot-def-br-a]:active,
+[ot][ot_def_br_a]:active, [ot][ot-def-br-act]:active,
+[ot][ot_def_br_act]:active, [ot][ot-def-br-active]:active,
+[ot][ot_def_br_active]:active, [ot][ot-default-br-a]:active,
+[ot][ot_default_br_a]:active, [ot][ot-default-br-act]:active,
+[ot][ot_default_br_act]:active, [ot][ot-default-br-active]:active,
+[ot][ot_default_br_active]:active, [ot][ot-default-border-right-a]:active,
+[ot][ot_default_border-right_a]:active, [ot][ot-default-border-right-act]:active,
+[ot][ot_default_border-right_act]:active, [ot][ot-default-border-right-active]:active,
+[ot][ot_default_border-right_active]:active, #ot__color__default__border-right__active {
+  border-right-color: #3a8ee6;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__default__border-top__active, [ot][ot-def-border-top-a]:active,
+[ot][ot_def_border-top_a]:active, [ot][ot-def-border-top-act]:active,
+[ot][ot_def_border-top_act]:active, [ot][ot-def-border-top-active]:active,
+[ot][ot_def_border-top_active]:active, [ot][ot-def-bt-a]:active,
+[ot][ot_def_bt_a]:active, [ot][ot-def-bt-act]:active,
+[ot][ot_def_bt_act]:active, [ot][ot-def-bt-active]:active,
+[ot][ot_def_bt_active]:active, [ot][ot-default-bt-a]:active,
+[ot][ot_default_bt_a]:active, [ot][ot-default-bt-act]:active,
+[ot][ot_default_bt_act]:active, [ot][ot-default-bt-active]:active,
+[ot][ot_default_bt_active]:active, [ot][ot-default-border-top-a]:active,
+[ot][ot_default_border-top_a]:active, [ot][ot-default-border-top-act]:active,
+[ot][ot_default_border-top_act]:active, [ot][ot-default-border-top-active]:active,
+[ot][ot_default_border-top_active]:active, #ot__color__default__border-top__active {
+  border-top-color: #3a8ee6;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__default__border-bottom__active, [ot][ot-def-border-bottom-a]:active,
+[ot][ot_def_border-bottom_a]:active, [ot][ot-def-border-bottom-act]:active,
+[ot][ot_def_border-bottom_act]:active, [ot][ot-def-border-bottom-active]:active,
+[ot][ot_def_border-bottom_active]:active, [ot][ot-def-bb-a]:active,
+[ot][ot_def_bb_a]:active, [ot][ot-def-bb-act]:active,
+[ot][ot_def_bb_act]:active, [ot][ot-def-bb-active]:active,
+[ot][ot_def_bb_active]:active, [ot][ot-default-bb-a]:active,
+[ot][ot_default_bb_a]:active, [ot][ot-default-bb-act]:active,
+[ot][ot_default_bb_act]:active, [ot][ot-default-bb-active]:active,
+[ot][ot_default_bb_active]:active, [ot][ot-default-border-bottom-a]:active,
+[ot][ot_default_border-bottom_a]:active, [ot][ot-default-border-bottom-act]:active,
+[ot][ot_default_border-bottom_act]:active, [ot][ot-default-border-bottom-active]:active,
+[ot][ot_default_border-bottom_active]:active, #ot__color__default__border-bottom__active {
+  border-bottom-color: #3a8ee6;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__primary__font__active, [ot][ot-pri-font-a]:active,
+[ot][ot_pri_font_a]:active, [ot][ot-pri-font-act]:active,
+[ot][ot_pri_font_act]:active, [ot][ot-pri-font-active]:active,
+[ot][ot_pri_font_active]:active, [ot][ot-pri-f-a]:active,
+[ot][ot_pri_f_a]:active, [ot][ot-pri-f-act]:active,
+[ot][ot_pri_f_act]:active, [ot][ot-pri-f-active]:active,
+[ot][ot_pri_f_active]:active, [ot][ot-primary-f-a]:active,
+[ot][ot_primary_f_a]:active, [ot][ot-primary-f-act]:active,
+[ot][ot_primary_f_act]:active, [ot][ot-primary-f-active]:active,
+[ot][ot_primary_f_active]:active, [ot][ot-primary-font-a]:active,
+[ot][ot_primary_font_a]:active, [ot][ot-primary-font-act]:active,
+[ot][ot_primary_font_act]:active, [ot][ot-primary-font-active]:active,
+[ot][ot_primary_font_active]:active, #ot__color__primary__font__active {
+  color: #3a8ee6;
+  cursor: pointer; }
+
+ot__color__primary__background__active, [ot][ot-pri-background-a]:active,
+[ot][ot_pri_background_a]:active, [ot][ot-pri-background-act]:active,
+[ot][ot_pri_background_act]:active, [ot][ot-pri-background-active]:active,
+[ot][ot_pri_background_active]:active, [ot][ot-pri-bg-a]:active,
+[ot][ot_pri_bg_a]:active, [ot][ot-pri-bg-act]:active,
+[ot][ot_pri_bg_act]:active, [ot][ot-pri-bg-active]:active,
+[ot][ot_pri_bg_active]:active, [ot][ot-primary-bg-a]:active,
+[ot][ot_primary_bg_a]:active, [ot][ot-primary-bg-act]:active,
+[ot][ot_primary_bg_act]:active, [ot][ot-primary-bg-active]:active,
+[ot][ot_primary_bg_active]:active, [ot][ot-primary-background-a]:active,
+[ot][ot_primary_background_a]:active, [ot][ot-primary-background-act]:active,
+[ot][ot_primary_background_act]:active, [ot][ot-primary-background-active]:active,
+[ot][ot_primary_background_active]:active, #ot__color__primary__background__active {
+  background-color: #3a8ee6;
+  cursor: pointer; }
+
+ot__color__primary__border__active, [ot][ot-pri-border-a]:active,
+[ot][ot_pri_border_a]:active, [ot][ot-pri-border-act]:active,
+[ot][ot_pri_border_act]:active, [ot][ot-pri-border-active]:active,
+[ot][ot_pri_border_active]:active, [ot][ot-pri-b-a]:active,
+[ot][ot_pri_b_a]:active, [ot][ot-pri-b-act]:active,
+[ot][ot_pri_b_act]:active, [ot][ot-pri-b-active]:active,
+[ot][ot_pri_b_active]:active, [ot][ot-primary-b-a]:active,
+[ot][ot_primary_b_a]:active, [ot][ot-primary-b-act]:active,
+[ot][ot_primary_b_act]:active, [ot][ot-primary-b-active]:active,
+[ot][ot_primary_b_active]:active, [ot][ot-primary-border-a]:active,
+[ot][ot_primary_border_a]:active, [ot][ot-primary-border-act]:active,
+[ot][ot_primary_border_act]:active, [ot][ot-primary-border-active]:active,
+[ot][ot_primary_border_active]:active, #ot__color__primary__border__active {
+  border-color: #3a8ee6;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__primary__border-left__active, [ot][ot-pri-border-left-a]:active,
+[ot][ot_pri_border-left_a]:active, [ot][ot-pri-border-left-act]:active,
+[ot][ot_pri_border-left_act]:active, [ot][ot-pri-border-left-active]:active,
+[ot][ot_pri_border-left_active]:active, [ot][ot-pri-bl-a]:active,
+[ot][ot_pri_bl_a]:active, [ot][ot-pri-bl-act]:active,
+[ot][ot_pri_bl_act]:active, [ot][ot-pri-bl-active]:active,
+[ot][ot_pri_bl_active]:active, [ot][ot-primary-bl-a]:active,
+[ot][ot_primary_bl_a]:active, [ot][ot-primary-bl-act]:active,
+[ot][ot_primary_bl_act]:active, [ot][ot-primary-bl-active]:active,
+[ot][ot_primary_bl_active]:active, [ot][ot-primary-border-left-a]:active,
+[ot][ot_primary_border-left_a]:active, [ot][ot-primary-border-left-act]:active,
+[ot][ot_primary_border-left_act]:active, [ot][ot-primary-border-left-active]:active,
+[ot][ot_primary_border-left_active]:active, #ot__color__primary__border-left__active {
+  border-left-color: #3a8ee6;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__primary__border-right__active, [ot][ot-pri-border-right-a]:active,
+[ot][ot_pri_border-right_a]:active, [ot][ot-pri-border-right-act]:active,
+[ot][ot_pri_border-right_act]:active, [ot][ot-pri-border-right-active]:active,
+[ot][ot_pri_border-right_active]:active, [ot][ot-pri-br-a]:active,
+[ot][ot_pri_br_a]:active, [ot][ot-pri-br-act]:active,
+[ot][ot_pri_br_act]:active, [ot][ot-pri-br-active]:active,
+[ot][ot_pri_br_active]:active, [ot][ot-primary-br-a]:active,
+[ot][ot_primary_br_a]:active, [ot][ot-primary-br-act]:active,
+[ot][ot_primary_br_act]:active, [ot][ot-primary-br-active]:active,
+[ot][ot_primary_br_active]:active, [ot][ot-primary-border-right-a]:active,
+[ot][ot_primary_border-right_a]:active, [ot][ot-primary-border-right-act]:active,
+[ot][ot_primary_border-right_act]:active, [ot][ot-primary-border-right-active]:active,
+[ot][ot_primary_border-right_active]:active, #ot__color__primary__border-right__active {
+  border-right-color: #3a8ee6;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__primary__border-top__active, [ot][ot-pri-border-top-a]:active,
+[ot][ot_pri_border-top_a]:active, [ot][ot-pri-border-top-act]:active,
+[ot][ot_pri_border-top_act]:active, [ot][ot-pri-border-top-active]:active,
+[ot][ot_pri_border-top_active]:active, [ot][ot-pri-bt-a]:active,
+[ot][ot_pri_bt_a]:active, [ot][ot-pri-bt-act]:active,
+[ot][ot_pri_bt_act]:active, [ot][ot-pri-bt-active]:active,
+[ot][ot_pri_bt_active]:active, [ot][ot-primary-bt-a]:active,
+[ot][ot_primary_bt_a]:active, [ot][ot-primary-bt-act]:active,
+[ot][ot_primary_bt_act]:active, [ot][ot-primary-bt-active]:active,
+[ot][ot_primary_bt_active]:active, [ot][ot-primary-border-top-a]:active,
+[ot][ot_primary_border-top_a]:active, [ot][ot-primary-border-top-act]:active,
+[ot][ot_primary_border-top_act]:active, [ot][ot-primary-border-top-active]:active,
+[ot][ot_primary_border-top_active]:active, #ot__color__primary__border-top__active {
+  border-top-color: #3a8ee6;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__primary__border-bottom__active, [ot][ot-pri-border-bottom-a]:active,
+[ot][ot_pri_border-bottom_a]:active, [ot][ot-pri-border-bottom-act]:active,
+[ot][ot_pri_border-bottom_act]:active, [ot][ot-pri-border-bottom-active]:active,
+[ot][ot_pri_border-bottom_active]:active, [ot][ot-pri-bb-a]:active,
+[ot][ot_pri_bb_a]:active, [ot][ot-pri-bb-act]:active,
+[ot][ot_pri_bb_act]:active, [ot][ot-pri-bb-active]:active,
+[ot][ot_pri_bb_active]:active, [ot][ot-primary-bb-a]:active,
+[ot][ot_primary_bb_a]:active, [ot][ot-primary-bb-act]:active,
+[ot][ot_primary_bb_act]:active, [ot][ot-primary-bb-active]:active,
+[ot][ot_primary_bb_active]:active, [ot][ot-primary-border-bottom-a]:active,
+[ot][ot_primary_border-bottom_a]:active, [ot][ot-primary-border-bottom-act]:active,
+[ot][ot_primary_border-bottom_act]:active, [ot][ot-primary-border-bottom-active]:active,
+[ot][ot_primary_border-bottom_active]:active, #ot__color__primary__border-bottom__active {
+  border-bottom-color: #3a8ee6;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__success__font__active, [ot][ot-suc-font-a]:active,
+[ot][ot_suc_font_a]:active, [ot][ot-suc-font-act]:active,
+[ot][ot_suc_font_act]:active, [ot][ot-suc-font-active]:active,
+[ot][ot_suc_font_active]:active, [ot][ot-suc-f-a]:active,
+[ot][ot_suc_f_a]:active, [ot][ot-suc-f-act]:active,
+[ot][ot_suc_f_act]:active, [ot][ot-suc-f-active]:active,
+[ot][ot_suc_f_active]:active, [ot][ot-success-f-a]:active,
+[ot][ot_success_f_a]:active, [ot][ot-success-f-act]:active,
+[ot][ot_success_f_act]:active, [ot][ot-success-f-active]:active,
+[ot][ot_success_f_active]:active, [ot][ot-success-font-a]:active,
+[ot][ot_success_font_a]:active, [ot][ot-success-font-act]:active,
+[ot][ot_success_font_act]:active, [ot][ot-success-font-active]:active,
+[ot][ot_success_font_active]:active, #ot__color__success__font__active {
+  color: #5daf34;
+  cursor: pointer; }
+
+ot__color__success__background__active, [ot][ot-suc-background-a]:active,
+[ot][ot_suc_background_a]:active, [ot][ot-suc-background-act]:active,
+[ot][ot_suc_background_act]:active, [ot][ot-suc-background-active]:active,
+[ot][ot_suc_background_active]:active, [ot][ot-suc-bg-a]:active,
+[ot][ot_suc_bg_a]:active, [ot][ot-suc-bg-act]:active,
+[ot][ot_suc_bg_act]:active, [ot][ot-suc-bg-active]:active,
+[ot][ot_suc_bg_active]:active, [ot][ot-success-bg-a]:active,
+[ot][ot_success_bg_a]:active, [ot][ot-success-bg-act]:active,
+[ot][ot_success_bg_act]:active, [ot][ot-success-bg-active]:active,
+[ot][ot_success_bg_active]:active, [ot][ot-success-background-a]:active,
+[ot][ot_success_background_a]:active, [ot][ot-success-background-act]:active,
+[ot][ot_success_background_act]:active, [ot][ot-success-background-active]:active,
+[ot][ot_success_background_active]:active, #ot__color__success__background__active {
+  background-color: #5daf34;
+  cursor: pointer; }
+
+ot__color__success__border__active, [ot][ot-suc-border-a]:active,
+[ot][ot_suc_border_a]:active, [ot][ot-suc-border-act]:active,
+[ot][ot_suc_border_act]:active, [ot][ot-suc-border-active]:active,
+[ot][ot_suc_border_active]:active, [ot][ot-suc-b-a]:active,
+[ot][ot_suc_b_a]:active, [ot][ot-suc-b-act]:active,
+[ot][ot_suc_b_act]:active, [ot][ot-suc-b-active]:active,
+[ot][ot_suc_b_active]:active, [ot][ot-success-b-a]:active,
+[ot][ot_success_b_a]:active, [ot][ot-success-b-act]:active,
+[ot][ot_success_b_act]:active, [ot][ot-success-b-active]:active,
+[ot][ot_success_b_active]:active, [ot][ot-success-border-a]:active,
+[ot][ot_success_border_a]:active, [ot][ot-success-border-act]:active,
+[ot][ot_success_border_act]:active, [ot][ot-success-border-active]:active,
+[ot][ot_success_border_active]:active, #ot__color__success__border__active {
+  border-color: #5daf34;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__success__border-left__active, [ot][ot-suc-border-left-a]:active,
+[ot][ot_suc_border-left_a]:active, [ot][ot-suc-border-left-act]:active,
+[ot][ot_suc_border-left_act]:active, [ot][ot-suc-border-left-active]:active,
+[ot][ot_suc_border-left_active]:active, [ot][ot-suc-bl-a]:active,
+[ot][ot_suc_bl_a]:active, [ot][ot-suc-bl-act]:active,
+[ot][ot_suc_bl_act]:active, [ot][ot-suc-bl-active]:active,
+[ot][ot_suc_bl_active]:active, [ot][ot-success-bl-a]:active,
+[ot][ot_success_bl_a]:active, [ot][ot-success-bl-act]:active,
+[ot][ot_success_bl_act]:active, [ot][ot-success-bl-active]:active,
+[ot][ot_success_bl_active]:active, [ot][ot-success-border-left-a]:active,
+[ot][ot_success_border-left_a]:active, [ot][ot-success-border-left-act]:active,
+[ot][ot_success_border-left_act]:active, [ot][ot-success-border-left-active]:active,
+[ot][ot_success_border-left_active]:active, #ot__color__success__border-left__active {
+  border-left-color: #5daf34;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__success__border-right__active, [ot][ot-suc-border-right-a]:active,
+[ot][ot_suc_border-right_a]:active, [ot][ot-suc-border-right-act]:active,
+[ot][ot_suc_border-right_act]:active, [ot][ot-suc-border-right-active]:active,
+[ot][ot_suc_border-right_active]:active, [ot][ot-suc-br-a]:active,
+[ot][ot_suc_br_a]:active, [ot][ot-suc-br-act]:active,
+[ot][ot_suc_br_act]:active, [ot][ot-suc-br-active]:active,
+[ot][ot_suc_br_active]:active, [ot][ot-success-br-a]:active,
+[ot][ot_success_br_a]:active, [ot][ot-success-br-act]:active,
+[ot][ot_success_br_act]:active, [ot][ot-success-br-active]:active,
+[ot][ot_success_br_active]:active, [ot][ot-success-border-right-a]:active,
+[ot][ot_success_border-right_a]:active, [ot][ot-success-border-right-act]:active,
+[ot][ot_success_border-right_act]:active, [ot][ot-success-border-right-active]:active,
+[ot][ot_success_border-right_active]:active, #ot__color__success__border-right__active {
+  border-right-color: #5daf34;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__success__border-top__active, [ot][ot-suc-border-top-a]:active,
+[ot][ot_suc_border-top_a]:active, [ot][ot-suc-border-top-act]:active,
+[ot][ot_suc_border-top_act]:active, [ot][ot-suc-border-top-active]:active,
+[ot][ot_suc_border-top_active]:active, [ot][ot-suc-bt-a]:active,
+[ot][ot_suc_bt_a]:active, [ot][ot-suc-bt-act]:active,
+[ot][ot_suc_bt_act]:active, [ot][ot-suc-bt-active]:active,
+[ot][ot_suc_bt_active]:active, [ot][ot-success-bt-a]:active,
+[ot][ot_success_bt_a]:active, [ot][ot-success-bt-act]:active,
+[ot][ot_success_bt_act]:active, [ot][ot-success-bt-active]:active,
+[ot][ot_success_bt_active]:active, [ot][ot-success-border-top-a]:active,
+[ot][ot_success_border-top_a]:active, [ot][ot-success-border-top-act]:active,
+[ot][ot_success_border-top_act]:active, [ot][ot-success-border-top-active]:active,
+[ot][ot_success_border-top_active]:active, #ot__color__success__border-top__active {
+  border-top-color: #5daf34;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__success__border-bottom__active, [ot][ot-suc-border-bottom-a]:active,
+[ot][ot_suc_border-bottom_a]:active, [ot][ot-suc-border-bottom-act]:active,
+[ot][ot_suc_border-bottom_act]:active, [ot][ot-suc-border-bottom-active]:active,
+[ot][ot_suc_border-bottom_active]:active, [ot][ot-suc-bb-a]:active,
+[ot][ot_suc_bb_a]:active, [ot][ot-suc-bb-act]:active,
+[ot][ot_suc_bb_act]:active, [ot][ot-suc-bb-active]:active,
+[ot][ot_suc_bb_active]:active, [ot][ot-success-bb-a]:active,
+[ot][ot_success_bb_a]:active, [ot][ot-success-bb-act]:active,
+[ot][ot_success_bb_act]:active, [ot][ot-success-bb-active]:active,
+[ot][ot_success_bb_active]:active, [ot][ot-success-border-bottom-a]:active,
+[ot][ot_success_border-bottom_a]:active, [ot][ot-success-border-bottom-act]:active,
+[ot][ot_success_border-bottom_act]:active, [ot][ot-success-border-bottom-active]:active,
+[ot][ot_success_border-bottom_active]:active, #ot__color__success__border-bottom__active {
+  border-bottom-color: #5daf34;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__warning__font__active, [ot][ot-war-font-a]:active,
+[ot][ot_war_font_a]:active, [ot][ot-war-font-act]:active,
+[ot][ot_war_font_act]:active, [ot][ot-war-font-active]:active,
+[ot][ot_war_font_active]:active, [ot][ot-war-f-a]:active,
+[ot][ot_war_f_a]:active, [ot][ot-war-f-act]:active,
+[ot][ot_war_f_act]:active, [ot][ot-war-f-active]:active,
+[ot][ot_war_f_active]:active, [ot][ot-warning-f-a]:active,
+[ot][ot_warning_f_a]:active, [ot][ot-warning-f-act]:active,
+[ot][ot_warning_f_act]:active, [ot][ot-warning-f-active]:active,
+[ot][ot_warning_f_active]:active, [ot][ot-warning-font-a]:active,
+[ot][ot_warning_font_a]:active, [ot][ot-warning-font-act]:active,
+[ot][ot_warning_font_act]:active, [ot][ot-warning-font-active]:active,
+[ot][ot_warning_font_active]:active, #ot__color__warning__font__active {
+  color: #cf9236;
+  cursor: pointer; }
+
+ot__color__warning__background__active, [ot][ot-war-background-a]:active,
+[ot][ot_war_background_a]:active, [ot][ot-war-background-act]:active,
+[ot][ot_war_background_act]:active, [ot][ot-war-background-active]:active,
+[ot][ot_war_background_active]:active, [ot][ot-war-bg-a]:active,
+[ot][ot_war_bg_a]:active, [ot][ot-war-bg-act]:active,
+[ot][ot_war_bg_act]:active, [ot][ot-war-bg-active]:active,
+[ot][ot_war_bg_active]:active, [ot][ot-warning-bg-a]:active,
+[ot][ot_warning_bg_a]:active, [ot][ot-warning-bg-act]:active,
+[ot][ot_warning_bg_act]:active, [ot][ot-warning-bg-active]:active,
+[ot][ot_warning_bg_active]:active, [ot][ot-warning-background-a]:active,
+[ot][ot_warning_background_a]:active, [ot][ot-warning-background-act]:active,
+[ot][ot_warning_background_act]:active, [ot][ot-warning-background-active]:active,
+[ot][ot_warning_background_active]:active, #ot__color__warning__background__active {
+  background-color: #cf9236;
+  cursor: pointer; }
+
+ot__color__warning__border__active, [ot][ot-war-border-a]:active,
+[ot][ot_war_border_a]:active, [ot][ot-war-border-act]:active,
+[ot][ot_war_border_act]:active, [ot][ot-war-border-active]:active,
+[ot][ot_war_border_active]:active, [ot][ot-war-b-a]:active,
+[ot][ot_war_b_a]:active, [ot][ot-war-b-act]:active,
+[ot][ot_war_b_act]:active, [ot][ot-war-b-active]:active,
+[ot][ot_war_b_active]:active, [ot][ot-warning-b-a]:active,
+[ot][ot_warning_b_a]:active, [ot][ot-warning-b-act]:active,
+[ot][ot_warning_b_act]:active, [ot][ot-warning-b-active]:active,
+[ot][ot_warning_b_active]:active, [ot][ot-warning-border-a]:active,
+[ot][ot_warning_border_a]:active, [ot][ot-warning-border-act]:active,
+[ot][ot_warning_border_act]:active, [ot][ot-warning-border-active]:active,
+[ot][ot_warning_border_active]:active, #ot__color__warning__border__active {
+  border-color: #cf9236;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__warning__border-left__active, [ot][ot-war-border-left-a]:active,
+[ot][ot_war_border-left_a]:active, [ot][ot-war-border-left-act]:active,
+[ot][ot_war_border-left_act]:active, [ot][ot-war-border-left-active]:active,
+[ot][ot_war_border-left_active]:active, [ot][ot-war-bl-a]:active,
+[ot][ot_war_bl_a]:active, [ot][ot-war-bl-act]:active,
+[ot][ot_war_bl_act]:active, [ot][ot-war-bl-active]:active,
+[ot][ot_war_bl_active]:active, [ot][ot-warning-bl-a]:active,
+[ot][ot_warning_bl_a]:active, [ot][ot-warning-bl-act]:active,
+[ot][ot_warning_bl_act]:active, [ot][ot-warning-bl-active]:active,
+[ot][ot_warning_bl_active]:active, [ot][ot-warning-border-left-a]:active,
+[ot][ot_warning_border-left_a]:active, [ot][ot-warning-border-left-act]:active,
+[ot][ot_warning_border-left_act]:active, [ot][ot-warning-border-left-active]:active,
+[ot][ot_warning_border-left_active]:active, #ot__color__warning__border-left__active {
+  border-left-color: #cf9236;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__warning__border-right__active, [ot][ot-war-border-right-a]:active,
+[ot][ot_war_border-right_a]:active, [ot][ot-war-border-right-act]:active,
+[ot][ot_war_border-right_act]:active, [ot][ot-war-border-right-active]:active,
+[ot][ot_war_border-right_active]:active, [ot][ot-war-br-a]:active,
+[ot][ot_war_br_a]:active, [ot][ot-war-br-act]:active,
+[ot][ot_war_br_act]:active, [ot][ot-war-br-active]:active,
+[ot][ot_war_br_active]:active, [ot][ot-warning-br-a]:active,
+[ot][ot_warning_br_a]:active, [ot][ot-warning-br-act]:active,
+[ot][ot_warning_br_act]:active, [ot][ot-warning-br-active]:active,
+[ot][ot_warning_br_active]:active, [ot][ot-warning-border-right-a]:active,
+[ot][ot_warning_border-right_a]:active, [ot][ot-warning-border-right-act]:active,
+[ot][ot_warning_border-right_act]:active, [ot][ot-warning-border-right-active]:active,
+[ot][ot_warning_border-right_active]:active, #ot__color__warning__border-right__active {
+  border-right-color: #cf9236;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__warning__border-top__active, [ot][ot-war-border-top-a]:active,
+[ot][ot_war_border-top_a]:active, [ot][ot-war-border-top-act]:active,
+[ot][ot_war_border-top_act]:active, [ot][ot-war-border-top-active]:active,
+[ot][ot_war_border-top_active]:active, [ot][ot-war-bt-a]:active,
+[ot][ot_war_bt_a]:active, [ot][ot-war-bt-act]:active,
+[ot][ot_war_bt_act]:active, [ot][ot-war-bt-active]:active,
+[ot][ot_war_bt_active]:active, [ot][ot-warning-bt-a]:active,
+[ot][ot_warning_bt_a]:active, [ot][ot-warning-bt-act]:active,
+[ot][ot_warning_bt_act]:active, [ot][ot-warning-bt-active]:active,
+[ot][ot_warning_bt_active]:active, [ot][ot-warning-border-top-a]:active,
+[ot][ot_warning_border-top_a]:active, [ot][ot-warning-border-top-act]:active,
+[ot][ot_warning_border-top_act]:active, [ot][ot-warning-border-top-active]:active,
+[ot][ot_warning_border-top_active]:active, #ot__color__warning__border-top__active {
+  border-top-color: #cf9236;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__warning__border-bottom__active, [ot][ot-war-border-bottom-a]:active,
+[ot][ot_war_border-bottom_a]:active, [ot][ot-war-border-bottom-act]:active,
+[ot][ot_war_border-bottom_act]:active, [ot][ot-war-border-bottom-active]:active,
+[ot][ot_war_border-bottom_active]:active, [ot][ot-war-bb-a]:active,
+[ot][ot_war_bb_a]:active, [ot][ot-war-bb-act]:active,
+[ot][ot_war_bb_act]:active, [ot][ot-war-bb-active]:active,
+[ot][ot_war_bb_active]:active, [ot][ot-warning-bb-a]:active,
+[ot][ot_warning_bb_a]:active, [ot][ot-warning-bb-act]:active,
+[ot][ot_warning_bb_act]:active, [ot][ot-warning-bb-active]:active,
+[ot][ot_warning_bb_active]:active, [ot][ot-warning-border-bottom-a]:active,
+[ot][ot_warning_border-bottom_a]:active, [ot][ot-warning-border-bottom-act]:active,
+[ot][ot_warning_border-bottom_act]:active, [ot][ot-warning-border-bottom-active]:active,
+[ot][ot_warning_border-bottom_active]:active, #ot__color__warning__border-bottom__active {
+  border-bottom-color: #cf9236;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__danger__font__active, [ot][ot-dan-font-a]:active,
+[ot][ot_dan_font_a]:active, [ot][ot-dan-font-act]:active,
+[ot][ot_dan_font_act]:active, [ot][ot-dan-font-active]:active,
+[ot][ot_dan_font_active]:active, [ot][ot-dan-f-a]:active,
+[ot][ot_dan_f_a]:active, [ot][ot-dan-f-act]:active,
+[ot][ot_dan_f_act]:active, [ot][ot-dan-f-active]:active,
+[ot][ot_dan_f_active]:active, [ot][ot-danger-f-a]:active,
+[ot][ot_danger_f_a]:active, [ot][ot-danger-f-act]:active,
+[ot][ot_danger_f_act]:active, [ot][ot-danger-f-active]:active,
+[ot][ot_danger_f_active]:active, [ot][ot-danger-font-a]:active,
+[ot][ot_danger_font_a]:active, [ot][ot-danger-font-act]:active,
+[ot][ot_danger_font_act]:active, [ot][ot-danger-font-active]:active,
+[ot][ot_danger_font_active]:active, #ot__color__danger__font__active {
+  color: #dd6161;
+  cursor: pointer; }
+
+ot__color__danger__background__active, [ot][ot-dan-background-a]:active,
+[ot][ot_dan_background_a]:active, [ot][ot-dan-background-act]:active,
+[ot][ot_dan_background_act]:active, [ot][ot-dan-background-active]:active,
+[ot][ot_dan_background_active]:active, [ot][ot-dan-bg-a]:active,
+[ot][ot_dan_bg_a]:active, [ot][ot-dan-bg-act]:active,
+[ot][ot_dan_bg_act]:active, [ot][ot-dan-bg-active]:active,
+[ot][ot_dan_bg_active]:active, [ot][ot-danger-bg-a]:active,
+[ot][ot_danger_bg_a]:active, [ot][ot-danger-bg-act]:active,
+[ot][ot_danger_bg_act]:active, [ot][ot-danger-bg-active]:active,
+[ot][ot_danger_bg_active]:active, [ot][ot-danger-background-a]:active,
+[ot][ot_danger_background_a]:active, [ot][ot-danger-background-act]:active,
+[ot][ot_danger_background_act]:active, [ot][ot-danger-background-active]:active,
+[ot][ot_danger_background_active]:active, #ot__color__danger__background__active {
+  background-color: #dd6161;
+  cursor: pointer; }
+
+ot__color__danger__border__active, [ot][ot-dan-border-a]:active,
+[ot][ot_dan_border_a]:active, [ot][ot-dan-border-act]:active,
+[ot][ot_dan_border_act]:active, [ot][ot-dan-border-active]:active,
+[ot][ot_dan_border_active]:active, [ot][ot-dan-b-a]:active,
+[ot][ot_dan_b_a]:active, [ot][ot-dan-b-act]:active,
+[ot][ot_dan_b_act]:active, [ot][ot-dan-b-active]:active,
+[ot][ot_dan_b_active]:active, [ot][ot-danger-b-a]:active,
+[ot][ot_danger_b_a]:active, [ot][ot-danger-b-act]:active,
+[ot][ot_danger_b_act]:active, [ot][ot-danger-b-active]:active,
+[ot][ot_danger_b_active]:active, [ot][ot-danger-border-a]:active,
+[ot][ot_danger_border_a]:active, [ot][ot-danger-border-act]:active,
+[ot][ot_danger_border_act]:active, [ot][ot-danger-border-active]:active,
+[ot][ot_danger_border_active]:active, #ot__color__danger__border__active {
+  border-color: #dd6161;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__danger__border-left__active, [ot][ot-dan-border-left-a]:active,
+[ot][ot_dan_border-left_a]:active, [ot][ot-dan-border-left-act]:active,
+[ot][ot_dan_border-left_act]:active, [ot][ot-dan-border-left-active]:active,
+[ot][ot_dan_border-left_active]:active, [ot][ot-dan-bl-a]:active,
+[ot][ot_dan_bl_a]:active, [ot][ot-dan-bl-act]:active,
+[ot][ot_dan_bl_act]:active, [ot][ot-dan-bl-active]:active,
+[ot][ot_dan_bl_active]:active, [ot][ot-danger-bl-a]:active,
+[ot][ot_danger_bl_a]:active, [ot][ot-danger-bl-act]:active,
+[ot][ot_danger_bl_act]:active, [ot][ot-danger-bl-active]:active,
+[ot][ot_danger_bl_active]:active, [ot][ot-danger-border-left-a]:active,
+[ot][ot_danger_border-left_a]:active, [ot][ot-danger-border-left-act]:active,
+[ot][ot_danger_border-left_act]:active, [ot][ot-danger-border-left-active]:active,
+[ot][ot_danger_border-left_active]:active, #ot__color__danger__border-left__active {
+  border-left-color: #dd6161;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__danger__border-right__active, [ot][ot-dan-border-right-a]:active,
+[ot][ot_dan_border-right_a]:active, [ot][ot-dan-border-right-act]:active,
+[ot][ot_dan_border-right_act]:active, [ot][ot-dan-border-right-active]:active,
+[ot][ot_dan_border-right_active]:active, [ot][ot-dan-br-a]:active,
+[ot][ot_dan_br_a]:active, [ot][ot-dan-br-act]:active,
+[ot][ot_dan_br_act]:active, [ot][ot-dan-br-active]:active,
+[ot][ot_dan_br_active]:active, [ot][ot-danger-br-a]:active,
+[ot][ot_danger_br_a]:active, [ot][ot-danger-br-act]:active,
+[ot][ot_danger_br_act]:active, [ot][ot-danger-br-active]:active,
+[ot][ot_danger_br_active]:active, [ot][ot-danger-border-right-a]:active,
+[ot][ot_danger_border-right_a]:active, [ot][ot-danger-border-right-act]:active,
+[ot][ot_danger_border-right_act]:active, [ot][ot-danger-border-right-active]:active,
+[ot][ot_danger_border-right_active]:active, #ot__color__danger__border-right__active {
+  border-right-color: #dd6161;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__danger__border-top__active, [ot][ot-dan-border-top-a]:active,
+[ot][ot_dan_border-top_a]:active, [ot][ot-dan-border-top-act]:active,
+[ot][ot_dan_border-top_act]:active, [ot][ot-dan-border-top-active]:active,
+[ot][ot_dan_border-top_active]:active, [ot][ot-dan-bt-a]:active,
+[ot][ot_dan_bt_a]:active, [ot][ot-dan-bt-act]:active,
+[ot][ot_dan_bt_act]:active, [ot][ot-dan-bt-active]:active,
+[ot][ot_dan_bt_active]:active, [ot][ot-danger-bt-a]:active,
+[ot][ot_danger_bt_a]:active, [ot][ot-danger-bt-act]:active,
+[ot][ot_danger_bt_act]:active, [ot][ot-danger-bt-active]:active,
+[ot][ot_danger_bt_active]:active, [ot][ot-danger-border-top-a]:active,
+[ot][ot_danger_border-top_a]:active, [ot][ot-danger-border-top-act]:active,
+[ot][ot_danger_border-top_act]:active, [ot][ot-danger-border-top-active]:active,
+[ot][ot_danger_border-top_active]:active, #ot__color__danger__border-top__active {
+  border-top-color: #dd6161;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__danger__border-bottom__active, [ot][ot-dan-border-bottom-a]:active,
+[ot][ot_dan_border-bottom_a]:active, [ot][ot-dan-border-bottom-act]:active,
+[ot][ot_dan_border-bottom_act]:active, [ot][ot-dan-border-bottom-active]:active,
+[ot][ot_dan_border-bottom_active]:active, [ot][ot-dan-bb-a]:active,
+[ot][ot_dan_bb_a]:active, [ot][ot-dan-bb-act]:active,
+[ot][ot_dan_bb_act]:active, [ot][ot-dan-bb-active]:active,
+[ot][ot_dan_bb_active]:active, [ot][ot-danger-bb-a]:active,
+[ot][ot_danger_bb_a]:active, [ot][ot-danger-bb-act]:active,
+[ot][ot_danger_bb_act]:active, [ot][ot-danger-bb-active]:active,
+[ot][ot_danger_bb_active]:active, [ot][ot-danger-border-bottom-a]:active,
+[ot][ot_danger_border-bottom_a]:active, [ot][ot-danger-border-bottom-act]:active,
+[ot][ot_danger_border-bottom_act]:active, [ot][ot-danger-border-bottom-active]:active,
+[ot][ot_danger_border-bottom_active]:active, #ot__color__danger__border-bottom__active {
+  border-bottom-color: #dd6161;
+  cursor: pointer;
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+ot__color__info__font__active, [ot][ot-inf-font-a]:active,
+[ot][ot_inf_font_a]:active, [ot][ot-inf-font-act]:active,
+[ot][ot_inf_font_act]:active, [ot][ot-inf-font-active]:active,
+[ot][ot_inf_font_active]:active, [ot][ot-inf-f-a]:active,
+[ot][ot_inf_f_a]:active, [ot][ot-inf-f-act]:active,
+[ot][ot_inf_f_act]:active, [ot][ot-inf-f-active]:active,
+[ot][ot_inf_f_active]:active, [ot][ot-info-f-a]:active,
+[ot][ot_info_f_a]:active, [ot][ot-info-f-act]:active,
+[ot][ot_info_f_act]:active, [ot][ot-info-f-active]:active,
+[ot][ot_info_f_active]:active, [ot][ot-info-font-a]:active,
+[ot][ot_info_font_a]:active, [ot][ot-info-font-act]:active,
+[ot][ot_info_font_act]:active, [ot][ot-info-font-active]:active,
+[ot][ot_info_font_active]:active, #ot__color__info__font__active {
+  color: #82848a;
+  cursor: pointer; }
+
+ot__color__info__background__active, [ot][ot-inf-background-a]:active,
+[ot][ot_inf_background_a]:active, [ot][ot-inf-background-act]:active,
+[ot][ot_inf_background_act]:active, [ot][ot-inf-background-active]:active,
+[ot][ot_inf_background_active]:active, [ot][ot-inf-bg-a]:active,
+[ot][ot_inf_bg_a]:active, [ot][ot-inf-bg-act]:active,
+[ot][ot_inf_bg_act]:active, [ot][ot-inf-bg-active]:active,
+[ot][ot_inf_bg_active]:active, [ot][ot-info-bg-a]:active,
+[ot][ot_info_bg_a]:active, [ot][ot-info-bg-act]:active,
+[ot][ot_info_bg_act]:active, [ot][ot-info-bg-active]:active,
+[ot][ot_info_bg_active]:active, [ot][ot-info-background-a]:active,
+[ot][ot_info_background_a]:active, [ot][ot-info-background-act]:active,
+[ot][ot_info_background_act]:active, [ot][ot-info-background-active]:active,
+[ot][ot_info_background_active]:active, #ot__color__info__background__active {
+  background-color: #82848a;
+  cursor: pointer; }
+
+ot__color__info__border__active, [ot][ot-inf-border-a]:active,
+[ot][ot_inf_border_a]:active, [ot][ot-inf-border-act]:active,
+[ot][ot_inf_border_act]:active, [ot][ot-inf-border-active]:active,
+[ot][ot_inf_border_active]:active, [ot][ot-inf-b-a]:active,
+[ot][ot_inf_b_a]:active, [ot][ot-inf-b-act]:active,
+[ot][ot_inf_b_act]:active, [ot][ot-inf-b-active]:active,
+[ot][ot_inf_b_active]:active, [ot][ot-info-b-a]:active,
+[ot][ot_info_b_a]:active, [ot][ot-info-b-act]:active,
+[ot][ot_info_b_act]:active, [ot][ot-info-b-active]:active,
+[ot][ot_info_b_active]:active, [ot][ot-info-border-a]:active,
+[ot][ot_info_border_a]:active, [ot][ot-info-border-act]:active,
+[ot][ot_info_border_act]:active, [ot][ot-info-border-active]:active,
+[ot][ot_info_border_active]:active, #ot__color__info__border__active {
+  border-color: #82848a;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px; }
+
+ot__color__info__border-left__active, [ot][ot-inf-border-left-a]:active,
+[ot][ot_inf_border-left_a]:active, [ot][ot-inf-border-left-act]:active,
+[ot][ot_inf_border-left_act]:active, [ot][ot-inf-border-left-active]:active,
+[ot][ot_inf_border-left_active]:active, [ot][ot-inf-bl-a]:active,
+[ot][ot_inf_bl_a]:active, [ot][ot-inf-bl-act]:active,
+[ot][ot_inf_bl_act]:active, [ot][ot-inf-bl-active]:active,
+[ot][ot_inf_bl_active]:active, [ot][ot-info-bl-a]:active,
+[ot][ot_info_bl_a]:active, [ot][ot-info-bl-act]:active,
+[ot][ot_info_bl_act]:active, [ot][ot-info-bl-active]:active,
+[ot][ot_info_bl_active]:active, [ot][ot-info-border-left-a]:active,
+[ot][ot_info_border-left_a]:active, [ot][ot-info-border-left-act]:active,
+[ot][ot_info_border-left_act]:active, [ot][ot-info-border-left-active]:active,
+[ot][ot_info_border-left_active]:active, #ot__color__info__border-left__active {
+  border-left-color: #82848a;
+  cursor: pointer;
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+ot__color__info__border-right__active, [ot][ot-inf-border-right-a]:active,
+[ot][ot_inf_border-right_a]:active, [ot][ot-inf-border-right-act]:active,
+[ot][ot_inf_border-right_act]:active, [ot][ot-inf-border-right-active]:active,
+[ot][ot_inf_border-right_active]:active, [ot][ot-inf-br-a]:active,
+[ot][ot_inf_br_a]:active, [ot][ot-inf-br-act]:active,
+[ot][ot_inf_br_act]:active, [ot][ot-inf-br-active]:active,
+[ot][ot_inf_br_active]:active, [ot][ot-info-br-a]:active,
+[ot][ot_info_br_a]:active, [ot][ot-info-br-act]:active,
+[ot][ot_info_br_act]:active, [ot][ot-info-br-active]:active,
+[ot][ot_info_br_active]:active, [ot][ot-info-border-right-a]:active,
+[ot][ot_info_border-right_a]:active, [ot][ot-info-border-right-act]:active,
+[ot][ot_info_border-right_act]:active, [ot][ot-info-border-right-active]:active,
+[ot][ot_info_border-right_active]:active, #ot__color__info__border-right__active {
+  border-right-color: #82848a;
+  cursor: pointer;
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+ot__color__info__border-top__active, [ot][ot-inf-border-top-a]:active,
+[ot][ot_inf_border-top_a]:active, [ot][ot-inf-border-top-act]:active,
+[ot][ot_inf_border-top_act]:active, [ot][ot-inf-border-top-active]:active,
+[ot][ot_inf_border-top_active]:active, [ot][ot-inf-bt-a]:active,
+[ot][ot_inf_bt_a]:active, [ot][ot-inf-bt-act]:active,
+[ot][ot_inf_bt_act]:active, [ot][ot-inf-bt-active]:active,
+[ot][ot_inf_bt_active]:active, [ot][ot-info-bt-a]:active,
+[ot][ot_info_bt_a]:active, [ot][ot-info-bt-act]:active,
+[ot][ot_info_bt_act]:active, [ot][ot-info-bt-active]:active,
+[ot][ot_info_bt_active]:active, [ot][ot-info-border-top-a]:active,
+[ot][ot_info_border-top_a]:active, [ot][ot-info-border-top-act]:active,
+[ot][ot_info_border-top_act]:active, [ot][ot-info-border-top-active]:active,
+[ot][ot_info_border-top_active]:active, #ot__color__info__border-top__active {
+  border-top-color: #82848a;
+  cursor: pointer;
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+ot__color__info__border-bottom__active, [ot][ot-inf-border-bottom-a]:active,
+[ot][ot_inf_border-bottom_a]:active, [ot][ot-inf-border-bottom-act]:active,
+[ot][ot_inf_border-bottom_act]:active, [ot][ot-inf-border-bottom-active]:active,
+[ot][ot_inf_border-bottom_active]:active, [ot][ot-inf-bb-a]:active,
+[ot][ot_inf_bb_a]:active, [ot][ot-inf-bb-act]:active,
+[ot][ot_inf_bb_act]:active, [ot][ot-inf-bb-active]:active,
+[ot][ot_inf_bb_active]:active, [ot][ot-info-bb-a]:active,
+[ot][ot_info_bb_a]:active, [ot][ot-info-bb-act]:active,
+[ot][ot_info_bb_act]:active, [ot][ot-info-bb-active]:active,
+[ot][ot_info_bb_active]:active, [ot][ot-info-border-bottom-a]:active,
+[ot][ot_info_border-bottom_a]:active, [ot][ot-info-border-bottom-act]:active,
+[ot][ot_info_border-bottom_act]:active, [ot][ot-info-border-bottom-active]:active,
+[ot][ot_info_border-bottom_active]:active, #ot__color__info__border-bottom__active {
+  border-bottom-color: #82848a;
   cursor: pointer;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -4535,7 +4535,7 @@ ot__color__default__background__selected, [ot][selected][ot-def-background-s],
 [ot][selected][ot_default_background_s], [ot][selected][ot-default-background-sel],
 [ot][selected][ot_default_background_sel], [ot][selected][ot-default-background-selected],
 [ot][selected][ot_default_background_selected], #ot__color__default__background__selected {
-  background-color: #ecf5ff;
+  background-color: #409EFF;
   cursor: pointer; }
   ot__color__default__background__selected:after, [ot-def-background-s][selected][ot]:after,
   [ot_def_background_s][selected][ot]:after, [ot-def-background-sel][selected][ot]:after,
@@ -4550,7 +4550,7 @@ ot__color__default__background__selected, [ot][selected][ot-def-background-s],
   [ot_default_background_s][selected][ot]:after, [ot-default-background-sel][selected][ot]:after,
   [ot_default_background_sel][selected][ot]:after, [ot-default-background-selected][selected][ot]:after,
   [ot_default_background_selected][selected][ot]:after, #ot__color__default__background__selected:after {
-    background-color: #ecf5ff; }
+    background-color: #409EFF; }
 
 ot__color__default__border__selected, [ot][selected][ot-def-border-s],
 [ot][selected][ot_def_border_s], [ot][selected][ot-def-border-sel],
@@ -6397,7 +6397,7 @@ ot__color__light__font__disabled, [ot][disabled][ot-lig-font-d],
 [ot][disabled][ot_light_font_d], [ot][disabled][ot-light-font-dis],
 [ot][disabled][ot_light_font_dis], [ot][disabled][ot-light-font-disabled],
 [ot][disabled][ot_light_font_disabled], #ot__color__light__font__disabled {
-  color: #cccccc;
+  color: #FFFFFF;
   cursor: not-allowed; }
 
 ot__color__light__background__disabled, [ot][disabled][ot-lig-background-d],
@@ -6413,7 +6413,7 @@ ot__color__light__background__disabled, [ot][disabled][ot-lig-background-d],
 [ot][disabled][ot_light_background_d], [ot][disabled][ot-light-background-dis],
 [ot][disabled][ot_light_background_dis], [ot][disabled][ot-light-background-disabled],
 [ot][disabled][ot_light_background_disabled], #ot__color__light__background__disabled {
-  background-color: #b3b3b3;
+  background-color: #FFFFFF;
   cursor: not-allowed; }
 
 ot__color__light__border__disabled, [ot][disabled][ot-lig-border-d],
@@ -6429,7 +6429,7 @@ ot__color__light__border__disabled, [ot][disabled][ot-lig-border-d],
 [ot][disabled][ot_light_border_d], [ot][disabled][ot-light-border-dis],
 [ot][disabled][ot_light_border_dis], [ot][disabled][ot-light-border-disabled],
 [ot][disabled][ot_light_border_disabled], #ot__color__light__border__disabled {
-  border-color: #cccccc;
+  border-color: #FFFFFF;
   cursor: not-allowed;
   border-style: solid;
   border-width: 1px; }
@@ -6447,7 +6447,7 @@ ot__color__light__border-left__disabled, [ot][disabled][ot-lig-border-left-d],
 [ot][disabled][ot_light_border-left_d], [ot][disabled][ot-light-border-left-dis],
 [ot][disabled][ot_light_border-left_dis], [ot][disabled][ot-light-border-left-disabled],
 [ot][disabled][ot_light_border-left_disabled], #ot__color__light__border-left__disabled {
-  border-left-color: #cccccc;
+  border-left-color: #FFFFFF;
   cursor: not-allowed;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -6465,7 +6465,7 @@ ot__color__light__border-right__disabled, [ot][disabled][ot-lig-border-right-d],
 [ot][disabled][ot_light_border-right_d], [ot][disabled][ot-light-border-right-dis],
 [ot][disabled][ot_light_border-right_dis], [ot][disabled][ot-light-border-right-disabled],
 [ot][disabled][ot_light_border-right_disabled], #ot__color__light__border-right__disabled {
-  border-right-color: #cccccc;
+  border-right-color: #FFFFFF;
   cursor: not-allowed;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -6483,7 +6483,7 @@ ot__color__light__border-top__disabled, [ot][disabled][ot-lig-border-top-d],
 [ot][disabled][ot_light_border-top_d], [ot][disabled][ot-light-border-top-dis],
 [ot][disabled][ot_light_border-top_dis], [ot][disabled][ot-light-border-top-disabled],
 [ot][disabled][ot_light_border-top_disabled], #ot__color__light__border-top__disabled {
-  border-top-color: #cccccc;
+  border-top-color: #FFFFFF;
   cursor: not-allowed;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -6501,7 +6501,7 @@ ot__color__light__border-bottom__disabled, [ot][disabled][ot-lig-border-bottom-d
 [ot][disabled][ot_light_border-bottom_d], [ot][disabled][ot-light-border-bottom-dis],
 [ot][disabled][ot_light_border-bottom_dis], [ot][disabled][ot-light-border-bottom-disabled],
 [ot][disabled][ot_light_border-bottom_disabled], #ot__color__light__border-bottom__disabled {
-  border-bottom-color: #cccccc;
+  border-bottom-color: #FFFFFF;
   cursor: not-allowed;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -6523,7 +6523,7 @@ ot__color__grey__background__disabled, [ot][disabled][ot-grey-bg-d],
 [ot][disabled][ot_grey_background_d], [ot][disabled][ot-grey-background-dis],
 [ot][disabled][ot_grey_background_dis], [ot][disabled][ot-grey-background-disabled],
 [ot][disabled][ot_grey_background_disabled], #ot__color__grey__background__disabled {
-  background-color: gray;
+  background-color: #4d4d4d;
   cursor: not-allowed; }
 
 ot__color__grey__border__disabled, [ot][disabled][ot-grey-b-d],
@@ -6599,7 +6599,7 @@ ot__color__default__font__disabled, [ot][disabled][ot-def-font-d],
 [ot][disabled][ot_default_font_d], [ot][disabled][ot-default-font-dis],
 [ot][disabled][ot_default_font_dis], [ot][disabled][ot-default-font-disabled],
 [ot][disabled][ot_default_font_disabled], #ot__color__default__font__disabled {
-  color: #83909b;
+  color: #adb5bd;
   cursor: not-allowed; }
 
 ot__color__default__background__disabled, [ot][disabled][ot-def-background-d],
@@ -6721,7 +6721,7 @@ ot__color__primary__font__disabled, [ot][disabled][ot-pri-font-d],
 [ot][disabled][ot_primary_font_d], [ot][disabled][ot-primary-font-dis],
 [ot][disabled][ot_primary_font_dis], [ot][disabled][ot-primary-font-disabled],
 [ot][disabled][ot_primary_font_disabled], #ot__color__primary__font__disabled {
-  color: #8cc5ff;
+  color: #b3d8ff;
   cursor: not-allowed; }
 
 ot__color__primary__background__disabled, [ot][disabled][ot-pri-background-d],
@@ -6737,7 +6737,7 @@ ot__color__primary__background__disabled, [ot][disabled][ot-pri-background-d],
 [ot][disabled][ot_primary_background_d], [ot][disabled][ot-primary-background-dis],
 [ot][disabled][ot_primary_background_dis], [ot][disabled][ot-primary-background-disabled],
 [ot][disabled][ot_primary_background_disabled], #ot__color__primary__background__disabled {
-  background-color: #a0cfff;
+  background-color: #ecf5ff;
   cursor: not-allowed; }
 
 ot__color__primary__border__disabled, [ot][disabled][ot-pri-border-d],
@@ -6753,7 +6753,7 @@ ot__color__primary__border__disabled, [ot][disabled][ot-pri-border-d],
 [ot][disabled][ot_primary_border_d], [ot][disabled][ot-primary-border-dis],
 [ot][disabled][ot_primary_border_dis], [ot][disabled][ot-primary-border-disabled],
 [ot][disabled][ot_primary_border_disabled], #ot__color__primary__border__disabled {
-  border-color: #a0cfff;
+  border-color: #d9ecff;
   cursor: not-allowed;
   border-style: solid;
   border-width: 1px; }
@@ -6771,7 +6771,7 @@ ot__color__primary__border-left__disabled, [ot][disabled][ot-pri-border-left-d],
 [ot][disabled][ot_primary_border-left_d], [ot][disabled][ot-primary-border-left-dis],
 [ot][disabled][ot_primary_border-left_dis], [ot][disabled][ot-primary-border-left-disabled],
 [ot][disabled][ot_primary_border-left_disabled], #ot__color__primary__border-left__disabled {
-  border-left-color: #a0cfff;
+  border-left-color: #d9ecff;
   cursor: not-allowed;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -6789,7 +6789,7 @@ ot__color__primary__border-right__disabled, [ot][disabled][ot-pri-border-right-d
 [ot][disabled][ot_primary_border-right_d], [ot][disabled][ot-primary-border-right-dis],
 [ot][disabled][ot_primary_border-right_dis], [ot][disabled][ot-primary-border-right-disabled],
 [ot][disabled][ot_primary_border-right_disabled], #ot__color__primary__border-right__disabled {
-  border-right-color: #a0cfff;
+  border-right-color: #d9ecff;
   cursor: not-allowed;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -6807,7 +6807,7 @@ ot__color__primary__border-top__disabled, [ot][disabled][ot-pri-border-top-d],
 [ot][disabled][ot_primary_border-top_d], [ot][disabled][ot-primary-border-top-dis],
 [ot][disabled][ot_primary_border-top_dis], [ot][disabled][ot-primary-border-top-disabled],
 [ot][disabled][ot_primary_border-top_disabled], #ot__color__primary__border-top__disabled {
-  border-top-color: #a0cfff;
+  border-top-color: #d9ecff;
   cursor: not-allowed;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -6825,7 +6825,7 @@ ot__color__primary__border-bottom__disabled, [ot][disabled][ot-pri-border-bottom
 [ot][disabled][ot_primary_border-bottom_d], [ot][disabled][ot-primary-border-bottom-dis],
 [ot][disabled][ot_primary_border-bottom_dis], [ot][disabled][ot-primary-border-bottom-disabled],
 [ot][disabled][ot_primary_border-bottom_disabled], #ot__color__primary__border-bottom__disabled {
-  border-bottom-color: #a0cfff;
+  border-bottom-color: #d9ecff;
   cursor: not-allowed;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -6843,7 +6843,7 @@ ot__color__success__font__disabled, [ot][disabled][ot-suc-font-d],
 [ot][disabled][ot_success_font_d], [ot][disabled][ot-success-font-dis],
 [ot][disabled][ot_success_font_dis], [ot][disabled][ot-success-font-disabled],
 [ot][disabled][ot_success_font_disabled], #ot__color__success__font__disabled {
-  color: #a4da89;
+  color: #c2e7b0;
   cursor: not-allowed; }
 
 ot__color__success__background__disabled, [ot][disabled][ot-suc-background-d],
@@ -6859,7 +6859,7 @@ ot__color__success__background__disabled, [ot][disabled][ot-suc-background-d],
 [ot][disabled][ot_success_background_d], [ot][disabled][ot-success-background-dis],
 [ot][disabled][ot_success_background_dis], [ot][disabled][ot-success-background-disabled],
 [ot][disabled][ot_success_background_disabled], #ot__color__success__background__disabled {
-  background-color: #b3e19d;
+  background-color: #f0f9eb;
   cursor: not-allowed; }
 
 ot__color__success__border__disabled, [ot][disabled][ot-suc-border-d],
@@ -6875,7 +6875,7 @@ ot__color__success__border__disabled, [ot][disabled][ot-suc-border-d],
 [ot][disabled][ot_success_border_d], [ot][disabled][ot-success-border-dis],
 [ot][disabled][ot_success_border_dis], [ot][disabled][ot-success-border-disabled],
 [ot][disabled][ot_success_border_disabled], #ot__color__success__border__disabled {
-  border-color: #b3e19d;
+  border-color: #e1f3d8;
   cursor: not-allowed;
   border-style: solid;
   border-width: 1px; }
@@ -6893,7 +6893,7 @@ ot__color__success__border-left__disabled, [ot][disabled][ot-suc-border-left-d],
 [ot][disabled][ot_success_border-left_d], [ot][disabled][ot-success-border-left-dis],
 [ot][disabled][ot_success_border-left_dis], [ot][disabled][ot-success-border-left-disabled],
 [ot][disabled][ot_success_border-left_disabled], #ot__color__success__border-left__disabled {
-  border-left-color: #b3e19d;
+  border-left-color: #e1f3d8;
   cursor: not-allowed;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -6911,7 +6911,7 @@ ot__color__success__border-right__disabled, [ot][disabled][ot-suc-border-right-d
 [ot][disabled][ot_success_border-right_d], [ot][disabled][ot-success-border-right-dis],
 [ot][disabled][ot_success_border-right_dis], [ot][disabled][ot-success-border-right-disabled],
 [ot][disabled][ot_success_border-right_disabled], #ot__color__success__border-right__disabled {
-  border-right-color: #b3e19d;
+  border-right-color: #e1f3d8;
   cursor: not-allowed;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -6929,7 +6929,7 @@ ot__color__success__border-top__disabled, [ot][disabled][ot-suc-border-top-d],
 [ot][disabled][ot_success_border-top_d], [ot][disabled][ot-success-border-top-dis],
 [ot][disabled][ot_success_border-top_dis], [ot][disabled][ot-success-border-top-disabled],
 [ot][disabled][ot_success_border-top_disabled], #ot__color__success__border-top__disabled {
-  border-top-color: #b3e19d;
+  border-top-color: #e1f3d8;
   cursor: not-allowed;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -6947,7 +6947,7 @@ ot__color__success__border-bottom__disabled, [ot][disabled][ot-suc-border-bottom
 [ot][disabled][ot_success_border-bottom_d], [ot][disabled][ot-success-border-bottom-dis],
 [ot][disabled][ot_success_border-bottom_dis], [ot][disabled][ot-success-border-bottom-disabled],
 [ot][disabled][ot_success_border-bottom_disabled], #ot__color__success__border-bottom__disabled {
-  border-bottom-color: #b3e19d;
+  border-bottom-color: #e1f3d8;
   cursor: not-allowed;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -6965,7 +6965,7 @@ ot__color__warning__font__disabled, [ot][disabled][ot-war-font-d],
 [ot][disabled][ot_warning_font_d], [ot][disabled][ot-warning-font-dis],
 [ot][disabled][ot_warning_font_dis], [ot][disabled][ot-warning-font-disabled],
 [ot][disabled][ot_warning_font_disabled], #ot__color__warning__font__disabled {
-  color: #f0c78a;
+  color: #f5dab1;
   cursor: not-allowed; }
 
 ot__color__warning__background__disabled, [ot][disabled][ot-war-background-d],
@@ -6981,7 +6981,7 @@ ot__color__warning__background__disabled, [ot][disabled][ot-war-background-d],
 [ot][disabled][ot_warning_background_d], [ot][disabled][ot-warning-background-dis],
 [ot][disabled][ot_warning_background_dis], [ot][disabled][ot-warning-background-disabled],
 [ot][disabled][ot_warning_background_disabled], #ot__color__warning__background__disabled {
-  background-color: #f3d19e;
+  background-color: #fdf6ec;
   cursor: not-allowed; }
 
 ot__color__warning__border__disabled, [ot][disabled][ot-war-border-d],
@@ -6997,7 +6997,7 @@ ot__color__warning__border__disabled, [ot][disabled][ot-war-border-d],
 [ot][disabled][ot_warning_border_d], [ot][disabled][ot-warning-border-dis],
 [ot][disabled][ot_warning_border_dis], [ot][disabled][ot-warning-border-disabled],
 [ot][disabled][ot_warning_border_disabled], #ot__color__warning__border__disabled {
-  border-color: #f3d19e;
+  border-color: #faecd8;
   cursor: not-allowed;
   border-style: solid;
   border-width: 1px; }
@@ -7015,7 +7015,7 @@ ot__color__warning__border-left__disabled, [ot][disabled][ot-war-border-left-d],
 [ot][disabled][ot_warning_border-left_d], [ot][disabled][ot-warning-border-left-dis],
 [ot][disabled][ot_warning_border-left_dis], [ot][disabled][ot-warning-border-left-disabled],
 [ot][disabled][ot_warning_border-left_disabled], #ot__color__warning__border-left__disabled {
-  border-left-color: #f3d19e;
+  border-left-color: #faecd8;
   cursor: not-allowed;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -7033,7 +7033,7 @@ ot__color__warning__border-right__disabled, [ot][disabled][ot-war-border-right-d
 [ot][disabled][ot_warning_border-right_d], [ot][disabled][ot-warning-border-right-dis],
 [ot][disabled][ot_warning_border-right_dis], [ot][disabled][ot-warning-border-right-disabled],
 [ot][disabled][ot_warning_border-right_disabled], #ot__color__warning__border-right__disabled {
-  border-right-color: #f3d19e;
+  border-right-color: #faecd8;
   cursor: not-allowed;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -7051,7 +7051,7 @@ ot__color__warning__border-top__disabled, [ot][disabled][ot-war-border-top-d],
 [ot][disabled][ot_warning_border-top_d], [ot][disabled][ot-warning-border-top-dis],
 [ot][disabled][ot_warning_border-top_dis], [ot][disabled][ot-warning-border-top-disabled],
 [ot][disabled][ot_warning_border-top_disabled], #ot__color__warning__border-top__disabled {
-  border-top-color: #f3d19e;
+  border-top-color: #faecd8;
   cursor: not-allowed;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -7069,7 +7069,7 @@ ot__color__warning__border-bottom__disabled, [ot][disabled][ot-war-border-bottom
 [ot][disabled][ot_warning_border-bottom_d], [ot][disabled][ot-warning-border-bottom-dis],
 [ot][disabled][ot_warning_border-bottom_dis], [ot][disabled][ot-warning-border-bottom-disabled],
 [ot][disabled][ot_warning_border-bottom_disabled], #ot__color__warning__border-bottom__disabled {
-  border-bottom-color: #f3d19e;
+  border-bottom-color: #faecd8;
   cursor: not-allowed;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -7087,7 +7087,7 @@ ot__color__danger__font__disabled, [ot][disabled][ot-dan-font-d],
 [ot][disabled][ot_danger_font_d], [ot][disabled][ot-danger-font-dis],
 [ot][disabled][ot_danger_font_dis], [ot][disabled][ot-danger-font-disabled],
 [ot][disabled][ot_danger_font_disabled], #ot__color__danger__font__disabled {
-  color: #f9a7a7;
+  color: #fbc4c4;
   cursor: not-allowed; }
 
 ot__color__danger__background__disabled, [ot][disabled][ot-dan-background-d],
@@ -7103,7 +7103,7 @@ ot__color__danger__background__disabled, [ot][disabled][ot-dan-background-d],
 [ot][disabled][ot_danger_background_d], [ot][disabled][ot-danger-background-dis],
 [ot][disabled][ot_danger_background_dis], [ot][disabled][ot-danger-background-disabled],
 [ot][disabled][ot_danger_background_disabled], #ot__color__danger__background__disabled {
-  background-color: #fab6b6;
+  background-color: #fef0f0;
   cursor: not-allowed; }
 
 ot__color__danger__border__disabled, [ot][disabled][ot-dan-border-d],
@@ -7119,7 +7119,7 @@ ot__color__danger__border__disabled, [ot][disabled][ot-dan-border-d],
 [ot][disabled][ot_danger_border_d], [ot][disabled][ot-danger-border-dis],
 [ot][disabled][ot_danger_border_dis], [ot][disabled][ot-danger-border-disabled],
 [ot][disabled][ot_danger_border_disabled], #ot__color__danger__border__disabled {
-  border-color: #fab6b6;
+  border-color: #fde2e2;
   cursor: not-allowed;
   border-style: solid;
   border-width: 1px; }
@@ -7137,7 +7137,7 @@ ot__color__danger__border-left__disabled, [ot][disabled][ot-dan-border-left-d],
 [ot][disabled][ot_danger_border-left_d], [ot][disabled][ot-danger-border-left-dis],
 [ot][disabled][ot_danger_border-left_dis], [ot][disabled][ot-danger-border-left-disabled],
 [ot][disabled][ot_danger_border-left_disabled], #ot__color__danger__border-left__disabled {
-  border-left-color: #fab6b6;
+  border-left-color: #fde2e2;
   cursor: not-allowed;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -7155,7 +7155,7 @@ ot__color__danger__border-right__disabled, [ot][disabled][ot-dan-border-right-d]
 [ot][disabled][ot_danger_border-right_d], [ot][disabled][ot-danger-border-right-dis],
 [ot][disabled][ot_danger_border-right_dis], [ot][disabled][ot-danger-border-right-disabled],
 [ot][disabled][ot_danger_border-right_disabled], #ot__color__danger__border-right__disabled {
-  border-right-color: #fab6b6;
+  border-right-color: #fde2e2;
   cursor: not-allowed;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -7173,7 +7173,7 @@ ot__color__danger__border-top__disabled, [ot][disabled][ot-dan-border-top-d],
 [ot][disabled][ot_danger_border-top_d], [ot][disabled][ot-danger-border-top-dis],
 [ot][disabled][ot_danger_border-top_dis], [ot][disabled][ot-danger-border-top-disabled],
 [ot][disabled][ot_danger_border-top_disabled], #ot__color__danger__border-top__disabled {
-  border-top-color: #fab6b6;
+  border-top-color: #fde2e2;
   cursor: not-allowed;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -7191,7 +7191,7 @@ ot__color__danger__border-bottom__disabled, [ot][disabled][ot-dan-border-bottom-
 [ot][disabled][ot_danger_border-bottom_d], [ot][disabled][ot-danger-border-bottom-dis],
 [ot][disabled][ot_danger_border-bottom_dis], [ot][disabled][ot-danger-border-bottom-disabled],
 [ot][disabled][ot_danger_border-bottom_disabled], #ot__color__danger__border-bottom__disabled {
-  border-bottom-color: #fab6b6;
+  border-bottom-color: #fde2e2;
   cursor: not-allowed;
   border-bottom-style: solid;
   border-bottom-width: 1px; }
@@ -7209,7 +7209,7 @@ ot__color__info__font__disabled, [ot][disabled][ot-inf-font-d],
 [ot][disabled][ot_info_font_d], [ot][disabled][ot-info-font-dis],
 [ot][disabled][ot_info_font_dis], [ot][disabled][ot-info-font-disabled],
 [ot][disabled][ot_info_font_disabled], #ot__color__info__font__disabled {
-  color: #bcbec2;
+  color: #d3d4d6;
   cursor: not-allowed; }
 
 ot__color__info__background__disabled, [ot][disabled][ot-inf-background-d],
@@ -7225,7 +7225,7 @@ ot__color__info__background__disabled, [ot][disabled][ot-inf-background-d],
 [ot][disabled][ot_info_background_d], [ot][disabled][ot-info-background-dis],
 [ot][disabled][ot_info_background_dis], [ot][disabled][ot-info-background-disabled],
 [ot][disabled][ot_info_background_disabled], #ot__color__info__background__disabled {
-  background-color: #c8c9cc;
+  background-color: #f4f4f5;
   cursor: not-allowed; }
 
 ot__color__info__border__disabled, [ot][disabled][ot-inf-border-d],
@@ -7241,7 +7241,7 @@ ot__color__info__border__disabled, [ot][disabled][ot-inf-border-d],
 [ot][disabled][ot_info_border_d], [ot][disabled][ot-info-border-dis],
 [ot][disabled][ot_info_border_dis], [ot][disabled][ot-info-border-disabled],
 [ot][disabled][ot_info_border_disabled], #ot__color__info__border__disabled {
-  border-color: #c8c9cc;
+  border-color: #e9e9eb;
   cursor: not-allowed;
   border-style: solid;
   border-width: 1px; }
@@ -7259,7 +7259,7 @@ ot__color__info__border-left__disabled, [ot][disabled][ot-inf-border-left-d],
 [ot][disabled][ot_info_border-left_d], [ot][disabled][ot-info-border-left-dis],
 [ot][disabled][ot_info_border-left_dis], [ot][disabled][ot-info-border-left-disabled],
 [ot][disabled][ot_info_border-left_disabled], #ot__color__info__border-left__disabled {
-  border-left-color: #c8c9cc;
+  border-left-color: #e9e9eb;
   cursor: not-allowed;
   border-left-style: solid;
   border-left-width: 1px; }
@@ -7277,7 +7277,7 @@ ot__color__info__border-right__disabled, [ot][disabled][ot-inf-border-right-d],
 [ot][disabled][ot_info_border-right_d], [ot][disabled][ot-info-border-right-dis],
 [ot][disabled][ot_info_border-right_dis], [ot][disabled][ot-info-border-right-disabled],
 [ot][disabled][ot_info_border-right_disabled], #ot__color__info__border-right__disabled {
-  border-right-color: #c8c9cc;
+  border-right-color: #e9e9eb;
   cursor: not-allowed;
   border-right-style: solid;
   border-right-width: 1px; }
@@ -7295,7 +7295,7 @@ ot__color__info__border-top__disabled, [ot][disabled][ot-inf-border-top-d],
 [ot][disabled][ot_info_border-top_d], [ot][disabled][ot-info-border-top-dis],
 [ot][disabled][ot_info_border-top_dis], [ot][disabled][ot-info-border-top-disabled],
 [ot][disabled][ot_info_border-top_disabled], #ot__color__info__border-top__disabled {
-  border-top-color: #c8c9cc;
+  border-top-color: #e9e9eb;
   cursor: not-allowed;
   border-top-style: solid;
   border-top-width: 1px; }
@@ -7313,7 +7313,7 @@ ot__color__info__border-bottom__disabled, [ot][disabled][ot-inf-border-bottom-d]
 [ot][disabled][ot_info_border-bottom_d], [ot][disabled][ot-info-border-bottom-dis],
 [ot][disabled][ot_info_border-bottom_dis], [ot][disabled][ot-info-border-bottom-disabled],
 [ot][disabled][ot_info_border-bottom_disabled], #ot__color__info__border-bottom__disabled {
-  border-bottom-color: #c8c9cc;
+  border-bottom-color: #e9e9eb;
   cursor: not-allowed;
   border-bottom-style: solid;
   border-bottom-width: 1px; }

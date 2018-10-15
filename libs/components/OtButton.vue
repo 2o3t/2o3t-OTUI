@@ -1,8 +1,8 @@
 <template>
     <button ot v-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
-        :disabled="disabled" :round="round">
-        <ot-icon v-if="icon" :icon="icon"></ot-icon>
-        <slot></slot>
+        :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default">
+        <ot-icon v-if="icon" :icon="icon"><slot></slot></ot-icon>
+        <slot v-else></slot>
     </button>
 </template>
 
@@ -12,23 +12,24 @@ export default {
     props: {
         icon: [ String ],
         disabled: [ Boolean ],
+        circle: [ Boolean ],
     },
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
             // return [ 'dark-b', 'light-f', 'pri-bg', 'light-b-hov', 'pri-bg-h', 'light-b-act', 'pri-bg-a', 'pri-bg-sel' ];
                 return {
-                    normal: [ 'light-f', 'pri-bg', 'light-b' ],
-                    hover: [ 'pri-bg-h', 'pri-b-h' ],
-                    active: [ 'pri-bg-a', 'light-b-a' ],
-                    disabled: [ 'light-f-dis', 'grey-bg-dis', 'light-b-dis' ],
+                    normal: [ 'light-f', 'def-b' ],
+                    hover: [ 'light-f-hov', 'def-bg-h', 'def-b-h' ],
+                    active: [ 'def-bg-a', 'light-b-a' ],
+                    disabled: [ 'def-f-dis', 'grey-bg-dis', 'def-b-dis' ],
                 };
             case 'light':
             default:
                 return {
-                    normal: [ 'def-f', 'light-bg', 'grey-b' ],
-                    hover: [ 'pri-f-hov', 'pri-b-hov' ],
-                    active: [ 'pri-f-act', 'pri-b-act' ],
+                    normal: [ 'def-f', 'def-bg', 'def-b' ],
+                    hover: [ 'def-f-hov', 'light-bg-hov', 'def-b-hov' ],
+                    active: [ 'light-f-act', 'def-bg-act', 'def-b-act' ],
                     disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                 };
         }
@@ -65,6 +66,15 @@ export default {
         &[round] {
             border-radius: $--ot-mini-radius;
         }
+
+        &[circle] {
+            border-radius: $--ot-mini-height;
+
+            &[icon] {
+                padding: 0;
+                min-width: $--ot-mini-height;
+            }
+        }
     }
 
     &[size=small] {
@@ -74,6 +84,15 @@ export default {
 
         &[round] {
             border-radius: $--ot-small-radius;
+        }
+
+        &[circle] {
+            border-radius: $--ot-small-height;
+
+            &[icon] {
+                padding: 0;
+                min-width: $--ot-small-height;
+            }
         }
     }
 
@@ -85,6 +104,15 @@ export default {
         &[round] {
             border-radius: $--ot-normal-radius;
         }
+
+        &[circle] {
+            border-radius: $--ot-normal-height;
+
+            &[icon] {
+                padding: 0;
+                min-width: $--ot-normal-height;
+            }
+        }
     }
 
     &[size=big] {
@@ -94,6 +122,15 @@ export default {
 
         &[round] {
             border-radius: $--ot-big-radius;
+        }
+
+        &[circle] {
+            border-radius: $--ot-big-height;
+
+            &[icon] {
+                padding: 0;
+                min-width: $--ot-big-height;
+            }
         }
     }
 }

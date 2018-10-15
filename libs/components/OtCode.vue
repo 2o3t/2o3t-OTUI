@@ -24,23 +24,21 @@ export default {
             case 'light':
             default:
                 return {
-                    // code: {
-                    //     normal: [ 'def-f', 'grey-bl', 'grey-br', 'grey-bb' ],
-                    //     hover: [
-                    //         'pri-f-hov',
-                    //         'def-bg-hov',
-                    //         'def-bl-hov',
-                    //         'def-br-hov',
-                    //         'def-bb-hov',
-                    //     ],
-                    //     active: [
-                    //         'pri-f-act',
-                    //         'def-bg-act',
-                    //         'pri-bl-act',
-                    //         'pri-br-act',
-                    //         'pri-bb-act',
-                    //     ],
-                    // },
+                    // normal: [ 'def-f', 'grey-bl', 'grey-br', 'grey-bb' ],
+                    // hover: [
+                    //     'pri-f-hov',
+                    //     'def-bg-hov',
+                    //     'def-bl-hov',
+                    //     'def-br-hov',
+                    //     'def-bb-hov',
+                    // ],
+                    // active: [
+                    //     'pri-f-act',
+                    //     'def-bg-act',
+                    //     'pri-bl-act',
+                    //     'pri-br-act',
+                    //     'pri-bb-act',
+                    // ],
                 };
         }
     },

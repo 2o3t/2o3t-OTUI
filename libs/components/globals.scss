@@ -140,6 +140,25 @@ $--ot-h6-size: 1.2rem !default;
     }
 }
 
+// circle
+@mixin __ot_circle__ {
+    &[size=mini] {
+        border-radius: $--ot-mini-height;
+    }
+
+    &[size=small] {
+        border-radius: $--ot-small-height;
+    }
+
+    &[size=normal] {
+        border-radius: $--ot-normal-height;
+    }
+
+    &[size=big] {
+        border-radius: $--ot-big-height;
+    }
+}
+
 
 // 动画
 .fade {
