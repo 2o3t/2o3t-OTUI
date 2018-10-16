@@ -2,7 +2,20 @@
 const requireModules = files => {
     const modules = {};
 
-    files.keys().forEach(key => {
+    files.keys().sort((key1, key2) => {
+        try {
+            const name1 = key1.replace(/(\.\/|\.vue)/g, '');
+            const a = /^([\d_-]+)/g.exec(name1)[1];
+            const name2 = key2.replace(/(\.\/|\.vue)/g, '');
+            const b = /^([\d_-]+)/g.exec(name2)[1];
+            if (a && b) {
+                return parseInt(a) - parseInt(b);
+            }
+        } catch (error) {
+            console.error(`Key1: ${key1}`, `Key2: ${key2}`, error);
+        }
+        return 1;
+    }).forEach(key => {
         if (/Index\.vue/img.test(key)) return;
         let file = files(key);
         if (file.__esModule === true) {

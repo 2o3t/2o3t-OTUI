@@ -1,8 +1,8 @@
 {
-    "name": "ot-ui",
+    "name": "2o3t-uikit",
     "version": "0.1.0",
     "author": "zyao89 <zyao89@gmail.com>",
-    "description": "A UI for Vue Project",
+    "description": "A UI for Vue",
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
@@ -14,9 +14,11 @@
         "sass:test": "node_modules/node-sass/bin/node-sass --watch sass/test/test.scss sass/test/test.css"
     },
     "files": [
-        "libs/**/*"
+        "src/**/*"
     ],
     "dependencies": {
+        "otui": "file:///Users/zyao89/Code/New Direction/2o3t-OTUI",
+        "2o3t-ui": "^0.0.2",
         "font-awesome": "^4.7.0",
         "highlight.js": "^9.12.0",
         "vue": "^2.5.17",

@@ -4,6 +4,9 @@
         <ot-section :theme="$otTheme" label="OT-Pagination">
             <ot-row-group :theme="$otTheme">
                 <ot-pagination :theme="$otTheme" :total="100" background></ot-pagination>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-pagination :theme="$otTheme" :total="100" background></ot-pagination>
                 <ot-pagination :theme="$otTheme" :total="88" round></ot-pagination>
                 <ot-pagination :theme="$otTheme" :total="78" background round></ot-pagination>
                 <ot-pagination :theme="$otTheme" :total="66" size="mini" round></ot-pagination>
