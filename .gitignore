@@ -2,8 +2,7 @@
 node_modules
 /dist
 
-.libs
-.sass
+/webs
 
 # local env files
 .env.local

@@ -1,0 +1,34 @@
+@import './globals';
+$--ot-prefix-name: "ot__color" !default;
+
+@mixin colors($name, $color) {
+    .#{$--ot-prefix-name}_#{$name} {
+        background-color: #{$color};
+    }
+}
+
+// grey
+@include colors(white, $--color-white);
+@include colors(black, $--color-black);
+@each $index in 1,2,3,4,5,6,7,8,9 {
+    @include colors(default_grey_#{$index}, mix($--color-white, $--color-primary, $index*10%));
+}
+
+$MAIN_NAME_MAP: (
+    default: $--color-default,
+    primary: $--color-primary,
+    success: $--color-success,
+    warning: $--color-warning,
+    danger: $--color-danger,
+    info: $--color-info,
+);
+
+@each $name, $color in $MAIN_NAME_MAP {
+    @include colors($name, $color);
+    @each $index in 1,2,3,4,5,6,7,8,9 {
+        @include colors(#{$name}_light_#{$index}, mix($--color-white, $color, $index*10%));
+    }
+    @each $index in 1,2,3,4,5,6,7,8,9 {
+        @include colors(#{$name}_dark_#{$index}, mix($--color-black, $color, $index*10%));
+    }
+}

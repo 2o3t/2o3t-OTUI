@@ -4,7 +4,7 @@ import App from './App.vue';
 import 'font-awesome/css/font-awesome.min.css';
 // import '2o3t-ui/libs/styles.css';
 // import OTUI from '2o3t-ui';
-import OTUI from 'otui/src/main.js';
+import OTUI from '@otui';
 Vue.use(OTUI, {
     global: true,
 });

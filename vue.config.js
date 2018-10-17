@@ -3,6 +3,8 @@ const path = require('path');
 const debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
+    baseUrl: debug ? '/' : '/2o3t-ui/',
+    outputDir: 'webs',
     configureWebpack: config => {
         // webpack配置，值位对象时会合并配置，为方法时会改写配置
         if (debug) { // 开发环境配置
@@ -15,6 +17,7 @@ module.exports = {
                     '@': path.resolve(__dirname, './src'),
                     '@v': path.resolve(__dirname, './src/views'),
                     '@c': path.resolve(__dirname, './src/components'),
+                    '@otui': path.resolve(__dirname, './libs'),
                     vue$: 'vue/dist/vue.esm.js',
                 },
                 extensions: [ '.js', '.vue', '.json', '.css' ],

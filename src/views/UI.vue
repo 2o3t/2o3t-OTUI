@@ -1,22 +1,6 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
-        <ot-section :theme="$otTheme" label="OT-Pagination">
-            <ot-row-group :theme="$otTheme">
-                <ot-pagination :theme="$otTheme" :total="100" background></ot-pagination>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-pagination :theme="$otTheme" :total="100" background></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="88" round></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="78" background round></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="66" size="mini" round></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="56"></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="30"></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="10"></ot-pagination>
-                <ot-pagination :theme="$otTheme" :total="9"></ot-pagination>
-            </ot-row-group>
-        </ot-section>
-
         <ot-section :theme="$otTheme" label="OT-Form">
             <ot-row-group :theme="$otTheme">
                 <ot-form v-model="formValue" :rules="formRules">
@@ -33,7 +17,7 @@
 
         <ot-section :theme="$otTheme" label="OT-Tip">
             <ot-row-group :theme="$otTheme">
-                <ot-tip :class="$style.test" :theme="$otTheme">
+                <ot-tip :theme="$otTheme">
                     <span>Hover</span>
                     <div slot="tip">
                         <div>tip!!!</div>
@@ -41,47 +25,6 @@
                         <div>tip!!!</div>
                     </div>
                 </ot-tip>
-                <ot-title-tip :theme="$otTheme" round>
-                    <span>Hover</span>
-                    <div slot="title">
-                        <div>tip!!!</div>
-                        <div>tip!!!</div>
-                        <div>tip!!!</div>
-                    </div>
-                </ot-title-tip>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-Slider">
-            <ot-row-group :theme="$otTheme">
-                <ot-slider :theme="$otTheme" v-model="sliderValue"></ot-slider>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-slider :theme="$otTheme" v-model="sliderValue" disabled></ot-slider>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-slider :theme="$otTheme" v-model="sliderStepValue" :step="10" showStep></ot-slider>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-slider :theme="$otTheme" v-model="sliderRangeValue" range></ot-slider>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-slider :theme="$otTheme" v-model="sliderRangeStepValue" :step="4" showStep range></ot-slider>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-slider :theme="$otTheme" v-model="sliderValue" vertical></ot-slider>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-Select-LIST">
-            <ot-row-group :theme="$otTheme">
-                <ot-select :theme="$otTheme" v-model="selectValue" :list="selectList">
-                </ot-select>
-                <ot-select :theme="$otTheme" v-model="selectValue" :list="selectList">
-                    <span slot="item" slot-scope="{ item }">
-                        {{ item }} slotScope
-                    </span>
-                </ot-select>
             </ot-row-group>
         </ot-section>
 
@@ -127,10 +70,5 @@ export default {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-
-    .test {
-        position: fixed;
-        z-index: 1000;
-    }
 }
 </style>

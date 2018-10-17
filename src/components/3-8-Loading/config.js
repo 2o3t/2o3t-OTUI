@@ -14,5 +14,9 @@ export default {
             LABEL: 'Push加载',
             DESC: '',
         },
+        Spinner: {
+            LABEL: 'Spinner',
+            DESC: '',
+        },
     },
 };

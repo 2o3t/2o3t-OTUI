@@ -1,11 +1,12 @@
 <template>
   <div id="app" :class="$style.root" :theme="$otTheme">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <header :class="$style.header" :theme="$otTheme">
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme">
-            <ot-logo :theme="$otTheme" slot="left" icon="apple">
-                <span>OT-UI</span>
-            </ot-logo>
+            <ot-link slot="left" router="/">
+                <ot-logo :theme="$otTheme" icon="gratipay">
+                    <span>OT-UI</span>
+                </ot-logo>
+            </ot-link>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :router="item.router">{{item.name}}</ot-nav-item>
             <ot-switch :theme="$otTheme" slot="right" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
                 <span slot="inactive">Light</span>
@@ -17,9 +18,9 @@
         <router-view :theme="$otTheme" name="sidebar"></router-view>
     </div>
     <div :class="$style.pager">
-        <!-- <keep-alive> -->
+        <keep-alive>
             <router-view :theme="$otTheme" :class="$style.content"></router-view>
-        <!-- </keep-alive> -->
+        </keep-alive>
     </div>
   </div>
 </template>
@@ -36,8 +37,7 @@ export default {
     },
     watch: {
         isDark(newV, oldV) {
-            if (newV !== oldV && this.$shared) { // test
-                // this.otStores.theme = newV ? 'dark' : 'light';
+            if (newV !== oldV) {
                 this.theme = newV ? 'dark' : 'light';
             }
         },
@@ -86,7 +86,7 @@ export default {
     padding-bottom: 2rem;
 
     .content {
-        padding: 10px 10px 0px;
+        padding: 10px 30px 0px;
         box-sizing: border-box;
         height: 100%;
         overflow-x: hidden;

@@ -1,0 +1,361 @@
+@import './colors';
+
+$--ot-prefix-name: "ot" !default;
+
+// light
+// font
+@include normalColor($--ot-prefix-name, "light", "color", $--ot-color-light-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "light", "color", $--ot-color-light-font-hover, "font");
+@include focusColor($--ot-prefix-name, "light", "color", $--ot-color-light-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "light", "background-color", $--ot-color-light-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "light", "background-color", $--ot-color-light-background-hover, "background");
+@include focusColor($--ot-prefix-name, "light", "background-color", $--ot-color-light-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "light", "border#{$var}-color", $--ot-color-light-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "light", "border#{$var}-color", $--ot-color-light-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "light", "border#{$var}-color", $--ot-color-light-border-focus, "border#{$var}");
+}
+
+// dark
+// font
+@include normalColor($--ot-prefix-name, "dark", "color", $--ot-color-dark-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "dark", "color", $--ot-color-dark-font-hover, "font");
+@include focusColor($--ot-prefix-name, "dark", "color", $--ot-color-dark-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "dark", "background-color", $--ot-color-dark-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "dark", "background-color", $--ot-color-dark-background-hover, "background");
+@include focusColor($--ot-prefix-name, "dark", "background-color", $--ot-color-dark-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "dark", "border#{$var}-color", $--ot-color-dark-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "dark", "border#{$var}-color", $--ot-color-dark-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "dark", "border#{$var}-color", $--ot-color-dark-border-focus, "border#{$var}");
+}
+
+// grey
+// font
+@include normalColor($--ot-prefix-name, "grey", "color", $--ot-color-grey-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "grey", "color", $--ot-color-grey-font-hover, "font");
+@include focusColor($--ot-prefix-name, "grey", "color", $--ot-color-grey-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "grey", "background-color", $--ot-color-grey-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "grey", "background-color", $--ot-color-grey-background-hover, "background");
+@include focusColor($--ot-prefix-name, "grey", "background-color", $--ot-color-grey-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "grey", "border#{$var}-color", $--ot-color-grey-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "grey", "border#{$var}-color", $--ot-color-grey-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "grey", "border#{$var}-color", $--ot-color-grey-border-focus, "border#{$var}");
+}
+
+// default
+// font
+@include normalColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-hover, "font");
+@include focusColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-hover, "background");
+@include focusColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-focus, "border#{$var}");
+}
+
+// primary
+// font
+@include normalColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-hover, "font");
+@include focusColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-hover, "background");
+@include focusColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-focus, "border#{$var}");
+}
+
+// success
+// font
+@include normalColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-hover, "font");
+@include focusColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-hover, "background");
+@include focusColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-focus, "border#{$var}");
+}
+
+
+// warning
+// font
+@include normalColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-hover, "font");
+@include focusColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-hover, "background");
+@include focusColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-focus, "border#{$var}");
+}
+
+// danger
+// font
+@include normalColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-hover, "font");
+@include focusColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-hover, "background");
+@include focusColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-focus, "border#{$var}");
+}
+
+// info
+// font
+@include normalColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-normal, "font");
+@include hoverColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-hover, "font");
+@include focusColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-focus, "font");
+// background
+@include normalColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-normal, "background");
+@include hoverColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-hover, "background");
+@include focusColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-focus, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include normalColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-normal, "border#{$var}");
+    @include hoverColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-hover, "border#{$var}");
+    @include focusColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-focus, "border#{$var}");
+}
+
+// ========  active  ========
+
+// light
+@include activeColor($--ot-prefix-name, "light", "color", $--ot-color-light-font-active, "font");
+@include activeColor($--ot-prefix-name, "light", "background-color", $--ot-color-light-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "light", "border#{$var}-color", $--ot-color-light-border-active, "border#{$var}");
+}
+
+// dark
+@include activeColor($--ot-prefix-name, "dark", "color", $--ot-color-dark-font-active, "font");
+@include activeColor($--ot-prefix-name, "dark", "background-color", $--ot-color-dark-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "dark", "border#{$var}-color", $--ot-color-dark-border-active, "border#{$var}");
+}
+
+// grey
+@include activeColor($--ot-prefix-name, "grey", "color", $--ot-color-grey-font-active, "font");
+@include activeColor($--ot-prefix-name, "grey", "background-color", $--ot-color-grey-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "grey", "border#{$var}-color", $--ot-color-grey-border-active, "border#{$var}");
+}
+
+// default
+@include activeColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-active, "font");
+@include activeColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-active, "border#{$var}");
+}
+
+// primary
+@include activeColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-active, "font");
+@include activeColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-active, "border#{$var}");
+}
+
+// success
+// font
+@include activeColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-active, "font");
+// background
+@include activeColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-active, "border#{$var}");
+}
+
+// warning
+// font
+@include activeColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-active, "font");
+// background
+@include activeColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-active, "border#{$var}");
+}
+
+// danger
+// font
+@include activeColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-active, "font");
+// background
+@include activeColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-active, "border#{$var}");
+}
+
+// info
+// font
+@include activeColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-active, "font");
+// background
+@include activeColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-active, "background");
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include activeColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-active, "border#{$var}");
+}
+
+// ========  selected  ========
+
+// dark
+@include selectedColor($--ot-prefix-name, "dark", "color", $--ot-color-dark-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "dark", "background-color", $--ot-color-dark-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "dark", "border#{$var}-color", $--ot-color-dark-border-selected, "border#{$var}");
+}
+
+// light
+@include selectedColor($--ot-prefix-name, "light", "color", $--ot-color-light-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "light", "background-color", $--ot-color-light-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "light", "border#{$var}-color", $--ot-color-light-border-selected, "border#{$var}");
+}
+
+// grey
+@include selectedColor($--ot-prefix-name, "grey", "color", $--ot-color-grey-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "grey", "background-color", $--ot-color-grey-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "grey", "border#{$var}-color", $--ot-color-grey-border-selected, "border#{$var}");
+}
+
+// default
+@include selectedColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-selected, "border#{$var}");
+}
+
+// primary
+@include selectedColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-selected, "border#{$var}");
+}
+
+// success
+@include selectedColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-selected, "border#{$var}");
+}
+
+// warning
+@include selectedColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-selected, "border#{$var}");
+}
+
+// danger
+@include selectedColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-selected, "border#{$var}");
+}
+
+// info
+@include selectedColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-selected, "font");
+@include selectedColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-selected, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include selectedColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-selected, "border#{$var}");
+}
+
+
+// ========  disabled ========
+
+// dark
+@include disabledColor($--ot-prefix-name, "dark", "color", $--ot-color-dark-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "dark", "background-color", $--ot-color-dark-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "dark", "border#{$var}-color", $--ot-color-dark-border-disabled, "border#{$var}");
+}
+
+// light
+@include disabledColor($--ot-prefix-name, "light", "color", $--ot-color-light-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "light", "background-color", $--ot-color-light-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "light", "border#{$var}-color", $--ot-color-light-border-disabled, "border#{$var}");
+}
+
+// grey
+@include disabledColor($--ot-prefix-name, "grey", "color", $--ot-color-grey-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "grey", "background-color", $--ot-color-grey-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "grey", "border#{$var}-color", $--ot-color-grey-border-disabled, "border#{$var}");
+}
+
+// default
+@include disabledColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-disabled, "border#{$var}");
+}
+
+// primary
+@include disabledColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-disabled, "border#{$var}");
+}
+
+// success
+@include disabledColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-disabled, "border#{$var}");
+}
+
+// warning
+@include disabledColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-disabled, "border#{$var}");
+}
+
+// danger
+@include disabledColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-disabled, "border#{$var}");
+}
+
+// info
+@include disabledColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-disabled, "font");
+@include disabledColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-disabled, "background");
+@each $var in null, -left, -right, -top ,-bottom {
+    @include disabledColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-disabled, "border#{$var}");
+}
