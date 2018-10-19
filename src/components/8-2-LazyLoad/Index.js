@@ -1,8 +1,8 @@
-import CompFactory from '../CompFactory';
-const files = require.context('.', false, /\.vue$/);
+const CompFactory = require('../CompFactory').default;
+const files = require.context('.', false, /.vue$/);
 const modules = CompFactory.requireModules(files);
 
-import Config from './config';
+import Config from './README.md';
 const template = CompFactory.getTemplate(Config, modules);
 
 export default {

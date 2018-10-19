@@ -5,7 +5,7 @@
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode" dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <transition name="collapse">
-            <ot-code ot v-bind="$otColors.code" :class="$style.code"
+            <ot-code ot v-bind="$otColors.code" :class="$style.code" :theme="$otTheme"
                 :size="$otSize"
                 v-if="code" v-show="bShow" lang="html"
                 :value="code">
@@ -23,9 +23,8 @@ export default {
                 return {
                     group: this.background ? [ 'pri-bg' ] : [],
                     code: {
-                        normal: [ 'light-f', 'def-bl', 'def-br', 'def-bb' ],
-                        hover: [ 'light-f-hov', 'def-bg-h', 'def-bl-h', 'def-br-h', 'def-bb-h' ],
-                        active: [ 'def-bg-a', 'light-bl-a', 'light-br-a', 'light-bb-a' ],
+                        normal: [ 'def-bl', 'def-br', 'def-bb' ],
+                        hover: [ 'def-bl-h', 'def-br-h', 'def-bb-h' ],
                     },
                 };
             case 'light':
@@ -33,21 +32,8 @@ export default {
                 return {
                     group: this.background ? [ 'pri-bg' ] : [],
                     code: {
-                        normal: [ 'def-f', 'grey-bl', 'grey-br', 'grey-bb' ],
-                        hover: [
-                            'def-f-hov',
-                            'light-bg-hov',
-                            'def-bl-hov',
-                            'def-br-hov',
-                            'def-bb-hov',
-                        ],
-                        active: [
-                            'light-f-act',
-                            'def-bg-act',
-                            'def-bl-act',
-                            'def-br-act',
-                            'def-bb-act',
-                        ],
+                        normal: [ 'grey-bl', 'grey-br', 'grey-bb' ],
+                        hover: [ 'def-bl-hov', 'def-br-hov', 'def-bb-hov' ],
                     },
                 };
         }

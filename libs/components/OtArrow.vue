@@ -1,9 +1,11 @@
 <template>
-    <div ot v-bind="$attrs" :class="$style.root" :placement="placement">
-        <i ot v-bind="$otColors" :class="$style.arrow"
-            :placement="placement"
-            v-on="$listeners">
-        </i>
+    <div ot class="ot-arrow" v-bind="$attrs" :class="$style.root" :placement="placement">
+        <div :class="$style.box" :placement="placement">
+            <i ot v-bind="$otColors" :class="$style.arrow"
+                :placement="placement"
+                v-on="$listeners">
+            </i>
+        </div>
     </div>
 </template>
 
@@ -19,7 +21,6 @@ export default {
     },
     otDefaultColors(theme) {
         const colors = {
-            normal: [ 'def-bl', 'def-bt' ],
             selected: [ 'def-bl-sel', 'def-bt-sel' ],
             disabled: [ 'def-bl-dis', 'def-bt-dis' ],
         };
@@ -31,10 +32,14 @@ export default {
         }
         switch (theme) {
             case 'dark':
-                return colors;
+                return Object.assign(colors, {
+                    normal: [ 'def-bl', 'def-bt' ],
+                });
             case 'light':
             default:
-                return colors;
+                return Object.assign(colors, {
+                    normal: [ 'def-bl', 'def-bt' ],
+                });
         }
     },
 };
@@ -43,12 +48,30 @@ export default {
 <style lang="scss" module>
 @import './globals';
 .root {
-    display: inline;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    &[placement=up] {
+        transform: translateY(0.1em);
+    }
+
+    &[placement=down] {
+        transform: translateY(-0.1em);
+    }
+
+    &[placement=left] {
+        transform: translateX(0.1em);
+    }
+
+    &[placement=right] {
+        transform: translateX(-0.1em);
+    }
+}
+.box {
+    display: block;
     box-sizing: border-box;
-    vertical-align: middle;
     text-align: center;
-    min-width: 0.6em;
-    min-height: 0.6em;
 
     .arrow {
         display: block;
@@ -57,7 +80,6 @@ export default {
         height: 0.6em;
         transform: rotate(45deg);
         transform-origin: center;
-        vertical-align: middle;
 
         &[placement=up] {
             transform: rotate(45deg);
@@ -86,3 +108,11 @@ export default {
 }
 </style>
 
+<style lang="scss">
+.ot-button[ot]:hover {
+
+    .ot-arrow[ot] {
+
+    }
+}
+</style>

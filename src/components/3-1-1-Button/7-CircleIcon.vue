@@ -15,7 +15,6 @@
 export default {
     data() {
         return {
-            radioSelect: 'A',
             code: decodeURIComponent(`<%=${'otSourceCode'}=%>`),
         };
     },

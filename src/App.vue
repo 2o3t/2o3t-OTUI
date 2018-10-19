@@ -18,9 +18,9 @@
         <router-view :theme="$otTheme" name="sidebar"></router-view>
     </div>
     <div :class="$style.pager">
-        <keep-alive>
-            <router-view :theme="$otTheme" :class="$style.content"></router-view>
-        </keep-alive>
+        <!-- <keep-alive> -->
+        <router-view :theme="$otTheme" :class="$style.content"></router-view>
+        <!-- </keep-alive> -->
     </div>
   </div>
 </template>
@@ -76,12 +76,12 @@ export default {
     position: fixed;
     top: 6.4rem;
     left: 0;
-    width: 200px;
+    width: 20rem;
     bottom: 0;
     z-index: 10;
 }
 .pager {
-    padding-left: 200px;
+    padding-left: 20rem;
     padding-top: 6.4rem;
     padding-bottom: 2rem;
 

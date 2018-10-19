@@ -1,7 +1,7 @@
 <template>
     <li ot v-bind="$otColors" :class="$style.root" class="ot-menu-item" :size="$otSize"
         :disabled="disabled" :selected="isSelected" :collapse="isCollapse">
-        <ot-link :class="$style.link" :href="href" :router="router" @click="handleClick">
+        <ot-link :class="$style.link" :href="href" :to="router" @click="handleClick">
             <ot-icon :class="$style.icon" :icon="icon" v-if="icon"></ot-icon>
             <slot name="title" v-if="!isCollapse"></slot>
             <slot></slot>

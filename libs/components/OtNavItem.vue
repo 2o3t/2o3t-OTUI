@@ -2,7 +2,7 @@
     <li ot v-bind="$otColors" class="ot-nav-item" :size="$otSize"
         :class="$style.root" @click="handleClick"
         :disabled="disabled" :selected="isSelected">
-        <ot-link :class="$style.link" :href="href" :router="router">
+        <ot-link :class="$style.link" :href="href" :to="router">
             <ot-icon :class="$style.icon" :icon="icon" v-if="icon"></ot-icon>
             <slot name="title" v-if="!isCollapse"></slot>
             <slot></slot>

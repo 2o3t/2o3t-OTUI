@@ -1,7 +1,7 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :theme="$otTheme" vertical :code="code">
-            <ot-checkbox :theme="$otTheme" :value="true" v-model="all" @click="handleAllClick" :indeterminate="indeterminate">
+            <ot-checkbox :theme="$otTheme" :value="true" v-model="all" @change="handleAllClick" :indeterminate="indeterminate">
                 <span>ALL</span>
             </ot-checkbox>
             <ot-checkbox-group :theme="$otTheme" v-model="checkboxValue" border round

@@ -16,12 +16,13 @@ import VuePlugin from 'rollup-plugin-vue';
 const DIST = 'dist';
 
 import './build/init';
+const path = require('path');
 
 const config = {
-    input: './libs/index.js',
+    input: path.resolve(__dirname, './index.js'),
     external: [ 'highlight.js' ],
     output: {
-        file: `./${DIST}/index.js`,
+        file: path.resolve(process.cwd(), `./${DIST}/index.js`),
         format: 'umd', // umd, esm
         name: 'OTUI', // 打包后的全局变量，如浏览器端 window.ReactRedux
         globals: {

@@ -1,13 +1,13 @@
 <template>
     <span v-if="type !== 'textarea'" ot v-bind="$otColors" class="ot-input" :class="$style.root"
-        :size="$otSize" :round="round">
-        <span ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :fixable="fixable">
+        :size="$otSize" :round="round" :circle="circle">
+        <span ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :circle="circle" :fixable="fixable">
             <slot name="prefix"></slot>
         </span>
-        <span ot v-bind="$otColors.suffix" v-if="$slots.suffix" :class="$style.suffix" :round="round" :fixable="fixable" ref="suffix">
+        <span ot v-bind="$otColors.suffix" v-if="$slots.suffix" :class="$style.suffix" :round="round" :circle="circle" :fixable="fixable" ref="suffix">
             <slot name="suffix"></slot>
         </span>
-        <input ot v-bind="$otColors.input" :round="round" :clearable="clearable" :logo="icon" :_type="type"
+        <input ot v-bind="$otColors.input" :round="round" :circle="circle" :clearable="clearable" :logo="icon" :_type="type"
             :class="$style.input" :placeholder="placeholder" :type="_type" :disabled="disabled"
             :autocomplete="autocomplete" :maxlength="Number(maxlength)"
             :readonly="readonly"
@@ -25,8 +25,8 @@
             <ot-icon ot v-bind="$otColors.logo" :icon="icon"></ot-icon>
         </span>
     </span>
-    <span v-else ot v-bind="$otColors" class="ot-input ot-textarea" :class="[$style.root]" textarea :size="$otSize" :round="round">
-        <textarea ot v-bind="$otColors.input" :round="round"  :disabled="disabled"
+    <span v-else ot v-bind="$otColors" class="ot-input ot-textarea" :class="[$style.root]" textarea :size="$otSize" :round="round" :circle="circle">
+        <textarea ot v-bind="$otColors.input" :round="round" :circle="circle" :disabled="disabled"
             :autocomplete="autocomplete" :maxlength="Number(maxlength)"
             :name="name"
             :class="[$style.input, $style.textarea]" :cols="Number(cols)" :rows="Number(rows)"
@@ -114,6 +114,7 @@ export default {
             type: [ Boolean ],
             default: true,
         },
+        circle: [ Boolean ],
     },
     data() {
         return {
@@ -329,16 +330,18 @@ export default {
         vertical-align: middle;
     }
 
-    $offset: 0rem;
-
     &[size=mini] {
         height: $--ot-mini-height;
-        line-height: $--ot-mini-height - $offset;
+        line-height: $--ot-mini-height;
         min-width: $--ot-mini-input-width;
         font-size: $--ot-mini-size;
 
         [round] {
             border-radius: $--ot-mini-radius;
+        }
+
+        [circle] {
+            border-radius: $--ot-mini-height;
         }
 
         .prefix {
@@ -364,12 +367,16 @@ export default {
 
     &[size=small] {
         height: $--ot-small-height;
-        line-height: $--ot-small-height - $offset;
+        line-height: $--ot-small-height;
         min-width: $--ot-small-input-width;
         font-size: $--ot-small-size;
 
         [round] {
             border-radius: $--ot-small-radius;
+        }
+
+        [circle] {
+            border-radius: $--ot-small-height;
         }
 
         .prefix {
@@ -395,12 +402,16 @@ export default {
 
     &[size=normal] {
         height: $--ot-normal-height;
-        line-height: $--ot-normal-height - $offset;
+        line-height: $--ot-normal-height;
         min-width: $--ot-normal-input-width;
         font-size: $--ot-normal-size;
 
         [round] {
             border-radius: $--ot-normal-radius;
+        }
+
+        [circle] {
+            border-radius: $--ot-normal-height;
         }
 
         .prefix {
@@ -426,12 +437,16 @@ export default {
 
     &[size=big] {
         height: $--ot-big-height;
-        line-height: $--ot-big-height - $offset;
+        line-height: $--ot-big-height;
         min-width: $--ot-big-input-width;
         font-size: $--ot-big-size;
 
         [round] {
             border-radius: $--ot-big-radius;
+        }
+
+        [circle] {
+            border-radius: $--ot-big-height;
         }
 
         .prefix {

@@ -1,6 +1,6 @@
 <template>
     <label ot v-bind="$otColors" @click="$emit('click', $event)" class="ot-checkbox" :class="$style.root" :size="$otSize" :selected="current===value" :disabled="disabled" :border="border" :round="round">
-        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current===value" :disabled="disabled">
+        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current===value" :disabled="disabled" :round="round">
             <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current===value" :disabled="disabled" :indeterminate="indeterminate"></span>
         </span>
         <div v-if="$slots.default" :class="$style.label">
@@ -89,15 +89,15 @@ export default {
         };
     },
     watch: {
-        model(newV, oldV) {
-            if (newV !== oldV) {
+        model(newV) {
+            if (this.current !== newV) {
                 this.current = newV;
             }
         },
     },
     mounted() {
         if (this.checked === true) {
-            this.updateVal(this.value);
+            this.updateSelected(this.value);
         }
     },
     methods: {
@@ -155,6 +155,10 @@ export default {
     text-align: center;
     height: 2em;
     width: 2em;
+
+    &[round] {
+        border-radius: 0.2em;
+    }
 
     .isChecked {
       display: block;

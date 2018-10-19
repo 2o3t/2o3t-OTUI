@@ -23,7 +23,9 @@ export default {
     watch: {
         model(newV) {
             if (Array.isArray(newV)) {
-                this.checkSelected();
+                this.$nextTick(() => {
+                    this.checkSelected();
+                });
             }
         },
         all(newV, oldV) {
@@ -67,7 +69,6 @@ export default {
         _on() {
             this.$on('update:ot:checkbox:group', (value, checked) => {
                 this._selectOne(value, checked);
-                this.checkSelected();
             });
         },
         _off() {
@@ -85,10 +86,7 @@ export default {
             const curr = this.model;
             const children = this.$children;
             for (const child of children) {
-                const one = curr.find(v => {
-                    return v === child.value;
-                });
-                if (one) {
+                if (curr.includes(child.value)) {
                     child.updateSelected(child.value);
                 } else {
                     child.updateSelected();
@@ -101,21 +99,22 @@ export default {
             this.$emit('update', curr);
 
             const children = this.$children;
-            if (curr.length === children.length) {
+            if (curr.length === children.length && curr.length !== 0) {
                 this.$emit('changeStatus', 'all', curr);
             } else if (curr.length <= 0) {
                 this.$emit('changeStatus', null, curr);
             } else {
                 this.$emit('changeStatus', 'half', curr);
             }
-
-            this.$emit('change', curr);
         },
     },
     mounted() {
         this._on();
         this._init_();
         this.checkSelected();
+    },
+    updated() {
+        this._init_();
     },
     beforeDestroy() {
         this._off();

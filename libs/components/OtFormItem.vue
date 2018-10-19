@@ -218,16 +218,21 @@ export default {
     @import './globals';
     position: relative;
     box-sizing: border-box;
+    display: table;
 
     @include __ot_size__;
 
     .label {
+        display: table-cell;
         margin-right: 0.6em;
+        vertical-align: middle;
     }
 
     .row {
+        display: table-cell;
         position: relative;
         box-sizing: border-box;
+        vertical-align: middle;
     }
 
     .msg {

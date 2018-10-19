@@ -39,15 +39,20 @@ export default {
     font-weight: bold;
     user-select: none;
 
+    &:after {
+        content: '';
+        display: table;
+    }
+
     .icon {
-        display: inline-block;
+        display: table-cell;
         vertical-align: middle;
         padding: 0 10px;
         margin: 0;
     }
 
     .title {
-        display: inline-block;
+        display: table-cell;
         vertical-align: middle;
         padding: 0;
         margin: 0;

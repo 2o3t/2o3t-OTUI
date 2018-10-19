@@ -63,8 +63,8 @@ export default {
     @include __ot_size__;
 
     .label {
+        display: inline-table;
         margin-right: 5px;
-        vertical-align: middle;
 
         &~* {
             vertical-align: middle;

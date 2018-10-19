@@ -1,21 +1,22 @@
 <template>
     <div ot v-bind="$otColors" v-highlight :class="$style.root" class="ot-code" :size="$otSize">
         <pre :class="`language-${lang}`" code>
-            <code ot :class="$style.code" :lang="lang" v-text="value"></code>
+            <code ot v-bind="$otColors" :class="$style.code" :lang="lang" v-text="value"></code>
         </pre>
     </div>
 </template>
 
 <script>
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github-gist.css'; // 样式文件
+// FIXME: 黑色主题下显示有问题
+import 'highlight.js/styles/androidstudio.css'; // 样式文件
 export default {
     name: 'ot-code',
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'def-f' ],
+                    normal: [ 'light-f' ],
                     // code: {
                     //     normal: [ 'light-f', 'light-bl', 'light-br', 'light-bb' ],
                     //     hover: [ 'pri-bg-h', 'pri-bl-h', 'pri-br-h', 'pri-bb-h' ],

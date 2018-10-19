@@ -17,7 +17,7 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol";
   font-variant: tabular-nums;
   line-height: 1.5;
-  transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 12px;

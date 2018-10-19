@@ -64,10 +64,10 @@ export default {
 
 <style lang="scss">
 .ot-menu[ot] {
-    width: 200px;
+    width: 20rem;
 
     &[collapse] {
-        width: 64px;
+        width: 6.4rem;
     }
 
     .ot-menu-item[ot] {

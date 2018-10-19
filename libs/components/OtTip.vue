@@ -1,5 +1,5 @@
 <template>
-    <div ot v-bind="$attrs" v-on="$listeners" :size="$otSize" class="ot-tip" :class="$style.root"
+    <div ot v-bind="$attrs" v-on="_listeners" :size="$otSize" class="ot-tip" :class="$style.root"
         @mouseover="handleMouseOver" @mouseout="handleMouseOut"
         @click="handleClick" :manual="manual" :disabled="disabled"
         >
@@ -56,6 +56,10 @@ export default {
                 return {};
             },
         },
+        clickable: { // 必须 manual= true
+            type: [ Boolean ],
+            default: false,
+        },
     },
     data() {
         return {
@@ -72,8 +76,7 @@ export default {
     },
     watch: {
         value(newV) {
-            this.bShown = newV;
-            if (this.bShown) {
+            if (newV) {
                 this.show();
             } else {
                 this.hide();
@@ -82,10 +85,18 @@ export default {
         refresh(newV, oldV) {
             if (newV !== oldV) {
                 this._initPosition_();
+                if (this.mountedComp) {
+                    this.mountedComp.$forceUpdate();
+                }
             }
         },
     },
     computed: {
+        _listeners() {
+            const listeners = Object.assign({}, this.$listeners);
+            delete listeners.click;
+            return listeners;
+        },
         _width() {
             return this.$el.offsetWidth;
         },
@@ -293,7 +304,7 @@ export default {
                                 onMouseout={this.handleMouseOut}
                                 >
                                     { slot }
-                                    { $vm.arrow && (<ot-arrow ot class="ot-arrow" v-ot-bind={arrowAttrs} placement={this.arrowPlacement}></ot-arrow>)}
+                                    { $vm.arrow && (<ot-arrow ot size={this.$otSize} class="ot-arrow" v-ot-bind={arrowAttrs} placement={this.arrowPlacement}></ot-arrow>)}
                                 </div>
                             </transition>);
                         },
@@ -312,8 +323,9 @@ export default {
             this.hide();
         },
         handleClick() {
-            if (!this.manual) return;
-            this.show();
+            if (this.manual && this.clickable) {
+                this.show();
+            }
         },
         show() {
             if (this.disabled) return;
@@ -323,16 +335,28 @@ export default {
 
             this._initPosition_();
 
-            this.$nextTick(() => {
-                if (this.mountedComp) {
-                    this.mountedComp.show();
-                }
-            });
+            if (this.mountedComp) {
+                this.mountedComp.show();
+            }
         },
-        hide() {
+        hide(e) {
             if (this.disabled) return;
+
+            if (e) {
+                const result = this.$el.contains(e.target);
+                if (result) {
+                    return;
+                } else if (this.mountedComp && this.mountedComp.$el) {
+                    const b = this.mountedComp.$el.contains(e.target);
+                    if (b) {
+                        return;
+                    }
+                }
+            }
+
             this.bShown = false;
             this.$emit('update', false);
+
             if (this.mountedComp) {
                 this.mountedComp.hide();
             }
@@ -379,6 +403,7 @@ export default {
         }
         this.mountedComp = null;
         this.unregisterScroll();
+        this.removeClickListener();
     },
 };
 </script>

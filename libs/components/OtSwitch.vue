@@ -3,15 +3,15 @@
         <span ot v-bind="$otColors.activeLabel" v-if="$slots.inactive" :class="[$style.left, $style.label]" :selected="!value" :disabled="disabled">
             <slot name="inactive"></slot>
         </span>
-        <div ot v-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle" :disabled="disabled">
-            <div ot v-bind="$otColors.front" :class="$style.front" :selected="value"></div>
+        <span ot v-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle" :disabled="disabled">
+            <span ot v-bind="$otColors.front" :class="$style.front" :selected="value"></span>
             <input :class="$style.input" type="checkbox"
                 :name="name"
                 v-on="$listeners"
                 :disabled="disabled"
                 @change="handleChange"
                 :checked="value">
-        </div>
+        </span>
         <span ot v-bind="$otColors.activeLabel" v-if="$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
             <slot name="active"></slot>
         </span>
@@ -49,10 +49,10 @@ export default {
             default:
                 return {
                     front: {
-                        normal: [ 'light-bg' ],
+                        normal: [ 'dark-bg' ],
                     },
                     switch: {
-                        normal: [ 'def-f', 'def-bg', 'pri-b' ],
+                        normal: [ 'def-f', 'pri-bg', 'pri-b' ],
                         hover: [ 'pri-f-hov', 'pri-b-hov' ],
                         active: [ 'pri-bg-a', 'dark-b-a' ],
                         selected: [ 'pri-f-sel', 'pri-bg-sel' ],
@@ -117,7 +117,7 @@ export default {
         position: relative;
         vertical-align: middle;
         box-sizing: border-box;
-        padding: 0 5px;
+        padding: 0 0.5em;
     }
 
     .left {
@@ -131,9 +131,9 @@ export default {
     .switch {
         display: inline-block;
         position: relative;
-        box-sizing: border-box;
-        align-items: center;
+        box-sizing: content-box;
         vertical-align: middle;
+        overflow: hidden;
 
         .input {
             position: absolute;
@@ -152,13 +152,15 @@ export default {
         }
 
         .front {
-            position: absolute;
+            display: block;
             border-radius: 50%;
-            box-sizing: border-box;
-            margin: 1px;
-            left: 0;
+            margin: auto 0.2rem;
             transform: translateX(0%);
             transition: all .3s;
+            overflow: hidden;
+            position: absolute;
+            box-sizing: border-box;
+            top: 0; left: 0; bottom: 0; right: 0;
 
             &[selected] {
                 transform: translateX(100%);
@@ -166,9 +168,9 @@ export default {
         }
     }
 
-    &[size=mini] {
-        font-size: $--ot-mini-size;
+    @include __ot_size__;
 
+    &[size=mini] {
         .switch {
             border-radius: $--ot-mini-default;
             height: $--ot-mini-default;
@@ -182,8 +184,6 @@ export default {
     }
 
     &[size=small] {
-        font-size: $--ot-small-size;
-
         .switch {
             border-radius: $--ot-small-default;
             height: $--ot-small-default;
@@ -197,8 +197,6 @@ export default {
     }
 
     &[size=normal] {
-        font-size: $--ot-normal-size;
-
         .switch {
             border-radius: $--ot-normal-default;
             height: $--ot-normal-default;
@@ -212,8 +210,6 @@ export default {
     }
 
     &[size=big] {
-        font-size: $--ot-big-size;
-
         .switch {
             border-radius: $--ot-big-default;
             height: $--ot-big-default;

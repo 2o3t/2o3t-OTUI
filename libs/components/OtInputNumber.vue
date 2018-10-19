@@ -121,10 +121,15 @@ export default {
     }
 
     .icon {
-        display: block;
+        display: table;
         text-align: center;
         width: 100%;
         height: 100%;
+
+        &>i {
+            display: table-cell;
+            vertical-align: middle;
+        }
     }
 
     .double {
@@ -133,7 +138,7 @@ export default {
         height: 100%;
         position: absolute;
         right: 0px;
-        top: 1px;
+        top: 0px;
         left: 0.4em;
         overflow: hidden;
 

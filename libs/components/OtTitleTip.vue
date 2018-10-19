@@ -10,6 +10,24 @@
 <script>
 export default {
     name: 'ot-title-tip',
+    props: {
+        content: {
+            type: [ String, Number ],
+            default: '',
+        },
+        width: {
+            type: [ Number ],
+            default: 0,
+        },
+        textAlign: {
+            type: [ String ],
+            default: 'center',
+        },
+        arrow: {
+            type: [ Boolean ],
+            default: true,
+        },
+    },
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
@@ -32,24 +50,6 @@ export default {
                     },
                 };
         }
-    },
-    props: {
-        content: {
-            type: [ String, Number ],
-            default: '',
-        },
-        width: {
-            type: [ Number ],
-            default: 0,
-        },
-        textAlign: {
-            type: [ String ],
-            default: 'center',
-        },
-        arrow: {
-            type: [ Boolean ],
-            default: true,
-        },
     },
     watch: {
         content(newV) {

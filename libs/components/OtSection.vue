@@ -7,6 +7,7 @@
         <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
         <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
+        <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" v-html="descHtml"></p>
         <div :prefix="prefix" :class="$style.children">
             <slot></slot>
         </div>
@@ -39,6 +40,10 @@ export default {
         indent: [ Boolean, Number ],
         prefix: [ String ],
         desc: {
+            type: String,
+            default: '',
+        },
+        descHtml: {
             type: String,
             default: '',
         },
@@ -112,40 +117,38 @@ export default {
       cursor: pointer;
     }
 
-    $offset: 0.8rem;
-
     &[level] {
       font-size: $--ot-h3-size;
-      line-height: $--ot-h3-size + $offset;
+      line-height: $--ot-h3-size + $--ot-offset-h-size;
 
       &[level="1"] {
         font-size: $--ot-h1-size;
-        line-height: $--ot-h1-size + $offset;
+        line-height: $--ot-h1-size + $--ot-offset-h-size;
       }
 
       &[level="2"] {
         font-size: $--ot-h2-size;
-        line-height: $--ot-h2-size + $offset;
+        line-height: $--ot-h2-size + $--ot-offset-h-size;
       }
 
       &[level="3"] {
         font-size: $--ot-h3-size;
-        line-height: $--ot-h3-size + $offset;
+        line-height: $--ot-h3-size + $--ot-offset-h-size;
       }
 
       &[level="4"] {
         font-size: $--ot-h4-size;
-        line-height: $--ot-h4-size + $offset;
+        line-height: $--ot-h4-size + $--ot-offset-h-size;
       }
 
       &[level="5"] {
         font-size: $--ot-h5-size;
-        line-height: $--ot-h5-size + $offset;
+        line-height: $--ot-h5-size + $--ot-offset-h-size;
       }
 
       &[level="6"] {
         font-size: $--ot-h6-size;
-        line-height: $--ot-h6-size + $offset;
+        line-height: $--ot-h6-size + $--ot-offset-h-size;
       }
     }
 
@@ -161,23 +164,21 @@ export default {
       margin-left: 2rem;
     }
 
-    $offset: 0.8rem;
-
     @include __ot_size__;
     &[size=mini] {
-        line-height: $--ot-mini-size + $offset;
+        line-height: $--ot-mini-default;
     }
 
     &[size=small] {
-        line-height: $--ot-small-size + $offset;
+        line-height: $--ot-small-default;
     }
 
     &[size=normal] {
-        line-height: $--ot-normal-size + $offset;
+        line-height: $--ot-normal-default;
     }
 
     &[size=big] {
-        line-height: $--ot-big-size + $offset;
+        line-height: $--ot-big-default;
     }
   }
 
