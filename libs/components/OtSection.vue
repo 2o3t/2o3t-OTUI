@@ -1,11 +1,11 @@
 <template>
-    <section ot v-bind="$otColors" class="ot-section" :class="$style.root" :indent="indent" :size="$otSize">
-        <h1 :class="$style.label" :level="level" :section="section" v-if="level === 1 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h1>
-        <h2 :class="$style.label" :level="level" :section="section" v-if="level === 2 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h2>
-        <h3 :class="$style.label" :level="level" :section="section" v-if="level === 3 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h3>
-        <h4 :class="$style.label" :level="level" :section="section" v-if="level === 4 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h4>
-        <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
-        <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span :class="$style.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
+    <section ot v-ot-bind="$otColors" class="ot-section" :class="$style.root" :indent="indent" :size="$otSize">
+        <h1 :class="$style.label" :level="level" :section="section" v-if="level === 1 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h1>
+        <h2 :class="$style.label" :level="level" :section="section" v-if="level === 2 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h2>
+        <h3 :class="$style.label" :level="level" :section="section" v-if="level === 3 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h3>
+        <h4 :class="$style.label" :level="level" :section="section" v-if="level === 4 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h4>
+        <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
+        <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" v-html="descHtml"></p>
         <div :prefix="prefix" :class="$style.children">
@@ -22,11 +22,19 @@ export default {
             case 'dark':
                 return {
                     normal: [ 'light-f' ],
+                    prefix: {
+                        normal: [ 'light-f' ],
+                        active: [ 'def-f-hov' ],
+                    },
                 };
             case 'light':
             default:
                 return {
                     normal: [ 'def-f' ],
+                    prefix: {
+                        normal: [ 'def-f' ],
+                        active: [ 'def-f-hov' ],
+                    },
                 };
         }
     },
@@ -105,15 +113,10 @@ export default {
     font-variant: tabular-nums;
     margin: 1rem 0 0.6rem;
 
-    &:hover .prefix {
-        visibility: visible;
-    }
-
     .prefix {
       display: inline-block;
       width: 2rem;
-      visibility: hidden;
-      transition: visibility 0.3s;
+      transition: color 0.3s;
       cursor: pointer;
     }
 

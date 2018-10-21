@@ -38,28 +38,42 @@ export default {
     },
 
     min(value, args) {
-        const msg = 'Must be greater than or equal to {{ min }}';
+        const msg = `Must be greater than or equal to ${args}`;
         const valid = Number(args) <= value;
 
         return [ valid, msg ];
     },
 
     max(value, args) {
-        const msg = 'Must be less than or equal to {{ max }}';
+        const msg = `Must be less than or equal to ${args}`;
         const valid = Number(args) >= value;
 
         return [ valid, msg ];
     },
 
     between(value, args) {
-        const msg = 'Must be between {{ min }} and {{ max }}';
+        const msg = `Must be between ${args.min} and ${args.max}`;
         const valid = Number(args.min) <= value && Number(args.max) >= value;
 
         return [ valid, msg ];
     },
 
+    minLength(value, args) {
+        const msg = `Must have be ${args} characters`;
+        const valid = Number(args) <= value.length;
+
+        return [ valid, msg ];
+    },
+
+    maxLength(value, args) {
+        const msg = `Must have be ${args} characters`;
+        const valid = Number(args) >= value.length;
+
+        return [ valid, msg ];
+    },
+
     betweenLength(value, args) {
-        const msg = 'Must have between {{ min }} and {{ max }} characters';
+        const msg = `Must have between ${args.min} and ${args.max} characters`;
         const valid = Number(args.min) <= value.length && Number(args.max) >= value.length;
 
         return [ valid, msg ];
@@ -91,9 +105,8 @@ export default {
     },
 
     includes(value, args) {
-        args.value = value;
         const values = args.values;
-        const msg = '{{ value }} is not one of the following: {{ values.join(", ") }}';
+        const msg = `${value} is not one of the following: ${values.join(', ')}`;
 
         return [ !!values.filter(option => option === value).length, msg ];
     },

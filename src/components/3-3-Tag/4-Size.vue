@@ -1,10 +1,10 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :theme="$otTheme" :code="code">
-            <ot-tag :theme="$otTheme" size="mini" circle>Mini</ot-tag>
-            <ot-tag :theme="$otTheme" size="small" circle> Small</ot-tag>
-            <ot-tag :theme="$otTheme" size="normal" circle>Normal</ot-tag>
-            <ot-tag :theme="$otTheme" size="big" circle>Big</ot-tag>
+            <ot-tag :theme="$otTheme" size="mini" round>Mini</ot-tag>
+            <ot-tag :theme="$otTheme" size="small" round> Small</ot-tag>
+            <ot-tag :theme="$otTheme" size="normal" round>Normal</ot-tag>
+            <ot-tag :theme="$otTheme" size="big" round>Big</ot-tag>
         </ot-row-group>
     </ot-section>
 </template>

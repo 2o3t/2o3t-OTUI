@@ -6,6 +6,7 @@ import OtCard from './OtCard.vue';
 import OtCheckbox from './OtCheckbox.vue';
 import OtCheckboxGroup from './OtCheckboxGroup.vue';
 import OtCode from './OtCode.vue';
+import OtColorPicker from './OtColorPicker.vue/index.vue';
 import OtForm from './OtForm.vue';
 import OtFormItem from './OtFormItem.vue';
 import OtIcon from './OtIcon.vue';
@@ -15,6 +16,7 @@ import OtLabel from './OtLabel.vue';
 import OtLazyLoad from './OtLazyLoad.vue';
 import OtLine from './OtLine.vue';
 import OtLink from './OtLink.vue';
+import OtList from './OtList.vue';
 import OtLoading from './OtLoading.vue';
 import OtLogo from './OtLogo.vue';
 import OtMenu from './OtMenu.vue';
@@ -37,6 +39,7 @@ import OtTag from './OtTag.vue';
 import OtTest from './OtTest.vue/index.vue';
 import OtTip from './OtTip.vue';
 import OtTitleTip from './OtTitleTip.vue';
+import OtTransfer from './OtTransfer.vue';
 
 export default {
 
@@ -47,6 +50,7 @@ export default {
     OtCheckbox,
     OtCheckboxGroup,
     OtCode,
+    OtColorPicker,
     OtForm,
     OtFormItem,
     OtIcon,
@@ -56,6 +60,7 @@ export default {
     OtLazyLoad,
     OtLine,
     OtLink,
+    OtList,
     OtLoading,
     OtLogo,
     OtMenu,
@@ -78,5 +83,6 @@ export default {
     OtTest,
     OtTip,
     OtTitleTip,
+    OtTransfer,
 
 };

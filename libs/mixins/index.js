@@ -213,7 +213,13 @@ function createMixin(options) {
             hookCreated(this);
         },
         mounted() {
-            // test
+            const $options = this.$options;
+            if ($options.__OT__) { // self
+                const children = this.$children;
+                this._otUpdateChildren(children);
+            }
+        },
+        beforeUpdate() {
             const $options = this.$options;
             if ($options.__OT__) { // self
                 const children = this.$children;
@@ -226,10 +232,10 @@ function createMixin(options) {
                     for (const child of children) {
                         const $options = child.$options;
                         if ($options.__OT__) { // 自己人
-                            if (this.theme && !child.theme) {
+                            if (this.theme && !child.$attrs.theme) {
                                 child.theme = this.$otTheme;
                             }
-                            if (this.size && !child.size) {
+                            if (this.size && !child.$attrs.size) {
                                 child.size = this.$otSize;
                             }
                         }

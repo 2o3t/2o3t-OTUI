@@ -1,5 +1,5 @@
 <template>
-    <div ot v-bind="$otColors" :class="$style.root" :mode="type" :style="initStyle"></div>
+    <div ot v-ot-bind="$otColors" :class="$style.root" :mode="type" :style="initStyle"></div>
 </template>
 
 <script>

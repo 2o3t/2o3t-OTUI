@@ -1,5 +1,5 @@
 <template>
-    <div ot v-bind="$otColors" class="ot-nav" :size="$otSize"
+    <div ot v-ot-bind="$otColors" class="ot-nav" :size="$otSize"
          :class="$style.root" :collapse="isCollapse">
         <div v-if="$slots.left" :class="$style.left">
             <slot name="left"></slot>

@@ -1,4 +1,4 @@
-@import './base';
+@import './globals.scss';
 
 // ====== light ======
 // font
@@ -78,7 +78,7 @@ $--ot-color-default-font-focus: $--color-default;
 $--ot-color-default-font-selected: $--color-primary;
 $--ot-color-default-font-disabled: $--color-default-light-6;  // ok
 // background
-$--ot-color-default-background-normal: $--color-white;  // ok
+$--ot-color-default-background-normal: $--color-primary-light-9;  // ok
 $--ot-color-default-background-hover: $--color-primary;
 $--ot-color-default-background-active: $--color-primary-dark-1;  // ok
 $--ot-color-default-background-focus: $--color-primary-light-9;

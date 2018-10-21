@@ -2,30 +2,13 @@
 # yarn lockfile v1
 
 
-"2o3t-ui@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.2.tgz#dc6954429d53b1b56eea2c32cd291d7e766288b0"
+"2o3t-ui@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.5.tgz#7dcf3764844c6ab6110ae0253db81dbe192370b6"
   dependencies:
-    highlight.js "^9.12.0"
-
-"2o3t-ui@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.3.tgz#ec56e053420fdbf5de7cd98aafadaa5a144fb5e1"
-  dependencies:
-    "2o3t-ui" "^0.0.2"
+    "2o3t-ui" "^0.0.5"
     font-awesome "^4.7.0"
-    highlight.js "^9.12.0"
-    lodash "^4.17.11"
-    vue "^2.5.17"
-    vue-router "^3.0.1"
-
-"2o3t-ui@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.4.tgz#293502fcd183f5a2d2af9fc20a5ec39611c08151"
-  dependencies:
-    "2o3t-ui" "^0.0.3"
-    font-awesome "^4.7.0"
-    highlight.js "^9.12.0"
+    highlight.js "^9.13.1"
     lodash "^4.17.11"
     vue "^2.5.17"
     vue-router "^3.0.1"
@@ -4446,10 +4429,6 @@ he@^1.1.0:
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
-
-highlight.js@^9.12.0:
-  version "9.13.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.13.0.tgz#ee96d5c5f4c456e440f2dbdb2752211dff56f671"
 
 highlight.js@^9.13.1:
   version "9.13.1"

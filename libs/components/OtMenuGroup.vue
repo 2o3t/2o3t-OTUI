@@ -1,7 +1,7 @@
 <template>
     <div ot :theme="$otTheme" class="ot-menu-group" :size="$otSize"
          :class="$style.root">
-         <div v-if="label" ot v-bind="$otColors" :class="$style.label" :collapse="isCollapse">{{ label }}</div>
+         <div v-if="label" ot v-ot-bind="$otColors" :class="$style.label" :collapse="isCollapse">{{ label }}</div>
          <slot></slot>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <li ot v-bind="$otColors" class="ot-nav-item" :size="$otSize"
+    <li ot v-ot-bind="$otColors" class="ot-nav-item" :size="$otSize"
         :class="$style.root" @click="handleClick"
         :disabled="disabled" :selected="isSelected">
         <ot-link :class="$style.link" :href="href" :to="router">

@@ -1,10 +1,10 @@
 <template>
-    <label ot v-bind="$otColors" class="ot-radio" :class="$style.root" :size="$otSize"
+    <label ot v-ot-bind="$otColors" class="ot-radio" :class="$style.root" :size="$otSize"
         :selected="current==value"
         :disabled="disabled"
         :border="border" :round="round">
-        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current==value" :disabled="disabled">
-            <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current==value" :disabled="disabled"></span>
+        <span ot v-ot-bind="$otColors.front" :class="$style.front" :selected="current==value" :disabled="disabled">
+            <span ot v-ot-bind="$otColors.point" :class="$style.isChecked" :selected="current==value" :disabled="disabled"></span>
         </span>
         <div v-if="$slots.default" :class="$style.label">
             <slot></slot>

@@ -1,4 +1,5 @@
 import './styles/normalize.css';
+import './styles/base.css';
 import './styles/main.css';
 
 import createMixin from './mixins';

@@ -337,6 +337,7 @@ export default {
 
             if (this.mountedComp) {
                 this.mountedComp.show();
+                this.$emit('onChange', this.bShown);
             }
         },
         hide(e) {
@@ -359,6 +360,7 @@ export default {
 
             if (this.mountedComp) {
                 this.mountedComp.hide();
+                this.$emit('onChange', this.bShown);
             }
         },
         handleScrollEvent() {

@@ -1,7 +1,7 @@
 <template>
-    <label ot v-bind="$otColors" @click="$emit('click', $event)" class="ot-checkbox" :class="$style.root" :size="$otSize" :selected="current===value" :disabled="disabled" :border="border" :round="round">
-        <span ot v-bind="$otColors.front" :class="$style.front" :selected="current===value" :disabled="disabled" :round="round">
-            <span ot v-bind="$otColors.point" :class="$style.isChecked" :selected="current===value" :disabled="disabled" :indeterminate="indeterminate"></span>
+    <label ot v-ot-bind="$otColors" @click="$emit('click', $event)" class="ot-checkbox" :class="$style.root" :size="$otSize" :selected="current===value" :disabled="disabled" :border="border" :round="round">
+        <span ot v-ot-bind="$otColors.front" :class="$style.front" :selected="current===value" :disabled="disabled" :round="round">
+            <span ot v-ot-bind="$otColors.point" :class="$style.isChecked" :selected="current===value" :disabled="disabled" :indeterminate="indeterminate"></span>
         </span>
         <div v-if="$slots.default" :class="$style.label">
             <slot></slot>

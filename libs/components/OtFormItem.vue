@@ -1,12 +1,13 @@
 <template>
-    <ot-row-group class="ot-form-item" :class="$style.root" :vertical="vertical" :fixable="false">
+    <ot-row-group class="ot-form-item" :class="$style.root" :vertical="_vertical" :fixable="false"
+        :size="$otSize">
         <ot-label :class="$style.label" :name="name" :required="required"
-            :style="{ width: labelWidth }">
+            :style="{ width: labelWidth }" :position="labelPosition">
             <span v-ot-title>{{ label }}</span>
         </ot-label>
         <div :class="$style.row" ot>
             <slot></slot>
-            <div ot v-if="errorMsg" v-bind="$otColors.msg" :class="$style.msg">{{ errorMsg }}</div>
+            <div ot v-if="errorMsg" v-ot-bind="$otColors.msg" :class="$style.msg">{{ errorMsg }}</div>
         </div>
     </ot-row-group>
 </template>
@@ -48,14 +49,35 @@ export default {
             type: [ String ],
             default: '100px',
         },
+        vertical: [ Boolean ],
     },
     data() {
         return {
-            vertical: false,
             inputElements: [],
             required: false,
             errorMsg: '',
         };
+    },
+    computed: {
+        _vertical() {
+            if (this.$OtForm && this.$OtForm.labelPosition) {
+                const position = this.$OtForm.labelPosition;
+                if (position === 'top') {
+                    return true;
+                }
+            }
+            return this.vertical;
+        },
+        labelPosition() {
+            if (this.$OtForm && this.$OtForm.labelPosition) {
+                const position = this.$OtForm.labelPosition;
+                if (position === 'top') {
+                    return 'left';
+                }
+                return position;
+            }
+            return 'right';
+        },
     },
     created() {
         if (this.$OtForm) {
@@ -76,16 +98,6 @@ export default {
             }
         }
     },
-    beforeDestroy() {
-        if (this.$OtForm) {
-            this.$OtForm.removeField(this.name);
-        }
-        this._removeListeners();
-    },
-    mounted() {
-        this._initInput();
-        this._initListeners();
-    },
     methods: {
         _validateInputUI(valid) {
             // 对 UI 进行操作
@@ -103,15 +115,14 @@ export default {
             });
         },
         _initInput() {
-            const $slot = this.$slots.default;
-            if ($slot && $slot.length) {
-                const $el = $slot[0].elm;
-                if ($el) {
-                    const $input = $el.querySelector('input');
-                    if ($input) {
-                        $input.name = this.name;
-                        this.inputElements.push($input);
-                    }
+            const $el = this.$el;
+            if ($el && $el.querySelectorAll) {
+                const $inputs = $el.querySelectorAll('input,textarea');
+                if ($inputs && $inputs.length) {
+                    $inputs.forEach(input => {
+                        input.name = this.name;
+                        this.inputElements.push(input);
+                    });
                 }
             }
         },
@@ -119,7 +130,7 @@ export default {
             if (this._eventFn_) return;
             this._eventFn_ = this._onRuleTrigger.bind(this);
             if (this.$OtForm) {
-                const triggers = this.$OtForm.getRuleTriggers(this.name);
+                const triggers = this.$OtForm.getTriggers(this.name);
                 if (Array.isArray(triggers)) {
                     triggers.forEach(trigger => {
                         this.inputElements.forEach(input => {
@@ -142,7 +153,7 @@ export default {
         _removeListeners() {
             if (!this._eventFn_) return;
             if (this.$OtForm) {
-                const triggers = this.$OtForm.getRuleTriggers(this.name);
+                const triggers = this.$OtForm.getTriggers(this.name);
                 if (Array.isArray(triggers)) {
                     triggers.forEach(trigger => {
                         this.inputElements.forEach(input => {
@@ -165,8 +176,10 @@ export default {
         _onRuleTrigger(e) {
             // 触发验证
             const trigger = e.type;
-            console.log('trigger: ', trigger);
-            this.validate(trigger);
+            setTimeout(() => {
+                console.log('trigger: ', trigger);
+                this.validate(trigger);
+            }, 100);
         },
         _blurAllInput() {
             this.inputElements.forEach(input => {
@@ -184,24 +197,29 @@ export default {
                 this.$otUtils.scrollAnimation(currentY, targetY);
             }
         },
+        focus() {
+            this._focusFirstInput();
+        },
         validate(trigger) {
-            let valid = true;
-            let message = true;
-            if (this.$OtForm) {
-                message = this.$OtForm.validateField(this.name, trigger);
+            if (!this.$OtForm) {
+                // 更新UI
+                this._validateInputUI(true);
+                return true;
             }
-            if (message === true) {
+            const p = this.$OtForm.validateField(this.name, trigger);
+            return p.then(() => {
                 // 通过了
                 this.errorMsg = '';
-                valid = true;
-            } else {
+                // 更新UI
+                this._validateInputUI(true);
+                return true;
+            }).catch(message => {
                 // 需要显示提示
                 this.errorMsg = message;
-                valid = false;
-            }
-            // 更新UI
-            this._validateInputUI(valid);
-            return valid;
+                // 更新UI
+                this._validateInputUI(false);
+                return false;
+            });
         },
         reset() {
             // 清空错误提示
@@ -209,6 +227,16 @@ export default {
             this._validateInputUI();
             this._blurAllInput();
         },
+    },
+    mounted() {
+        this._initInput();
+        this._initListeners();
+    },
+    beforeDestroy() {
+        if (this.$OtForm) {
+            this.$OtForm.removeField(this.name);
+        }
+        this._removeListeners();
     },
 };
 </script>
@@ -220,12 +248,20 @@ export default {
     box-sizing: border-box;
     display: table;
 
+    &>[ot][childs]:not([vertical]) {
+        align-items: baseline;
+    }
+
     @include __ot_size__;
 
     .label {
         display: table-cell;
-        margin-right: 0.6em;
+        margin-right: 1em;
         vertical-align: middle;
+
+        &[position=ri] {
+
+        }
     }
 
     .row {

@@ -1,5 +1,5 @@
 <template>
-    <span ot v-bind="$otColors" class="ot-logo" :class="$style.root" :size="$otSize">
+    <span ot v-ot-bind="$otColors" class="ot-logo" :class="$style.root" :size="$otSize">
         <ot-icon :class="$style.icon" :icon="icon" :url="url"></ot-icon>
         <div :class="$style.title">
             <slot></slot>

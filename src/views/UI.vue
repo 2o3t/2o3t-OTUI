@@ -3,7 +3,7 @@
 
         <ot-section :theme="$otTheme" label="OT-ColorPicker">
             <ot-row-group :theme="$otTheme">
-                <ot-color-picker :theme="$otTheme" round></ot-color-picker>
+                <ot-color-picker :theme="$otTheme" round v-model="color" @onChange="changeColor"></ot-color-picker>
             </ot-row-group>
         </ot-section>
 
@@ -61,6 +61,8 @@ export default {
     name: 'ui-page',
     data() {
         return {
+            color: '#CCCCCC',
+
             transferSelectItems: [],
             listSelectItems: [],
 
@@ -98,6 +100,11 @@ export default {
                 });
             }
             return list;
+        },
+    },
+    methods: {
+        changeColor() {
+
         },
     },
 };

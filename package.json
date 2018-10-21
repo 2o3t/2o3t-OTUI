@@ -1,6 +1,6 @@
 {
     "name": "2o3t-ui",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": "zyao89 <zyao89@gmail.com>",
     "description": "A OT-UI for Vue",
     "scripts": {
@@ -10,7 +10,9 @@
         "lint": "vue-cli-service lint",
         "lint:libs": "vue-cli-service lint ./libs",
         "lint:libs:fix": "vue-cli-service lint ./libs --fix",
+        "sass:base": "node_modules/node-sass/bin/node-sass --watch libs/sass/base.scss libs/styles/base.css",
         "sass:main": "node_modules/node-sass/bin/node-sass --watch libs/sass/main.scss libs/styles/main.css",
+        "sass:main:color": "node_modules/node-sass/bin/node-sass libs/sass/main.scss src/assets/main.color",
         "sass:test": "node_modules/node-sass/bin/node-sass --watch libs/sass/test/test.scss libs/sass/test/test.css",
         "deploy": "sh ./deploy.sh"
     },
@@ -20,7 +22,7 @@
         "dist/**/*"
     ],
     "dependencies": {
-        "2o3t-ui": "^0.0.4",
+        "2o3t-ui": "^0.0.5",
         "font-awesome": "^4.7.0",
         "highlight.js": "^9.13.1",
         "lodash": "^4.17.11",

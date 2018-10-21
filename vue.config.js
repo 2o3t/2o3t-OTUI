@@ -47,7 +47,7 @@ module.exports = {
         //     .loader('vue-loader')
         //     .end();
 
-
+        // markdown
         config.module
             .rule('markdown')
             .test(/.md$/)
@@ -56,6 +56,16 @@ module.exports = {
             .end()
             .use()
             .loader(path.resolve(__dirname, './loaders/markdown.js'))
+            .end();
+
+        config.module
+            .rule('UIViews')
+            .test(/.js$/)
+            .include
+            .add(path.resolve(__dirname, './src/views'))
+            .end()
+            .use()
+            .loader(path.resolve(__dirname, './loaders/mainCss.js'))
             .end();
     },
 };

@@ -8,10 +8,13 @@
                 </ot-logo>
             </ot-link>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :router="item.router">{{item.name}}</ot-nav-item>
-            <ot-switch :theme="$otTheme" slot="right" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
-                <span slot="inactive">Light</span>
-                <span slot="active">Dark</span>
-            </ot-switch>
+            <ot-row-group :theme="$otTheme" :class="$style.right" slot="right">
+                <ChangeColor ot></ChangeColor>
+                <ot-switch :theme="$otTheme" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
+                    <span slot="inactive">Light</span>
+                    <span slot="active">Dark</span>
+                </ot-switch>
+            </ot-row-group>
         </ot-nav>
     </header>
     <div :class="$style.sidebar">
@@ -26,8 +29,12 @@
 </template>
 
 <script>
+import ChangeColor from '@v/ChangeThemeColor';
 export default {
     name: 'app',
+    components: {
+        ChangeColor,
+    },
     data() {
         return {
             isCollapse: false,
@@ -70,6 +77,10 @@ export default {
 
     &[theme='dark'] {
         background-color: rgba($color: #242424, $alpha: .75);
+    }
+
+    .right {
+        vertical-align: middle;
     }
 }
 .sidebar {

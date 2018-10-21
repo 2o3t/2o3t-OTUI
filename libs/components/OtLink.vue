@@ -1,5 +1,5 @@
 <template>
-    <a ot v-bind="$otColors" class="ot-link" :class="$style.root" :href="currentHref" @click="handleClick" :line="line"
+    <a ot v-ot-bind="$otColors" class="ot-link" :class="$style.root" :href="currentHref" @click="handleClick" :line="line"
         v-on="listeners" :disabled="disabled"
         :target="target">
         <slot></slot>

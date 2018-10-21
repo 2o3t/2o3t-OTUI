@@ -1,5 +1,5 @@
 <template>
-    <span ot v-bind="$otColors" class="ot-tag" :size="$otSize" type="tag" :class="$style.root"
+    <span ot v-ot-bind="$otColors" class="ot-tag" :size="$otSize" type="tag" :class="$style.root"
         :disabled="disabled" :round="round" :circle="circle">
         <slot></slot>
     </span>
@@ -41,7 +41,7 @@ export default {
     @import './globals';
     position: relative;
     box-sizing: border-box;
-    padding: 0 0.6em;
+    padding: 0 0.3em;
     display: inline-block;
     white-space: nowrap;
 

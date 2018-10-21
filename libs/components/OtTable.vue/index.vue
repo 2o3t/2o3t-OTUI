@@ -1,14 +1,14 @@
 <template>
-    <div class="root">Test</div>
+    <div></div>
 </template>
 
 <script>
 export default {
-    name: 'ot-test',
+    name: 'ot-table',
+    // TODO Table
 };
 </script>
 
 <style>
-.root {
-}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <label ot class="ot-label" :class="$style.root" @click="handleForClick">
-        <span ot v-bind="$otColors" :class="$style.prefix" v-if="required">{{ prefix }}</span>
+    <label ot class="ot-label" :class="$style.root" @click="handleForClick" :position="position">
+        <span ot v-ot-bind="$otColors" :class="$style.prefix" v-if="required">{{ prefix }}</span>
         <slot></slot>
     </label>
 </template>
@@ -33,6 +33,10 @@ export default {
             type: [ String ],
             default: '*',
         },
+        position: {
+            type: [ String ],
+            default: 'right',
+        },
     },
     methods: {
         handleForClick() {
@@ -59,6 +63,14 @@ export default {
     box-sizing: border-box;
     text-align: right;
     vertical-align: middle;
+
+    &[position=left] {
+        text-align: left;
+    }
+
+    &[position=center] {
+        text-align: center;
+    }
 
     @include __ot_size__;
     @include __ot_height__;

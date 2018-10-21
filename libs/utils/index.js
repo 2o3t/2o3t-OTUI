@@ -1,11 +1,11 @@
 import * as scroll from './scroll';
 import * as throttle from './throttle';
-import validator from './validator/index';
 import listeners from './listeners';
+import extend from './extendEx';
 
 export default {
     ...scroll,
     ...throttle,
-    $validator: validator,
     ...listeners,
+    extend,
 };

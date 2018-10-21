@@ -1,32 +1,32 @@
 <template>
-    <div ot v-bind="$otColors" class="ot-slider" :class="$style.root" :size="$otSize" :theme="$otTheme" :disabled="disabled" :vertical="vertical">
-        <div ot v-bind="$otColors.runway" :class="$style.runway" :disabled="disabled" :vertical="vertical"
+    <div ot v-ot-bind="$otColors" class="ot-slider" :class="$style.root" :size="$otSize" :theme="$otTheme" :disabled="disabled" :vertical="vertical">
+        <div ot v-ot-bind="$otColors.runway" :class="$style.runway" :disabled="disabled" :vertical="vertical"
             @mousedown="handleRunwayClick">
-            <div ot v-bind="$otColors.bar" :class="$style.bar" :disabled="disabled" :vertical="vertical" selected
+            <div ot v-ot-bind="$otColors.bar" :class="$style.bar" :disabled="disabled" :vertical="vertical" selected
                 :style="barStyle"
                 @mousedown="handleBarClick"></div>
-            <div ot v-bind="$otColors.wrapper" :class="$style.wrapper" :size="$otSize" :disabled="disabled" :vertical="vertical"
+            <div ot v-ot-bind="$otColors.wrapper" :class="$style.wrapper" :size="$otSize" :disabled="disabled" :vertical="vertical"
                 @mousedown="handleDown"
                 :style="wrapperStyle"
                 >
                 <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
-                    <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled" ref="wrapper"></div>
+                    <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled" ref="wrapper"></div>
                 </ot-title-tip>
-                <!-- <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div> -->
+                <!-- <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div> -->
             </div>
             <!-- range -->
-            <div v-if="range" ot v-bind="$otColors.wrapper" :class="$style.wrapper" :size="$otSize" :disabled="disabled" :vertical="vertical"
+            <div v-if="range" ot v-ot-bind="$otColors.wrapper" :class="$style.wrapper" :size="$otSize" :disabled="disabled" :vertical="vertical"
                 @mousedown="handleRangeDown"
                 :style="wrapperRangeStyle"
                 >
                 <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
-                    <div ot v-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
+                    <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
                 </ot-title-tip>
             </div>
             <!-- step -->
             <ul :class="$style.step" v-if="showStep"
                 @mousedown="handleStepClick">
-                <li ot v-bind="$otColors.step" :class="$style.item" v-for="(item, index) in step" :key="item" :vertical="vertical"
+                <li ot v-ot-bind="$otColors.step" :class="$style.item" v-for="(item, index) in step" :key="item" :vertical="vertical"
                     v-if="calcXPercent(leftX) <= (index / step)"
                     :style="vertical ? { bottom: `${index / step * 100}%` } : { left: `${index / step * 100}%` }">
                 </li>

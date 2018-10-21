@@ -1,6 +1,6 @@
 <template>
-    <div ot v-bind="$otColors" :class="$style.root" class="ot-card">
-        <div ot v-bind="$otColors.left" :class="$style.left">
+    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card">
+        <div ot v-ot-bind="$otColors.left" :class="$style.left">
             <slot name="left"></slot>
         </div>
         <div :class="$style.right">

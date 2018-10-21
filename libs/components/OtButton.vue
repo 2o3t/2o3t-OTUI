@@ -1,5 +1,5 @@
 <template>
-    <button ot v-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
+    <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
         :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default" :dashed="dashed">
         <ot-icon v-if="icon" :icon="icon"><slot></slot></ot-icon>
         <slot v-else></slot>

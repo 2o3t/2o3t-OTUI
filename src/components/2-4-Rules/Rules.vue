@@ -12,9 +12,9 @@
                                 <span :class="$style.title">{{ name }}-{{ suffix }}-{{ sx }}</span>
 
                                 <span :class="[$style.title, $style.name]">
-                                    <span ot v-bind="$otColors.name" :class="$style.sLeft">[</span>
+                                    <span ot v-ot-bind="$otColors.name" :class="$style.sLeft">[</span>
                                     ot-{{ parseSubName(name,3) }}-{{ parseSubName(suffix,1) }}{{ parseSubSXName(sx,1) }}
-                                    <span ot v-bind="$otColors.name" :class="$style.sRight">]</span>
+                                    <span ot v-ot-bind="$otColors.name" :class="$style.sRight">]</span>
                                 </span>
                             </div>
                         </ot-section>

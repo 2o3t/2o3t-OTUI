@@ -1,7 +1,7 @@
 <template>
-    <div ot v-bind="$otColors" v-highlight :class="$style.root" class="ot-code" :size="$otSize">
+    <div ot v-ot-bind="$otColors" v-highlight :class="$style.root" class="ot-code" :size="$otSize">
         <pre :class="`language-${lang}`" code>
-            <code ot v-bind="$otColors" :class="$style.code" :lang="lang" v-text="value"></code>
+            <code ot v-ot-bind="$otColors" :class="$style.code" :lang="lang" v-text="value"></code>
         </pre>
     </div>
 </template>

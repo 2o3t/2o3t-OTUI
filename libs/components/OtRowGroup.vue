@@ -1,11 +1,11 @@
 <template>
-    <div ot v-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
+    <div ot v-ot-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
         <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable">
             <slot></slot>
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode" dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <transition name="collapse">
-            <ot-code ot v-bind="$otColors.code" :class="$style.code" :theme="$otTheme"
+            <ot-code ot v-ot-bind="$otColors.code" :class="$style.code" :theme="$otTheme"
                 :size="$otSize"
                 v-if="code" v-show="bShow" lang="html"
                 :value="code">
@@ -21,7 +21,7 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    group: this.background ? [ 'pri-bg' ] : [],
+                    group: this.background ? [ 'dark-bg' ] : [ ],
                     code: {
                         normal: [ 'def-bl', 'def-br', 'def-bb' ],
                         hover: [ 'def-bl-h', 'def-br-h', 'def-bb-h' ],
@@ -30,7 +30,7 @@ export default {
             case 'light':
             default:
                 return {
-                    group: this.background ? [ 'pri-bg' ] : [],
+                    group: this.background ? [ 'def-bg' ] : [],
                     code: {
                         normal: [ 'grey-bl', 'grey-br', 'grey-bb' ],
                         hover: [ 'def-bl-hov', 'def-br-hov', 'def-bb-hov' ],
@@ -70,12 +70,12 @@ export default {
 <style lang="scss" module>
 @import './globals';
 .root {
-  padding: 10px 0;
+  padding: 0.8em 0;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 1.2em;
   position: relative;
 
   &[round] {
@@ -87,11 +87,12 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     box-sizing: border-box;
 
     &[vertical] {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     & > [ot] {
@@ -100,16 +101,16 @@ export default {
     }
 
     &[fixable] > [ot] {
-        margin: 5px 20px;
+        margin: 0.5em 2em;
     }
   }
 
   .codeBtn {
-      margin: 20px 10px 0;
+      margin: 2em 1em 0;
   }
 
   .code {
-      margin: 0 10px 20px;
+      margin: 0 1em 2em;
   }
 }
 </style>

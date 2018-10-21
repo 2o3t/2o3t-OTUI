@@ -144,9 +144,13 @@ export default {
     position: relative;
     margin-left: -1px;
     box-sizing: border-box;
-    padding: 0.6em 1.5em 0.6em 1.2em;
+    padding: 0.6em 1.5em 0.6em 0em;
 
     @include __ot_size__;
+
+    &[border], &[round] {
+        padding: 0.6em 1.5em 0.6em 1.2em;
+    }
 
     &[round] {
         border-radius: 0;

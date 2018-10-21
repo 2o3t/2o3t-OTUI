@@ -1,7 +1,7 @@
 <template>
     <div ot class="ot-arrow" v-bind="$attrs" :class="$style.root" :placement="placement">
         <div :class="$style.box" :placement="placement">
-            <i ot v-bind="$otColors" :class="$style.arrow"
+            <i ot v-ot-bind="$otColors" :class="$style.arrow"
                 :placement="placement"
                 v-on="$listeners">
             </i>
@@ -49,8 +49,6 @@ export default {
 @import './globals';
 .root {
     display: inline-block;
-    width: 100%;
-    height: 100%;
 
     &[placement=up] {
         transform: translateY(0.1em);

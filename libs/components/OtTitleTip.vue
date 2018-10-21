@@ -1,7 +1,7 @@
 <template>
     <ot-tip ot class="ot-title-tip" :class="$style.root" :round="round" v-bind="$attrs" v-on="$listeners" :arrow="arrow" :arrowAttrs="$otColors.arrow">
         <slot></slot>
-        <div ot v-bind="$otColors.tip" slot="tip" :size="$otSize" :theme="$otTheme" class="ot-title-tip-popper" :style="style" :round="round">
+        <div ot v-ot-bind="$otColors.tip" slot="tip" :size="$otSize" :theme="$otTheme" class="ot-title-tip-popper" :style="style" :round="round">
             <slot name="title">{{ title }}</slot>
         </div>
     </ot-tip>
