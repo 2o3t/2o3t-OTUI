@@ -178,7 +178,7 @@ export default {
                     invalids[0].focus();
                     return false;
                 }
-                this._focusForm();
+                // this._focusForm();
                 this._updateModel();
                 return true;
             });
@@ -199,7 +199,7 @@ export default {
                     this.model[name] = this.firstModel[name];
                 }
             });
-            this._updateModel();
+            // this._updateModel();
             this._focusForm();
         },
         _focusForm() { // 聚焦

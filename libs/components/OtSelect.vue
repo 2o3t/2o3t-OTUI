@@ -20,6 +20,7 @@
             </div>
         </transition>
         <ot-input :fixable="false" :theme="$otTheme" :size="$otSize"
+            :icon="icon"
             :round="round"
             :placeholder="placeholder"
             :readonly="readonly"
@@ -27,7 +28,6 @@
             :name="name"
             :model="model"
             @input="handleInput"
-            @change="$emit('change', $event)"
             :clearable="clearable"
             @clear="handleClear"
             v-on="$listeners"
@@ -87,7 +87,7 @@ export default {
                         normal: [ 'def-f' ],
                         hover: [ 'pri-f-hov' ],
                         active: [ 'pri-f-act' ],
-                        selected: [ 'pri-f-sel' ],
+                        selected: [ 'light-f-sel', 'pri-bg-sel' ],
                         disabled: [ 'def-f-dis', 'def-bg-dis' ],
                     },
                 };
@@ -113,6 +113,7 @@ export default {
         list: [ Array ],
         direction: [ String ],
         clearable: [ Boolean ],
+        icon: [ String ],
     },
     data() {
         return {
@@ -137,9 +138,9 @@ export default {
             this.$nextTick(() => {
                 this.bShown = false;
             });
+            this.$emit('close');
         },
         handleSelectClick(item) {
-            console.log(item);
             if (typeof item === 'object') {
                 const value = item.value;
                 this.$emit('update', value);
@@ -182,7 +183,6 @@ export default {
         },
         handleInput(e) {
             const value = e.target.value;
-            console.log(value);
             this.$emit('update', value);
 
             this._show();
@@ -195,12 +195,26 @@ export default {
             if (this.disabled) return;
             if (!this.bShown) {
                 this.bShown = true;
+                this._scrollItem();
+                this.$emit('show');
             }
+        },
+        _scrollItem() {
+            this.$nextTick(() => {
+                const els = this.$el.querySelectorAll('ul>li[selected]');
+                if (els && els.length) {
+                    els.forEach(el => {
+                        if (el.parentElement) {
+                            el.parentElement.scrollTop = el.offsetTop;
+                        }
+                    });
+                }
+            });
         },
         _off(e) {
             const result = this.$el.contains(e.target);
             if (!result) {
-                this.bShown = false;
+                this.handleSelectCloseClick();
             }
         },
         addListener() {
@@ -248,10 +262,13 @@ export default {
     .select {
         display: block;
         box-sizing: border-box;
-        padding: 0.5rem 1rem;
+        padding: 0.5em 1em;
         width: 100%;
         margin: 0;
         z-index: 100;
+        max-height: 16em;
+        overflow-x: hidden;
+        overflow-y: auto;
 
         &[round] {
             @include __ot_round__;
@@ -259,13 +276,17 @@ export default {
 
         &>li {
             list-style: none;
+
+            &[selected] {
+                font-weight: bold;
+            }
         }
 
         &[list] {
-            padding: 0.5rem 0;
+            padding: 0.5em 0;
 
             &>li {
-                padding: 0 1rem;
+                padding: 0 1em;
             }
         }
     }
@@ -275,7 +296,7 @@ export default {
 
         &>.select {
             position: absolute;
-            bottom: 0.2rem;
+            bottom: 0.2em;
         }
     }
 
@@ -284,7 +305,7 @@ export default {
 
         &>.select {
             position: absolute;
-            top: 0.2rem;
+            top: 0.2em;
         }
     }
 }

@@ -1,6 +1,23 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-TimePicker">
+            <ot-row-group :theme="$otTheme">
+                <ot-time-picker :theme="$otTheme" :options="{
+                    start: '08:30',
+                    step: '00:15',
+                    end: '18:30',
+                 }"
+                 v-model="timepicker1" format="HH:mm"></ot-time-picker>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-time-picker :theme="$otTheme" round v-model="timepicker2"></ot-time-picker>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-time-picker :theme="$otTheme" round v-model="timepicker3" double></ot-time-picker>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-ColorPicker">
             <ot-row-group :theme="$otTheme">
                 <ot-color-picker :theme="$otTheme" round v-model="color" @onChange="changeColor"></ot-color-picker>
@@ -61,6 +78,12 @@ export default {
     name: 'ui-page',
     data() {
         return {
+            timepicker1: '',
+            timepicker2: '',
+            timepicker3: '',
+
+            wheelValue: '1',
+
             color: '#CCCCCC',
 
             transferSelectItems: [],

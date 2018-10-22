@@ -4,8 +4,10 @@ const modules = {};
 const files = require.context('.', true, /\.vue$/);
 files.keys().forEach(key => {
     if (key === './index.js' || key === './_index.js') return;
-    modules[key.replace(/(\.\/|\.vue)/g, '').replace(/\/index/g, '')] = files(key).default;
+    const name = key.replace(/(\.\/|\.vue)/g, '').replace(/\/index/g, '');
+    if (!/\w+\//g.test(name)) {
+        modules[name] = files(key).default;
+    }
 });
 
 export default modules;
-

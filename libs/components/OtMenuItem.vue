@@ -19,7 +19,7 @@ export default {
                     normal: [ 'light-f' ],
                     hover: [ 'pri-f-h' ],
                     active: [ 'pri-bg-act' ],
-                    selected: [ 'pri-bg-sel', 'light-f-s' ],
+                    selected: [ 'light-f-s', 'pri-bg-sel'],
                 };
             case 'light':
             default:

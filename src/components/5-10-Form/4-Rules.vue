@@ -72,7 +72,7 @@ export default {
                     required: true,
                     trigger: [ 'blur' ],
                     message: '需要输入姓名!',
-                },{
+                }, {
                     minLength: 3,
                     trigger: [ 'blur' ],
                 }],

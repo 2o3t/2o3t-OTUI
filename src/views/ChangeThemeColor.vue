@@ -7,10 +7,10 @@ import MAIN_CSS from './cssColor.js';
 const ID_NAME = '__custom_theme_color__';
 export default {
     name: 'ui-change-theme-color',
-    data () {
+    data() {
         return {
             color: '#409EFF',
-        }
+        };
     },
     methods: {
         changeColor() {
@@ -69,5 +69,5 @@ export default {
     beforeDestroy() {
         this.removeColor();
     },
-}
+};
 </script>

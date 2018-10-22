@@ -36,7 +36,6 @@ import OtSlider from './OtSlider.vue';
 import OtSwitch from './OtSwitch.vue';
 import OtTabs from './OtTabs.vue';
 import OtTag from './OtTag.vue';
-import OtTest from './OtTest.vue/index.vue';
 import OtTip from './OtTip.vue';
 import OtTitleTip from './OtTitleTip.vue';
 import OtTransfer from './OtTransfer.vue';
@@ -80,7 +79,6 @@ export default {
     OtSwitch,
     OtTabs,
     OtTag,
-    OtTest,
     OtTip,
     OtTitleTip,
     OtTransfer,

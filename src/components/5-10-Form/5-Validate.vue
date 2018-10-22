@@ -57,7 +57,7 @@
 export default {
     data() {
         const validatorMask = (value, callback) => {
-            if(!value || value.length < 10) {
+            if (!value || value.length < 10) {
                 callback('我是自定义验证, 请输入超过10个字符!');
             } else {
                 callback();
@@ -79,7 +79,7 @@ export default {
                     required: true,
                     trigger: [ 'blur' ],
                     message: '需要输入姓名!',
-                },{
+                }, {
                     minLength: 3,
                     trigger: [ 'blur' ],
                 }],
