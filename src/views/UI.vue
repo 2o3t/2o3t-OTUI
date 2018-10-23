@@ -1,6 +1,12 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-DatePicker">
+            <ot-row-group :theme="$otTheme">
+                <ot-date-picker :theme="$otTheme"></ot-date-picker>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-TimePicker">
             <ot-row-group :theme="$otTheme">
                 <ot-time-picker :theme="$otTheme" :options="{

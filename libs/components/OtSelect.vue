@@ -3,13 +3,13 @@
         :size="$otSize" :theme="$otTheme">
         <transition name="otSelectCollapse">
             <div :class="$style.up" v-if="bShown && ($slots.up || isUp) && !$slots.down && !list" :style="{ width: `${autoWidth}px` }">
-                <div ot v-ot-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
+                <div ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="up"></slot>
                     <slot></slot>
                 </div>
             </div>
             <div :class="$style.up" v-else-if="bShown && isUp && !$slots.up && !$slots.down && list" :style="{ width: `${autoWidth}px` }">
-                <ul ot v-ot-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
+                <ul ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
                     <li ot v-ot-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
@@ -38,13 +38,13 @@
         </ot-input>
         <transition name="otSelectCollapse">
             <div :class="$style.down" v-if="bShown && ($slots.down || !isUp) && !$slots.up && !list" :style="{ width: `${autoWidth}px` }">
-                <div ot v-ot-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
+                <div ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="down"></slot>
                     <slot></slot>
                 </div>
             </div>
             <div :class="$style.down" v-else-if="bShown && !isUp && !$slots.down && !$slots.up && list" :style="{ width: `${autoWidth}px` }">
-                <ul ot v-ot-bind="$otColors.list" :class="$style.select" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
+                <ul ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
                     <li ot v-ot-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
@@ -114,6 +114,7 @@ export default {
         direction: [ String ],
         clearable: [ Boolean ],
         icon: [ String ],
+        custom: [ Boolean ], // 不限制下拉框大小, 用于组件扩展
     },
     data() {
         return {
@@ -269,6 +270,11 @@ export default {
         max-height: 16em;
         overflow-x: hidden;
         overflow-y: auto;
+
+        &[custom] {
+            width: auto;
+            max-height: none;
+        }
 
         &[round] {
             @include __ot_round__;

@@ -1,5 +1,5 @@
 <template>
-    <ot-color-picker :theme="$otTheme" round v-model="color" @onChange="changeColor"></ot-color-picker>
+    <ot-color-picker :theme="$otTheme" round v-model="color" @change="changeColor"></ot-color-picker>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable :refresh="refresh" @onChange="handleTipOnChange">
+    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable :refresh="refresh" @change="handleTipOnChange">
         <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
             <div ot v-ot-bind="$otColors.box" :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
                 <ot-icon icon="angle-down"></ot-icon>
@@ -323,7 +323,7 @@ export default {
             this.$nextTick(() => {
                 this.$emit('update', this.currentHex);
 
-                this.$emit('onChange', this.lastRGB);
+                this.$emit('change', this.lastRGB);
             });
         },
         handleInput() {

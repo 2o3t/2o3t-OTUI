@@ -83,7 +83,7 @@ export default {
         };
     },
     watch: {
-        model(nv, ov) {
+        model(nv) {
             if (this.double && Array.isArray(nv)) {
                 this.selectValue = this.model[0];
                 this.selectDoubleValue = this.model[1];
@@ -147,7 +147,7 @@ export default {
         hourList() {
             const hours = [];
             let i = 0;
-            while(i < 24) {
+            while (i < 24) {
                 hours.push(this.pad(i));
                 i++;
             }
@@ -156,7 +156,7 @@ export default {
         minuteAndSecondList() {
             const array = [];
             let i = 0;
-            while(i < 60) {
+            while (i < 60) {
                 array.push(this.pad(i));
                 i++;
             }
@@ -180,7 +180,9 @@ export default {
             return [ parseInt(timeArr[0]), parseInt(timeArr[1]), parseInt(timeArr[2]) ];
         },
         formatValue(h, m, s) {
-            const value = moment().hour(h).minute(m).second(s).format(this._format);
+            const value = moment().hour(h).minute(m)
+                .second(s)
+                .format(this._format);
             return value;
         },
         handleWheelChange() {
