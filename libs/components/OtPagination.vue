@@ -320,6 +320,10 @@ export default {
 
     .jumper {
         vertical-align: middle;
+
+         & input {
+            text-align: center;
+         }
     }
 }
 </style>

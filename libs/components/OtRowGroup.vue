@@ -1,15 +1,13 @@
 <template>
     <div ot v-ot-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
-        <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable">
+        <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable" :fill="fill">
             <slot></slot>
         </div>
-        <ot-button :class="$style.codeBtn" v-if="code" :theme="$otTheme" @click="showCode" dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
+        <ot-button :class="$style.codeBtn" v-if="code" @click="showCode" dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <transition name="collapse">
-            <ot-code ot v-ot-bind="$otColors.code" :class="$style.code" :theme="$otTheme"
-                :size="$otSize"
-                v-if="code" v-show="bShow" lang="html"
-                :value="code">
-            </ot-code>
+            <div ot v-ot-bind="$otColors.code" v-if="code" v-show="bShow" :class="$style.code">
+                <ot-code :lang="lang" :value="code"></ot-code>
+            </div>
         </transition>
     </div>
 </template>
@@ -53,6 +51,11 @@ export default {
             default: true,
         },
         background: [ Boolean ],
+        lang: {
+            type: String,
+            default: 'vue',
+        },
+        fill: [ Boolean ],
     },
     data() {
         return {
@@ -103,6 +106,10 @@ export default {
     &[fixable] > [ot] {
         margin: 0.5em 2em;
     }
+
+    &[fill] > [ot] {
+        flex-grow: 1;
+    }
   }
 
   .codeBtn {
@@ -112,24 +119,5 @@ export default {
   .code {
       margin: 0 1em 2em;
   }
-}
-</style>
-
-<style>
-.collapse {
-    transform-origin: 50% 0%;
-    transform: scaleY(1);
-}
-
-.collapse-enter-active,
-.collapse-leave-active {
-    transform-origin: 50% 0%;
-    transition: transform 0.3s;
-}
-
-.collapse-enter,
-.collapse-leave-to {
-    transform-origin: 50% 0%;
-    transform: scaleY(0);
 }
 </style>

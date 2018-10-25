@@ -52,6 +52,9 @@ const components = Object.keys(allModules).sort((key1, key2) => {
         return item != null;
     });
 
-console.log(components);
+
+if (process.env.NODE_ENV !== 'production') {
+    console.log(components);
+}
 
 export default components;

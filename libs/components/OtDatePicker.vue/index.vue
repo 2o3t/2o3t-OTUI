@@ -9,7 +9,8 @@
                     :weeksLabel="weeksLabel"
                     :week="week"
                     :footer="footer"
-                    :format="format" @change="handleOnChange">
+                    :format="format" @change="handleOnChange"
+                    @ok="handleOK">
                 </ot-date-panel>
             </div>
         </ot-select>
@@ -17,12 +18,8 @@
 </template>
 
 <script>
-import OtDatePanel from './OtDatePanel.vue';
 export default {
     name: 'ot-date-picker',
-    components: {
-        OtDatePanel,
-    },
     model: {
         prop: 'model',
         event: 'update',
@@ -70,10 +67,15 @@ export default {
     },
     methods: {
         handleOnChange(value) {
+            console.log(this.selectValue);
             this.$emit('change', value);
         },
         updateModel() {
             this.$emit('update', this.selectValue);
+        },
+        handleOK() {
+            document.body.click();
+            this.updateModel();
         },
     },
 };

@@ -14,7 +14,9 @@ files.keys().forEach(key => {
 
 export default {
     install(Vue) {
-        console.log(modules);
+        if (process.env.NODE_ENV !== 'production') {
+            console.log(modules);
+        }
         Vue.prototype.$shared = modules;
         Vue.$shared = modules;
     },

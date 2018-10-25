@@ -173,13 +173,13 @@ export default {
     methods: {
         _calcThisDayToWeek(m) {
             const clone = moment(m);
-            const w = clone.week();
-            const first = clone.subtract(w, 'day');
+            const w = clone.days();
+            const first = clone.subtract(w, 'days');
             const weeks = [];
             let i = 0;
             while (i < 7) {
-                first.add(i, 'day');
-                weeks.push(first);
+                first.add(i, 'days');
+                weeks.push(moment(first));
                 i++;
             }
             return weeks;
@@ -221,22 +221,22 @@ export default {
         },
         lastMonth() {
             const displayDate = this.displayDate;
-            displayDate.subtract(1, 'month');
+            displayDate.subtract(1, 'months');
             this.refresh();
         },
         nextMonth() {
             const displayDate = this.displayDate;
-            displayDate.add(1, 'month');
+            displayDate.add(1, 'months');
             this.refresh();
         },
         lastYear() {
             const displayDate = this.displayDate;
-            displayDate.subtract(1, 'year');
+            displayDate.subtract(1, 'years');
             this.refresh();
         },
         nextYear() {
             const displayDate = this.displayDate;
-            displayDate.add(1, 'year');
+            displayDate.add(1, 'years');
             this.refresh();
         },
         refresh() {
@@ -251,10 +251,12 @@ export default {
                 }
             }
             this.currentDate = item;
+            this.currentWeek = this._calcThisDayToWeek(item);
 
             this.updateModel();
         },
         handleSelectWeek(items) {
+            this.currentDate = items[0];
             this.currentWeek = items;
 
             this.updateModel();
@@ -275,16 +277,20 @@ export default {
             this.currentDate = moment();
 
             if (this.week) {
-                this.currentWeek = this._calcThisDayToWeek(moment());
+                this.currentWeek = this._calcThisDayToWeek(this.currentDate);
             }
 
-            this.displayDate = moment();
+            this.displayDate = moment(this.currentDate);
             this.refresh();
+
+            this.updateModel();
         },
     },
     created() {
         // 初始化
-        this.currentDate = this.model ? moment(this.model, this._format) : moment();
+        if (this.model) {
+            this.currentDate = moment(this.model, this._format);
+        }
         this.currentWeek = this._calcThisDayToWeek(this.currentDate);
         this.displayDate = moment(this.currentDate);
         this.monthDays = this._calcMonthDays();

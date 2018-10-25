@@ -51,7 +51,7 @@ export default {
 </style>
 
 <style lang="scss">
-@import './globals';
+@import '../globals';
 .ot-button-group[ot] .ot-button[ot] {
     float: left;
     position: relative;

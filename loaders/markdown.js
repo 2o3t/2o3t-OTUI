@@ -35,5 +35,12 @@ module.exports = function(source) {
 
     config.COMPONENTS.__markdown = true;
 
+    // api
+    const $h3 = $('h3');
+    if ($h3.length) {
+        const table = $h3.next('table').html();
+        config._API_ = `<div class="markdown ot-api-container"><table>${table}</table></div>`;
+    }
+
     return 'export default ' + JSON.stringify(config);
 };

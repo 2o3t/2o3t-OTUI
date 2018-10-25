@@ -32,10 +32,10 @@ export default {
             case 'dark':
                 return {
                     list: {
-                        normal: [ 'light-f', 'dark-bg' ],
+                        normal: [ 'light-f' ],
                     },
                     item: {
-                        normal: [ 'light-f', 'dark-bg' ],
+                        normal: [ 'light-f' ],
                         hover: [ 'pri-bg-h' ],
                         active: [ 'pri-bg-a' ],
                         selected: [ 'light-f-sel', 'pri-bg-sel' ],
@@ -46,7 +46,7 @@ export default {
             default:
                 return {
                     list: {
-                        normal: [ 'def-f', 'light-bg' ],
+                        normal: [ 'def-f' ],
                     },
                     item: {
                         normal: [ 'def-f' ],

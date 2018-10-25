@@ -206,7 +206,9 @@ export default {
                 if (els && els.length) {
                     els.forEach(el => {
                         if (el.parentElement) {
-                            el.parentElement.scrollTop = el.offsetTop;
+                            this.$nextTick(() => {
+                                el.parentElement.scrollTop = el.offsetTop;
+                            });
                         }
                     });
                 }

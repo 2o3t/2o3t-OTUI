@@ -37,6 +37,7 @@ function mergeObjPropsToArray(obj) {
     const keys = Object.keys(obj);
     return keys.reduce((as, key) => {
         if (SX_NAMES.includes(key)) {
+            // TODO 验证是否合理
             const prop = obj[key];
             if (Array.isArray(prop)) {
                 return as.concat(prop);
@@ -68,6 +69,7 @@ function initTheme($vm, theme) {
                         const arr = otCs[k];
                         if (arr) {
                             if (SX_NAMES.includes(k)) {
+                                // TODO 验证是否合理
                                 if (Array.isArray(arr)) {
                                     return arrs.concat(arr);
                                 } else if (isStr(arr)) {
@@ -215,15 +217,19 @@ function createMixin(options) {
         mounted() {
             const $options = this.$options;
             if ($options.__OT__) { // self
-                const children = this.$children;
-                this._otUpdateChildren(children);
+                this.$nextTick(() => {
+                    const children = this.$children;
+                    this._otUpdateChildren(children);
+                });
             }
         },
         beforeUpdate() {
             const $options = this.$options;
             if ($options.__OT__) { // self
-                const children = this.$children;
-                this._otUpdateChildren(children);
+                this.$nextTick(() => {
+                    const children = this.$children;
+                    this._otUpdateChildren(children);
+                });
             }
         },
         methods: {

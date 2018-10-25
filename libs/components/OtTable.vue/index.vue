@@ -1,14 +1,178 @@
 <template>
-    <div></div>
+    <div ot class="ot-table" :class="$style.root" :adapter="adapter">
+        <slot></slot>
+        <div :class="$style.header" :style="_headerStyle">
+            <ot-table-header>
+                <div v-if="$slots['header-item']" prop="{ id, index, label }">
+                    <slot name="header-item" :id="id" :index="index" :label="label"></slot>
+                </div>
+            </ot-table-header>
+        </div>
+        <div :class="$style.body" :style="_bodyStyle">
+            <ot-table-body :list="list" :stripe="stripe">
+                <div v-if="$slots['body-item']" prop="{ id, index, label }">
+                    <slot name="body-item" :id="id" :index="index" :label="label"></slot>
+                </div>
+            </ot-table-body>
+        </div>
+        <div :class="$style.footer" :style="_footerStyle">
+            <ot-table-footer>
+            </ot-table-footer>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'ot-table',
-    // TODO Table
+    provide() {
+        return {
+            $OtTable: this,
+        };
+    },
+    props: {
+        list: {
+            type: Array,
+            default() {
+                return [];
+            },
+        },
+        stripe: [ Boolean ], // 是否为斑马纹 table
+        height: [ String, Number ],
+        maxHeight: [ String, Number ],
+        headerStyle: {
+            type: Function,
+            default() {
+                return {};
+            },
+        },
+        bodyStyle: {
+            type: Function,
+            default() {
+                return {};
+            },
+        },
+        adapter: { // 自适应宽度
+            tyep: [ Boolean ],
+            default: true,
+        },
+    },
+    data() {
+        return {
+            columns: {}, // 所有列
+            members: {},
+
+            allWidth: 0, // 总宽度
+        };
+    },
+    computed: {
+        _headerStyle() {
+            const style = {};
+            if (this.allWidth > 0 && !this.adapter) {
+                style.width = this.allWidth + 'px';
+            }
+            return style;
+        },
+        _bodyStyle() {
+            const style = {};
+            if (this.height) {
+                if (typeof this.height === 'number') {
+                    style.height = this.height + 'px';
+                } else {
+                    style.height = this.height;
+                }
+            }
+            if (this.maxHeight) {
+                if (typeof this.maxHeight === 'number') {
+                    style.maxHeight = this.maxHeight + 'px';
+                } else {
+                    style.maxHeight = this.maxHeight;
+                }
+            }
+            if (this.allWidth > 0 && !this.adapter) {
+                style.width = this.allWidth + 'px';
+            }
+            return style;
+        },
+        _footerStyle() {
+            const style = {};
+            if (this.allWidth > 0 && !this.adapter) {
+                style.width = this.allWidth + 'px';
+            }
+            return style;
+        },
+    },
+    methods: {
+        registerMembers(name, member) {
+            this.members[name] = member;
+        },
+        unregisterMembers(name) {
+            delete this.members[name];
+        },
+        addColumn(name, column) {
+            console.log(name);
+            this.columns[name] = column;
+        },
+        removeColumn(name) {
+            delete this.columns[name];
+        },
+        getAllColumns() {
+            return Object.assign({}, this.columns);
+        },
+        calcAllWidth() {
+            let width = 0;
+            const columns = this.getAllColumns();
+            Object.keys(columns).forEach(name => {
+                width += columns[name] && parseInt(columns[name].labelWidth) || 0;
+            });
+            return width;
+        },
+        notifyAll() {
+            this.allWidth = this.calcAllWidth();
+            const members = this.members;
+            Object.keys(members).forEach(name => {
+                const member = members[name];
+                member.notify && member.notify();
+            });
+        },
+    },
+    mounted() {
+        this.notifyAll();
+    },
+    beforeUpdate() {
+        this.notifyAll();
+    },
 };
 </script>
 
-<style>
+<style lang="scss" module>
+.root {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
 
+    &:before {
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+    }
+
+    .header {
+        overflow: auto;
+    }
+
+    .body {
+        overflow: auto;
+    }
+
+    .footer {
+        overflow: auto;
+    }
+}
 </style>

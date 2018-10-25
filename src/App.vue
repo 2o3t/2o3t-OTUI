@@ -2,7 +2,7 @@
   <div id="app" :class="$style.root" :theme="$otTheme">
     <header :class="$style.header" :theme="$otTheme">
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme">
-            <ot-link slot="left" router="/">
+            <ot-link slot="left" to="/">
                 <ot-logo :theme="$otTheme" icon="gratipay">
                     <span>OT-UI</span>
                 </ot-logo>

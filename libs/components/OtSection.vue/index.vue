@@ -7,7 +7,7 @@
         <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
         <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
-        <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" v-html="descHtml"></p>
+        <p class="markdown" :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" v-html="descHtml"></p>
         <div :prefix="prefix" :class="$style.children">
             <slot></slot>
         </div>
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import './globals';
+@import '../globals';
 .root {
   display: block;
   box-sizing: border-box;
@@ -194,3 +194,6 @@ export default {
 }
 </style>
 
+<style lang="scss">
+@import './markdown';
+</style>

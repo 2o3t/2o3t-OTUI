@@ -28,12 +28,8 @@
 
 <script>
 import moment from 'moment';
-import OtWheel from './OtWheel.vue';
 export default {
     name: 'ot-time-picker',
-    components: {
-        OtWheel,
-    },
     model: {
         prop: 'model',
         event: 'update',
@@ -244,10 +240,13 @@ export default {
     }
 
     .selectableWheel {
+        display: flex;
+        flex-direction: row;
         padding-top: 5px;
+        justify-content: space-between;
 
         .wheel {
-            width: 33.3%;
+            flex: 1 1 auto;
         }
     }
 }

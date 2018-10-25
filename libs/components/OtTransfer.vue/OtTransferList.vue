@@ -6,7 +6,7 @@
                 <ot-checkbox :theme="$otTheme" :value="true" v-model="checkAll"
                     :size="$otSize" :round="round"
                     @change="handleAllChange" :indeterminate="indeterminate">
-                    <span>{{ label }}</span>
+                    <span :class="$style.label">{{ label }}</span>
                 </ot-checkbox>
                 <span ot v-ot-bind="$otColors.count" :class="$style.count">{{selectItems.length}}/{{_list.length}}</span>
             </slot>
@@ -36,8 +36,10 @@
 import isObject from 'lodash/isObject.js';
 import isUndefined from 'lodash/isUndefined.js';
 import _difference from 'lodash/difference.js';
+import theme from './OtTransferListTheme.js';
 export default {
-    name: 'ot-list',
+    name: 'ot-transfer-list',
+    mixins: [ theme ],
     model: {
         prop: 'model',
         event: 'update',
@@ -71,33 +73,6 @@ export default {
             type: Boolean,
             default: true,
         },
-    },
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    normal: [ 'light-f', 'def-b' ],
-                    disabled: [ 'def-f-dis', 'grey-bg-dis', 'def-b-dis' ],
-                    top: {
-                        normal: [ 'def-f', 'def-bg' ],
-                    },
-                    count: {
-                        normal: [ 'grey-f' ],
-                    },
-                };
-            case 'light':
-            default:
-                return {
-                    normal: [ 'def-f', 'def-b' ],
-                    disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
-                    top: {
-                        normal: [ 'def-f', 'def-bg' ],
-                    },
-                    count: {
-                        normal: [ 'grey-f' ],
-                    },
-                };
-        }
     },
     data() {
         return {
@@ -194,7 +169,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import './globals';
+@import '../globals';
 .root {
     position: relative;
     width: 14em;
@@ -227,6 +202,10 @@ export default {
             float: right;
             padding-right: 0.5em;
         }
+
+        .label {
+            font-weight: bold;
+        }
     }
 
     .search {
@@ -247,8 +226,8 @@ export default {
 
             .item {
                 display: block;
-                padding-left: $padding-offset;
-                float: none;
+                padding-left: $padding-offset !important;
+                float: none !important;
                 margin: 0;
             }
         }

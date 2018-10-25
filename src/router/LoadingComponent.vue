@@ -13,8 +13,8 @@ export default {
 <style lang="scss" module>
 .root {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 6.4rem;
+    left: 20rem;
     right: 0;
     bottom: 0;
     background-color: rgba(255, 255, 255, .6);

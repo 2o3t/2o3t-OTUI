@@ -1,5 +1,5 @@
 <template>
-    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable :refresh="refresh" @change="handleTipOnChange">
+    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange">
         <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
             <div ot v-ot-bind="$otColors.box" :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
                 <ot-icon icon="angle-down"></ot-icon>
@@ -34,8 +34,10 @@
 
 <script>
 import Color from './color.js';
+import theme from './theme.js';
 export default {
     name: 'ot-color-picker',
+    mixins: [ theme ],
     model: {
         prop: 'value',
         event: 'update',
@@ -46,34 +48,10 @@ export default {
             default: '#FFFFFF',
         },
     },
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    tip: {
-                        normal: [ 'light-f', 'dark-bg', 'def-b' ],
-                    },
-                    box: {
-                        normal: [ 'light-f', 'def-b' ],
-                    },
-                };
-            case 'light':
-            default:
-                return {
-                    tip: {
-                        normal: [ 'def-f', 'light-bg', 'def-b' ],
-                    },
-                    box: {
-                        normal: [ 'light-f', 'def-b' ],
-                    },
-                };
-        }
-    },
     data() {
         return {
             bMoveSvpane: false,
             bMoveSlider: false,
-            refresh: 0,
 
             cursorTop: 0,
             cursorLeft: 0,
@@ -165,17 +143,13 @@ export default {
                 rect = $svpanel.getBoundingClientRect();
                 this.cursorTop = (1 - hsv.v / 100) * rect.height;
                 this.cursorLeft = hsv.s / 100 * rect.width;
-
-                this.refresh++;
             });
         },
         handleSliderMouseDown() {
             this.bMoveSlider = true;
-            this.refresh++;
         },
         handleSvpanelMouseDown() {
             this.bMoveSvpane = true;
-            this.refresh++;
         },
         handleSMouseUp() {
             this.bMoveSlider = false;
@@ -263,8 +237,6 @@ export default {
             const rgb = Color.hsv2rgb(hsv.h, hsv.s, hsv.v);
             this.rgb = rgb;
             this.currentHex = Color.toHex(this.rgb);
-
-            this.refresh++;
         },
         handleSMouseMove(e) {
             if (e && this.bMoveSvpane) {

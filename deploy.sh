@@ -7,6 +7,9 @@ set -e
 npm run lint:libs
 npm run lint
 
+# sass
+npm run sass:main:color
+
 # build
 npm run build
 
@@ -15,6 +18,8 @@ cd webs
 
 # if you are deploying to a custom domain
 echo 'uikit.2o3t.cn' > CNAME
+# readme
+cat ../README.MD > README.MD
 
 git init
 git add -A

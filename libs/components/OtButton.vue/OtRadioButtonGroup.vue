@@ -82,7 +82,7 @@ export default {
 </style>
 
 <style lang="scss">
-@import './globals';
+@import '../globals';
 .ot-radio-button-group[ot] .ot-radio-button[ot] {
     float: left;
     position: relative;

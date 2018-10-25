@@ -11,6 +11,10 @@
 let INDEX = 3000;
 export default {
     name: 'ot-tip',
+    model: {
+        prop: 'value',
+        event: 'update',
+    },
     props: {
         disabled: {
             type: [ Boolean ],
@@ -33,7 +37,6 @@ export default {
             type: [ Boolean ],
             default: true,
         },
-        refresh: [ Number ],
         offsetX: {
             type: [ Number ],
             default: 0,
@@ -76,17 +79,11 @@ export default {
     },
     watch: {
         value(newV) {
-            if (newV) {
-                this.show();
-            } else {
-                this.hide();
-            }
-        },
-        refresh(newV, oldV) {
-            if (newV !== oldV) {
-                this._initPosition_();
-                if (this.mountedComp) {
-                    this.mountedComp.$forceUpdate();
+            if (newV !== this.bShown) { // 防止重复
+                if (newV) {
+                    this.show();
+                } else {
+                    this.hide();
                 }
             }
         },
@@ -172,10 +169,6 @@ export default {
                             },
                         },
                         computed: {
-                            visibility() {
-                                const visibility = this.bShown ? 'visible' : 'hidden';
-                                return visibility;
-                            },
                             position() {
                                 return $vm.position;
                             },
@@ -295,13 +288,14 @@ export default {
                             const slot = $vm.$slots.tip;
                             const arrowAttrs = $vm.arrowAttrs;
                             const className = `ot-tip-popper ot-tip-${this.index} ${$vm.popperClass}`;
+
+                            const style = Object.assign(this.style, {
+                                position: this.position,
+                            });
                             return (<transition name="fade">
-                                <div ot size={this.$otSize} class={className} style={Object.assign(this.style, {
-                                    visibility: this.visibility,
-                                    position: this.position,
-                                })} refresh={this.refresh}
-                                onMouseover={this.handleMouseOver}
-                                onMouseout={this.handleMouseOut}
+                                <div ot size={this.$otSize} class={className} style={style} refresh={this.refresh}
+                                    onMouseover={this.handleMouseOver}
+                                    onMouseout={this.handleMouseOut}
                                 >
                                     { slot }
                                     { $vm.arrow && (<ot-arrow ot size={this.$otSize} class="ot-arrow" v-ot-bind={arrowAttrs} placement={this.arrowPlacement}></ot-arrow>)}
@@ -394,6 +388,13 @@ export default {
                 this.iClickFn = null;
             }
         },
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate...');
+        this._initPosition_();
+        if (this.mountedComp) {
+            this.mountedComp.$forceUpdate();
+        }
     },
     mounted() {
         this.registerScroll();

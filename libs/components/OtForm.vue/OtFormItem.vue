@@ -13,26 +13,11 @@
 </template>
 
 <script>
+import theme from './OtFormItemTheme.js';
 const isStr = v => Object.prototype.toString.call(v) === '[object String]';
 export default {
     name: 'ot-form-item',
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    msg: {
-                        normal: [ 'danger-f' ],
-                    },
-                };
-            case 'light':
-            default:
-                return {
-                    msg: {
-                        normal: [ 'danger-f' ],
-                    },
-                };
-        }
-    },
+    mixins: [ theme ],
     provide() {
         return {
             $OtFormItem: this,
@@ -84,21 +69,24 @@ export default {
             this.$OtForm.addField(this.name, this);
         }
         // required
-        if (this.$OtForm) {
+        this._initRequired();
+    },
+    methods: {
+        _initRequired() {
             this.required = false;
-            const rules = this.$OtForm.getRules(this.name);
-            if (rules) {
-                for (let i = 0; i < rules.length; i++) {
-                    const rule = rules[i];
-                    if (rule.required) {
-                        this.required = rule.required === true;
-                        break;
+            if (this.$OtForm) {
+                const rules = this.$OtForm.getRules(this.name);
+                if (rules) {
+                    for (let i = 0; i < rules.length; i++) {
+                        const rule = rules[i];
+                        if (rule.required) {
+                            this.required = rule.required === true;
+                            break;
+                        }
                     }
                 }
             }
-        }
-    },
-    methods: {
+        },
         _validateInputUI(valid) {
             // 对 UI 进行操作
             this.inputElements.forEach(input => {
@@ -243,7 +231,7 @@ export default {
 
 <style lang="scss" module>
 .root {
-    @import './globals';
+    @import '../globals';
     position: relative;
     box-sizing: border-box;
     display: table;

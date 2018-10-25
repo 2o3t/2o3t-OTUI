@@ -30,14 +30,30 @@ const requireModules = files => {
     return modules;
 };
 
+/**
+ * 创建 API 表格
+ * @param {Html} api table
+ * @return {String} html
+ */
+function createAPI(api) {
+    const desc = '以下是大部分功能API, 删除代表 ‘过时’ 或 ‘未实现’,  ‘@’ 开头表示是Event事件.';
+    return `<ot-section :theme="$otTheme" :level="2" label="API" desc="${desc}" prefix="#">
+    ${api}
+    </ot-section>`;
+}
+
 const getTemplate = (config, modules) => {
     const LABEL = config.LABEL;
     const DESC = config.DESC;
     const COMPONENTS = config.COMPONENTS || {};
     const bMd = COMPONENTS.__markdown;
+
+    // api
+    const API = config._API_;
+
     const template = `
     <ot-section :theme="$otTheme" :level="2" label="${LABEL}" desc="${DESC}">
-    ${
+${
     Object.keys(modules).map(key => {
         const name = key.replace(/^OT-/igm, '');
         const comp = COMPONENTS[name] || {};
@@ -45,7 +61,11 @@ const getTemplate = (config, modules) => {
             return `<${key} :theme="$otTheme" label="${comp.LABEL || ''}" descHtml="${comp.DESC || ''}" prefix="#"/>`;
         }
         return `<${key} :theme="$otTheme" label="${comp.LABEL || ''}" desc="${comp.DESC || ''}" prefix="#"/>`;
-    }).join('\n')}
+    }).join('\n')
+}
+${
+    API ? createAPI(API) : ''
+}
     </ot-section>
     `;
     return template;

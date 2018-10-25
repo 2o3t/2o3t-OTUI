@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style module lang='scss'>
-@import './globals';
+@import '../globals';
 .root {
     position: relative;
     display: flex;

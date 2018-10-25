@@ -1,19 +1,19 @@
 <template>
     <div ot class="ot-transfer" :class="$style.root">
-        <ot-list :class="$style.list" :theme="$otTheme" :round="round"
+        <ot-transfer-list :class="$style.list" :round="round"
             :label="labels[0]" :search="search"
             :placeholder="placeholders[0]" :top="top"
             :list="_leftList" v-model="leftSelectItems" @change="handleChange">
-        </ot-list>
+        </ot-transfer-list>
         <div :class="$style.middle">
             <ot-button :disabled="leftSelectItems.length <= 0" :class="$style.btn" :theme="$otTheme" icon="angle-right" circle @click="handleSwitchRight"></ot-button>
             <ot-button :disabled="rightSelectItems.length <= 0" :class="$style.btn" :theme="$otTheme" icon="angle-left" circle @click="handleSwitchLeft"></ot-button>
         </div>
-        <ot-list :class="$style.list" :theme="$otTheme" :round="round"
+        <ot-transfer-list :class="$style.list" :round="round"
             :label="labels[1]" :search="search"
             :placeholder="placeholders[1]" :top="top"
             :list="_rightList" v-model="rightSelectItems" @change="handleChange">
-        </ot-list>
+        </ot-transfer-list>
     </div>
 </template>
 
@@ -150,7 +150,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import './globals';
+@import '../globals';
 .root {
     position: relative;
 

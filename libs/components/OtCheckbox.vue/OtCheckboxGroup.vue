@@ -138,7 +138,7 @@ export default {
 </style>
 
 <style lang="scss">
-@import './globals';
+@import '../globals';
 .ot-checkbox-group[ot] .ot-checkbox[ot] {
     float: left;
     position: relative;

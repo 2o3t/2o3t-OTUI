@@ -31,7 +31,7 @@ export default {
         switch (theme) {
             case 'dark': {
                 const c = {
-                    normal: [ 'pri-f' ],
+                    normal: [ 'light-f' ],
                     hover: [ 'pri-f-h' ],
                     active: [ 'pri-f-a' ],
                     disabled: [ 'pri-f-dis' ],

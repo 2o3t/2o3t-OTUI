@@ -9,7 +9,7 @@
                 @mousedown="handleDown"
                 :style="wrapperStyle"
                 >
-                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
+                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
                     <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled" ref="wrapper"></div>
                 </ot-title-tip>
                 <!-- <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div> -->
@@ -19,7 +19,7 @@
                 @mousedown="handleRangeDown"
                 :style="wrapperRangeStyle"
                 >
-                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :refresh="refreshTip" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
+                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :offsetX="offsetX" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
                     <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
                 </ot-title-tip>
             </div>
@@ -123,7 +123,6 @@ export default {
             leftRangeX: 0,
             bRangeMove: false,
             // tip 相关
-            refreshTip: 0,
             offsetX: 0,
             offsetY: 0,
             width: 60,
@@ -210,7 +209,7 @@ export default {
     methods: {
         _moveTip(/* action, x1, x2 */) {
             // console.log('action: ', action, x1, x2);
-            this.refreshTip++;
+            // this.refreshTip++;
         },
         _initData_(newV = this.model) {
             if (Array.isArray(newV)) {

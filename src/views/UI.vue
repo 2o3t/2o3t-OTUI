@@ -1,9 +1,23 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-Table">
+            <ot-row-group :theme="$otTheme">
+                <ot-table :list="tableList">
+                    <ot-table-column name="name" label="名称"></ot-table-column>
+                    <ot-table-column name="age" label="年龄"></ot-table-column>
+                    <ot-table-column name="address" label="地址"></ot-table-column>
+                    <ot-table-column name="other" label="其它"></ot-table-column>
+                </ot-table>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-DatePicker">
             <ot-row-group :theme="$otTheme">
                 <ot-date-picker :theme="$otTheme"></ot-date-picker>
+            </ot-row-group>
+            <ot-row-group :theme="$otTheme">
+                <ot-date-picker :theme="$otTheme" footer week></ot-date-picker>
             </ot-row-group>
         </ot-section>
 
@@ -27,39 +41,6 @@
         <ot-section :theme="$otTheme" label="OT-ColorPicker">
             <ot-row-group :theme="$otTheme">
                 <ot-color-picker :theme="$otTheme" round v-model="color" @onChange="changeColor"></ot-color-picker>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-Transfer">
-            <ot-row-group :theme="$otTheme">
-                <ot-transfer :theme="$otTheme" :list="list" v-model="transferSelectItems" round></ot-transfer>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-List">
-            <ot-row-group :theme="$otTheme">
-                <ot-list :theme="$otTheme" :list="list" v-model="listSelectItems">
-                    <!-- <span>Hover</span>
-                    <div>
-                        <div>tip!!!</div>
-                        <div>tip!!!</div>
-                        <div>tip!!!</div>
-                    </div> -->
-                </ot-list>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-Form">
-            <ot-row-group :theme="$otTheme">
-                <ot-form v-model="formValue" :rules="formRules">
-                    <ot-form-item label="name" name="name">
-                        <ot-input :theme="$otTheme" v-model="formValue.name"></ot-input>
-                    </ot-form-item>
-                    <ot-form-item label="sex" name="sex">
-                        <ot-radio :theme="$otTheme" v-model="formValue.sex" value="m">m</ot-radio>
-                        <ot-radio :theme="$otTheme" v-model="formValue.sex" value="w">w</ot-radio>
-                    </ot-form-item>
-                </ot-form>
             </ot-row-group>
         </ot-section>
 
@@ -103,23 +84,21 @@ export default {
             sliderRangeValue: [ 0, 1 ],
             sliderRangeStepValue: [ 0, 1 ],
 
-            formValue: {
-                name: '',
-                sex: '',
-            },
-            formRules: {
-                name: [{
-                    required: true,
-                    trigger: [ 'blur' ],
-                }],
-                sex: [{
-                    required: true,
-                    trigger: [ 'blur' ],
-                }],
-            },
         };
     },
     computed: {
+        tableList() {
+            const list = [];
+            for (let i = 0; i < 10; i++) {
+                list.push({
+                    name: `name_${i}`,
+                    age: `age${i}`,
+                    address: `address_${i}`,
+                    other: `other_${i}`,
+                });
+            }
+            return list;
+        },
         list() {
             const list = [];
             for (let i = 0; i < 10; i++) {
@@ -129,11 +108,6 @@ export default {
                 });
             }
             return list;
-        },
-    },
-    methods: {
-        changeColor() {
-
         },
     },
 };

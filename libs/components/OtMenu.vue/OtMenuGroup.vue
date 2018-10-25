@@ -7,21 +7,10 @@
 </template>
 
 <script>
+import theme from './OtMenuGroupTheme.js';
 export default {
     name: 'ot-menu',
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    normal: [ 'grey-f' ],
-                };
-            case 'light':
-            default:
-                return {
-                    normal: [ 'grey-f' ],
-                };
-        }
-    },
+    mixins: [ theme ],
     props: {
         label: [ String ],
     },
@@ -38,7 +27,7 @@ export default {
 </script>
 
 <style module lang='scss'>
-@import './globals';
+@import '../globals';
 .root {
     position: relative;
     display: flex;

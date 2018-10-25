@@ -1,46 +1,44 @@
 <template>
     <div ot v-ot-bind="$otColors" v-highlight :class="$style.root" class="ot-code" :size="$otSize">
-        <pre :class="`language-${lang}`" code>
+        <div :class="$style.title">
+            <ot-icon :class="$style.lang" icon="code">{{ lang }}</ot-icon>
+            <ot-link @click="handleCopyClick">
+                <ot-title-tip content="Copied!" manual v-model="bShown" placement="top" :arrow="false">
+                    <span>复制代码</span>
+                </ot-title-tip>
+            </ot-link>
+        </div>
+        <pre :class="`language-${_lang}`" code>
             <code ot v-ot-bind="$otColors" :class="$style.code" :lang="lang" v-text="value"></code>
         </pre>
     </div>
 </template>
 
 <script>
+import clipboard from 'clipboard-polyfill';
 import hljs from 'highlight.js';
-// FIXME: 黑色主题下显示有问题
 import 'highlight.js/styles/androidstudio.css'; // 样式文件
 export default {
     name: 'ot-code',
+    props: {
+        value: [ String ],
+        lang: {
+            type: [ String ],
+            default: 'javascript',
+        },
+        copy: [ Boolean ],
+        showLang: [ Boolean ],
+    },
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
                 return {
                     normal: [ 'light-f' ],
-                    // code: {
-                    //     normal: [ 'light-f', 'light-bl', 'light-br', 'light-bb' ],
-                    //     hover: [ 'pri-bg-h', 'pri-bl-h', 'pri-br-h', 'pri-bb-h' ],
-                    //     active: [ 'pri-bg-a', 'light-bl-a', 'light-br-a', 'light-bb-a' ],
-                    // },
                 };
             case 'light':
             default:
                 return {
                     normal: [ 'def-f' ],
-                    // hover: [
-                    //     'pri-f-hov',
-                    //     'def-bg-hov',
-                    //     'def-bl-hov',
-                    //     'def-br-hov',
-                    //     'def-bb-hov',
-                    // ],
-                    // active: [
-                    //     'pri-f-act',
-                    //     'def-bg-act',
-                    //     'pri-bl-act',
-                    //     'pri-br-act',
-                    //     'pri-bb-act',
-                    // ],
                 };
         }
     },
@@ -78,11 +76,32 @@ export default {
             el.__inited_hljs__ = true;
         },
     },
-    props: {
-        value: [ String ],
-        lang: {
-            type: [ String ],
-            default: 'javascript',
+    data() {
+        return {
+            bShown: false,
+            iTimer: null,
+        };
+    },
+    computed: {
+        _lang() {
+            // 特殊处理
+            if (this.lang === 'vue') {
+                return 'html';
+            }
+            return this.lang;
+        },
+    },
+    methods: {
+        handleCopyClick() {
+            const content = this.value;
+            clipboard.writeText(content);
+            this.bShown = true;
+
+            clearTimeout(this.iTimer);
+            this.iTimer = setTimeout(() => {
+                this.bShown = false;
+                this.iTimer = null;
+            }, 2000);
         },
     },
 };
@@ -99,6 +118,23 @@ export default {
   overflow: hidden;
   text-align: left;
 
+  .title {
+      text-align: right;
+      opacity: 0.7;
+      margin: 0 1em;
+      line-height: 1.2;
+
+      & *{
+          font-size: 0.9em !important;
+      }
+
+      .lang {
+          vertical-align: middle;
+          margin: 0 1em;
+          line-height: 2;
+      }
+  }
+
   pre[code] {
     box-sizing: border-box;
     position: relative;
@@ -114,6 +150,7 @@ export default {
         overflow-x: auto;
         margin: 0px 0px 0 40px !important;
         background: none;
+        padding: 0 0.5em;
     }
   }
 
@@ -136,7 +173,7 @@ export default {
 </style>
 
 <style lang="scss">
-pre[code] {
+.ot-code>pre[code] {
 
   .code-block[ot] {
     position: absolute;
@@ -145,7 +182,7 @@ pre[code] {
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 0.5em;
+    padding: 0 0.5em;
     margin: 0;
     width: 40px;
     text-align: right;

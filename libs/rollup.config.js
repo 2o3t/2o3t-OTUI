@@ -20,15 +20,19 @@ const path = require('path');
 
 const config = {
     input: path.resolve(__dirname, './index.js'),
-    external: [ 'highlight.js' ],
+    external: [ 'highlight.js', 'moment' ],
     output: {
+        // dir: path.resolve(process.cwd(), `./${DIST}`),
+        // format: 'esm', // umd, esm
         file: path.resolve(process.cwd(), `./${DIST}/index.js`),
         format: 'umd', // umd, esm
         name: 'OTUI', // 打包后的全局变量，如浏览器端 window.ReactRedux
         globals: {
             'highlight.js': 'hljs', // 这跟external 是配套使用的，指明global.React即是外部依赖react
+            moment: 'moment',
         },
     },
+    experimentalCodeSplitting: true,
     plugins: [
         VuePlugin({
             compileTemplate: true,
@@ -70,6 +74,7 @@ const config = {
                         targets: {
                             browsers: [ '> 1%', 'last 2 versions', 'not ie <= 8' ],
                         },
+                        useBuiltIns: 'usage',
                     },
                 ],
                 'stage-2',

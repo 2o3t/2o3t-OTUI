@@ -1,5 +1,5 @@
 <template>
-    <ot-tip ot class="ot-title-tip" :class="$style.root" :round="round" v-bind="$attrs" v-on="$listeners" :arrow="arrow" :arrowAttrs="$otColors.arrow">
+    <ot-tip ot class="ot-title-tip" :class="$style.root" :value="bShown" @update="handleUpdate" :round="round" v-bind="$attrs" v-on="$listeners" :arrow="arrow" :arrowAttrs="$otColors.arrow">
         <slot></slot>
         <div ot v-ot-bind="$otColors.tip" slot="tip" :size="$otSize" :theme="$otTheme" class="ot-title-tip-popper" :style="style" :round="round">
             <slot name="title">{{ title }}</slot>
@@ -10,6 +10,10 @@
 <script>
 export default {
     name: 'ot-title-tip',
+    model: {
+        prop: 'value',
+        event: 'update',
+    },
     props: {
         content: {
             type: [ String, Number ],
@@ -27,6 +31,7 @@ export default {
             type: [ Boolean ],
             default: true,
         },
+        value: [ Boolean ],
     },
     otDefaultColors(theme) {
         switch (theme) {
@@ -52,12 +57,16 @@ export default {
         }
     },
     watch: {
+        value(newV) {
+            this.bShown = newV;
+        },
         content(newV) {
             this.title = newV;
         },
     },
     data() {
         return {
+            bShown: false,
             style: {
                 display: 'block',
                 position: 'relative',
@@ -67,6 +76,12 @@ export default {
             },
             title: this.content,
         };
+    },
+    methods: {
+        handleUpdate(value) {
+            this.bShown = value;
+            this.$emit('update', value);
+        },
     },
 };
 </script>

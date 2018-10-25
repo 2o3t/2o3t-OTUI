@@ -174,12 +174,10 @@ $--ot-offset-h-size: 0.8rem !default;
     right: 0;
     bottom: 0;
 }
-
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.6s ease-in-out;
 }
-
 .fade-enter,
 .fade-leave-to {
     position: absolute;
@@ -188,4 +186,20 @@ $--ot-offset-h-size: 0.8rem !default;
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+// 动画 收缩
+.collapse {
+    transform-origin: 50% 0%;
+    transform: scaleY(1);
+}
+.collapse-enter-active,
+.collapse-leave-active {
+    transform-origin: 50% 0%;
+    transition: transform 0.3s;
+}
+.collapse-enter,
+.collapse-leave-to {
+    transform-origin: 50% 0%;
+    transform: scaleY(0);
 }
