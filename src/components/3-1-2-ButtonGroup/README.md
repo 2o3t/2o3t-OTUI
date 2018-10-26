@@ -1,3 +1,4 @@
+<!-- @api: OtButton.vue/OtButtonGroupAPI.md -->
 
 # ButtonGroup 按钮组
 

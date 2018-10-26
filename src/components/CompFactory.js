@@ -47,7 +47,6 @@ const getTemplate = (config, modules) => {
     const DESC = config.DESC;
     const COMPONENTS = config.COMPONENTS || {};
     const bMd = COMPONENTS.__markdown;
-
     // api
     const API = config._API_;
 

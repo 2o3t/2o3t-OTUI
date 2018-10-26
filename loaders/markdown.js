@@ -1,5 +1,7 @@
 const MarkdownIt = require('markdown-it');
 const cheerio = require('cheerio');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = function(source) {
     this.cacheable && this.cacheable();
@@ -40,6 +42,46 @@ module.exports = function(source) {
     if ($h3.length) {
         const table = $h3.next('table').html();
         config._API_ = `<div class="markdown ot-api-container"><table>${table}</table></div>`;
+    }
+
+    const apiUrl = $.html().toString().match(/\<\!--\s*@api:(.*?)\s*--\>/ig);
+    if (apiUrl) {
+        const htmls = apiUrl.map(api => {
+            return api.replace(/\<\!--\s*@api:\s*(.*?)\s*--\>/ig, '$1');
+        }).map(url => {
+            // 特殊处理
+            // @api: OtButton.vue/OtButtonAPI.md
+            const mdPath = path.resolve(process.cwd(), path.join('libs', 'components', url));
+            if (fs.existsSync(mdPath)) {
+                console.log(`\n\n# Read API Markdown! <${mdPath}>\n\n`);
+                const mdText = fs.readFileSync(mdPath);
+                const mdParser = new MarkdownIt();
+                const result = mdParser.render(mdText.toString());
+                const $ = cheerio.load(result, {
+                    decodeEntities: false,
+                    lowerCaseAttributeNames: false,
+                    lowerCaseTags: false,
+                });
+                $('h1').remove();
+                $('h2').each((index, h) => {
+                    h.tagName = 'H3';
+                });
+                $('h3').each((index, h) => {
+                    h.tagName = 'H4';
+                });
+                $('h4').each((index, h) => {
+                    h.tagName = 'H5';
+                });
+                $('h5').each((index, h) => {
+                    h.tagName = 'H6';
+                });
+                const html = $('body').html();
+                return `<div class="markdown ot-api-container">${html}</div>`;
+            }
+            console.error(`\n\n[!!!] Dont Find File <${mdPath}>!!\n\n`);
+            return '';
+        });
+        config._API_ = htmls.join('\n');
     }
 
     return 'export default ' + JSON.stringify(config);

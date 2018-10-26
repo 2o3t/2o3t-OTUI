@@ -1,3 +1,4 @@
+<!-- @api: OtCheckbox.vue/OtCheckboxAPI.md -->
 
 # Checkbox 多选框
 

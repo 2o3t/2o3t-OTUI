@@ -1,5 +1,6 @@
 <template>
     <div ot :class="$style.root" class="ot-radio-button-group" :round="round" :circle="circle">
+        <!-- ot-radio-button 容器 -->
         <slot></slot>
     </div>
 </template>

@@ -1,3 +1,4 @@
+<!-- @api: OtLink.vue/OtLinkAPI.md -->
 
 # 文字链接 🔗
 

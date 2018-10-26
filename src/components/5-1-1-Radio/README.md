@@ -1,3 +1,4 @@
+<!-- @api: OtRadio.vue/OtRadioAPI.md -->
 
 # Radio 单选框
 

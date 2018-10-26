@@ -1,3 +1,4 @@
+<!-- @api: OtTip.vue/OtTitleTipAPI.md -->
 
 # Title Tip
 

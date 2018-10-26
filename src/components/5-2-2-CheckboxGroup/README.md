@@ -1,3 +1,4 @@
+<!-- @api: OtCheckbox.vue/OtCheckboxGroupAPI.md -->
 
 # CheckboxGroup 多选框组
 

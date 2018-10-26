@@ -9,7 +9,7 @@
             </ot-link>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :router="item.router">{{item.name}}</ot-nav-item>
             <ot-row-group :theme="$otTheme" :class="$style.right" slot="right">
-                <ChangeColor ot></ChangeColor>
+                <ChangeColor ot :theme="$otTheme"></ChangeColor>
                 <ot-switch :theme="$otTheme" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
                     <span slot="inactive">Light</span>
                     <span slot="active">Dark</span>

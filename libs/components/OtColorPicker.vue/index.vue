@@ -1,5 +1,5 @@
 <template>
-    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange">
+    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange" :offsetY="5">
         <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
             <div ot v-ot-bind="$otColors.box" :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
                 <ot-icon icon="angle-down"></ot-icon>
@@ -341,12 +341,12 @@ export default {
         box-sizing: content-box;
 
         .select {
-            display: block;
+            display: table;
             width: 1.6em;
             height: 1.6em;
             margin: auto;
             box-sizing: border-box;
-            line-height: 1.6em;
+            line-height: 1.4em;
         }
     }
 

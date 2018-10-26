@@ -1,3 +1,4 @@
+<!-- @api: OtPagination.vue/OtPaginationAPI.md -->
 
 # Pagination 分页
 

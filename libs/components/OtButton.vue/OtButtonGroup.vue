@@ -1,5 +1,6 @@
 <template>
     <div ot :class="$style.root" class="ot-button-group" :round="round" :circle="circle">
+        <!-- ot-button 容器 -->
         <slot></slot>
     </div>
 </template>

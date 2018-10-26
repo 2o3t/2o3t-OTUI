@@ -1,3 +1,4 @@
+<!-- @api: OtButton.vue/OtRadioButtonGroupAPI.md -->
 
 # RadioButtonGroup 单选按钮组
 

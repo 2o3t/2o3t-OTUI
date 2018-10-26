@@ -1,6 +1,7 @@
+import './createAPI';
 
-import './comp';
+import './components';
 
-import './direct';
+import './directives';
 
 import './service';

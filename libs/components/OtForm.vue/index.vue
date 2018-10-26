@@ -29,39 +29,51 @@ export default {
         event: 'update',
     },
     props: {
+        // 原生 action
         action: [ String ],
+        // 原生 autocomplete
         autocomplete: [ String ],
+        // 原生 enctype
         enctype: [ String ],
+        // 原生 method
         method: [ String ],
+        // 原生 name
         name: [ String ],
+        // 原生 `target` 可为 `_self`, `_blank`
         target: [ String ],
-        // self
+        // `v-model` 绑定属性
         model: {
             type: [ Object ],
             default() {
                 return {};
             },
         },
+        // 验证规则
         rules: {
             type: [ Object ],
             default() {
                 return {};
             },
         },
+        // 表单展示方向
         horizontal: [ Boolean ],
+        // 提交按钮显示文字, false 为不显示
         submitLabel: {
             type: [ String, Boolean ],
             default: '确认',
         },
+        // 重置按钮显示文字, false 为不显示
         resetLabel: {
             type: [ String, Boolean ],
             default: '重置',
         },
+        // 取消按钮显示文字, false 为不显示
         cancelLabel: {
             type: [ String, Boolean ],
             default: '取消',
         },
-        labelPosition: { // left, right, center, top
+        // Label 的显示位置, 可选 `left`, `right`, `center`, `top`
+        labelPosition: {
             type: String,
             default: 'right',
         },
@@ -211,7 +223,10 @@ export default {
             this.$otUtils.scrollAnimation(currentY, targetY);
         },
         _updateModel() {
-            this.$emit('update', this.model);
+            this.$emit('update', this.model); // 与 `v-model` 互动更新数据
+        },
+        _updateAction(action) {
+            this.$emit('event', action, this.model); // 按钮点击动作事件, `action` 是行为动作
         },
         handleClick(action) {
             switch (action) {
@@ -219,18 +234,17 @@ export default {
                     const promise = this.validate();
                     promise.then(valid => {
                         if (valid) {
-                            console.log('submit...');
-                            this.$emit('event', action, this.model);
+                            this._updateAction(action);
                         }
                     }); }
                     break;
                 case 'reset':
                     this.resetFields();
-                    this.$emit('event', action);
+                    this._updateAction(action);
                     break;
                 case 'cancel':
                 default:
-                    this.$emit('event', action);
+                    this._updateAction(action);
             }
         },
     },

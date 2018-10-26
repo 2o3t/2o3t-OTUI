@@ -1,7 +1,11 @@
 <template>
     <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
         :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default" :dashed="dashed">
-        <ot-icon v-if="icon" :icon="icon"><slot></slot></ot-icon>
+        <ot-icon v-if="icon" :icon="icon">
+            <!-- 有 icon 时显示 -->
+            <slot></slot>
+        </ot-icon>
+        <!-- 没有 icon 时显示 -->
         <slot v-else></slot>
     </button>
 </template>
@@ -12,14 +16,18 @@ export default {
     name: 'ot-button',
     mixins: [ theme ],
     props: {
+        // `ot-icon` 的图标名称
         icon: [ String ],
+         // 禁用功能
         disabled: [ Boolean ],
+         // 圆角UI
         circle: [ Boolean ],
+        // 虚边UI
         dashed: [ Boolean ],
     },
     methods: {
         handleClick(e) {
-            this.$emit('click', e);
+            this.$emit('click', e); // 触发点击事件
         },
     },
 };

@@ -1,3 +1,4 @@
+<!-- @api: OtInputNumber.vue/OtInputNumberAPI.md -->
 
 # InputNumber 计数器
 

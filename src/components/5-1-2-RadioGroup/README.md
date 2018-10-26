@@ -1,3 +1,4 @@
+<!-- @api: OtRadio.vue/OtRadioGroupAPI.md -->
 
 # RadioGroup 单选框组
 

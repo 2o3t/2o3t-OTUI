@@ -1,3 +1,4 @@
+<!-- @api: OtTabs.vue/OtTabsAPI.md -->
 
 # Tabs 标签页
 

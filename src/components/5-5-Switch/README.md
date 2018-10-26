@@ -1,3 +1,4 @@
+<!-- @api: OtSwitch.vue/OtSwitchAPI.md -->
 
 # Switch 开关
 

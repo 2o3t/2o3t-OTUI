@@ -1,8 +1,12 @@
 <template>
     <button ot v-ot-bind="$otColors" @click="handleClick" :size="$otSize" type="button" :class="$style.root" class="ot-radio-button"
         :selected="selected" :disabled="disabled" :round="round">
-        <ot-icon v-if="icon" :icon="icon"></ot-icon>
-        <slot></slot>
+        <ot-icon v-if="icon" :icon="icon">
+            <!-- 有 icon 时 -->
+            <slot></slot>
+        </ot-icon>
+        <!-- 无 icon 时 -->
+        <slot v-else></slot>
     </button>
 </template>
 
