@@ -9,6 +9,6 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| placement | - | String | 'up' |
-| hover | - | Boolean | - |
+| placement | 箭头方向, `up`, `down`, `left`, `right` 四个方向 | String | 'up' |
+| hover | 是否可以 hover 状态 | Boolean | false |
 

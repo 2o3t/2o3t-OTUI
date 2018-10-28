@@ -1,6 +1,7 @@
 // 生成 directives 的 index.js 文件
 const fs = require('fs');
 const path = require('path');
+const Colors = require('colors');
 
 import config from './config.js';
 const ROOT = path.resolve(__dirname, config.directDir);
@@ -16,4 +17,7 @@ files.forEach(key => {
 });
 
 import factory from './factory.js';
+
+console.log(Colors.blue('\n\n ### Create Directives <index.js> Start ### \n'));
 factory(ROOT, modules);
+console.log(Colors.blue('\n ### Create Directives <index.js> End ### \n\n'));

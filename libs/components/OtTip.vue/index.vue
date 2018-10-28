@@ -125,7 +125,7 @@ export default {
             }
             if (this.mountedComp) {
                 this.mountedComp.top = this.top;
-                this.mountedComp.left = this.left
+                this.mountedComp.left = this.left;
             }
         },
         _initRenderComp_() {

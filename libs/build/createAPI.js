@@ -4,6 +4,7 @@ import traverse from '@babel/traverse';
 import generate from '@babel/generator';
 import * as bt from '@babel/types';
 const babelParser = require('@babel/parser');
+const Colors = require('colors');
 
 const fs = require('fs');
 const path = require('path');
@@ -17,6 +18,7 @@ const path = require('path');
 //     default: '-' // 默认值
 // }
 
+/* eslint no-new-func: "off" */
 class ParserVue {
     constructor(content, name, file, fp) {
         this._content = content;
@@ -318,7 +320,7 @@ class ParserVue {
         while (er != null) {
             events.push({
                 name: `@${er[1]}`,
-                type: `(${er[2] && er[2].replace(/this\./ig, '')}): Void`,
+                type: `(${er[2] ? er[2].replace(/this\./ig, '') : ' '}): Void`,
                 describe: er[3] ? [ er[3] ] : [ ],
                 default: '-',
             });
@@ -397,8 +399,11 @@ class ParserVue {
             text += '| round | 可选(非必支持), UI边框圆角 | Boolean | false |\n';
         }
         text += arr.map(item => {
-            const describe = item.describe.length > 0 ? item.describe.join('\n') : '-';
-            let def = (item.default === undefined) ? '-' : item.default;
+            let describe = item.describe.length > 0 ? item.describe.join('\n') : '-';
+            if (item.required === true) {
+                describe = `***必填***, ${describe}`;
+            }
+            let def = item.defaultDesc || (item.default === undefined) ? '-' : item.default;
             if (/^default()/.test(def)) {
                 def = def.replace(/^default\(\)/, '()=>').replace(/\n/igm, ' ');
             }
@@ -451,7 +456,7 @@ const parserMap = parsers.reduce((obj, parser) => {
 }, {});
 
 // 输出 md
-console.log('\n\n ######### Create API Markdown Start ######### \n\n');
+console.log(Colors.blue('\n\n ### Create API Markdown Start ### \n'));
 Object.keys(parserMap).forEach(key => {
     const parsers = parserMap[key];
     for (const i in parsers) {
@@ -467,8 +472,8 @@ function doWriteFile(parser) {
     const dist = path.join(root, `./${name}API.md`);
     const md = parser.toMarkdown();
 
-    console.log(`${name} --> ${dist}`);
+    console.log(`${name.green} --> ${dist.grey}`);
     fs.writeFileSync(dist, md);
 }
 
-console.log('\n\n ######### Create API Markdown End ######### \n\n');
+console.log(Colors.blue('\n ### Create API Markdown End ### \n\n'));

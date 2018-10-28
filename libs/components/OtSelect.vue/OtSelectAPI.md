@@ -25,13 +25,13 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| @close | - | (undefined): Void | - |
+| @close | - | ( ): Void | - |
 | @update | - | (value): Void | - |
 | @update | - | (item): Void | - |
 | @select | - | (item): Void | - |
 | @update | - | (value): Void | - |
 | @update | - | (''): Void | - |
-| @show | - | (undefined): Void | - |
+| @show | - | ( ): Void | - |
 
 ## Slots
 

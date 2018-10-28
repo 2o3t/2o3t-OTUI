@@ -1,6 +1,6 @@
 {
     "name": "2o3t-ui",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "author": "zyao89 <zyao89@gmail.com>",
     "description": "A OT-UI for Vue",
     "scripts": {
@@ -22,7 +22,7 @@
         "dist/**/*"
     ],
     "dependencies": {
-        "2o3t-ui": "^0.0.9",
+        "2o3t-ui": "^0.0.10",
         "clipboard-polyfill": "^2.6.0",
         "font-awesome": "^4.7.0",
         "highlight.js": "^9.13.1",

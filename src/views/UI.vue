@@ -21,23 +21,6 @@
             </ot-row-group>
         </ot-section>
 
-        <ot-section :theme="$otTheme" label="OT-TimePicker">
-            <ot-row-group :theme="$otTheme">
-                <ot-time-picker :theme="$otTheme" :options="{
-                    start: '08:30',
-                    step: '00:15',
-                    end: '18:30',
-                 }"
-                 v-model="timepicker1" format="HH:mm"></ot-time-picker>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-time-picker :theme="$otTheme" round v-model="timepicker2"></ot-time-picker>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-time-picker :theme="$otTheme" round v-model="timepicker3" double></ot-time-picker>
-            </ot-row-group>
-        </ot-section>
-
         <ot-section :theme="$otTheme" label="OT-ColorPicker">
             <ot-row-group :theme="$otTheme">
                 <ot-color-picker :theme="$otTheme" round v-model="color" @onChange="changeColor"></ot-color-picker>
@@ -75,15 +58,6 @@ export default {
 
             transferSelectItems: [],
             listSelectItems: [],
-
-            number: 0,
-            selectValue: '',
-            selectList: [ '我是大名', '我是二名', '我是小明' ],
-            sliderValue: 0,
-            sliderStepValue: 0,
-            sliderRangeValue: [ 0, 1 ],
-            sliderRangeStepValue: [ 0, 1 ],
-
         };
     },
     computed: {

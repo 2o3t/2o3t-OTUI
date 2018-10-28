@@ -9,15 +9,15 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| value | - | String | - |
-| circle | - | Boolean | - |
+| value | 数据源 | String | - |
+| circle | 大圆弧UI | Boolean | - |
 
 ## Events
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| @input | - | (value): Void | - |
-| @change | - | (value): Void | - |
+| @input |  v-model 数据输入事件 | (value): Void | - |
+| @change |  改变数据时, 回调 | (value): Void | - |
 
 ## Slots
 

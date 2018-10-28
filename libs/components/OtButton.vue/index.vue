@@ -18,9 +18,9 @@ export default {
     props: {
         // `ot-icon` 的图标名称
         icon: [ String ],
-         // 禁用功能
+        // 禁用功能
         disabled: [ Boolean ],
-         // 圆角UI
+        // 圆角UI
         circle: [ Boolean ],
         // 虚边UI
         dashed: [ Boolean ],

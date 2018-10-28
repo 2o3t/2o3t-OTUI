@@ -371,9 +371,12 @@ export default {
                 left = [ Math.min(one, two), Math.max(one, two) ];
             }
             if (Array.isArray(left)) {
-                this.$emit('update', [ this.calcOutputValue(left[0]), this.calcOutputValue(left[1]) ]);
+                const one = this.calcOutputValue(left[0]);
+                const two = this.calcOutputValue(left[1]);
+                this.$emit('update', [ one, two ]); // range 模式下, 更新 v-model 的值为两位数组
             } else {
-                this.$emit('update', this.calcOutputValue(left));
+                const one = this.calcOutputValue(left);
+                this.$emit('update', one); // 更新 v-model 的值
             }
         },
         initFontSize() {

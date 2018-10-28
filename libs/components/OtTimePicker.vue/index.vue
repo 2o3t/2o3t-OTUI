@@ -1,6 +1,6 @@
 <template>
     <div ot class="ot-time-picker" :class="$style.root" :size="$otSize">
-        <ot-select :class="$style.timer" :placeholder="placeholder" round
+        <ot-select :class="$style.timer" :placeholder="placeholder" :round="round"
             icon="clock-o" :clearable="clearable"
             :readonly="readonly"
             v-model="selectValue"
@@ -12,7 +12,7 @@
             </div>
         </ot-select>
 
-        <ot-select :class="$style.timer" v-if="double" :placeholder="_doublePlaceholder" round
+        <ot-select :class="$style.timer" v-if="double" :placeholder="_doublePlaceholder" :round="round"
             icon="clock-o" :clearable="clearable"
             :readonly="readonly"
             v-model="selectDoubleValue"
@@ -35,12 +35,14 @@ export default {
         event: 'update',
     },
     props: {
+        // 数据源 `v-model`
         model: {
             type: [ String, Number, Array ],
             default() {
                 return '';
             },
         },
+        // 固定时间点选项
         options: {
             type: Object,
             // default() {
@@ -51,18 +53,27 @@ export default {
             //     };
             // },
         },
+        // 时间格式化输出
         format: {
             type: [ String ],
             default: 'HH:mm:ss',
         },
+        // 输入框的提示文字内容
         placeholder: {
             type: String,
             default: '请选择',
         },
+        // double 模式下的文字提示内容
         doublePlaceholder: [ String ],
+        // 输入框只读
         readonly: [ Boolean ],
+        // double 模式
         double: [ Boolean ],
-        clearable: [ Boolean ],
+        // 是否带有清除按钮
+        clearable: {
+            type: [ Boolean ],
+            default: false,
+        },
     },
     data() {
         return {
@@ -214,9 +225,9 @@ export default {
             }
 
             if (this.double) {
-                this.$emit('update', [ this.selectValue, this.selectDoubleValue ]);
+                this.$emit('update', [ this.selectValue, this.selectDoubleValue ]); // double 模式下 `v-model` 数据源更新
             } else {
-                this.$emit('update', this.selectValue);
+                this.$emit('update', this.selectValue); // `v-model` 数据源更新
             }
         },
     },

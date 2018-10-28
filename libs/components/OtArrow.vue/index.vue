@@ -15,11 +15,16 @@ export default {
     name: 'ot-arrow',
     mixins: [ theme ],
     props: {
+        // 箭头方向, `up`, `down`, `left`, `right` 四个方向
         placement: {
             type: [ String ],
             default: 'up',
         },
-        hover: [ Boolean ],
+        // 是否可以 hover 状态
+        hover: {
+            type: [ Boolean ],
+            default: false,
+        },
     },
 };
 </script>

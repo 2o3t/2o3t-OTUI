@@ -11,7 +11,7 @@
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | name | - | String | - |
 | disabled | - | Boolean | false |
-| value | - | Boolean | - |
+| value | ***必填***, - | Boolean | - |
 | activeColor | - | String | - |
 | inactiveColor | - | String | - |
 

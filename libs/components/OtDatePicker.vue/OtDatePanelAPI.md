@@ -23,5 +23,5 @@
 | @change | - | (currentWeek): Void | - |
 | @update | - | (currentDate.format(_format)): Void | - |
 | @change | - | (currentDate): Void | - |
-| @ok | - | (undefined): Void | - |
+| @ok | - | ( ): Void | - |
 

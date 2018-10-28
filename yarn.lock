@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"2o3t-ui@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.9.tgz#0750b71fff8ae14f826ca3fff202227bdac5cc4e"
+"2o3t-ui@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.10.tgz#1a79cd9e4540132ec9bec463931f9d8bc6428d55"
   dependencies:
-    "2o3t-ui" "^0.0.9"
+    "2o3t-ui" "^0.0.10"
     clipboard-polyfill "^2.6.0"
     font-awesome "^4.7.0"
     highlight.js "^9.13.1"

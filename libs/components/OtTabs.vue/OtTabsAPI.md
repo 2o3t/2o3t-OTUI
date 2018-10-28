@@ -9,7 +9,7 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| list | - | Array | - |
+| list | ***必填***, - | Array | - |
 | select | - | Object | - |
 | clearable | - | Boolean | - |
 | offset | - | Number,String | - |

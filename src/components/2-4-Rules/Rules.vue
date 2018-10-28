@@ -16,6 +16,7 @@
                                     ot-{{ parseSubName(name,3) }}-{{ parseSubName(suffix,1) }}{{ parseSubSXName(sx,1) }}
                                     <span ot v-ot-bind="$otColors.name" :class="$style.sRight">]</span>
                                 </span>
+
                             </div>
                         </ot-section>
                     </div>

@@ -1,8 +1,8 @@
 <template>
     <div ot v-ot-bind="$otColors" v-highlight :class="$style.root" class="ot-code" :size="$otSize">
-        <div :class="$style.title">
-            <ot-icon :class="$style.lang" icon="code">{{ lang }}</ot-icon>
-            <ot-link @click="handleCopyClick">
+        <div :class="$style.title" >
+            <ot-icon v-if="showLang" :class="$style.lang" icon="code">{{ lang }}</ot-icon>
+            <ot-link v-if="copy" @click="handleCopyClick">
                 <ot-title-tip content="Copied!" manual v-model="bShown" placement="top" :arrow="false">
                     <span>复制代码</span>
                 </ot-title-tip>
@@ -23,13 +23,28 @@ export default {
     name: 'ot-code',
     mixins: [ theme ],
     props: {
+        // 源代码文本
         value: [ String ],
+        // 预览类型标识
         lang: {
             type: [ String ],
             default: 'javascript',
         },
-        copy: [ Boolean ],
-        showLang: [ Boolean ],
+        // 是否显示 `复制代码` 按钮
+        copy: {
+            type: [ Boolean ],
+            default: true,
+        },
+        // 显示语言类型
+        showLang: {
+            type: [ Boolean ],
+            default: true,
+        },
+        // 设置提示框显示时长 ms
+        tipTime: {
+            type: Number,
+            default: 2000,
+        },
     },
     directives: {
         highlight(el) {
@@ -86,11 +101,15 @@ export default {
             clipboard.writeText(content);
             this.bShown = true;
 
+            this.$emit('onCopy', content); // 代码复制事件, `content` 为源代码.
+
             clearTimeout(this.iTimer);
             this.iTimer = setTimeout(() => {
                 this.bShown = false;
                 this.iTimer = null;
-            }, 2000);
+
+                this.$emit('onDismiss'); // 提示框消失事件
+            }, this.tipTime);
         },
     },
 };

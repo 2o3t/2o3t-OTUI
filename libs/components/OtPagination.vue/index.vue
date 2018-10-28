@@ -1,7 +1,7 @@
 <template>
     <div ot class="ot-pagination" :size="$otSize" :class="$style.root">
         <span :class="$style.total" v-if="showTotal">
-            <!-- 总 -->
+            <!-- 总条数显示容器 -->
             <slot name="total" :total="total">
                 共 {{ total }} 条
             </slot>
@@ -17,6 +17,7 @@
         <ul :class="$style.pager">
             <li ot v-bind="_itemUIColors" :class="$style.item" @click="handlePrevPage"
                 :disabled="disabled || current === 1" :size="$otSize" :round="round">
+                <!-- 上一页的箭头容器 -->
                 <slot name="prev">
                     <ot-icon icon="angle-left" :size="$otSize"></ot-icon>
                 </slot>
@@ -53,13 +54,14 @@
             </li>
             <li ot v-bind="_itemUIColors" :class="$style.item" @click="handleNextPage"
                 :disabled="disabled || current === pageCount" :size="$otSize" :round="round">
+                <!-- 下一页的箭头容器 -->
                 <slot name="next">
                     <ot-icon icon="angle-right" :size="$otSize"></ot-icon>
                 </slot>
             </li>
         </ul>
         <span :class="$style.jumper" v-if="showJumper">
-            <!-- 前往 -->
+            <!-- 跳转页面容器 -->
             <slot name="jumper" :current="current" :jump="handleJumper">
                 <ot-input :size="$otSize" :round="round" :model="current" :disabled="disabled"
                     @blur="handleJumper" @keyup.enter="handleJumper">
@@ -81,44 +83,54 @@ export default {
         event: 'update',
     },
     props: {
+        // 当前页数
         currentPage: {
             type: [ Number ],
             default: 1,
         },
-        pageSize: { // 每页显示条目个数
+        // 每页显示条目个数
+        pageSize: {
             type: [ Number ],
             default: 10,
         },
-        pageSizes: { // 每页显示条目个数
+        // 每页显示条目个数
+        pageSizes: {
             type: [ Array ],
             default() {
                 return [ 10, 20, 30, 40, 50, 100 ];
             },
         },
-        total: { // 总条目数
+        // 总条目数
+        total: {
             type: [ Number ],
             required: true,
         },
-        pagerCount: { // 页码按钮的数量，当总页数超过该值时会折叠
+        // 页码按钮的数量，当总页数超过该值时会折叠
+        pagerCount: {
             type: [ Number ],
             default: 7,
         },
+        // 禁用
         disabled: {
             type: [ Boolean ],
             default: false,
         },
+        // 是否带有背景, 只改变UI
         background: {
             type: [ Boolean ],
             default: false,
         },
+        // 显示总页数
         showTotal: {
             type: [ Boolean ],
             default: false,
         },
+        // 显示控制跳转页输入框
         showJumper: {
             type: [ Boolean ],
             default: false,
         },
+        // 显示每页展示的数量选择器
         showPageSizes: {
             type: [ Boolean ],
             default: false,
@@ -216,8 +228,7 @@ export default {
             this.updateModel();
         },
         updateModel() {
-            console.log(this.current);
-            this.$emit('update', this.current);
+            this.$emit('update', this.current); // 更新 `v-model` 当前页数
         },
         handleJumper(e) {
             const item = parseInt(e.target.value);

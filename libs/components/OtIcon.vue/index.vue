@@ -1,7 +1,8 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)" :loading="loading"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
     <span ot :class="$style.root" v-else>
-        <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" @click="$emit('click', $event)" :loading="loading"></i>
+        <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
+        <!-- 跟随图标后面的容器 -->
         <slot></slot>
     </span>
 </template>
@@ -10,10 +11,15 @@
 export default {
     name: 'ot-icon',
     props: {
+        // 图标名称
         icon: [ String ],
+        // url链接地址
         url: [ String ],
+        // 宽度大小
         width: [ String ],
+        // 高度大小
         height: [ String ],
+        // 是否为等待状态
         loading: {
             type: [ Boolean ],
             default: false,

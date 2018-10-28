@@ -2,6 +2,7 @@
     <a ot v-ot-bind="$otColors" class="ot-link" :class="$style.root" :href="currentHref" @click="handleClick" :line="line"
         v-on="listeners" :disabled="disabled"
         :target="target">
+        <!-- 需要 link 的包裹容器 -->
         <slot></slot>
     </a>
 </template>
@@ -12,18 +13,31 @@ export default {
     name: 'ot-link',
     mixins: [ theme ],
     props: {
+        // `a` 标签地址
         href: {
             type: [ String ],
             default: null,
         },
+        // vue-router 路由, 跳转 名称 或 对象.
         to: {
             type: [ String, Object ],
             default: null,
         },
+        // vue-router 跳转是否为 `replace`.
         replace: { type: Boolean, default: false },
+        // vue-router 中 `append` 模式
         append: { type: Boolean, default: false },
-        line: [ Boolean ],
-        disabled: [ Boolean ],
+        // 是否有下划线 UI
+        line: {
+            type: [ Boolean ],
+            default: false,
+        },
+        // 禁用状态
+        disabled: {
+            type: [ Boolean ],
+            default: false,
+        },
+        // 原生 `a` 标签中`target`属性
         target: {
             type: [ String ],
             default: '_self',

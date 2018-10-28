@@ -9,7 +9,9 @@
 export default {
     name: 'ot-radio-button-group',
     props: {
+        // 数据源
         value: [ String ],
+        // 大圆弧UI
         circle: [ Boolean ],
     },
     watch: {
@@ -50,8 +52,8 @@ export default {
             }
         },
         handleInput(value) {
-            this.$emit('input', value);
-            this.$emit('change', value);
+            this.$emit('input', value); // v-model 数据输入事件
+            this.$emit('change', value); // 改变数据时, 回调
         },
     },
     mounted() {

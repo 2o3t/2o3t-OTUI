@@ -9,7 +9,7 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| model | - | Number,Array | - |
+| model | ***必填***, - | Number,Array | - |
 | disabled | - | Boolean | - |
 | step | - | Number | 0 |
 | showStep | - | Boolean | - |
@@ -23,6 +23,6 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| @update | - | ([ calcOutputValue(left[0]), calcOutputValue(left[1]) ]): Void | - |
-| @update | - | (calcOutputValue(left)): Void | - |
+| @update |  range 模式下, 更新 v-model 的值为两位数组 | ([ one, two ]): Void | - |
+| @update |  更新 v-model 的值 | (one): Void | - |
 

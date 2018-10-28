@@ -11,7 +11,7 @@
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | placeholder | - | String | - |
 | disabled | - | Boolean | - |
-| model | - | Number | - |
+| model | ***必填***, - | Number | - |
 | name | - | String | - |
 | readonly | - | Boolean | - |
 | max | - | String,Number | - |

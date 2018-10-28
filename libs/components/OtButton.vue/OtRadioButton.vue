@@ -18,6 +18,7 @@ export default {
     extends: OtButton,
     mixins: [ theme ],
     props: {
+        // 数据源
         value: {
             type: [ String ],
             required: true,

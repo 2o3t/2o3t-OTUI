@@ -9,7 +9,11 @@
 export default {
     name: 'ot-button-group',
     props: {
-        circle: [ Boolean ],
+        // 大圆弧边UI
+        circle: {
+            type: [ Boolean ],
+            default: false,
+        },
     },
     created() {
         this.updateChild();
