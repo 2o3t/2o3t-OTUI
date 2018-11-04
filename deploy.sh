@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+#yarn
+yarn
+
 # lint
 npm run lint:libs
 npm run lint

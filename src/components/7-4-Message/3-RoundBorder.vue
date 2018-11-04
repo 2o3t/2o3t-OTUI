@@ -16,25 +16,25 @@ export default {
         };
     },
     methods: {
-      openRound() {
-        this.$OtMessage({
-            title: '这是一条消息提示',
-            round: true,
-        });
-      },
-      openBorder() {
-        this.$OtMessage({
-            title: '这是一条消息提示',
-            border: true,
-        });
-      },
-      open() {
-        this.$OtMessage({
-            title: '这是一条消息提示',
-            round: true,
-            border: true,
-        });
-      },
+        openRound() {
+            this.$OtMessage({
+                title: '这是一条消息提示',
+                round: true,
+            });
+        },
+        openBorder() {
+            this.$OtMessage({
+                title: '这是一条消息提示',
+                border: true,
+            });
+        },
+        open() {
+            this.$OtMessage({
+                title: '这是一条消息提示',
+                round: true,
+                border: true,
+            });
+        },
     },
 };
 </script>

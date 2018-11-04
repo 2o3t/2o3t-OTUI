@@ -15,9 +15,10 @@
 </template>
 
 <script>
-import clipboard from 'clipboard-polyfill';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/androidstudio.css'; // 样式文件
+
+import clipboard from 'clipboard-polyfill';
 import theme from './theme.js';
 export default {
     name: 'ot-code',

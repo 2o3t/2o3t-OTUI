@@ -18,13 +18,13 @@ export default {
         };
     },
     methods: {
-      openColors(color) {
-        this.$OtMessage({
-            icon: "space-shuttle",
-            title: '这是一条消息提示',
-            color,
-        });
-      },
+        openColors(color) {
+            this.$OtMessage({
+                icon: 'space-shuttle',
+                title: '这是一条消息提示',
+                color,
+            });
+        },
     },
 };
 </script>

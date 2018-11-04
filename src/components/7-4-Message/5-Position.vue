@@ -16,12 +16,12 @@ export default {
         };
     },
     methods: {
-      open(position) {
-        this.$OtMessage({
-            title: '这是一条消息提示',
-            position,
-        });
-      },
+        open(position) {
+            this.$OtMessage({
+                title: '这是一条消息提示',
+                position,
+            });
+        },
     },
 };
 </script>

@@ -1,12 +1,13 @@
 {
     "name": "2o3t-ui",
-    "version": "0.0.10",
+    "version": "0.0.15",
     "author": "zyao89 <zyao89@gmail.com>",
     "description": "A OT-UI for Vue",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "build:libs": "rollup -c ./libs/rollup.config.js",
+        "deploy:libs": "npm run build:libs && npm publish",
         "lint": "vue-cli-service lint",
         "lint:libs": "vue-cli-service lint ./libs",
         "lint:libs:fix": "vue-cli-service lint ./libs --fix",
@@ -22,16 +23,13 @@
         "dist/**/*"
     ],
     "dependencies": {
-        "2o3t-ui": "^0.0.10",
-        "clipboard-polyfill": "^2.6.0",
-        "font-awesome": "^4.7.0",
         "highlight.js": "^9.13.1",
         "lodash": "^4.17.11",
-        "moment": "^2.22.2",
-        "vue": "^2.5.17",
-        "vue-router": "^3.0.1"
+        "moment": "^2.22.2"
     },
     "devDependencies": {
+        "2o3t-ui": "^0.0.15",
+        "clipboard-polyfill": "^2.7.0",
         "@vue/cli-plugin-babel": "^3.0.4",
         "@vue/cli-plugin-eslint": "^3.0.4",
         "@vue/cli-service": "^3.0.4",
@@ -48,6 +46,7 @@
         "cssnano": "^4.1.4",
         "eslint-config-2o3t": "^1.1.1",
         "eslint-loader": "^2.1.1",
+        "font-awesome": "^4.7.0",
         "markdown-it": "^8.4.2",
         "node-sass": "^4.9.3",
         "rollup-plugin-babel": "3",
@@ -60,6 +59,8 @@
         "rollup-plugin-uglify": "^6.0.0",
         "rollup-plugin-vue": "^4.3.2",
         "sass-loader": "^7.1.0",
+        "vue": "^2.5.17",
+        "vue-router": "^3.0.1",
         "vue-template-compiler": "^2.5.17"
     },
     "eslintConfig": {

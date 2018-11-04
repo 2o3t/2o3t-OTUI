@@ -15,19 +15,19 @@ export default {
         };
     },
     methods: {
-      open() {
-        this.$OtMessage('这是一条消息提示');
-      },
+        open() {
+            this.$OtMessage('这是一条消息提示');
+        },
 
-      openVn() {
-        const h = this.$createElement;
-        this.$OtMessage({
-          message: h('p', null, [
-            h('span', null, '内容可以是 '),
-            h('i', { style: 'color: teal' }, 'VNode')
-          ])
-        });
-      },
+        openVn() {
+            const h = this.$createElement;
+            this.$OtMessage({
+                message: h('p', null, [
+                    h('span', null, '内容可以是 '),
+                    h('i', { style: 'color: teal' }, 'VNode'),
+                ]),
+            });
+        },
     },
 };
 </script>

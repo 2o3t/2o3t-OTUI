@@ -17,45 +17,45 @@
 </template>
 
 <script>
-import theme from "./theme.js";
+import theme from './theme.js';
 export default {
-  name: "ot-corners",
-  // http://tholman.com/github-corners/
-  mixins: [theme],
-  props: {
+    name: 'ot-corners',
+    // http://tholman.com/github-corners/
+    mixins: [ theme ],
+    props: {
     // 悬停提示文字
-    title: {
-        type: String,
-        default: 'View source on GitHub',
+        title: {
+            type: String,
+            default: 'View source on GitHub',
+        },
+        // `a` 标签地址
+        href: {
+            type: [ String ],
+            default: null,
+        },
+        // vue-router 路由, 跳转 名称 或 对象.
+        to: {
+            type: [ String, Object ],
+            default: null,
+        },
+        // vue-router 跳转是否为 `replace`.
+        replace: { type: Boolean, default: false },
+        // vue-router 中 `append` 模式
+        append: { type: Boolean, default: false },
+        // 原生 `a` 标签中`target`属性
+        target: {
+            type: [ String ],
+            default: '_self',
+        },
+        // 可选择位置
+        position: {
+            type: String,
+            default: 'right',
+            // [ `right`, `left`, `bottom-right`, `bottom-left` ]
+            validator: val =>
+                [ 'right', 'left', 'bottom-right', 'bottom-left' ].indexOf(val) > -1,
+        },
     },
-    // `a` 标签地址
-    href: {
-      type: [String],
-      default: null
-    },
-    // vue-router 路由, 跳转 名称 或 对象.
-    to: {
-      type: [String, Object],
-      default: null
-    },
-    // vue-router 跳转是否为 `replace`.
-    replace: { type: Boolean, default: false },
-    // vue-router 中 `append` 模式
-    append: { type: Boolean, default: false },
-    // 原生 `a` 标签中`target`属性
-    target: {
-      type: [String],
-      default: "_self"
-    },
-    // 可选择位置
-    position: {
-        type: String,
-        default: 'right',
-        // [ `right`, `left`, `bottom-right`, `bottom-left` ]
-        validator: val =>
-            [ 'right', 'left', `bottom-right`, `bottom-left` ].indexOf(val) > -1,
-    },
-  }
 };
 </script>
 

@@ -29,7 +29,6 @@ export default {
         }
 
         // service
-        console.error(servs);
         for (const key in servs) {
             if (servs.hasOwnProperty(key)) {
                 const initService = servs[key];

@@ -2,18 +2,13 @@
 # yarn lockfile v1
 
 
-"2o3t-ui@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.10.tgz#1a79cd9e4540132ec9bec463931f9d8bc6428d55"
+"2o3t-ui@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.13.tgz#79cec397d6d447663b1168f6605315665b326579"
   dependencies:
-    "2o3t-ui" "^0.0.10"
-    clipboard-polyfill "^2.6.0"
-    font-awesome "^4.7.0"
     highlight.js "^9.13.1"
     lodash "^4.17.11"
     moment "^2.22.2"
-    vue "^2.5.17"
-    vue-router "^3.0.1"
 
 "@babel/code-frame@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -2464,9 +2459,9 @@ cli-width@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
 
-clipboard-polyfill@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/clipboard-polyfill/-/clipboard-polyfill-2.6.0.tgz#95d2e8914658f19aeaf6dffedfd3fd807f01c061"
+clipboard-polyfill@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/clipboard-polyfill/-/clipboard-polyfill-2.7.0.tgz#4f4344bb3405f88609ccf8ee2d445018da0e318f"
 
 clipboardy@^1.2.3:
   version "1.2.3"
