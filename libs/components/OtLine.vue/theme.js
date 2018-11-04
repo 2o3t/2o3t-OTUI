@@ -4,12 +4,12 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'grey-bl', 'grey-bt' ],
+                    normal: [ 'grey-bl', 'grey-bt', 'border' ],
                 };
             case 'light':
             default:
                 return {
-                    normal: [ 'grey-bt', 'grey-bl' ],
+                    normal: [ 'grey-bt', 'grey-bl', 'border' ],
                 };
         }
     },

@@ -1,11 +1,11 @@
 <template>
     <div ot v-ot-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
-        <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable" :fill="fill">
+        <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable" :fill="fill" :flex="flex">
             <slot></slot>
         </div>
-        <ot-button :class="$style.codeBtn" v-if="code" @click="showCode" dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
+        <ot-button :class="$style.codeBtn" v-if="code" @click="showCode" border dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <transition name="collapse">
-            <div ot v-ot-bind="$otColors.code" v-if="code" v-show="bShow" :class="$style.code">
+            <div ot v-ot-bind="$otColors.code" v-if="code" v-show="bShow" :class="$style.code" border>
                 <ot-code :lang="lang" :value="code"></ot-code>
             </div>
         </transition>
@@ -18,25 +18,32 @@ export default {
     name: 'ot-row-group',
     mixins: [ theme ],
     props: {
+        // code 源代码
         code: {
             type: [ String ],
             default: '',
         },
-        type: {
-            type: [ String ],
-            default: 'html',
-        },
+        // 布局方向, 只支持 flex:true
         vertical: [ Boolean ],
+        // 是否自动 margin
         fixable: {
             type: [ Boolean ],
             default: true,
         },
+        // 是否填充背景
         background: [ Boolean ],
+        // code 的语言
         lang: {
             type: String,
             default: 'vue',
         },
+        // 空间多余时, 拉伸
         fill: [ Boolean ],
+        // flex 布局
+        flex: {
+            type: Boolean,
+            default: true,
+        },
     },
     data() {
         return {
@@ -68,11 +75,15 @@ export default {
 
   .childs {
     position: relative;
-    display: flex;
+    display: block;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     box-sizing: border-box;
+
+    &[flex] {
+        display: flex;
+    }
 
     &[vertical] {
         flex-direction: column;

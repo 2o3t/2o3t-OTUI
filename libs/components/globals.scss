@@ -178,8 +178,11 @@ $--ot-offset-h-size: 0.8rem !default;
 .fade-leave-active {
     transition: opacity 0.6s ease-in-out;
 }
-.fade-enter,
 .fade-leave-to {
+    position: absolute;
+    opacity: 0;
+}
+.fade-enter {
     position: absolute;
     opacity: 0;
     top: 0;

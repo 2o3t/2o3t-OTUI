@@ -38,6 +38,8 @@ export default {
     box-sizing: border-box;
     @include __ot_box_shadow__;
 
+    @include __ot_size__;
+
     .left {
         width: 80px;
         flex: 0 0 80px;

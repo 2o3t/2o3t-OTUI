@@ -12,7 +12,7 @@
         "lint:libs:fix": "vue-cli-service lint ./libs --fix",
         "sass:base": "node_modules/node-sass/bin/node-sass --watch libs/sass/base.scss libs/styles/base.css",
         "sass:main": "node_modules/node-sass/bin/node-sass --watch libs/sass/main.scss libs/styles/main.css",
-        "sass:main:color": "node_modules/node-sass/bin/node-sass libs/sass/main.scss src/assets/main.color",
+        "sass:main:color": "node_modules/node-sass/bin/node-sass libs/sass/main.scss public/main.color",
         "sass:test": "node_modules/node-sass/bin/node-sass --watch libs/sass/test/test.scss libs/sass/test/test.css",
         "deploy": "sh ./deploy.sh"
     },

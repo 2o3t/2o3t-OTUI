@@ -1,6 +1,6 @@
 <template>
     <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
-        :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default" :dashed="dashed">
+        :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default" :border="border" :dashed="dashed">
         <ot-icon v-if="icon" :icon="icon">
             <!-- 有 icon 时显示 -->
             <slot></slot>

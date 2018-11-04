@@ -52,25 +52,39 @@ export default {
         event: 'update',
     },
     props: {
+        // 提示信息
         placeholder: [ String ],
+        // input 类型
         type: {
             type: [ String ],
             default: 'text',
         },
+        // 禁用状态
         disabled: [ Boolean ],
+        // v-model 数据源
         model: [ String, Number ],
+        // name 属性
         name: [ String ],
+        // 是否可清除按钮
         clearable: [ Boolean ],
+        // 前置图标样式
         icon: [ String ],
+        // textarea 的 cols
         cols: [ Number, String ],
+        // textarea 的 rows
         rows: [ Number, String ],
+        // 是否只读内容
         readonly: [ Boolean ],
+        // 同原生
         autocomplete: [ String, Boolean ],
+        // 最大长度
         maxlength: [ Number, String ],
+        // 是否自动适应圆角
         fixable: {
             type: [ Boolean ],
             default: true,
         },
+        // 圆形边框
         circle: [ Boolean ],
     },
     data() {

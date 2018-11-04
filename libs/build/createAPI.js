@@ -204,7 +204,7 @@ class ParserVue {
             // 通过babel 进行处理
             traverse(babelFile, {
                 ObjectProperty(path) {
-                    if (_self._isVueOption(path, 'props')) {
+                    if (_self._isVueOption(path, 'props') || _self._isVueOption(path, 'docs')) {
                         const valuePath = path.get('value');
                         let res = [];
                         if (bt.isArrayExpression(valuePath.node)) {
@@ -314,7 +314,7 @@ class ParserVue {
 
     parserEvents() {
         const content = this._content;
-        const eventsRegex = /(?:this\.)?\$emit\(['|"]{1}(\w+?)['|"]{1}(?:,?\s*(.*))?\);?(?:[ ]*\/\/(.*))?/ig;
+        const eventsRegex = /(?:\w+\.)?\$emit\(['|"]{1}(\w+?)['|"]{1}(?:,?\s*(.*))?\);?(?:[ ]*\/\/(.*))?/ig;
         const events = [];
         let er = eventsRegex.exec(content);
         while (er != null) {
@@ -400,6 +400,9 @@ class ParserVue {
         }
         text += arr.map(item => {
             let describe = item.describe.length > 0 ? item.describe.join('\n') : '-';
+            if (item.validator && item.validatorDesc) {
+                describe = `**${item.validatorDesc}**, ${describe}`;
+            }
             if (item.required === true) {
                 describe = `***必填***, ${describe}`;
             }

@@ -1,8 +1,8 @@
 <template>
     <div ot class="ot-arrow" v-bind="$attrs" :class="$style.root" :placement="placement">
         <div :class="$style.box" :placement="placement">
-            <i ot v-ot-bind="$otColors" :class="$style.arrow"
-                :placement="placement"
+            <i ot v-ot-bind="customColors" :class="$style.arrow"
+                :placement="placement" :border="border"
                 v-on="$listeners">
             </i>
         </div>
@@ -24,6 +24,18 @@ export default {
         hover: {
             type: [ Boolean ],
             default: false,
+        },
+        // 自定义属性
+        attrs: {
+            type: Object,
+            default() {
+                return {};
+            },
+        },
+    },
+    computed: {
+        customColors() {
+            return Object.assign({}, this.$otColors, this.attrs);
         },
     },
 };

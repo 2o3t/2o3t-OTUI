@@ -19,9 +19,11 @@ import OtSection from './OtSection.vue/index.vue';
 import OtRowGroup from './OtRowGroup.vue/index.vue';
 import OtRadioGroup from './OtRadio.vue/OtRadioGroup.vue';
 import OtRadio from './OtRadio.vue/index.vue';
+import OtProgress from './OtProgress.vue/index.vue';
 import OtPagination from './OtPagination.vue/index.vue';
 import OtNavItem from './OtNav.vue/OtNavItem.vue';
 import OtNav from './OtNav.vue/index.vue';
+import OtMessage from './OtMessage.vue/index.vue';
 import OtMenuGroup from './OtMenu.vue/OtMenuGroup.vue';
 import OtMenuItem from './OtMenu.vue/OtMenuItem.vue';
 import OtMenu from './OtMenu.vue/index.vue';
@@ -37,6 +39,7 @@ import OtFormItem from './OtForm.vue/OtFormItem.vue';
 import OtForm from './OtForm.vue/index.vue';
 import OtDatePanel from './OtDatePicker.vue/OtDatePanel.vue';
 import OtDatePicker from './OtDatePicker.vue/index.vue';
+import OtCorners from './OtCorners.vue/index.vue';
 import OtColorPicker from './OtColorPicker.vue/index.vue';
 import OtCode from './OtCode.vue/index.vue';
 import OtCheckboxGroup from './OtCheckbox.vue/OtCheckboxGroup.vue';
@@ -46,10 +49,11 @@ import OtButtonGroup from './OtButton.vue/OtButtonGroup.vue';
 import OtRadioButton from './OtButton.vue/OtRadioButton.vue';
 import OtRadioButtonGroup from './OtButton.vue/OtRadioButtonGroup.vue';
 import OtButton from './OtButton.vue/index.vue';
+import OtBadge from './OtBadge.vue/index.vue';
 import OtArrow from './OtArrow.vue/index.vue';
+import OtAlert from './OtAlert.vue/index.vue';
 import OtCascader from './OtCascader.vue';
 import OtLoading from './OtLoading.vue';
-import OtProgress from './OtProgress.vue';
 
 export default {
 
@@ -73,9 +77,11 @@ OtSection,
 OtRowGroup,
 OtRadioGroup,
 OtRadio,
+OtProgress,
 OtPagination,
 OtNavItem,
 OtNav,
+OtMessage,
 OtMenuGroup,
 OtMenuItem,
 OtMenu,
@@ -91,6 +97,7 @@ OtFormItem,
 OtForm,
 OtDatePanel,
 OtDatePicker,
+OtCorners,
 OtColorPicker,
 OtCode,
 OtCheckboxGroup,
@@ -100,9 +107,10 @@ OtButtonGroup,
 OtRadioButton,
 OtRadioButtonGroup,
 OtButton,
+OtBadge,
 OtArrow,
+OtAlert,
 OtCascader,
 OtLoading,
-OtProgress,
 
     };

@@ -311,7 +311,7 @@ export default {
                                     onMouseout={this.handleMouseOut}
                                 >
                                     { slot }
-                                    { $vm.arrow && (<ot-arrow ot size={this.$otSize} class="ot-arrow" v-ot-bind={arrowAttrs} placement={this.arrowPlacement}></ot-arrow>)}
+                                    { $vm.arrow && (<ot-arrow ot size={this.$otSize} class="ot-arrow" attrs={arrowAttrs} placement={this.arrowPlacement}></ot-arrow>)}
                                 </div>
                             </transition>);
                         },

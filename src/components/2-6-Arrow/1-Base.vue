@@ -1,10 +1,10 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :theme="$otTheme" :code="code">
-            <ot-arrow :theme="$otTheme" placement="up"></ot-arrow>
-            <ot-arrow :theme="$otTheme" placement="down"></ot-arrow>
-            <ot-arrow :theme="$otTheme" placement="left"></ot-arrow>
-            <ot-arrow :theme="$otTheme" placement="right"></ot-arrow>
+            <ot-arrow :theme="$otTheme" placement="up" border></ot-arrow>
+            <ot-arrow :theme="$otTheme" placement="down" border></ot-arrow>
+            <ot-arrow :theme="$otTheme" placement="left" border></ot-arrow>
+            <ot-arrow :theme="$otTheme" placement="right" border></ot-arrow>
         </ot-row-group>
     </ot-section>
 </template>

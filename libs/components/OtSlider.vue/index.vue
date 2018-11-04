@@ -1,7 +1,7 @@
 <template>
     <div ot v-ot-bind="$otColors" class="ot-slider" :class="$style.root" :size="$otSize" :theme="$otTheme" :disabled="disabled" :vertical="vertical">
         <div ot v-ot-bind="$otColors.runway" :class="$style.runway" :disabled="disabled" :vertical="vertical"
-            @mousedown="handleRunwayClick">
+            @mousedown="handleRunwayClick" border>
             <div ot v-ot-bind="$otColors.bar" :class="$style.bar" :disabled="disabled" :vertical="vertical" selected
                 :style="barStyle"
                 @mousedown="handleBarClick"></div>

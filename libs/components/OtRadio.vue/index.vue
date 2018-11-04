@@ -3,7 +3,7 @@
         :selected="current==value"
         :disabled="disabled"
         :border="border" :round="round">
-        <span ot v-ot-bind="$otColors.front" :class="$style.front" :selected="current==value" :disabled="disabled">
+        <span ot v-ot-bind="$otColors.front" :class="$style.front" :selected="current==value" :disabled="disabled" border>
             <span ot v-ot-bind="$otColors.point" :class="$style.isChecked" :selected="current==value" :disabled="disabled"></span>
         </span>
         <div v-if="$slots.default" :class="$style.label">

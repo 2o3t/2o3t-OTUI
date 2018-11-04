@@ -1,4 +1,4 @@
-// FIXME: 不能这样写,不然打不出来包
+// FLAG: 不能这样写,不然打不出来包
 const modules = {};
 
 const files = require.context('.', true, /\.vue$/);

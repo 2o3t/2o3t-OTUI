@@ -43,6 +43,7 @@ export default {
         event: 'update',
     },
     props: {
+        // `v-model` 数据源 `{ r, g, b }` 或 hex
         value: {
             type: [ String, Object ],
             default: '#FFFFFF',
@@ -293,9 +294,9 @@ export default {
             document.body.click();
 
             this.$nextTick(() => {
-                this.$emit('update', this.currentHex);
+                this.$emit('update', this.currentHex); // `v-model` 事件更新
 
-                this.$emit('change', this.lastRGB);
+                this.$emit('change', this.lastRGB); // 改变事件
             });
         },
         handleInput() {
@@ -353,13 +354,14 @@ export default {
 }
 
 .dropdown {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
     box-sizing: border-box;
     user-select: none;
-    padding: 6px;
 
     .wrapper {
+        box-sizing: border-box;
 
         .mask {
             position: absolute;

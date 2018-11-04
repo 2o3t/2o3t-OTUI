@@ -1,8 +1,8 @@
 /* auto load */
-import Modal from './Modal.vue';
+import OtMessage from './OtMessage/index.js';
 
 export default {
 
-    Modal,
+    OtMessage,
 
     };

@@ -1,6 +1,28 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-Alert">
+            <ot-row-group :theme="$otTheme" :flex="false">
+                <ot-alert :title="alertTitle" color="success">123</ot-alert>
+                <ot-alert :title="alertTitle" color="success" show-icon></ot-alert>
+                <ot-alert :title="alertTitle" :max="99" description="123123"></ot-alert>
+                <ot-alert :title="alertTitle" :max="99" description="closable" :closable="false"></ot-alert>
+                <ot-alert :title="alertTitle" :max="99" description="center" :center="true"></ot-alert>
+                <ot-alert :title="alertTitle" :max="99" description="close-text" close-text="Close"></ot-alert>
+                <ot-alert type="warning" :title="alertTitle" description="show-icon" show-icon color="warning"></ot-alert>
+            </ot-row-group>
+        </ot-section>
+
+        <ot-section :theme="$otTheme" label="OT-Badge">
+            <ot-row-group :theme="$otTheme" :flex="false">
+                <ot-badge :value="20">123</ot-badge>
+                <ot-badge :value="200" :max="99">123</ot-badge>
+                <ot-badge value="new">new</ot-badge>
+                <ot-badge value="hot">hot</ot-badge>
+                <ot-badge dot>DOT</ot-badge>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-Table">
             <ot-row-group :theme="$otTheme">
                 <ot-table :list="tableList">
@@ -9,21 +31,6 @@
                     <ot-table-column name="address" label="地址"></ot-table-column>
                     <ot-table-column name="other" label="其它"></ot-table-column>
                 </ot-table>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-DatePicker">
-            <ot-row-group :theme="$otTheme">
-                <ot-date-picker :theme="$otTheme"></ot-date-picker>
-            </ot-row-group>
-            <ot-row-group :theme="$otTheme">
-                <ot-date-picker :theme="$otTheme" footer week></ot-date-picker>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-ColorPicker">
-            <ot-row-group :theme="$otTheme">
-                <ot-color-picker :theme="$otTheme" round v-model="color" @onChange="changeColor"></ot-color-picker>
             </ot-row-group>
         </ot-section>
 
@@ -48,13 +55,13 @@ export default {
     name: 'ui-page',
     data() {
         return {
+            alertTitle: 'Notice: Balabala...',
+
             timepicker1: '',
             timepicker2: '',
             timepicker3: '',
 
             wheelValue: '1',
-
-            color: '#CCCCCC',
 
             transferSelectItems: [],
             listSelectItems: [],
@@ -82,11 +89,6 @@ export default {
                 });
             }
             return list;
-        },
-    },
-    methods: {
-        changeColor() {
-
         },
     },
 };

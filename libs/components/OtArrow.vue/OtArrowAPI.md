@@ -11,4 +11,5 @@
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | placement | 箭头方向, `up`, `down`, `left`, `right` 四个方向 | String | 'up' |
 | hover | 是否可以 hover 状态 | Boolean | false |
+| attrs | 自定义属性 | Object | ()=> {   return {}; } |
 

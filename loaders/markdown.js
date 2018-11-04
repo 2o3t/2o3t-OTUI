@@ -2,6 +2,7 @@ const MarkdownIt = require('markdown-it');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
+const Colors = require('colors');
 
 module.exports = function(source) {
     this.cacheable && this.cacheable();
@@ -46,14 +47,18 @@ module.exports = function(source) {
 
     const apiUrl = $.html().toString().match(/\<\!--\s*@api:(.*?)\s*--\>/ig);
     if (apiUrl) {
+        const ROOT = process.cwd();
         const htmls = apiUrl.map(api => {
             return api.replace(/\<\!--\s*@api:\s*(.*?)\s*--\>/ig, '$1');
         }).map(url => {
             // 特殊处理
             // @api: OtButton.vue/OtButtonAPI.md
-            const mdPath = path.resolve(process.cwd(), path.join('libs', 'components', url));
+            let mdPath = path.resolve(ROOT, path.join('libs', url));
+            if (!fs.existsSync(mdPath)) {
+                mdPath = path.resolve(ROOT, path.join('libs', 'components', url));
+            }
             if (fs.existsSync(mdPath)) {
-                console.log(`\n\n# Read API Markdown! <${mdPath}>\n\n`);
+                console.log(Colors.grey(`\n\n# Read API Markdown! <${mdPath}>\n\n`));
                 const mdText = fs.readFileSync(mdPath);
                 const mdParser = new MarkdownIt();
                 const result = mdParser.render(mdText.toString());
@@ -78,7 +83,7 @@ module.exports = function(source) {
                 const html = $('body').html();
                 return `<div class="markdown ot-api-container">${html}</div>`;
             }
-            console.error(`\n\n[!!!] Dont Find File <${mdPath}>!!\n\n`);
+            console.error(Colors.yellow(`\n\n[!!!] Dont Find File <${mdPath}>!!\n\n`));
             return '';
         });
         config._API_ = htmls.join('\n');
