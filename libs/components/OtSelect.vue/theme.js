@@ -5,7 +5,7 @@ export default {
             case 'dark':
                 return {
                     list: {
-                        normal: [ 'light-f', 'dark-bg', 'light-b' ],
+                        normal: [ 'light-f', 'dark-bg', 'light-b', 'border' ],
                         hover: [ 'pri-b-h' ],
                     },
                     item: {
@@ -20,7 +20,7 @@ export default {
             default:
                 return {
                     list: {
-                        normal: [ 'def-f', 'light-bg', 'grey-b' ],
+                        normal: [ 'def-f', 'light-bg', 'grey-b', 'border' ],
                         hover: [ 'pri-b-hov' ],
                     },
                     item: {

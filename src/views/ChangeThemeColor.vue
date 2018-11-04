@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import MAIN_CSS from './cssColor.js';
+import MAIN_CSS from './CssColor.js';
 const ID_NAME = '__custom_theme_color__';
 export default {
     name: 'ui-change-theme-color',

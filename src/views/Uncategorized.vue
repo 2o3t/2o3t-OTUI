@@ -52,19 +52,10 @@
 
 <script>
 export default {
-    name: 'ui-page',
+    name: 'uncategorized-page',
     data() {
         return {
             alertTitle: 'Notice: Balabala...',
-
-            timepicker1: '',
-            timepicker2: '',
-            timepicker3: '',
-
-            wheelValue: '1',
-
-            transferSelectItems: [],
-            listSelectItems: [],
         };
     },
     computed: {

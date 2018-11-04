@@ -33,8 +33,8 @@ const sides = modules.reduce((obj, { key, name, router }) => {
 
 export default {
     DEFAULT: [{
-        name: 'UI',
-        router: '/UI',
+        name: 'Uncategorized',
+        router: '/Uncategorized',
     }],
     ...sides,
     OTHERS: others,

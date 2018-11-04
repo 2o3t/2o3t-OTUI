@@ -5,7 +5,7 @@ import asyncImport from './asyncImport';
 const SideBar = () => import('@v/SideBar');
 // views
 const Home = () => import('@v/Home');
-const UI = () => import('@v/UI');
+const Uncategorized = () => import('@v/Uncategorized');
 
 function createSideBarView(view) {
     return {
@@ -44,11 +44,11 @@ export default new Router({
             components: createSideBarView(Home),
         },
         {
-            path: '/UI',
-            name: 'UI-page',
-            // component: UI,
-            // component: () => asyncImport(UI()),
-            components: createSideBarView(UI),
+            path: '/Uncategorized',
+            name: 'Uncategorized-page',
+            // component: Uncategorized,
+            // component: () => asyncImport(Uncategorized()),
+            components: createSideBarView(Uncategorized),
         },
         ...routers,
         {
