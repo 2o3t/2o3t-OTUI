@@ -1,5 +1,5 @@
 const CompFactory = require('../CompFactory').default;
-const files = require.context('.', false, /\.vue$/);
+const files = require.context('.', false, /.vue$/);
 const modules = CompFactory.requireModules(files);
 
 import Config from './README.md';

@@ -21,8 +21,10 @@ import OtRadioGroup from './OtRadio.vue/OtRadioGroup.vue';
 import OtRadio from './OtRadio.vue/index.vue';
 import OtProgress from './OtProgress.vue/index.vue';
 import OtPagination from './OtPagination.vue/index.vue';
+import OtNotice from './OtNotice.vue/index.vue';
 import OtNavItem from './OtNav.vue/OtNavItem.vue';
 import OtNav from './OtNav.vue/index.vue';
+import OtMessageBox from './OtMessageBox.vue/index.vue';
 import OtMessage from './OtMessage.vue/index.vue';
 import OtMenuGroup from './OtMenu.vue/OtMenuGroup.vue';
 import OtMenuItem from './OtMenu.vue/OtMenuItem.vue';
@@ -79,8 +81,10 @@ OtRadioGroup,
 OtRadio,
 OtProgress,
 OtPagination,
+OtNotice,
 OtNavItem,
 OtNav,
+OtMessageBox,
 OtMessage,
 OtMenuGroup,
 OtMenuItem,

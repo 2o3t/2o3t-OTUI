@@ -1,25 +1,9 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
-        <ot-section :theme="$otTheme" label="OT-Alert">
+        <ot-section :theme="$otTheme" label="OT-MessageBox">
             <ot-row-group :theme="$otTheme" :flex="false">
-                <ot-alert :title="alertTitle" color="success">123</ot-alert>
-                <ot-alert :title="alertTitle" color="success" show-icon></ot-alert>
-                <ot-alert :title="alertTitle" :max="99" description="123123"></ot-alert>
-                <ot-alert :title="alertTitle" :max="99" description="closable" :closable="false"></ot-alert>
-                <ot-alert :title="alertTitle" :max="99" description="center" :center="true"></ot-alert>
-                <ot-alert :title="alertTitle" :max="99" description="close-text" close-text="Close"></ot-alert>
-                <ot-alert type="warning" :title="alertTitle" description="show-icon" show-icon color="warning"></ot-alert>
-            </ot-row-group>
-        </ot-section>
-
-        <ot-section :theme="$otTheme" label="OT-Badge">
-            <ot-row-group :theme="$otTheme" :flex="false">
-                <ot-badge :value="20">123</ot-badge>
-                <ot-badge :value="200" :max="99">123</ot-badge>
-                <ot-badge value="new">new</ot-badge>
-                <ot-badge value="hot">hot</ot-badge>
-                <ot-badge dot>DOT</ot-badge>
+                <ot-button @click="open">打开消息提示</ot-button>
             </ot-row-group>
         </ot-section>
 
@@ -80,6 +64,11 @@ export default {
                 });
             }
             return list;
+        },
+    },
+    methods: {
+        open() {
+            this.$OtMessageBox('这是一条消息提示');
         },
     },
 };

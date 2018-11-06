@@ -1,6 +1,7 @@
 <template>
     <div ot v-ot-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
         <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable" :fill="fill" :flex="flex">
+            <!-- 内容 -->
             <slot></slot>
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" @click="showCode" border dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>

@@ -16,7 +16,7 @@
                 </slot>
             </div>
             <div v-else :class="$style.content" v-html="message"></div>
-            <ot-icon v-ot-bind="$otColors.closeBtn" :class="$style.closeBtn" :icon="closeText === '' ? 'close' : ''" v-show="closable" @click="close">
+            <ot-icon v-ot-bind="$otColors.closeBtn" :class="$style.closeBtn" :icon="closeText === '' ? 'close' : ''" v-if="closable" @click="close">
                 {{closeText}}
             </ot-icon>
         </div>
@@ -250,6 +250,7 @@ export default {
   .content {
     display: table-cell;
     padding: 0 1em;
+    flex: 1 1 auto;
   }
 
   .title {
@@ -268,12 +269,12 @@ export default {
   }
 
   .closeBtn {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
     display: table;
     margin: auto;
-    right: 15px;
+    // right: 15px;
   }
 }
 </style>

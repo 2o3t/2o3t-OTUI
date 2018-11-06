@@ -3,9 +3,22 @@ import * as throttle from './throttle';
 import listeners from './listeners';
 import extend from './extendEx';
 
-export default {
-    ...scroll,
-    ...throttle,
-    ...listeners,
-    extend,
-};
+function server($vm, func) {
+    return Object.keys(func).reduce((obj, key) => {
+        obj[key] = function() {
+            const args = Array.prototype.splice.call(arguments, 0);
+            if ($vm.$isServer) return;
+            return func[key].apply(func, args);
+        };
+        return obj;
+    }, {});
+}
+
+export default function($vm) {
+    return {
+        ...server($vm, scroll),
+        ...server($vm, throttle),
+        ...server($vm, listeners),
+        extend,
+    };
+}

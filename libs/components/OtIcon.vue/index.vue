@@ -1,7 +1,7 @@
 <template>
     <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
-    <span ot :class="$style.root" v-else>
-        <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
+    <span ot :class="$style.root" v-else v-on="$listeners">
+        <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
         <!-- 跟随图标后面的容器 -->
         <slot></slot>
     </span>

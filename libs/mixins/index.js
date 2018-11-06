@@ -12,7 +12,7 @@ import utils from '../utils';
 function hookBeforeCreate($vm) {
     $vm._ot_color = {};
     // 工具类
-    $vm.$otUtils = utils;
+    $vm.$otUtils = utils($vm);
 }
 
 function hookCreated($vm) {

@@ -7,6 +7,9 @@ import components from './components';
 import directives from './directives';
 import services from './services';
 
+// 三方
+import VModal from 'vue-js-modal';
+
 let componentsDev;
 let directivesDev;
 let servicesDev;
@@ -47,11 +50,21 @@ export default {
                         element.mixins = [];
                     }
                     element.mixins.push(mixin);
-                } else {
-                    Vue.mixin(mixin);
                 }
                 Vue.component(key, element);
             }
         }
+
+        if (options.global === true) {
+            Vue.mixin(mixin);
+        }
+
+        if (options.global !== true) {
+            if (!VModal.mixins) {
+                VModal.mixins = [];
+            }
+            VModal.mixins.push(mixin);
+        }
+        Vue.use(VModal, { componentName: 'ot-modal' });
     },
 };

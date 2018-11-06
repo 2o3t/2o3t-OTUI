@@ -20,7 +20,7 @@ const path = require('path');
 
 const config = {
     input: path.resolve(__dirname, './index.js'),
-    external: [ 'highlight.js', 'moment' ],
+    external: [ 'highlight.js', 'moment', 'vue' ],
     output: {
         // dir: path.resolve(process.cwd(), `./${DIST}`),
         // format: 'esm', // umd, esm
@@ -30,6 +30,7 @@ const config = {
         globals: {
             'highlight.js': 'hljs', // 这跟external 是配套使用的，指明global.React即是外部依赖react
             moment: 'moment',
+            Vue: 'vue',
         },
     },
     experimentalCodeSplitting: true,
