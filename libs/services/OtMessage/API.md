@@ -2,7 +2,7 @@
 
 ## 实例方法
 
-调用 Message 或 this.$OtMessage 会返回当前 OtMessage 的实例。如果需要手动关闭实例，可以调用它的 close 方法。
+调用 Message 或 this.$otMessage 会返回当前 OtMessage 的实例。如果需要手动关闭实例，可以调用它的 close 方法。
 
 | 方法名 | 说明 |
 | --- | --- |

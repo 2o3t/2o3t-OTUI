@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         open(position) {
-            this.$OtMessage({
+            this.$otMessage({
                 title: '这是一条消息提示',
                 position,
             });

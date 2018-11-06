@@ -80,5 +80,5 @@ export default Vue => {
     };
 
     // 挂载
-    Vue.prototype.$OtMessage = Message;
+    Vue.prototype.$otMessage = Message;
 };

@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         openColors(color) {
-            this.$OtMessage({
+            this.$otMessage({
                 icon: 'space-shuttle',
                 title: '这是一条消息提示',
                 color,
