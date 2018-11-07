@@ -1,5 +1,5 @@
 <template>
-    <table :class="$style.root">
+    <ot-table-ui :class="$style.root">
         <colgroup>
             <col v-for="(name, index) in columns"
                 :key="`ot_table_cell_body_${name}_${index}`"
@@ -19,7 +19,7 @@
                 </td>
             </tr>
         </tbody>
-    </table>
+    </ot-table-ui>
 </template>
 
 <script>

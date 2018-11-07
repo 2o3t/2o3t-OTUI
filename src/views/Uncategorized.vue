@@ -13,7 +13,7 @@
         </ot-section>
 
         <ot-section :theme="$otTheme" label="OT-Table">
-            <ot-row-group :theme="$otTheme">
+            <ot-row-group :theme="$otTheme" :fixable="false">
                 <ot-table :list="tableList">
                     <ot-table-column name="name" label="名称"></ot-table-column>
                     <ot-table-column name="age" label="年龄"></ot-table-column>
@@ -40,51 +40,43 @@
 </template>
 
 <script>
+import md from '../../README.MD';
 export default {
-  name: "uncategorized-page",
-  data() {
-    return {
-      alertTitle: "Notice: Balabala..."
-    };
-  },
-  computed: {
-    tableList() {
-      const list = [];
-      for (let i = 0; i < 10; i++) {
-        list.push({
-          name: `name_${i}`,
-          age: `age${i}`,
-          address: `address_${i}`,
-          other: `other_${i}`
-        });
-      }
-      return list;
+    name: 'uncategorized-page',
+    data() {
+        return {
+            alertTitle: 'Notice: Balabala...',
+            markdown: md,
+        };
     },
-    list() {
-      const list = [];
-      for (let i = 0; i < 10; i++) {
-        list.push({
-          name: `name_${i}`,
-          value: `value_${i}`
-        });
-      }
-      return list;
-    }
-  },
-  methods: {
-    customOpen() {
-      const h = this.$createElement;
-      this.$otMessageBox({
-        title: "消息",
-        message: h("p", null, [
-          h("span", null, "内容可以是 "),
-          h("i", { style: "color: teal" }, "VNode")
-        ]),
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-      });
-    }
-  }
+    computed: {
+        tableList() {
+            const list = [];
+            for (let i = 0; i < 10; i++) {
+                list.push({
+                    name: `name_${i}`,
+                    age: `age${i}`,
+                    address: `address_${i}`,
+                    other: `other_${i}`,
+                });
+            }
+            return list;
+        },
+    },
+    methods: {
+        customOpen() {
+            const h = this.$createElement;
+            this.$otMessageBox({
+                title: '消息',
+                message: h('p', null, [
+                    h('span', null, '内容可以是 '),
+                    h('i', { style: 'color: teal' }, 'VNode'),
+                ]),
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            });
+        },
+    },
 };
 </script>
 

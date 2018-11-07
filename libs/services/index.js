@@ -5,6 +5,6 @@ import OtMessage from './OtMessage/index.js';
 export default {
 
     OtMessageBox,
-    OtMessage,
+OtMessage,
 
-};
+    };

@@ -1,7 +1,7 @@
 import OtMessageBox from '../../components/OtMessageBox.vue/index.vue';
 
 const defaults = {
-    name: 'alert', // confirm , prompt
+    name: 'custom', // confirm , prompt, custom
 
     closedCallback: null,
     closeText: '',
@@ -114,6 +114,7 @@ export default Vue => {
         }, options, {
             name: 'alert',
             showCancelButton: false,
+            showConfirmButton: true,
         }));
     };
 

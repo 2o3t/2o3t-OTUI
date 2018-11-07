@@ -37,7 +37,8 @@ export default {
                 return [];
             },
         },
-        stripe: [ Boolean ], // 是否为斑马纹 table
+        // 是否为斑马纹 table
+        stripe: [ Boolean ],
         height: [ String, Number ],
         maxHeight: [ String, Number ],
         headerStyle: {
@@ -52,7 +53,8 @@ export default {
                 return {};
             },
         },
-        adapter: { // 自适应宽度
+        // 自适应宽度
+        adapter: {
             tyep: [ Boolean ],
             default: true,
         },
@@ -110,7 +112,6 @@ export default {
             delete this.members[name];
         },
         addColumn(name, column) {
-            console.log(name);
             this.columns[name] = column;
         },
         removeColumn(name) {

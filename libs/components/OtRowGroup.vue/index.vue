@@ -111,6 +111,7 @@ export default {
 
   .code {
       margin: 0 1em 2em;
+      padding-bottom: 1em;
   }
 }
 </style>

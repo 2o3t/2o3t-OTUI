@@ -7,7 +7,7 @@
         <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
         <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
-        <p class="markdown" :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" v-html="descHtml"></p>
+        <ot-markdown class="markdown" :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" :content="descHtml"></ot-markdown>
         <div :prefix="prefix" :class="$style.children">
             <slot></slot>
         </div>
@@ -74,8 +74,6 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  line-height: 2;
 
   @include __ot_size__;
 
@@ -108,51 +106,12 @@ export default {
   }
 
   .label {
-    font-weight: 500;
-    clear: both;
-    font-variant: tabular-nums;
-    margin: 1rem 0 0.6rem;
 
     .prefix {
       display: inline-block;
       width: 2rem;
       transition: color 0.3s;
       cursor: pointer;
-    }
-
-    &[level] {
-      font-size: $--ot-h3-size;
-      line-height: $--ot-h3-size + $--ot-offset-h-size;
-
-      &[level="1"] {
-        font-size: $--ot-h1-size;
-        line-height: $--ot-h1-size + $--ot-offset-h-size;
-      }
-
-      &[level="2"] {
-        font-size: $--ot-h2-size;
-        line-height: $--ot-h2-size + $--ot-offset-h-size;
-      }
-
-      &[level="3"] {
-        font-size: $--ot-h3-size;
-        line-height: $--ot-h3-size + $--ot-offset-h-size;
-      }
-
-      &[level="4"] {
-        font-size: $--ot-h4-size;
-        line-height: $--ot-h4-size + $--ot-offset-h-size;
-      }
-
-      &[level="5"] {
-        font-size: $--ot-h5-size;
-        line-height: $--ot-h5-size + $--ot-offset-h-size;
-      }
-
-      &[level="6"] {
-        font-size: $--ot-h6-size;
-        line-height: $--ot-h6-size + $--ot-offset-h-size;
-      }
     }
 
     &[section] {
@@ -192,8 +151,4 @@ export default {
     }
   }
 }
-</style>
-
-<style lang="scss">
-@import './markdown';
 </style>

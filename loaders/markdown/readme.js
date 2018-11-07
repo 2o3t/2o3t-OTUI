@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const Colors = require('colors');
 
+const replaceTag = require('./replaceTag');
+
 module.exports = function(source) {
     this.cacheable && this.cacheable();
 
@@ -42,12 +44,13 @@ module.exports = function(source) {
     const $h3 = $('h3');
     if ($h3.length) {
         const table = $h3.next('table').html();
-        config._API_ = `<div class="markdown ot-api-container"><table>${table}</table></div>`;
+        config._API_ = `<ot-markdown customClass="ot-api-container"><ot-table-ui>${table}</ot-table-ui></ot-markdown>`;
     }
 
     const apiUrl = $.html().toString().match(/\<\!--\s*@api:(.*?)\s*--\>/ig);
     if (apiUrl) {
         const ROOT = process.cwd();
+        const maxCount = apiUrl.length;
         const htmls = apiUrl.map(api => {
             return api.replace(/\<\!--\s*@api:\s*(.*?)\s*--\>/ig, '$1');
         }).map(url => {
@@ -67,7 +70,13 @@ module.exports = function(source) {
                     lowerCaseAttributeNames: false,
                     lowerCaseTags: false,
                 });
-                $('h1').remove();
+                if (maxCount <= 1) {
+                    $('h1').remove();
+                } else {
+                    $('h1').each((index, h) => {
+                        h.tagName = 'H2';
+                    });
+                }
                 $('h2').each((index, h) => {
                     h.tagName = 'H3';
                 });
@@ -80,8 +89,12 @@ module.exports = function(source) {
                 $('h5').each((index, h) => {
                     h.tagName = 'H6';
                 });
+
+                // 替换
+                replaceTag($);
+
                 const html = $('body').html();
-                return `<div class="markdown ot-api-container">${html}</div>`;
+                return `<ot-markdown customClass="ot-api-container">${html}</ot-markdown>`;
             }
             console.error(Colors.yellow(`\n\n[!!!] Dont Find File <${mdPath}>!!\n\n`));
             return '';

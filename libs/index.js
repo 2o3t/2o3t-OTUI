@@ -6,6 +6,7 @@ import createMixin from './mixins';
 import components from './components';
 import directives from './directives';
 import services from './services';
+import plugins from './plugins';
 
 // 三方
 import VModal from 'vue-js-modal';
@@ -22,7 +23,16 @@ if (process.env.NODE_ENV !== 'production') {
 const comps = componentsDev || components;
 const directs = directivesDev || directives;
 const servs = servicesDev || services;
+
 export default {
+    /* option = {
+         theme, size,
+         global, // 全局注册
+         plugins: { // 需要注册的三方插件
+            markdownIt: require('markdown-it'),
+            cheerio: require('cheerio'),
+         }
+    } */
     install(Vue, options = {}) {
         for (const key in directs) {
             if (directs.hasOwnProperty(key)) {
@@ -66,5 +76,9 @@ export default {
             VModal.mixins.push(mixin);
         }
         Vue.use(VModal, { componentName: 'ot-modal' });
+
+        // 注册三方组件
+        const pluginsOptions = options.plugins || {};
+        Vue.use(plugins, pluginsOptions);
     },
 };

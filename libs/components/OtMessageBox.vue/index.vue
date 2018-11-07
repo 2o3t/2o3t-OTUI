@@ -30,65 +30,65 @@
 </template>
 
 <script>
-import theme from "./theme.js";
+import theme from './theme.js';
 export default {
-  mixins: [theme],
-  data() {
-    return {
-    //   name: "",
-    //   closedCallback: null,
-    //   closeText: "",
-    //   cancelButtonText: "取消",
-    //   confirmButtonText: "确定",
-    //   title: "标题名称",
-    //   description: "",
-    //   message: "",
-    //   icon: "",
-    //   center: "",
-    //   customClass: "",
-    //   closable: true
-    };
-  },
-  computed: {
-      _options() { // 自带
-          return {
-              width: '420px',
-              height: 'auto',
-              minHeight: 160,
-              clickToClose: true,
-          }
-      },
-    _type() {
-      return this.name;
+    mixins: [ theme ],
+    data() {
+        return {
+            //   name: "",
+            //   closedCallback: null,
+            //   closeText: "",
+            //   cancelButtonText: "取消",
+            //   confirmButtonText: "确定",
+            //   title: "标题名称",
+            //   description: "",
+            //   message: "",
+            //   icon: "",
+            //   center: "",
+            //   customClass: "",
+            //   closable: true
+        };
     },
-  },
-  methods: {
-    show() {
-      this.$modal.show(`ot-message-box-${this.name}`);
+    computed: {
+        _options() { // 自带
+            return {
+                width: '420px',
+                height: 'auto',
+                minHeight: 160,
+                clickToClose: this._type !== 'alert',
+            };
+        },
+        _type() {
+            return this.name;
+        },
     },
-    hide() {
-      this.$modal.hide(`ot-message-box-${this.name}`);
-    },
-    onClosed() {
-      this.closedCallback && this.closedCallback();
-    },
-    handleCancel() {
-        if (this.__callback__) {
-            if (this.__callback__.reject) {
-                this.__callback__.reject();
+    methods: {
+        show() {
+            this.$modal.show(`ot-message-box-${this.name}`);
+        },
+        hide() {
+            this.$modal.hide(`ot-message-box-${this.name}`);
+        },
+        onClosed() {
+            this.closedCallback && this.closedCallback();
+        },
+        handleCancel() {
+            if (this.__callback__) {
+                if (this.__callback__.reject) {
+                    this.__callback__.reject();
+                }
             }
-        }
-        this.hide();
-    },
-    handleConfirm() {
-        if (this.__callback__) {
-            if (this.__callback__.resolve) {
-                this.__callback__.resolve();
+            this.hide();
+        },
+        handleConfirm() {
+            if (this.__callback__) {
+                if (this.__callback__.resolve) {
+                    this.__callback__.resolve();
+                }
             }
-        }
-        this.hide();
+            this.hide();
+        },
     },
-  }
 };
 </script>
 

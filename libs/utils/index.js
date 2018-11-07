@@ -20,5 +20,15 @@ export default function($vm) {
         ...server($vm, throttle),
         ...server($vm, listeners),
         extend,
+
+        // 获取插件
+        getOtPlugin(name) {
+            const plugin = $vm[`__ot_plugins_${name}__`];
+            if (plugin) {
+                return plugin;
+            }
+            console.warn(`please use options.plugins '${name}'`);
+            return null;
+        },
     };
 }

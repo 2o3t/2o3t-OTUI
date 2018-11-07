@@ -3,7 +3,7 @@ const path = require('path');
 const debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    // baseUrl: debug ? '/' : '/2o3t-UIKit/',
+    baseUrl: debug ? '/' : '/ot-ui/',
     outputDir: 'webs',
     configureWebpack: config => {
         // webpack配置，值位对象时会合并配置，为方法时会改写配置
@@ -27,7 +27,7 @@ module.exports = {
     chainWebpack: config => {
         config.module
             .rule('html')
-            .test(/.vue$/)
+            .test(/.vue$/i)
             .include
             .add(path.resolve(__dirname, './src/components'))
             .end()
@@ -50,17 +50,14 @@ module.exports = {
         // markdown
         config.module
             .rule('markdown')
-            .test(/.md$/)
-            .include
-            .add(path.resolve(__dirname, './src/components'))
-            .end()
+            .test(/.md$/i)
             .use()
-            .loader(path.resolve(__dirname, './loaders/markdown.js'))
+            .loader(path.resolve(__dirname, './loaders/markdown/index.js'))
             .end();
 
         config.module
             .rule('UIViews')
-            .test(/.js$/)
+            .test(/.js$/i)
             .include
             .add(path.resolve(__dirname, './src/views'))
             .end()
@@ -85,7 +82,7 @@ const initComps = () => {
 const files = require.context('.', false, /\.vue$/);
 const modules = CompFactory.requireModules(files);
 
-import Config from ${exists ? "'./README.md'" : "'./config'"};
+import Config from ${exists ? "'./README.md?inject=true&name=readme'" : "'./config'"};
 const template = CompFactory.getTemplate(Config, modules);
 
 export default {

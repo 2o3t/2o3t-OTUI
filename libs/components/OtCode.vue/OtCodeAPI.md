@@ -22,3 +22,9 @@
 | @onCopy |  代码复制事件, `content` 为源代码. | (content): Void | - |
 | @onDismiss |  提示框消失事件 | ( ): Void | - |
 
+## Slots
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| default | code 内容 | - | - |
+

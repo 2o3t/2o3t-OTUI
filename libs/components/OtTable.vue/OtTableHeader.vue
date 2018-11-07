@@ -1,5 +1,5 @@
 <template>
-    <table :class="$style.root">
+    <ot-table-ui :class="$style.root">
         <colgroup>
             <col v-for="(name, index) in columns"
                 :key="`ot_table_header_cell_${name}_${index}`"
@@ -19,7 +19,7 @@
                 </th>
             </tr>
         </thead>
-    </table>
+    </ot-table-ui>
 </template>
 
 <script>
@@ -78,6 +78,10 @@ export default {
 .root {
     text-align: left;
     user-select: none;
+
+    &[ot][border] {
+        border-bottom: none;
+    }
 }
 </style>
 

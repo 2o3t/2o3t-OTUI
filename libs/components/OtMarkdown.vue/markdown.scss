@@ -1,0 +1,159 @@
+.markdown img {
+    max-width: calc(100% - 32px);
+    box-shadow: 0 8px 20px rgba(143, 168, 191, 0.35);
+}
+
+.markdown h1 .subtitle {
+    margin-left: 12px;
+}
+
+.markdown hr {
+    height: 1px;
+    border: 0;
+    background: #ebedf0;
+    margin: 56px 0;
+    clear: both;
+}
+
+.markdown p {
+    margin: 1em 0;
+}
+
+.markdown ul>li {
+    list-style-type: circle;
+    margin-left: 20px;
+    padding-left: 4px;
+}
+
+.markdown ul>li:empty {
+    display: none;
+}
+
+.markdown ol>li {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 4px;
+}
+
+.markdown ul>li>p,
+.markdown ol>li>p {
+    margin: 0.2em 0;
+}
+
+.markdown strong,
+.markdown b {
+    font-weight: bold;
+}
+
+.markdown blockquote {
+    font-size: 90%;
+    color: #697b8c;
+    border-left: 4px solid #ebedf0;
+    padding-left: 0.8em;
+    margin: 1em 0;
+}
+
+.markdown blockquote p {
+    margin: 0;
+}
+
+.markdown .anchor {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    margin-left: 8px;
+}
+
+.markdown .waiting {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.markdown a.edit-button {
+    display: inline-block;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+.markdown a.edit-button i {
+    color: #697b8c;
+}
+
+.markdown a.edit-button i:hover {
+    color: #1890ff;
+}
+
+.markdown a.edit-button .anticon {
+    display: block;
+    font-size: 16px;
+}
+
+.markdown h1:hover .anchor,
+.markdown h2:hover .anchor,
+.markdown h3:hover .anchor,
+.markdown h4:hover .anchor,
+.markdown h5:hover .anchor,
+.markdown h6:hover .anchor {
+    opacity: 1;
+    display: inline-block;
+}
+
+.markdown br,
+.markdown p>br {
+    clear: both;
+}
+
+.markdown.ot-api-container table {
+    font-size: 14px;
+    line-height: 1.5;
+    border-width: 0;
+    margin: 2em 0;
+}
+
+.markdown.ot-api-container table th,
+.markdown.ot-api-container table td {
+    padding: 14px 16px;
+    border-width: 1px 0;
+    border-color: #e8e8e8;
+}
+
+.markdown.ot-api-container table th {
+    border-width: 0 0 2px 0;
+}
+
+.markdown.ot-api-container table tr {
+    border-width: 0 0 1px 0;
+}
+
+.markdown.ot-api-container table td:first-child {
+    font-weight: 500;
+    width: 20%;
+    color: #003a8c;
+}
+
+.markdown.ot-api-container table td:nth-child(3) {
+    width: 22%;
+    font-size: 13px;
+    color: #c41d7f;
+    word-break: break-all;
+}
+
+.markdown.ot-api-container table td:last-child {
+    width: 13%;
+    font-size: 13px;
+}
+
+&[theme=dark] {
+
+    .markdown a.edit-button i {
+        color: #ebeff3;
+    }
+
+    .markdown a.edit-button i:hover {
+        color: #59ff18;
+    }
+
+    .markdown.ot-api-container table td:first-child {
+        color: #1dafa8;
+    }
+}

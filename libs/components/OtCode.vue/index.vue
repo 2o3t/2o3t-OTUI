@@ -9,7 +9,7 @@
             </ot-link>
         </div>
         <pre :class="`language-${_lang}`" code>
-            <code ot v-ot-bind="$otColors" :class="$style.code" :lang="lang" v-text="value"></code>
+            <code ot v-ot-bind="$otColors" :class="$style.code" :lang="lang"><!-- code 内容 --><slot>{{ value }}</slot></code>
         </pre>
     </div>
 </template>
@@ -18,7 +18,6 @@
 import hljs from 'highlight.js';
 import 'highlight.js/styles/androidstudio.css'; // 样式文件
 
-import clipboard from 'clipboard-polyfill';
 import theme from './theme.js';
 export default {
     name: 'ot-code',
@@ -98,7 +97,11 @@ export default {
     },
     methods: {
         handleCopyClick() {
-            const content = this.value;
+            const clipboard = this.$otUtils.getOtPlugin('clipboard');
+            if (!clipboard) {
+                return;
+            }
+            const content = this.value || (this.$slots.default && this.$slots.default[0].text);
             clipboard.writeText(content);
             this.bShown = true;
 

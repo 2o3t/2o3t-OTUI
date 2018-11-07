@@ -44,7 +44,7 @@ export default {
     text-align: center;
     box-sizing: border-box;
     margin: 0;
-    transition: all .3s;
+    transition: background .3s, color .3s;
     font-weight: 500;
     user-select:none;
     line-height: 1;
