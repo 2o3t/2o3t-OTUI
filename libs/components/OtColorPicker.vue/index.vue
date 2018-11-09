@@ -1,5 +1,5 @@
 <template>
-    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange" :offsetY="5">
+    <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange">
         <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
             <div ot v-ot-bind="$otColors.box" :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
                 <ot-icon icon="angle-down"></ot-icon>

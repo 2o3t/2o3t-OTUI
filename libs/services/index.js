@@ -1,10 +1,10 @@
 /* auto load */
-import OtMessageBox from './OtMessageBox/index.js';
 import OtMessage from './OtMessage/index.js';
+import OtDialog from './OtDialog/index.js';
 
 export default {
 
-    OtMessageBox,
-OtMessage,
+    OtMessage,
+OtDialog,
 
     };

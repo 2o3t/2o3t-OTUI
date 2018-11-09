@@ -11,6 +11,7 @@ import OtTableBody from './OtTable.vue/OtTableBody.vue';
 import OtTableColumn from './OtTable.vue/OtTableColumn.vue';
 import OtTableFooter from './OtTable.vue/OtTableFooter.vue';
 import OtTableHeader from './OtTable.vue/OtTableHeader.vue';
+import OtTableUi from './OtTable.vue/OtTableUi.vue';
 import OtTable from './OtTable.vue/index.vue';
 import OtSwitch from './OtSwitch.vue/index.vue';
 import OtSlider from './OtSlider.vue/index.vue';
@@ -24,7 +25,6 @@ import OtPagination from './OtPagination.vue/index.vue';
 import OtNotice from './OtNotice.vue/index.vue';
 import OtNavItem from './OtNav.vue/OtNavItem.vue';
 import OtNav from './OtNav.vue/index.vue';
-import OtMessageBox from './OtMessageBox.vue/index.vue';
 import OtMessage from './OtMessage.vue/index.vue';
 import OtMenuGroup from './OtMenu.vue/OtMenuGroup.vue';
 import OtMenuItem from './OtMenu.vue/OtMenuItem.vue';
@@ -34,12 +34,19 @@ import OtLogo from './OtLogo.vue/index.vue';
 import OtLink from './OtLink.vue/index.vue';
 import OtLine from './OtLine.vue/index.vue';
 import OtLazyLoad from './OtLazyLoad.vue/index.vue';
+import OtAside from './OtLayout.vue/OtAside.vue';
+import OtFooter from './OtLayout.vue/OtFooter.vue';
+import OtHeader from './OtLayout.vue/OtHeader.vue';
+import OtMain from './OtLayout.vue/OtMain.vue';
+import OtLayout from './OtLayout.vue/index.vue';
 import OtLabel from './OtLabel.vue/index.vue';
 import OtInputNumber from './OtInputNumber.vue/index.vue';
 import OtInput from './OtInput.vue/index.vue';
 import OtIcon from './OtIcon.vue/index.vue';
 import OtFormItem from './OtForm.vue/OtFormItem.vue';
 import OtForm from './OtForm.vue/index.vue';
+import OtDropdown from './OtDropdown.vue/index.vue';
+import OtDialog from './OtDialog.vue/index.vue';
 import OtDatePanel from './OtDatePicker.vue/OtDatePanel.vue';
 import OtDatePicker from './OtDatePicker.vue/index.vue';
 import OtCorners from './OtCorners.vue/index.vue';
@@ -52,6 +59,8 @@ import OtButtonGroup from './OtButton.vue/OtButtonGroup.vue';
 import OtRadioButton from './OtButton.vue/OtRadioButton.vue';
 import OtRadioButtonGroup from './OtButton.vue/OtRadioButtonGroup.vue';
 import OtButton from './OtButton.vue/index.vue';
+import OtBreadcrumbItem from './OtBreadcrumb.vue/OtBreadcrumbItem.vue';
+import OtBreadcrumb from './OtBreadcrumb.vue/index.vue';
 import OtBadge from './OtBadge.vue/index.vue';
 import OtArrow from './OtArrow.vue/index.vue';
 import OtAlert from './OtAlert.vue/index.vue';
@@ -72,6 +81,7 @@ OtTableBody,
 OtTableColumn,
 OtTableFooter,
 OtTableHeader,
+OtTableUi,
 OtTable,
 OtSwitch,
 OtSlider,
@@ -85,7 +95,6 @@ OtPagination,
 OtNotice,
 OtNavItem,
 OtNav,
-OtMessageBox,
 OtMessage,
 OtMenuGroup,
 OtMenuItem,
@@ -95,12 +104,19 @@ OtLogo,
 OtLink,
 OtLine,
 OtLazyLoad,
+OtAside,
+OtFooter,
+OtHeader,
+OtMain,
+OtLayout,
 OtLabel,
 OtInputNumber,
 OtInput,
 OtIcon,
 OtFormItem,
 OtForm,
+OtDropdown,
+OtDialog,
 OtDatePanel,
 OtDatePicker,
 OtCorners,
@@ -113,6 +129,8 @@ OtButtonGroup,
 OtRadioButton,
 OtRadioButtonGroup,
 OtButton,
+OtBreadcrumbItem,
+OtBreadcrumb,
 OtBadge,
 OtArrow,
 OtAlert,

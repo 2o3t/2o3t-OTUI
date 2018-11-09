@@ -14,6 +14,7 @@ import theme from './OtMenuItemTheme.js';
 export default {
     name: 'ot-menu-item',
     mixins: [ theme ],
+    inject: [ '$OtMenu', '$OtMenuGroup' ],
     props: {
         icon: [ String ],
         index: [ String ],
@@ -33,15 +34,15 @@ export default {
     computed: {
         isCollapse() {
             let result = false;
-            if (this.$parent && this.$parent.isCollapse) {
-                result = this.$parent.isCollapse;
+            if (this.$OtMenu && this.$OtMenu.isCollapse) {
+                result = this.$OtMenu.isCollapse;
             }
             return result;
         },
         isSelected() {
             let result = false;
-            if (this.$parent && this.$parent.value) {
-                const s = this.$parent.value;
+            if (this.$OtMenu && this.$OtMenu.value) {
+                const s = this.$OtMenu.value;
                 result = (s === this.index);
             } else if (this.$route && this.router) {
                 if (typeof this.router === 'string') {
@@ -55,8 +56,8 @@ export default {
     },
     methods: {
         handleClick() {
-            if (this.$parent) {
-                this.$parent.$emit('input', this.index);
+            if (this.$OtMenu) {
+                this.$OtMenu.updateSelect(this.index)
             }
             if (this.$router) {
                 if (this.index && !this.router && !this.href) {

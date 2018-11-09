@@ -7,7 +7,7 @@
                     <div ot :class="$style.item" v-for="(suffix) in otUISubfixMap" :key="suffix">
                         <ot-section v-bind="$attrs" :theme="$otTheme" prefix="#" :label="`${camelCase(name)} - ${camelCase(suffix)}`" :level="6">
                             <div ot :class="$style.box" v-for="sx in otUISxMap" :key="sx">
-                                <span :id="`ot__color__${name}__${suffix}__${sx}`" :class="$style.color">{{ String.prototype.toUpperCase.call(sx) }}</span>
+                                <span :id="`ot__color__${name}__${suffix}__${sx}`" v-bind="{ [sx]: true }" :border="suffix.includes('border')" :class="$style.color">{{ String.prototype.toUpperCase.call(sx) }}</span>
                                 <span>: </span>
                                 <span :class="$style.title">{{ name }}-{{ suffix }}-{{ sx }}</span>
 

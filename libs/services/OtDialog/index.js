@@ -1,4 +1,4 @@
-import OtMessageBox from '../../components/OtMessageBox.vue/index.vue';
+import OtDialog from '../../components/OtDialog.vue/index.vue';
 
 const defaults = {
     name: 'custom', // confirm , prompt, custom
@@ -33,7 +33,7 @@ function isVNode(node) {
 }
 
 export default Vue => {
-    const OtMessageBoxConstructor = Vue.extend(OtMessageBox);
+    const OtDialogConstructor = Vue.extend(OtDialog);
 
     const initInstance = options => {
 
@@ -45,7 +45,7 @@ export default Vue => {
 
         const key = options.name;
         if (!instances[key]) {
-            instance = new OtMessageBoxConstructor({
+            instance = new OtDialogConstructor({
                 data: options,
             });
         } else {
@@ -79,7 +79,7 @@ export default Vue => {
         }
     };
 
-    const MessageBox = function(options) {
+    const Dialog = function(options) {
         if (Vue.prototype.$isServer) return;
 
         if (typeof options === 'string' || isVNode(options)) {
@@ -101,14 +101,14 @@ export default Vue => {
         });
     };
 
-    MessageBox.alert = (description, title, options) => {
+    Dialog.alert = (description, title, options) => {
         if (typeof title === 'object') {
             options = title;
             title = '';
         } else if (title === undefined) {
             title = '';
         }
-        return MessageBox(Object.assign({
+        return Dialog(Object.assign({
             title,
             description,
         }, options, {
@@ -118,14 +118,14 @@ export default Vue => {
         }));
     };
 
-    MessageBox.confirm = (description, title, options) => {
+    Dialog.confirm = (description, title, options) => {
         if (typeof title === 'object') {
             options = title;
             title = '';
         } else if (title === undefined) {
             title = '';
         }
-        return MessageBox(Object.assign({
+        return Dialog(Object.assign({
             title,
             description,
         }, options, {
@@ -135,14 +135,14 @@ export default Vue => {
         }));
     };
 
-    MessageBox.prompt = (description, title, options) => {
+    Dialog.prompt = (description, title, options) => {
         if (typeof title === 'object') {
             options = title;
             title = '';
         } else if (title === undefined) {
             title = '';
         }
-        return MessageBox(Object.assign({
+        return Dialog(Object.assign({
             title,
             description,
         }, options, {
@@ -152,17 +152,17 @@ export default Vue => {
         }));
     };
 
-    MessageBox.close = () => {
+    Dialog.close = () => {
         instance.hide();
     };
 
     // 挂载
-    Vue.prototype.$otMessageBox = MessageBox; // $otMessageBox(options)
+    Vue.prototype.$otDialog = Dialog; // $otDialog(options)
 
     // $otAlert(description, title, options) 或 $otAlert(description, options)
     // $otConfirm(description, title, options) 或 $otConfirm(description, options)
     // $otPrompt(description, title, options) 或 $otPrompt(description, options)
-    Vue.prototype.$otAlert = MessageBox.alert;
-    Vue.prototype.$otConfirm = MessageBox.confirm;
-    Vue.prototype.$otPrompt = MessageBox.prompt;
+    Vue.prototype.$otAlert = Dialog.alert;
+    Vue.prototype.$otConfirm = Dialog.confirm;
+    Vue.prototype.$otPrompt = Dialog.prompt;
 };

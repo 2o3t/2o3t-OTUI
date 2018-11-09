@@ -3,7 +3,7 @@ export default {
         switch (theme) {
             case 'dark': {
                 return {
-                    normal: [ 'def-f', 'def-bg', 'def-bl', 'border' ],
+                    normal: [ 'light-f', 'dark-bg', 'def-b', 'border' ],
                 };
             }
             case 'light':

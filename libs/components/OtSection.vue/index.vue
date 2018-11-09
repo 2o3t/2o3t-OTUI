@@ -15,42 +15,30 @@
 </template>
 
 <script>
+import theme from './theme.js';
 export default {
     name: 'ot-section',
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    normal: [ 'light-f' ],
-                    prefix: {
-                        normal: [ 'light-f' ],
-                        active: [ 'def-f-hov' ],
-                    },
-                };
-            case 'light':
-            default:
-                return {
-                    normal: [ 'def-f' ],
-                    prefix: {
-                        normal: [ 'def-f' ],
-                        active: [ 'def-f-hov' ],
-                    },
-                };
-        }
-    },
+    mixins: [ theme ],
     props: {
+        // 标题
         label: [ String ],
+        // 标题等级
         level: {
             type: Number,
             default: 3,
         },
+        // 上下块间距
         section: [ Boolean ],
+        // 缩进
         indent: [ Boolean, Number ],
+        // 标题前缀符号
         prefix: [ String ],
+        // 描述
         desc: {
             type: String,
             default: '',
         },
+        // `html` 描述
         descHtml: {
             type: String,
             default: '',

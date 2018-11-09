@@ -51,7 +51,7 @@ export default {
             } else if (this.$router && this.to) {
                 return this.$router.resolve(this.to, this.$route, this.append).href;
             }
-            return undefined;
+            return null;
         },
         listeners() {
             const listeners = Object.assign({}, this.$listeners);
@@ -84,7 +84,6 @@ export default {
 <style lang="scss" module>
 @import '../globals';
 .root {
-    cursor: pointer;
     box-sizing: border-box;
     vertical-align: middle;
     text-decoration: none;

@@ -9,13 +9,13 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| label | - | String | - |
-| level | - | Number | 3 |
-| section | - | Boolean | - |
-| indent | - | Boolean,Number | - |
-| prefix | - | String | - |
-| desc | - | String | '' |
-| descHtml | - | String | '' |
+| label | 标题 | String | - |
+| level | 标题等级 | Number | 3 |
+| section | 上下块间距 | Boolean | - |
+| indent | 缩进 | Boolean,Number | - |
+| prefix | 标题前缀符号 | String | - |
+| desc | 描述 | String | '' |
+| descHtml | `html` 描述 | String | '' |
 
 ## Slots
 

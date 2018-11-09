@@ -11,6 +11,7 @@
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | content | html template 内容 | String | null |
 | dangerouslyUseHTMLString | 是否直接传入 HTML 片段, 危险 | Boolean | false |
+| customClass | 自定义 class | String | '' |
 
 ## Slots
 

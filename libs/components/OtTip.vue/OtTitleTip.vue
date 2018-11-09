@@ -46,15 +46,19 @@ export default {
     data() {
         return {
             bShown: false,
-            style: {
+            title: this.content,
+        };
+    },
+    computed: {
+        style() {
+            return {
                 display: 'block',
                 position: 'relative',
                 width: this.width ? `${this.width}px` : 'auto',
                 textAlign: this.textAlign,
                 boxSizing: 'border-box',
-            },
-            title: this.content,
-        };
+            };
+        },
     },
     methods: {
         handleUpdate(value) {

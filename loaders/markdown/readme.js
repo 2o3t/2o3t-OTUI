@@ -19,6 +19,9 @@ module.exports = function(source) {
         lowerCaseTags: false,
     });
 
+    // 替换
+    replaceTag($);
+
     const config = {};
     config.LABEL = $('h1').first().text();
     config.DESC = $('h1').next('p').first()
@@ -30,10 +33,22 @@ module.exports = function(source) {
         const $el = $h2.eq(index);
         const name = $el.text();
         const key = $el.next('blockquote').children('p').text();
-        const desc = $el.next('blockquote').next('p').html();
+
+        const desc = [];
+        const currAllEls = $el.next('blockquote').nextAll();
+        if (currAllEls && currAllEls.length) {
+            for (let i = 0; i < currAllEls.length; i++) {
+                const currEl = currAllEls[i];
+                if (/^h\w+/i.test(currEl.tagName)) {
+                    break;
+                }
+                desc.push($.html(currEl));
+            }
+        }
+
         obj[key] = {
             LABEL: name,
-            DESC: desc,
+            DESC: desc.join('\n'),
         };
         return obj;
     }, {});

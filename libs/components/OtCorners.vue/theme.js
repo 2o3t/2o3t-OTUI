@@ -3,12 +3,12 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    selected: [ 'def-f-sel', 'light-bg-sel' ],
+                    selected: [ 'def-f-sel', 'light-bg-sel', 'fill' ],
                 };
             case 'light':
             default:
                 return {
-                    selected: [ 'light-f-sel', 'def-bg-sel' ],
+                    selected: [ 'light-f-sel', 'def-bg-sel', 'fill' ],
                 };
         }
     },

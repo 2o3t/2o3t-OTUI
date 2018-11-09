@@ -1,1 +1,11 @@
 @import '../sass/globals';
+
+@mixin __ot_root_block__ {
+    &:after {
+        clear: both;
+    }
+    &:before, &:after{
+        display: table;
+        content: "";
+    }
+}

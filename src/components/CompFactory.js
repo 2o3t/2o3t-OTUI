@@ -57,7 +57,7 @@ ${
         const name = key.replace(/^OT-/igm, '');
         const comp = COMPONENTS[name] || {};
         if (bMd) {
-            return `<${key} :theme="$otTheme" label="${comp.LABEL || ''}" descHtml="${comp.DESC || ''}" prefix="#"/>`;
+            return `<${key} :theme="$otTheme" label="${comp.LABEL || ''}" descHtml='${comp.DESC || ''}' prefix="#"/>`;
         }
         return `<${key} :theme="$otTheme" label="${comp.LABEL || ''}" desc="${comp.DESC || ''}" prefix="#"/>`;
     }).join('\n')

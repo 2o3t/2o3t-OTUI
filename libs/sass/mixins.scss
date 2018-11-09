@@ -1,372 +1,105 @@
 // base
-$NAME_MAP: (light: lig, dark: dar, grey: gre, default: def, primary: pri, success: suc, warning: war, danger: dan, info: inf);
-$SUBFIX_MAP: (font: f, background: bg, border: b, border-top: bt, border-left: bl, border-right: br, border-bottom: bb);
+$NAME_MAP: (default: def, primary: pri, success: suc, warning: war, danger: dan, info: inf);
+$LEIXING_MAP: (font: f, background: bg, border: b, border-top: bt, border-left: bl, border-right: br, border-bottom: bb);
 $BORDER_MAP: (border-color: border, border-top-color: border-top, border-left-color: border-left, border-right-color: border-right, border-bottom-color: border-bottom);
-@mixin _mC_($prefix, $name, $shuxin, $color, $subfix, $action) {
-    [#{$prefix}][ot-#{$name}-#{$subfix}]#{$action},
-    [#{$prefix}][ot_#{$name}_#{$subfix}]#{$action} {
-        #{$shuxin}: #{$color};
+
+// ============ NEW ============
+
+@mixin __ot_mixin_color_inner__($prefix, $shuxin, $value) {
+    #{$shuxin}: #{$value};
+    @each $key, $val in $BORDER_MAP {
+        @if $shuxin == $key {
+            #{$val}-style: solid;
+            #{$val}-width: 0px;
+            &[border], &[#{$prefix}-color-border],  {
+                #{$val}-width: 1px;
+            }
+        }
     }
-}
-// normal
-@mixin _nC_($prefix, $name, $shuxin, $color, $subfix, $ex) {
-    #{$ex}, ##{$ex} {
-        #{$shuxin}: #{$color};
+    @if $shuxin == 'background-color' {
+        &[#{$prefix}-color-stroke] {
+            stroke: #{$value};
+        }
+        &[#{$prefix}-color-fill] {
+            fill: #{$value};
+        }
+    }
+
+    &[#{$prefix}-color-after]:after, &[#{$prefix}-color-before]:before {
+        #{$shuxin}: #{$value};
         @each $key, $val in $BORDER_MAP {
             @if $shuxin == $key {
                 #{$val}-style: solid;
                 #{$val}-width: 0px;
-                &[border], &[ot-border] {
+                &[border], &[#{$prefix}-color-border],  {
                     #{$val}-width: 1px;
                 }
             }
         }
-        @if $shuxin == 'background-color' {
-            &[ot-stroke] {
-                stroke: #{$color};
-            }
-            &[ot-fill] {
-                fill: #{$color};
-            }
-        }
-    }
-}
-@mixin _nCE_($prefix, $name, $shuxin, $color, $subfix, $ex) {
-    [#{$prefix}][ot-#{$name}-#{$subfix}],
-    [#{$prefix}][ot_#{$name}_#{$subfix}] {
-        @extend #{$ex};
-    }
-}
-// hover
-@mixin _hC_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    #{$ex}, ##{$ex} {
-        #{$shuxin}: #{$color};
-        cursor: pointer;
-        @each $key, $val in $BORDER_MAP {
-            @if $shuxin == $key {
-                #{$val}-style: solid;
-                #{$val}-width: 0px;
-                &[border], &[ot-border] {
-                    #{$val}-width: 1px;
-                }
-            }
-        }
-        @if $shuxin == 'background-color' {
-            &[ot-stroke] {
-                stroke: #{$color};
-            }
-            &[ot-fill] {
-                fill: #{$color};
-            }
-        }
-    }
-}
-@mixin _hCE_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    [#{$prefix}][ot-#{$name}-#{$subfix}-#{$action}]:hover,
-    [#{$prefix}][ot_#{$name}_#{$subfix}_#{$action}]:hover {
-        @extend #{$ex};
-    }
-}
-// active
-@mixin _aC_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    #{$ex}, ##{$ex} {
-        #{$shuxin}: #{$color};
-        cursor: pointer;
-        @each $key, $val in $BORDER_MAP {
-            @if $shuxin == $key {
-                #{$val}-style: solid;
-                #{$val}-width: 0px;
-                &[border], &[ot-border] {
-                    #{$val}-width: 1px;
-                }
-            }
-        }
-        @if $shuxin == 'background-color' {
-            &[ot-stroke] {
-                stroke: #{$color};
-            }
-            &[ot-fill] {
-                fill: #{$color};
-            }
-        }
-    }
-}
-@mixin _aCE_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    [#{$prefix}][ot-#{$name}-#{$subfix}-#{$action}]:active,
-    [#{$prefix}][ot_#{$name}_#{$subfix}_#{$action}]:active {
-        @extend #{$ex};
-    }
-}
-// focus
-@mixin _fC_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    #{$ex}, ##{$ex} {
-        #{$shuxin}: #{$color};
-        cursor: pointer;
-        @each $key, $val in $BORDER_MAP {
-            @if $shuxin == $key {
-                #{$val}-style: solid;
-                #{$val}-width: 0px;
-                &[border], &[ot-border] {
-                    #{$val}-width: 1px;
-                }
-            }
-        }
-        @if $shuxin == 'background-color' {
-            &[ot-stroke] {
-                stroke: #{$color};
-            }
-            &[ot-fill] {
-                fill: #{$color};
-            }
-        }
-    }
-}
-@mixin _fCE_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    [#{$prefix}][ot-#{$name}-#{$subfix}-#{$action}]:focus,
-    [#{$prefix}][ot_#{$name}_#{$subfix}_#{$action}]:focus {
-        @extend #{$ex};
-    }
-}
-// selected
-@mixin _sC_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    #{$ex}, ##{$ex} {
-        #{$shuxin}: #{$color};
-        cursor: pointer;
-        @if $shuxin == 'background-color' {
-            &[ot-stroke] {
-                stroke: #{$color};
-            }
-            &[ot-fill] {
-                fill: #{$color};
-            }
-        }
-
-        &:not([ot-after]) {
-            @each $key, $val in $BORDER_MAP {
-                @if $shuxin == $key {
-                    #{$val}-style: solid;
-                    #{$val}-width: 0px;
-                    &[border], &[ot-border] {
-                        #{$val}-width: 1px;
-                    }
-                }
-            }
-        }
-
-        &:after {
-            #{$shuxin}: #{$color};
-            @each $key, $val in $BORDER_MAP {
-                @if $shuxin == $key {
-                    #{$val}-style: solid;
-                    #{$val}-width: 0px;
-                    &[border], &[ot-border] {
-                        #{$val}-width: 1px;
-                    }
-                }
-            }
-        }
-    }
-}
-@mixin _sCE_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    [#{$prefix}][selected][ot-#{$name}-#{$subfix}-#{$action}],
-    [#{$prefix}][selected][ot_#{$name}_#{$subfix}_#{$action}] {
-        @extend #{$ex};
     }
 }
 
-// disabled
-@mixin _dC_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    #{$ex}, ##{$ex} {
-        #{$shuxin}: #{$color};
-        cursor: not-allowed;
-        @each $key, $val in $BORDER_MAP {
-            @if $shuxin == $key {
-                #{$val}-style: solid;
-                #{$val}-width: 0px;
-                &[border], &[ot-border] {
-                    #{$val}-width: 1px;
+@mixin __ot_mixin_color_inner_action__($prefix, $shuxin, $value, $action) {
+    $flag: true;
+    @each $a in ('hover', 'active', 'focus') {
+        @if $a == $action {
+            $flag: false;
+            &:not([disabled]) {
+                cursor: pointer;
+                &:#{$action} {
+                    @include __ot_mixin_color_inner__($prefix, $shuxin, $value);
                 }
             }
         }
-        @if $shuxin == 'background-color' {
-            &[ot-stroke] {
-                stroke: #{$color};
-            }
-            &[ot-fill] {
-                fill: #{$color};
+    }
+    @each $a in ('disabled', 'selected') {
+        @if $a == $action {
+            $flag: false;
+            &[#{$action}] {
+                @if $action == 'disabled' {
+                    cursor: not-allowed;
+                }
+                @include __ot_mixin_color_inner__($prefix, $shuxin, $value);
             }
         }
     }
-}
-@mixin _dCE_($prefix, $name, $shuxin, $color, $subfix, $action, $ex) {
-    [#{$prefix}][disabled][ot-#{$name}-#{$subfix}-#{$action}],
-    [#{$prefix}][disabled][ot_#{$name}_#{$subfix}_#{$action}] {
-        @extend #{$ex};
+
+    @if $flag == true {
+        @include __ot_mixin_color_inner__($prefix, $shuxin, $value);
     }
 }
 
+// 格式: ot-color-font[disabled][selected][hover][focus][active] ot-color="default"
+// 对照: ${prefix}-color-${leixin}[${action}]  ${prefix}-color="${color}"
 
-// mixin
-@mixin mainColor($prefix, $name, $shuxin, $color, $subfix, $action) {
-    @include _mC_($prefix, $name, $shuxin, $color, $subfix, $action);
-}
-@mixin normalColor($prefix, $name, $shuxin, $color, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$subfix}__normal";
-    @include _nC_($prefix, $name, $shuxin, $color, $subfix, $ex);
-    @each $key, $val in $NAME_MAP {
-        @if $name == $key {
-            @include _nCE_($prefix, $val, $shuxin, $color, $subfix, $ex);
-            @each $sb1, $sb2 in $SUBFIX_MAP {
-                @if $subfix == $sb1 {
-                    @include _nCE_($prefix, $val, $shuxin, $color, $sb2, $ex);
-                }
+
+// $prefix 前缀
+// $name 颜色名称
+// $shuxin css属性
+// $value 颜色值
+// $action 行为
+// $leixing 类型
+// $subfix 后缀
+@mixin __ot_mixin_color__($prefix, $name, $shuxin, $value, $leixing, $action, $subfix) {
+    $ex: "#{$prefix}__color__#{$name}__#{$leixing}__#{$action}";
+
+    ##{$ex}, [#{$prefix}][#{$prefix}-color-#{$name}-#{$leixing}-#{$action}] {
+        @if $subfix != null {
+            &[#{$prefix}-color-#{$subfix}] {
+                @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, $action);
             }
+        } @else {
+            @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, $action);
         }
     }
-    @each $sb1, $sb2 in $SUBFIX_MAP {
-        @if $subfix == $sb1 {
-            @include _nCE_($prefix, $name, $shuxin, $color, $sb2, $ex);
-        }
-    }
-    @include _nCE_($prefix, $name, $shuxin, $color, $subfix, $ex);
 }
-@mixin hoverColor($prefix, $name, $shuxin, $color, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$subfix}__hover";
-    @include _hC_($prefix, $name, $shuxin, $color, $subfix, hover, $ex);
-    @each $key, $val in $NAME_MAP {
-        @if $name == $key {
-            @include _hCE_($prefix, $val, $shuxin, $color, $subfix, h, $ex);
-            @include _hCE_($prefix, $val, $shuxin, $color, $subfix, hov, $ex);
-            @include _hCE_($prefix, $val, $shuxin, $color, $subfix, hover, $ex);
-            @each $sb1, $sb2 in $SUBFIX_MAP {
-                @if $subfix == $sb1 {
-                    @include _hCE_($prefix, $val, $shuxin, $color, $sb2, h, $ex);
-                    @include _hCE_($prefix, $val, $shuxin, $color, $sb2, hov, $ex);
-                    @include _hCE_($prefix, $val, $shuxin, $color, $sb2, hover, $ex);
-                }
-            }
-        }
-    }
-    @each $sb1, $sb2 in $SUBFIX_MAP {
-        @if $subfix == $sb1 {
-            @include _hCE_($prefix, $name, $shuxin, $color, $sb2, h, $ex);
-            @include _hCE_($prefix, $name, $shuxin, $color, $sb2, hov, $ex);
-            @include _hCE_($prefix, $name, $shuxin, $color, $sb2, hover, $ex);
-        }
-    }
-    @include _hCE_($prefix, $name, $shuxin, $color, $subfix, h, $ex);
-    @include _hCE_($prefix, $name, $shuxin, $color, $subfix, hov, $ex);
-    @include _hCE_($prefix, $name, $shuxin, $color, $subfix, hover, $ex);
-}
-@mixin activeColor($prefix, $name, $shuxin, $color, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$subfix}__active";
-    @include _aC_($prefix, $name, $shuxin, $color, $subfix, active, $ex);
-    @each $key, $val in $NAME_MAP {
-        @if $name == $key {
-            @include _aCE_($prefix, $val, $shuxin, $color, $subfix, a, $ex);
-            @include _aCE_($prefix, $val, $shuxin, $color, $subfix, act, $ex);
-            @include _aCE_($prefix, $val, $shuxin, $color, $subfix, active, $ex);
-            @each $sb1, $sb2 in $SUBFIX_MAP {
-                @if $subfix == $sb1 {
-                    @include _aCE_($prefix, $val, $shuxin, $color, $sb2, a, $ex);
-                    @include _aCE_($prefix, $val, $shuxin, $color, $sb2, act, $ex);
-                    @include _aCE_($prefix, $val, $shuxin, $color, $sb2, active, $ex);
-                }
-            }
-        }
-    }
-    @each $sb1, $sb2 in $SUBFIX_MAP {
-        @if $subfix == $sb1 {
-            @include _aCE_($prefix, $name, $shuxin, $color, $sb2, a, $ex);
-            @include _aCE_($prefix, $name, $shuxin, $color, $sb2, act, $ex);
-            @include _aCE_($prefix, $name, $shuxin, $color, $sb2, active, $ex);
-        }
-    }
-    @include _aCE_($prefix, $name, $shuxin, $color, $subfix, a, $ex);
-    @include _aCE_($prefix, $name, $shuxin, $color, $subfix, act, $ex);
-    @include _aCE_($prefix, $name, $shuxin, $color, $subfix, active, $ex);
-}
-@mixin focusColor($prefix, $name, $shuxin, $color, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$subfix}__focus";
-    @include _fC_($prefix, $name, $shuxin, $color, $subfix, focus, $ex);
-    @each $key, $val in $NAME_MAP {
-        @if $name == $key {
-            @include _fCE_($prefix, $val, $shuxin, $color, $subfix, f, $ex);
-            @include _fCE_($prefix, $val, $shuxin, $color, $subfix, foc, $ex);
-            @include _fCE_($prefix, $val, $shuxin, $color, $subfix, focus, $ex);
-            @each $sb1, $sb2 in $SUBFIX_MAP {
-                @if $subfix == $sb1 {
-                    @include _fCE_($prefix, $val, $shuxin, $color, $sb2, f, $ex);
-                    @include _fCE_($prefix, $val, $shuxin, $color, $sb2, foc, $ex);
-                    @include _fCE_($prefix, $val, $shuxin, $color, $sb2, focus, $ex);
-                }
-            }
-        }
-    }
-    @each $sb1, $sb2 in $SUBFIX_MAP {
-        @if $subfix == $sb1 {
-            @include _fCE_($prefix, $name, $shuxin, $color, $sb2, f, $ex);
-            @include _fCE_($prefix, $name, $shuxin, $color, $sb2, foc, $ex);
-            @include _fCE_($prefix, $name, $shuxin, $color, $sb2, focus, $ex);
-        }
-    }
-    @include _fCE_($prefix, $name, $shuxin, $color, $subfix, f, $ex);
-    @include _fCE_($prefix, $name, $shuxin, $color, $subfix, foc, $ex);
-    @include _fCE_($prefix, $name, $shuxin, $color, $subfix, focus, $ex);
-}
-@mixin selectedColor($prefix, $name, $shuxin, $color, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$subfix}__selected";
-    @include _sC_($prefix, $name, $shuxin, $color, $subfix, selected, $ex);
-    @each $key, $val in $NAME_MAP {
-        @if $name == $key {
-            @include _sCE_($prefix, $val, $shuxin, $color, $subfix, s, $ex);
-            @include _sCE_($prefix, $val, $shuxin, $color, $subfix, sel, $ex);
-            @include _sCE_($prefix, $val, $shuxin, $color, $subfix, selected, $ex);
-            @each $sb1, $sb2 in $SUBFIX_MAP {
-                @if $subfix == $sb1 {
-                    @include _sCE_($prefix, $val, $shuxin, $color, $sb2, s, $ex);
-                    @include _sCE_($prefix, $val, $shuxin, $color, $sb2, sel, $ex);
-                    @include _sCE_($prefix, $val, $shuxin, $color, $sb2, selected, $ex);
-                }
-            }
-        }
-    }
-    @each $sb1, $sb2 in $SUBFIX_MAP {
-        @if $subfix == $sb1 {
-            @include _sCE_($prefix, $name, $shuxin, $color, $sb2, s, $ex);
-            @include _sCE_($prefix, $name, $shuxin, $color, $sb2, sel, $ex);
-            @include _sCE_($prefix, $name, $shuxin, $color, $sb2, selected, $ex);
-        }
-    }
-    @include _sCE_($prefix, $name, $shuxin, $color, $subfix, s, $ex);
-    @include _sCE_($prefix, $name, $shuxin, $color, $subfix, sel, $ex);
-    @include _sCE_($prefix, $name, $shuxin, $color, $subfix, selected, $ex);
-}
-@mixin disabledColor($prefix, $name, $shuxin, $color, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$subfix}__disabled";
-    @include _dC_($prefix, $name, $shuxin, $color, $subfix, disabled, $ex);
-    @each $key, $val in $NAME_MAP {
-        @if $name == $key {
-            @include _dCE_($prefix, $val, $shuxin, $color, $subfix, d, $ex);
-            @include _dCE_($prefix, $val, $shuxin, $color, $subfix, dis, $ex);
-            @include _dCE_($prefix, $val, $shuxin, $color, $subfix, disabled, $ex);
-            @each $sb1, $sb2 in $SUBFIX_MAP {
-                @if $subfix == $sb1 {
-                    @include _dCE_($prefix, $val, $shuxin, $color, $sb2, d, $ex);
-                    @include _dCE_($prefix, $val, $shuxin, $color, $sb2, dis, $ex);
-                    @include _dCE_($prefix, $val, $shuxin, $color, $sb2, disabled, $ex);
-                }
-            }
-        }
-    }
-    @each $sb1, $sb2 in $SUBFIX_MAP {
-        @if $subfix == $sb1 {
-            @include _dCE_($prefix, $name, $shuxin, $color, $sb2, d, $ex);
-            @include _dCE_($prefix, $name, $shuxin, $color, $sb2, dis, $ex);
-            @include _dCE_($prefix, $name, $shuxin, $color, $sb2, disabled, $ex);
-        }
-    }
-    @include _dCE_($prefix, $name, $shuxin, $color, $subfix, d, $ex);
-    @include _dCE_($prefix, $name, $shuxin, $color, $subfix, dis, $ex);
-    @include _dCE_($prefix, $name, $shuxin, $color, $subfix, disabled, $ex);
+
+@mixin otMixinColor($prefix, $name, $shuxin, $value, $leixing, $action, $subfix){
+    @include __ot_mixin_color__($prefix, $name, $shuxin, $value, $leixing, $action, $subfix);
+
+    // @each $sb1, $sb2 in $LEIXING_MAP {
+    //     @if $leixing == $sb1 {
+    //         @include __ot_mixin_color__($prefix, $name, $shuxin, $value, $sb2, $action, $subfix);
+    //     }
+    // }
 }

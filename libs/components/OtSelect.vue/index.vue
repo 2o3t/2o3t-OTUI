@@ -83,7 +83,8 @@ export default {
         direction: [ String ],
         clearable: [ Boolean ],
         icon: [ String ],
-        custom: [ Boolean ], // 不限制下拉框大小, 用于组件扩展
+        // 不限制下拉框大小, 用于组件扩展
+        custom: [ Boolean ],
     },
     data() {
         return {

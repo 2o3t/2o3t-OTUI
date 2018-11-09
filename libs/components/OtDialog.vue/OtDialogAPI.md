@@ -1,4 +1,4 @@
-# OtMessageBox API
+# OtDialog API
 
 ## Slots
 

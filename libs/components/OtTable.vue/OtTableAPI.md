@@ -10,12 +10,12 @@
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | list | - | Array | ()=> {   return []; } |
-| stripe | - | Boolean | - |
-| height | 是否为斑马纹 table | String,Number | - |
+| stripe | 是否为斑马纹 table | Boolean | - |
+| height | - | String,Number | - |
 | maxHeight | - | String,Number | - |
 | headerStyle | - | Function | ()=> {   return {}; } |
 | bodyStyle | - | Function | ()=> {   return {}; } |
-| adapter | - | null | true |
+| adapter | 自适应宽度 | null | true |
 
 ## Slots
 

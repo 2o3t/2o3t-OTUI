@@ -14,6 +14,11 @@ module.exports = function($) {
         preEl.tagName = 'ot-code';
     });
 
+    $('p>code').each((index, h) => {
+        h.tagName = 'ot-tag';
+        h.attribs.round = true;
+    });
+
     $('table').each((index, h) => {
         h.tagName = 'ot-table-ui';
         h.attribs.border = true;

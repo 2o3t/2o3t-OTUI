@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import md from "./Test.md";
+import md from './Test.md';
 export default {
     data() {
         return {

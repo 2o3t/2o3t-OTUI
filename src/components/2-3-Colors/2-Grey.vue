@@ -32,11 +32,12 @@ export default {
                 result.push(c2);
                 color2 = c2.color;
             }
-            for (let i = 0; i < 9; i++) {
+            for (let i = 0; i < 99; i++) {
                 const index = i + 1;
+                const pre = Math.round(index * 0.01 * 100) / 100;
                 result.push({
-                    name: `${prefix}-${index}`,
-                    color: this.$shared.Color.mix(color1, color2, index * 0.1),
+                    name: `${Math.round(pre * 100)}%`,
+                    color: this.$shared.Color.mix(color1, color2, pre),
                 });
             }
             return result;

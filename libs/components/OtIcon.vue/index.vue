@@ -2,8 +2,10 @@
     <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
     <span ot :class="$style.root" v-else v-on="$listeners">
         <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
-        <!-- 跟随图标后面的容器 -->
-        <slot></slot>
+        <span :class="$style.append">
+            <!-- 跟随图标后面的容器 -->
+            <slot></slot>
+        </span>
     </span>
 </template>
 
@@ -57,7 +59,6 @@ export default {
     font-style: normal;
     border-width: 0;
     text-align: center;
-    line-height: 1;
     box-sizing: border-box;
 
     &[url] {
@@ -70,11 +71,13 @@ export default {
 
     .label {
         display: inline-table;
-        margin-right: 5px;
+        vertical-align: middle;
+    }
 
-        &~* {
-            vertical-align: middle;
-        }
+    .append {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
     }
 
     &[loading] {

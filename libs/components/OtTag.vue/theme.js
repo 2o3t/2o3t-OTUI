@@ -4,7 +4,7 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'def-f', 'def-b' ],
+                    normal: [ 'light-f', 'def-b', 'border' ],
                     disabled: [ 'light-f-dis', 'grey-bg-dis', 'light-b-dis' ],
                 };
             case 'light':

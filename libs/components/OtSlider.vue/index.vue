@@ -9,7 +9,7 @@
                 @mousedown="handleDown"
                 :style="wrapperStyle"
                 >
-                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :offsetX="width * 0.5" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
+                <ot-title-tip placement="top" :theme="$otTheme" :size="$otSize" round :content="tipContent" :manual="true" :value="bMove" :offsetX="width * 0.6" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
                     <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled" ref="wrapper"></div>
                 </ot-title-tip>
                 <!-- <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div> -->
@@ -19,7 +19,7 @@
                 @mousedown="handleRangeDown"
                 :style="wrapperRangeStyle"
                 >
-                <ot-title-tip placement="top-start" :theme="$otTheme" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :offsetX="width * 0.5" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
+                <ot-title-tip placement="top" :theme="$otTheme" :size="$otSize" round :content="tipRangeContent" :manual="true" :value="bRangeMove" :offsetX="width * 0.6" :offsetY="vertical ? verticalOffsetY : horizontalOffsetY" :width="width" :disabled="!tip" transition="">
                     <div ot v-ot-bind="$otColors.btn" :class="$style.btn" :disabled="disabled"></div>
                 </ot-title-tip>
             </div>
@@ -103,10 +103,10 @@ export default {
             return this.calcOutputValue(left);
         },
         verticalOffsetY() {
-            return -this.offsetY * 0.8;
+            return -this.offsetY * 0.6;
         },
         horizontalOffsetY() {
-            return -this.offsetY * 0.8;
+            return -this.offsetY * 0.6;
         },
         wrapperStyle() {
             const left = this.calcXPercent(this.leftX);

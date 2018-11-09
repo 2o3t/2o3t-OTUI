@@ -1,0 +1,248 @@
+@import './colors';
+@import './mixins.scss';
+
+$--ot-prefix-name: "ot" !default;
+
+// default
+// font
+@include otMixinColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-normal, "font", null, null);
+@include otMixinColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-hover, "font", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-focus, "font", 'focus', null);
+// background
+@include otMixinColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-normal, "background", null, null);
+@include otMixinColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-hover, "background", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-focus, "background", 'focus', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-normal, "border#{$var}", null, null);
+    @include otMixinColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-hover, "border#{$var}", 'hover', null);
+    @include otMixinColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-focus, "border#{$var}", 'focus', null);
+}
+
+// primary
+// font
+@include otMixinColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-normal, "font", null, null);
+@include otMixinColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-hover, "font", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-focus, "font", 'focus', null);
+// background
+@include otMixinColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-normal, "background", null, null);
+@include otMixinColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-hover, "background", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-focus, "background", 'focus', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-normal, "border#{$var}", null, null);
+    @include otMixinColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-hover, "border#{$var}", 'hover', null);
+    @include otMixinColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-focus, "border#{$var}", 'focus', null);
+}
+
+// success
+// font
+@include otMixinColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-normal, "font", null, null);
+@include otMixinColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-hover, "font", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-focus, "font", 'focus', null);
+// background
+@include otMixinColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-normal, "background", null, null);
+@include otMixinColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-hover, "background", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-focus, "background", 'focus', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-normal, "border#{$var}", null, null);
+    @include otMixinColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-hover, "border#{$var}", 'hover', null);
+    @include otMixinColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-focus, "border#{$var}", 'focus', null);
+}
+
+
+// warning
+// font
+@include otMixinColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-normal, "font", null, null);
+@include otMixinColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-hover, "font", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-focus, "font", 'focus', null);
+// background
+@include otMixinColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-normal, "background", null, null);
+@include otMixinColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-hover, "background", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-focus, "background", 'focus', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-normal, "border#{$var}", null, null);
+    @include otMixinColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-hover, "border#{$var}", 'hover', null);
+    @include otMixinColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-focus, "border#{$var}", 'focus', null);
+}
+
+// danger
+// font
+@include otMixinColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-normal, "font", null, null);
+@include otMixinColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-hover, "font", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-focus, "font", 'focus', null);
+// background
+@include otMixinColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-normal, "background", null, null);
+@include otMixinColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-hover, "background", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-focus, "background", 'focus', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-normal, "border#{$var}", null, null);
+    @include otMixinColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-hover, "border#{$var}", 'hover', null);
+    @include otMixinColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-focus, "border#{$var}", 'focus', null);
+}
+
+// info
+// font
+@include otMixinColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-normal, "font", null, null);
+@include otMixinColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-hover, "font", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-focus, "font", 'focus', null);
+// background
+@include otMixinColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-normal, "background", null, null);
+@include otMixinColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-hover, "background", 'hover', null);
+@include otMixinColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-focus, "background", 'focus', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-normal, "border#{$var}", null, null);
+    @include otMixinColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-hover, "border#{$var}", 'hover', null);
+    @include otMixinColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-focus, "border#{$var}", 'focus', null);
+}
+
+// ========  active  ========
+
+// default
+@include otMixinColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-active, "font", 'active', null);
+@include otMixinColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-active, "background", 'active', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-active, "border#{$var}", 'active', null);
+}
+
+// primary
+@include otMixinColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-active, "font", 'active', null);
+@include otMixinColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-active, "background", 'active', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-active, "border#{$var}", 'active', null);
+}
+
+// success
+// font
+@include otMixinColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-active, "font", 'active', null);
+// background
+@include otMixinColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-active, "background", 'active', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-active, "border#{$var}", 'active', null);
+}
+
+// warning
+// font
+@include otMixinColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-active, "font", 'active', null);
+// background
+@include otMixinColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-active, "background", 'active', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-active, "border#{$var}", 'active', null);
+}
+
+// danger
+// font
+@include otMixinColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-active, "font", 'active', null);
+// background
+@include otMixinColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-active, "background", 'active', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-active, "border#{$var}", 'active', null);
+}
+
+// info
+// font
+@include otMixinColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-active, "font", 'active', null);
+// background
+@include otMixinColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-active, "background", 'active', null);
+// border-color
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-active, "border#{$var}", 'active', null);
+}
+
+// ========  selected  ========
+
+// default
+@include otMixinColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-selected, "font", 'selected', null);
+@include otMixinColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-selected, "background", 'selected', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-selected, "border#{$var}", 'selected', null);
+}
+
+// primary
+@include otMixinColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-selected, "font", 'selected', null);
+@include otMixinColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-selected, "background", 'selected', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-selected, "border#{$var}", 'selected', null);
+}
+
+// success
+@include otMixinColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-selected, "font", 'selected', null);
+@include otMixinColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-selected, "background", 'selected', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-selected, "border#{$var}", 'selected', null);
+}
+
+// warning
+@include otMixinColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-selected, "font", 'selected', null);
+@include otMixinColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-selected, "background", 'selected', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-selected, "border#{$var}", 'selected', null);
+}
+
+// danger
+@include otMixinColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-selected, "font", 'selected', null);
+@include otMixinColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-selected, "background", 'selected', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-selected, "border#{$var}", 'selected', null);
+}
+
+// info
+@include otMixinColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-selected, "font", 'selected', null);
+@include otMixinColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-selected, "background", 'selected', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-selected, "border#{$var}", 'selected', null);
+}
+
+
+// ========  disabled ========
+
+// default
+@include otMixinColor($--ot-prefix-name, "default", "color", $--ot-color-default-font-disabled, "font", 'disabled', null);
+@include otMixinColor($--ot-prefix-name, "default", "background-color", $--ot-color-default-background-disabled, "background", 'disabled', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "default", "border#{$var}-color", $--ot-color-default-border-disabled, "border#{$var}", 'disabled', null);
+}
+
+// primary
+@include otMixinColor($--ot-prefix-name, "primary", "color", $--ot-color-primary-font-disabled, "font", 'disabled', null);
+@include otMixinColor($--ot-prefix-name, "primary", "background-color", $--ot-color-primary-background-disabled, "background", 'disabled', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "primary", "border#{$var}-color", $--ot-color-primary-border-disabled, "border#{$var}", 'disabled', null);
+}
+
+// success
+@include otMixinColor($--ot-prefix-name, "success", "color", $--ot-color-success-font-disabled, "font", 'disabled', null);
+@include otMixinColor($--ot-prefix-name, "success", "background-color", $--ot-color-success-background-disabled, "background", 'disabled', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "success", "border#{$var}-color", $--ot-color-success-border-disabled, "border#{$var}", 'disabled', null);
+}
+
+// warning
+@include otMixinColor($--ot-prefix-name, "warning", "color", $--ot-color-warning-font-disabled, "font", 'disabled', null);
+@include otMixinColor($--ot-prefix-name, "warning", "background-color", $--ot-color-warning-background-disabled, "background", 'disabled', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "warning", "border#{$var}-color", $--ot-color-warning-border-disabled, "border#{$var}", 'disabled', null);
+}
+
+// danger
+@include otMixinColor($--ot-prefix-name, "danger", "color", $--ot-color-danger-font-disabled, "font", 'disabled', null);
+@include otMixinColor($--ot-prefix-name, "danger", "background-color", $--ot-color-danger-background-disabled, "background", 'disabled', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "danger", "border#{$var}-color", $--ot-color-danger-border-disabled, "border#{$var}", 'disabled', null);
+}
+
+// info
+@include otMixinColor($--ot-prefix-name, "info", "color", $--ot-color-info-font-disabled, "font", 'disabled', null);
+@include otMixinColor($--ot-prefix-name, "info", "background-color", $--ot-color-info-background-disabled, "background", 'disabled', null);
+@each $var in null, -left, -right, -top ,-bottom {
+    @include otMixinColor($--ot-prefix-name, "info", "border#{$var}-color", $--ot-color-info-border-disabled, "border#{$var}", 'disabled', null);
+}

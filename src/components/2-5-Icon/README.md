@@ -20,7 +20,7 @@
 
 > Size
 
-提供了 mini、small、normal、big 四种尺寸.
+提供了 `mini`、`small`、`normal`、`big` 四种尺寸.
 
 ## 标题
 

@@ -1,17 +1,6 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
-        <ot-section :theme="$otTheme" label="OT-MessageBox">
-            <ot-row-group :theme="$otTheme" :flex="false">
-                <ot-button @click="$otMessageBox('这是一条消息提示')">打开消息提示</ot-button>
-                <ot-button @click="$otAlert('这是一条消息提示', 'Alert')">Alert</ot-button>
-                <ot-button @click="$otAlert('这是一条消息提示1', 'Alert1')">Alert1</ot-button>
-                <ot-button @click="$otConfirm('这是一条消息提示', 'Confirm')">Confirm</ot-button>
-                <ot-button @click="$otPrompt('这是一条消息提示', 'Prompt')">Prompt</ot-button>
-                <ot-button @click="customOpen">Custom</ot-button>
-            </ot-row-group>
-        </ot-section>
-
         <ot-section :theme="$otTheme" label="OT-Table">
             <ot-row-group :theme="$otTheme" :fixable="false">
                 <ot-table :list="tableList">
@@ -40,13 +29,11 @@
 </template>
 
 <script>
-import md from '../../README.MD';
 export default {
     name: 'uncategorized-page',
     data() {
         return {
             alertTitle: 'Notice: Balabala...',
-            markdown: md,
         };
     },
     computed: {
@@ -61,20 +48,6 @@ export default {
                 });
             }
             return list;
-        },
-    },
-    methods: {
-        customOpen() {
-            const h = this.$createElement;
-            this.$otMessageBox({
-                title: '消息',
-                message: h('p', null, [
-                    h('span', null, '内容可以是 '),
-                    h('i', { style: 'color: teal' }, 'VNode'),
-                ]),
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-            });
         },
     },
 };

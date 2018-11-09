@@ -16,5 +16,17 @@ Watch this space!
 import 'font-awesome/css/font-awesome.min.css';
 import '2o3t-ui/libs/styles.css';
 import OTUI from '2o3t-ui';
-Vue.use(OTUI);
+
+const MarkdownIt = require('markdown-it');
+const cheerio = require('cheerio');
+const clipboard = require('clipboard-polyfill');
+Vue.use(OTUI, {
+    global: true, // 全局注册 mixins
+    plugins: {
+        markdownIt: MarkdownIt,
+        cheerio,
+        clipboard,
+    },
+});
+
 ```

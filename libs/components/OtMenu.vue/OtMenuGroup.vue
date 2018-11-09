@@ -11,14 +11,20 @@ import theme from './OtMenuGroupTheme.js';
 export default {
     name: 'ot-menu',
     mixins: [ theme ],
+    provide() {
+        return {
+            $OtMenuGroup: this,
+        }
+    },
+    inject: [ '$OtMenu' ],
     props: {
         label: [ String ],
     },
     computed: {
         isCollapse() {
             let result = false;
-            if (this.$parent && this.$parent.isCollapse) {
-                result = this.$parent.isCollapse;
+            if (this.$OtMenu && this.$OtMenu.isCollapse) {
+                result = this.$OtMenu.isCollapse;
             }
             return result;
         },

@@ -17,14 +17,29 @@
 <script>
 export default {
     name: 'ot-menu',
+    provide() {
+        return {
+            $OtMenu: this,
+        }
+    },
+    model: {
+        prop: 'value',
+        event: 'update',
+    },
     props: {
         isCollapse: [ Boolean ],
+        // 默认选择项
         value: [ String ], // 子组件使用
         line: {
             type: [ Boolean ],
             default: true,
         },
     },
+    methods: {
+        updateSelect(index) {
+            this.$emit('update', index);
+        }
+    }
 };
 </script>
 

@@ -16,50 +16,64 @@ export default {
         event: 'update',
     },
     props: {
+        // 禁用
         disabled: {
             type: [ Boolean ],
             default: false,
         },
-        manual: { // 手动
+        // 手动操作
+        manual: {
             type: [ Boolean ],
             default: false,
         },
+        // 自定义 class
         popperClass: {
             type: [ String ],
             default: '',
         },
+        // 方向
         placement: {
             type: [ String ],
-            default: 'auto', // top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end   auto
+            default: 'auto',
+            // 可选参数 [ auto, top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end ]
+            validator: val =>
+                [ 'auto', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end' ].indexOf(val) > -1,
         },
+        // 控制显示
         value: [ Boolean ],
-        enterable: { // 鼠标是否可进入到内容中
+        // 鼠标是否可进入到内容中
+        enterable: {
             type: [ Boolean ],
             default: true,
         },
+        // X偏移量
         offsetX: {
             type: [ Number ],
             default: 0,
         },
+        // Y偏移量
         offsetY: {
             type: [ Number ],
             default: 0,
         },
         transition: {
             type: [ String ],
-            default: 'all .3s',
+            default: 'opacity .3s',
         },
+        // 是否有箭头
         arrow: {
             type: [ Boolean ],
             default: false,
         },
+        // 箭头的属性值
         arrowAttrs: {
             type: [ Object ],
             default() {
                 return {};
             },
         },
-        clickable: { // 必须 manual= true
+        // 是否可点击, 必须 manual= true
+        clickable: {
             type: [ Boolean ],
             default: false,
         },
@@ -143,6 +157,7 @@ export default {
                                 index: $vm.index,
                                 style: {
                                     display: 'block',
+                                    opacity: 0,
                                     boxSizing: 'border-box',
                                     transformOrigin: 'center bottom 0px',
                                     zIndex: this.index,
@@ -206,9 +221,13 @@ export default {
                                 this.bShown = true;
                                 this.style.display = 'block';
                                 this.initPlacement();
+                                this.$nextTick(() => {
+                                    this.style.opacity = 1;
+                                });
                             },
                             hide() {
                                 this.bShown = false;
+                                this.style.opacity = null;
                                 this.style.display = 'none';
                             },
                             initSize() {
@@ -281,6 +300,9 @@ export default {
                                         break;
                                 }
 
+                                // 2号位 修复
+                                this.arrowPlacementFixed = place[1] || false;
+
                             },
                             handleMouseOver() {
                                 if (!$vm.enterable) return;
@@ -310,8 +332,8 @@ export default {
                                     onMouseover={this.handleMouseOver}
                                     onMouseout={this.handleMouseOut}
                                 >
+                                    { $vm.arrow && (<ot-arrow ot size={this.$otSize} class="ot-arrow" attrs={arrowAttrs} placement={this.arrowPlacement} place-fixed={this.arrowPlacementFixed}></ot-arrow>)}
                                     { slot }
-                                    { $vm.arrow && (<ot-arrow ot size={this.$otSize} class="ot-arrow" attrs={arrowAttrs} placement={this.arrowPlacement}></ot-arrow>)}
                                 </div>
                             </transition>);
                         },
@@ -433,6 +455,10 @@ export default {
 @import '../globals';
 .ot-tip-popper {
     position: relative;
+    padding: 0.2em 0.6em;
+    opacity: 0;
+    box-sizing: border-box;
+
     @include __ot_size__;
 
     &>[ot][round] {
@@ -446,12 +472,23 @@ export default {
             left: 50%;
             transform: translateX(-50%);
 
+            &[place-fixed=start] {
+                left: 1.6em;
+            }
+
+            &[place-fixed=end] {
+                left: auto;
+                right: 1.2em;
+            }
+
             &[placement=up] {
-                top: -0.3em;
+                // top: -0.3em;
+                top: 0em;
             }
 
             &[placement=down] {
-                bottom: -0.3em;
+                // bottom: -0.3em;
+                bottom: 0em;
             }
         }
 
@@ -459,12 +496,23 @@ export default {
             top: 50%;
             transform: translateY(-50%);
 
+            &[place-fixed=start] {
+                top: 1.2em;
+            }
+
+            &[place-fixed=end] {
+                top: auto;
+                bottom: 0.6em;
+            }
+
             &[placement=left] {
-                left: -0.3em;
+                // left: -0.3em;
+                left: 0.3em;
             }
 
             &[placement=right] {
-                right: -0.3em;
+                // right: -0.3em;
+                right: 0.4em;
             }
         }
     }

@@ -36,23 +36,23 @@ export default {
                 },
                 {
                     title: 'primary',
-                    main: '#409EFF',
+                    main: '#207ff6',
                 },
                 {
                     title: 'success',
-                    main: '#67c23a',
+                    main: '#37c385',
                 },
                 {
                     title: 'warning',
-                    main: '#e6a23c',
+                    main: '#ffcc00',
                 },
                 {
                     title: 'danger',
-                    main: '#f56c6c',
+                    main: '#ff5252',
                 },
                 {
                     title: 'info',
-                    main: '#909399',
+                    main: '#26aefb',
                 },
             ],
         };
@@ -84,11 +84,12 @@ export default {
                 result.push(c2);
                 color2 = c2.color;
             }
-            for (let i = 0; i < 9; i++) {
+            for (let i = 0; i < 99; i++) {
                 const index = i + 1;
+                const pre = Math.round(index * 0.01 * 100) / 100;
                 result.push({
-                    name: `${prefix}-${index}`,
-                    color: this.$shared.Color.mix(color1, color2, index * 0.1),
+                    name: `${prefix} ${Math.round(pre * 100)}%`,
+                    color: this.$shared.Color.mix(color1, color2, pre),
                 });
             }
             return result;

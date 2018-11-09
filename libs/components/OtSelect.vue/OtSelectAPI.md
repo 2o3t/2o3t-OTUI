@@ -19,7 +19,7 @@
 | direction | - | String | - |
 | clearable | - | Boolean | - |
 | icon | - | String | - |
-| custom | - | Boolean | - |
+| custom | 不限制下拉框大小, 用于组件扩展 | Boolean | - |
 
 ## Events
 

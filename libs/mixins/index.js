@@ -1,14 +1,16 @@
 const NAMES = [ 'default', 'success', 'warning', 'primary', 'danger', 'info' ];
 const SX_NAMES = [ 'normal', 'hover', 'active', 'focus', 'selected', 'disabled' ];
 const otRegexColorName = /^ot(\w+)Colors$/;
-const otRegexName = /^ot-/;
 const isDef = v => v !== undefined;
 const isFunc = v => typeof v === 'function';
 const isObj = v => Object.prototype.toString.call(v) === '[object Object]';
 const isStr = v => Object.prototype.toString.call(v) === '[object String]';
 const isTrue = v => (isStr(v) || !!v);
 
+import MixinColors from './colors';
+const { cloneOthers, parseName } = MixinColors;
 import utils from '../utils';
+
 function hookBeforeCreate($vm) {
     $vm._ot_color = {};
     // 工具类
@@ -111,13 +113,13 @@ function initColors($vm) {
         Object.keys(_otColors).forEach(key => {
             const colors = _otColors[key] || [];
             _otColorsInstance[key] = colors.reduce((obj, curr) => {
-                if (!otRegexName.test(curr)) {
-                    curr = `ot-${curr}`;
-                }
+                curr = parseName(curr);
                 return Object.assign(obj, {
                     [curr]: true,
                 });
-            }, {});
+            }, {
+                'ot-color': key,
+            });
         });
     }
     const _otColorsData = $vm._otColorsData;
@@ -133,13 +135,13 @@ function initColors($vm) {
                             get() {
                                 const colors = otCData[key] || [];
                                 const sub = colors.reduce((obj, curr) => {
-                                    if (!otRegexName.test(curr)) {
-                                        curr = `ot-${curr}`;
-                                    }
+                                    curr = parseName(curr);
                                     return Object.assign(obj, {
                                         [curr]: true,
                                     });
-                                }, {});
+                                }, {
+                                    'ot-color': name,
+                                });
                                 return sub;
                             },
                             set() {
@@ -154,7 +156,6 @@ function initColors($vm) {
     return _otColorsInstance;
 }
 
-import othersColors from './colors';
 function createMixin(options) {
     return {
         props: {
@@ -205,7 +206,7 @@ function createMixin(options) {
         },
         created() {
             if (this.$options.otDefaultColors) {
-                const cs = othersColors(this.$options.otDefaultColors, this);
+                const cs = cloneOthers(this.$options.otDefaultColors, this);
                 Object.keys(cs).forEach(key => {
                     if (!this[key]) {
                         this.$options[key] = cs[key].bind(this);
