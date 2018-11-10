@@ -204,7 +204,7 @@ export default {
         }
 
         .label {
-            font-weight: bold;
+            font-weight: $--main-font-weight-medium;
         }
     }
 

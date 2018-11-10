@@ -1,13 +1,18 @@
 <template>
-    <div></div>
+    <div ot class="ot-layout" :class="$style.root">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
 export default {
-
+    name: 'ot-layout',
 };
 </script>
 
-<style>
+<style lang="scss" module>
+.root {
 
+}
 </style>
+

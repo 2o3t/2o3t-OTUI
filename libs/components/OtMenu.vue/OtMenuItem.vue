@@ -1,11 +1,14 @@
 <template>
-    <li ot v-ot-bind="$otColors" :class="$style.root" class="ot-menu-item" :size="$otSize"
-        :disabled="disabled" :selected="isSelected" :collapse="isCollapse">
-        <ot-link :class="$style.link" :href="href" :to="router" @click="handleClick">
-            <ot-icon :class="$style.icon" :icon="icon" v-if="icon"></ot-icon>
-            <slot name="title" v-if="!isCollapse"></slot>
-            <slot></slot>
-        </ot-link>
+    <li ot :class="$style.root" class="ot-menu-item" v-ot-bind="$otColors" :size="$otSize" :collapse="isCollapse" :selected="isSelected" :disabled="disabled">
+        <ot-background-mask enable :alpha="alphaWhite" :otColors="$otColors.mask" :selected="isSelected" :disabled="disabled">
+            <ot-link :class="$style.link" :href="href" :to="to" @click="handleClick">
+                <ot-icon :class="$style.icon" :icon="icon" v-if="icon"></ot-icon>
+                <!-- 自定义标题容器 -->
+                <slot name="title" v-if="!isCollapse"></slot>
+                <!-- 不支持 collapse 的标题容器 -->
+                <slot></slot>
+            </ot-link>
+        </ot-background-mask>
     </li>
 </template>
 
@@ -16,20 +19,30 @@ export default {
     mixins: [ theme ],
     inject: [ '$OtMenu', '$OtMenuGroup' ],
     props: {
+        // 标题前图标
         icon: [ String ],
+        // 唯一标志, 与 menu 的 model 对应, 可以是 router 路径
         index: [ String ],
+        // 是否禁用
         disabled: {
             type: [ Boolean ],
             default: false,
         },
+        // 跳转路径
         href: {
             type: [ String ],
             default: null,
         },
-        router: {
+        // 路由跳转, 具体参照 ot-link
+        to: {
             type: [ String, Object ],
             default: null,
         },
+    },
+    data() {
+        return {
+            alphaWhite: 5,
+        };
     },
     computed: {
         isCollapse() {
@@ -43,12 +56,13 @@ export default {
             let result = false;
             if (this.$OtMenu && this.$OtMenu.value) {
                 const s = this.$OtMenu.value;
-                result = (s === this.index);
-            } else if (this.$route && this.router) {
-                if (typeof this.router === 'string') {
-                    result = (this.$route.fullPath === this.router);
-                } else if (typeof this.router === 'object' && this.router.name) {
-                    result = (this.$route.name === this.router.name);
+                result = (this.startsWith(s, this.index));
+            } else if (this.$route && this.to) {
+                if (typeof this.to === 'string') {
+                    result = (this.startsWith(this.$route.fullPath, this.to));
+                } else if (typeof this.to === 'object' && this.to.name) {
+                    const { route } = this.$router.resolve(this.to, this.$route);
+                    result = (this.startsWith(this.$route.fullPath, route.fullPath));
                 }
             }
             return result;
@@ -57,13 +71,18 @@ export default {
     methods: {
         handleClick() {
             if (this.$OtMenu) {
-                this.$OtMenu.updateSelect(this.index)
+                this.$OtMenu.updateSelect(this.index);
             }
             if (this.$router) {
-                if (this.index && !this.router && !this.href) {
+                if (this.index && !this.to && !this.href) {
                     this.$router.push(this.index);
                 }
             }
+        },
+        startsWith(a, b) {
+            const ap = `${a}/`;
+            const bp = `${b}/`;
+            return ap.startsWith(bp);
         },
     },
 };
@@ -72,20 +91,22 @@ export default {
 <style module lang='scss'>
 @import '../globals';
 .root {
+    display: block;
     cursor: pointer;
-    transition: all .3s;
     box-sizing: border-box;
     position: relative;
     white-space: nowrap;
     list-style: none;
-    height: 4em;
-    line-height: 4em;
+    height: 3em;
+    line-height: 3em;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 0.4em 0 0.6em 0;
 
     .link {
         display: inline-block;
-        padding: 0 2rem;
+        padding: 0 2em;
         position: relative;
-        border: none !important;
         width: 100%;
         height: 100%;
         color: inherit;
@@ -97,21 +118,68 @@ export default {
 
     @include __ot_size__;
 
-    &:after {
-        content: '';
-        transition: height .3s;
-        height: 0%;
+    $--font-weight-size: $--main-font-weight-medium;
+    $--border-right-width: 0.3em;
+
+    .backgroundMask {
+        margin-left: $--border-right-width;
     }
 
-    &[selected] {
-        &:after {
-            display: block;
-            position: absolute;
-            right: 0;
-            height: 100%;
-            transform: translateY(-50%);
-            top: 50%;
-            border-right-width: 3px !important;
+    &[ot-color-after]:after, &[ot-color-before]:before {
+        content: '';
+        display: block;
+        position: absolute;
+        transition: height .3s;
+        height: 0%;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    &[ot-color-after]:after {
+        right: 0;
+    }
+
+    &[ot-color-before]:before {
+        left: 0;
+    }
+
+    &[class][ot-color-after]{
+        &:hover {
+            font-weight: $--font-weight-size;
+
+            &[class]:after {
+                height: 100%;
+                border-right-width: $--border-right-width;
+            }
+        }
+
+        &[selected] {
+            font-weight: $--font-weight-size;
+
+            &:after {
+                height: 100%;
+                border-right-width: $--border-right-width;
+            }
+        }
+    }
+
+    &[class][ot-color-before]{
+        &:hover {
+            font-weight: $--font-weight-size;
+
+            &[class]:before {
+                height: 100%;
+                border-right-width: $--border-right-width;
+            }
+        }
+
+        &[selected] {
+            font-weight: $--font-weight-size;
+
+            &:before {
+                height: 100%;
+                border-right-width: $--border-right-width;
+            }
         }
     }
 

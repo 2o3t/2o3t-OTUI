@@ -8,6 +8,7 @@ export default {
                     },
                     box: {
                         normal: [ 'light-f', 'def-b', 'border' ],
+                        hover: [ 'def-b-hov' ],
                     },
                 };
             case 'light':
@@ -18,6 +19,7 @@ export default {
                     },
                     box: {
                         normal: [ 'light-f', 'def-b', 'border' ],
+                        hover: [ 'def-b-hov' ],
                     },
                 };
         }

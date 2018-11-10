@@ -9,8 +9,8 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| to | vue-router 路由, 跳转 名称 或 对象. | String,Object | null |
-| replace | vue-router 跳转是否为 `replace`. | Boolean | false |
+| to | vue-router 路由, 跳转 名称 或 对象. 更多参考 `ot-link` | String,Object | null |
+| replace | vue-router 跳转是否为 `replace`. 更多参考 `ot-link` | Boolean | false |
 
 ## Slots
 

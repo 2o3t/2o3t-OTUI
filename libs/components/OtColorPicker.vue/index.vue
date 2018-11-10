@@ -2,7 +2,7 @@
     <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange">
         <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
             <div ot v-ot-bind="$otColors.box" :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
-                <ot-icon icon="angle-down"></ot-icon>
+                <ot-arrow :attrs="$otColors.arrow" :class="$style.arrow" borderColor="#ffffff" :placement="bShown ? 'up' : 'down'" border></ot-arrow>
             </div>
         </div>
         <div ot v-ot-bind="$otColors.tip" slot="tip" :size="$otSize" :theme="$otTheme" class="ot-title-tip-popper" :round="round">
@@ -71,6 +71,9 @@ export default {
             lastRGB: null,
 
             currentHex: '',
+
+            // 窗口显示状态
+            bShown: false,
         };
     },
     computed: {
@@ -288,6 +291,7 @@ export default {
             } else {
                 this._show();
             }
+            this.bShown = bShown;
         },
         handleOK() {
             this.lastRGB = this.rgb;
@@ -348,6 +352,11 @@ export default {
             margin: auto;
             box-sizing: border-box;
             line-height: 1.4em;
+            text-align: center;
+
+            .arrow {
+                height: 100%;
+            }
         }
     }
 

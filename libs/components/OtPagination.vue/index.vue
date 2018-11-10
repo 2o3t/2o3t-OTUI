@@ -247,7 +247,6 @@ export default {
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    font-weight: 700;
     text-align: center;
     user-select: none;
 

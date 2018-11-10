@@ -34,10 +34,8 @@ import OtLogo from './OtLogo.vue/index.vue';
 import OtLink from './OtLink.vue/index.vue';
 import OtLine from './OtLine.vue/index.vue';
 import OtLazyLoad from './OtLazyLoad.vue/index.vue';
-import OtAside from './OtLayout.vue/OtAside.vue';
-import OtFooter from './OtLayout.vue/OtFooter.vue';
-import OtHeader from './OtLayout.vue/OtHeader.vue';
-import OtMain from './OtLayout.vue/OtMain.vue';
+import OtCol from './OtLayout.vue/OtCol.vue';
+import OtRow from './OtLayout.vue/OtRow.vue';
 import OtLayout from './OtLayout.vue/index.vue';
 import OtLabel from './OtLabel.vue/index.vue';
 import OtInputNumber from './OtInputNumber.vue/index.vue';
@@ -50,6 +48,11 @@ import OtDialog from './OtDialog.vue/index.vue';
 import OtDatePanel from './OtDatePicker.vue/OtDatePanel.vue';
 import OtDatePicker from './OtDatePicker.vue/index.vue';
 import OtCorners from './OtCorners.vue/index.vue';
+import OtAside from './OtContainer.vue/OtAside.vue';
+import OtFooter from './OtContainer.vue/OtFooter.vue';
+import OtHeader from './OtContainer.vue/OtHeader.vue';
+import OtMain from './OtContainer.vue/OtMain.vue';
+import OtContainer from './OtContainer.vue/index.vue';
 import OtColorPicker from './OtColorPicker.vue/index.vue';
 import OtCode from './OtCode.vue/index.vue';
 import OtCheckboxGroup from './OtCheckbox.vue/OtCheckboxGroup.vue';
@@ -62,6 +65,7 @@ import OtButton from './OtButton.vue/index.vue';
 import OtBreadcrumbItem from './OtBreadcrumb.vue/OtBreadcrumbItem.vue';
 import OtBreadcrumb from './OtBreadcrumb.vue/index.vue';
 import OtBadge from './OtBadge.vue/index.vue';
+import OtBackgroundMask from './OtBackgroundMask.vue/index.vue';
 import OtArrow from './OtArrow.vue/index.vue';
 import OtAlert from './OtAlert.vue/index.vue';
 import OtCascader from './OtCascader.vue';
@@ -70,71 +74,75 @@ import OtLoading from './OtLoading.vue';
 export default {
 
     OtTransferList,
-OtTransfer,
-OtTitleTip,
-OtTip,
-OtWheel,
-OtTimePicker,
-OtTag,
-OtTabs,
-OtTableBody,
-OtTableColumn,
-OtTableFooter,
-OtTableHeader,
-OtTableUi,
-OtTable,
-OtSwitch,
-OtSlider,
-OtSelect,
-OtSection,
-OtRowGroup,
-OtRadioGroup,
-OtRadio,
-OtProgress,
-OtPagination,
-OtNotice,
-OtNavItem,
-OtNav,
-OtMessage,
-OtMenuGroup,
-OtMenuItem,
-OtMenu,
-OtMarkdown,
-OtLogo,
-OtLink,
-OtLine,
-OtLazyLoad,
-OtAside,
-OtFooter,
-OtHeader,
-OtMain,
-OtLayout,
-OtLabel,
-OtInputNumber,
-OtInput,
-OtIcon,
-OtFormItem,
-OtForm,
-OtDropdown,
-OtDialog,
-OtDatePanel,
-OtDatePicker,
-OtCorners,
-OtColorPicker,
-OtCode,
-OtCheckboxGroup,
-OtCheckbox,
-OtCard,
-OtButtonGroup,
-OtRadioButton,
-OtRadioButtonGroup,
-OtButton,
-OtBreadcrumbItem,
-OtBreadcrumb,
-OtBadge,
-OtArrow,
-OtAlert,
-OtCascader,
-OtLoading,
+    OtTransfer,
+    OtTitleTip,
+    OtTip,
+    OtWheel,
+    OtTimePicker,
+    OtTag,
+    OtTabs,
+    OtTableBody,
+    OtTableColumn,
+    OtTableFooter,
+    OtTableHeader,
+    OtTableUi,
+    OtTable,
+    OtSwitch,
+    OtSlider,
+    OtSelect,
+    OtSection,
+    OtRowGroup,
+    OtRadioGroup,
+    OtRadio,
+    OtProgress,
+    OtPagination,
+    OtNotice,
+    OtNavItem,
+    OtNav,
+    OtMessage,
+    OtMenuGroup,
+    OtMenuItem,
+    OtMenu,
+    OtMarkdown,
+    OtLogo,
+    OtLink,
+    OtLine,
+    OtLazyLoad,
+    OtCol,
+    OtRow,
+    OtLayout,
+    OtLabel,
+    OtInputNumber,
+    OtInput,
+    OtIcon,
+    OtFormItem,
+    OtForm,
+    OtDropdown,
+    OtDialog,
+    OtDatePanel,
+    OtDatePicker,
+    OtCorners,
+    OtAside,
+    OtFooter,
+    OtHeader,
+    OtMain,
+    OtContainer,
+    OtColorPicker,
+    OtCode,
+    OtCheckboxGroup,
+    OtCheckbox,
+    OtCard,
+    OtButtonGroup,
+    OtRadioButton,
+    OtRadioButtonGroup,
+    OtButton,
+    OtBreadcrumbItem,
+    OtBreadcrumb,
+    OtBadge,
+    OtBackgroundMask,
+    OtArrow,
+    OtAlert,
+    OtCascader,
+    OtLoading,
 
-    };
+};

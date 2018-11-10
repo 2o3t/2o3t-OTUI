@@ -45,7 +45,6 @@ export default {
     box-sizing: border-box;
     margin: 0;
     transition: background .3s, color .3s;
-    font-weight: 500;
     user-select:none;
     line-height: 1;
 

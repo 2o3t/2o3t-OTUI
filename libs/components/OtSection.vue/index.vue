@@ -108,7 +108,7 @@ export default {
   }
 
   .desc {
-    font-weight: 300;
+    font-weight: $--main-font-weight-light;
 
     &[prefix] {
       margin-left: 2rem;

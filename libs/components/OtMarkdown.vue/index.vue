@@ -68,7 +68,7 @@ export default {
             if (this.dangerouslyUseHTMLString) {
                 return content;
             }
-            const MarkdownIt = this.$otUtils.getOtPlugin('markdownIt');
+            const MarkdownIt = this.$otUtils.getOtPlugin('markdownit');
             if (!MarkdownIt) {
                 return;
             }

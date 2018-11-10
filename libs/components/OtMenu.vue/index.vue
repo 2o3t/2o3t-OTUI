@@ -2,12 +2,15 @@
     <div ot v-ot-bind="$otColors" class="ot-menu" :size="$otSize"
          :class="$style.root" :collapse="isCollapse">
         <div :class="$style.top">
+            <!-- 最顶部插槽 -->
             <slot name="top"></slot>
         </div>
-        <div :class="$style.content">
+        <ul :class="$style.content">
+            <!-- 默认容器 -->
             <slot></slot>
-        </div>
+        </ul>
         <div :class="$style.bottom">
+            <!-- 最底部插槽 -->
             <slot name="bottom"></slot>
         </div>
         <ot-line v-if="line" type="right"></ot-line>
@@ -20,26 +23,28 @@ export default {
     provide() {
         return {
             $OtMenu: this,
-        }
+        };
     },
     model: {
         prop: 'value',
         event: 'update',
     },
     props: {
+        // 是否横向收缩
         isCollapse: [ Boolean ],
-        // 默认选择项
+        // 默认选择项, v-model 数据源
         value: [ String ], // 子组件使用
+        // 右侧分割线
         line: {
             type: [ Boolean ],
-            default: true,
+            default: false,
         },
     },
     methods: {
         updateSelect(index) {
-            this.$emit('update', index);
-        }
-    }
+            this.$emit('update', index); // 更新 v-model 数据源
+        },
+    },
 };
 </script>
 
@@ -54,6 +59,7 @@ export default {
     box-sizing: border-box;
 
     @include __ot_size__;
+    @include __ot_root_block__;
 
     .top {
         flex: 0 0 auto;
@@ -79,10 +85,11 @@ export default {
 
 <style lang="scss">
 .ot-menu[ot] {
-    width: 20rem;
+    padding-left: 10%;
+    width: 100%;
 
     &[collapse] {
-        width: 6.4rem;
+        width: 6.4em;
     }
 
     .ot-menu-item[ot] {

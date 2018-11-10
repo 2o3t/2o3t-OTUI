@@ -257,7 +257,7 @@ export default {
     font-size: 1em;
 
     &[bold] {
-      font-weight: 700;
+      font-weight: $--main-font-weight-semibold;
     }
   }
 

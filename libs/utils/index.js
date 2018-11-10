@@ -2,6 +2,7 @@ import * as scroll from './scroll';
 import * as throttle from './throttle';
 import listeners from './listeners';
 import extend from './extendEx';
+import * as dom from './dom';
 
 function server($vm, func) {
     return Object.keys(func).reduce((obj, key) => {
@@ -16,6 +17,7 @@ function server($vm, func) {
 
 export default function($vm) {
     return {
+        ...server($vm, dom),
         ...server($vm, scroll),
         ...server($vm, throttle),
         ...server($vm, listeners),

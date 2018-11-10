@@ -20,7 +20,7 @@ npm run build
 cd webs
 
 # if you are deploying to a custom domain
-echo 'uikit.2o3t.cn' > CNAME
+# echo 'uikit.2o3t.cn' > CNAME
 # readme
 cat ../README.MD > README.MD
 

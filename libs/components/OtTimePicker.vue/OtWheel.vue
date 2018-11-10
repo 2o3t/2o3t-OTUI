@@ -102,7 +102,7 @@ export default {
         padding: 0 0.6em;
 
         &[selected] {
-            font-weight: bold;
+            font-weight: $--main-font-weight-medium;
         }
     }
 

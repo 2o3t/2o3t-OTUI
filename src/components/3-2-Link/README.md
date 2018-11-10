@@ -1,6 +1,6 @@
 <!-- @api: OtLink.vue/OtLinkAPI.md -->
 
-# 文字链接 🔗
+# Link 文字链接
 
 常用的超链接操作.
 

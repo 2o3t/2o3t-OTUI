@@ -2,32 +2,48 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import asyncImport from './asyncImport';
 
-const SideBar = () => import('@v/SideBar');
+const ComponentsSideBar = () => import('@v/SideBar/Components');
+const DesignsSideBar = () => import('@v/SideBar/Designs');
 // views
-const Home = () => import('@v/Home');
+// const Home = () => import('@v/Home');
 const Uncategorized = () => import('@v/Uncategorized');
 
-function createSideBarView(view) {
+function createSideBarView(sidebar, view) {
     return {
-        // sidebar: () => asyncImport(SideBar()),
-        sidebar: SideBar,
+        // sidebar: () => asyncImport(sidebar()),
+        sidebar,
         default: () => asyncImport(view()),
     };
 }
 
+function createComponentsView(view) {
+    return createSideBarView(ComponentsSideBar, view);
+}
+function createDesignsView(view) {
+    return createSideBarView(DesignsSideBar, view);
+}
+
 Vue.use(Router);
 
-import modules from '@/components';
-
-const routers = [];
-modules.forEach(item => {
-    routers.push({
+import componentsModules from '@/components';
+const componentRouters = [];
+componentsModules.forEach(item => {
+    componentRouters.push({
         name: item.name,
         path: item.router,
-        components: createSideBarView(() => import(`@c/${item.index}`)),
+        components: createComponentsView(() => import(`@c/${item.index}`)),
     });
 });
 
+import designsModules from '@/designs';
+const designRouters = [];
+designsModules.forEach(item => {
+    designRouters.push({
+        name: item.name,
+        path: item.router,
+        components: createDesignsView(() => import(`@d/${item.index}`)),
+    });
+});
 
 const scrollBehavior = (to, from, savedPosition) => {
     if (savedPosition) { return savedPosition; }
@@ -41,16 +57,34 @@ export default new Router({
         {
             path: '/',
             name: 'Home-page',
-            components: createSideBarView(Home),
+            // components: createSideBarView(ComponentsSideBar, Home),
+            redirect: '/components/Installation',
         },
         {
             path: '/Uncategorized',
             name: 'Uncategorized-page',
             // component: Uncategorized,
             // component: () => asyncImport(Uncategorized()),
-            components: createSideBarView(Uncategorized),
+            components: createSideBarView(ComponentsSideBar, Uncategorized),
         },
-        ...routers,
+        {
+            path: '/components',
+            redirect: '/components/Installation',
+        },
+        // ...componentRouters,
+        ...componentRouters.map(item => {
+            item.path = `/components${item.path}`;
+            return item;
+        }),
+        {
+            path: '/designs',
+            redirect: '/designs/Disciplines',
+        },
+        ...designRouters.map(item => {
+            item.name = `Designs_${item.name}`;
+            item.path = `/designs${item.path}`;
+            return item;
+        }),
         {
             path: '*',
             redirect: '/',

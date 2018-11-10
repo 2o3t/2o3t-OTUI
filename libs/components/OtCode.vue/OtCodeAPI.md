@@ -14,6 +14,7 @@
 | copy | 是否显示 `复制代码` 按钮 | Boolean | true |
 | showLang | 显示语言类型 | Boolean | true |
 | tipTime | 设置提示框显示时长 ms | Number | 2000 |
+| background | 填充背景 | Boolean,String | false |
 
 ## Events
 

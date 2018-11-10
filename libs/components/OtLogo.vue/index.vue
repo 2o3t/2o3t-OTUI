@@ -25,7 +25,7 @@ export default {
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    font-weight: bold;
+    font-weight: $--main-font-weight-semibold;
     user-select: none;
 
     &:after {

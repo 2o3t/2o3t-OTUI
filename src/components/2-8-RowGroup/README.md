@@ -1,6 +1,6 @@
 <!-- @api: OtRowGroup.vue/OtRowGroupAPI.md -->
 
-# RowGroup 布局容器
+# RowGroup 简单容器
 
 用于简单布局的容器.
 

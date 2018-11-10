@@ -12,21 +12,22 @@ Watch this space!
 ## init
 
 ```js
-// import hljs from 'highlight.js';
 import 'font-awesome/css/font-awesome.min.css';
 import '2o3t-ui/libs/styles.css';
 import OTUI from '2o3t-ui';
 
-const MarkdownIt = require('markdown-it');
+// 三方库
+const hljs = require('highlight.js');
+const markdownit = require('markdown-it');
 const cheerio = require('cheerio');
 const clipboard = require('clipboard-polyfill');
 Vue.use(OTUI, {
-    global: true, // 全局注册 mixins
+    global: true,
     plugins: {
-        markdownIt: MarkdownIt,
+        markdownit,
         cheerio,
         clipboard,
+        hljs,
     },
 });
-
 ```

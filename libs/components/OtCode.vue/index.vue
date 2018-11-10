@@ -1,5 +1,5 @@
 <template>
-    <div ot v-ot-bind="$otColors" v-highlight :class="$style.root" class="ot-code" :size="$otSize">
+    <div ot v-ot-bind="$otColors" v-highlight="_hljs" :class="$style.root" class="ot-code" :size="$otSize" :round="round" :border="border">
         <div :class="$style.title" >
             <ot-icon v-if="showLang" :class="$style.lang" icon="code">{{ lang }}</ot-icon>
             <ot-link v-if="copy" @click="handleCopyClick">
@@ -9,21 +9,18 @@
             </ot-link>
         </div>
         <pre :class="`language-${_lang}`" code>
-            <code ot v-ot-bind="$otColors" :class="$style.code" :lang="lang"><!-- code 内容 --><slot>{{ value }}</slot></code>
+            <code ot :class="$style.code" :lang="lang"><!-- code 内容 --><slot>{{ value }}</slot></code>
         </pre>
     </div>
 </template>
 
 <script>
-import hljs from 'highlight.js';
-import 'highlight.js/styles/androidstudio.css'; // 样式文件
-
 import theme from './theme.js';
 export default {
     name: 'ot-code',
     mixins: [ theme ],
     props: {
-        // 源代码文本
+    // 源代码文本
         value: [ String ],
         // 预览类型标识
         lang: {
@@ -45,36 +42,46 @@ export default {
             type: Number,
             default: 2000,
         },
+        // 填充背景
+        background: {
+            type: [ Boolean, String ],
+            default: false,
+        },
     },
     directives: {
-        highlight(el) {
+        highlight(el, { value }) {
+            if (!value) return;
+            const hljs = value;
             if (el.__inited_hljs__) return;
             const blocks = el.querySelectorAll('pre code');
-            blocks.forEach(block => {
-                hljs.highlightBlock(block);
-            });
             let len = 1;
-            blocks.forEach(block => {
-                const html = block.innerHTML;
-                const reg = html.match(/\n/g);
-                if (reg) {
-                    len += reg.length;
-                }
-            });
-
+            if (blocks) {
+                blocks.forEach(block => {
+                    hljs.highlightBlock(block);
+                });
+                blocks.forEach(block => {
+                    const html = block.innerHTML;
+                    const reg = html.replace(/^\s+|\s+$/g,'').match(/\n/g);
+                    if (reg) {
+                        len += reg.length;
+                    }
+                });
+            }
             if (len) {
                 const blocks = el.querySelectorAll('pre');
-                blocks.forEach(block => {
-                    const ele = document.createElement('ol');
-                    ele.className = 'code-block';
-                    ele.setAttribute('ot', '');
-                    let html = '';
-                    for (let i = 0; i < len; i++) {
-                        html += '<li ot class="code-line">' + (i + 1) + '</li>';
-                    }
-                    ele.innerHTML = html;
-                    block.appendChild(ele);
-                });
+                if (blocks) {
+                    blocks.forEach(block => {
+                        const ele = document.createElement('ol');
+                        ele.className = 'code-block';
+                        ele.setAttribute('ot', '');
+                        let html = '';
+                        for (let i = 0; i < len; i++) {
+                            html += '<li ot class="code-line">' + (i + 1) + '</li>';
+                        }
+                        ele.innerHTML = html;
+                        block.appendChild(ele);
+                    });
+                }
             }
 
             el.__inited_hljs__ = true;
@@ -94,6 +101,13 @@ export default {
             }
             return this.lang;
         },
+        _hljs() {
+            const hljs = this.$otUtils.getOtPlugin('hljs');
+            if (!hljs) {
+                return;
+            }
+            return hljs;
+        },
     },
     methods: {
         handleCopyClick() {
@@ -101,7 +115,8 @@ export default {
             if (!clipboard) {
                 return;
             }
-            const content = this.value || (this.$slots.default && this.$slots.default[0].text);
+            const content =
+        this.value || (this.$slots.default && this.$slots.default[0].text);
             clipboard.writeText(content);
             this.bShown = true;
 
@@ -120,31 +135,37 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../globals';
+@import "../globals";
 .root {
   display: block;
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: 1em 0 2em 0;
   box-sizing: border-box;
   overflow: hidden;
   text-align: left;
 
+  @include __ot_size__;
+
+  &[round] {
+      @include __ot_round__;
+  }
+
   .title {
-      text-align: right;
-      opacity: 0.7;
+    text-align: right;
+    opacity: 0.7;
+    margin: 0 1em;
+    line-height: 1.2;
+
+    & * {
+      font-size: 0.9em !important;
+    }
+
+    .lang {
+      vertical-align: middle;
       margin: 0 1em;
-      line-height: 1.2;
-
-      & *{
-          font-size: 0.9em !important;
-      }
-
-      .lang {
-          vertical-align: middle;
-          margin: 0 1em;
-          line-height: 2;
-      }
+      line-height: 2;
+    }
   }
 
   pre[code] {
@@ -158,57 +179,45 @@ export default {
     margin: 0;
 
     .code {
-        width: 100%;
-        overflow-x: auto;
-        margin: 0px 0px 0 40px !important;
-        background: none;
-        padding: 0 0.5em;
+      width: 100%;
+      overflow-x: auto;
+      margin: 0px 0px 0 40px !important;
+      background: none;
+      padding: 0 0.5em;
     }
   }
-
-    &[size=mini] {
-        font-size: $--ot-mini-size;
-    }
-
-    &[size=small] {
-        font-size: $--ot-small-size;
-    }
-
-    &[size=normal] {
-        font-size: $--ot-normal-size;
-    }
-
-    &[size=big] {
-        font-size: $--ot-big-size;
-    }
 }
 </style>
 
 <style lang="scss">
-.ot-code>pre[code] {
+@import '../globals';
+.ot-code {
 
-  .code-block[ot] {
-    position: absolute;
-    list-style: decimal;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    padding: 0 0.5em;
-    margin: 0;
-    width: 40px;
-    text-align: right;
-    border-right: 1px solid #ddd !important;
-    font-weight: 500;
-  }
-  .code-line[ot] {
-    list-style: none;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+  @import "./androidstudio";
 
+  & > pre[code] {
+    .code-block[ot] {
+      position: absolute;
+      list-style: decimal;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0 0.5em;
+      margin: 0;
+      width: 40px;
+      text-align: right;
+      border-right: 1px solid #ddd !important;
+      font-weight: $--main-font-weight-medium;
+    }
+    .code-line[ot] {
+      list-style: none;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+  }
 }
 </style>
 

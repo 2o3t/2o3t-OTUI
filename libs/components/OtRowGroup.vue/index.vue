@@ -5,11 +5,11 @@
             <slot></slot>
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" @click="showCode" border dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
-        <transition name="collapse">
+        <ot-collapse-transition>
             <div ot v-ot-bind="$otColors.code" v-if="code" v-show="bShow" :class="$style.code" border>
                 <ot-code :lang="lang" :value="code"></ot-code>
             </div>
-        </transition>
+        </ot-collapse-transition>
     </div>
 </template>
 

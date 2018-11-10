@@ -11,57 +11,57 @@
 <script>
 import theme from './theme.js';
 export default {
-  name: "ot-breadcrumb-item",
-  mixins: [theme],
-  inject: ["$OtBreadcrumb"],
+    name: 'ot-breadcrumb-item',
+    mixins: [ theme ],
+    inject: [ '$OtBreadcrumb' ],
 
-  props: {
+    props: {
     // vue-router 路由, 跳转 名称 或 对象. 更多参考 `ot-link`
-    to: {
-      type: [String, Object],
-      default: null
+        to: {
+            type: [ String, Object ],
+            default: null,
+        },
+        // vue-router 跳转是否为 `replace`. 更多参考 `ot-link`
+        replace: {
+            type: Boolean,
+            default: false,
+        },
     },
-    // vue-router 跳转是否为 `replace`. 更多参考 `ot-link`
-    replace: {
-      type: Boolean,
-      default: false
-    }
-  },
-  data() {
-    return {
-      separator: "",
-      separatorIcon: "",
-      bLastIndex: false,
-    };
-  },
-  created () {
-      if (this.$OtBreadcrumb) {
-        this.$OtBreadcrumb.addItem(this);
-      }
-  },
-  methods: {
-     updateSync() {
-      if (this.$OtBreadcrumb) {
-        this.separatorIcon = this.$OtBreadcrumb.separatorIcon;
-        if (this.separatorIcon) {
-            this.separator = '';
-        } else {
-            this.separator = this.$OtBreadcrumb.separator;
+    data() {
+        return {
+            separator: '',
+            separatorIcon: '',
+            bLastIndex: false,
+        };
+    },
+    created() {
+        if (this.$OtBreadcrumb) {
+            this.$OtBreadcrumb.addItem(this);
         }
-      }
-     }
-  },
-  mounted() {
-      this.updateSync();
-  },
-  beforeUpdate() {
-      this.updateSync();
-  },
-  beforeDestroy() {
-      if (this.$OtBreadcrumb) {
-        this.$OtBreadcrumb.removeItem(this);
-      }
-  },
+    },
+    methods: {
+        updateSync() {
+            if (this.$OtBreadcrumb) {
+                this.separatorIcon = this.$OtBreadcrumb.separatorIcon;
+                if (this.separatorIcon) {
+                    this.separator = '';
+                } else {
+                    this.separator = this.$OtBreadcrumb.separator;
+                }
+            }
+        },
+    },
+    mounted() {
+        this.updateSync();
+    },
+    beforeUpdate() {
+        this.updateSync();
+    },
+    beforeDestroy() {
+        if (this.$OtBreadcrumb) {
+            this.$OtBreadcrumb.removeItem(this);
+        }
+    },
 };
 </script>
 
@@ -76,7 +76,7 @@ export default {
 
     .link {
         &[href] {
-            font-weight: 700;
+            font-weight: $--main-font-weight-medium;
         }
     }
 

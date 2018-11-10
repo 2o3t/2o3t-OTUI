@@ -1,6 +1,6 @@
 <!-- @api: OtMarkdown.vue/OtMarkdownAPI.md -->
 
-# Markdown 富文本展示
+# Markdown 富文本
 
 可以通过 html 进行展示.
 

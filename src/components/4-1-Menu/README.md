@@ -18,11 +18,11 @@
 
 
 
-## 禁用状态
+## 禁用收缩
 
-> Disabled
+> DisabledExpand
 
-
+通过 `expand` 参数禁用菜单组收缩.
 
 ## 大小
 

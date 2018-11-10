@@ -15,15 +15,17 @@ if (process.env.NODE_ENV === 'production') {
     console.warn('In Development !!!');
 }
 
-const MarkdownIt = require('markdown-it');
+const hljs = require('highlight.js');
+const markdownit = require('markdown-it');
 const cheerio = require('cheerio');
 const clipboard = require('clipboard-polyfill');
 Vue.use(OTUI, {
     global: true,
     plugins: {
-        markdownIt: MarkdownIt,
+        markdownit,
         cheerio,
         clipboard,
+        hljs,
     },
 });
 

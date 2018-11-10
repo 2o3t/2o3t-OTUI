@@ -345,3 +345,9 @@ button, input, optgroup, select, textarea {
     background: none;
     border: none;
 }
+
+ul,li,ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

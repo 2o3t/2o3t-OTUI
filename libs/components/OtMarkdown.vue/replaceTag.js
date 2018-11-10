@@ -12,6 +12,8 @@ export default function($) {
         }
         $(preEl).html(html);
         preEl.tagName = 'ot-code';
+        preEl.attribs.background = true;
+        preEl.attribs.round = true;
     });
 
     $('p>code').each((index, h) => {

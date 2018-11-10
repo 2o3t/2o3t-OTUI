@@ -10,6 +10,13 @@ module.exports = {
         if (debug) { // 开发环境配置
             config.devtool = 'cheap-module-eval-source-map';
         } else { // 生产环境配置
+            Object.assign(config, {
+                externals: {
+                    'highlight.js': 'hljs',
+                    'markdown-it': 'markdownit',
+                    clipboard: 'clipboard-polyfill',
+                },
+            });
         }
         Object.assign(config, { // 开发生产共同配置
             resolve: {
@@ -17,6 +24,7 @@ module.exports = {
                     '@': path.resolve(__dirname, './src'),
                     '@v': path.resolve(__dirname, './src/views'),
                     '@c': path.resolve(__dirname, './src/components'),
+                    '@d': path.resolve(__dirname, './src/designs'),
                     '@otui': path.resolve(__dirname, './libs'),
                     vue$: 'vue/dist/vue.esm.js',
                 },
@@ -69,8 +77,8 @@ module.exports = {
 
 
 const fs = require('fs');
-const initComps = () => {
-    const compPath = path.join(process.cwd(), 'src', 'components');
+const initIndexs = (dirName = 'components') => {
+    const compPath = path.join(process.cwd(), 'src', dirName);
     const components = fs.readdirSync(compPath);
     components.filter(name => {
         return /^\d+/ig.test(name);
@@ -93,4 +101,5 @@ export default {
         fs.writeFileSync(path.join(p, 'index.js'), data);
     });
 };
-initComps();
+initIndexs('components');
+initIndexs('designs');

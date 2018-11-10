@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style lang="scss" module>
+@import '../globals';
 table.root {
   border-collapse: collapse;
   border-spacing: 0;
@@ -33,7 +34,7 @@ table.root {
 
   th {
     white-space: nowrap;
-    font-weight: 500;
+    font-weight: $--main-font-weight-medium;
     background: rgba(0, 0, 0, 0.02);
   }
 

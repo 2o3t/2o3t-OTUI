@@ -5,51 +5,51 @@
 </template>
 
 <script>
-import _pull from "lodash/pull.js";
+import _pull from 'lodash/pull.js';
 export default {
-  name: "ot-breadcrumb",
+    name: 'ot-breadcrumb',
 
-  provide() {
-    return {
-      $OtBreadcrumb: this
-    };
-  },
+    provide() {
+        return {
+            $OtBreadcrumb: this,
+        };
+    },
 
-  props: {
+    props: {
     // 分隔符
-    separator: {
-      type: String,
-      default: "/"
+        separator: {
+            type: String,
+            default: '/',
+        },
+        // 图标分隔符 iconfont
+        separatorIcon: {
+            type: String,
+            default: '',
+        },
     },
-    // 图标分隔符 iconfont
-    separatorIcon: {
-      type: String,
-      default: ""
-    }
-  },
-  data() {
-    return {
-      items: []
-    };
-  },
-  methods: {
-    addItem(item) {
-      this.items.push(item);
+    data() {
+        return {
+            items: [],
+        };
     },
-    removeItem(item) {
-      if (item) {
-        this.items = _pull(this.items, item);
-      }
-    }
-  },
-  mounted() {
-    const len = this.items.length;
-    if (len) {
-      this.items.forEach((item, index) => {
-        item.bLastIndex = index >= (len - 1);
-      });
-    }
-  }
+    methods: {
+        addItem(item) {
+            this.items.push(item);
+        },
+        removeItem(item) {
+            if (item) {
+                this.items = _pull(this.items, item);
+            }
+        },
+    },
+    mounted() {
+        const len = this.items.length;
+        if (len) {
+            this.items.forEach((item, index) => {
+                item.bLastIndex = index >= (len - 1);
+            });
+        }
+    },
 };
 </script>
 

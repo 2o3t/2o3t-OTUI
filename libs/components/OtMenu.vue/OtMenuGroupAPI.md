@@ -9,7 +9,9 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| label | - | String | - |
+| label | 组标题 | String | - |
+| expand | 是否支持收缩 | Boolean | true |
+| defaultExpanded | 默认是否展开 | Boolean | true |
 
 ## Slots
 

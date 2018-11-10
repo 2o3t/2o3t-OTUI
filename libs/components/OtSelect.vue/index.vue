@@ -256,7 +256,7 @@ export default {
             list-style: none;
 
             &[selected] {
-                font-weight: bold;
+                font-weight: $--main-font-weight-medium;
             }
         }
 

@@ -1,31 +1,38 @@
 <template>
-  <div id="app" :class="$style.root" :theme="$otTheme">
-    <header :class="$style.header" :theme="$otTheme">
-        <ot-nav :isCollapse="isCollapse" :theme="$otTheme">
+  <ot-container id="app" :class="$style.root" :theme="$otTheme">
+    <ot-header :class="$style.header" :theme="$otTheme">
+        <ot-nav :isCollapse="isCollapse" :theme="$otTheme" placement="right">
             <ot-link slot="left" to="/">
                 <ot-logo :theme="$otTheme" icon="gratipay">
                     <span>OT-UI</span>
                 </ot-logo>
             </ot-link>
-            <ot-nav-item v-for="(item) in headers" :key="item.name" :router="item.router">{{item.name}}</ot-nav-item>
-            <ot-row-group :theme="$otTheme" :class="$style.right" slot="right">
-                <ChangeColor ot :theme="$otTheme"></ChangeColor>
-                <ot-switch :theme="$otTheme" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
-                    <span slot="inactive">Light</span>
-                    <span slot="active">Dark</span>
-                </ot-switch>
-            </ot-row-group>
+            <ot-nav-item v-for="(item) in headers" :key="item.name" :to="item.router">{{item.name}}</ot-nav-item>
+            <ot-row :gutter="10" :class="$style.right" slot="right">
+                <ot-col :span="4">
+                    <ChangeColor ot :theme="$otTheme"></ChangeColor>
+                </ot-col>
+                <ot-col :span="12">
+                    <ot-switch :theme="$otTheme" v-model="isDark" active-color="#13ce66" inactive-color="#ff4949">
+                        <span slot="inactive">Light</span>
+                        <span slot="active">Dark</span>
+                    </ot-switch>
+                </ot-col>
+                <ot-col :span="8">
+                    <ot-corners></ot-corners>
+                </ot-col>
+            </ot-row>
         </ot-nav>
-    </header>
-    <div :class="$style.sidebar">
+    </ot-header>
+    <ot-aside :class="$style.sidebar">
         <router-view :theme="$otTheme" name="sidebar"></router-view>
-    </div>
-    <div :class="$style.pager">
+    </ot-aside>
+    <ot-main :class="$style.pager">
         <!-- <keep-alive> -->
         <router-view :theme="$otTheme" :class="$style.content"></router-view>
         <!-- </keep-alive> -->
-    </div>
-  </div>
+    </ot-main>
+  </ot-container>
 </template>
 
 <script>
@@ -71,7 +78,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 6.4rem;
+    height: 6em;
     background-color: rgba($color: #ffffff, $alpha: .75);
     z-index: 10;
 
@@ -79,22 +86,22 @@ export default {
         background-color: rgba($color: #242424, $alpha: .75);
     }
 
-    .right {
-        vertical-align: middle;
+    .nav {
+        justify-content: flex-end;
     }
 }
 .sidebar {
     position: fixed;
-    top: 6.4rem;
+    top: 6em;
     left: 0;
-    width: 20rem;
+    width: 20em;
     bottom: 0;
     z-index: 10;
 }
 .pager {
-    padding-left: 20rem;
-    padding-top: 6.4rem;
-    padding-bottom: 2rem;
+    padding-left: 20em;
+    padding-top: 6em;
+    padding-bottom: 2em;
 
     .content {
         padding: 10px 30px 0px;
