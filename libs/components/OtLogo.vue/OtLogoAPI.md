@@ -9,12 +9,18 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| icon | - | String | - |
-| url | - | String | - |
+| icon | font icon | String | - |
+| url | url | String | - |
 
 ## Slots
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | default | - | - | - |
+
+## ScopedSlots
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| subtitle | - | - | - |
 

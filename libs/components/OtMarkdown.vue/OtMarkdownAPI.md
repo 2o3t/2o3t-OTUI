@@ -12,6 +12,7 @@
 | content | html template 内容 | String | null |
 | dangerouslyUseHTMLString | 是否直接传入 HTML 片段, 危险 | Boolean | false |
 | customClass | 自定义 class | String | '' |
+| data | 外部传入依赖的 data 数据 | Object | ()=> {   return {}; } |
 
 ## Slots
 

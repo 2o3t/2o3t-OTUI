@@ -18,3 +18,9 @@
 | horizontal | 水平样式展示 | Boolean | - |
 | autoFont | 自动控制字体颜色 | Boolean | true |
 
+## Events
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| @onCopy |  复制事件, `content` 为颜色值. | (content): Void | - |
+

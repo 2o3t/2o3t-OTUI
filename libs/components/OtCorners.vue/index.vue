@@ -45,7 +45,7 @@ export default {
         // 原生 `a` 标签中`target`属性
         target: {
             type: [ String ],
-            default: '_self',
+            default: '_blank', // _self
         },
         // 可选择位置
         position: {

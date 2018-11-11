@@ -3,7 +3,7 @@
          :class="$style.root">
          <div v-if="label" ot v-ot-bind="$otColors" :class="$style.label" :collapse="isCollapse" @click="handleClickToggle">
              <h5>{{ label }}</h5>
-             <ot-arrow :class="$style.arrow" :placement="bCollapse ? 'up' : 'down'" border></ot-arrow>
+             <ot-arrow :class="$style.arrow" :placement="bCollapse ? 'up' : 'down'" animation border></ot-arrow>
          </div>
          <ot-collapse-transition>
             <ul v-if="$slots.default" v-show="bCollapse">

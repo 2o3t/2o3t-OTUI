@@ -70,7 +70,7 @@ export default {
     data() {
         return {
             copyTitle: 'Click To Copy Color',
-        }
+        };
     },
     computed: {
         colorsTabList() {

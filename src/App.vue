@@ -20,7 +20,7 @@
                     </ot-switch>
                 </ot-col>
                 <ot-col :span="8">
-                    <ot-corners></ot-corners>
+                    <ot-corners href="//github.com/2o3t"></ot-corners>
                 </ot-col>
             </ot-row>
         </ot-nav>

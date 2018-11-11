@@ -1,7 +1,7 @@
 <template>
     <div ot class="ot-arrow" v-bind="$attrs" :class="$style.root" :placement="placement">
         <div :class="$style.box" :placement="placement">
-            <i ot v-ot-bind="customColors" :class="$style.arrow"
+            <i ot v-ot-bind="customColors" :class="$style.arrow" :animation="animation"
                 :placement="placement" :border="border" :style="style"
                 v-on="$listeners">
             </i>
@@ -32,10 +32,13 @@ export default {
                 return {};
             },
         },
+        // 线颜色
         borderColor: {
             type: String,
             default: '',
         },
+        // 旋转动画
+        animation: Boolean,
     },
     computed: {
         customColors() {
@@ -93,7 +96,10 @@ export default {
     transform: rotate(45deg);
     transform-origin: center;
     box-sizing: border-box;
-    transition: transform 0.3s;
+
+    &[animation] {
+        transition: transform 0.3s;
+    }
 
     &[placement="up"] {
       transform: rotate(45deg);

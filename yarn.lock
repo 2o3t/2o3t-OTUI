@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"2o3t-ui@^0.0.28":
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.28.tgz#116f11445c7668a24afc5bbb1a6e4d829a605e3e"
+"2o3t-ui@^0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.30.tgz#8a0d23826466b3b72b427c1f8fd661b2965b9d33"
   dependencies:
     highlight.js "^9.13.1"
     lodash "^4.17.11"

@@ -33,6 +33,7 @@
             v-on="$listeners"
             type="text">
             <ot-link :class="$style.link" slot="suffix" @click="handleShowSelectList" :disabled="disabled">
+                <!-- TODO: 替换为 ot-arrow -->
                 <ot-icon :class="$style.icon" :size="$otSize" icon="angle-down" :shown="bShown"></ot-icon>
             </ot-link>
         </ot-input>

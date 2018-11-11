@@ -14,7 +14,7 @@
 | to | vue-router 路由, 跳转 名称 或 对象. | String,Object | null |
 | replace | vue-router 跳转是否为 `replace`. | Boolean | false |
 | append | vue-router 中 `append` 模式 | Boolean | false |
-| target | 原生 `a` 标签中`target`属性 | String | '_self' |
+| target | 原生 `a` 标签中`target`属性 | String | '_blank' |
 | position | **[ `right`, `left`, `bottom-right`, `bottom-left` ]**, 可选择位置 | String | 'right' |
 
 ## Slots
