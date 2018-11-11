@@ -4,6 +4,9 @@
         <div :class="$style.title">
             <slot></slot>
         </div>
+        <div v-if="$slots.subtitle" :class="$style.subtitle">
+            <slot name="subtitle"></slot>
+        </div>
     </span>
 </template>
 
@@ -13,7 +16,9 @@ export default {
     name: 'ot-logo',
     mixins: [ theme ],
     props: {
+        // font icon
         icon: [ String ],
+        // url
         url: [ String ],
     },
 };
@@ -28,10 +33,7 @@ export default {
     font-weight: $--main-font-weight-semibold;
     user-select: none;
 
-    &:after {
-        content: '';
-        display: table;
-    }
+    @include __ot_root_block__;
 
     .icon {
         display: table-cell;
@@ -43,12 +45,24 @@ export default {
     .title {
         display: table-cell;
         vertical-align: middle;
-        padding: 0;
+        padding-left: 0.6em;
         margin: 0;
     }
 
+    .subtitle {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0;
+        font-weight: $--main-font-weight;
+
+        &:before {
+            display: inline-block;
+            content: '|';
+            padding: 0 0.6em;
+        }
+    }
+
     &[size=mini] {
-        padding: 0px 15px;
         min-height: $--ot-mini-height;
         line-height: $--ot-mini-height;
         font-size: $--ot-mini-size * 2;
@@ -56,10 +70,13 @@ export default {
         .icon {
             font-size: $--ot-mini-size * 2;
         }
+
+        .subtitle {
+            font-size: $--ot-mini-size;
+        }
     }
 
     &[size=small] {
-        padding: 0px 15px;
         min-height: $--ot-small-height;
         line-height: $--ot-small-height;
         font-size: $--ot-small-size * 2;
@@ -67,10 +84,13 @@ export default {
         .icon {
             font-size: $--ot-small-size * 2;
         }
+
+        .subtitle {
+            font-size: $--ot-small-size;
+        }
     }
 
     &[size=normal] {
-        padding: 0px 20px;
         min-height: $--ot-normal-height;
         line-height: $--ot-normal-height;
         font-size: $--ot-normal-size * 2;
@@ -78,10 +98,13 @@ export default {
         .icon {
             font-size: $--ot-normal-size * 2;
         }
+
+        .subtitle {
+            font-size: $--ot-normal-size;
+        }
     }
 
     &[size=big] {
-        padding: 0px 25px;
         min-height: $--ot-big-height;
         line-height: $--ot-big-height;
         font-size: $--ot-big-size * 2;
@@ -89,7 +112,16 @@ export default {
         .icon {
             font-size: $--ot-big-size * 2;
         }
+
+        .subtitle {
+            font-size: $--ot-big-size;
+        }
     }
 }
 </style>
 
+<style lang="scss">
+.ot-logo {
+    padding-left: 2em;
+}
+</style>

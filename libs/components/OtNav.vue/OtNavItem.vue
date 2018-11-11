@@ -89,20 +89,22 @@ export default {
     display: inline-block;
     cursor: pointer;
     transition: all .3s;
-    box-sizing: border-box;
+    box-sizing: content-box;
     position: relative;
     white-space: nowrap;
     list-style: none;
     list-style-type: disc;
     list-style-position: inside;
-    margin: 0 0.6em;
+    margin: 0;
+    vertical-align: middle;
 
     .link {
         display: inline-block;
-        padding: 0 1em;
+        padding: 0 1.4em;
         position: relative;
         width: 100%;
         height: 100%;
+        color: inherit;
 
         &:hover {
             color: inherit;

@@ -1,16 +1,16 @@
 <template>
-    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card">
-        <div ot v-ot-bind="$otColors.left" :class="$style.left">
+    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card" :style="{ height }" :size="$otSize" :round="round">
+        <div v-if="$slots.left" ot v-ot-bind="$otColors.left" :class="[$style.left, $style.padding]" class="ot-card__left">
             <slot name="left"></slot>
         </div>
-        <div :class="$style.right">
-            <slot name="right">
-                <div :class="$style.top">
-                    <slot name="right-top"></slot>
+        <div :class="[$style.right, { [$style.padding]: !!$slots.default }]">
+            <slot>
+                <div :class="[$style.top, $style.padding]" class="ot-card__top">
+                    <slot name="top"></slot>
                 </div>
-                <ot-line></ot-line>
-                <div :class="$style.bottom">
-                    <slot name="right-bottom"></slot>
+                <ot-line v-if="$slots.bottom" class="ot-card__line"></ot-line>
+                <div v-if="$slots.bottom" :class="[$style.bottom, $style.padding]" class="ot-card__bottom">
+                    <slot name="bottom"></slot>
                 </div>
             </slot>
         </div>
@@ -23,6 +23,11 @@ export default {
     name: 'ot-card',
     mixins: [ theme ],
     props: {
+        // 卡片高度
+        height: {
+            type: String,
+            default: 'auto',
+        },
     },
 };
 </script>
@@ -30,37 +35,62 @@ export default {
 <style lang="scss" module>
 @import '../globals';
 .root {
-    height: 200px;
+    min-height: 10em;
     display: flex;
     flex-direction: row;
-    min-width: 320px;
-    border-radius: 3px;
+    min-width: 26em;
     box-sizing: border-box;
-    @include __ot_box_shadow__;
+    vertical-align: middle;
 
+    @include __ot_box_shadow__;
     @include __ot_size__;
 
+    &[round] {
+        @include __ot_round__;
+    }
+
     .left {
-        width: 80px;
-        flex: 0 0 80px;
+        width: 8em;
+        flex: 0 0 8em;
         text-align: center;
+        box-sizing: border-box;
+        vertical-align: middle;
+
+        &>* {
+            vertical-align: middle;
+        }
     }
     .right {
-        flex: 1;
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
+        vertical-align: middle;
+
         .top {
             position: relative;
-            flex: 1;
-            padding: 10px;
+            flex: 1 1 auto;
+            box-sizing: border-box;
+            vertical-align: middle;
+
+            &>* {
+                vertical-align: middle;
+            }
         }
         .bottom {
             position: relative;
-            flex: 0 0 30px;
-            height: 30px;
-            line-height: 1;
-            text-align: right;
+            flex: 0 0 auto;
+            min-height: 2em;
+            box-sizing: border-box;
+
+            &>* {
+                vertical-align: middle;
+            }
         }
+    }
+
+    .padding {
+        padding: 0.4em 1.6em;
     }
 }
 </style>

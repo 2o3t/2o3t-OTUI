@@ -1,10 +1,11 @@
 <template>
   <ot-container id="app" :class="$style.root" :theme="$otTheme">
-    <ot-header :class="$style.header" :theme="$otTheme">
+    <ot-header :class="$style.header" :theme="$otTheme" shadow>
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme" placement="right">
             <ot-link slot="left" to="/">
-                <ot-logo :theme="$otTheme" icon="gratipay">
-                    <span>OT-UI</span>
+                <ot-logo :theme="$otTheme" :url="require('@assets/logo.svg')">
+                    <span>2O3T-UI</span>
+                    <!-- <span slot="subtitle">OT-UI</span> -->
                 </ot-logo>
             </ot-link>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :to="item.router">{{item.name}}</ot-nav-item>
@@ -36,7 +37,7 @@
 </template>
 
 <script>
-import ChangeColor from '@v/ChangeThemeColor';
+import ChangeColor from '@views/ChangeThemeColor';
 export default {
     name: 'app',
     components: {

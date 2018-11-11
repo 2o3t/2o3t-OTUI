@@ -1,5 +1,6 @@
 <template>
     <main ot class="ot-main" :class="$style.root" :size="$otSize">
+        <!-- 主内容区 -->
         <slot></slot>
     </main>
 </template>

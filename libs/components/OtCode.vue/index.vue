@@ -61,7 +61,7 @@ export default {
                 });
                 blocks.forEach(block => {
                     const html = block.innerHTML;
-                    const reg = html.replace(/^\s+|\s+$/g,'').match(/\n/g);
+                    const reg = html.replace(/^\s+|\s+$/g, '').match(/\n/g);
                     if (reg) {
                         len += reg.length;
                     }

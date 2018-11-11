@@ -10,45 +10,45 @@
 </template>
 
 <script>
-import theme from "./theme.js";
+import theme from './theme.js';
 export default {
-  name: "ot-arrow",
-  mixins: [theme],
-  props: {
+    name: 'ot-arrow',
+    mixins: [ theme ],
+    props: {
     // 箭头方向, `up`, `down`, `left`, `right` 四个方向
-    placement: {
-      type: [String],
-      default: "up"
+        placement: {
+            type: [ String ],
+            default: 'up',
+        },
+        // 是否可以 hover 状态
+        hover: {
+            type: [ Boolean ],
+            default: false,
+        },
+        // 自定义属性
+        attrs: {
+            type: Object,
+            default() {
+                return {};
+            },
+        },
+        borderColor: {
+            type: String,
+            default: '',
+        },
     },
-    // 是否可以 hover 状态
-    hover: {
-      type: [Boolean],
-      default: false
+    computed: {
+        customColors() {
+            return Object.assign({}, this.$otColors, this.attrs);
+        },
+        style() {
+            const style = {};
+            if (this.borderColor) {
+                style.borderColor = this.borderColor;
+            }
+            return style;
+        },
     },
-    // 自定义属性
-    attrs: {
-      type: Object,
-      default() {
-        return {};
-      }
-    },
-    borderColor: {
-      type: String,
-      default: ""
-    }
-  },
-  computed: {
-    customColors() {
-      return Object.assign({}, this.$otColors, this.attrs);
-    },
-    style() {
-      const style = {};
-      if (this.borderColor) {
-        style.borderColor = this.borderColor;
-      }
-      return style;
-    }
-  }
 };
 </script>
 

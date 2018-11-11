@@ -8,7 +8,7 @@
         <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
         <ot-markdown class="markdown" :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" :content="descHtml"></ot-markdown>
-        <div :prefix="prefix" :class="$style.children">
+        <div :prefix="prefix" :class="$style.childs" class="ot-section_childs">
             <slot></slot>
         </div>
     </section>
@@ -66,30 +66,30 @@ export default {
   @include __ot_size__;
 
   &[indent] {
-    padding-left: 0.5rem;
+    padding-left: 0em;
 
     &[indent="1"] {
-      padding-left: 1rem;
+      padding-left: 1em;
     }
 
     &[indent="2"] {
-      padding-left: 2rem;
+      padding-left: 2em;
     }
 
     &[indent="3"] {
-      padding-left: 3rem;
+      padding-left: 3em;
     }
 
     &[indent="4"] {
-      padding-left: 4rem;
+      padding-left: 4em;
     }
 
     &[indent="5"] {
-      padding-left: 5rem;
+      padding-left: 5em;
     }
 
     &[indent="6"] {
-      padding-left: 6rem;
+      padding-left: 6em;
     }
   }
 
@@ -97,7 +97,7 @@ export default {
 
     .prefix {
       display: inline-block;
-      width: 2rem;
+      width: 1em;
       transition: color 0.3s;
       cursor: pointer;
     }
@@ -111,7 +111,7 @@ export default {
     font-weight: $--main-font-weight-light;
 
     &[prefix] {
-      margin-left: 2rem;
+      margin-left: 1em;
     }
 
     @include __ot_size__;
@@ -132,10 +132,10 @@ export default {
     }
   }
 
-  .children {
+  .childs {
 
     &[prefix] {
-      margin-left: 2rem;
+      margin-left: 1em;
     }
   }
 }

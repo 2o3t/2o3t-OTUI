@@ -5,11 +5,12 @@
 <script>
 import MAIN_CSS from './CssColor.js';
 const ID_NAME = '__custom_theme_color__';
+const DEFAULT_COLOR = '#207FF6';
 export default {
     name: 'ui-change-theme-color',
     data() {
         return {
-            color: '#409EFF',
+            color: DEFAULT_COLOR,
         };
     },
     methods: {
@@ -38,7 +39,7 @@ export default {
                 ];
             }
 
-            const oldColorPools = create('#409EFF'); // 主颜色
+            const oldColorPools = create(DEFAULT_COLOR); // 主颜色
             const newColorPools = create(color);
 
             const cssColor = oldColorPools.reduce((result, oldC, index) => {

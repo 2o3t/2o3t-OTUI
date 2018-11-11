@@ -3,6 +3,7 @@ import * as throttle from './throttle';
 import listeners from './listeners';
 import extend from './extendEx';
 import * as dom from './dom';
+import Colors from './colors';
 
 function server($vm, func) {
     return Object.keys(func).reduce((obj, key) => {
@@ -32,5 +33,7 @@ export default function($vm) {
             console.warn(`please use options.plugins '${name}'`);
             return null;
         },
+
+        Colors,
     };
 }

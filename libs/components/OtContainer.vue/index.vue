@@ -1,5 +1,5 @@
 <template>
-    <section ot class="ot-container" :class="$style.root" :vertical="vertical">
+    <section ot class="ot-container" :class="$style.root" :vertical="isVertical">
         <slot></slot>
     </section>
 </template>
@@ -13,7 +13,7 @@ export default {
         };
     },
     props: {
-        // 垂直排列
+        // 子元素垂直排列, 子元素中有 `ot-header` 或 `ot-footer` 时为 vertical
         vertical: [ Boolean ],
     },
     data() {
@@ -23,6 +23,14 @@ export default {
             aside: null,
             main: null,
         };
+    },
+    computed: {
+        isVertical() {
+            if (this.vertical) {
+                return true;
+            }
+            return this.header || this.footer;
+        },
     },
     methods: {
         addHeader(item) {

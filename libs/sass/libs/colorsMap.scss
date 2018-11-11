@@ -1,0 +1,208 @@
+@import './vars.scss';
+
+// ====== light ======
+// font
+$--ot-color-light-font-normal: $--color-white;
+$--ot-color-light-font-hover: $--color-white;
+$--ot-color-light-font-active: $--color-white;
+$--ot-color-light-font-focus: $--color-white;
+$--ot-color-light-font-selected: $--color-white;
+$--ot-color-light-font-disabled: $--color-white;
+// background
+$--ot-color-light-background-normal: $--color-white;
+$--ot-color-light-background-hover: $--color-white;
+$--ot-color-light-background-active: $--color-white;
+$--ot-color-light-background-focus: $--color-white;
+$--ot-color-light-background-selected: $--color-white;
+$--ot-color-light-background-disabled: $--color-white;
+// border
+$--ot-color-light-border-normal: $--color-white;
+$--ot-color-light-border-hover: $--color-white;
+$--ot-color-light-border-active: $--color-white;
+$--ot-color-light-border-focus: $--color-white;
+$--ot-color-light-border-selected: $--color-white;
+$--ot-color-light-border-disabled: $--color-white;
+
+// ====== dark ======
+// font
+$--ot-color-dark-font-normal: $--color-black;
+$--ot-color-dark-font-hover: $--color-default-grey-30;
+$--ot-color-dark-font-active: $--color-default-grey-20;
+$--ot-color-dark-font-focus: $--color-black;
+$--ot-color-dark-font-selected: $--color-black;
+$--ot-color-dark-font-disabled: $--color-default-grey-20;
+// background
+$--ot-color-dark-background-normal: $--color-black;
+$--ot-color-dark-background-hover: $--color-default-grey-30;
+$--ot-color-dark-background-active: $--color-default-grey-20;
+$--ot-color-dark-background-focus: $--color-black;
+$--ot-color-dark-background-selected: $--color-black;
+$--ot-color-dark-background-disabled: $--color-default-grey-30;
+// border
+$--ot-color-dark-border-normal: $--color-black;
+$--ot-color-dark-border-hover: $--color-default-grey-30;
+$--ot-color-dark-border-active: $--color-default-grey-20;
+$--ot-color-dark-border-focus: $--color-black;
+$--ot-color-dark-border-selected: $--color-black;
+$--ot-color-dark-border-disabled: $--color-default-grey-20;
+
+// ====== grey ======
+// font
+$--ot-color-grey-font-normal: $--color-default-grey-70;
+$--ot-color-grey-font-hover: $--color-default-grey-80;
+$--ot-color-grey-font-active: $--color-default-grey-10;
+$--ot-color-grey-font-focus: $--color-default-grey-70;
+$--ot-color-grey-font-selected: $--color-default-grey-50;
+$--ot-color-grey-font-disabled: $--color-default-grey-50;
+// background
+$--ot-color-grey-background-normal: $--color-default-grey-90;  // ok
+$--ot-color-grey-background-hover: $--color-default-grey-80;
+$--ot-color-grey-background-active: $--color-default-grey-10;
+$--ot-color-grey-background-focus: $--color-default-grey-70;
+$--ot-color-grey-background-selected: $--color-default-grey-50;
+$--ot-color-grey-background-disabled: $--color-default-grey-30;
+// border
+$--ot-color-grey-border-normal: $--color-default-grey-70;
+$--ot-color-grey-border-hover: $--color-default-grey-80;
+$--ot-color-grey-border-active: $--color-default-grey-10;
+$--ot-color-grey-border-focus: $--color-default-grey-70;
+$--ot-color-grey-border-selected: $--color-default-grey-50;
+$--ot-color-grey-border-disabled: $--color-default-grey-50;
+
+// ====== default ======
+// font
+$--ot-color-default-font-normal: $--color-default;  // ok
+$--ot-color-default-font-hover: $--color-primary;  // ok
+$--ot-color-default-font-active: $--color-default-dark-10;
+$--ot-color-default-font-focus: $--color-default;
+$--ot-color-default-font-selected: $--color-primary;
+$--ot-color-default-font-disabled: $--color-default-light-60;  // ok
+// background
+$--ot-color-default-background-normal: $--color-primary-light-90;  // ok
+$--ot-color-default-background-hover: $--color-primary;
+$--ot-color-default-background-active: $--color-primary-dark-10;  // ok
+$--ot-color-default-background-focus: $--color-primary-light-90;
+$--ot-color-default-background-selected: $--color-primary;
+$--ot-color-default-background-disabled: $--color-default-light-90;  // ok
+// border
+$--ot-color-default-border-normal: $--color-default-light-50;  // ok
+$--ot-color-default-border-hover: $--color-primary-light-30;  // ok
+$--ot-color-default-border-active: $--color-primary-dark-10;  // ok
+$--ot-color-default-border-focus: $--color-default;
+$--ot-color-default-border-selected: $--color-primary;
+$--ot-color-default-border-disabled: $--color-default-light-80;  // ok
+
+// ====== primary ======
+// font
+$--ot-color-primary-font-normal: $--color-primary;  // ok
+$--ot-color-primary-font-hover: $--color-primary-light-20;  // ok
+$--ot-color-primary-font-active: $--color-primary-dark-10;
+$--ot-color-primary-font-focus: $--color-primary;
+$--ot-color-primary-font-selected: $--color-primary;
+$--ot-color-primary-font-disabled: $--color-primary-light-60;  // ok
+// background
+$--ot-color-primary-background-normal: $--color-primary-light-90;  // ok
+$--ot-color-primary-background-hover: $--color-primary-light-20;
+$--ot-color-primary-background-active: $--color-primary-dark-10;  // ok
+$--ot-color-primary-background-focus: $--color-primary-light-90;
+$--ot-color-primary-background-selected: $--color-primary;
+$--ot-color-primary-background-disabled: $--color-primary-light-90;  // ok
+// border
+$--ot-color-primary-border-normal: $--color-primary;  // ok
+$--ot-color-primary-border-hover: $--color-primary-light-20;  // ok
+$--ot-color-primary-border-active: $--color-primary-dark-10;  // ok
+$--ot-color-primary-border-focus: $--color-primary;
+$--ot-color-primary-border-selected: $--color-primary;
+$--ot-color-primary-border-disabled: $--color-primary-light-80;  // ok
+
+// ====== success ======
+// font
+$--ot-color-success-font-normal: $--color-success;  // ok
+$--ot-color-success-font-hover: $--color-success-light-20;  // ok
+$--ot-color-success-font-active: $--color-success-dark-10;
+$--ot-color-success-font-focus: $--color-success;
+$--ot-color-success-font-selected: $--color-success;
+$--ot-color-success-font-disabled: $--color-success-light-60;  // ok
+// background
+$--ot-color-success-background-normal: $--color-success-light-90;  // ok
+$--ot-color-success-background-hover: $--color-success-light-20;
+$--ot-color-success-background-active: $--color-success-dark-10;  // ok
+$--ot-color-success-background-focus: $--color-success-light-90;
+$--ot-color-success-background-selected: $--color-success;
+$--ot-color-success-background-disabled: $--color-success-light-90;  // ok
+// border
+$--ot-color-success-border-normal: $--color-success;  // ok
+$--ot-color-success-border-hover: $--color-success-light-20;  // ok
+$--ot-color-success-border-active: $--color-success-dark-10;  // ok
+$--ot-color-success-border-focus: $--color-success;
+$--ot-color-success-border-selected: $--color-success;
+$--ot-color-success-border-disabled: $--color-success-light-80;  // ok
+
+// ====== warning ======
+// font
+$--ot-color-warning-font-normal: $--color-warning;  // ok
+$--ot-color-warning-font-hover: $--color-warning-light-20;  // ok
+$--ot-color-warning-font-active: $--color-warning-dark-10;
+$--ot-color-warning-font-focus: $--color-warning;
+$--ot-color-warning-font-selected: $--color-warning;
+$--ot-color-warning-font-disabled: $--color-warning-light-60;  // ok
+// background
+$--ot-color-warning-background-normal: $--color-warning-light-90;  // ok
+$--ot-color-warning-background-hover: $--color-warning-light-20;
+$--ot-color-warning-background-active: $--color-warning-dark-10;  // ok
+$--ot-color-warning-background-focus: $--color-warning-light-90;
+$--ot-color-warning-background-selected: $--color-warning;
+$--ot-color-warning-background-disabled: $--color-warning-light-90;  // ok
+// border
+$--ot-color-warning-border-normal: $--color-warning;  // ok
+$--ot-color-warning-border-hover: $--color-warning-light-20;  // ok
+$--ot-color-warning-border-active: $--color-warning-dark-10;  // ok
+$--ot-color-warning-border-focus: $--color-warning;
+$--ot-color-warning-border-selected: $--color-warning;
+$--ot-color-warning-border-disabled: $--color-warning-light-80;  // ok
+
+// ====== danger ======
+// font
+$--ot-color-danger-font-normal: $--color-danger;  // ok
+$--ot-color-danger-font-hover: $--color-danger-light-20;  // ok
+$--ot-color-danger-font-active: $--color-danger-dark-10;
+$--ot-color-danger-font-focus: $--color-danger;
+$--ot-color-danger-font-selected: $--color-danger;
+$--ot-color-danger-font-disabled: $--color-danger-light-60;  // ok
+// background
+$--ot-color-danger-background-normal: $--color-danger-light-90;  // ok
+$--ot-color-danger-background-hover: $--color-danger-light-20;
+$--ot-color-danger-background-active: $--color-danger-dark-10;  // ok
+$--ot-color-danger-background-focus: $--color-danger-light-90;
+$--ot-color-danger-background-selected: $--color-danger;
+$--ot-color-danger-background-disabled: $--color-danger-light-90;  // ok
+// border
+$--ot-color-danger-border-normal: $--color-danger;  // ok
+$--ot-color-danger-border-hover: $--color-danger-light-20;  // ok
+$--ot-color-danger-border-active: $--color-danger-dark-10;  // ok
+$--ot-color-danger-border-focus: $--color-danger;
+$--ot-color-danger-border-selected: $--color-danger;
+$--ot-color-danger-border-disabled: $--color-danger-light-80;  // ok
+
+// ====== info ======
+// font
+$--ot-color-info-font-normal: $--color-info;  // ok
+$--ot-color-info-font-hover: $--color-info-light-20;  // ok
+$--ot-color-info-font-active: $--color-info-dark-10;
+$--ot-color-info-font-focus: $--color-info;
+$--ot-color-info-font-selected: $--color-info;
+$--ot-color-info-font-disabled: $--color-info-light-60;  // ok
+// background
+$--ot-color-info-background-normal: $--color-info-light-90;  // ok
+$--ot-color-info-background-hover: $--color-info-light-20;
+$--ot-color-info-background-active: $--color-info-dark-10; // ok
+$--ot-color-info-background-focus: $--color-info-light-90;
+$--ot-color-info-background-selected: $--color-info;
+$--ot-color-info-background-disabled: $--color-info-light-90; // ok
+// border
+$--ot-color-info-border-normal: $--color-info; // ok
+$--ot-color-info-border-hover: $--color-info-light-20; // ok
+$--ot-color-info-border-active: $--color-info-dark-10; // ok
+$--ot-color-info-border-focus: $--color-info;
+$--ot-color-info-border-selected: $--color-info;
+$--ot-color-info-border-disabled: $--color-info-light-80; // ok

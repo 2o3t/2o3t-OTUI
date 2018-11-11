@@ -1,6 +1,6 @@
 <template>
     <div ot v-ot-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
-        <div ot :class="$style.childs" childs :vertical="vertical" :fixable="fixable" :fill="fill" :flex="flex">
+        <div ot :class="$style.childs" class="ot-row-group__childs" childs :vertical="vertical" :fixable="fixable" :fill="fill" :flex="flex">
             <!-- 内容 -->
             <slot></slot>
         </div>
@@ -97,7 +97,7 @@ export default {
     }
 
     &[fixable] > [ot] {
-        margin: 0.5em 2em;
+        margin: 0.6em 2em 1.4em 0;
     }
 
     &[fill] > [ot] {

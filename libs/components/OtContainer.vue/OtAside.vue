@@ -1,5 +1,6 @@
 <template>
     <aside ot class="ot-aside" :class="$style.root" :size="$otSize" :style="{ width }">
+        <!-- 侧边容器 -->
         <slot></slot>
     </aside>
 </template>
@@ -9,6 +10,7 @@ export default {
     name: 'ot-aside',
     inject: [ '$OtContainer' ],
     props: {
+        // 侧边栏宽度
         width: {
             type: String,
             default: '20em',

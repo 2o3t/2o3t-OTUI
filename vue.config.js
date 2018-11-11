@@ -22,11 +22,12 @@ module.exports = {
             resolve: {
                 alias: {
                     '@': path.resolve(__dirname, './src'),
-                    '@v': path.resolve(__dirname, './src/views'),
-                    '@c': path.resolve(__dirname, './src/components'),
-                    '@d': path.resolve(__dirname, './src/designs'),
-                    '@otui': path.resolve(__dirname, './libs'),
+                    '@assets': path.resolve(__dirname, './src/assets'),
+                    '@views': path.resolve(__dirname, './src/views'),
+                    '@comps': path.resolve(__dirname, './src/components'),
+                    '@designs': path.resolve(__dirname, './src/designs'),
                     vue$: 'vue/dist/vue.esm.js',
+                    '@otui': path.resolve(__dirname, './libs'),
                 },
                 extensions: [ '.js', '.vue', '.json', '.css' ],
             },

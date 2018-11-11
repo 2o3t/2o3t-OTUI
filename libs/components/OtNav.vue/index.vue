@@ -62,6 +62,7 @@ export default {
     transition: all .3s;
     box-sizing: border-box;
     align-items: center;
+    vertical-align: middle;
 
     @include __ot_size__;
     @include __ot_root_block__;
@@ -71,6 +72,8 @@ export default {
         align-items: center;
         margin-right: 2em;
         overflow: hidden;
+        vertical-align: middle;
+        box-sizing: border-box;
     }
 
     .right {
@@ -79,6 +82,8 @@ export default {
         justify-content: flex-end;
         margin-left: 2em;
         overflow: hidden;
+        vertical-align: middle;
+        box-sizing: border-box;
     }
 
     .nav {
@@ -90,6 +95,8 @@ export default {
         padding-left: 0;
         display: flex;
         flex-direction: row;
+        vertical-align: middle;
+        box-sizing: border-box;
 
         &[placement=right] {
             justify-content: flex-end;
@@ -105,13 +112,15 @@ export default {
 <style lang="scss">
 @import '../globals';
 .ot-nav[ot] {
-    height: 6.4em;
-    line-height: 6.4em;
+    $--ot-nav-line-height: 6em;
+
+    height: 6em;
+    line-height: $--ot-nav-line-height;
 
     &[collapse]>.ot-nav__content {
         flex-direction: column;
         position: absolute;
-        top: 6.4em;
+        top: $--ot-nav-line-height;
         left: 0;
         right: 0;
 

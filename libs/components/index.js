@@ -57,6 +57,7 @@ import OtColorPicker from './OtColorPicker.vue/index.vue';
 import OtCode from './OtCode.vue/index.vue';
 import OtCheckboxGroup from './OtCheckbox.vue/OtCheckboxGroup.vue';
 import OtCheckbox from './OtCheckbox.vue/index.vue';
+import OtColorCard from './OtCard.vue/OtColorCard.vue';
 import OtCard from './OtCard.vue/index.vue';
 import OtButtonGroup from './OtButton.vue/OtButtonGroup.vue';
 import OtRadioButton from './OtButton.vue/OtRadioButton.vue';
@@ -131,6 +132,7 @@ export default {
     OtCode,
     OtCheckboxGroup,
     OtCheckbox,
+    OtColorCard,
     OtCard,
     OtButtonGroup,
     OtRadioButton,

@@ -2,9 +2,8 @@
     <div ot class="ot-markdown" :class="$style.root" :theme="$otTheme" :size="$otSize">
         <div ot v-ot-bind="$otColors" class="markdown" :class="customClass">
             <!-- 内容 (不推荐使用) -->
-            <slot>
-                <div ref="content"></div>
-            </slot>
+            <slot></slot>
+            <div ref="content"></div>
         </div>
     </div>
 </template>
@@ -31,6 +30,13 @@ export default {
             type: String,
             default: '',
         },
+        // 外部传入依赖的 data 数据
+        data: {
+            type: Object,
+            default() {
+                return {};
+            },
+        },
     },
     watch: {
         content: {
@@ -50,7 +56,14 @@ export default {
     methods: {
         renderMD(content) {
             if (this.$slots.default) {
-                return;
+                const slots = this.$slots.default;
+                content = slots.map(item => {
+                    if (item.elm) {
+                        return item.elm.outerHTML;
+                    }
+                    return '';
+                }).join('\n');
+                delete this.$slots.default;
             }
             const Vue = this.$options.__OT_Vue__;
             if (Vue) {
@@ -61,6 +74,7 @@ export default {
                     template: `<div>${html}</div>`,
                     parent: vm,
                     el,
+                    data: vm.data,
                 });
             }
         },

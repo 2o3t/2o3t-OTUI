@@ -1,3 +1,8 @@
+<!-- @api: OtContainer.vue/OtContainerAPI.md -->
+<!-- @api: OtContainer.vue/OtHeaderAPI.md -->
+<!-- @api: OtContainer.vue/OtAsideAPI.md -->
+<!-- @api: OtContainer.vue/OtMainAPI.md -->
+<!-- @api: OtContainer.vue/OtFooterAPI.md -->
 
 # Container 布局容器
 
@@ -12,22 +17,6 @@
 <ot-notice round>
 以上组件采用了 flex 布局，使用前请确定目标浏览器是否兼容。此外，`&ltot-container&gt` 的子元素只能是后四者，后四者的父元素也只能是 `&ltot-container&gt`。
 </ot-notice>
-
-## 基础用法
-
-> Base
-
-
-## 圆角
-
-> Round
-
-
-
-## 禁用状态
-
-> Disabled
-
 
 
 ## 大小

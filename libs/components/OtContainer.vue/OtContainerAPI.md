@@ -9,7 +9,7 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| vertical | 垂直排列 | Boolean | - |
+| vertical | 子元素垂直排列, 子元素中有 `ot-header` 或 `ot-footer` 时为 vertical | Boolean | - |
 
 ## Slots
 

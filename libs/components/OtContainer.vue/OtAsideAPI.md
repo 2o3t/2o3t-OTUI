@@ -9,11 +9,11 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| width | - | String | '20em' |
+| width | 侧边栏宽度 | String | '20em' |
 
 ## Slots
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| default | - | - | - |
+| default | 侧边容器 | - | - |
 

@@ -1,7 +1,7 @@
 import modules from '../designs';
 
 const KEY_MAP = {
-    1: 'Introduction',
+    1: 'Design Specifications',
     2: 'Basic',
     3: 'General',
     4: 'Navigation',

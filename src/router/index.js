@@ -2,11 +2,11 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import asyncImport from './asyncImport';
 
-const ComponentsSideBar = () => import('@v/SideBar/Components');
-const DesignsSideBar = () => import('@v/SideBar/Designs');
+const ComponentsSideBar = () => import('@views/SideBar/Components');
+const DesignsSideBar = () => import('@views/SideBar/Designs');
 // views
-// const Home = () => import('@v/Home');
-const Uncategorized = () => import('@v/Uncategorized');
+// const Home = () => import('@views/Home');
+const Uncategorized = () => import('@views/Uncategorized');
 
 function createSideBarView(sidebar, view) {
     return {
@@ -31,7 +31,7 @@ componentsModules.forEach(item => {
     componentRouters.push({
         name: item.name,
         path: item.router,
-        components: createComponentsView(() => import(`@c/${item.index}`)),
+        components: createComponentsView(() => import(`@comps/${item.index}`)),
     });
 });
 
@@ -41,7 +41,7 @@ designsModules.forEach(item => {
     designRouters.push({
         name: item.name,
         path: item.router,
-        components: createDesignsView(() => import(`@d/${item.index}`)),
+        components: createDesignsView(() => import(`@designs/${item.index}`)),
     });
 });
 
