@@ -36,7 +36,7 @@ module.exports = {
                     '@components': path.resolve(__dirname, './src/components'),
                     '@designs': path.resolve(__dirname, './src/designs'),
                     vue$: 'vue/dist/vue.esm.js',
-                    '@otui': path.resolve(__dirname, './libs'),
+                    '@libs': path.resolve(__dirname, './libs'),
                 },
                 extensions: [ '.js', '.vue', '.json', '.css' ],
             },

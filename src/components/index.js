@@ -1,8 +1,8 @@
+const DIRNAME = '/components';
 
 // ============= readme =============
 
 const readmeFiles = require.context('.', true, /\README.md$/i);
-const DIRNAME = readmeFiles.id.split(' ')[0].replace(/^\.\/src/i, '');
 
 const ReadmeModules = readmeFiles.keys().reduce((obj, key) => {
     const result = /^\.\/([\w-_]+)\//ig.exec(key);

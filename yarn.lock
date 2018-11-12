@@ -6,9 +6,9 @@
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/2o3t-icon-font/-/2o3t-icon-font-0.0.5.tgz#6414f092256d838bcab5c99513ce645d3005c989"
 
-"2o3t-ui@^0.0.31":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.31.tgz#76153abc311a1a84b8b7cf5fa77e3134f6b56e09"
+"2o3t-ui@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.32.tgz#57dddc20a3a84280bfcc1504a8d63c7b43f0cc99"
   dependencies:
     "2o3t-icon-font" "^0.0.5"
     highlight.js "^9.13.1"

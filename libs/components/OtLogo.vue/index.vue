@@ -43,7 +43,7 @@ export default {
         vertical-align: middle;
         padding: 0;
         margin: 0;
-        font-size: 2.2em;
+        font-size: 2.6em;
     }
 
     .title {
@@ -59,33 +59,12 @@ export default {
         vertical-align: middle;
         margin: 0;
         font-weight: $--main-font-weight;
-        font-size: 2em;
 
         &:before {
             display: inline-block;
             content: '|';
             padding: 0 0.6em;
         }
-    }
-
-    &[size=mini] {
-        min-height: $--ot-mini-height;
-        line-height: $--ot-mini-height;
-    }
-
-    &[size=small] {
-        min-height: $--ot-small-height;
-        line-height: $--ot-small-height;
-    }
-
-    &[size=normal] {
-        min-height: $--ot-normal-height;
-        line-height: $--ot-normal-height;
-    }
-
-    &[size=big] {
-        min-height: $--ot-big-height;
-        line-height: $--ot-big-height;
     }
 }
 </style>

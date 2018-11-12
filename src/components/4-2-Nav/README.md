@@ -1,5 +1,5 @@
 <!-- @api: OtNav.vue/OtNavAPI.md -->
-<!-- @api: OtNavItem.vue/OtNavItemAPI.md -->
+<!-- @api: OtNav.vue/OtNavItemAPI.md -->
 
 # Nav 导航
 

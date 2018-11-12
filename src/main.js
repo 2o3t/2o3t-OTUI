@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
     require('2o3t-ui/dist/styles.css');
     OTUI = require('2o3t-ui');
 } else {
-    OTUI = require('@otui').default;
+    OTUI = require('@libs').default;
     console.warn('In Development !!!');
 }
 
