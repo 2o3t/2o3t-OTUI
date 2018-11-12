@@ -1,10 +1,9 @@
 export default {
-
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'pri-f' ],
+                    normal: [ 'light-f' ],
                 };
             case 'light':
             default:

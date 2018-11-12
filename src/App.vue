@@ -3,7 +3,7 @@
     <ot-header :class="$style.header" :theme="$otTheme" shadow>
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme" placement="right">
             <ot-link slot="left" to="/">
-                <ot-logo :theme="$otTheme" :url="require('@assets/logo.svg')">
+                <ot-logo :theme="$otTheme" icon="logo" lib="font-ot">
                     <span>2O3T-UI</span>
                     <!-- <span slot="subtitle">OT-UI</span> -->
                 </ot-logo>

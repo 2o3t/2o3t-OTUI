@@ -2,20 +2,28 @@ const path = require('path');
 
 const debug = process.env.NODE_ENV !== 'production';
 
+// initIndexs('components');
+// initIndexs('designs');
+require('./bin/preBuildIndex')([
+    'components',
+    'designs',
+]);
+
 module.exports = {
-    baseUrl: debug ? '/' : '/ot-ui/',
+    baseUrl: debug ? '/' : '/2o3t-ui/',
     outputDir: 'webs',
     configureWebpack: config => {
         // webpack配置，值位对象时会合并配置，为方法时会改写配置
         if (debug) { // 开发环境配置
             config.devtool = 'cheap-module-eval-source-map';
         } else { // 生产环境配置
+            const externals = config.externals;
             Object.assign(config, {
-                externals: {
+                externals: Object.assign(externals, {
                     'highlight.js': 'hljs',
                     'markdown-it': 'markdownit',
                     clipboard: 'clipboard-polyfill',
-                },
+                }),
             });
         }
         Object.assign(config, { // 开发生产共同配置
@@ -75,32 +83,3 @@ module.exports = {
             .end();
     },
 };
-
-
-const fs = require('fs');
-const initIndexs = (dirName = 'components') => {
-    const compPath = path.join(process.cwd(), 'src', dirName);
-    const components = fs.readdirSync(compPath);
-    components.filter(name => {
-        return /^\d+/ig.test(name);
-    }).map(name => {
-        return path.join(compPath, name);
-    }).forEach(p => {
-        const exists = fs.existsSync(path.join(p, 'README.md'));
-        const data = `const CompFactory = require('../CompFactory').default;
-const files = require.context('.', false, /\.vue$/);
-const modules = CompFactory.requireModules(files);
-
-import Config from ${exists ? "'./README.md?inject=true&name=readme'" : "'./config'"};
-const template = CompFactory.getTemplate(Config, modules);
-
-export default {
-    template,
-    components: modules,
-};
-`;
-        fs.writeFileSync(path.join(p, 'index.js'), data);
-    });
-};
-initIndexs('components');
-initIndexs('designs');

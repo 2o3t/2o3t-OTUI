@@ -1,6 +1,6 @@
 <template>
     <span ot v-ot-bind="$otColors" class="ot-logo" :class="$style.root" :size="$otSize">
-        <ot-icon :class="$style.icon" :icon="icon" :url="url"></ot-icon>
+        <ot-icon v-ot-bind="$otColors.logo" :class="$style.logo" :icon="icon" :url="url" :lib="lib"></ot-icon>
         <div :class="$style.title">
             <slot></slot>
         </div>
@@ -20,6 +20,8 @@ export default {
         icon: [ String ],
         // url
         url: [ String ],
+        // icon-font lib
+        lib: String,
     },
 };
 </script>
@@ -33,13 +35,15 @@ export default {
     font-weight: $--main-font-weight-semibold;
     user-select: none;
 
+    @include __ot_size__;
     @include __ot_root_block__;
 
-    .icon {
+    .logo[class] {
         display: table-cell;
         vertical-align: middle;
-        padding: 0 10px;
+        padding: 0;
         margin: 0;
+        font-size: 2.2em;
     }
 
     .title {
@@ -47,6 +51,7 @@ export default {
         vertical-align: middle;
         padding-left: 0.6em;
         margin: 0;
+        font-size: 2em;
     }
 
     .subtitle {
@@ -54,6 +59,7 @@ export default {
         vertical-align: middle;
         margin: 0;
         font-weight: $--main-font-weight;
+        font-size: 2em;
 
         &:before {
             display: inline-block;
@@ -65,57 +71,21 @@ export default {
     &[size=mini] {
         min-height: $--ot-mini-height;
         line-height: $--ot-mini-height;
-        font-size: $--ot-mini-size * 2;
-
-        .icon {
-            font-size: $--ot-mini-size * 2;
-        }
-
-        .subtitle {
-            font-size: $--ot-mini-size;
-        }
     }
 
     &[size=small] {
         min-height: $--ot-small-height;
         line-height: $--ot-small-height;
-        font-size: $--ot-small-size * 2;
-
-        .icon {
-            font-size: $--ot-small-size * 2;
-        }
-
-        .subtitle {
-            font-size: $--ot-small-size;
-        }
     }
 
     &[size=normal] {
         min-height: $--ot-normal-height;
         line-height: $--ot-normal-height;
-        font-size: $--ot-normal-size * 2;
-
-        .icon {
-            font-size: $--ot-normal-size * 2;
-        }
-
-        .subtitle {
-            font-size: $--ot-normal-size;
-        }
     }
 
     &[size=big] {
         min-height: $--ot-big-height;
         line-height: $--ot-big-height;
-        font-size: $--ot-big-size * 2;
-
-        .icon {
-            font-size: $--ot-big-size * 2;
-        }
-
-        .subtitle {
-            font-size: $--ot-big-size;
-        }
     }
 }
 </style>

@@ -1,4 +1,4 @@
-# OTUI
+# 2O3T-UI
 
 [![](https://img.shields.io/npm/v/2o3t-ui.svg?style=flat)](https://www.npmjs.com/package/2o3t-ui)
 ![](https://img.shields.io/badge/language-javascript-blue.svg)

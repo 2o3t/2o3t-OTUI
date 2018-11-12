@@ -1,7 +1,7 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, {[`${lib} ${icon} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
     <span ot :class="$style.root" v-else v-on="$listeners">
-        <i ot :class="[$style.root, $style.label, {[`fa fa-${icon}`]: !!icon}]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
+        <i ot :class="[$style.root, $style.label, {[`${lib} ${icon} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
         <span :class="$style.append">
             <!-- 跟随图标后面的容器 -->
             <slot></slot>
@@ -25,6 +25,16 @@ export default {
         loading: {
             type: [ Boolean ],
             default: false,
+        },
+        // icon-font lib
+        lib: {
+            type: String,
+            default: 'fa',
+        },
+        // 自定义 class
+        customClass: {
+            type: String,
+            default: '',
         },
     },
     computed: {
