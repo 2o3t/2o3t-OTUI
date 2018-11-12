@@ -165,7 +165,6 @@ export default {
             // 触发验证
             const trigger = e.type;
             setTimeout(() => {
-                console.log('trigger: ', trigger);
                 this.validate(trigger);
             }, 100);
         },

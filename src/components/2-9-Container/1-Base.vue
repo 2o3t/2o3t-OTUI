@@ -63,9 +63,6 @@ export default {
             code: decodeURIComponent(`<%=${'otSourceCode'}=%>`),
         };
     },
-    mounted() {
-        console.log(this.code);
-    },
 };
 </script>
 

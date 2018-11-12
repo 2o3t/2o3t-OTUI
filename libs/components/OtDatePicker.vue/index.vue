@@ -80,7 +80,6 @@ export default {
     },
     methods: {
         handleOnChange(value) {
-            console.log(this.selectValue);
             this.$emit('change', value); // 改变事件
         },
         updateModel() {
