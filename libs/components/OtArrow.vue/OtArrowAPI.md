@@ -12,5 +12,6 @@
 | placement | 箭头方向, `up`, `down`, `left`, `right` 四个方向 | String | 'up' |
 | hover | 是否可以 hover 状态 | Boolean | false |
 | attrs | 自定义属性 | Object | ()=> {   return {}; } |
-| borderColor | - | String | '' |
+| borderColor | 线颜色 | String | '' |
+| animation | 旋转动画 | Boolean | - |
 

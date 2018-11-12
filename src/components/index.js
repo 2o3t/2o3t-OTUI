@@ -1,3 +1,32 @@
+
+// ============= readme =============
+
+const readmeFiles = require.context('.', true, /\README.md$/i);
+const DIRNAME = readmeFiles.id.split(' ')[0].replace(/^\.\/src/i, '');
+
+const ReadmeModules = readmeFiles.keys().reduce((obj, key) => {
+    const result = /^\.\/([\w-_]+)\//ig.exec(key);
+    if (result) {
+        const name = result[1].replace(/[\d-_]+/ig, '');
+        if (obj[name]) {
+            console.error(name, 'run error!!!!');
+            return obj;
+        }
+        let content = require(`./${key.replace(/^\.\//ig, '')}?inject=true&name=readme`);
+        if (content.default) {
+            content = content.default;
+        }
+        obj[name] = content.LABEL;
+    }
+    return obj;
+}, {});
+
+if (process.env.NODE_ENV !== 'production') {
+    console.log(ReadmeModules);
+}
+
+
+// ============= compoents =============
 const files = require.context('.', true, /\index.js$/i);
 
 const allModules = files.keys().reduce((obj, key) => {
@@ -43,7 +72,8 @@ const components = Object.keys(allModules).sort((key1, key2) => {
             key,
             name,
             index,
-            router: `/${name}`,
+            router: `${DIRNAME}/${name}`,
+            label: ReadmeModules[name] || name,
         };
     }
     return null;
@@ -52,9 +82,10 @@ const components = Object.keys(allModules).sort((key1, key2) => {
         return item != null;
     });
 
-
 if (process.env.NODE_ENV !== 'production') {
     console.log(components);
 }
+
+components.DIRNAME = DIRNAME.replace('/', '');
 
 export default components;

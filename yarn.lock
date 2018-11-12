@@ -6,10 +6,11 @@
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/2o3t-icon-font/-/2o3t-icon-font-0.0.5.tgz#6414f092256d838bcab5c99513ce645d3005c989"
 
-"2o3t-ui@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.30.tgz#8a0d23826466b3b72b427c1f8fd661b2965b9d33"
+"2o3t-ui@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.31.tgz#76153abc311a1a84b8b7cf5fa77e3134f6b56e09"
   dependencies:
+    "2o3t-icon-font" "^0.0.5"
     highlight.js "^9.13.1"
     lodash "^4.17.11"
     moment "^2.22.2"

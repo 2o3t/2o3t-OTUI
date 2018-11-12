@@ -4,7 +4,7 @@ const debug = process.env.NODE_ENV !== 'production';
 
 // initIndexs('components');
 // initIndexs('designs');
-require('./bin/preBuildIndex')([
+require('./bin/autoBuildIndex')([
     'components',
     'designs',
 ]);
@@ -17,7 +17,7 @@ module.exports = {
         if (debug) { // 开发环境配置
             config.devtool = 'cheap-module-eval-source-map';
         } else { // 生产环境配置
-            const externals = config.externals;
+            const externals = config.externals || {};
             Object.assign(config, {
                 externals: Object.assign(externals, {
                     'highlight.js': 'hljs',
@@ -30,9 +30,10 @@ module.exports = {
             resolve: {
                 alias: {
                     '@': path.resolve(__dirname, './src'),
+                    '@router': path.resolve(__dirname, './src/router'),
                     '@assets': path.resolve(__dirname, './src/assets'),
                     '@views': path.resolve(__dirname, './src/views'),
-                    '@comps': path.resolve(__dirname, './src/components'),
+                    '@components': path.resolve(__dirname, './src/components'),
                     '@designs': path.resolve(__dirname, './src/designs'),
                     vue$: 'vue/dist/vue.esm.js',
                     '@otui': path.resolve(__dirname, './libs'),

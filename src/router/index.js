@@ -1,12 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import asyncImport from './asyncImport';
+import createRouters from './createRouters';
 
-const ComponentsSideBar = () => import('@views/SideBar/Components');
-const DesignsSideBar = () => import('@views/SideBar/Designs');
-// views
-// const Home = () => import('@views/Home');
-const Uncategorized = () => import('@views/Uncategorized');
+Vue.use(Router);
 
 function createSideBarView(sidebar, view) {
     return {
@@ -16,33 +13,25 @@ function createSideBarView(sidebar, view) {
     };
 }
 
-function createComponentsView(view) {
-    return createSideBarView(ComponentsSideBar, view);
-}
-function createDesignsView(view) {
-    return createSideBarView(DesignsSideBar, view);
-}
+// views
+const Uncategorized = () => import('@views/Uncategorized');
 
-Vue.use(Router);
-
+const ComponentsSideBar = () => import('@views/SideBar/Components');
 import componentsModules from '@/components';
-const componentRouters = [];
-componentsModules.forEach(item => {
-    componentRouters.push({
-        name: item.name,
-        path: item.router,
-        components: createComponentsView(() => import(`@comps/${item.index}`)),
-    });
+const componentRouters = createRouters(componentsModules, index => {
+    if (!index) {
+        return createSideBarView(ComponentsSideBar, Uncategorized);
+    }
+    return createSideBarView(ComponentsSideBar, () => import(`@components/${index}`));
 });
 
+const DesignsSideBar = () => import('@views/SideBar/Designs');
 import designsModules from '@/designs';
-const designRouters = [];
-designsModules.forEach(item => {
-    designRouters.push({
-        name: item.name,
-        path: item.router,
-        components: createDesignsView(() => import(`@designs/${item.index}`)),
-    });
+const designRouters = createRouters(designsModules, index => {
+    if (!index) {
+        return createSideBarView(DesignsSideBar, Uncategorized);
+    }
+    return createSideBarView(DesignsSideBar, () => import(`@designs/${index}`));
 });
 
 const scrollBehavior = (to, from, savedPosition) => {
@@ -50,44 +39,32 @@ const scrollBehavior = (to, from, savedPosition) => {
     return { x: 0, y: 0 };
 };
 
-export default new Router({
+const routerMapConfig = {
     // mode: 'history',
     scrollBehavior,
     routes: [
         {
             path: '/',
             name: 'Home-page',
-            // components: createSideBarView(ComponentsSideBar, Home),
             redirect: '/components/Installation',
-        },
-        {
-            path: '/Uncategorized',
-            name: 'Uncategorized-page',
-            // component: Uncategorized,
-            // component: () => asyncImport(Uncategorized()),
-            components: createSideBarView(ComponentsSideBar, Uncategorized),
         },
         {
             path: '/components',
+            name: 'Components-page',
             redirect: '/components/Installation',
         },
-        // ...componentRouters,
-        ...componentRouters.map(item => {
-            item.path = `/components${item.path}`;
-            return item;
-        }),
+        ...componentRouters,
         {
             path: '/designs',
+            name: 'Designs-page',
             redirect: '/designs/Disciplines',
         },
-        ...designRouters.map(item => {
-            item.name = `Designs_${item.name}`;
-            item.path = `/designs${item.path}`;
-            return item;
-        }),
+        ...designRouters,
         {
             path: '*',
             redirect: '/',
         },
     ],
-});
+};
+
+export default new Router(routerMapConfig);

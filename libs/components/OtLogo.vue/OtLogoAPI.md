@@ -11,6 +11,7 @@
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | icon | font icon | String | - |
 | url | url | String | - |
+| lib | icon-font lib | String | - |
 
 ## Slots
 
