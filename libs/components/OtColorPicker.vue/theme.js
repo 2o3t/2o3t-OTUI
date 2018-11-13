@@ -15,10 +15,12 @@ export default {
             default:
                 return {
                     tip: {
-                        normal: [ 'def-f', 'light-bg', 'def-b', 'border' ],
+                        normal: [ 'def-f', 'def-b', 'border' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                     },
                     box: {
                         normal: [ 'light-f', 'def-b', 'border' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                         hover: [ 'def-b-hov' ],
                     },
                 };

@@ -55,11 +55,16 @@ $BORDER_MAP: (border-color: border, border-top-color: border-top, border-left-co
     @each $a in ('disabled', 'selected') {
         @if $a == $action {
             $flag: false;
-            &[#{$action}] {
+            &[#{$action}]{
                 @if $action == 'disabled' {
                     cursor: not-allowed;
                 }
                 @include __ot_mixin_color_inner__($prefix, $shuxin, $value);
+            }
+            @if $action == 'selected' {
+                &[#{$prefix}-color-#{$action}] {
+                    @include __ot_mixin_color_inner__($prefix, $shuxin, $value);
+                }
             }
         }
     }
@@ -81,15 +86,29 @@ $BORDER_MAP: (border-color: border, border-top-color: border-top, border-left-co
 // $leixing 类型
 // $subfix 后缀
 @mixin __ot_mixin_color__($prefix, $name, $shuxin, $value, $leixing, $action, $subfix) {
-    $ex: "#{$prefix}__color__#{$name}__#{$leixing}__#{$action}";
+    @if $action != null {
+        $ex: "#{$prefix}__color__#{$name}__#{$leixing}__#{$action}";
 
-    ##{$ex}, [#{$prefix}][#{$prefix}-color-#{$name}-#{$leixing}-#{$action}] {
-        @if $subfix != null {
-            &[#{$prefix}-color-#{$subfix}] {
+        ##{$ex}, [#{$prefix}][#{$prefix}-color-#{$name}-#{$leixing}-#{$action}] {
+            @if $subfix != null {
+                &[#{$prefix}-color-#{$subfix}] {
+                    @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, $action);
+                }
+            } @else {
                 @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, $action);
             }
-        } @else {
-            @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, $action);
+        }
+    } @else {
+        $ex: "#{$prefix}__color__#{$name}__#{$leixing}";
+
+        ##{$ex}, [#{$prefix}][#{$prefix}-color-#{$name}-#{$leixing}] {
+            @if $subfix != null {
+                &[#{$prefix}-color-#{$subfix}] {
+                    @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, null);
+                }
+            } @else {
+                @include __ot_mixin_color_inner_action__($prefix, $shuxin, $value, null);
+            }
         }
     }
 }

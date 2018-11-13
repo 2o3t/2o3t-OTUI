@@ -62,6 +62,7 @@ export default {
 </script>
 
 <style lang="scss" module>
+@import '../globals';
 .root {
     display: flex;
     flex-direction: row;
@@ -69,6 +70,8 @@ export default {
     flex-basis: auto;
     box-sizing: border-box;
     min-width: 0;
+
+    @include __ot_root_block__;
 
     &[vertical] {
         flex-direction: column;

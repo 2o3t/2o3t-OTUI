@@ -47,8 +47,22 @@ THEMES.forEach(theme => {
             const mixColor = mix(_white, COLORS[_name], i * 0.01);
             datas.push(`${PREFIX}-default-${theme}-${i}: mix(${PREFIX}-white, ${PREFIX}-${_name}, ${i}%) ${SUFFIX} /* ${mixColor} */`);
         }
+        for (let i = 1; i < 100; i++) {
+            datas.push(`${PREFIX}-light-${theme}-${i}: rgba(${PREFIX}-white, .${padZero(i)}) ${SUFFIX}`);
+        }
+        for (let i = 1; i < 100; i++) {
+            datas.push(`${PREFIX}-dark-${theme}-${i}: rgba(${PREFIX}-black, .${padZero(i)}) ${SUFFIX}`);
+        }
     }
 });
+
+function padZero(i) {
+    i = String(i);
+    while (i.length <= 1) {
+        i = `0${i}`;
+    }
+    return i;
+}
 
 
 fs.writeFileSync(path.resolve(__dirname, './colorsOutput.scss'), datas.join('\n'));

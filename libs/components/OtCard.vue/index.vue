@@ -1,6 +1,6 @@
 <template>
-    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card" :style="{ height }" :size="$otSize" :round="round">
-        <div v-if="$slots.left" ot v-ot-bind="$otColors.left" :class="[$style.left, $style.padding]" class="ot-card__left">
+    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card" :style="{ height }" :size="$otSize" :round="round" :border="border">
+        <div v-if="$slots.left" ot v-ot-bind="$otColors.left" :class="[$style.left, $style.padding]" class="ot-card__left" :border="border">
             <slot name="left"></slot>
         </div>
         <div :class="[$style.right, { [$style.padding]: !!$slots.default }]">

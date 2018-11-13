@@ -1,12 +1,14 @@
 import './styles/normalize.css';
 import './styles/base.css';
-import './styles/main.css';
 
-import createMixin from './mixins';
+import { setOptions, otMixin } from '2o3t-css-colors/dist/2o3t-ui';
+import '2o3t-css-colors/dist/2o3t-ui/styles.css';
+
 import components from './components';
 import directives from './directives';
 import services from './services';
 import plugins from './plugins';
+import utils from './utils';
 
 // 三方
 import VModal from 'vue-js-modal';
@@ -49,7 +51,7 @@ export default {
             }
         }
 
-        const mixin = createMixin(options);
+        setOptions(options);
         for (const key in comps) {
             if (comps.hasOwnProperty(key)) {
                 const element = comps[key];
@@ -59,26 +61,34 @@ export default {
                     if (!element.mixins) {
                         element.mixins = [];
                     }
-                    element.mixins.push(mixin);
+                    element.mixins.push(otMixin);
                 }
                 Vue.component(key, element);
             }
         }
 
         if (options.global === true) {
-            Vue.mixin(mixin);
+            Vue.mixin(otMixin);
         }
 
         if (options.global !== true) {
             if (!VModal.mixins) {
                 VModal.mixins = [];
             }
-            VModal.mixins.push(mixin);
+            VModal.mixins.push(otMixin);
         }
         Vue.use(VModal, { componentName: 'ot-modal' });
 
         // 注册三方组件
         const pluginsOptions = options.plugins || {};
         Vue.use(plugins, pluginsOptions);
+
+        // utils
+        Vue.mixin({
+            beforeCreate() {
+                // 工具类
+                this.$otUtils = utils(this);
+            },
+        });
     },
 };

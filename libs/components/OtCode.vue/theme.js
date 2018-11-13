@@ -4,16 +4,16 @@ export default {
         switch (theme) {
             case 'dark':
                 return background ? {
-                    normal: [ 'light-f', 'grey-b', 'border' ],
+                    normal: [ 'light-f', 'light-b', 'border' ],
                 } : {
                     normal: [ 'light-f' ],
                 };
             case 'light':
             default:
                 return background ? {
-                    normal: [ 'def-f', 'def-bg', 'grey-b' ],
+                    normal: [ 'dark-f', 'dark-bg', 'dark-b' ],
                 } : {
-                    normal: [ 'def-f' ],
+                    normal: [ 'dark-f' ],
                 };
         }
     },

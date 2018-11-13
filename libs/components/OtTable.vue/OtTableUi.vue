@@ -1,11 +1,11 @@
 <template>
-    <table ot v-ot-bind="$otColors" class="ot-table-ui" :class="$style.root" :border="border" :row="rowBorder" :column="columnBorder">
+    <table ot v-ot-bind="$otColors" class="ot-table-ui" :class="$style.root" :border="border" :row="rowBorder" :column="columnBorder" :theme="$otTheme">
         <slot></slot>
     </table>
 </template>
 
 <script>
-import theme from './OtTableTheme.js';
+import theme from './OtTableUiTheme.js';
 export default {
     name: 'ot-table-ui',
     mixins: [ theme ],

@@ -4,18 +4,18 @@ export default {
             case 'dark':
                 return {
                     normal: [ 'light-f' ],
-                    hover: [ 'pri-f-h', 'pri-bb-h', 'after' ],
-                    active: [ 'pri-f-act' ],
-                    selected: [ 'pri-f-s', 'pri-bb-sel' ],
+                    hover: [ 'def-f-h', 'def-bb-h', 'after' ],
+                    active: [ 'def-f-act' ],
+                    selected: [ 'def-f-s', 'def-bb-sel' ],
                     disabled: [ 'def-f-dis', 'def-bb-dis' ],
                 };
             case 'light':
             default:
                 return {
                     normal: [ 'def-f' ],
-                    hover: [ 'pri-f-h', 'pri-bb-h', 'after' ],
-                    active: [ 'pri-f-a' ],
-                    selected: [ 'pri-f-s', 'pri-bb-s' ],
+                    hover: [ 'def-f-h', 'def-bb-h', 'after' ],
+                    active: [ 'def-f-a' ],
+                    selected: [ 'def-f-s', 'def-bb-s' ],
                     disabled: [ 'def-f-dis', 'def-bb-dis' ],
                 };
         }

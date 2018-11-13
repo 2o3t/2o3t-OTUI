@@ -75,10 +75,10 @@ module.exports = {
 
         config.module
             .rule('UIViews')
-            .test(/.js$/i)
-            .include
-            .add(path.resolve(__dirname, './src/views'))
-            .end()
+            .test(/.color$/i)
+            // .include
+            // .add(path.resolve(__dirname, './src/views'))
+            // .end()
             .use()
             .loader(path.resolve(__dirname, './loaders/mainCss.js'))
             .end();

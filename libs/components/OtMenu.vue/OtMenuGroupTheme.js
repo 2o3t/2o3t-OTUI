@@ -4,14 +4,14 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'grey-f' ],
-                    hover: isExpand ? [ 'def-f-h' ] : [],
+                    normal: [ 'light-f' ],
+                    hover: isExpand ? [ 'light-f-h' ] : [],
                 };
             case 'light':
             default:
                 return {
-                    normal: [ 'grey-f' ],
-                    hover: isExpand ? [ 'def-f-h' ] : [],
+                    normal: [ 'dark-f' ],
+                    hover: isExpand ? [ 'dark-f-h' ] : [],
                 };
         }
     },

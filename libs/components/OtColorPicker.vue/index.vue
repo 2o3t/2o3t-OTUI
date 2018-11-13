@@ -1,7 +1,7 @@
 <template>
     <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange">
         <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
-            <div ot v-ot-bind="$otColors.box" :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
+            <div ot :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
                 <ot-arrow :attrs="$otColors.arrow" :class="$style.arrow" borderColor="#ffffff" :placement="bShown ? 'up' : 'down'" animation border></ot-arrow>
             </div>
         </div>

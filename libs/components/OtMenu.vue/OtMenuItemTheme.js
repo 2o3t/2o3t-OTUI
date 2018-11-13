@@ -4,24 +4,24 @@ export default {
             case 'dark':
                 return {
                     normal: [ 'light-f' ],
-                    hover: [ 'pri-f-h', 'pri-br-h', 'before' ],
-                    active: [ 'pri-f-act' ],
-                    selected: [ 'pri-f-s', 'pri-br-sel' ],
+                    hover: [ 'def-f-h', 'def-br-h', 'before' ],
+                    active: [ 'def-f-act' ],
+                    selected: [ 'def-f-s', 'def-br-sel' ],
                     disabled: [ 'def-f-dis', 'def-br-dis' ],
                     mask: {
-                        selected: [ 'pri-f-s', 'pri-bg-sel', 'pri-br-sel' ],
+                        selected: [ 'def-f-s', 'def-bg-sel', 'def-br-sel' ],
                     },
                 };
             case 'light':
             default:
                 return {
                     normal: [ 'def-f' ],
-                    hover: [ 'pri-f-h', 'pri-br-h', 'before' ],
-                    active: [ 'pri-f-a' ],
-                    selected: [ 'pri-f-s', 'pri-br-s' ],
+                    hover: [ 'def-f-h', 'def-br-h', 'before' ],
+                    active: [ 'def-f-a' ],
+                    selected: [ 'def-f-s', 'def-br-s' ],
                     disabled: [ 'def-f-dis', 'def-br-dis' ],
                     mask: {
-                        selected: [ 'pri-f-s', 'pri-bg-sel', 'pri-br-s' ],
+                        selected: [ 'def-f-s', 'def-bg-sel', 'def-br-s' ],
                     },
                 };
         }

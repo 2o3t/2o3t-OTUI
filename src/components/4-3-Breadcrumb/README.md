@@ -1,5 +1,5 @@
-<!-- @api: OtBreadcrumb.vue/OtBreadcrumbAPIFixed.md -->
 <!-- @api: OtBreadcrumb.vue/OtBreadcrumbAPI.md -->
+<!-- @api: OtBreadcrumb.vue/OtBreadcrumbItemAPI.md -->
 
 # Breadcrumb 面包屑
 

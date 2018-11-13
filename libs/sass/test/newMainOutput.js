@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const datas = [ "@import './colors';", "@import './mixins.scss';", '$--ot-prefix-name: "ot" !default;' ];
+const datas = [ '$--ot-prefix-name: "ot" !default;' ];
 
 const THEMES = [ 'light', 'dark', 'grey', 'default', 'primary', 'success', 'warning', 'danger', 'info' ];
 const SHUXING = [ 'font', 'background', 'border' ];
-const STATUS = [ 'normal', 'hover', 'active', 'focus', 'selected', 'disabled' ];
+const STATUS = [ null, 'normal', 'hover', 'active', 'focus', 'selected', 'disabled' ];
 
 STATUS.forEach(status => {
     datas.push('\n');
@@ -15,16 +15,32 @@ STATUS.forEach(status => {
         datas.push(`// ${theme}`);
         SHUXING.forEach((shuxing, index) => {
             datas.push(`// ${shuxing}`);
+            const color = status ? `$--ot-color-${theme}-${shuxing}-${status}` : `$--ot-color-${theme}-${shuxing}`;
             if (index === 0) {
-                const text1 = `@include otMixinColor($--ot-prefix-name, "${theme}", "color", $--ot-color-${theme}-${shuxing}-${status}, "${shuxing}", "${status}", null);`;
-                datas.push(text1);
+                let text;
+                if (status !== null) {
+                    text = `@include otMixinColor($--ot-prefix-name, "${theme}", "color", ${color}, "${shuxing}", "${status}", null);`;
+                } else {
+                    text = `@include otMixinColor($--ot-prefix-name, "${theme}", "color", ${color}, "${shuxing}", null, null);`;
+                }
+                datas.push(text);
             } else if (index === 1) {
-                const text2 = `@include otMixinColor($--ot-prefix-name, "${theme}", "background-color", $--ot-color-${theme}-${shuxing}-${status}, "${shuxing}", "${status}", null);`;
-                datas.push(text2);
+                let text;
+                if (status !== null) {
+                    text = `@include otMixinColor($--ot-prefix-name, "${theme}", "background-color", ${color}, "${shuxing}", "${status}", null);`;
+                } else {
+                    text = `@include otMixinColor($--ot-prefix-name, "${theme}", "background-color", ${color}, "${shuxing}", null, null);`;
+                }
+                datas.push(text);
             } else {
                 datas.push('@each $var in null, -left, -right, -top ,-bottom {');
-                const text3 = `@include otMixinColor($--ot-prefix-name, "${theme}", "border#{$var}-color", $--ot-color-${theme}-${shuxing}-${status}, "${shuxing}#{$var}", "${status}", null);`;
-                datas.push(text3);
+                let text;
+                if (status !== null) {
+                    text = `@include otMixinColor($--ot-prefix-name, "${theme}", "border#{$var}-color", ${color}, "${shuxing}#{$var}", "${status}", null);`;
+                } else {
+                    text = `@include otMixinColor($--ot-prefix-name, "${theme}", "border#{$var}-color", ${color}, "${shuxing}#{$var}", null, null);`;
+                }
+                datas.push(text);
                 datas.push('}');
             }
         });

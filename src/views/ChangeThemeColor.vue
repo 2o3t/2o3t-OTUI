@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import MAIN_CSS from './CssColor.js';
+import MAIN_CSS from '2o3t-css-colors/public/2o3t-ui/main.color';
 const ID_NAME = '__custom_theme_color__';
 const DEFAULT_COLOR = '#207FF6';
 export default {

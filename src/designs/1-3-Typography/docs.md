@@ -5,7 +5,7 @@
 主要使用苹方和微软雅黑,平台端设计稿可以采用 PingFang但 Microsoft YaHei 视觉体量偏大，且只有 Regular 与 Bold设计中需要注意。
 
 <ot-row-group>
-    <ot-card round>
+    <ot-card border round>
         <div slot="top" style="display: table-cell; height: 9em;">
             <div style="font-size: 48px;">{{ imgChinesePingFangFont }}</div>
         </div>
@@ -14,7 +14,7 @@
             <div>MacOS, IOS 优选字体</div>
         </div>
     </ot-card>
-    <ot-card round>
+    <ot-card border round>
         <div slot="top" style="display: table-cell; height: 9em;">
             <div style="font-size: 48px;">{{ imgChineseHiraginoSansFont }}</div>
         </div>
@@ -23,7 +23,7 @@
             <div>MacOS备选字体字体</div>
         </div>
     </ot-card>
-    <ot-card round>
+    <ot-card border round>
         <div slot="top" style="display: table-cell; height: 9em;">
             <div style="font-size: 48px;">{{ imgChineseYaHeiFont }}</div>
         </div>
@@ -39,7 +39,7 @@
 主要使用英文字体和数字字体设计中。
 
 <ot-row-group>
-    <ot-card round>
+    <ot-card border round>
         <div slot="top" style="display: table-cell; height: 9em;">
             <div style="font-size: 48px;">{{ imgEnglishHelveticaNeueFont }}</div>
         </div>
@@ -48,7 +48,7 @@
             <div>优选字体</div>
         </div>
     </ot-card>
-    <ot-card round>
+    <ot-card border round>
         <div slot="top" style="display: table-cell; height: 9em;">
             <div style="font-size: 48px;">{{ imgEnglishHelveticaFont }}</div>
         </div>
@@ -57,7 +57,7 @@
             <div>备选字体字体</div>
         </div>
     </ot-card>
-    <ot-card round>
+    <ot-card border round>
         <div slot="top" style="display: table-cell; height: 9em;">
             <div style="font-size: 48px;">{{ imgEnglishArialFont }}</div>
         </div>

@@ -3,17 +3,17 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'grey-b', 'border' ],
+                    normal: [ 'light-b' ],
                     left: {
-                        normal: [ 'grey-br', 'border' ],
+                        normal: [ 'light-br' ],
                     },
                 };
             case 'light':
             default:
                 return {
-                    normal: [ 'grey-b', 'border' ],
+                    normal: [ 'dark-b' ],
                     left: {
-                        normal: [ 'grey-br', 'border' ],
+                        normal: [ 'dark-br' ],
                     },
                 };
         }

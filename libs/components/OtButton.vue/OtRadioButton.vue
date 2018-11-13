@@ -12,7 +12,7 @@
 
 <script>
 import OtButton from './index.vue';
-import theme from './OtRadioButtonTheme.js';
+import theme from './theme.js';
 export default {
     name: 'ot-radio-button',
     extends: OtButton,

@@ -2,8 +2,13 @@ export default {
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
+                if (this.color === 'default') {
+                    return {
+                        selected: [ 'dark-f-sel', 'light-bg-sel', 'fill' ],
+                    };
+                }
                 return {
-                    selected: [ 'def-f-sel', 'light-bg-sel', 'fill' ],
+                    selected: [ 'light-f-sel', 'def-bg-sel', 'fill' ],
                 };
             case 'light':
             default:

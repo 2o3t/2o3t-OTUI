@@ -1,6 +1,6 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
-        <ot-markdown :content="markdownDoc" dangerouslyUseHTMLString></ot-markdown>
+        <ot-markdown :content="markdownDoc"></ot-markdown>
     </ot-section>
 </template>
 

@@ -6,19 +6,20 @@ export default {
                     normal: [ 'light-f' ],
                     hover: [ ],
                     active: [ ],
-                    disabled: [ 'pri-f-dis' ],
+                    selected: [ 'def-f-sel' ],
+                    disabled: [ 'def-f-dis' ],
                 };
                 if (this.line) {
-                    c.normal.push('pri-bb');
-                    c.disabled.push('pri-bb-dis');
+                    c.normal.push('def-bb', 'border');
+                    c.disabled.push('def-bb-dis');
                 }
                 if (this.currentHref) {
-                    c.hover.push('pri-f-hov');
-                    c.hover.push('pri-f-act');
+                    c.hover.push('def-f-hov');
+                    c.hover.push('def-f-act');
 
                     if (this.line) {
-                        c.hover.push('pri-bb-hov');
-                        c.active.push('light-bb-act');
+                        c.hover.push('def-bb-hov');
+                        c.active.push('def-bb-act');
                     }
                 }
                 return c;
@@ -26,22 +27,23 @@ export default {
             case 'light':
             default: {
                 const c = {
-                    normal: [ 'def-f' ],
+                    normal: [ 'dark-f' ],
                     hover: [ ],
                     active: [ ],
+                    selected: [ 'def-f-sel' ],
                     disabled: [ 'def-f-dis' ],
                 };
                 if (this.line) {
-                    c.normal.push('def-bb');
+                    c.normal.push('def-bb', 'border');
                     c.disabled.push('def-bb-dis');
                 }
                 if (this.currentHref) {
-                    c.hover.push('pri-f-hov');
-                    c.hover.push('pri-f-act');
+                    c.hover.push('def-f-hov');
+                    c.hover.push('def-f-act');
 
                     if (this.line) {
                         c.hover.push('def-bb-hov');
-                        c.active.push('pri-bb-act');
+                        c.active.push('def-bb-act');
                     }
                 }
                 return c;

@@ -1,14 +1,15 @@
 <template>
-    <div ot class="ot-markdown" :class="$style.root" :theme="$otTheme" :size="$otSize">
-        <div ot v-ot-bind="$otColors" class="markdown" :class="customClass">
+    <div ot class="ot-markdown" :class="$style.root" :size="$otSize" :theme="$otTheme">
+        <div ot v-ot-bind="$otColors" class="markdown" :class="customClass" :theme="$otTheme">
             <!-- 内容 (不推荐使用) -->
             <slot></slot>
-            <div ref="content"></div>
+            <div v-if="!$slots.default" ot ref="content" :theme="$otTheme"></div>
         </div>
     </div>
 </template>
 
 <script>
+import { otMixin } from '2o3t-css-colors/dist/2o3t-ui';
 import replaceTag from './replaceTag.js';
 import theme from './theme.js';
 export default {
@@ -56,26 +57,24 @@ export default {
     methods: {
         renderMD(content) {
             if (this.$slots.default) {
-                const slots = this.$slots.default;
-                content = slots.map(item => {
-                    if (item.elm) {
-                        return item.elm.outerHTML;
-                    }
-                    return '';
-                }).join('\n');
-                delete this.$slots.default;
+                return;
             }
+
             const Vue = this.$options.__OT_Vue__;
             if (Vue) {
+                this.destroySubEl();
+
                 const html = this.covertMD(content);
-                const el = this.$refs.content;
                 const vm = this;
+
                 this.subVm = new Vue({
-                    template: `<div>${html}</div>`,
+                    template: `<div ot :theme="$otTheme">${html}</div>`,
+                    mixins: [ otMixin ],
                     parent: vm,
-                    el,
                     data: vm.data,
                 });
+
+                this.bindSubEl();
             }
         },
         covertMD(content) {
@@ -86,14 +85,14 @@ export default {
             if (!MarkdownIt) {
                 return;
             }
+            const mdParser = new MarkdownIt();
+            content = mdParser.render(content);
+
             const cheerio = this.$otUtils.getOtPlugin('cheerio');
             if (!cheerio) {
                 return;
             }
-
-            const mdParser = new MarkdownIt();
-            const result = mdParser.render(content);
-            const $ = cheerio.load(result, {
+            const $ = cheerio.load(content, {
                 decodeEntities: false,
                 lowerCaseAttributeNames: false,
                 lowerCaseTags: false,
@@ -107,14 +106,25 @@ export default {
             return html;
         },
         replaceTag($) {
-            replaceTag($);
+            return replaceTag($);
+        },
+        bindSubEl() {
+            if (this.subVm) {
+                const el = this.$refs.content;
+                if (el) {
+                    this.subVm.$mount(el);
+                }
+            }
+        },
+        destroySubEl() {
+            if (this.subVm) {
+                this.subVm.$destroy();
+                this.subVm = null;
+            }
         },
     },
     beforeDestroy() {
-        if (this.subVm) {
-            this.subVm.$destroy();
-            this.subVm = null;
-        }
+        this.destroySubEl();
     },
 };
 </script>

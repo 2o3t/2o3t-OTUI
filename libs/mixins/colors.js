@@ -10,19 +10,25 @@ const cloneOthers = (otDefaultColorsFn, ctx) => {
         return obj;
     }, {});
 
-    return COLORS.filter(name => {
-        return name !== 'default';
-    }).reduce((obj, name) => {
-        const funcName = `ot${name[0].toUpperCase()}${name.substring(1)}Colors`;
-        obj[funcName] = t => {
-            const themeColors = themes[t];
-            const s = JSON.stringify(themeColors);
-            // 开始替换
-            const r = s.replace(/(def|default)-/igm, `${name}-`);
-            return JSON.parse(r);
-        };
-        return obj;
-    }, {});
+    return COLORS
+        // .filter(name => {
+        //     return name !== 'default';
+        // })
+        .reduce((obj, name) => {
+            const funcName = `ot${name[0].toUpperCase()}${name.substring(1)}Colors`;
+            obj[funcName] = t => {
+                const themeColors = themes[t];
+                const s = JSON.stringify(themeColors);
+                if (name === 'default') { // 开始替换 default
+                    const r = s.replace(/(def|default)-/igm, `${t === 'light' ? 'dark' : 'light'}-`);
+                    return JSON.parse(r);
+                }
+                // 开始替换
+                const r = s.replace(/(def|default)-/igm, `${name}-`);
+                return JSON.parse(r);
+            };
+            return obj;
+        }, {});
 };
 
 const PREFIX_NAME_MAP = {
@@ -63,9 +69,9 @@ const parseName = curr => {
         if (!/color-/i.test(curr)) {
             const attrs = curr.split('-');
             let len = attrs.length;
-            if (len === 2 && ![ 'normal', 'n', 'nor' ].includes(attrs[len - 1])) {
-                attrs.push('normal');
-            }
+            // if (len === 2 && ![ 'normal', 'n', 'nor' ].includes(attrs[len - 1])) {
+            //     attrs.push('normal');
+            // }
             while (len-- >= 0) {
                 const key = attrs[len];
                 if (PREFIX_NAME_MAP[key]) {

@@ -1,7 +1,7 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :theme="$otTheme" :code="code">
-            <ot-link :theme="$otTheme" line>Home</ot-link>
+            <ot-link :theme="$otTheme" line to="/">Home</ot-link>
         </ot-row-group>
     </ot-section>
 </template>

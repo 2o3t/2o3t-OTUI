@@ -5,38 +5,39 @@ export default {
             case 'dark':
                 return {
                     front: {
-                        normal: [ 'light-bg' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                     },
                     switch: {
-                        normal: [ 'light-f', 'dark-bg', 'pri-b' ],
-                        hover: [ 'pri-f-h', 'pri-b-h' ],
-                        active: [ 'pri-bg-a', 'light-b-a' ],
-                        selected: [ 'pri-f-sel', 'pri-bg-sel', 'pri-b-sel' ],
-                        disabled: [ 'pri-f-dis', 'pri-bg-dis', 'pri-b-dis' ],
+                        // TODO: 需要改进
+                        normal: [ 'def-f', 'def-bg', 'def-b' ],
+                        hover: [ 'def-f-h', 'def-b-h' ],
+                        active: [ 'def-bg-a', 'light-b-a' ],
+                        selected: [ 'def-f-sel', 'def-b-sel', 'border' ],
+                        disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     activeLabel: {
-                        normal: [ 'grey-f' ],
-                        selected: [ 'pri-f-sel' ],
+                        normal: [ 'def-f' ],
+                        selected: [ 'def-f-sel' ],
                         disabled: [ 'def-f-dis' ],
                     },
-                    normal: [ 'light-f' ],
+                    normal: [ 'def-f' ],
                 };
             case 'light':
             default:
                 return {
                     front: {
-                        normal: [ 'light-bg' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                     },
                     switch: {
-                        normal: [ 'def-f', 'pri-bg', 'pri-b' ],
-                        hover: [ 'pri-f-hov', 'pri-b-hov' ],
-                        active: [ 'pri-bg-a', 'dark-b-a' ],
-                        selected: [ 'pri-f-sel', 'pri-bg-sel' ],
-                        disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
+                        normal: [ 'def-f', 'def-bg' ],
+                        hover: [ 'def-f-hov' ],
+                        active: [ 'def-bg-a' ],
+                        selected: [ 'def-f-sel', 'def-bg-sel' ],
+                        disabled: [ 'def-f-dis', 'def-bg-dis' ],
                     },
                     activeLabel: {
-                        normal: [ 'grey-f' ],
-                        selected: [ 'pri-f-sel' ],
+                        normal: [ 'def-f' ],
+                        selected: [ 'def-f-sel' ],
                         disabled: [ 'def-f-dis' ],
                     },
                     normal: [ 'def-f' ],

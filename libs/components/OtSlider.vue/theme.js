@@ -8,12 +8,13 @@ export default {
                         normal: [ 'light-f', 'light-b' ],
                     },
                     bar: {
-                        selected: [ 'def-f-sel', 'pri-bg-sel' ],
+                        selected: [ 'def-f-sel', 'def-bg-sel' ],
                         disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     btn: {
-                        normal: [ 'pri-b', 'light-bg' ],
-                        disabled: [ 'def-bg-dis', 'def-b-dis' ],
+                        normal: [ 'def-b', 'light-bg' ],
+                        selected: [ 'def-bg-sel', 'selected' ],
+                        disabled: [ 'grey-bg-dis', 'def-b-dis' ],
                     },
                     step: {
                         normal: [ 'light-bg' ],
@@ -23,18 +24,19 @@ export default {
             default:
                 return {
                     runway: {
-                        normal: [ 'def-f', 'grey-bg' ],
+                        normal: [ 'def-f', 'def-bg' ],
                     },
                     bar: {
-                        selected: [ 'def-f-sel', 'pri-bg-sel' ],
+                        selected: [ 'def-f-sel', 'def-bg-sel' ],
                         disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     btn: {
-                        normal: [ 'light-bg', 'pri-b' ],
-                        disabled: [ 'def-bg-dis', 'def-b-dis' ],
+                        normal: [ 'light-bg', 'def-b' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
+                        disabled: [ 'grey-bg-dis', 'dark-b-dis' ],
                     },
                     step: {
-                        normal: [ 'light-bg' ],
+                        normal: [ 'dark-bg' ],
                     },
                 };
         }

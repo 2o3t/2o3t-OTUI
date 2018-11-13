@@ -1,6 +1,6 @@
 <!-- @api: OtMenu.vue/OtMenuAPI.md -->
-<!-- @api: OtMenuGroup.vue/OtMenuGroupAPI.md -->
-<!-- @api: OtMenuItem.vue/OtMenuItemAPI.md -->
+<!-- @api: OtMenu.vue/OtMenuGroupAPI.md -->
+<!-- @api: OtMenu.vue/OtMenuItemAPI.md -->
 
 # Menu 菜单
 

@@ -5,10 +5,12 @@ export default {
             case 'dark':
                 return {
                     tip: {
-                        normal: [ 'def-f', 'light-bg', 'def-b' ],
+                        normal: [ 'dark-f', 'light-bg', 'def-b' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                     },
                     arrow: {
-                        normal: [ 'light-f', 'light-bg' ],
+                        normal: [ 'def-f' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                     },
                 };
             case 'light':
@@ -16,9 +18,11 @@ export default {
                 return {
                     tip: {
                         normal: [ 'light-f', 'dark-bg', 'def-b' ],
+                        selected: [ 'dark-bg-sel', 'selected' ],
                     },
                     arrow: {
-                        normal: [ 'def-f', 'dark-bg' ],
+                        normal: [ 'def-f' ],
+                        selected: [ 'dark-bg-sel', 'selected' ],
                     },
                 };
         }
