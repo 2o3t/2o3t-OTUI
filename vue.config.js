@@ -2,12 +2,21 @@ const path = require('path');
 
 const debug = process.env.NODE_ENV !== 'production';
 
-// initIndexs('components');
-// initIndexs('designs');
-require('./bin/autoBuildIndex')([
+const autoBuildIndex = require('./.2o3t/bin/autoBuildIndex');
+const loadLibs = [
     'components',
     'designs',
-]);
+    'themes',
+];
+autoBuildIndex(loadLibs);
+
+const aliasLibs = loadLibs.reduce((obj, item) => {
+    obj[`@${item}`] = path.resolve(__dirname, `./src/${item}`);
+    return obj;
+}, {});
+console.log(aliasLibs);
+
+const customLoader = require('./.2o3t/loaders');
 
 module.exports = {
     baseUrl: debug ? '/' : '/2o3t-ui/',
@@ -33,54 +42,15 @@ module.exports = {
                     '@router': path.resolve(__dirname, './src/router'),
                     '@assets': path.resolve(__dirname, './src/assets'),
                     '@views': path.resolve(__dirname, './src/views'),
-                    '@components': path.resolve(__dirname, './src/components'),
-                    '@designs': path.resolve(__dirname, './src/designs'),
-                    vue$: 'vue/dist/vue.esm.js',
                     '@libs': path.resolve(__dirname, './libs'),
+                    vue$: 'vue/dist/vue.esm.js',
+                    ...aliasLibs,
                 },
                 extensions: [ '.js', '.vue', '.json', '.css' ],
             },
         });
     },
     chainWebpack: config => {
-        config.module
-            .rule('html')
-            .test(/.vue$/i)
-            .include
-            .add(path.resolve(__dirname, './src/components'))
-            .end()
-            .use()
-            .loader(path.resolve(__dirname, './loaders/template.js'))
-            .end();
-        // config.module
-        //     .rule('html')
-        //     .test(/\.vue$/)
-        //     .include
-        //     .add(path.resolve(__dirname, './src/components'))
-        //     .end()
-        //     .use()
-        //     .loader(path.resolve(__dirname, './loaders/template.js'))
-        //     .end()
-        //     .use('vue-loader')
-        //     .loader('vue-loader')
-        //     .end();
-
-        // markdown
-        config.module
-            .rule('markdown')
-            .test(/.md$/i)
-            .use()
-            .loader(path.resolve(__dirname, './loaders/markdown/index.js'))
-            .end();
-
-        config.module
-            .rule('UIViews')
-            .test(/.color$/i)
-            // .include
-            // .add(path.resolve(__dirname, './src/views'))
-            // .end()
-            .use()
-            .loader(path.resolve(__dirname, './loaders/mainCss.js'))
-            .end();
+        customLoader(config);
     },
 };

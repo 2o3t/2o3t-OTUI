@@ -7,8 +7,6 @@ set -e
 node ./bin/libsVersionCtrl.js
 
 # build
-npm run sass:base:build
-npm run sass:main:build
 npm run build:libs
 
 # publish
@@ -18,4 +16,4 @@ npm publish
 npm run deploy
 
 # finish
-echo 'Finish...'
+echo 'Deploy Finish...'

@@ -16,8 +16,9 @@ function createSideBarView(sidebar, view) {
 // views
 const Uncategorized = () => import('@views/Uncategorized');
 
+// component
 const ComponentsSideBar = () => import('@views/SideBar/Components');
-import componentsModules from '@/components';
+import componentsModules from '@components';
 const componentRouters = createRouters(componentsModules, index => {
     if (!index) {
         return createSideBarView(ComponentsSideBar, Uncategorized);
@@ -25,13 +26,24 @@ const componentRouters = createRouters(componentsModules, index => {
     return createSideBarView(ComponentsSideBar, () => import(`@components/${index}`));
 });
 
+// design
 const DesignsSideBar = () => import('@views/SideBar/Designs');
-import designsModules from '@/designs';
+import designsModules from '@designs';
 const designRouters = createRouters(designsModules, index => {
     if (!index) {
         return createSideBarView(DesignsSideBar, Uncategorized);
     }
     return createSideBarView(DesignsSideBar, () => import(`@designs/${index}`));
+});
+
+// theme
+const ThemesSideBar = () => import('@views/SideBar/Themes');
+import themesModules from '@themes';
+const themeRouters = createRouters(themesModules, index => {
+    if (!index) {
+        return createSideBarView(ThemesSideBar, Uncategorized);
+    }
+    return createSideBarView(ThemesSideBar, () => import(`@themes/${index}`));
 });
 
 const scrollBehavior = (to, from, savedPosition) => {
@@ -60,6 +72,12 @@ const routerMapConfig = {
             redirect: '/designs/Disciplines',
         },
         ...designRouters,
+        {
+            path: '/themes',
+            name: 'Themes-page',
+            redirect: '/themes/Disciplines',
+        },
+        ...themeRouters,
         {
             path: '*',
             redirect: '/',

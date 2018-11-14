@@ -5,6 +5,6 @@ import OtTitle from './OtTitle.js';
 export default {
 
     OtBind,
-    OtTitle,
+OtTitle,
 
-};
+    };

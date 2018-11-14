@@ -6,7 +6,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "build:libs": "rollup -c ./libs/rollup.config.js",
+        "build:libs": "sh ./bin/buildLibs.sh",
         "deploy:libs": "npm run build:libs && npm publish",
         "lint": "vue-cli-service lint",
         "lint:libs": "vue-cli-service lint ./libs",
@@ -14,10 +14,9 @@
         "sass:base:build": "node_modules/node-sass/bin/node-sass libs/sass/base.scss libs/styles/base.css",
         "sass:main": "node_modules/node-sass/bin/node-sass --watch libs/sass/main.scss libs/styles/main.css",
         "sass:main:build": "node_modules/node-sass/bin/node-sass libs/sass/main.scss libs/styles/main.css",
-        "sass:main:color": "node_modules/node-sass/bin/node-sass libs/sass/main.color.scss public/main.color",
         "sass:test": "node_modules/node-sass/bin/node-sass --watch libs/sass/test/test.scss libs/sass/test/test.css",
         "deploy": "sh ./bin/deploy.sh",
-        "deploy:auto": "sh ./bin/autoDeploy.sh"
+        "deploy:auto": "sh ./.2o3t/bin/autoDeploy.sh"
     },
     "license": "MIT",
     "main": "dist/index.js",
@@ -32,7 +31,7 @@
         "vue-js-modal": "^1.3.26"
     },
     "devDependencies": {
-        "2o3t-css-colors": "file:///Users/zyao89/Code/New Direction/2o3t-CssColors",
+        "2o3t-css-colors": "^0.0.1",
         "2o3t-ui": "^0.0.32",
         "@vue/cli-plugin-babel": "^3.0.4",
         "@vue/cli-plugin-eslint": "^3.0.4",

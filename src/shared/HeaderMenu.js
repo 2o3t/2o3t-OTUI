@@ -11,4 +11,8 @@ export default [
         name: '组件库',
         router: '/components',
     },
+    {
+        name: '主题',
+        router: '/themes',
+    },
 ];

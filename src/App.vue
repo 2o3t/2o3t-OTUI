@@ -48,6 +48,7 @@ export default {
             isCollapse: false,
             isDark: false,
             theme: this.$shared.Stores.theme,
+            color: this.$shared.Stores.color,
         };
     },
     watch: {

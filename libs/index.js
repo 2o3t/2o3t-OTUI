@@ -1,7 +1,7 @@
 import './styles/normalize.css';
-import './styles/base.css';
 
-import { setOptions, otMixin } from '2o3t-css-colors/dist/2o3t-ui';
+import OTUIColors from '2o3t-css-colors/dist/2o3t-ui/index.js';
+const { setOptions, otMixin } = OTUIColors;
 import '2o3t-css-colors/dist/2o3t-ui/styles.css';
 
 import components from './components';
