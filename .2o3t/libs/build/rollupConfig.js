@@ -17,26 +17,29 @@ import VuePlugin from 'rollup-plugin-vue';
 const path = require('path');
 
 const defaultOpts = {
+    input: './index.js',
     root: __dirname,
     dist: 'dist',
     external: ['vue'],
     format: 'umd', // umd, esm
-    name: 'OTUI-LIB', // 打包后的全局变量，如浏览器端 window.ReactRedux
+    name: 'OTUI', // 打包后的全局变量，如浏览器端 window.ReactRedux
     globals: {// 这跟external 是配套使用的，指明global.React即是外部依赖react
         Vue: 'vue',
+        window: 'window',
     },
 };
 
 export default function (opts) {
     const {
+        input,
         root, dist,
         external,
         format, name, globals,
     } = Object.assign({}, defaultOpts, opts);
 
     const config = {
-        input: path.resolve(root, './index.js'),
-        external: ['highlight.js', 'moment', 'vue'],
+        input: path.resolve(root, input),
+        external: external,
         output: {
             // dir: path.resolve(process.cwd(), `./${DIST}`),
             // format: 'esm', // umd, esm
@@ -60,6 +63,7 @@ export default function (opts) {
             }),
             // 新增的postcss
             postcss({
+                modules: true,
                 plugins: [autoprefixer, cssnano],
                 extract: `${dist}/styles.css`, // 输出路径
             }),
@@ -104,14 +108,20 @@ export default function (opts) {
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
             }),
-            uglify({
-                compress: {
-                    pure_getters: true,
-                    unsafe: true,
-                    unsafe_comps: true,
-                    warnings: false,
-                },
-            }),
+            uglify(
+                {
+                    compress: {
+                        pure_getters: true,
+                        unsafe: true,
+                        unsafe_comps: true,
+                        warnings: false,
+                        evaluate: false,
+                        keep_fnames: true,
+                        keep_infinity: true,
+                    },
+                    sourcemap: true,
+                }
+            ),
         ],
     };
 

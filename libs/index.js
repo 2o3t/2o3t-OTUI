@@ -1,8 +1,8 @@
 import './styles/normalize.css';
+import '2o3t-css-colors/dist/2o3t-ui/styles.css';
 
 import OTUIColors from '2o3t-css-colors/dist/2o3t-ui/index.js';
 const { setOptions, otMixin } = OTUIColors;
-import '2o3t-css-colors/dist/2o3t-ui/styles.css';
 
 import components from './components';
 import directives from './directives';
@@ -32,7 +32,6 @@ export default {
          global, // 全局注册
          plugins: { // 需要注册的三方插件
             markdownIt: require('markdown-it'),
-            cheerio: require('cheerio'),
          }
     } */
     install(Vue, options = {}) {

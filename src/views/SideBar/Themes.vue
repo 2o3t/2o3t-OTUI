@@ -1,7 +1,7 @@
 <template>
     <ot-menu :isCollapse="isCollapse" :theme="$otTheme">
         <ot-menu-group :label="key" v-for="key in Object.keys(slides)" :key="key">
-            <ot-menu-item :theme="$otTheme" color="primary" :to="item.router" v-for="item in slides[key]" :key="item.name">
+            <ot-menu-item :theme="$otTheme" :to="item.router" v-for="item in slides[key]" :key="item.name">
                 <span>{{item.label}}</span>
             </ot-menu-item>
         </ot-menu-group>
@@ -13,7 +13,7 @@ import modules from '@themes';
 import createRouters from '@router/createRouters';
 const routers = createRouters(modules);
 const KEY_MAP = {
-    1: 'Design Specifications',
+    1: 'Introduction',
     2: 'Basic',
 };
 export default {

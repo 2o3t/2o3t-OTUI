@@ -62,17 +62,14 @@ export default {
 <style lang="scss" module>
 @import '../globals';
 .root {
-  position: relative;
+    position: relative;
     width: 6em;
     height: 6em;
+    display: inline-block;
+    vertical-align: middle;
 
-  @include __ot_size__;
-
-  &:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+    @include __ot_size__;
+    @include __ot_root_block__;
 
   .githubCorner {
     &:hover .octo-arm {

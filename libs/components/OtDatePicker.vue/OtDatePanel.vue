@@ -68,7 +68,6 @@
 </template>
 
 <script>
-import moment from 'moment';
 export default {
     name: 'ot-date-panel',
     model: {
@@ -142,14 +141,21 @@ export default {
     },
     data() {
         return {
-            currentDate: moment(),
+            currentDate: this.moment(),
             currentWeek: [],
 
-            displayDate: moment(),
+            displayDate: this.moment(),
             monthDays: [],
         };
     },
     computed: {
+        moment() {
+            const moment = this.$otUtils.getOtPlugin('moment');
+            if (!moment) {
+                return;
+            }
+            return moment;
+        },
         _format() {
             if (/^[YMDHSW:-]*$/igm.test(this.format)) {
                 return this.format;
@@ -172,20 +178,20 @@ export default {
     },
     methods: {
         _calcThisDayToWeek(m) {
-            const clone = moment(m);
+            const clone = this.moment(m);
             const w = clone.days();
             const first = clone.subtract(w, 'days');
             const weeks = [];
             let i = 0;
             while (i < 7) {
                 first.add(i, 'days');
-                weeks.push(moment(first));
+                weeks.push(this.moment(first));
                 i++;
             }
             return weeks;
         },
         _calcMonthDays() {
-            const clone = moment(this.displayDate);
+            const clone = this.moment(this.displayDate);
             const daysInMonth = clone.daysInMonth();
             clone.date(1);
             const firstWeek = clone.day();
@@ -195,7 +201,7 @@ export default {
                 if (!days[0]) {
                     days[0] = [];
                 }
-                days[0][i] = moment(clone).subtract(firstWeek - i, 'days');
+                days[0][i] = this.moment(clone).subtract(firstWeek - i, 'days');
                 i++;
             }
             let j = 0;
@@ -204,7 +210,7 @@ export default {
                 if (!days[a]) {
                     days[a] = [];
                 }
-                days[a][(j + firstWeek) % 7] = moment(clone).date(j + 1);
+                days[a][(j + firstWeek) % 7] = this.moment(clone).date(j + 1);
                 // days[a][(j + firstWeek) % 7] = j + 1;
                 j++;
             }
@@ -214,7 +220,7 @@ export default {
             let q = 0;
             while (q < len) {
                 q++;
-                const mom = moment(clone).date(daysInMonth);
+                const mom = this.moment(clone).date(daysInMonth);
                 days[lastRow].push(mom.add(q, 'days'));
             }
             return days;
@@ -274,13 +280,13 @@ export default {
             this.$emit('ok');
         },
         handleTodayClick() {
-            this.currentDate = moment();
+            this.currentDate = this.moment();
 
             if (this.week) {
                 this.currentWeek = this._calcThisDayToWeek(this.currentDate);
             }
 
-            this.displayDate = moment(this.currentDate);
+            this.displayDate = this.moment(this.currentDate);
             this.refresh();
 
             this.updateModel();
@@ -289,10 +295,10 @@ export default {
     created() {
         // 初始化
         if (this.model) {
-            this.currentDate = moment(this.model, this._format);
+            this.currentDate = this.moment(this.model, this._format);
         }
         this.currentWeek = this._calcThisDayToWeek(this.currentDate);
-        this.displayDate = moment(this.currentDate);
+        this.displayDate = this.moment(this.currentDate);
         this.monthDays = this._calcMonthDays();
     },
 };

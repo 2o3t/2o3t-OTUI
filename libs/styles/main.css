@@ -1,3 +1,5 @@
+/* Scrollbar
+ -------------------------- */
 /* #33485b */
 /* #354a5c */
 /* #374c5e */
@@ -1285,8 +1287,6 @@
 /* #020508 */
 /* #010305 */
 /* #010203 */
-/* Scrollbar
- -------------------------- */
 #ot__color__light__font, [ot][ot-color-light-font] {
   color: rgba(255, 255, 255, 0.85); }
   #ot__color__light__font[ot-color-after]:after, #ot__color__light__font[ot-color-before]:before, [ot][ot-color-light-font][ot-color-after]:after, [ot][ot-color-light-font][ot-color-before]:before {

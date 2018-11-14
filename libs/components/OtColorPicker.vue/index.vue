@@ -355,7 +355,6 @@ export default {
             text-align: center;
 
             .arrow {
-                height: 100%;
             }
         }
     }

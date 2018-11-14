@@ -2,6 +2,10 @@
     <ot-tip ot class="ot-dropdown" :class="$style.root" :value="bShown" @update="handleUpdate" :round="round" :arrow="arrow" v-on="$listeners" :arrowAttrs="$otColors.arrow"
         :disabled="disabled" :manual="manual" :placement="placement" :offsetX="offsetX" :offsetY="offsetY" :clickable="clickable">
         <slot></slot>
+        <ot-link :class="$style.link" v-if="!$slots.default" :disabled="disabled">
+            <span :class="$style.text">{{ text }}</span>
+            <ot-arrow :class="$style.arrow" :placement="bShown ? 'up' : 'down'" animation border></ot-arrow>
+        </ot-link>
         <div ot v-ot-bind="$otColors.dropdown" :class="$style.dropdown" slot="tip" :size="$otSize" class="ot-dropdown-popper" :style="style" :round="round" v-if="!list">
             <div ot v-ot-bind="$otColors.list" class="ot-dropdown-popper-list" :custom="custom" @click="handleDropdownCloseClick" :shown="bShown" :round="round" :size="$otSize">
                 <!-- 无 list 时, 下拉框容器 -->
@@ -85,6 +89,8 @@ export default {
         custom: [ Boolean ],
         // 控制显示, v-model 数据源
         value: [ Boolean ],
+        // 文本按钮内容
+        text: [ String ],
     },
     watch: {
         value(newV) {
@@ -131,6 +137,18 @@ export default {
 <style lang="scss" module>
 .root {
 
+    .link {
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+
+    .text {
+        display: inline-block;
+        padding-right: 0.6em;
+        vertical-align: middle;
+    }
+
     .dropdown {
         position: relative;
         box-sizing: border-box;
@@ -156,7 +174,6 @@ export default {
         overflow-y: auto;
 
         &[custom] {
-            width: auto;
             max-height: none;
         }
 

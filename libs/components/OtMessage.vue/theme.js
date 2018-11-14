@@ -1,25 +1,23 @@
 export default {
     otDefaultColors(theme) {
+        const defColors = {
+            normal: [ 'def-f', 'def-bg', 'def-b' ],
+            closeBtn: {
+                normal: [ 'def-f' ],
+                hover: [ 'def-f-h' ],
+                active: [ 'def-f-a' ],
+            },
+        };
         switch (theme) {
             case 'dark':
-                return {
-                    normal: [ 'def-f', 'def-bg', 'light-b' ],
-                    closeBtn: {
-                        normal: [ 'def-f' ],
-                        hover: [ 'light-f-h' ],
-                        active: [ 'def-f-a' ],
-                    },
-                };
+                return Object.assign({}, defColors, {
+                    selected: this.color === 'default' ? [ 'dark-bg-sel', 'selected' ] : [],
+                });
             case 'light':
             default:
-                return {
-                    normal: [ 'def-f', 'def-bg', 'def-b' ],
-                    closeBtn: {
-                        normal: [ 'grey-f' ],
-                        hover: [ 'def-f-h' ],
-                        active: [ 'def-f-a' ],
-                    },
-                };
+                return Object.assign({}, defColors, {
+                    selected: this.color === 'default' ? [ 'light-bg-sel', 'selected' ] : [],
+                });
         }
     },
 };

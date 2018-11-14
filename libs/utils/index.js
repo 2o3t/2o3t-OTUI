@@ -29,6 +29,8 @@ export default function($vm) {
             const plugin = $vm[`__ot_plugins_${name}__`];
             if (plugin) {
                 return plugin;
+            } else if (window && window[name]) {
+                return window[name];
             }
             console.warn(`please use options.plugins '${name}'`);
             return null;

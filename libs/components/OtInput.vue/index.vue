@@ -36,7 +36,7 @@
             @input="handleInput" v-on="$listeners">
         </textarea>
         <span v-if="lastLength !== null" :class="$style.lastLength">剩余
-            <span ot v-ot-bind="$otColors.last" v-if="lastLength <= 10">{{ lastLength }}</span>
+            <span ot v-ot-bind="$otColors.msg" v-if="lastLength <= 10">{{ lastLength }}</span>
             <span v-else>{{ lastLength }}</span>
         个字符</span>
     </span>

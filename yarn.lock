@@ -2,18 +2,19 @@
 # yarn lockfile v1
 
 
-"2o3t-css-colors@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.1.tgz#5b7727de3e4d1a41426d395399ce7a61edaa9639"
+"2o3t-css-colors@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.7.tgz#b355e5937d516536566d311f0156556b9749fcb2"
 
 "2o3t-icon-font@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/2o3t-icon-font/-/2o3t-icon-font-0.0.5.tgz#6414f092256d838bcab5c99513ce645d3005c989"
 
-"2o3t-ui@^0.0.32":
-  version "0.0.32"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.32.tgz#57dddc20a3a84280bfcc1504a8d63c7b43f0cc99"
+"2o3t-ui@^0.0.38":
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.38.tgz#f178b7591c6962c4cf528a5882e4c012f75d9dab"
   dependencies:
+    "2o3t-css-colors" "^0.0.7"
     "2o3t-icon-font" "^0.0.5"
     highlight.js "^9.13.1"
     lodash "^4.17.11"

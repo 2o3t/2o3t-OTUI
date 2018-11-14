@@ -88,17 +88,19 @@ export default {
             }
         },
         _validateInputUI(valid) {
+            const dangeBorderColor = this.$otColorsParse('danger-b');
+            const successBorderColor = this.$otColorsParse('success-b');
             // 对 UI 进行操作
             this.inputElements.forEach(input => {
                 if (valid === true) {
-                    input.removeAttribute('ot-danger-b');
-                    input.setAttribute('ot-success-b', true);
+                    input.removeAttribute(dangeBorderColor);
+                    input.setAttribute(successBorderColor, true);
                 } else if (valid === false) {
-                    input.removeAttribute('ot-success-b');
-                    input.setAttribute('ot-danger-b', true);
+                    input.removeAttribute(successBorderColor);
+                    input.setAttribute(dangeBorderColor, true);
                 } else {
-                    input.removeAttribute('ot-success-b');
-                    input.removeAttribute('ot-danger-b');
+                    input.removeAttribute(successBorderColor);
+                    input.removeAttribute(dangeBorderColor);
                 }
             });
         },

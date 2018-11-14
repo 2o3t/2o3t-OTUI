@@ -8,8 +8,7 @@ export default {
                         selected: [ 'light-bg-sel', 'selected' ],
                     },
                     switch: {
-                        // TODO: 需要改进
-                        normal: [ 'def-f', 'def-bg', 'def-b' ],
+                        normal: [ 'light-f', 'def-bg', 'def-b' ],
                         hover: [ 'def-f-h', 'def-b-h' ],
                         active: [ 'def-bg-a', 'light-b-a' ],
                         selected: [ 'def-f-sel', 'def-b-sel', 'border' ],
@@ -20,7 +19,7 @@ export default {
                         selected: [ 'def-f-sel' ],
                         disabled: [ 'def-f-dis' ],
                     },
-                    normal: [ 'def-f' ],
+                    normal: [ 'light-f' ],
                 };
             case 'light':
             default:
@@ -29,7 +28,7 @@ export default {
                         selected: [ 'light-bg-sel', 'selected' ],
                     },
                     switch: {
-                        normal: [ 'def-f', 'def-bg' ],
+                        normal: [ 'dark-f', 'def-bg' ],
                         hover: [ 'def-f-hov' ],
                         active: [ 'def-bg-a' ],
                         selected: [ 'def-f-sel', 'def-bg-sel' ],
@@ -40,7 +39,7 @@ export default {
                         selected: [ 'def-f-sel' ],
                         disabled: [ 'def-f-dis' ],
                     },
-                    normal: [ 'def-f' ],
+                    normal: [ 'dark-f' ],
                 };
         }
     },

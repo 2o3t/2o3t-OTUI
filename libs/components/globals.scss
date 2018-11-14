@@ -1,11 +1,1 @@
-@import '../sass/libs/vars.scss';
-
-@mixin __ot_root_block__ {
-    &:after {
-        clear: both;
-    }
-    &:before, &:after{
-        display: table;
-        content: "";
-    }
-}
+@import '../../node_modules/2o3t-css-colors/public/2o3t-ui/vars';

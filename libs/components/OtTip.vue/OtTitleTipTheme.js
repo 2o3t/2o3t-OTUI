@@ -5,7 +5,7 @@ export default {
             case 'dark':
                 return {
                     tip: {
-                        normal: [ 'dark-f', 'light-bg', 'def-b' ],
+                        normal: [ 'dark-f', 'light-bg' ],
                         selected: [ 'light-bg-sel', 'selected' ],
                     },
                     arrow: {
@@ -17,7 +17,7 @@ export default {
             default:
                 return {
                     tip: {
-                        normal: [ 'light-f', 'dark-bg', 'def-b' ],
+                        normal: [ 'light-f', 'dark-bg' ],
                         selected: [ 'dark-bg-sel', 'selected' ],
                     },
                     arrow: {

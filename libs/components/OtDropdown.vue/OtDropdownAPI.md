@@ -21,6 +21,7 @@
 | list | 下拉数据列表, { value } | Array | - |
 | custom | 不限制下拉框大小, 用于组件扩展 | Boolean | - |
 | value | 控制显示, v-model 数据源 | Boolean | - |
+| text | 文本按钮内容 | String | - |
 
 ## Events
 

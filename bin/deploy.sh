@@ -7,11 +7,7 @@ set -e
 yarn
 
 # lint
-npm run lint:libs
 npm run lint
-
-# sass
-npm run sass:main:color
 
 # build
 npm run build

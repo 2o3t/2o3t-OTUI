@@ -12,9 +12,9 @@ export default {
             case 'light':
             default:
                 return {
-                    normal: [ 'def-f' ],
+                    normal: [ 'dark-f' ],
                     prefix: {
-                        normal: [ 'def-f' ],
+                        normal: [ 'dark-f' ],
                         active: [ 'def-f-hov' ],
                     },
                 };

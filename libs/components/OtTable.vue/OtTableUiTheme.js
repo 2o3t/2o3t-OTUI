@@ -3,12 +3,12 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'def-f', 'light-b' ],
+                    normal: [ 'light-f', 'light-b' ],
                 };
             case 'light':
             default:
                 return {
-                    normal: [ 'def-f', 'dark-b' ],
+                    normal: [ 'dark-f', 'dark-b' ],
                 };
         }
     },

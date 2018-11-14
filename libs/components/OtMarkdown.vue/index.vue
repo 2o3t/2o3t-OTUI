@@ -9,9 +9,11 @@
 </template>
 
 <script>
-import { otMixin } from '2o3t-css-colors/dist/2o3t-ui';
+import OTUIColors from '2o3t-css-colors/dist/2o3t-ui/index.js';
+const { otMixin } = OTUIColors;
 import replaceTag from './replaceTag.js';
 import theme from './theme.js';
+const cheerio = require('cheerio');
 export default {
     name: 'ot-markdown',
     mixins: [ theme ],
@@ -88,10 +90,10 @@ export default {
             const mdParser = new MarkdownIt();
             content = mdParser.render(content);
 
-            const cheerio = this.$otUtils.getOtPlugin('cheerio');
-            if (!cheerio) {
-                return;
-            }
+            // const cheerio = this.$otUtils.getOtPlugin('cheerio');
+            // if (!cheerio) {
+            //     return;
+            // }
             const $ = cheerio.load(content, {
                 decodeEntities: false,
                 lowerCaseAttributeNames: false,

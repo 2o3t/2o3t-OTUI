@@ -7,6 +7,7 @@ export default {
                     list: {
                         normal: [ 'light-f', 'dark-bg', 'light-b', 'border' ],
                         hover: [ 'pri-b-h' ],
+                        selected: [ 'dark-bg-sel', 'selected' ],
                     },
                     item: {
                         normal: [ 'light-f', 'dark-bg' ],
@@ -22,6 +23,7 @@ export default {
                     list: {
                         normal: [ 'def-f', 'light-bg', 'grey-b', 'border' ],
                         hover: [ 'pri-b-hov' ],
+                        selected: [ 'light-bg-sel', 'selected' ],
                     },
                     item: {
                         normal: [ 'def-f' ],

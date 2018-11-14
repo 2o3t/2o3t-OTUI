@@ -75,7 +75,7 @@ const routerMapConfig = {
         {
             path: '/themes',
             name: 'Themes-page',
-            redirect: '/themes/Disciplines',
+            redirect: '/themes/Principles',
         },
         ...themeRouters,
         {

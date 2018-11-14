@@ -59,7 +59,6 @@ export default {
 @import "../globals";
 .root {
   display: inline-block;
-  display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;

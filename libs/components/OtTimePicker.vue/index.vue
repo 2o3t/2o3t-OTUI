@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import moment from 'moment';
 export default {
     name: 'ot-time-picker',
     model: {
@@ -111,6 +110,13 @@ export default {
         },
     },
     computed: {
+        moment() {
+            const moment = this.$otUtils.getOtPlugin('moment');
+            if (!moment) {
+                return;
+            }
+            return moment;
+        },
         _doublePlaceholder() {
             return this.doublePlaceholder || this.placeholder;
         },
@@ -134,13 +140,13 @@ export default {
         },
         timePickerList() {
             const startTime = this.startTime.join(':');
-            const start = moment(startTime, 'HH:mm:ss');
+            const start = this.moment(startTime, 'HH:mm:ss');
 
             const stepTime = this.stepTime.join(':');
-            const step = moment(stepTime, 'HH:mm:ss');
+            const step = this.moment(stepTime, 'HH:mm:ss');
 
             const endTime = this.endTime.join(':');
-            const end = moment(endTime, 'HH:mm:ss');
+            const end = this.moment(endTime, 'HH:mm:ss');
 
             const timers = [];
             while (start.isBefore(end)) {
@@ -187,7 +193,7 @@ export default {
             return [ parseInt(timeArr[0]), parseInt(timeArr[1]), parseInt(timeArr[2]) ];
         },
         formatValue(h, m, s) {
-            const value = moment().hour(h).minute(m)
+            const value = this.moment().hour(h).minute(m)
                 .second(s)
                 .format(this._format);
             return value;

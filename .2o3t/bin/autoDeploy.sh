@@ -4,13 +4,10 @@
 set -e
 
 # version ctrl
-node ./bin/libsVersionCtrl.js
-
-# build
-npm run build:libs
+node ./.2o3t/bin/libsVersionCtrl.js
 
 # publish
-npm publish
+npm run deploy:libs
 
 # deploy
 npm run deploy

@@ -29,7 +29,7 @@ export default {
             if (this.vertical) {
                 return true;
             }
-            return this.header || this.footer;
+            return !!(this.header || this.footer);
         },
     },
     methods: {

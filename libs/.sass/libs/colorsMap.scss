@@ -1,5 +1,8 @@
 @import './vars.scss';
 
+// Mixin Color Libs
+@import './colors';
+
 // ====== light ======
 // font
 $--ot-color-light-font: $--color-light-grey-85; // ok 正文颜色
