@@ -33,13 +33,13 @@ import OTUI from '2o3t-ui';
 // 三方库
 const hljs = require('highlight.js');
 const markdownit = require('markdown-it');
-const cheerio = require('cheerio');
 const clipboard = require('clipboard-polyfill');
+const moment = require('moment');
 Vue.use(OTUI, {
     global: true,
     plugins: {
         markdownit,
-        cheerio,
+        moment,
         clipboard,
         hljs,
     },

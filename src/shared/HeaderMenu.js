@@ -12,7 +12,7 @@ export default [
         router: '/components',
     },
     {
-        name: '主题',
+        name: '主题配色',
         router: '/themes',
     },
 ];

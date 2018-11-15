@@ -11,15 +11,19 @@ export default {
     },
     inject: [ '$OtTable' ],
     props: {
+        // 维一标识
         name: {
             type: String,
             required: true,
         },
+        // 列名
         label: [ String ],
-        labelWidth: {
+        // 列宽
+        width: {
             type: [ String ],
             default: '150px',
         },
+        // 文字对齐方式
         align: {
             type: String,
             default: 'left',

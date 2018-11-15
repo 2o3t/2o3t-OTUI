@@ -26,6 +26,7 @@ export default {
                     h('span', null, '内容可以是 '),
                     h('i', { style: 'color: teal' }, 'VNode'),
                 ]),
+                theme: this.$otTheme,
             });
         },
     },

@@ -20,7 +20,7 @@ export default {
     name: 'ot-code',
     mixins: [ theme ],
     props: {
-    // 源代码文本
+        // 源代码文本
         value: [ String ],
         // 预览类型标识
         lang: {

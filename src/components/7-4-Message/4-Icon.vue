@@ -19,12 +19,14 @@ export default {
             this.$otMessage({
                 icon: 'space-shuttle',
                 title: '这是一条消息提示',
+                theme: this.$otTheme,
             });
         },
         openCustom() {
             this.$otMessage({
                 icon: 'ship',
                 message: '<i>这是一条支持 HTML 标签的消息</i>',
+                theme: this.$otTheme,
             });
         },
     },

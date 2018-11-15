@@ -4,9 +4,9 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    group: this.background ? [ 'dark-bg' ] : [ ],
+                    group: this.background ? [ 'def-bg' ] : [ ],
                     code: {
-                        normal: [ 'def-bl', 'def-br', 'def-bb' ],
+                        normal: [ 'light-bl', 'light-br', 'light-bb' ],
                         hover: [ 'def-bl-h', 'def-br-h', 'def-bb-h' ],
                     },
                 };
@@ -15,7 +15,7 @@ export default {
                 return {
                     group: this.background ? [ 'def-bg' ] : [],
                     code: {
-                        normal: [ 'grey-bl', 'grey-br', 'grey-bb' ],
+                        normal: [ 'dark-bl', 'dark-br', 'dark-bb' ],
                         hover: [ 'def-bl-hov', 'def-br-hov', 'def-bb-hov' ],
                     },
                 };

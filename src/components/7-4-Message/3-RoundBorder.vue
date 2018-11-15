@@ -20,12 +20,14 @@ export default {
             this.$otMessage({
                 title: '这是一条消息提示',
                 round: true,
+                theme: this.$otTheme,
             });
         },
         openBorder() {
             this.$otMessage({
                 title: '这是一条消息提示',
                 border: true,
+                theme: this.$otTheme,
             });
         },
         open() {
@@ -33,6 +35,7 @@ export default {
                 title: '这是一条消息提示',
                 round: true,
                 border: true,
+                theme: this.$otTheme,
             });
         },
     },

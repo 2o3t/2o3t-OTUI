@@ -87,7 +87,7 @@ export default {
             if (!MarkdownIt) {
                 return;
             }
-            const mdParser = new MarkdownIt();
+            const mdParser = new MarkdownIt('commonmark');
             content = mdParser.render(content);
 
             // const cheerio = this.$otUtils.getOtPlugin('cheerio');

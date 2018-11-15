@@ -1,5 +1,5 @@
 export default {
-
+    // TODO: 需要调整
     otDefaultColors(theme) {
         switch (theme) {
             case 'dark':
@@ -12,14 +12,14 @@ export default {
                         normal: [ 'light-f', 'def-b' ],
                         hover: [ 'light-f-hov', 'def-bg-h', 'def-b-h' ],
                         active: [ 'def-bg-a', 'light-b-a' ],
-                        selected: [ 'light-f-s', 'pri-bg-s' ],
+                        selected: [ 'light-f-s', 'def-bg-s' ],
                         disabled: [ 'def-f-dis', 'grey-bg-dis', 'def-b-dis' ],
                     },
                     noBgItem: {
                         normal: [ 'light-f' ],
-                        hover: [ 'pri-f-hov' ],
+                        hover: [ 'def-f-hov' ],
                         active: [ 'light-f-a', 'def-bg-a' ],
-                        selected: [ 'light-f-s', 'pri-bg-s' ],
+                        selected: [ 'light-f-s', 'def-bg-s' ],
                         disabled: [ 'def-f-dis' ],
                     },
                 };
@@ -29,19 +29,19 @@ export default {
                     normal: [ 'def-f', 'def-bg', 'def-b' ],
                     hover: [ 'def-f-hov', 'light-bg-hov', 'def-b-hov' ],
                     active: [ 'light-f-act', 'def-bg-act', 'def-b-act' ],
-                    disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
+                    disabled: [ 'def-f-dis', 'grey-bg-dis', 'def-b-dis' ],
                     item: {
                         normal: [ 'def-f', 'def-bg', 'def-b' ],
                         hover: [ 'def-f-hov', 'light-bg-hov', 'def-b-hov' ],
                         active: [ 'light-f-act', 'def-bg-act', 'def-b-act' ],
-                        selected: [ 'light-f-s', 'pri-bg-s' ],
-                        disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
+                        selected: [ 'light-f-s', 'def-bg-s' ],
+                        disabled: [ 'def-f-dis', 'grey-bg-dis', 'def-b-dis' ],
                     },
                     noBgItem: {
                         normal: [ 'def-f' ],
                         hover: [ 'def-f-hov' ],
                         active: [ 'light-f-act' ],
-                        selected: [ 'light-f-s', 'pri-bg-s' ],
+                        selected: [ 'light-f-s', 'def-bg-s' ],
                         disabled: [ 'def-f-dis' ],
                     },
                 };

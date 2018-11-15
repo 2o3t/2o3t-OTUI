@@ -20,6 +20,7 @@ export default {
             this.$otMessage({
                 title: '这是一条消息提示',
                 position,
+                theme: this.$otTheme,
             });
         },
     },

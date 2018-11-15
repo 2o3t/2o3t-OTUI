@@ -11,7 +11,7 @@
                 <td v-for="(name, index) in columns"
                     :style="getBodyCellStyle(name)"
                     :key="`ot_table_cell_body_${name}_${index}`">
-                    <slot :id="name" :index="index" :label="item[name]">
+                    <slot :id="name" :index="index" :item="item[name]">
                         <div>
                             {{ item[name] }}
                         </div>
@@ -49,7 +49,7 @@ export default {
     methods: {
         calcWidth(name) {
             const column = this._columns[name];
-            return column.labelWidth;
+            return column.width;
         },
         getBodyStyle() {
             if (this.$OtTable && this.$OtTable.bodyStyle) {

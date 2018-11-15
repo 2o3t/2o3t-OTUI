@@ -3,11 +3,11 @@ export default {
         switch (theme) {
             case 'dark':
                 return {
-                    normal: [ 'light-f', 'def-b', 'border' ],
+                    normal: [ 'def-f', 'def-b', 'border' ],
                     hover: [ 'light-f-hov', 'def-bg-h', 'def-b-h' ],
-                    active: [ 'def-bg-a', 'light-b-a' ],
+                    active: [ 'def-bg-a', 'def-b-a' ],
                     selected: [ 'dark-f-s', 'def-bg-s' ],
-                    disabled: [ 'def-f-dis', 'grey-bg-dis', 'def-b-dis' ],
+                    disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                 };
             case 'light':
             default:

@@ -13,7 +13,7 @@ module.exports = function(source) {
         return readme(source);
     }
 
-    const mdParser = new MarkdownIt();
+    const mdParser = new MarkdownIt('commonmark');
 
     const result = mdParser.render(source);
 

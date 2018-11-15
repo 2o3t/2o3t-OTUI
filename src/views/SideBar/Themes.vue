@@ -14,7 +14,8 @@ import createRouters from '@router/createRouters';
 const routers = createRouters(modules);
 const KEY_MAP = {
     1: 'Introduction',
-    2: 'Basic',
+    2: 'Colors',
+    3: 'Rules',
 };
 export default {
     name: 'side-bar-pager',

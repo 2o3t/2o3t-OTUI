@@ -8,8 +8,10 @@
 </template>
 
 <script>
+import theme from './OtWheelTheme';
 export default {
     name: 'ot-wheel',
+    mixins: [ theme ],
     model: {
         prop: 'model',
         event: 'update',
@@ -26,37 +28,6 @@ export default {
             default: '',
         },
         disabled: [ Boolean ],
-    },
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    list: {
-                        normal: [ 'light-f' ],
-                    },
-                    item: {
-                        normal: [ 'light-f' ],
-                        hover: [ 'pri-bg-h' ],
-                        active: [ 'pri-bg-a' ],
-                        selected: [ 'light-f-sel', 'pri-bg-sel' ],
-                        disabled: [ 'light-f-dis', 'grey-bg-dis' ],
-                    },
-                };
-            case 'light':
-            default:
-                return {
-                    list: {
-                        normal: [ 'def-f' ],
-                    },
-                    item: {
-                        normal: [ 'def-f' ],
-                        hover: [ 'pri-f-hov' ],
-                        active: [ 'pri-f-act' ],
-                        selected: [ 'light-f-sel', 'pri-bg-sel' ],
-                        disabled: [ 'def-f-dis', 'def-bg-dis' ],
-                    },
-                };
-        }
     },
     methods: {
         handleSelectClick(item) {

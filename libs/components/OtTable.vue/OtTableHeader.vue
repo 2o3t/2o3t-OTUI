@@ -11,7 +11,7 @@
                 <th v-for="(name, index) in columns"
                     :style="getHeadCellStyle(name)"
                     :key="`ot_table_cell_header_${name}_${index}`">
-                    <slot :id="name" :index="index" :label="getLabel(name)">
+                    <slot :id="name" :index="index" :item="getLabel(name)">
                         <div>
                             {{ getLabel(name) }}
                         </div>
@@ -38,7 +38,7 @@ export default {
     methods: {
         calcWidth(name) {
             const column = this._columns[name];
-            return column.labelWidth;
+            return column.width;
         },
         getLabel(name) {
             const column = this._columns[name];

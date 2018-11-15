@@ -23,6 +23,7 @@ export default {
                 icon: 'space-shuttle',
                 title: '这是一条消息提示',
                 color,
+                theme: this.$otTheme,
             });
         },
     },

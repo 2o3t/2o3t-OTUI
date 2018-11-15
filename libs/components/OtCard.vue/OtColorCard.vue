@@ -1,8 +1,8 @@
 <template>
     <div v-if="!horizontal" ot v-ot-bind="verticalOtColors(value)" class="ot-color-card" :class="$style.root" :size="$otSize" :round="round">
-        <div :class="[$style.main, $style.card]" :style="bgColor(value)" :size="$otSize" :only-one="!colorsTabList.length">
+        <div :class="[$style.main, $style.card]" :style="_valueStyle" v-ot-bind="_valueStyle" :size="$otSize" :only-one="!colorsTabList.length">
             <span :class="$style.name">{{ name }}</span>
-            <span :class="$style.value">{{ String.prototype.toUpperCase.call(value) }}</span>
+            <span :class="$style.value">{{ _realValue }}</span>
         </div>
         <div :class="[$style.sub, $style.card, $style.link]" :style="item.style" :size="$otSize" :round="round"
             v-for="(item, index) in colorsTabList" :key="index" :first="index === 0" :title="copyTitle" @click="handleCopyClick(item.color)">
@@ -32,7 +32,7 @@ export default {
         },
         // 主颜色值, 十六进制
         value: {
-            type: String,
+            type: [ String, Object ],
             default: '#207FF6',
         },
         // 叠加白色基色
@@ -64,7 +64,7 @@ export default {
         // 自动控制字体颜色
         autoFont: {
             type: Boolean,
-            default: true,
+            default: false,
         },
     },
     data() {
@@ -73,6 +73,20 @@ export default {
         };
     },
     computed: {
+        _realValue() {
+            const value = this.value;
+            if (typeof value === 'object') {
+                return Object.keys(value)[0] || value;
+            }
+            return String.prototype.toUpperCase.call(value);
+        },
+        _valueStyle() {
+            const value = this.value;
+            if (typeof value === 'object') {
+                return value;
+            }
+            return this.bgColor(value);
+        },
         colorsTabList() {
             return this.mix({
                 name: '0%',
@@ -106,13 +120,23 @@ export default {
             if (Array.isArray(whiteAttrs)) {
                 for (let i = 0; i < whiteAttrs.length; i++) {
                     const index = whiteAttrs[i];
-                    const pre = Math.round(index * 0.01 * 100) / 100;
-                    const color = this.$otUtils.Colors.mix(color2, color1, pre);
-                    result.push({
-                        name: `W ${Math.round(pre * 100)}%`,
-                        color,
-                        style: this.bgColor(color),
-                    });
+                    if (typeof index !== 'object') {
+                        const pre = Math.round(parseInt(index) * 0.01 * 100) / 100;
+                        const color = this.$otUtils.Colors.mix(color2, color1, pre);
+                        result.push({
+                            name: `W ${Math.round(pre * 100)}%`,
+                            color,
+                            style: this.bgColor(color),
+                        });
+                    } else {
+                        result.push({
+                            name: index.name,
+                            color: index.color || index.otColor,
+                            style: index.color ? this.bgColor(index.color) : {
+                                ...index.otColor,
+                            },
+                        });
+                    }
                 }
             }
             const blackAttrs = this._blackArray;
@@ -128,13 +152,23 @@ export default {
 
                 for (let i = 0; i < blackAttrs.length; i++) {
                     const index = blackAttrs[i];
-                    const pre = Math.round(index * 0.01 * 100) / 100;
-                    const color = this.$otUtils.Colors.mix(color3, color1, pre);
-                    result.push({
-                        name: `B ${Math.round(pre * 100)}%`,
-                        color,
-                        style: this.bgColor(color),
-                    });
+                    if (typeof index !== 'object') {
+                        const pre = Math.round(parseInt(index) * 0.01 * 100) / 100;
+                        const color = this.$otUtils.Colors.mix(color3, color1, pre);
+                        result.push({
+                            name: `B ${Math.round(pre * 100)}%`,
+                            color,
+                            style: this.bgColor(color),
+                        });
+                    } else {
+                        result.push({
+                            name: index.name,
+                            color: index.color || index.otColor,
+                            style: index.color ? this.bgColor(index.color) : {
+                                ...index.otColor,
+                            },
+                        });
+                    }
                 }
             }
             return result;
@@ -158,18 +192,21 @@ export default {
         horizontalOtColors(hex) {
             const { v } = this.judgeFontColor(hex);
             if (parseInt(v) < 55) {
+                const name = this.$otColorsParse('light-font-normal');
                 return {
-                    'ot-color-light-font-normal': true,
+                    [name]: true,
                 };
             }
+            const name = this.$otColorsParse('dark-font-normal');
             return {
-                'ot-color-dark-font-normal': true,
+                [name]: true,
             };
         },
         verticalOtColors(hex) {
-            if (!this.auto) {
+            if (!this.autoFont) {
+                const name = this.$otColorsParse('light-font-normal');
                 return {
-                    'ot-color-light-font-normal': true,
+                    [name]: true,
                 };
             }
             return this.horizontalOtColors(hex);

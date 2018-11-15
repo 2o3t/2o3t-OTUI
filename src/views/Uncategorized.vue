@@ -3,6 +3,13 @@
 
         <ot-section :theme="$otTheme" label="OT-Table">
             <ot-row-group :theme="$otTheme" :fixable="false">
+                <ot-color-rule-table name="light" shuxing="font">
+                </ot-color-rule-table>
+            </ot-row-group>
+        </ot-section>
+
+        <ot-section :theme="$otTheme" label="OT-Table">
+            <ot-row-group :theme="$otTheme" :fixable="false">
                 <ot-table-ui>
                     <tbody>
                         <tr style="font-size: 24px;">

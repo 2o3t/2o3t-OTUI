@@ -17,10 +17,10 @@
                     <ot-dropdown :list="dropdownList" round text-align="left" @select="handleDropdownSelect" text="THEME" custom>
                         <!-- <ot-button round>Theme</ot-button> -->
                         <div slot="item" slot-scope="{ item }">
-                            <ot-radio v-if="item !== 'theme'" :theme="!isDark ? 'dark' : 'light'" size="mini" v-model="currentColor" :value="item">
+                            <ot-radio v-if="item !== 'theme'" :theme="!isDark ? 'dark' : 'light'" size="small" v-model="currentColor" :value="item">
                                 <span>{{ item.toUpperCase() }}</span>
                             </ot-radio>
-                            <ot-switch v-else :value="isDark" :theme="!isDark ? 'dark' : 'light'" size="mini" active-color="#13ce66" inactive-color="#ff4949">
+                            <ot-switch v-else :value="isDark" :theme="!isDark ? 'dark' : 'light'" size="small" active-color="#13ce66" inactive-color="#ff4949">
                                 <span slot="inactive">Light</span>
                                 <span slot="active">Dark</span>
                             </ot-switch>

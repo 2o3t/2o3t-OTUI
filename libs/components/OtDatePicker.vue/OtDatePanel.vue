@@ -68,8 +68,10 @@
 </template>
 
 <script>
+import theme from './OtDatePanelTheme';
 export default {
     name: 'ot-date-panel',
+    mixins: [ theme ],
     model: {
         prop: 'model',
         event: 'update',
@@ -92,61 +94,25 @@ export default {
         week: [ Boolean ],
         footer: [ Boolean ],
     },
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    day: !this.week ? {
-                        normal: [ 'light-f' ],
-                        hover: [ 'def-f-hov' ],
-                        selected: [ 'light-f-sel', 'def-bg-sel' ],
-                        disabled: [ 'grey-f-dis' ],
-                    } : {
-                        disabled: [ 'grey-f-dis' ],
-                    },
-                    week: {
-                        hover: [ 'light-f-hov' ],
-                        selected: [ 'light-f-sel', 'def-bg-sel' ],
-                    },
-                    footer: {
-                        normal: [ 'grey-bt' ],
-                    },
-                    header: {
-                        normal: [ 'grey-bb' ],
-                    },
-                };
-            case 'light':
-            default:
-                return {
-                    day: !this.week ? {
-                        normal: [ 'def-f' ],
-                        hover: [ 'def-f-hov' ],
-                        selected: [ 'light-f-sel', 'def-bg-sel' ],
-                        disabled: [ 'grey-f-dis' ],
-                    } : {
-                        disabled: [ 'grey-f-dis' ],
-                    },
-                    week: {
-                        hover: [ 'def-f-hov' ],
-                        selected: [ 'light-f-sel', 'def-bg-sel' ],
-                    },
-                    footer: {
-                        normal: [ 'grey-bt' ],
-                    },
-                    header: {
-                        normal: [ 'grey-bb' ],
-                    },
-                };
-        }
-    },
     data() {
         return {
-            currentDate: this.moment(),
+            currentDate: null,
             currentWeek: [],
 
-            displayDate: this.moment(),
+            displayDate: null,
             monthDays: [],
         };
+    },
+    created() {
+        // 初始化
+        if (this.model) {
+            this.currentDate = this.moment(this.model, this._format);
+        } else {
+            this.currentDate = this.moment();
+        }
+        this.currentWeek = this._calcThisDayToWeek(this.currentDate);
+        this.displayDate = this.moment(this.currentDate);
+        this.monthDays = this._calcMonthDays();
     },
     computed: {
         moment() {
@@ -291,15 +257,6 @@ export default {
 
             this.updateModel();
         },
-    },
-    created() {
-        // 初始化
-        if (this.model) {
-            this.currentDate = this.moment(this.model, this._format);
-        }
-        this.currentWeek = this._calcThisDayToWeek(this.currentDate);
-        this.displayDate = this.moment(this.currentDate);
-        this.monthDays = this._calcMonthDays();
     },
 };
 </script>

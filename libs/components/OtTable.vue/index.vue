@@ -1,24 +1,30 @@
 <template>
     <div ot class="ot-table" :class="$style.root" :adapter="adapter">
-        <slot></slot>
         <div :class="$style.header" :style="_headerStyle">
-            <ot-table-header>
-                <div v-if="$slots['header-item']" prop="{ id, index, label }">
-                    <slot name="header-item" :id="id" :index="index" :label="label"></slot>
-                </div>
-            </ot-table-header>
+            <slot name="header">
+                <ot-table-header>
+                    <template slot-scope="{ id, index, item }">
+                        <slot name="header-item" :id="id" :index="index" :item="item"></slot>
+                    </template>
+                </ot-table-header>
+            </slot>
         </div>
         <div :class="$style.body" :style="_bodyStyle">
-            <ot-table-body :list="list" :stripe="stripe">
-                <div v-if="$slots['body-item']" prop="{ id, index, label }">
-                    <slot name="body-item" :id="id" :index="index" :label="label"></slot>
-                </div>
-            </ot-table-body>
+            <slot name="body">
+                <ot-table-body :list="list" :stripe="stripe">
+                    <template slot-scope="{ id, index, item }">
+                        <slot name="body-item" :id="id" :index="index" :item="item"></slot>
+                    </template>
+                </ot-table-body>
+            </slot>
         </div>
         <div :class="$style.footer" :style="_footerStyle">
-            <ot-table-footer>
-            </ot-table-footer>
+            <slot name="footer">
+                <ot-table-footer>
+                </ot-table-footer>
+            </slot>
         </div>
+        <slot></slot>
     </div>
 </template>
 
@@ -124,7 +130,7 @@ export default {
             let width = 0;
             const columns = this.getAllColumns();
             Object.keys(columns).forEach(name => {
-                width += columns[name] && parseInt(columns[name].labelWidth) || 0;
+                width += columns[name] && parseInt(columns[name].width) || 0;
             });
             return width;
         },

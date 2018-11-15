@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div ot class="ot-message" v-ot-bind="$otColors" :class="[$style.root, customClass]"
+        <div ot class="ot-message" v-ot-bind="$otColors" :class="[$style.root, customClass]" :theme="$otTheme"
             v-show="visible" :center="center" :round="round" :position="position" :border="border" :size="$otSize"
             @mouseenter="clearTimer"
             @mouseleave="startTimer">
