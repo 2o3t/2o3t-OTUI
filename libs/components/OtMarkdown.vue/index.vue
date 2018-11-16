@@ -80,20 +80,15 @@ export default {
             }
         },
         covertMD(content) {
-            if (this.dangerouslyUseHTMLString) {
-                return content;
+            if (!this.dangerouslyUseHTMLString) {
+                const MarkdownIt = this.$otUtils.getOtPlugin('markdownit');
+                if (!MarkdownIt) {
+                    return;
+                }
+                const mdParser = new MarkdownIt();
+                content = mdParser.render(content);
             }
-            const MarkdownIt = this.$otUtils.getOtPlugin('markdownit');
-            if (!MarkdownIt) {
-                return;
-            }
-            const mdParser = new MarkdownIt('commonmark');
-            content = mdParser.render(content);
 
-            // const cheerio = this.$otUtils.getOtPlugin('cheerio');
-            // if (!cheerio) {
-            //     return;
-            // }
             const $ = cheerio.load(content, {
                 decodeEntities: false,
                 lowerCaseAttributeNames: false,

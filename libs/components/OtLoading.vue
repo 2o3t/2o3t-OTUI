@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.root" :size="$otSize">
         <figure :class="$style.spinner" v-if="type === 'spinner'">
-            <ot-icon ot v-ot-bind="$otColors.spinner" :class='$style.spinner' icon="spinner" selected loading></ot-icon>
+            <ot-icon ot v-ot-bind="$otColors.spinner" :class='$style.spinner' icon="loading" selected loading></ot-icon>
         </figure>
         <figure :class="$style.pushing" v-if="type === 'push'">
             <h2>{{ label }}</h2>

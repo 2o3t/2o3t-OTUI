@@ -1,9 +1,10 @@
 
-### 展示字体规则
+### 字规则
 
+文字规则大致定义如下:
 
 <ot-row-group>
-    <ot-section :label="`${name.toUpperCase()} Font Rule`" prefix="#" :level="4" v-for="(name) in otUINameMap" :key="name" section>
+    <ot-section :label="name.toUpperCase()+' Font Rule'" prefix="#" :level="4" v-for="name in otUINameMap" :key="name" section>
         <ot-color-rule-table  :actions="otUIActionMap"
             :name="name" :shuxing="shuxing">
         </ot-color-rule-table>

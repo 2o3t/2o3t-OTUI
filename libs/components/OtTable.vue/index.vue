@@ -3,7 +3,7 @@
         <div :class="$style.header" :style="_headerStyle">
             <slot name="header">
                 <ot-table-header>
-                    <template slot-scope="{ id, index, item }">
+                    <template v-if="$scopedSlots['header-item']" slot-scope="{ id, index, item }">
                         <slot name="header-item" :id="id" :index="index" :item="item"></slot>
                     </template>
                 </ot-table-header>
@@ -12,7 +12,7 @@
         <div :class="$style.body" :style="_bodyStyle">
             <slot name="body">
                 <ot-table-body :list="list" :stripe="stripe">
-                    <template slot-scope="{ id, index, item }">
+                    <template v-if="$scopedSlots['body-item']" slot-scope="{ id, index, item }">
                         <slot name="body-item" :id="id" :index="index" :item="item"></slot>
                     </template>
                 </ot-table-body>

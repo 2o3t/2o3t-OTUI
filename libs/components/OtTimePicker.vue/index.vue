@@ -1,7 +1,7 @@
 <template>
     <div ot class="ot-time-picker" :class="$style.root" :size="$otSize">
         <ot-select :class="$style.timer" :placeholder="placeholder" :round="round"
-            icon="clock-o" :clearable="clearable"
+            icon="time-circle" :clearable="clearable"
             :readonly="readonly"
             v-model="selectValue"
             :list="options ? timePickerList : null">
@@ -13,7 +13,7 @@
         </ot-select>
 
         <ot-select :class="$style.timer" v-if="double" :placeholder="_doublePlaceholder" :round="round"
-            icon="clock-o" :clearable="clearable"
+            icon="time-circle" :clearable="clearable"
             :readonly="readonly"
             v-model="selectDoubleValue"
             :list="options ? timePickerList : null">

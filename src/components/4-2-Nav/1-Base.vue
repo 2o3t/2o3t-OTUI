@@ -3,7 +3,7 @@
         <ot-row-group :theme="$otTheme" :code="code" :fixable="false">
             <ot-nav :isCollapse="isCollapse">
                 <ot-link slot="left" to="/">
-                    <ot-logo :theme="$otTheme" icon="gratipay">
+                    <ot-logo :theme="$otTheme" icon="logo">
                         <span>2O3T-UI</span>
                     </ot-logo>
                 </ot-link>

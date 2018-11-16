@@ -58,7 +58,7 @@ export default {
         // 展示的图标
         icon: {
             type: String,
-            default: 'clock-o',
+            default: 'calendar',
         },
     },
     watch: {

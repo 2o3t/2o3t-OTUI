@@ -2,7 +2,7 @@
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :theme="$otTheme" :code="code">
             <ot-title-tip :theme="$otTheme">
-                <ot-icon slot="title" icon="gg">
+                <ot-icon slot="title" icon="right-circle">
                     <span>你好!</span>
                 </ot-icon>
                 <span>Hi!</span>

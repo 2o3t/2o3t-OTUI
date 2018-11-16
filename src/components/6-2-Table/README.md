@@ -1,4 +1,5 @@
 <!-- @api: OtTable.vue/OtTableAPI.md -->
+<!-- @api: OtTable.vue/OtTableColumnAPI.md -->
 <!-- @api: OtTable.vue/OtTableHeaderAPI.md -->
 <!-- @api: OtTable.vue/OtTableBodyAPI.md -->
 <!-- @api: OtTable.vue/OtTableFooterAPI.md -->

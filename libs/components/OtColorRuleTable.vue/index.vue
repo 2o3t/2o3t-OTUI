@@ -10,7 +10,7 @@
             <div v-if="id === 'title'" :class="$style.title">
                 {{ item }}
             </div>
-            <ot-link v-if="id === 'alias'" :class="[$style.title, $style.name]">
+            <ot-link v-if="id === 'alias'" :class="[$style.title, $style.name]" @click="handleCopyClick(item)">
                 <span ot v-ot-bind="$otColors.name" :class="$style.sLeft">[</span>
                 <span :class="$style.alias">{{ item }}</span>
                 <span ot v-ot-bind="$otColors.name" :class="$style.sRight">]</span>
@@ -91,6 +91,19 @@ export default {
             }
             return `-${this.parseSubName(name, len)}`;
         },
+        handleCopyClick(item) {
+            const clipboard = this.$otUtils.getOtPlugin('clipboard');
+            if (!clipboard) {
+                return;
+            }
+            const content = item;
+            clipboard.writeText(content);
+
+            this.$otMessage.info({
+                title: `[ ${item} ] 复制成功!`,
+                theme: this.$otTheme,
+            });
+        },
     },
 };
 </script>
@@ -105,16 +118,18 @@ export default {
     @include __ot_root_block__;
 
     .title {
-
+        box-sizing: border-box;
     }
 
     .color {
+        box-sizing: border-box;
         width: 100%;
         height: 100%;
         padding: 0 5px;
     }
 
     .name {
+        box-sizing: border-box;
         cursor: pointer;
 
         .alias {

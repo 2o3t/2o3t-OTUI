@@ -3,7 +3,7 @@
         <ot-row-group :theme="$otTheme" :code="code" :flex="false" center>
             <ot-alert title="我是一条不可关闭的消息提示" round :closable="false" :description="description"></ot-alert>
             <ot-alert title="我是一条不可关闭的消息提示" color="primary" round :closable="false" type="question" show-icon :description="description"></ot-alert>
-            <ot-alert :title="alertTitle" color="success" round close-text="Close" type="success" :description="description"></ot-alert>
+            <ot-alert :title="alertTitle" color="success" round close-text="Close" type="success" show-icon :description="description"></ot-alert>
             <ot-alert :title="alertTitle" color="warning" round close-text="CLOSE" type="warning" show-icon :description="description"></ot-alert>
             <ot-alert :title="alertTitle" color="danger" round close-text="Close" type="error" show-icon :description="description"></ot-alert>
             <ot-alert :title="alertTitle" color="info" round type="info" show-icon :description="description"></ot-alert>

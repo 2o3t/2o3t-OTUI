@@ -46,3 +46,8 @@ new Vue({
     router,
     render: h => h(App),
 }).$mount('#app');
+
+// 解决移动端 hover 问题
+if (document) {
+    document.body.addEventListener('touchstart', function() { });
+}

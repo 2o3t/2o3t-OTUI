@@ -16,6 +16,7 @@
 | lang | code 的语言 | String | 'vue' |
 | fill | 空间多余时, 拉伸 | Boolean | - |
 | flex | flex 布局 | Boolean | true |
+| center | - | Boolean | - |
 
 ## Slots
 

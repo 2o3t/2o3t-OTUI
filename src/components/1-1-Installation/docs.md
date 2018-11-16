@@ -26,7 +26,7 @@ yarn add 2o3t-ui
 
 
 ```js
-import 'font-awesome/css/font-awesome.min.css';
+import '2o3t-icon-font/dist/font-ot.css';
 import '2o3t-ui/libs/styles.css';
 import OTUI from '2o3t-ui';
 
@@ -43,5 +43,24 @@ Vue.use(OTUI, {
         clipboard,
         hljs,
     },
+});
+```
+
+or 引入 CDN
+
+```html
+<script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/markdown-it/8.4.2/markdown-it.min.js"></script>
+<script src="https://cdn.bootcss.com/clipboard-polyfill/3.0.0-beta3/clipboard-polyfill.promise.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+```
+
+```js
+import '2o3t-icon-font/dist/font-ot.css';
+import '2o3t-ui/libs/styles.css';
+import OTUI from '2o3t-ui';
+
+Vue.use(OTUI, {
+    global: true,
 });
 ```

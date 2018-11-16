@@ -27,6 +27,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| header-item | - | :id="id" :index="index" :label="label" | - |
-| body-item | - | :id="id" :index="index" :label="label" | - |
+| header | - | - | - |
+| body | - | - | - |
+| footer | - | - | - |
 

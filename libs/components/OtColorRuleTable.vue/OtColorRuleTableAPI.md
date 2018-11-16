@@ -1,4 +1,4 @@
-# OtTableColumn API
+# OtColorRuleTable API
 
 ## Props
 
@@ -9,10 +9,7 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| name | ***必填***, 维一标识 | String | - |
-| label | 列名 | String | - |
-| width | 列宽 | String | '150px' |
-| align | 文字对齐方式 | String | 'left' |
-| headCellStyle | - | Function | ()=> {   return {}; } |
-| bodyCellStyle | - | Function | ()=> {   return {}; } |
+| name | - | String | '' |
+| shuxing | - | String | '' |
+| actions | - | Array | ()=> {   return ['', 'normal', 'hover', 'active', 'focus', 'selected', 'disabled']; } |
 

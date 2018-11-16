@@ -3,7 +3,7 @@
     <ot-header :class="$style.header" :theme="$otTheme" shadow>
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme" placement="right">
             <ot-link slot="left" to="/">
-                <ot-logo :theme="$otTheme" icon="logo" lib="font-ot">
+                <ot-logo :theme="$otTheme" icon="logo">
                     <span>2O3T-UI</span>
                     <!-- <span slot="subtitle">OT-UI</span> -->
                 </ot-logo>
@@ -11,7 +11,8 @@
             <ot-nav-item v-for="(item) in headers" :key="item.name" :to="item.router">{{item.name}}</ot-nav-item>
             <ot-row :gutter="10" :class="$style.right" slot="right">
                 <ot-col :span="6">
-                    <ChangeColor ot :theme="$otTheme"></ChangeColor>
+                    <ChangeColor v-if="currentColor !== 'default'"  :theme="$otTheme"></ChangeColor>
+                    <div v-else><span style="opacity: 0;">2O3T</span></div>
                 </ot-col>
                 <ot-col :span="6">
                     <ot-dropdown :list="dropdownList" round text-align="left" @select="handleDropdownSelect" text="THEME" custom>

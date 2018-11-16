@@ -37,5 +37,10 @@ export default function($) {
         h.tagName = 'ot-link';
     });
 
+    // blockquote
+    $('blockquote').each((index, h) => {
+        h.tagName = 'ot-notice';
+    });
+
     return $;
 }

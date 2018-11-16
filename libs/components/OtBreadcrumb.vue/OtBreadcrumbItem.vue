@@ -1,11 +1,11 @@
 <template>
-    <span ot class="ot-breadcrumb-item" :class="$style.root" :size="$otSize">
+    <div ot class="ot-breadcrumb-item" :class="$style.root" :size="$otSize">
         <ot-link :class="$style.link" v-bind="$attrs" :to="to" :replace="replace">
             <!-- 可参考 ot-link 使用 -->
             <slot></slot>
         </ot-link>
         <ot-icon ot v-ot-bind="$otColors.separator" v-if="!bLastIndex" class="ot-breadcrumb-item__separator" :class="$style.separator" :icon="separatorIcon"><span v-if="separator">{{ separator }}</span></ot-icon>
-    </span>
+    </div>
 </template>
 
 <script>
@@ -81,8 +81,11 @@ export default {
     }
 
     .separator {
+        box-sizing: border-box;
         margin: 0 0.6em;
-        font-size: 0.8em;
+        transform-origin: center;
+        transform: scale(0.8);
+        vertical-align: bottom;
     }
 }
 </style>

@@ -10,13 +10,13 @@
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | name | 颜色名称 | String | 'Primary Color' |
-| value | 主颜色值, 十六进制 | String | '#207FF6' |
+| value | 主颜色值, 十六进制 | String,Object | '#207FF6' |
 | white | 叠加白色基色 | String | '#FFFFFF' |
 | black | 叠加黑色基色 | String | '#000000' |
 | whiteArray | 白色百分比池子 | Array,Object,String | ()=> {   return [60, 40, 20]; } |
 | blackArray | 黑色百分比池子 | Array,Object,String | ()=> {   return [10, 20, 40, 60]; } |
 | horizontal | 水平样式展示 | Boolean | - |
-| autoFont | 自动控制字体颜色 | Boolean | true |
+| autoFont | 自动控制字体颜色 | Boolean | false |
 
 ## Events
 

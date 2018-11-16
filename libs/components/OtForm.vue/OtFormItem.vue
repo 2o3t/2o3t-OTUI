@@ -167,7 +167,9 @@ export default {
             // 触发验证
             const trigger = e.type;
             setTimeout(() => {
-                this.validate(trigger);
+                this.$nextTick(()=> {
+                    this.validate(trigger);
+                });
             }, 100);
         },
         _blurAllInput() {

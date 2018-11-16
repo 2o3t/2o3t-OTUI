@@ -7,7 +7,7 @@
                 v-model="selectValue"
                 :list="selectList">
                 <div slot="item" slot-scope="{ item }">
-                    <ot-icon icon="chevron-circle-right">{{ item }}</ot-icon>
+                    <ot-icon icon="right-circle-fill">{{ item }}</ot-icon>
                 </div>
             </ot-select>
             <ot-select :theme="$otTheme"
@@ -15,7 +15,7 @@
                 v-model="selectValue"
                 :list="selectList">
                 <div slot="item" slot-scope="{ item }">
-                    <ot-icon icon="chevron-circle-right">{{ item }}</ot-icon>
+                    <ot-icon icon="right-circle-fill">{{ item }}</ot-icon>
                 </div>
             </ot-select>
         </ot-row-group>

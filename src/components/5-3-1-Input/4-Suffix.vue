@@ -8,7 +8,7 @@
                 <span slot="suffix">.com</span>
             </ot-input>
             <ot-input :theme="$otTheme" v-model="inputValue" round>
-                <ot-icon slot="suffix" icon="cog"></ot-icon>
+                <ot-icon slot="suffix" icon="setting"></ot-icon>
             </ot-input>
             <ot-input :theme="$otTheme" v-model="inputValue" placeholder="请输入" round>
                 <span slot="prefix">@</span>

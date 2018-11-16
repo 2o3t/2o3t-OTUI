@@ -1,4 +1,4 @@
 
-# Font Rules 字色规则
+# Font Rules 字规则
 
 字体配色规则

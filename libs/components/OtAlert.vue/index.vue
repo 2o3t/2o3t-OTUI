@@ -21,10 +21,11 @@
 
 <script>
 const TYPE_CLASSES_MAP = {
-    success: 'check-circle',
-    warning: 'exclamation-triangle',
-    question: 'question-circle',
-    error: 'times-circle',
+    success: 'check-circle-fill',
+    warning: 'warning-circle-fill',
+    question: 'question-circle-fill',
+    error: 'close-circle-fill',
+    info: 'info-circle-fill',
 };
 import theme from './theme.js';
 export default {
