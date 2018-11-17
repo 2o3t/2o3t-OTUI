@@ -17,6 +17,6 @@ export default [
     },
     {
         name: '字体图标',
-        href: 'https://2o3t.github.io/2o3t-IconFont/#/components',
+        href: '//2o3t.github.io/2o3t-IconFont/#/components',
     },
 ];

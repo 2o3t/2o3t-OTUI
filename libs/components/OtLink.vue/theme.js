@@ -3,7 +3,7 @@ export default {
         switch (theme) {
             case 'dark': {
                 const c = {
-                    normal: [ 'light-f' ],
+                    normal: [ 'def-f' ],
                     hover: [ ],
                     active: [ ],
                     selected: [ 'def-f-sel' ],
@@ -27,7 +27,7 @@ export default {
             case 'light':
             default: {
                 const c = {
-                    normal: [ 'dark-f' ],
+                    normal: [ 'def-f' ],
                     hover: [ ],
                     active: [ ],
                     selected: [ 'def-f-sel' ],

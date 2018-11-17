@@ -10,6 +10,7 @@
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | icon | `ot-icon` 的图标名称 | String | - |
+| lib | ot-icon lib 图表库名称 | String | - |
 | disabled | 禁用功能 | Boolean | - |
 | circle | 圆角UI | Boolean | - |
 | dashed | 虚边UI | Boolean | - |

@@ -134,7 +134,7 @@ export default {
     padding-bottom: 2em;
 
     .content {
-        padding: 10px 30px 0px;
+        padding: 1em 2em 0;
         box-sizing: border-box;
         height: 100%;
         overflow-x: hidden;

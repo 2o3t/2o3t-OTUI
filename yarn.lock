@@ -10,9 +10,9 @@
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/2o3t-icon-font/-/2o3t-icon-font-0.0.10.tgz#fd4f2cc58686fcc9cf70e489a32bf30531cc24bc"
 
-"2o3t-ui@^0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.45.tgz#e9fc3151f4202982a39ff80453607a86c371e01c"
+"2o3t-ui@^0.0.46":
+  version "0.0.46"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.46.tgz#be2ffad67c4c31bdbd85f38093fad4151ebb95c8"
   dependencies:
     "2o3t-css-colors" "^0.0.9"
     "2o3t-icon-font" "^0.0.10"

@@ -1,7 +1,7 @@
 <template>
     <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
         :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default" :border="border" :dashed="dashed">
-        <ot-icon v-if="icon" :icon="icon">
+        <ot-icon v-if="icon" :icon="icon" :lib="lib">
             <!-- 有 icon 时显示 -->
             <slot></slot>
         </ot-icon>
@@ -18,6 +18,8 @@ export default {
     props: {
         // `ot-icon` 的图标名称
         icon: [ String ],
+        // ot-icon lib 图表库名称
+        lib: String,
         // 禁用功能
         disabled: [ Boolean ],
         // 圆角UI
