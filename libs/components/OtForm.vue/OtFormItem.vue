@@ -167,7 +167,7 @@ export default {
             // 触发验证
             const trigger = e.type;
             setTimeout(() => {
-                this.$nextTick(()=> {
+                this.$nextTick(() => {
                     this.validate(trigger);
                 });
             }, 100);

@@ -35,6 +35,8 @@ module.exports = function($) {
 
     $('a').each((index, h) => {
         h.tagName = 'ot-link';
+        h.attribs.target = '_blank';
+        h.attribs.border = true;
     });
 
     // blockquote

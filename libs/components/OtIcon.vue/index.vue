@@ -53,7 +53,16 @@ export default {
                     style.height = this.height;
                 }
             }
-            return style;
+            return Object.assign(style, this.fontStyle);
+        },
+        fontStyle() {
+            const style = {};
+            if ([ 'mini', 'small', 'normal', 'big' ].includes(this.size)) {
+                return style;
+            }
+            return {
+                fontSize: this.size,
+            };
         },
     },
 };

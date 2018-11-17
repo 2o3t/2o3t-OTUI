@@ -46,6 +46,7 @@ export default {
             type: Boolean,
             default: true,
         },
+        // 居中
         center: [ Boolean ],
     },
     data() {

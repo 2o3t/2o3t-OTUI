@@ -14,7 +14,7 @@
 | width | 宽度大小 | String | - |
 | height | 高度大小 | String | - |
 | loading | 是否为等待状态 | Boolean | false |
-| lib | icon-font lib | String | 'fa' |
+| lib | icon-font lib | String | 'font-ot' |
 | customClass | 自定义 class | String | '' |
 
 ## Slots

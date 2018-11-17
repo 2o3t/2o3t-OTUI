@@ -17,7 +17,7 @@
 | week | 是否为选择 周 . | Boolean | - |
 | footer | 是否显示底部面板 | Boolean | - |
 | model | 数据源 `v-model` | String | '' |
-| icon | 展示的图标 | String | 'clock-o' |
+| icon | 展示的图标 | String | 'calendar' |
 
 ## Events
 

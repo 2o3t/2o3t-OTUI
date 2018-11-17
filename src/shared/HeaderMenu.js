@@ -15,4 +15,8 @@ export default [
         name: '主题配色',
         router: '/themes',
     },
+    {
+        name: '字体图标',
+        href: 'https://2o3t.github.io/2o3t-IconFont/#/components',
+    },
 ];

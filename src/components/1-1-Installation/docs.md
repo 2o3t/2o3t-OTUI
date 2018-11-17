@@ -1,4 +1,9 @@
 
+
+[![](https://img.shields.io/npm/v/2o3t-ui.svg?style=flat)](https://www.npmjs.com/package/2o3t-ui)
+[![](https://img.shields.io/badge/UIKit-@2o3t.cn-red.svg)](http://uikit.2o3t.cn)
+[![](https://img.shields.io/npm/dt/2o3t-ui.svg)]()
+
 ### npm 安装
 
 使用 npm 的方式安装。
@@ -18,7 +23,8 @@ yarn add 2o3t-ui
 ### 初始化引入
 
 你可以引入整个 2o3t-ui 组件。
-我们的图标库暂时依赖于 font-awesome。
+
+我们的图标库依赖于 [2o3t-icon-font](https://2o3t.github.io/2o3t-icon-font/)。
 
 <ot-notice round>
 一些三方库的引用, 需要通过初始化时注入其中. 否则部分组件会显示不正常.
