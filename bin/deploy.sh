@@ -28,6 +28,6 @@ git commit -m 'deploy'
 git push -f git@github.com:2o3t/2o3t-ui.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:2o3t/ot-ui.git master:gh-pages
+git push -f git@github.com:2o3t/2o3t-ui.git master:gh-pages
 
 cd -

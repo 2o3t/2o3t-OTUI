@@ -54,10 +54,15 @@ export default {
       border-style: dashed;
     }
 
+    @include __ot_size__;
+    padding: 0px 2em;
+
+    &:hover {
+        @include __ot_box_shadow__;
+    }
+
     &[size=mini] {
-        padding: 0px 15px;
         min-height: $--ot-mini-height;
-        font-size: $--ot-mini-size;
 
         &[round] {
             border-radius: $--ot-mini-radius;
@@ -74,9 +79,7 @@ export default {
     }
 
     &[size=small] {
-        padding: 0px 15px;
         min-height: $--ot-small-height;
-        font-size: $--ot-small-size;
 
         &[round] {
             border-radius: $--ot-small-radius;
@@ -93,9 +96,7 @@ export default {
     }
 
     &[size=normal] {
-        padding: 0px 20px;
         min-height: $--ot-normal-height;
-        font-size: $--ot-normal-size;
 
         &[round] {
             border-radius: $--ot-normal-radius;
@@ -112,9 +113,7 @@ export default {
     }
 
     &[size=big] {
-        padding: 0px 25px;
         min-height: $--ot-big-height;
-        font-size: $--ot-big-size;
 
         &[round] {
             border-radius: $--ot-big-radius;

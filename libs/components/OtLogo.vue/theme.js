@@ -8,7 +8,7 @@ export default {
             case 'light':
             default:
                 return {
-                    normal: [ 'def-f' ],
+                    normal: [ 'dark-f' ],
                 };
         }
     },
