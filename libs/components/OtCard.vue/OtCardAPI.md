@@ -10,6 +10,7 @@
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | height | 卡片高度 | String | 'auto' |
+| line | 分割线 | Boolean | false |
 
 ## Slots
 

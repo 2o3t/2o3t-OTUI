@@ -1,6 +1,6 @@
 <template>
     <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card" :style="{ height }" :size="$otSize" :round="round" :border="border">
-        <div v-if="$slots.left" ot v-ot-bind="$otColors.left" :class="[$style.left, $style.padding]" class="ot-card__left" :border="border">
+        <div v-if="$slots.left" ot v-ot-bind="$otColors.left" :class="[$style.left, $style.padding]" class="ot-card__left" :border="line">
             <slot name="left"></slot>
         </div>
         <div :class="[$style.right, { [$style.padding]: !!$slots.default }]">
@@ -8,7 +8,7 @@
                 <div :class="[$style.top, $style.padding]" class="ot-card__top">
                     <slot name="top"></slot>
                 </div>
-                <ot-line v-if="$slots.bottom" class="ot-card__line"></ot-line>
+                <ot-line v-if="line && $slots.bottom" class="ot-card__line"></ot-line>
                 <div v-if="$slots.bottom" :class="[$style.bottom, $style.padding]" class="ot-card__bottom">
                     <slot name="bottom"></slot>
                 </div>
@@ -27,6 +27,11 @@ export default {
         height: {
             type: String,
             default: 'auto',
+        },
+        // 分割线
+        line: {
+            type: Boolean,
+            default: false,
         },
     },
 };
