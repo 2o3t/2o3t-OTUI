@@ -1,7 +1,7 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
     <span ot :class="$style.root" v-else v-on="$listeners">
-        <i ot :class="[$style.root, $style.label, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
+        <i ot :class="[$style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
         <span :class="$style.append">
             <!-- 跟随图标后面的容器 -->
             <slot></slot>
@@ -74,10 +74,6 @@ export default {
     display: inline-block;
     margin: 0;
     padding: 0;
-    list-style: none;
-    font-style: normal;
-    border-width: 0;
-    text-align: center;
     box-sizing: border-box;
     vertical-align: middle;
 
@@ -88,11 +84,6 @@ export default {
     }
 
     @include __ot_size__;
-
-    .label {
-        display: inline-block;
-        vertical-align: middle;
-    }
 
     .append {
         display: inline-block;
@@ -113,6 +104,18 @@ export default {
         transform: rotate(360deg);
       }
     }
+}
+
+.icon {
+    display: inline-block;
+    line-height: 1;
+    overflow: hidden;
+    list-style: none;
+    font-style: normal;
+    border-width: 0;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: middle;
 }
 </style>
 

@@ -2,7 +2,7 @@
     <li ot v-ot-bind="$otColors" class="ot-nav-item" :size="$otSize"
         :class="$style.root" :collapse="isCollapse"
         :disabled="disabled" :selected="isSelected">
-        <ot-link :class="$style.link" :href="href" :to="to" @click="handleClick"
+        <ot-link v-ot-bind="$otColors.link" :class="$style.link" :href="href" :to="to" @click="handleClick"
             :color="color" :selected="isSelected" :disabled="disabled">
             <ot-icon :class="$style.icon" :icon="icon" v-if="icon"></ot-icon>
             <!-- 自定义标题容器 -->
@@ -105,6 +105,10 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
+
+        &[ot]:not([selected]):not([disabled]):not(:hover):not(:active) {
+            color: inherit;
+        }
     }
 
     @include __ot_size__;

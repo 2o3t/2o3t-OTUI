@@ -3,7 +3,7 @@ export default {
         switch (theme) {
             case 'dark': {
                 const c = {
-                    normal: [ 'def-f' ],
+                    normal: [ 'light-f' ],
                     hover: [ ],
                     active: [ ],
                     selected: [ 'def-f-sel' ],
@@ -14,6 +14,7 @@ export default {
                     c.disabled.push('def-bb-dis');
                 }
                 if (this.currentHref) {
+                    c.normal = [ 'def-f' ];
                     c.hover.push('def-f-hov');
                     c.hover.push('def-f-act');
 
@@ -27,7 +28,7 @@ export default {
             case 'light':
             default: {
                 const c = {
-                    normal: [ 'def-f' ],
+                    normal: [ 'dark-f' ],
                     hover: [ ],
                     active: [ ],
                     selected: [ 'def-f-sel' ],
@@ -38,6 +39,7 @@ export default {
                     c.disabled.push('def-bb-dis');
                 }
                 if (this.currentHref) {
+                    c.normal = [ 'def-f' ];
                     c.hover.push('def-f-hov');
                     c.hover.push('def-f-act');
 

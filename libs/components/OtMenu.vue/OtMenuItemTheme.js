@@ -9,7 +9,11 @@ export default {
                     selected: [ 'def-f-s', 'def-br-sel' ],
                     disabled: [ 'def-f-dis', 'def-br-dis' ],
                     mask: {
-                        selected: [ 'def-f-s', 'def-bg-sel', 'def-br-sel' ],
+                        normal: [ 'light-f' ],
+                        selected: [ 'light-f-s', 'def-bg-sel', 'def-br-sel' ],
+                    },
+                    link: {
+                        normal: [ 'light-f' ],
                     },
                 };
             case 'light':
@@ -21,7 +25,11 @@ export default {
                     selected: [ 'def-f-s', 'def-br-s' ],
                     disabled: [ 'def-f-dis', 'def-br-dis' ],
                     mask: {
-                        selected: [ 'def-f-s', 'def-bg-sel', 'def-br-s' ],
+                        normal: [ 'dark-f' ],
+                        selected: [ 'dark-f-s', 'def-bg-sel', 'def-br-s' ],
+                    },
+                    link: {
+                        normal: [ 'dark-f' ],
                     },
                 };
         }

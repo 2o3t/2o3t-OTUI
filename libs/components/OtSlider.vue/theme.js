@@ -5,14 +5,14 @@ export default {
             case 'dark':
                 return {
                     runway: {
-                        normal: [ 'light-f', 'light-b' ],
+                        normal: [ 'def-f', 'def-b' ],
                     },
                     bar: {
                         selected: [ 'def-f-sel', 'def-bg-sel' ],
                         disabled: [ 'def-f-dis', 'def-bg-dis', 'def-b-dis' ],
                     },
                     btn: {
-                        normal: [ 'def-b', 'light-bg' ],
+                        normal: [ 'dark-bg', 'def-b' ],
                         selected: [ 'def-bg-sel', 'selected' ],
                         disabled: [ 'grey-bg-dis', 'def-b-dis' ],
                     },
