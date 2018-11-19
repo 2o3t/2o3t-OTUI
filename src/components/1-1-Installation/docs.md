@@ -61,6 +61,8 @@ or 引入 CDN
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 ```
 
+&nbsp;
+
 ```js
 import '2o3t-icon-font/dist/font-ot.css';
 import '2o3t-ui/libs/styles.css';

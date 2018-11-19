@@ -1,7 +1,7 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading"></i>
-    <span ot :class="$style.root" v-else v-on="$listeners">
-        <i ot :class="[$style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading" v-ot-bind="$otColors" :local-ratio="localRatio"></i>
+    <span ot :class="$style.root" v-else v-on="$listeners" v-ot-bind="$otColors">
+        <i ot :class="[$style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading" :local-ratio="localRatio"></i>
         <span :class="$style.append">
             <!-- 跟随图标后面的容器 -->
             <slot></slot>
@@ -35,6 +35,11 @@ export default {
         customClass: {
             type: String,
             default: '',
+        },
+        // 锁定图标宽高比例
+        localRatio: {
+            type: Boolean,
+            default: true,
         },
     },
     computed: {
@@ -116,6 +121,11 @@ export default {
     text-align: center;
     box-sizing: border-box;
     vertical-align: middle;
+
+    &[local-ratio] {
+        width: 1em;
+        height: 1em;
+    }
 }
 </style>
 

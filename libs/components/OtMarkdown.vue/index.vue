@@ -71,7 +71,7 @@ export default {
 
                 this.subVm = new Vue({
                     template: `<div ot :theme="$otTheme">${html}</div>`,
-                    mixins: [ otMixin ],
+                    mixins: [ otMixin, theme ],
                     parent: vm,
                     data: vm.data,
                 });

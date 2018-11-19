@@ -37,8 +37,11 @@ export default {
     install(Vue, options = {}) {
         for (const key in directs) {
             if (directs.hasOwnProperty(key)) {
-                const element = directs[key];
-                Vue.directive(key, element);
+                const initDirect = directs[key];
+                const element = initDirect(Vue);
+                if (element) {
+                    Vue.directive(key, element);
+                }
             }
         }
 

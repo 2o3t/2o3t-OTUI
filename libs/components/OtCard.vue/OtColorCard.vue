@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!horizontal" ot v-ot-bind="verticalOtColors(value)" class="ot-color-card" :class="$style.root" :size="$otSize" :round="round">
+    <div v-if="!horizontal" ot v-ot-bind="verticalOtColors(value)" class="ot-color-card" :class="$style.root" :size="$otSize" :round="round" :shadow="shadow">
         <div :class="[$style.main, $style.card]" :style="_valueStyle" v-ot-bind="_valueStyle" :size="$otSize" :only-one="!colorsTabList.length">
             <span :class="$style.name">{{ name }}</span>
             <span :class="$style.value">{{ _realValue }}</span>
@@ -65,6 +65,11 @@ export default {
         autoFont: {
             type: Boolean,
             default: false,
+        },
+        // 是否有阴影
+        shadow: {
+            type: Boolean,
+            default: true,
         },
     },
     data() {
@@ -236,8 +241,11 @@ export default {
     width: $--color-card-width;
 
     @include __ot_size__;
-    @include __ot_box_shadow__;
     @include __ot_root_block__;
+
+    &[shadow] {
+        @include __ot_box_shadow__;
+    }
 
     &[horizontal] {
         display: block;

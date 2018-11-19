@@ -1,4 +1,4 @@
-export default function(el, binding) {
+function otBind(el, binding) {
     let old = null;
     if (el.__ot_lastBind__) {
         old = el.__ot_lastBind__;
@@ -43,5 +43,40 @@ export default function(el, binding) {
             el.removeAttribute(key);
         }
     });
+}
 
+export default function(Vue) {
+    if (Vue.prototype.$isServer) return;
+    return {
+        bind(el, binding) {
+            if (el) {
+                return otBind(el, binding);
+            }
+            Vue.$nextTick(function() {
+                if (el) {
+                    otBind(el, binding);
+                }
+            });
+        },
+        inserted(el, binding) {
+            if (el) {
+                return otBind(el, binding);
+            }
+            Vue.$nextTick(function() {
+                if (el) {
+                    otBind(el, binding);
+                }
+            });
+        },
+        componentUpdated(el, binding) {
+            if (el) {
+                return otBind(el, binding);
+            }
+            Vue.$nextTick(function() {
+                if (el) {
+                    otBind(el, binding);
+                }
+            });
+        },
+    };
 }

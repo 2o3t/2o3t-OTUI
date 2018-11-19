@@ -1,5 +1,6 @@
 <template>
-    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card" :style="{ height }" :size="$otSize" :round="round" :border="border">
+    <div ot v-ot-bind="$otColors" :class="$style.root" class="ot-card" :style="{ height }" :size="$otSize" :round="round" :border="border"
+        :animation="animation" :shadow="shadow">
         <div v-if="$slots.left" ot v-ot-bind="$otColors.left" :class="[$style.left, $style.padding]" class="ot-card__left" :border="line">
             <slot name="left"></slot>
         </div>
@@ -33,6 +34,13 @@ export default {
             type: Boolean,
             default: false,
         },
+        // 是否有 hover 动画
+        animation: Boolean,
+        // 是否有阴影
+        shadow: {
+            type: Boolean,
+            default: true,
+        },
     },
 };
 </script>
@@ -47,11 +55,23 @@ export default {
     box-sizing: border-box;
     vertical-align: middle;
 
-    @include __ot_box_shadow__;
     @include __ot_size__;
 
     &[round] {
         @include __ot_round__;
+    }
+
+    &[shadow] {
+        @include __ot_box_shadow__;
+    }
+
+    &[animation] {
+        transition: all .4s;
+
+        &:hover {
+            transform: translateY(-2%);
+            box-shadow: 1px 10px 20px 2px rgba(20, 20, 20, 0.2);
+        }
     }
 
     .left {

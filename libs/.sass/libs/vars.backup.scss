@@ -325,8 +325,7 @@ $--ot-offset-h-size: 0.8rem !default;
     box-shadow: 0 4px 20px 0 rgba(33, 36, 41, 0.06);
 }
 
-/* Scrollbar
- -------------------------- */
+// Scrollbar
 @mixin __ot_scroll_bar__ {
     $--scrollbar-thumb-background: #b4bccc;
     $--scrollbar-track-background: #fff;

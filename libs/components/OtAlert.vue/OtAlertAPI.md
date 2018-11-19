@@ -9,7 +9,7 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| title | ***必填***, 提示标题 | String | '' |
+| title | 提示标题 | String | '' |
 | description | 辅助性文字。也可通过默认 slot 传入 | String | '' |
 | type | **[ 'success', 'warning', 'info', 'error', 'question' ]**, 图标样式 | String | 'info' |
 | closable | 是否可关闭 | Boolean | true |

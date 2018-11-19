@@ -32,11 +32,10 @@ export default {
     name: 'ot-alert',
     mixins: [ theme ],
     props: {
-    // 提示标题
+        // 提示标题
         title: {
             type: String,
             default: '',
-            required: true,
         },
         // 辅助性文字。也可通过默认 slot 传入
         description: {
@@ -105,6 +104,7 @@ export default {
   transition: opacity 0.2s;
 
   @include __ot_size__;
+  @include __ot_root_block__;
 
   &[center] {
     justify-content: center;

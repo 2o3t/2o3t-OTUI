@@ -31,6 +31,7 @@ import OtMenuItem from './OtMenu.vue/OtMenuItem.vue';
 import OtMenu from './OtMenu.vue/index.vue';
 import OtMarkdown from './OtMarkdown.vue/index.vue';
 import OtLogo from './OtLogo.vue/index.vue';
+import OtLoading from './OtLoading.vue/index.vue';
 import OtLink from './OtLink.vue/index.vue';
 import OtLine from './OtLine.vue/index.vue';
 import OtLazyLoad from './OtLazyLoad.vue/index.vue';
@@ -71,7 +72,6 @@ import OtBackgroundMask from './OtBackgroundMask.vue/index.vue';
 import OtArrow from './OtArrow.vue/index.vue';
 import OtAlert from './OtAlert.vue/index.vue';
 import OtCascader from './OtCascader.vue';
-import OtLoading from './OtLoading.vue';
 
 export default {
 
@@ -107,6 +107,7 @@ OtMenuItem,
 OtMenu,
 OtMarkdown,
 OtLogo,
+OtLoading,
 OtLink,
 OtLine,
 OtLazyLoad,
@@ -147,6 +148,5 @@ OtBackgroundMask,
 OtArrow,
 OtAlert,
 OtCascader,
-OtLoading,
 
     };

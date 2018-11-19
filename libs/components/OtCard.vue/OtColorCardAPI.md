@@ -17,6 +17,7 @@
 | blackArray | 黑色百分比池子 | Array,Object,String | ()=> {   return [10, 20, 40, 60]; } |
 | horizontal | 水平样式展示 | Boolean | - |
 | autoFont | 自动控制字体颜色 | Boolean | false |
+| shadow | 是否有阴影 | Boolean | true |
 
 ## Events
 

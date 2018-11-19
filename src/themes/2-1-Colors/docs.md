@@ -1,6 +1,6 @@
 
 <ot-notice color="info">
-以下内容开发时, 请使用 `v-ot-bind={}` 进行配置.
+以下内容开发时, 请使用 `v-ot-bind={}` 进行配置. 如果需要丢弃原组件配置则使用 `:ot-bind={}` .
 </ot-notice>
 
 ### 原色

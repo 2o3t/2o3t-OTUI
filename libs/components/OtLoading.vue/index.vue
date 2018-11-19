@@ -1,10 +1,9 @@
 <template>
     <div :class="$style.root" :size="$otSize">
-        <figure :class="$style.spinner" v-if="type === 'spinner'">
-            <ot-icon ot v-ot-bind="$otColors.spinner" :class='$style.spinner' icon="loading" selected loading></ot-icon>
+        <figure :class="[$style.figure, $style.spinner]" v-if="type === 'spinner'">
+            <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' icon="loading" loading></ot-icon>
         </figure>
-        <figure :class="$style.pushing" v-if="type === 'push'">
-            <h2>{{ label }}</h2>
+        <figure :class="[$style.figure, $style.pushing]" v-if="type === 'push'">
             <span ot v-ot-bind="$otColors.pushPri" selected></span>
             <span ot v-ot-bind="$otColors.pushDef" selected></span>
             <span ot v-ot-bind="$otColors.pushThe" selected></span>
@@ -13,7 +12,7 @@
             <span ot v-ot-bind="$otColors.pushDan" selected></span>
             <span ot v-ot-bind="$otColors.pushInf" selected></span>
         </figure>
-        <figure :class="$style.vsco" v-if="type === 'vsco'">
+        <figure :class="[$style.figure, $style.vsco]" v-if="type === 'vsco'">
             <span ot v-ot-bind="$otColors.vsco" :class='$style.a' selected></span>
             <span ot v-ot-bind="$otColors.vsco" :class='$style.b' selected></span>
             <span ot v-ot-bind="$otColors.vsco" :class='$style.c' selected></span>
@@ -24,69 +23,31 @@
             <span ot v-ot-bind="$otColors.vsco" :class='$style.h' selected></span>
             <span ot v-ot-bind="$otColors.vsco" :class='$style.i' selected></span>
         </figure>
-        <figure :class="$style.circle" v-if="type === 'circle'">
-            <div :class="[$style.dot, $style.white]"></div>
-            <div ot v-ot-bind="$otColors.one" :class="$style.dot" selected></div>
-            <div ot v-ot-bind="$otColors.two" :class="$style.dot" selected></div>
-            <div ot v-ot-bind="$otColors.three" :class="$style.dot" selected></div>
-            <div ot v-ot-bind="$otColors.four" :class="$style.dot" selected></div>
-        </figure>
+        <div ot v-ot-bind="$otColors.label">
+            <p :class="$style.label" v-if="label">{{ label }}</p>
+        </div>
     </div>
 </template>
 
 <script>
+import theme from './theme.js';
 export default {
     name: 'ot-loading',
-    otDefaultColors(theme) {
-        switch (theme) {
-            case 'dark':
-                return {
-                    vsco: [ 'def-bg-sel' ],
-                    spinner: [ 'def-f-sel' ],
-                    one: [ 'success-bg-sel' ],
-                    two: [ 'warning-bg-sel' ],
-                    three: [ 'danger-bg-sel' ],
-                    four: [ 'info-bg-sel' ],
-                    pushPri: [ 'pri-bg-sel' ],
-                    pushDef: [ 'def-bg-sel' ],
-                    pushThe: [ 'lig-bg-sel' ],
-                    pushSuc: [ 'suc-bg-sel' ],
-                    pushWar: [ 'war-bg-sel' ],
-                    pushDan: [ 'dan-bg-sel' ],
-                    pushInf: [ 'inf-bg-sel' ],
-                };
-            case 'light':
-            default:
-                return {
-                    vsco: [ 'pri-bg-sel' ],
-                    spinner: [ 'pri-f-sel' ],
-                    one: [ 'def-bg-sel' ],
-                    two: [ 'success-bg-sel' ],
-                    three: [ 'dark-bg-sel' ],
-                    four: [ 'pri-bg-sel' ],
-                    pushPri: [ 'pri-bg-sel' ],
-                    pushDef: [ 'def-bg-sel' ],
-                    pushThe: [ 'dar-bg-sel' ],
-                    pushSuc: [ 'suc-bg-sel' ],
-                    pushWar: [ 'war-bg-sel' ],
-                    pushDan: [ 'dan-bg-sel' ],
-                    pushInf: [ 'inf-bg-sel' ],
-                };
-        }
-    },
+    mixins: [ theme ],
     props: {
         type: {
             type: [ String ],
-            default: 'vsco', // 'circle'
+            default: 'vsco', // 'push'
         },
         label: [ String ],
     },
-    methods: {},
+    methods: {
+    },
 };
 </script>
 
 <style lang="scss" module>
-@import "./globals";
+@import "../globals";
 .root {
   position: relative;
   box-sizing: border-box;
@@ -96,25 +57,23 @@ export default {
   vertical-align: middle;
   overflow: hidden;
 
-  &[size="mini"] {
-    font-size: $--ot-mini-size;
+  @include __ot_root_block__;
+  @include __ot_size__;
+
+  .figure {
+    position: relative;
+
+    @include __ot_root_block__;
   }
 
-  &[size="small"] {
-    font-size: $--ot-small-size;
-  }
-
-  &[size="normal"] {
-    font-size: $--ot-normal-size;
-  }
-
-  &[size="big"] {
-    font-size: $--ot-big-size;
+  .label {
+    margin: 0;
+    font: 0.8em verdana;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   .spinner {
-    width: 1em;
-    height: 1em;
     display: block;
     position: absolute;
     margin: auto;
@@ -122,115 +81,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-  }
-
-  .circle {
-    display: block;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 6.25em;
-    height: 6.25em;
-    animation: rotate 2.4s linear infinite;
-
-    .white {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      animation: flash 2.4s linear infinite;
-      opacity: 0;
-    }
-    .dot {
-      position: absolute;
-      margin: auto;
-      width: 2.4em;
-      height: 2.4em;
-      border-radius: 50%;
-      transition: all 1s ease;
-    }
-    .dot:nth-child(2) {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      animation: dotsY 2.4s linear infinite;
-    }
-    .dot:nth-child(3) {
-      left: 0;
-      right: 0;
-      top: 0;
-      animation: dotsX 2.4s linear infinite;
-    }
-    .dot:nth-child(4) {
-      top: 0;
-      bottom: 0;
-      right: 0;
-      animation: dotsY 2.4s linear infinite;
-    }
-    .dot:nth-child(5) {
-      left: 0;
-      right: 0;
-      bottom: 0;
-      animation: dotsX 2.4s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0);
-      }
-      10% {
-        width: 6.25em;
-        height: 6.25em;
-      }
-      66% {
-        width: 2.4em;
-        height: 2.4em;
-      }
-      100% {
-        transform: rotate(360deg);
-        width: 6.25em;
-        height: 6.25em;
-      }
-    }
-
-    @keyframes dotsY {
-      66% {
-        opacity: 0.1;
-        width: 2.4em;
-      }
-      77% {
-        opacity: 1;
-        width: 0;
-      }
-    }
-    @keyframes dotsX {
-      66% {
-        opacity: 0.1;
-        height: 2.4em;
-      }
-      77% {
-        opacity: 1;
-        height: 0;
-      }
-    }
-
-    @keyframes flash {
-      33% {
-        opacity: 0;
-        border-radius: 0%;
-      }
-      55% {
-        opacity: 0.6;
-        border-radius: 50%;
-      }
-      66% {
-        opacity: 0;
-      }
-    }
+    font-size: 2em;
   }
 
   .pushing {
@@ -243,14 +94,6 @@ export default {
     right: 0;
     width: 12em;
     height: 3em;
-
-    h2 {
-      color: #ccc;
-      margin: 0;
-      font: 0.8em verdana;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
 
     /*
     * Loading Dots
