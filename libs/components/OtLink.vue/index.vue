@@ -85,7 +85,6 @@ export default {
 @import '../globals';
 .root {
     box-sizing: border-box;
-    vertical-align: middle;
     text-decoration: none;
 
     @include __ot_size__;

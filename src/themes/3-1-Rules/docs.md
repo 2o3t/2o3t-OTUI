@@ -68,7 +68,7 @@ otDefaultColors(theme) {
 ### 整个栗子
 
 <ot-notice color="info">
-在开发时, 使用 `v-ot-bind={}` 进行配置. 如果需要丢弃原组件配置则使用 `:ot-bind={}` .
+在开发时, 请先使用 `v-bind`, 冲突时再选用 `v-ot-bind={}` 进行配置. 如果需要丢弃原组件配置则使用 `:ot-bind={}` .
 </ot-notice>
 
 ```js
