@@ -5,8 +5,8 @@
                 <ot-tabs :theme="$otTheme"
                     :list="tabs" :select="selectTab" @action="handleAction"
                     clearable :offset="20">
-                    <ot-link slot="prefix" :theme="$otTheme" @click="handleAddClick">
-                        <ot-icon :class="$style.icon" icon="plus"></ot-icon>
+                    <ot-link slot="prefix" :class="$style.icon" :theme="$otTheme" @click="handleAddClick">
+                        <ot-icon icon="plus"></ot-icon>
                     </ot-link>
                     <span>{{ selectTab && selectTab.title }}</span>
                 </ot-tabs>
@@ -86,7 +86,7 @@ export default {
     width: 100%;
 }
 .icon {
-    padding: 10px 0;
+    vertical-align: middle;
 }
 </style>
 

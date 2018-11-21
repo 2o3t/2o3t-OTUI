@@ -48,7 +48,7 @@ export default {
     margin: 0;
     transition: background .3s, color .3s;
     user-select:none;
-    line-height: 1;
+    line-height: 0;
 
     &[dashed] {
       border-style: dashed;

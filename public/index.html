@@ -21,7 +21,15 @@
     <noscript>
       <strong>We're sorry but 2o3t-otui doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+        <link href="<%= BASE_URL %>loading/style.css" rel="stylesheet">
+        <div class="zyao89-site-loading-mask">
+            <div class="zyao89-site-loading">
+                <div id="zyao89-loading-text">2O3T - 二圆三土</div>
+            </div>
+        </div>
+        <script src="<%= BASE_URL %>loading/index.js"></script>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

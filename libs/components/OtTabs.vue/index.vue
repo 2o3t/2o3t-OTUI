@@ -137,12 +137,10 @@ export default {
             }
 
             .titleIcon {
-                padding-right: 5px;
                 vertical-align: middle;
             }
 
             .text {
-                min-width: 40px;
                 max-width: 100px;
                 display: inline-block;
                 overflow: hidden;

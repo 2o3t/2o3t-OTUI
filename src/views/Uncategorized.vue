@@ -1,6 +1,15 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-Avatar">
+            <ot-row-group :theme="$otTheme">
+                <ot-avatar>U</ot-avatar>
+                <ot-avatar round>U</ot-avatar>
+                <ot-avatar circle>U</ot-avatar>
+                <ot-avatar icon="logo"></ot-avatar>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-Table">
             <ot-row-group :theme="$otTheme" :fixable="false">
                 <ot-color-rule-table name="light" shuxing="font">

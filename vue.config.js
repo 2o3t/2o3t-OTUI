@@ -35,20 +35,23 @@ module.exports = {
                 }),
             });
         }
-        Object.assign(config, { // 开发生产共同配置
-            resolve: {
-                alias: {
-                    '@': path.resolve(__dirname, './src'),
-                    '@router': path.resolve(__dirname, './src/router'),
-                    '@assets': path.resolve(__dirname, './src/assets'),
-                    '@views': path.resolve(__dirname, './src/views'),
-                    '@libs': path.resolve(__dirname, './libs'),
-                    vue$: 'vue/dist/vue.esm.js',
-                    ...aliasLibs,
-                },
-                extensions: [ '.js', '.vue', '.json', '.css' ],
-            },
+
+        const resolve = config.resolve || {};
+        const alias = resolve.alias || {};
+        Object.assign(config.resolve, { // 开发生产共同配置
+            alias: Object.assign(alias, {
+                '@': path.resolve(__dirname, './src'),
+                '@router': path.resolve(__dirname, './src/router'),
+                '@assets': path.resolve(__dirname, './src/assets'),
+                '@views': path.resolve(__dirname, './src/views'),
+                '@libs': path.resolve(__dirname, './libs'),
+                vue$: 'vue/dist/vue.esm.js',
+                ...aliasLibs,
+            }),
+            extensions: [ '.js', '.jsx', '.vue', '.json', '.css' ],
         });
+
+        config.output.libraryExport = 'default';
     },
     chainWebpack: config => {
         customLoader(config);

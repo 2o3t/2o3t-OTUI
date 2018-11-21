@@ -42,6 +42,9 @@
         <router-view :theme="$otTheme" :class="$style.content"></router-view>
         <!-- </keep-alive> -->
     </ot-main>
+    <!-- <ot-footer :class="$style.footer">
+        footer
+    </ot-footer> -->
   </ot-container>
 </template>
 
@@ -142,6 +145,10 @@ export default {
     }
 }
 
+.footer {
+    padding-left: 20em;
+}
+
 @media screen and (max-width: 767px) {
     .sidebar {
         position: relative;
@@ -149,7 +156,7 @@ export default {
         padding-right: 1em;
     }
 
-    .main {
+    .main, .footer {
         padding-left: 0;
     }
 }

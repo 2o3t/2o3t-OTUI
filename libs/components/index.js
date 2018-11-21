@@ -69,6 +69,7 @@ import OtBreadcrumbItem from './OtBreadcrumb.vue/OtBreadcrumbItem.vue';
 import OtBreadcrumb from './OtBreadcrumb.vue/index.vue';
 import OtBadge from './OtBadge.vue/index.vue';
 import OtBackgroundMask from './OtBackgroundMask.vue/index.vue';
+import OtAvatar from './OtAvatar.vue/index.vue';
 import OtArrow from './OtArrow.vue/index.vue';
 import OtAlert from './OtAlert.vue/index.vue';
 import OtCascader from './OtCascader.vue';
@@ -145,6 +146,7 @@ OtBreadcrumbItem,
 OtBreadcrumb,
 OtBadge,
 OtBackgroundMask,
+OtAvatar,
 OtArrow,
 OtAlert,
 OtCascader,

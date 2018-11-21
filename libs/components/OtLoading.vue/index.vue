@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.root" :size="$otSize">
         <figure :class="[$style.figure, $style.spinner]" v-if="type === 'spinner'">
-            <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' icon="loading" loading></ot-icon>
+            <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' icon="loading" loading size="3em"></ot-icon>
         </figure>
         <figure :class="[$style.figure, $style.pushing]" v-if="type === 'push'">
             <span ot v-ot-bind="$otColors.pushPri" selected></span>
@@ -67,26 +67,26 @@ export default {
   }
 
   .label {
-    margin: 0;
     font: 0.8em verdana;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin: 1em;
   }
 
   .spinner {
     display: block;
-    position: absolute;
+    // position: absolute;
     margin: auto;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    font-size: 2em;
+    overflow: hidden;
   }
 
   .pushing {
     display: block;
-    position: absolute;
+    // position: absolute;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -94,6 +94,7 @@ export default {
     right: 0;
     width: 12em;
     height: 3em;
+    overflow: hidden;
 
     /*
     * Loading Dots
@@ -156,7 +157,7 @@ export default {
   .vsco {
     display: block;
     box-sizing: border-box;
-    position: absolute;
+    // position: absolute;
     margin: auto;
     top: 0;
     bottom: 0;

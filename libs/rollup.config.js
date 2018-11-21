@@ -10,13 +10,11 @@ const config = rollupConfig({
     root: __dirname,
     dist: DIST,
     external: [
-        // 'moment',
         'vue',
     ],
     format: 'umd', // umd, esm
     name: 'OTUI', // 打包后的全局变量，如浏览器端 window.ReactRedux
     globals: { // 这跟external 是配套使用的，指明global.React即是外部依赖react
-        // moment: 'moment',
         Vue: 'vue',
     },
 });

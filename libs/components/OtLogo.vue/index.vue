@@ -39,7 +39,7 @@ export default {
     @include __ot_root_block__;
 
     .logo[class] {
-        display: table-cell;
+        display: inline-block;
         vertical-align: middle;
         padding: 0;
         margin: 0;
@@ -47,15 +47,15 @@ export default {
     }
 
     .title {
-        display: table-cell;
+        display: inline-block;
         vertical-align: middle;
-        padding-left: 0.6em;
+        padding-left: 0.5em;
         margin: 0;
         font-size: 2em;
     }
 
     .subtitle {
-        display: table-cell;
+        display: inline-block;
         vertical-align: middle;
         margin: 0;
         font-weight: $--main-font-weight;

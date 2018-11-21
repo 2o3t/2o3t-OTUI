@@ -1,4 +1,8 @@
 
+<ot-alert title="温馨提示" round show-icon color="info">
+    <div>可以在全局Vue注册时, 进行主题锁定, Vue.use(OTUI, { color: 'primary' })</div>
+</ot-alert>
+
 ### Default 原色
 
 原色模式是以 <ot-tag color="default">黑白</ot-tag> 为主的配色方案, 采用了最简洁的设计.
