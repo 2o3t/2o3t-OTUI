@@ -1,10 +1,8 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :theme="$otTheme" :code="code">
-            <ot-loading :theme="$otTheme" type="push" size="mini" :label="label"></ot-loading>
-            <ot-loading :theme="$otTheme" type="push" size="small" :label="label"></ot-loading>
-            <ot-loading :theme="$otTheme" type="push" size="normal" :label="label"></ot-loading>
-            <ot-loading :theme="$otTheme" type="push" size="big" :label="label"></ot-loading>
+            <ot-color-rule-table name="light" shuxing="font" v-ot-loading="loading" :ot-loading-text="label" ot-loading-spinner="push">
+            </ot-color-rule-table>
         </ot-row-group>
     </ot-section>
 </template>
@@ -14,6 +12,7 @@ export default {
     data() {
         return {
             label: '2O3T Loading',
+            loading: true,
             code: decodeURIComponent(`<%=${'otSourceCode'}=%>`),
         };
     },

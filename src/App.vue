@@ -4,8 +4,8 @@
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme" placement="right">
             <ot-link slot="left" to="/">
                 <ot-logo :theme="$otTheme" icon="logo">
-                    <span>2O3T-UI</span>
-                    <!-- <span slot="subtitle">OT-UI</span> -->
+                    <span>2O3T</span>
+                    <span slot="subtitle">OT-UI</span>
                 </ot-logo>
             </ot-link>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :to="item.router" :href="item.href">{{item.name}}</ot-nav-item>
@@ -112,7 +112,7 @@ export default {
     left: 0;
     width: 100%;
     height: 6em;
-    z-index: 100;
+    z-index: 3000;
     background-color: rgba($color: #ffffff, $alpha: .75);
 
     &[theme='dark'] {
@@ -129,7 +129,7 @@ export default {
     left: 0;
     width: 20em;
     bottom: 0;
-    z-index: 10;
+    z-index: 100;
 }
 .main {
     padding-left: 20em;

@@ -45,13 +45,14 @@ Vue.use(Shared);
 const app = new Vue({
     router,
     render: h => h(App),
+    mounted() {
+        // 解决移动端 hover 问题
+        if (document) {
+            document.body.addEventListener('touchstart', function() { });
+        }
+    },
 });
 
 router.onReady(() => {
     app.$mount('#app');
 });
-
-// 解决移动端 hover 问题
-if (document) {
-    document.body.addEventListener('touchstart', function() { });
-}

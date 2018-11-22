@@ -11,7 +11,7 @@
         </ot-section>
 
         <ot-section :theme="$otTheme" label="OT-Table">
-            <ot-row-group :theme="$otTheme" :fixable="false">
+            <ot-row-group :theme="$otTheme" :fixable="false" v-ot-loading="loading" ot-loading-text="loading">
                 <ot-color-rule-table name="light" shuxing="font">
                 </ot-color-rule-table>
             </ot-row-group>
@@ -159,6 +159,7 @@ export default {
     name: 'uncategorized-page',
     data() {
         return {
+            loading: true,
             alertTitle: 'Notice: Balabala...',
         };
     },

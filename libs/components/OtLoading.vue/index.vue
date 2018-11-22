@@ -1,32 +1,45 @@
 <template>
-    <div :class="$style.root" :size="$otSize">
-        <figure :class="[$style.figure, $style.spinner]" v-if="type === 'spinner'">
-            <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' icon="loading" loading size="3em"></ot-icon>
-        </figure>
-        <figure :class="[$style.figure, $style.pushing]" v-if="type === 'push'">
-            <span ot v-ot-bind="$otColors.pushPri" selected></span>
-            <span ot v-ot-bind="$otColors.pushDef" selected></span>
-            <span ot v-ot-bind="$otColors.pushThe" selected></span>
-            <span ot v-ot-bind="$otColors.pushSuc" selected></span>
-            <span ot v-ot-bind="$otColors.pushWar" selected></span>
-            <span ot v-ot-bind="$otColors.pushDan" selected></span>
-            <span ot v-ot-bind="$otColors.pushInf" selected></span>
-        </figure>
-        <figure :class="[$style.figure, $style.vsco]" v-if="type === 'vsco'">
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.a' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.b' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.c' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.d' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.e' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.f' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.g' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.h' selected></span>
-            <span ot v-ot-bind="$otColors.vsco" :class='$style.i' selected></span>
-        </figure>
-        <div ot v-ot-bind="$otColors.label">
-            <p :class="$style.label" v-if="label">{{ label }}</p>
+    <transition name="ot-loading-fade" @after-leave="handleAfterLeave">
+        <div v-show="visible" :class="[$style.root, customClass, { 'is-fullscreen': fullscreen }]"
+            class="ot-loading-mask" :theme="$otTheme"
+            :style="{ backgroundColor: background || '' }">
+
+            <div :class="$style.loading" :size="$otSize">
+                <figure :class="[$style.figure, $style.spinner]" v-if="_spinner === 'spinner'">
+                    <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' :icon="_icon" :lib="lib" loading size="3em"></ot-icon>
+                </figure>
+                <figure :class="[$style.figure, $style.pushing]" v-else-if="_spinner === 'push'">
+                    <span ot v-ot-bind="$otColors.pushPri" selected></span>
+                    <span ot v-ot-bind="$otColors.pushDef" selected></span>
+                    <span ot v-ot-bind="$otColors.pushThe" selected></span>
+                    <span ot v-ot-bind="$otColors.pushSuc" selected></span>
+                    <span ot v-ot-bind="$otColors.pushWar" selected></span>
+                    <span ot v-ot-bind="$otColors.pushDan" selected></span>
+                    <span ot v-ot-bind="$otColors.pushInf" selected></span>
+                </figure>
+                <figure :class="[$style.figure, $style.vsco]" v-else-if="_spinner === 'vsco'">
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.a' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.b' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.c' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.d' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.e' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.f' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.g' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.h' selected></span>
+                    <span ot v-ot-bind="$otColors.vsco" :class='$style.i' selected></span>
+                </figure>
+                <figure :class="[$style.figure, $style.spinner]" v-else>
+                    <svg class="circular" viewBox="25 25 50 50">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none"/>
+                    </svg>
+                </figure>
+                <div ot v-ot-bind="$otColors.label">
+                    <p :class="$style.label" v-if="text">{{ text }}</p>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -35,13 +48,59 @@ export default {
     name: 'ot-loading',
     mixins: [ theme ],
     props: {
+        // 类型
         type: {
             type: [ String ],
-            default: 'vsco', // 'push'
+            default: 'vsco', // 'push', 'spinner
         },
+        // spinner 模式, 支持自定义图标
+        icon: {
+            type: String,
+            default: 'loading',
+        },
+        // 图表库名称
+        lib: String,
+        // 文字
         label: [ String ],
+        // 显示
+        show: {
+            type: Boolean,
+            default: false,
+        },
+    },
+    data() {
+        return {
+            text: this.label,
+            spinner: null,
+            background: null,
+            fullscreen: true,
+            visible: this.show,
+            customClass: '',
+        };
+    },
+    computed: {
+        _spinner() {
+            if (['vsco', 'push', 'spinner'].includes(this.spinner)) {
+                return this.spinner;
+            } else if (this.spinner) {
+                return 'spinner';
+            }
+            return this.type || 'spinner';
+        },
+        _icon() {
+            if (!['vsco', 'push', 'spinner'].includes(this.spinner)) {
+                return this.spinner;
+            }
+            return this.icon;
+        }
     },
     methods: {
+        handleAfterLeave() {
+            this.$emit('after-leave');
+        },
+        setText(text) {
+            this.text = text;
+        },
     },
 };
 </script>
@@ -49,13 +108,36 @@ export default {
 <style lang="scss" module>
 @import "../globals";
 .root {
-  position: relative;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, .9);
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.3s;
+
+    &[theme=dark] {
+        background-color: rgba(30, 30, 30, .9);
+    }
+
+    &.is-fullscreen {
+        z-index: 3000;
+        position: fixed;
+    }
+}
+.loading {
+    position: absolute;
   box-sizing: border-box;
   min-height: 8em;
   min-width: 16em;
   text-align: center;
   vertical-align: middle;
   overflow: hidden;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
 
   @include __ot_root_block__;
   @include __ot_size__;
@@ -315,6 +397,19 @@ export default {
       }
     }
   }
+}
+</style>
+
+<style>
+.ot-loading-fade-enter,
+.ot-loading-fade-leave-active {
+    opacity: 0;
+}
+.ot-loading-parent--relative {
+    position: relative !important;
+}
+.ot-loading-parent--hidden {
+    overflow: hidden !important;
 }
 </style>
 

@@ -1,4 +1,6 @@
 <!-- @api: OtLoading.vue/OtLoadingAPI.md -->
+<!-- @api: directives/OtLoadingAPI.md -->
+<!-- @api: services/OtLoading/API.md -->
 
 # Loading 加载
 
@@ -10,11 +12,11 @@
 
 
 
-## 圆形加载
+## 自定义图标
 
-> Circle
+> Icon
 
-
+通过icon-font自定义加载图标
 
 ## Push加载
 

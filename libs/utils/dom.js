@@ -1,9 +1,50 @@
-export const getStyle = function(element, attr) {
-    if (element.currentStyle) {
-        return element.currentStyle[attr];
-    }
-    return getComputedStyle(element, false)[attr];
+const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g;
+const MOZ_HACK_REGEXP = /^moz([A-Z])/;
+
+/* istanbul ignore next */
+const camelCase = function(name) {
+    return name.replace(SPECIAL_CHARS_REGEXP, function(_, separator, letter, offset) {
+        return offset ? letter.toUpperCase() : letter;
+    }).replace(MOZ_HACK_REGEXP, 'Moz$1');
 };
+
+// export const getStyle = function(element, attr) {
+//     if (element.currentStyle) {
+//         return element.currentStyle[attr];
+//     }
+//     return getComputedStyle(element, false)[attr];
+// };
+
+/* istanbul ignore next */
+export function getStyle(element, styleName) {
+    if (!element || !styleName) return null;
+    styleName = camelCase(styleName);
+    if (styleName === 'float') {
+        styleName = 'cssFloat';
+    }
+    try {
+        const computed = document.defaultView.getComputedStyle(element, '');
+        return element.style[styleName] || computed ? computed[styleName] : null;
+    } catch (e) {
+        return element.style[styleName];
+    }
+}
+
+/* istanbul ignore next */
+export function setStyle(element, styleName, value) {
+    if (!element || !styleName) return;
+
+    if (typeof styleName === 'object') {
+        for (const prop in styleName) {
+            if (styleName.hasOwnProperty(prop)) {
+                setStyle(element, prop, styleName[prop]);
+            }
+        }
+    } else {
+        styleName = camelCase(styleName);
+        element.style[styleName] = value;
+    }
+}
 
 export const getOffsetTop = function(el) {
     let offsetTop = el.offsetTop;

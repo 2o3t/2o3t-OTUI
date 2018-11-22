@@ -9,6 +9,9 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| type | - | String | 'vsco' |
-| label | - | String | - |
+| type | 类型 | String | 'vsco' |
+| icon | spinner 模式, 支持自定义图标 | String | 'loading' |
+| lib | 图表库名称 | String | - |
+| label | 文字 | String | - |
+| show | 显示 | Boolean | false |
 

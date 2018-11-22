@@ -10,9 +10,6 @@ import services from './services';
 import plugins from './plugins';
 import utils from './utils';
 
-// 三方
-import VModal from 'vue-js-modal';
-
 let componentsDev;
 let directivesDev;
 let servicesDev;
@@ -73,6 +70,14 @@ export default {
             Vue.mixin(otMixin);
         }
 
+
+        // 三方, 支持ssr
+        let VModal;
+        if (Vue.prototype.$isServer) {
+            VModal = require('vue-js-modal/dist/ssr.index');
+        } else {
+            VModal = require('vue-js-modal').default;
+        }
         if (options.global !== true) {
             if (!VModal.mixins) {
                 VModal.mixins = [];
