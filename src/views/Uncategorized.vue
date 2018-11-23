@@ -1,6 +1,21 @@
 <template>
     <div :class="$style.root" :theme="$otTheme">
 
+        <ot-section :theme="$otTheme" label="OT-Carouse">
+            <ot-row-group :theme="$otTheme" :fixable="false" :flex="false">
+                <ot-carousel height="150px">
+                    <ot-carousel-item v-for="item in 'abcd'.split('')" :key="item">
+                        <h3>{{ item }}</h3>
+                    </ot-carousel-item>
+                </ot-carousel>
+                <ot-carousel height="150px" indicator-position="outside">
+                    <ot-carousel-item v-for="item in 'abcd'.split('')" :key="item">
+                        <h3>{{ item }}</h3>
+                    </ot-carousel-item>
+                </ot-carousel>
+            </ot-row-group>
+        </ot-section>
+
         <ot-section :theme="$otTheme" label="OT-Avatar">
             <ot-row-group :theme="$otTheme">
                 <ot-avatar>U</ot-avatar>
@@ -188,4 +203,22 @@ export default {
   overflow-x: hidden;
   overflow-y: auto;
 }
+</style>
+
+<style>
+  .ot-carousel-item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+  }
+
+  .ot-carousel-item:nth-child(2n) {
+     background-color: #99a9bf;
+  }
+
+  .ot-carousel-item:nth-child(2n+1) {
+     background-color: #d3dce6;
+  }
 </style>

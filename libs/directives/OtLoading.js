@@ -90,10 +90,16 @@ export default function(Vue) {
             const spinnerExr = el.getAttribute('ot-loading-spinner');
             const backgroundExr = el.getAttribute('ot-loading-background');
             const customClassExr = el.getAttribute('ot-loading-custom-class');
+            const theme = el.getAttribute('theme');
+            const color = el.getAttribute('color');
+            const size = el.getAttribute('size');
             const vm = vnode.context;
             const mask = new Mask({
                 el: document.createElement('div'),
                 data: {
+                    theme: vm && (vm.theme || vm.$otTheme) || theme,
+                    color: vm && vm.color || color,
+                    size: vm && (vm.size || vm.$otSize) || size,
                     text: vm && vm[textExr] || textExr,
                     spinner: vm && vm[spinnerExr] || spinnerExr,
                     background: vm && vm[backgroundExr] || backgroundExr,

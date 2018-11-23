@@ -14,14 +14,13 @@
 <ot-row-group>
     <ot-color-card :value="{
             'ot-color-light-background-normal': true,
-            'ot-color-light-font-normal': true,
+            'ot-color-dark-font-normal': true,
             'ot': true,
         }"
         name="Light Color" white-array black-array round>
     </ot-color-card>
     <ot-color-card :value="{
             'ot-color-dark-background-normal': true,
-            'ot-color-dark-font-normal': true,
             'ot': true,
         }"
         name="Dark Color" white-array black-array round>

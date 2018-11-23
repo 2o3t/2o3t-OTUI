@@ -5,6 +5,7 @@ import extend from './extendEx';
 import * as dom from './dom';
 import Colors from './colors';
 import afterLeave from './after-leave';
+import * as resizeEvent from './resize-event';
 
 function server($vm, func) {
     return Object.keys(func).reduce((obj, key) => {
@@ -39,5 +40,6 @@ export default function($vm) {
 
         Colors,
         afterLeave,
+        resizeEvent,
     };
 }

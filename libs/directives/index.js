@@ -7,8 +7,8 @@ import OtTitle from './OtTitle.js';
 export default {
 
     OtBind,
-OtCopy,
-OtLoading,
-OtTitle,
+    OtCopy,
+    OtLoading,
+    OtTitle,
 
-    };
+};

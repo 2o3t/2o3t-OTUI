@@ -23,7 +23,7 @@ export default Vue => {
         if (this.fullscreen) {
             fullscreenLoading = undefined;
         }
-        afterLeave(this, _ => {
+        afterLeave(this, () => {
             const target = this.fullscreen || this.body
                 ? document.body
                 : this.target;

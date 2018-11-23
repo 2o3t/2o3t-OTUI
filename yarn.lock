@@ -10,6 +10,10 @@
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.19.tgz#30043abb39ded5da7402afd621844bff42f52eed"
 
+"2o3t-css-colors@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.20.tgz#4d1abe4735b03bce777cdad727238a241e3c9c8a"
+
 "2o3t-css-colors@^0.0.9":
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.9.tgz#9002b905409803f3866fbd1b72239e3c66a6d9e4"
@@ -7416,6 +7420,10 @@ requires-port@^1.0.0:
 reserved-words@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
+
+resize-observer-polyfill@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
 
 resolve-cwd@^2.0.0:
   version "2.0.0"

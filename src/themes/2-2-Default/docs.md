@@ -25,7 +25,6 @@
     </ot-color-card>
     <ot-color-card :value="{
             'ot-color-light-background-normal': true,
-            'ot-color-light-font': true,
             'ot': true,
         }"
         name="Light Background Normal" white-array black-array round>
@@ -81,7 +80,6 @@
     </ot-color-card>
     <ot-color-card :value="{
             'ot-color-dark-background-normal': true,
-            'ot-color-dark-font': true,
             'ot': true,
         }"
         name="Dark Background Normal" white-array black-array round>

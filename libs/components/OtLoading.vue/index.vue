@@ -4,7 +4,7 @@
             class="ot-loading-mask" :theme="$otTheme"
             :style="{ backgroundColor: background || '' }">
 
-            <div :class="$style.loading" :size="$otSize">
+            <div ot class="ot-loading" :class="$style.loading" :size="$otSize">
                 <figure :class="[$style.figure, $style.spinner]" v-if="_spinner === 'spinner'">
                     <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' :icon="_icon" :lib="lib" loading size="3em"></ot-icon>
                 </figure>
@@ -80,7 +80,7 @@ export default {
     },
     computed: {
         _spinner() {
-            if (['vsco', 'push', 'spinner'].includes(this.spinner)) {
+            if ([ 'vsco', 'push', 'spinner' ].includes(this.spinner)) {
                 return this.spinner;
             } else if (this.spinner) {
                 return 'spinner';
@@ -88,11 +88,11 @@ export default {
             return this.type || 'spinner';
         },
         _icon() {
-            if (!['vsco', 'push', 'spinner'].includes(this.spinner)) {
+            if (![ 'vsco', 'push', 'spinner' ].includes(this.spinner)) {
                 return this.spinner;
             }
             return this.icon;
-        }
+        },
     },
     methods: {
         handleAfterLeave() {
