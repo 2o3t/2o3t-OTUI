@@ -116,14 +116,15 @@
     cheerio "^1.0.0-rc.2"
     vue-js-modal "^1.3.26"
 
-"2o3t-ui@^0.0.67":
-  version "0.0.67"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.67.tgz#9e63b4f2d8138d3a7af4cd2d805da30a060c3fcc"
+"2o3t-ui@^0.0.71":
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.71.tgz#81b77286ba608dace6ff7f98211fa573f5157745"
   dependencies:
-    "2o3t-css-colors" "^0.0.19"
+    "2o3t-css-colors" "^0.0.20"
     "2o3t-icon-font" "^0.0.16"
     cheerio "^1.0.0-rc.2"
-    vue-js-modal "^1.3.26"
+    resize-observer-polyfill "^1.5.0"
+    vue-js-modal "^1.3.27"
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
@@ -3679,7 +3680,7 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1:
 
 estree-walker@^0.2.1:
   version "0.2.1"
-  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
+  resolved "http://registry.npmjs.org/estree-walker/-/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
 
 estree-walker@^0.5.2:
   version "0.5.2"
@@ -8634,6 +8635,10 @@ vue-hot-reload-api@^2.3.0:
 vue-js-modal@^1.3.26:
   version "1.3.26"
   resolved "https://registry.yarnpkg.com/vue-js-modal/-/vue-js-modal-1.3.26.tgz#00c8b9d4765e034c6b6535a2d6373117519f343f"
+
+vue-js-modal@^1.3.27:
+  version "1.3.27"
+  resolved "https://registry.yarnpkg.com/vue-js-modal/-/vue-js-modal-1.3.27.tgz#c0733d439c9f3c0f0e6a271b3d85604d5328e039"
 
 vue-loader@^15.4.2:
   version "15.4.2"

@@ -1,8 +1,8 @@
 <template>
-    <div ot :class="$style.root" v-ot-bind="$otColors" :size="$otSize" :style="fontStyle" :round="round" :circle="circle">
+    <div ot class="ot-avatar" :class="$style.root" v-ot-bind="$otColors" :size="$otSize" :style="fontStyle" :round="round" :circle="circle">
         <!-- 内容插槽 -->
         <slot>
-            <ot-icon :icon="icon" :lib="lib" :url="url"></ot-icon>
+            <ot-icon class="ot-avatar__icon" :icon="icon" :lib="lib" :url="url"></ot-icon>
         </slot>
     </div>
 </template>
@@ -25,11 +25,11 @@ export default {
     computed: {
         fontStyle() {
             const style = {};
-            if ([ 'mini', 'small', 'normal', 'big' ].includes(this.size)) {
+            if ([ 'mini', 'small', 'normal', 'big' ].includes(this.$otSize)) {
                 return style;
             }
             return {
-                fontSize: this.size,
+                fontSize: this.$otSize,
             };
         },
     },
@@ -46,6 +46,7 @@ export default {
     width: 3em;
     height: 3em;
     vertical-align: middle;
+    overflow: hidden;
 
     @include __ot_size__;
 

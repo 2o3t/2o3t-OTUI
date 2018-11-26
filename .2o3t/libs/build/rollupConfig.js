@@ -50,6 +50,9 @@ export default function (opts) {
         },
         experimentalCodeSplitting: true,
         plugins: [
+            replace({
+                'process.env.NODE_ENV': JSON.stringify('production'),
+            }),
             VuePlugin({
                 compileTemplate: true,
                 htmlMinifier: {
@@ -105,9 +108,6 @@ export default function (opts) {
                     'transform-vue-jsx',
                     'external-helpers',
                 ],
-            }),
-            replace({
-                'process.env.NODE_ENV': JSON.stringify('production'),
             }),
             uglify(
                 {

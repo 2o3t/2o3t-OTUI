@@ -43,7 +43,7 @@
 
 <script>
 import theme from './theme.js';
-import throttle from 'lodash/throttle.js';
+import _throttle from 'lodash/throttle.js';
 export default {
     name: 'ot-carousel',
     mixins: [ theme ],
@@ -102,17 +102,23 @@ export default {
     },
     watch: {
         items(val) {
-            if (val.length > 0) this.setActiveItem(this.initialIndex);
-        },
-        activeIndex(val, oldVal) {
-            this.resetItemPosition(oldVal);
-            this.$emit('change', val, oldVal);
+            if (val.length > 0) {
+                this.setActiveItem(this.initialIndex);
+            }
         },
         autoplay(val) {
-            val ? this.startTimer() : this.pauseTimer();
+            if (val) {
+                this.startTimer();
+            } else {
+                this.pauseTimer();
+            }
         },
         loop() {
             this.setActiveItem(this.activeIndex);
+        },
+        activeIndex(val, oldVal) {
+            this.resetItemPosition(oldVal);
+            this.$emit('change', val, oldVal); // 页面改变
         },
     },
     methods: {
@@ -126,11 +132,13 @@ export default {
         },
         itemInStage(item, index) {
             const length = this.items.length;
-            if (index === length - 1 && item.inStage && this.items[0].active ||
-        (item.inStage && this.items[index + 1] && this.items[index + 1].active)) {
+            const a = (index === length - 1 && item.inStage && this.items[0].active);
+            const b = (item.inStage && this.items[index + 1] && this.items[index + 1].active);
+            const c = (index === 0 && item.inStage && this.items[length - 1].active);
+            const d = (item.inStage && this.items[index - 1] && this.items[index - 1].active);
+            if (a || b ) {
                 return 'left';
-            } else if (index === 0 && item.inStage && this.items[length - 1].active ||
-        (item.inStage && this.items[index - 1] && this.items[index - 1].active)) {
+            } else if (c || d) {
                 return 'right';
             }
             return false;
@@ -148,7 +156,9 @@ export default {
             });
         },
         updateItems() {
-            this.items = this.$children.filter(child => child.$options.name === 'ot-carousel-item');
+            this.items = this.$children.filter(child => {
+                return child.$options.name === 'ot-carousel-item';
+            });
         },
         resetItemPosition(oldIndex) {
             this.items.forEach((item, index) => {
@@ -171,7 +181,9 @@ export default {
         },
         setActiveItem(index) {
             if (typeof index === 'string') {
-                const filteredItems = this.items.filter(item => item.name === index);
+                const filteredItems = this.items.filter(item => {
+                    return item.name === index;
+                });
                 if (filteredItems.length > 0) {
                     index = this.items.indexOf(filteredItems[0]);
                 }
@@ -179,7 +191,7 @@ export default {
             index = Number(index);
             if (isNaN(index) || index !== Math.floor(index)) {
                 process.env.NODE_ENV !== 'production' &&
-        console.warn('[OTUI Warn][Carousel]index must be an integer.');
+          console.warn('[OTUI Warn][Carousel]index must be an integer.');
                 return;
             }
             const length = this.items.length;
@@ -211,10 +223,10 @@ export default {
         },
     },
     created() {
-        this.throttledArrowClick = throttle(index => {
+        this.throttledArrowClick = _throttle(index => {
             this.setActiveItem(index);
         }, 300);
-        this.throttledIndicatorHover = throttle(index => {
+        this.throttledIndicatorHover = _throttle(index => {
             this.handleIndicatorHover(index);
         }, 300);
     },
@@ -237,7 +249,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../globals';
+@import "../globals";
 .root {
   overflow-x: hidden;
   position: relative;
@@ -245,33 +257,33 @@ export default {
   @include __ot_size__;
 
   &[round] {
-      @include __ot_round__;
+    @include __ot_round__;
   }
 
-    $--index-normal: 1;
-    $--carousel-indicator-width: 2em;
-    $--carousel-indicator-height: 2px;
-    $--carousel-indicator-padding-horizontal: 4px;
-    $--carousel-indicator-padding-vertical: 1em;
+  $--index-normal: 1;
+  $--carousel-indicator-width: 2em;
+  $--carousel-indicator-height: 2px;
+  $--carousel-indicator-padding-horizontal: 4px;
+  $--carousel-indicator-padding-vertical: 1em;
 
   .container {
-      position: relative;
+    position: relative;
     height: 30em;
   }
 
   .arrow {
-    transition: .3s;
+    transition: 0.3s;
     position: absolute;
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
 
     &.left {
-        left: 1em;
+      left: 1em;
     }
 
     &.right {
-        right: 1em;
+      right: 1em;
     }
   }
 
@@ -301,51 +313,52 @@ export default {
     }
 
     &[labels] {
-        left: 0;
-        right: 0;
-        transform: none;
-        text-align: center;
+      left: 0;
+      right: 0;
+      transform: none;
+      text-align: center;
 
-        .button {
-            height: auto;
-            width: auto;
-            padding: 2px 18px;
-            font-size: 12px;
-        }
+      .button {
+        height: auto;
+        width: auto;
+        padding: 2px 18px;
+        font-size: 12px;
+      }
 
-        .indicator {
-            padding: 6px 4px;
-        }
+      .indicator {
+        padding: 6px 4px;
+      }
     }
 
     .indicator {
-        display: inline-block;
-        background-color: transparent;
-        padding: $--carousel-indicator-padding-vertical $--carousel-indicator-padding-horizontal;
-        cursor: pointer;
+      display: inline-block;
+      background-color: transparent;
+      padding: $--carousel-indicator-padding-vertical
+        $--carousel-indicator-padding-horizontal;
+      cursor: pointer;
 
-        &:hover .button {
-            opacity: 0.72;
-        }
+      &:hover .button {
+        opacity: 0.72;
+      }
 
-        &[active]{
-            .button {
-                opacity: 1;
-            }
+      &[active] {
+        .button {
+          opacity: 1;
         }
+      }
     }
 
     .button {
-        display: block;
-        opacity: 0.48;
-        width: $--carousel-indicator-width;
-        height: $--carousel-indicator-height;
-        border: none;
-        outline: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-        transition: .3s;
+      display: block;
+      opacity: 0.48;
+      width: $--carousel-indicator-width;
+      height: $--carousel-indicator-height;
+      border: none;
+      outline: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      transition: 0.3s;
     }
   }
 }

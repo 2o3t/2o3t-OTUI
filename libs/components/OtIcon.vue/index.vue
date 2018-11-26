@@ -62,11 +62,11 @@ export default {
         },
         fontStyle() {
             const style = {};
-            if ([ 'mini', 'small', 'normal', 'big' ].includes(this.size)) {
+            if ([ 'mini', 'small', 'normal', 'big' ].includes(this.$otSize)) {
                 return style;
             }
             return {
-                fontSize: this.size,
+                fontSize: this.$otSize,
             };
         },
     },
@@ -81,12 +81,6 @@ export default {
     padding: 0;
     box-sizing: border-box;
     vertical-align: middle;
-
-    &[url] {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50%;
-    }
 
     @include __ot_size__;
 
@@ -121,6 +115,12 @@ export default {
     text-align: center;
     box-sizing: border-box;
     vertical-align: middle;
+
+    &[url] {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }
 
     &[local-ratio] {
         width: 1em;

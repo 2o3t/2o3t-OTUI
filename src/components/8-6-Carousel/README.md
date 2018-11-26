@@ -1,4 +1,5 @@
 <!-- @api: OtCarousel.vue/OtCarouselAPI.md -->
+<!-- @api: OtCarousel.vue/OtCarouselItemAPI.md -->
 
 # Carousel 走马灯
 

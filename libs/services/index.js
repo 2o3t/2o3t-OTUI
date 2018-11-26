@@ -7,8 +7,8 @@ import OtCollapseTransition from './OtCollapseTransition/index.js';
 export default {
 
     OtMessage,
-    OtLoading,
-    OtDialog,
-    OtCollapseTransition,
+OtLoading,
+OtDialog,
+OtCollapseTransition,
 
-};
+    };
