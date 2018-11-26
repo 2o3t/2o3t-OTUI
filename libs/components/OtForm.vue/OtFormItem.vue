@@ -5,7 +5,7 @@
             :style="{ width: labelWidth }" :position="labelPosition">
             <span v-ot-title>{{ label }}</span>
         </ot-label>
-        <div :class="$style.row" ot>
+        <div :class="$style.row" ot row class="ot-form-item__row">
             <slot></slot>
             <div ot v-if="errorMsg" v-ot-bind="$otColors.msg" :class="$style.msg">{{ errorMsg }}</div>
         </div>
@@ -250,8 +250,16 @@ export default {
         margin-right: 1em;
         vertical-align: middle;
 
-        &[position=ri] {
+        &[position=right] {
+            text-align: right;
+        }
 
+        &[position=center] {
+            text-align: center;
+        }
+
+        &[position=left] {
+            text-align: left;
         }
     }
 
@@ -260,6 +268,7 @@ export default {
         position: relative;
         box-sizing: border-box;
         vertical-align: middle;
+        width: 100%;
     }
 
     .msg {
