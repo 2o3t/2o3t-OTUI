@@ -12,8 +12,8 @@
         <div :class="$style.body" :style="_bodyStyle">
             <slot name="body">
                 <ot-table-body :list="list" :stripe="stripe">
-                    <template v-if="$scopedSlots['body-item']" slot-scope="{ id, index, item }">
-                        <slot name="body-item" :id="id" :index="index" :item="item"></slot>
+                    <template v-if="$scopedSlots['body-item']" slot-scope="{ id, index, item ,rowItem, rowIndex }">
+                        <slot name="body-item" :id="id" :index="index" :item="item" :rowItem="rowItem" :rowIndex="rowIndex"></slot>
                     </template>
                 </ot-table-body>
             </slot>

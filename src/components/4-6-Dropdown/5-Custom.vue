@@ -5,12 +5,9 @@
                 <ot-button border>Custom Dropdown</ot-button>
                 <div slot="dropdown">
                     <ot-row-group vertical>
-                        <ot-tag color="default" circle>Default</ot-tag>
-                        <ot-tag color="primary">Primary</ot-tag>
-                        <ot-tag color="success" circle>Success</ot-tag>
-                        <ot-tag color="warning">Warning</ot-tag>
-                        <ot-tag color="danger" circle>Danger</ot-tag>
-                        <ot-tag color="info">Info</ot-tag>
+                        <div>1111</div>
+                        <div>2222</div>
+                        <div>3333</div>
                     </ot-row-group>
                 </div>
             </ot-dropdown>

@@ -10,6 +10,7 @@
                 background round
                 :page-size="pageSize"
                 :page-sizes="pageSizes"
+                @selectPageSize="handleSelectPageSize"
                 show-page-sizes>
             </ot-pagination>
         </ot-row-group>
@@ -25,6 +26,11 @@ export default {
             pageSizes: [ 10, 50, 100 ],
             code: decodeURIComponent(`<%=${'otSourceCode'}=%>`),
         };
+    },
+    methods: {
+        handleSelectPageSize(item) {
+            console.log(item);
+        },
     },
 };
 </script>

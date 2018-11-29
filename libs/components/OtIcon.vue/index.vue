@@ -1,7 +1,7 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" v-on="$listeners" :loading="loading" v-ot-bind="$otColors" :local-ratio="localRatio"></i>
+    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="customStyle" :size="$otSize" v-on="$listeners" :loading="loading" v-ot-bind="$otColors" :local-ratio="localRatio"></i>
     <span ot :class="$style.root" v-else v-on="$listeners" v-ot-bind="$otColors">
-        <i ot :class="[$style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="imageUrl" :size="$otSize" :loading="loading" :local-ratio="localRatio"></i>
+        <i ot :class="[$style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="customStyle" :size="$otSize" :loading="loading" :local-ratio="localRatio"></i>
         <span :class="$style.append">
             <!-- 跟随图标后面的容器 -->
             <slot></slot>
@@ -18,9 +18,9 @@ export default {
         // url链接地址
         url: [ String ],
         // 宽度大小
-        width: [ String ],
+        width: [ String, Number ],
         // 高度大小
-        height: [ String ],
+        height: [ String, Number ],
         // 是否为等待状态
         loading: {
             type: [ Boolean ],
@@ -43,22 +43,40 @@ export default {
         },
     },
     computed: {
+        customStyle() {
+            const style = {};
+            return Object.assign(style, this.sizeStyle, this.fontStyle, this.imageUrl);
+        },
+        sizeStyle() {
+            const style = {};
+            if (this.$otSize) {
+                style.width = '1em';
+                style.height = '1em';
+            }
+            if (this.width) {
+                if (typeof this.width === 'string') {
+                    style.width = this.width;
+                } else {
+                    style.width = this.width + 'px';
+                }
+            }
+            if (this.height) {
+                if (typeof this.height === 'string') {
+                    style.height = this.height;
+                    style.lineHeight = this.height;
+                } else {
+                    style.height = this.height + 'px';
+                    style.lineHeight = this.height + 'px';
+                }
+            }
+            return style;
+        },
         imageUrl() {
             const style = {};
             if (this.url) {
                 style.backgroundImage = `url('${this.url}')`;
-                if (this.$otSize) {
-                    style.width = '1em';
-                    style.height = '1em';
-                }
-                if (this.width) {
-                    style.width = this.width;
-                }
-                if (this.height) {
-                    style.height = this.height;
-                }
             }
-            return Object.assign(style, this.fontStyle);
+            return style;
         },
         fontStyle() {
             const style = {};

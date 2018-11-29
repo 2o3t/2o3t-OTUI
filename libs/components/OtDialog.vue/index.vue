@@ -1,5 +1,5 @@
 <template>
-    <ot-modal :name="`ot-message-box-${name}`" @closed="onClosed" v-bind="_options">
+    <ot-modal ot class="ot-dialog" :class="$style.dialog" :name="`ot-message-box-${name}`" @closed="onClosed" v-bind="_options">
         <div ot class="ot-message-box" :class="[$style.root, customClass]" :center="center" :size="$otSize">
             <div :class="$style.header">
                 <div :class="$style.title">
@@ -32,6 +32,7 @@
 <script>
 import theme from './theme.js';
 export default {
+    name: 'ot-dialog',
     mixins: [ theme ],
     data() {
         return {
@@ -45,14 +46,14 @@ export default {
             //   message: "",
             //   icon: "",
             //   center: "",
-            //   customClass: "",
+            // customClass: '',
             //   closable: true
         };
     },
     computed: {
         _options() { // 自带
             return {
-                width: '420px',
+                width: this.width || '420px',
                 height: 'auto',
                 minHeight: 160,
                 clickToClose: this._type !== 'alert',
@@ -94,53 +95,56 @@ export default {
 
 <style lang="scss" module>
 @import '../globals';
-.root {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+.dialog {
+    .root {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
 
-  @include __ot_size__;
+        @include __ot_size__;
 
-  .header {
-    flex: 0 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    padding: 1em 1.5em;
+        .header {
+            flex: 0 0 auto;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 1em 1.5em;
 
-    .title {
-      flex: 1 1 auto;
-        font-size: $--ot-h3-size;
+            .title {
+            flex: 1 1 auto;
+                font-size: $--ot-h3-size;
+            }
+
+            .closeBtn {
+            flex: 0 0 auto;
+            display: table;
+            margin: auto;
+            }
+        }
+
+        .content {
+            flex: 1 1 100%;
+            position: relative;
+            padding: 1em 1.5em;
+
+            .message {
+
+            }
+        }
+
+        .btns {
+            text-align: right;
+            flex: 0 0 auto;
+            position: relative;
+            padding: 1em 1.5em;
+
+            &>*:last-child {
+                margin-left: 0.5em;
+            }
+        }
     }
-
-    .closeBtn {
-      flex: 0 0 auto;
-      display: table;
-      margin: auto;
-    }
-  }
-
-  .content {
-    flex: 1 1 100%;
-    position: relative;
-    padding: 1em 1.5em;
-
-    .message {
-
-    }
-  }
-
-  .btns {
-      text-align: right;
-    flex: 0 0 auto;
-    position: relative;
-    padding: 1em 1.5em;
-  }
-}
-.v--modal {
-    background-color: transparent;
 }
 </style>

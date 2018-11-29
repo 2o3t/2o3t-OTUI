@@ -1,3 +1,5 @@
+<!-- @api: OtDialog.vue/OtDialogAPI.md -->
+<!-- @api: services/OtDialog/API.md -->
 
 # Dialog 对话框
 

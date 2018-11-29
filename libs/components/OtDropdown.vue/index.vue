@@ -1,11 +1,12 @@
 <template>
     <ot-tip ot class="ot-dropdown" :class="$style.root" :value="bShown" @update="handleUpdate" :round="round" :arrow="arrow" v-on="$listeners" :arrowAttrs="$otColors.arrow"
         :disabled="disabled" :manual="manual" :placement="placement" :offsetX="offsetX" :offsetY="offsetY" :clickable="clickable">
-        <slot></slot>
-        <ot-link :class="$style.link" v-if="!$slots.default" :disabled="disabled">
-            <span :class="$style.text">{{ text }}</span>
-            <ot-arrow :class="$style.arrow" :placement="bShown ? 'up' : 'down'" animation border></ot-arrow>
-        </ot-link>
+        <slot>
+            <ot-link :class="$style.link" :disabled="disabled">
+                <span :class="$style.text">{{ text }}</span>
+            </ot-link>
+        </slot>
+        <ot-arrow :class="$style.arrow" v-if="appendArrow || !$slots.default" :placement="bShown ? 'up' : 'down'" animation border></ot-arrow>
         <div ot v-ot-bind="$otColors.dropdown" :class="$style.dropdown" slot="tip" :size="$otSize" class="ot-dropdown-popper" :style="style" :round="round" v-if="!list">
             <div ot v-ot-bind="$otColors.list" class="ot-dropdown-popper-list" :custom="custom" @click="handleDropdownCloseClick" :shown="bShown" :round="round" :size="$otSize">
                 <!-- 无 list 时, 下拉框容器 -->
@@ -91,6 +92,11 @@ export default {
         value: [ Boolean ],
         // 文本按钮内容
         text: [ String ],
+        // 文字后附加箭头
+        appendArrow: {
+            type: [ Boolean ],
+            default: false,
+        }
     },
     watch: {
         value(newV) {
@@ -136,6 +142,12 @@ export default {
 
 <style lang="scss" module>
 .root {
+    position: relative;
+    vertical-align: middle;
+
+    .arrow {
+        margin-left: 5px;
+    }
 
     .link {
         overflow: hidden;

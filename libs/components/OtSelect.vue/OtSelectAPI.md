@@ -25,13 +25,10 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| @update |  更新 v-model 事件 | (value): Void | - |
 | @close | - | ( ): Void | - |
-| @update | - | (value): Void | - |
-| @update | - | (item): Void | - |
-| @select | - | (item): Void | - |
-| @update | - | (value): Void | - |
-| @update | - | (''): Void | - |
-| @show | - | ( ): Void | - |
+| @select |  更新选中状态事件 | (item): Void | - |
+| @show |  显示事件 | ( ): Void | - |
 
 ## Slots
 

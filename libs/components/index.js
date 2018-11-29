@@ -1,4 +1,6 @@
 /* auto load */
+import OtUploadAvatar from './OtUploadImage.vue/OtUploadAvatar.vue';
+import OtUploadImage from './OtUploadImage.vue/index.vue';
 import OtTransferList from './OtTransfer.vue/OtTransferList.vue';
 import OtTransfer from './OtTransfer.vue/index.vue';
 import OtTitleTip from './OtTip.vue/OtTitleTip.vue';
@@ -78,7 +80,9 @@ import OtCascader from './OtCascader.vue';
 
 export default {
 
-    OtTransferList,
+    OtUploadAvatar,
+OtUploadImage,
+OtTransferList,
 OtTransfer,
 OtTitleTip,
 OtTip,

@@ -13,6 +13,7 @@
 | url | url链接地址 | String | - |
 | lib | icon-font 图标库 | String | - |
 | circle | 是否为圆形 | Boolean | - |
+| fill | 头像填充满 | Boolean | - |
 
 ## Slots
 

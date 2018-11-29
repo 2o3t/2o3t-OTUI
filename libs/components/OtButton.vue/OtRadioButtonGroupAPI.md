@@ -10,7 +10,7 @@
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | value | 数据源 | String | - |
-| circle | 大圆弧UI | Boolean | - |
+| circle | 大圆弧边UI | Boolean | false |
 
 ## Events
 

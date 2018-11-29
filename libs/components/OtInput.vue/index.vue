@@ -9,7 +9,7 @@
         </span>
         <input ot v-ot-bind="$otColors.input" :round="round" :circle="circle" :clearable="clearable" :logo="icon" :_type="type"
             :class="$style.input" :placeholder="placeholder" :type="_type" :disabled="disabled"
-            :autocomplete="autocomplete" :maxlength="Number(maxlength)"
+            :autocomplete="autocomplete" :maxlength="_maxlength"
             :readonly="readonly"
             :name="name"
             :value="model"
@@ -27,7 +27,7 @@
     </span>
     <span v-else ot v-ot-bind="$otColors" class="ot-input ot-textarea" :class="[$style.root]" textarea :size="$otSize" :round="round" :circle="circle">
         <textarea ot v-ot-bind="$otColors.input" :round="round" :circle="circle" :disabled="disabled"
-            :autocomplete="autocomplete" :maxlength="Number(maxlength)"
+            :autocomplete="autocomplete" :maxlength="_maxlength"
             :name="name"
             :class="[$style.input, $style.textarea]" :cols="Number(cols)" :rows="Number(rows)"
             :readonly="readonly"
@@ -100,16 +100,26 @@ export default {
             }
             return this.type;
         },
-        lastLength() {
+        _maxlength() {
             if (this.maxlength) {
+                return parseInt(this.maxlength);
+            }
+            return null;
+        },
+        lastLength() {
+            if (this.$isServer) return null;
+            if (this._maxlength && this.model) {
                 const len = this.model.length;
-                const last = this.maxlength - len;
+                const last = this._maxlength - len;
                 return last >= 0 ? last : null;
             }
             return null;
         },
     },
     methods: {
+        _updateValue(value) {
+            this.$emit('update', value);
+        },
         _initSuffixClearableStyle() {
             if (this.$slots.suffix && this.clearable) {
                 const $suffixEl = this.$refs.suffix;
@@ -124,20 +134,21 @@ export default {
             this.suffixClearableStyle = {};
         },
         handleInput(e) {
-            if (this.maxlength) {
+            if (this.$isServer) return;
+            if (this._maxlength) {
                 const value = e.target.value;
                 const len = value.length;
-                const max = Number(this.maxlength);
+                const max = this._maxlength;
                 if (max <= len) {
                     const v = value.substr(0, max);
-                    this.$emit('update', v);
+                    this._updateValue(v);
                     return;
                 }
             }
-            this.$emit('update', e.target.value);
+            this._updateValue(e.target.value);
         },
         handleClearClick(e) {
-            this.$emit('update', '');
+            this._updateValue('');
             this.$emit('clear', e);
         },
         handlePasswordEyeClick() {

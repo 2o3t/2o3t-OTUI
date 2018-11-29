@@ -32,6 +32,8 @@ table.root {
   empty-cells: show;
   width: 100%;
 
+  @include __ot_size__;
+
   th {
     white-space: nowrap;
     font-weight: $--main-font-weight-medium;
@@ -41,8 +43,13 @@ table.root {
   th,
   td {
     border: none;
-    padding: 16px 24px;
+    padding: 1em 0;
     text-align: left;
+
+    &>div {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
   }
 
   thead, tbody {

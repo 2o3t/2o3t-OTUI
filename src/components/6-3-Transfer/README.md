@@ -1,3 +1,4 @@
+<!-- @api: OtTransfer.vue/OtTransferAPI.md -->
 
 # Transfer 穿梭框
 

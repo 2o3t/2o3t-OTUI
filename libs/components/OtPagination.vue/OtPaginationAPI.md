@@ -25,6 +25,8 @@
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | @update |  更新 `v-model` 当前页数 | (current): Void | - |
+| @jumperEvent |  jumper事件 | (item): Void | - |
+| @selectPageSize |  切换每页显示条目个数事件 | (item): Void | - |
 
 ## ScopedSlots
 

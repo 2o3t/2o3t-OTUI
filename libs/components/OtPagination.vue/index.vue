@@ -10,7 +10,7 @@
             <!-- 每页条数 -->
             <ot-select placeholder="请选择" :size="$otSize" :round="round"
                 readonly :disabled="disabled"
-                v-model="currentPageSize"
+                v-model="currentPageSize" @select="handleSelectPageSize"
                 :list="pageSizes">
             </ot-select>
         </span>
@@ -232,7 +232,11 @@ export default {
         },
         handleJumper(e) {
             const item = parseInt(e.target.value);
+            this.$emit('jumperEvent', item); // jumper事件
             this.handleSpecifyPage(item);
+        },
+        handleSelectPageSize(item) {
+            this.$emit('selectPageSize', item); // 切换每页显示条目个数事件
         },
     },
 };

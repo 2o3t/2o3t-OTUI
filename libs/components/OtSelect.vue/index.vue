@@ -2,15 +2,15 @@
     <div ot :class="$style.root" class="ot-select" @click="handleFirstClick"
         :size="$otSize" :theme="$otTheme">
         <transition name="otSelectCollapse">
-            <div :class="$style.up" v-if="bShown && ($slots.up || isUp) && !$slots.down && !list" :style="{ width: `${autoWidth}px` }">
+            <div :class="$style.up" v-if="bShown && ($slots.up || isUp) && !$slots.down && !_list" :style="{ width: `${autoWidth}px` }">
                 <div ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="up"></slot>
                     <slot></slot>
                 </div>
             </div>
-            <div :class="$style.up" v-else-if="bShown && isUp && !$slots.up && !$slots.down && list" :style="{ width: `${autoWidth}px` }">
+            <div :class="$style.up" v-else-if="bShown && isUp && !$slots.up && !$slots.down && _list" :style="{ width: `${autoWidth}px` }">
                 <ul ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
-                    <li ot v-ot-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)"
+                    <li ot v-ot-bind="$otColors.item" v-for="(item, index) in _list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
                             {{ (typeof item !== 'object') ? item : item.value }}
@@ -30,23 +30,21 @@
             @input="handleInput"
             :clearable="clearable"
             @clear="handleClear"
-            v-on="$listeners"
             type="text">
             <ot-link :class="$style.link" slot="suffix" @click="handleShowSelectList" :disabled="disabled">
-                <!-- TODO: 替换为 ot-arrow -->
                 <ot-icon :class="$style.icon" :size="$otSize" icon="angle-down" :shown="bShown"></ot-icon>
             </ot-link>
         </ot-input>
         <transition name="otSelectCollapse">
-            <div :class="$style.down" v-if="bShown && ($slots.down || !isUp) && !$slots.up && !list" :style="{ width: `${autoWidth}px` }">
+            <div :class="$style.down" v-if="bShown && ($slots.down || !isUp) && !$slots.up && !_list" :style="{ width: `${autoWidth}px` }">
                 <div ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="down"></slot>
                     <slot></slot>
                 </div>
             </div>
-            <div :class="$style.down" v-else-if="bShown && !isUp && !$slots.down && !$slots.up && list" :style="{ width: `${autoWidth}px` }">
+            <div :class="$style.down" v-else-if="bShown && !isUp && !$slots.down && !$slots.up && _list" :style="{ width: `${autoWidth}px` }">
                 <ul ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
-                    <li ot v-ot-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)"
+                    <li ot v-ot-bind="$otColors.item" v-for="(item, index) in _list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
                             {{ (typeof item !== 'object') ? item : item.value }}
@@ -95,12 +93,18 @@ export default {
         };
     },
     computed: {
+        _list() {
+            return this.list;
+        },
         autoWidth() {
             const $el = this.$el;
             return $el.offsetWidth;
         },
     },
     methods: {
+        _updateValue(value) {
+            this.$emit('update', value); // 更新 v-model 事件
+        },
         handleFirstClick(e) {
             if (!this.bShown) {
                 this.handleShowSelectList(e);
@@ -115,11 +119,11 @@ export default {
         handleSelectClick(item) {
             if (typeof item === 'object') {
                 const value = item.value;
-                this.$emit('update', value);
+                this._updateValue(value);
             } else {
-                this.$emit('update', item);
+                this._updateValue(item);
             }
-            this.$emit('select', item);
+            this.$emit('select', item); // 更新选中状态事件
         },
         handleShowSelectList(ev) {
             if (this.bShown) {
@@ -155,12 +159,12 @@ export default {
         },
         handleInput(e) {
             const value = e.target.value;
-            this.$emit('update', value);
+            this._updateValue(value);
 
             this._show();
         },
         handleClear() {
-            this.$emit('update', '');
+            this._updateValue('');
             this._show();
         },
         _show() {
@@ -168,7 +172,7 @@ export default {
             if (!this.bShown) {
                 this.bShown = true;
                 this._scrollItem();
-                this.$emit('show');
+                this.$emit('show'); // 显示事件
             }
         },
         _scrollItem() {

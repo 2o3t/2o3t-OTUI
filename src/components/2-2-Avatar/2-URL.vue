@@ -3,7 +3,8 @@
         <ot-row-group :theme="$otTheme" :code="code">
             <ot-avatar :url="url1" round></ot-avatar>
             <ot-avatar :url="url2" circle></ot-avatar>
-            <ot-avatar :url="url3"></ot-avatar>
+            <ot-avatar :url="url3" fill></ot-avatar>
+            <ot-avatar :url="url3" circle fill size="2em"></ot-avatar>
         </ot-row-group>
     </ot-section>
 </template>

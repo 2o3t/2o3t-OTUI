@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import OtButton from './index.vue';
 import theme from './theme.js';
+import OtButton from './index.vue';
 export default {
     name: 'ot-radio-button',
     extends: OtButton,

@@ -13,7 +13,7 @@ export default {
                     c.normal.push('def-bb', 'border');
                     c.disabled.push('def-bb-dis');
                 }
-                if (this.currentHref) {
+                if (this.currentHref || this.hasClick) {
                     c.normal = [ 'def-f' ];
                     c.hover.push('def-f-hov');
                     c.hover.push('def-f-act');
@@ -38,7 +38,7 @@ export default {
                     c.normal.push('def-bb', 'border');
                     c.disabled.push('def-bb-dis');
                 }
-                if (this.currentHref) {
+                if (this.currentHref || this.hasClick) {
                     c.normal = [ 'def-f' ];
                     c.hover.push('def-f-hov');
                     c.hover.push('def-f-act');

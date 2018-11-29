@@ -5,7 +5,7 @@
             :style="{ width: labelWidth }" :position="labelPosition">
             <span v-ot-title>{{ label }}</span>
         </ot-label>
-        <div :class="$style.row" ot row class="ot-form-item__row">
+        <div :class="$style.row" ot row class="ot-form-item__row" :vertical="_vertical">
             <slot></slot>
             <div ot v-if="errorMsg" v-ot-bind="$otColors.msg" :class="$style.msg">{{ errorMsg }}</div>
         </div>
@@ -263,12 +263,16 @@ export default {
         }
     }
 
-    .row {
+    .row[row] {
         display: table-cell;
         position: relative;
         box-sizing: border-box;
         vertical-align: middle;
-        width: 100%;
+        flex: 1 0 auto;
+
+        &[vertical] {
+            width: 100%;
+        }
     }
 
     .msg {

@@ -7,12 +7,12 @@
                 :width="calcWidth(name)">
         </colgroup>
         <tbody :style="getBodyStyle()">
-            <tr :class="$style.row" v-for="(item, index) in _list" :key="index" :stripe="stripe">
-                <td v-for="(name, index) in columns"
+            <tr :class="$style.row" v-for="(item, rowIndex) in _list" :key="rowIndex" :stripe="stripe">
+                <td v-for="(name, index) in columns" :class="$style.cell"
                     :style="getBodyCellStyle(name)"
                     :key="`ot_table_cell_body_${name}_${index}`">
-                    <slot :id="name" :index="index" :item="item[name]">
-                        <div>
+                    <slot :id="name" :index="index" :item="item[name]" :rowItem="item" :rowIndex="rowIndex">
+                        <div :class="$style.cell">
                             {{ item[name] }}
                         </div>
                     </slot>
@@ -91,8 +91,15 @@ export default {
 
             }
             &:nth-child(even) {
-                background-color: #aaaaaa;
+                background-color: #fafafa;
             }
+        }
+
+        .cell {
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: normal;
+            word-break: break-all;
         }
     }
 }

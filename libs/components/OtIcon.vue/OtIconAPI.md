@@ -11,8 +11,8 @@
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
 | icon | 图标名称 | String | - |
 | url | url链接地址 | String | - |
-| width | 宽度大小 | String | - |
-| height | 高度大小 | String | - |
+| width | 宽度大小 | String,Number | - |
+| height | 高度大小 | String,Number | - |
 | loading | 是否为等待状态 | Boolean | false |
 | lib | icon-font lib | String | 'font-ot' |
 | customClass | 自定义 class | String | '' |

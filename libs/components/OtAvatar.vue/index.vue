@@ -1,8 +1,8 @@
 <template>
-    <div ot class="ot-avatar" :class="$style.root" v-ot-bind="$otColors" :size="$otSize" :style="fontStyle" :round="round" :circle="circle">
+    <div ot class="ot-avatar" :class="$style.root" v-ot-bind="$otColors" :size="$otSize" :style="fontStyle" :circle="circle">
         <!-- 内容插槽 -->
         <slot>
-            <ot-icon class="ot-avatar__icon" :icon="icon" :lib="lib" :url="url"></ot-icon>
+            <ot-icon :class="$style.icon" class="ot-avatar__icon" :icon="icon" :lib="lib" :url="url" :fill="fill"></ot-icon>
         </slot>
     </div>
 </template>
@@ -21,6 +21,8 @@ export default {
         lib: [ String ],
         // 是否为圆形
         circle: Boolean,
+        // 头像填充满
+        fill: Boolean,
     },
     computed: {
         fontStyle() {
@@ -56,6 +58,15 @@ export default {
 
     &[circle] {
         border-radius: 50%;
+    }
+
+    .icon {
+        &[fill] {
+            width: 100%;
+            height: 100%;
+            font-size: 3em;
+            vertical-align: baseline;
+        }
     }
 }
 </style>

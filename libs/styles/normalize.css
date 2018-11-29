@@ -344,6 +344,7 @@ template {
 button, input, optgroup, select, textarea {
     background: none;
     border: none;
+    outline:none;
 }
 
 ul,li,ol {

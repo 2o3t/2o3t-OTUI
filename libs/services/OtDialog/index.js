@@ -94,11 +94,14 @@ export default Vue => {
         options = Object.assign({}, defaults, options);
         initInstance(options);
 
-        return new Promise((resolve, reject) => {
+        const p = new Promise((resolve, reject) => {
             instance.__callback__ = {
                 resolve, reject,
             };
         });
+        p.instance = instance;
+        p.refresh = initInstance;
+        return p;
     };
 
     Dialog.alert = (description, title, options) => {

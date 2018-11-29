@@ -1,8 +1,14 @@
 <template>
-    <span ot v-ot-bind="$otColors" class="ot-tag" :size="$otSize" type="tag" :class="$style.root"
-        :disabled="disabled" :round="round" :circle="circle">
-        <slot></slot>
-    </span>
+    <transition name="fade">
+        <span v-if="visible" ot v-ot-bind="$otColors" class="ot-tag" :size="$otSize" type="tag" :class="$style.root"
+            :disabled="disabled" :round="round" :circle="circle">
+            <slot></slot>
+            <ot-link v-if="closable" @click="close">
+                <ot-icon icon="close" size="mini" v-bind="$otColors.close" :class="$style.close" circle
+                    width="1.2em"  height="1.2em"></ot-icon>
+            </ot-link>
+        </span>
+    </transition>
 </template>
 
 <script>
@@ -19,6 +25,18 @@ export default {
             type: [ Boolean ],
             default: false,
         },
+        closable: Boolean,
+    },
+    data() {
+        return {
+            visible: true,
+        };
+    },
+    methods: {
+        close() {
+            this.visible = false;
+            this.$emit('close'); // 关闭alert时触发的事件
+        },
     },
 };
 </script>
@@ -28,9 +46,9 @@ export default {
 .root {
     position: relative;
     box-sizing: border-box;
-    padding: 0 0.3em;
     display: inline-block;
     white-space: nowrap;
+    padding: 0.2em 1em;
 
     @include __ot_size__;
 
@@ -40,6 +58,16 @@ export default {
 
     &[circle] {
         @include __ot_circle__;
+    }
+
+    .close {
+        display: inline-block;
+        box-sizing: border-box;
+        margin-left: 0.5em;
+
+        &[circle] {
+            border-radius: 50%;
+        }
     }
 }
 </style>

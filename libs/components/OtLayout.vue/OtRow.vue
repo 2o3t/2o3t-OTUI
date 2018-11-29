@@ -30,7 +30,7 @@ export default {
 
     computed: {
         style() {
-            const ret = {};
+            const ret = { };
 
             if (this.gutter) {
                 ret.marginLeft = `-${this.gutter / 2}px`;
@@ -52,6 +52,10 @@ export default {
                     { 'ot-row--flex': this.type === 'flex' },
                 ],
                 style: this.style,
+                attrs: {
+                    ot: true,
+                    row: true,
+                },
             },
             this.$slots.default
         );

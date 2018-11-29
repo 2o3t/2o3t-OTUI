@@ -1,7 +1,7 @@
 <template>
-    <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" :size="$otSize" type="button" :class="$style.root"
-        :disabled="disabled" :round="round" :circle="circle" :icon="icon && !$slots.default" :border="border" :dashed="dashed">
-        <ot-icon v-if="icon" :icon="icon" :lib="lib">
+    <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" v-on="listeners" :size="$otSize" type="button" :class="$style.root" :custom="custom"
+        :disabled="disabled" :round="round" :circle="circle" :icon="(!!icon || !!url) && !$slots.default" :border="border" :dashed="dashed" v-bind="$attrs">
+        <ot-icon v-if="icon || url" :icon="icon" :lib="lib" :url="url" :width="width" :height="height">
             <!-- 有 icon 时显示 -->
             <slot></slot>
         </ot-icon>
@@ -12,24 +12,47 @@
 
 <script>
 import theme from './theme.js';
+import OtLink from '../OtLink.vue/index.vue';
+const ExtendsOtLink = Object.assign({}, OtLink, { beforeCreate: null }); // 修复 cssmodule
 export default {
     name: 'ot-button',
     mixins: [ theme ],
+    extends: ExtendsOtLink,
     props: {
         // `ot-icon` 的图标名称
         icon: [ String ],
         // ot-icon lib 图表库名称
         lib: String,
-        // 禁用功能
-        disabled: [ Boolean ],
+        // ot-icon url
+        url: String,
+        //  `ot-icon` 宽度大小
+        width: [ String, Number ],
+        //  `ot-icon` 高度大小
+        height: [ String, Number ],
+        // 用于自定义时, 如 ot-upload-avatar
+        custom: Boolean,
+        // 禁用状态
+        disabled: {
+            type: [ Boolean ],
+            default: false,
+        },
         // 圆角UI
         circle: [ Boolean ],
         // 虚边UI
         dashed: [ Boolean ],
-    },
-    methods: {
-        handleClick(e) {
-            this.$emit('click', e); // 触发点击事件
+        // vue-router 路由, 跳转 名称 或 对象.
+        to: {
+            type: [ String, Object ],
+            default: null,
+        },
+        // vue-router 跳转是否为 `replace`.
+        replace: { type: Boolean, default: false },
+        // vue-router 中 `append` 模式
+        append: { type: Boolean, default: false },
+        // 原生 `a` 标签中`target`属性
+        target: {
+            type: [ String ],
+            default: '_self',
         },
     },
 };
@@ -126,6 +149,21 @@ export default {
                 padding: 0;
                 min-width: $--ot-big-height;
             }
+        }
+    }
+
+    &[custom] {
+        &[circle] {
+            border-radius: 50%;
+        }
+
+        &[round] {
+            border-radius: 1em;
+        }
+
+        &[icon] {
+            padding: 0;
+            overflow: hidden;
         }
     }
 }

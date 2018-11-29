@@ -42,7 +42,7 @@ export default {
     },
     render(h) {
         const classList = [];
-        const style = {};
+        const style = { };
 
         if (this.gutter) {
             style.paddingLeft = this.gutter / 2 + 'px';
@@ -79,6 +79,10 @@ export default {
             {
                 class: [ 'ot-col', classList ],
                 style,
+                attrs: {
+                    ot: true,
+                    col: true,
+                },
             },
             this.$slots.default
         );

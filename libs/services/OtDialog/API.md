@@ -6,10 +6,7 @@
 
 | 方法名 | 说明 |
 | --- | --- |
-| close(id, userOnClose) | 关闭当前的 Message |
-| closeAll() | 关闭所有的 Message |
-| success(options) | success样式的 Message |
-| warning(options) | warning样式的 Message |
-| info(options) | info样式的 Message |
-| error(options) | error样式的 Message |
-| question(options) | question样式的 Message |
+| close(id, userOnClose) | 关闭当前的 OtDialog |
+| alert(options) | alert样式的 OtDialog |
+| confirm(options) | confirm样式的 OtDialog |
+| prompt(options) | prompt样式的 OtDialog |

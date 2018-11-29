@@ -28,9 +28,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| @update | - | (v): Void | - |
-| @update | - | (e.target.value): Void | - |
-| @update | - | (''): Void | - |
+| @update | - | (value): Void | - |
 | @clear | - | (e): Void | - |
 
 ## ScopedSlots
