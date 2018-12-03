@@ -57,6 +57,7 @@ export default Vue => {
                 };
             }
             options.type = type;
+            options.color = (type !== 'question' ? type : 'default');
             return Message(options);
         };
     });

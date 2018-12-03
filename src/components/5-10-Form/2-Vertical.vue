@@ -1,7 +1,7 @@
 <template>
     <ot-section v-bind="$attrs" :theme="$otTheme" section>
         <ot-row-group :code="code">
-            <ot-form v-model="formValue" vertical :cancelLabel="false">
+            <ot-form v-model="formValue" horizontal :cancelLabel="false">
                 <ot-form-item label="号码" name="number">
                     <ot-input placeholder="请输入" v-model="formValue.name"></ot-input>
                 </ot-form-item>

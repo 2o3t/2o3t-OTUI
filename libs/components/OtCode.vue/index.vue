@@ -1,5 +1,5 @@
 <template>
-    <div ot v-ot-bind="$otColors" v-highlight="_hljs" :class="$style.root" class="ot-code" :size="$otSize" :round="round" :border="border">
+    <div ot v-ot-bind="$otColors" v-ot-highlight="_hljs" :class="$style.root" class="ot-code" :size="$otSize" :round="round" :border="border">
         <div :class="$style.title" >
             <ot-icon v-if="showLang" :class="$style.lang" icon="code">{{ lang }}</ot-icon>
             <ot-link v-if="copy" @click="handleCopyClick">
@@ -48,45 +48,6 @@ export default {
             default: false,
         },
     },
-    directives: {
-        highlight(el, { value }) {
-            if (!value) return;
-            const hljs = value;
-            if (el.__inited_hljs__) return;
-            const blocks = el.querySelectorAll('pre code');
-            let len = 1;
-            if (blocks) {
-                blocks.forEach(block => {
-                    hljs.highlightBlock(block);
-                });
-                blocks.forEach(block => {
-                    const html = block.innerHTML;
-                    const reg = html.replace(/^\s+|\s+$/g, '').match(/\n/g);
-                    if (reg) {
-                        len += reg.length;
-                    }
-                });
-            }
-            if (len) {
-                const blocks = el.querySelectorAll('pre');
-                if (blocks) {
-                    blocks.forEach(block => {
-                        const ele = document.createElement('ol');
-                        ele.className = 'code-block';
-                        ele.setAttribute('ot', '');
-                        let html = '';
-                        for (let i = 0; i < len; i++) {
-                            html += '<li ot class="code-line">' + (i + 1) + '</li>';
-                        }
-                        ele.innerHTML = html;
-                        block.appendChild(ele);
-                    });
-                }
-            }
-
-            el.__inited_hljs__ = true;
-        },
-    },
     data() {
         return {
             bShown: false,
@@ -102,15 +63,19 @@ export default {
             return this.lang;
         },
         _hljs() {
+            if (this.$isServer) return;
             const hljs = this.$otUtils.getOtPlugin('hljs');
             if (!hljs) {
                 return;
             }
+            const value = this.value || '';
+            hljs.__value__ = value;
             return hljs;
         },
     },
     methods: {
         handleCopyClick() {
+            if (this.$isServer) return;
             const clipboard = this.$otUtils.getOtPlugin('clipboard');
             if (!clipboard) {
                 return;

@@ -17,9 +17,15 @@ export default {
 @import '../globals';
 .root {
     @include __ot_size__;
+}
+</style>
 
-    &[gutter]>[ot] {
+<style lang="scss">
+.root {
+
+    &[gutter] [ot].ot-row {
         margin-bottom: 1em;
+
         &:last-child {
             margin-bottom: 0;
         }
