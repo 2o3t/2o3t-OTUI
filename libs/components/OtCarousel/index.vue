@@ -35,7 +35,7 @@
         :class="$style.indicator"
         @mouseenter="throttledIndicatorHover(index)"
         @click.stop="handleIndicatorClick(index)">
-        <button ot v-ot-bind="outside ? $otColors.outsideIndicator : $otColors.indicator" :class="$style.button" class="ot-carousel__button"><span v-if="hasLabel">{{ item.label }}</span></button>
+        <button ot v-bind="outside ? $otColors.outsideIndicator : $otColors.indicator" :class="$style.button" class="ot-carousel__button"><span v-if="hasLabel">{{ item.label }}</span></button>
       </li>
     </ul>
   </div>
@@ -136,7 +136,7 @@ export default {
             const b = (item.inStage && this.items[index + 1] && this.items[index + 1].active);
             const c = (index === 0 && item.inStage && this.items[length - 1].active);
             const d = (item.inStage && this.items[index - 1] && this.items[index - 1].active);
-            if (a || b ) {
+            if (a || b) {
                 return 'left';
             } else if (c || d) {
                 return 'right';

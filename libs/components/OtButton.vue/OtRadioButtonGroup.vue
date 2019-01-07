@@ -7,10 +7,10 @@
 
 <script>
 import OtButtonGroup from './OtButtonGroup.vue';
-const ExtendsOtButtonGroup = Object.assign({}, OtButtonGroup, { beforeCreate: null }); // 修复 cssmodule
+// const ExtendsOtButtonGroup = Object.assign({}, OtButtonGroup, { beforeCreate: null }); // 修复 cssmodule
 export default {
     name: 'ot-radio-button-group',
-    extends: ExtendsOtButtonGroup,
+    extends: OtButtonGroup,
     props: {
         // 数据源
         value: [ String ],
@@ -54,3 +54,8 @@ export default {
     },
 };
 </script>
+
+<style lang="scss">
+@import './scss/group';
+</style>
+

@@ -1,7 +1,7 @@
 <template>
     <li ot :theme="$otTheme" class="ot-menu-group" :size="$otSize" :expanded="bCollapse"
          :class="$style.root">
-         <div v-if="label" ot v-ot-bind="$otColors" :class="$style.label" :collapse="isCollapse" @click="handleClickToggle">
+         <div v-if="label" ot v-bind="$otColors" :class="$style.label" :collapse="isCollapse" @click="handleClickToggle">
              <h5>{{ label }}</h5>
              <ot-arrow :class="$style.arrow" :placement="bCollapse ? 'up' : 'down'" animation border></ot-arrow>
          </div>

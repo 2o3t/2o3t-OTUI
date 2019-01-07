@@ -1,5 +1,5 @@
 <template>
-    <table ot v-ot-bind="$otColors" class="ot-table-ui" :class="$style.root" :border="border" :row="rowBorder" :column="columnBorder" :theme="$otTheme">
+    <table ot v-bind="$otColors" class="ot-table-ui" :class="$style.root" :border="border" :row="rowBorder" :column="columnBorder" :theme="$otTheme">
         <slot></slot>
     </table>
 </template>

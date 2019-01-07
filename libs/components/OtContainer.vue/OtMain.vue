@@ -28,8 +28,6 @@ export default {
     flex-basis: auto;
     overflow: auto;
     box-sizing: border-box;
-
-    @include __ot_scroll_bar__;
 }
 </style>
 

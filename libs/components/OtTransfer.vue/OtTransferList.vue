@@ -1,14 +1,14 @@
 <template>
-    <div ot v-ot-bind="$otColors" class="ot-list" :size="$otSize"
+    <div ot v-bind="$otColors" class="ot-list" :size="$otSize"
         :class="$style.root" :round="round">
-        <div ot v-ot-bind="$otColors.top" :class="$style.top" v-if="top" :size="$otSize" :round="round">
+        <div ot v-bind="$otColors.top" :class="$style.top" v-if="top" :size="$otSize" :round="round">
             <slot name="top">
                 <ot-checkbox :theme="$otTheme" :value="true" v-model="checkAll"
                     :size="$otSize" :round="round"
                     @change="handleAllChange" :indeterminate="indeterminate">
                     <span :class="$style.label">{{ label }}</span>
                 </ot-checkbox>
-                <span ot v-ot-bind="$otColors.count" :class="$style.count">{{selectItems.length}}/{{_list.length}}</span>
+                <span ot v-bind="$otColors.count" :class="$style.count">{{selectItems.length}}/{{_list.length}}</span>
             </slot>
         </div>
         <ot-line v-if="top"></ot-line>

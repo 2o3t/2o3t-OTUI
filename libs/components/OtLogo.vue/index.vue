@@ -1,6 +1,6 @@
 <template>
-    <span ot v-ot-bind="$otColors" class="ot-logo" :class="$style.root" :size="$otSize">
-        <ot-icon v-ot-bind="$otColors.logo" :class="$style.logo" :icon="icon" :url="url" :lib="lib"></ot-icon>
+    <span ot v-bind="$otColors" class="ot-logo" :class="$style.root" :size="$otSize" :adaptive="adaptive">
+        <ot-icon v-bind="$otColors.logo" :class="$style.logo" :icon="icon" :url="url" :lib="lib"></ot-icon>
         <div :class="$style.title">
             <slot></slot>
         </div>
@@ -22,6 +22,8 @@ export default {
         url: [ String ],
         // icon-font lib
         lib: String,
+        // 自动适配屏幕
+        adaptive: Boolean,
     },
 };
 </script>
@@ -64,6 +66,14 @@ export default {
             display: inline-block;
             content: '|';
             padding: 0 0.6em;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &[adaptive] {
+            .subtitle {
+                display: none;
+            }
         }
     }
 }

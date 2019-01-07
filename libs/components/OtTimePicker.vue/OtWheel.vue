@@ -1,6 +1,6 @@
 <template>
-    <ul ot v-ot-bind="$otColors.list" class="ot-wheel" :class="$style.root">
-        <li ot v-ot-bind="$otColors.item" class="ot-wheel-item" :class="$style.item" v-for="(item, index) in list" :key="index"
+    <ul ot v-bind="$otColors.list" class="ot-wheel" :class="$style.root">
+        <li ot v-bind="$otColors.item" class="ot-wheel-item" :class="$style.item" v-for="(item, index) in list" :key="index"
             @click="handleSelectClick(item)" :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
             <span>{{ (typeof item !== 'object') ? item : item.value }}</span>
         </li>

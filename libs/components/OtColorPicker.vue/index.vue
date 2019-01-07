@@ -1,11 +1,11 @@
 <template>
     <ot-tip ot class="ot-color-picker-tip" :class="$style.root" manual clickable @change="handleTipOnChange">
-        <div ot class="ot-color-picker" v-ot-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
+        <div ot class="ot-color-picker" v-bind="$otColors.box" :class="$style.box" :size="$otSize" :round="round">
             <div ot :class="$style.select" :size="$otSize" :round="round" :style="bgStyle">
                 <ot-arrow :attrs="$otColors.arrow" :class="$style.arrow" borderColor="#ffffff" :placement="bShown ? 'up' : 'down'" animation border></ot-arrow>
             </div>
         </div>
-        <div ot v-ot-bind="$otColors.tip" slot="tip" :size="$otSize" :theme="$otTheme" class="ot-title-tip-popper" :round="round">
+        <div ot v-bind="$otColors.tip" slot="tip" :size="$otSize" :theme="$otTheme" class="ot-title-tip-popper" :round="round">
             <!-- 颜色面板 -->
             <div :class="$style.dropdown">
                 <div :class="$style.wrapper">

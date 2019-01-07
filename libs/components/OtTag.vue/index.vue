@@ -1,11 +1,11 @@
 <template>
     <transition name="fade">
-        <span v-if="visible" ot v-ot-bind="$otColors" class="ot-tag" :size="$otSize" type="tag" :class="$style.root"
+        <span v-if="visible" ot v-bind="$otColors" class="ot-tag" :size="$otSize" type="tag" :class="$style.root"
             :disabled="disabled" :round="round" :circle="circle">
             <slot></slot>
             <ot-link v-if="closable" @click="close">
                 <ot-icon icon="close" size="mini" v-bind="$otColors.close" :class="$style.close" circle
-                    width="1.2em"  height="1.2em"></ot-icon>
+                    width="1.4rem"  height="1.4rem"></ot-icon>
             </ot-link>
         </span>
     </transition>

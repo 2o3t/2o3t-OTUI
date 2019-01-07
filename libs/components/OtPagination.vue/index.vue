@@ -79,12 +79,12 @@ export default {
     name: 'ot-pagination',
     mixins: [ theme ],
     model: {
-        prop: 'currentPage',
+        prop: 'model',
         event: 'update',
     },
     props: {
         // 当前页数
-        currentPage: {
+        model: {
             type: [ Number ],
             default: 1,
         },
@@ -137,7 +137,7 @@ export default {
         },
     },
     watch: {
-        currentPage(nv, ov) {
+        model(nv, ov) {
             if (nv !== ov) {
                 this.current = nv;
             }
@@ -145,7 +145,7 @@ export default {
     },
     data() {
         return {
-            current: this.currentPage,
+            current: this.model,
             ellipsisNextHover: false,
             ellipsisPrevHover: false,
             currentPageSize: this.pageSize,
@@ -229,6 +229,9 @@ export default {
         },
         updateModel() {
             this.$emit('update', this.current); // 更新 `v-model` 当前页数
+            this.$nextTick(() => {
+                this.$emit('changePage', this.current); // 当前页面发生改变事件
+            });
         },
         handleJumper(e) {
             const item = parseInt(e.target.value);
@@ -236,7 +239,9 @@ export default {
             this.handleSpecifyPage(item);
         },
         handleSelectPageSize(item) {
+            this.current = 1;
             this.$emit('selectPageSize', item); // 切换每页显示条目个数事件
+            this.updateModel();
         },
     },
 };

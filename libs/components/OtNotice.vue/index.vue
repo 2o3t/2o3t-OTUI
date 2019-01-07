@@ -1,5 +1,5 @@
 <template>
-    <div ot class="ot-notice" v-ot-bind="$otColors" :class="$style.root" :size="$otSize" :round="round">
+    <div ot class="ot-notice" v-bind="$otColors" :class="$style.root" :size="$otSize" :round="round">
         <!-- 内容区域, 默认可用 `context` -->
         <slot>
             <p>{{ context }}</p>

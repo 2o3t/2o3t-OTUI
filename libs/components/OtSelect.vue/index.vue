@@ -3,17 +3,17 @@
         :size="$otSize" :theme="$otTheme">
         <transition name="otSelectCollapse">
             <div :class="$style.up" v-if="bShown && ($slots.up || isUp) && !$slots.down && !_list" :style="{ width: `${autoWidth}px` }">
-                <div ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
+                <div ot v-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="up"></slot>
                     <slot></slot>
                 </div>
             </div>
             <div :class="$style.up" v-else-if="bShown && isUp && !$slots.up && !$slots.down && _list" :style="{ width: `${autoWidth}px` }">
-                <ul ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
-                    <li ot v-ot-bind="$otColors.item" v-for="(item, index) in _list" :key="index" @click="handleSelectClick(item)"
+                <ul ot v-bind="$otColors.list" :class="$style.select" list :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
+                    <li ot v-bind="$otColors.item" :class="$style.item" item v-for="(item, index) in _list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
-                            {{ (typeof item !== 'object') ? item : item.value }}
+                            {{ (typeof item !== 'object') ? item : item.text || item.value }}
                         </slot>
                     </li>
                 </ul>
@@ -26,7 +26,7 @@
             :readonly="readonly"
             :disabled="disabled"
             :name="name"
-            :model="model"
+            :model="current"
             @input="handleInput"
             :clearable="clearable"
             @clear="handleClear"
@@ -37,17 +37,17 @@
         </ot-input>
         <transition name="otSelectCollapse">
             <div :class="$style.down" v-if="bShown && ($slots.down || !isUp) && !$slots.up && !_list" :style="{ width: `${autoWidth}px` }">
-                <div ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
+                <div ot v-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
                     <slot name="down"></slot>
                     <slot></slot>
                 </div>
             </div>
             <div :class="$style.down" v-else-if="bShown && !isUp && !$slots.down && !$slots.up && _list" :style="{ width: `${autoWidth}px` }">
-                <ul ot v-ot-bind="$otColors.list" :class="$style.select" :custom="custom" @click="handleSelectCloseClick" :shown="bShown" list :round="round" :size="$otSize">
-                    <li ot v-ot-bind="$otColors.item" v-for="(item, index) in _list" :key="index" @click="handleSelectClick(item)"
+                <ul ot v-bind="$otColors.list" :class="$style.select" list :custom="custom" @click="handleSelectCloseClick" :shown="bShown" :round="round" :size="$otSize">
+                    <li ot v-bind="$otColors.item" :class="$style.item" item v-for="(item, index) in _list" :key="index" @click="handleSelectClick(item)"
                         :selected="(typeof item !== 'object') ? (model === item) : (model === item.value)">
                         <slot name="item" :item="item">
-                            {{ (typeof item !== 'object') ? item : item.value }}
+                            {{ (typeof item !== 'object') ? item : item.text || item.value }}
                         </slot>
                     </li>
                 </ul>
@@ -90,7 +90,41 @@ export default {
             bShown: false,
             isUp: false,
             iListenerHandle: null,
+            current: '',
         };
+    },
+    watch: {
+        model: {
+            immediate: true,
+            handler(nv) {
+                if (this._list && Array.isArray(this._list)) {
+                    const v = this._list.find(item => {
+                        return item.value === nv;
+                    });
+                    if (v) {
+                        this.current = v.text || v.value || v;
+                        return;
+                    }
+                }
+                this.current = nv;
+            },
+        },
+        list: {
+            immediate: true,
+            handler() {
+                const nv = this.model;
+                if (this._list && Array.isArray(this._list)) {
+                    const v = this._list.find(item => {
+                        return item.value === nv;
+                    });
+                    if (v) {
+                        this.current = v.text || v.value || v;
+                        return;
+                    }
+                }
+                this.current = nv;
+            },
+        },
     },
     computed: {
         _list() {
@@ -159,7 +193,16 @@ export default {
         },
         handleInput(e) {
             const value = e.target.value;
-            this._updateValue(value);
+            let result = value;
+            if (this._list && Array.isArray(this._list)) {
+                const v = this._list.find(item => {
+                    return item.text === value;
+                });
+                if (v) {
+                    result = v.value;
+                }
+            }
+            this._updateValue(result);
 
             this._show();
         },
@@ -257,7 +300,7 @@ export default {
             @include __ot_round__;
         }
 
-        &>li {
+        li {
             list-style: none;
 
             &[selected] {
@@ -268,8 +311,8 @@ export default {
         &[list] {
             padding: 0.5em 0;
 
-            &>li {
-                padding: 0 1em;
+            &>[item] {
+                padding: 0.2em 1em;
             }
         }
     }

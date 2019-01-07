@@ -1,6 +1,6 @@
 <template>
     <div ot class="ot-date-panel" :class="$style.root" :size="$otSize">
-        <div ot v-ot-bind="$otColors.header" :class="$style.header">
+        <div ot v-bind="$otColors.header" :class="$style.header">
             <div :class="[$style.flexItem, $style.left]">
                 <ot-link @click="lastYear">
                     <ot-icon :class="$style.row" icon="angle-double-left"></ot-icon>
@@ -34,10 +34,10 @@
                 <!-- body -->
                 <tbody v-if="week">
                     <tr v-for="(items, index) in monthDays" :key="index"
-                        ot v-ot-bind="$otColors.week" @click="handleSelectWeek(items)"
+                        ot v-bind="$otColors.week" @click="handleSelectWeek(items)"
                         :selected="items[0].isSame(currentWeek[0], 'week')">
                         <td v-for="(item, key) in items" :key="`${index}-${key}`">
-                            <div ot v-ot-bind="$otColors.day" :class="$style.day"
+                            <div ot v-bind="$otColors.day" :class="$style.day"
                                 :disabled="!item.isSame(displayDate, 'month')">
                                 {{ item.format('DD') }}
                             </div>
@@ -47,9 +47,9 @@
                 <tbody v-else>
                     <!-- day -->
                     <tr v-for="(items, index) in monthDays" :key="index"
-                        ot v-ot-bind="$otColors.week">
+                        ot v-bind="$otColors.week">
                         <td v-for="(item, key) in items" :key="`${index}-${key}`">
-                            <div ot v-ot-bind="$otColors.day"
+                            <div ot v-bind="$otColors.day"
                                 :class="$style.day" @click="handleSelectDay(item)"
                                 :disabled="!item.isSame(displayDate, 'month')"
                                 :selected="item.isSame(currentDate, 'day')">
@@ -60,7 +60,7 @@
                 </tbody>
             </table>
         </div>
-        <div v-if="footer" ot v-ot-bind="$otColors.footer" :class="$style.footer" >
+        <div v-if="footer" ot v-bind="$otColors.footer" :class="$style.footer" >
             <ot-link @click="handleTodayClick"><span>此刻</span></ot-link>
             <ot-button @click="handleOKClick">确认</ot-button>
         </div>

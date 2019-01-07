@@ -10,7 +10,7 @@ export default {
                     disabled: [ 'def-f-dis' ],
                 };
                 if (this.line) {
-                    c.normal.push('def-bb', 'border');
+                    c.normal.push('light-bb');
                     c.disabled.push('def-bb-dis');
                 }
                 if (this.currentHref || this.hasClick) {
@@ -19,6 +19,7 @@ export default {
                     c.hover.push('def-f-act');
 
                     if (this.line) {
+                        c.normal.push('def-bb');
                         c.hover.push('def-bb-hov');
                         c.active.push('def-bb-act');
                     }
@@ -35,7 +36,7 @@ export default {
                     disabled: [ 'def-f-dis' ],
                 };
                 if (this.line) {
-                    c.normal.push('def-bb', 'border');
+                    c.normal.push('dark-bb');
                     c.disabled.push('def-bb-dis');
                 }
                 if (this.currentHref || this.hasClick) {
@@ -44,6 +45,7 @@ export default {
                     c.hover.push('def-f-act');
 
                     if (this.line) {
+                        c.normal.push('def-bb');
                         c.hover.push('def-bb-hov');
                         c.active.push('def-bb-act');
                     }

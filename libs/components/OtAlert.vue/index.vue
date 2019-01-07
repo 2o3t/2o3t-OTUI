@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div ot class="ot-alert" v-ot-bind="$otColors" :class="$style.root" v-show="visible" :center="center" :round="round" :size="$otSize">
+        <div ot class="ot-alert" v-bind="$otColors" :class="$style.root" v-show="visible" :center="center" :round="round" :size="$otSize">
             <ot-icon :class="$style.icon" v-if="showIcon" :icon="iconClass" :big="isBigIcon"></ot-icon>
             <div :class="$style.content">
                 <span :class="$style.title" :bold="isBoldTitle" v-if="title || $slots.title">
@@ -12,7 +12,7 @@
                     <p :class="$style.description" v-if="description">{{ description }}</p>
                 </slot>
             </div>
-            <ot-icon v-ot-bind="$otColors.closeBtn" :class="$style.closeBtn" :icon="closeText === '' ? 'close' : ''" v-if="closable" @click="close">
+            <ot-icon v-bind="$otColors.closeBtn" :class="$style.closeBtn" :icon="closeText === '' ? 'close' : ''" v-if="closable" @click="close">
                 {{closeText}}
             </ot-icon>
         </div>

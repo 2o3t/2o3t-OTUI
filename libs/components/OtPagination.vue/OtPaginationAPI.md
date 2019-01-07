@@ -9,7 +9,7 @@
 | color | 可选, 更改主题色, 可选参数 `default`, `primary`, `success`, `warning`, `danger`, `info` | String | default |
 | border | 可选(非必支持), UI增加边框 | Boolean | false |
 | round | 可选(非必支持), UI边框圆角 | Boolean | false |
-| currentPage | 当前页数 | Number | 1 |
+| model | 当前页数 | Number | 1 |
 | pageSize | 每页显示条目个数 | Number | 10 |
 | pageSizes | 每页显示条目个数 | Array | ()=> {   return [10, 20, 30, 40, 50, 100]; } |
 | total | ***必填***, 总条目数 | Number | - |
@@ -25,6 +25,7 @@
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | @update |  更新 `v-model` 当前页数 | (current): Void | - |
+| @changePage |  当前页面发生改变事件 | (current): Void | - |
 | @jumperEvent |  jumper事件 | (item): Void | - |
 | @selectPageSize |  切换每页显示条目个数事件 | (item): Void | - |
 

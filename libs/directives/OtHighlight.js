@@ -1,18 +1,18 @@
 function otHighlight(el, { value }) {
     if (!value) return;
-    const hljs = value;
-
+    const { hljs, code } = value;
+    if (!hljs) return;
     const blocks = el.querySelectorAll('pre code');
     let len = 1;
     if (blocks) {
         blocks.forEach(block => {
-            if (hljs.__value__) {
-                block.innerText = hljs.__value__;
+            if (code) {
+                block.innerText = code;
             }
             hljs.highlightBlock(block);
         });
         blocks.forEach(block => {
-            const html = block.innerHTML;
+            const html = block.innerText;
             const reg = html.replace(/^\s+|\s+$/g, '').match(/\n/g);
             if (reg) {
                 len += reg.length;

@@ -4,7 +4,8 @@
             <!-- 可参考 ot-link 使用 -->
             <slot></slot>
         </ot-link>
-        <ot-icon ot v-ot-bind="$otColors.separator" v-if="!bLastIndex" class="ot-breadcrumb-item__separator" :class="$style.separator" :icon="separatorIcon"><span v-if="separator">{{ separator }}</span></ot-icon>
+        <span v-if="separator" v-show="!bLastIndex" ot v-bind="$otColors.separator" class="ot-breadcrumb-item__separator" :class="$style.separator">{{ separator }}</span>
+        <ot-icon v-else v-show="!bLastIndex" ot v-bind="$otColors.separator" class="ot-breadcrumb-item__separator" :class="$style.separator" :icon="separatorIcon"></ot-icon>
     </div>
 </template>
 
@@ -75,6 +76,9 @@ export default {
     @include __ot_size__;
 
     .link {
+        display: inline-block;
+        vertical-align: middle;
+
         &[href] {
             font-weight: $--main-font-weight-medium;
         }
@@ -85,7 +89,7 @@ export default {
         margin: 0 0.6em;
         transform-origin: center;
         transform: scale(0.8);
-        vertical-align: bottom;
+        vertical-align: middle;
     }
 }
 </style>

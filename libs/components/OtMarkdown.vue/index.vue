@@ -1,6 +1,6 @@
 <template>
     <div ot class="ot-markdown" :class="$style.root" :size="$otSize" :theme="$otTheme">
-        <div ot v-ot-bind="$otColors" class="markdown" :class="customClass" :theme="$otTheme">
+        <div ot v-bind="$otColors" class="markdown" :class="customClass" :theme="$otTheme">
             <!-- 内容 (不推荐使用) -->
             <slot></slot>
             <div v-if="!$slots.default" ot ref="content" :theme="$otTheme"></div>

@@ -56,8 +56,9 @@ export default Vue => {
             });
         }
 
+        // 关闭回调
         instance.closedCallback = function() {
-            console.log('close...');
+            // console.log('close...');
         };
         // instance.callback = defaultCallback;
 

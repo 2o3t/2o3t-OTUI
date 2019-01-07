@@ -1,7 +1,7 @@
 <template>
     <div ot class="ot-arrow" v-bind="$attrs" :class="$style.root" :placement="placement">
         <div :class="$style.box" :placement="placement">
-            <i ot v-ot-bind="customColors" :class="$style.arrow" :animation="animation"
+            <i ot v-bind="customColors" :class="$style.arrow" :animation="animation"
                 :placement="placement" :border="border" :style="style"
                 v-on="$listeners">
             </i>

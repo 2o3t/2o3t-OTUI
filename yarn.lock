@@ -18,9 +18,9 @@
   version "0.0.21"
   resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.21.tgz#1141ae4238cdb9671c59f73ac113834c0f0978c1"
 
-"2o3t-css-colors@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.23.tgz#987258ddf0db5b3a0406630d22546fce699dc06c"
+"2o3t-css-colors@^0.0.28":
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/2o3t-css-colors/-/2o3t-css-colors-0.0.28.tgz#9ac20cb6af69ba504710b509005aea3453a4a9aa"
 
 "2o3t-css-colors@^0.0.9":
   version "0.0.9"
@@ -88,9 +88,9 @@
     markdown-it "^8.4.2"
     moment "^2.22.2"
 
-"2o3t-icon-font@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/2o3t-icon-font/-/2o3t-icon-font-0.0.18.tgz#92e3304ae9793cf2349ba707f22fc1ebe3f0d406"
+"2o3t-icon-font@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/2o3t-icon-font/-/2o3t-icon-font-0.0.21.tgz#52de1e3a24243205b5af115e7506804a061dfd2b"
   dependencies:
     "2o3t-css-colors" "^0.0.21"
     "2o3t-ui" "^0.0.71"
@@ -101,16 +101,6 @@
     lodash "^4.17.11"
     markdown-it "^8.4.2"
     moment "^2.22.2"
-
-"2o3t-ui@^0.0.106":
-  version "0.0.106"
-  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.0.106.tgz#353faf3522bc1da3600c7b5800cd92fa0c30712c"
-  dependencies:
-    "2o3t-css-colors" "^0.0.23"
-    "2o3t-icon-font" "^0.0.18"
-    cheerio "^1.0.0-rc.2"
-    resize-observer-polyfill "^1.5.0"
-    vue-js-modal "^1.3.27"
 
 "2o3t-ui@^0.0.43":
   version "0.0.43"
@@ -156,6 +146,16 @@
     "2o3t-icon-font" "^0.0.16"
     cheerio "^1.0.0-rc.2"
     resize-observer-polyfill "^1.5.0"
+    vue-js-modal "^1.3.27"
+
+"2o3t-ui@^0.1.15":
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/2o3t-ui/-/2o3t-ui-0.1.15.tgz#1c991a95d103478c2ab13c55ce11ca6bf907d56b"
+  dependencies:
+    "2o3t-css-colors" "^0.0.28"
+    "2o3t-icon-font" "^0.0.21"
+    cheerio "^1.0.0-rc.2"
+    resize-observer-polyfill "^1.5.1"
     vue-js-modal "^1.3.27"
 
 "@babel/code-frame@^7.0.0":
@@ -1337,15 +1337,15 @@ autoprefixer@^8.6.5:
     postcss "^6.0.23"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^9.3.1:
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.3.1.tgz#71b622174de2b783d5fd99f9ad617b7a3c78443e"
+autoprefixer@^9.4.2:
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.2.tgz#0234d20900684fc4bfb67926493deb68384067f5"
   dependencies:
-    browserslist "^4.3.3"
-    caniuse-lite "^1.0.30000898"
+    browserslist "^4.3.5"
+    caniuse-lite "^1.0.30000914"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^7.0.5"
+    postcss "^7.0.6"
     postcss-value-parser "^3.3.1"
 
 aws-sign2@~0.7.0:
@@ -2164,13 +2164,21 @@ browserslist@^3.2.6, browserslist@^3.2.8:
     caniuse-lite "^1.0.30000844"
     electron-to-chromium "^1.3.47"
 
-browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.3.3:
+browserslist@^4.0.0, browserslist@^4.1.0:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.3.4.tgz#4477b737db6a1b07077275b24791e680d4300425"
   dependencies:
     caniuse-lite "^1.0.30000899"
     electron-to-chromium "^1.3.82"
     node-releases "^1.0.1"
+
+browserslist@^4.3.5:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.3.5.tgz#1a917678acc07b55606748ea1adf9846ea8920f7"
+  dependencies:
+    caniuse-lite "^1.0.30000912"
+    electron-to-chromium "^1.3.86"
+    node-releases "^1.0.5"
 
 buffer-from@^1.0.0:
   version "1.1.1"
@@ -2346,9 +2354,13 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000912"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000912.tgz#29c739d8c8fae006de61b51f547bdbf02f5d867e"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864, caniuse-lite@^1.0.30000898, caniuse-lite@^1.0.30000899:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864, caniuse-lite@^1.0.30000899:
   version "1.0.30000912"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000912.tgz#08e650d4090a9c0ab06bfd2b46b7d3ad6dcaea28"
+
+caniuse-lite@^1.0.30000912, caniuse-lite@^1.0.30000914:
+  version "1.0.30000916"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000916.tgz#3428d3f529f0a7b2bfaaec65e796037bdd433aab"
 
 case-sensitive-paths-webpack-plugin@^2.1.2:
   version "2.1.2"
@@ -3389,6 +3401,10 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47, electron-to-chromium@
   version "1.3.85"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.85.tgz#5c46f790aa96445cabc57eb9d17346b1e46476fe"
 
+electron-to-chromium@^1.3.86:
+  version "1.3.88"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.88.tgz#f36ab32634f49ef2b0fdc1e82e2d1cc17feb29e7"
+
 elliptic@^6.0.0:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.1.tgz#c2d0b7776911b86722c632c3c06c60f2f819939a"
@@ -3475,7 +3491,7 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-2o3t@^1.1.1:
+eslint-config-2o3t@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/eslint-config-2o3t/-/eslint-config-2o3t-1.1.3.tgz#a6fe035fb4e3122c870af226f16a37a861aa5b63"
   dependencies:
@@ -5884,6 +5900,12 @@ node-releases@^1.0.1:
   dependencies:
     semver "^5.3.0"
 
+node-releases@^1.0.5:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.0.tgz#be7464fa8d877808237520fd49436d5e79191c3d"
+  dependencies:
+    semver "^5.3.0"
+
 node-sass@^4.10.0:
   version "4.10.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.10.0.tgz#dcc2b364c0913630945ccbf7a2bbf1f926effca4"
@@ -6969,7 +6991,7 @@ postcss@^6.0.1, postcss@^6.0.20, postcss@^6.0.21, postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.5:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.6.tgz#6dcaa1e999cdd4a255dcd7d4d9547f4ca010cdc2"
   dependencies:
@@ -7466,6 +7488,10 @@ reserved-words@^0.1.2:
 resize-observer-polyfill@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
+
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
@@ -8700,7 +8726,7 @@ vue-loader@^15.4.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.0.1:
+vue-router@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
 

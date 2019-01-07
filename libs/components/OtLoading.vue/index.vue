@@ -9,31 +9,31 @@
                     <ot-icon :ot-bind="$otColors.spinner" :class='$style.spinner' :icon="_icon" :lib="lib" loading size="3em"></ot-icon>
                 </figure>
                 <figure :class="[$style.figure, $style.pushing]" v-else-if="_spinner === 'push'">
-                    <span ot v-ot-bind="$otColors.pushPri" selected></span>
-                    <span ot v-ot-bind="$otColors.pushDef" selected></span>
-                    <span ot v-ot-bind="$otColors.pushThe" selected></span>
-                    <span ot v-ot-bind="$otColors.pushSuc" selected></span>
-                    <span ot v-ot-bind="$otColors.pushWar" selected></span>
-                    <span ot v-ot-bind="$otColors.pushDan" selected></span>
-                    <span ot v-ot-bind="$otColors.pushInf" selected></span>
+                    <span ot v-bind="$otColors.pushPri" selected></span>
+                    <span ot v-bind="$otColors.pushDef" selected></span>
+                    <span ot v-bind="$otColors.pushThe" selected></span>
+                    <span ot v-bind="$otColors.pushSuc" selected></span>
+                    <span ot v-bind="$otColors.pushWar" selected></span>
+                    <span ot v-bind="$otColors.pushDan" selected></span>
+                    <span ot v-bind="$otColors.pushInf" selected></span>
                 </figure>
                 <figure :class="[$style.figure, $style.vsco]" v-else-if="_spinner === 'vsco'">
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.a' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.b' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.c' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.d' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.e' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.f' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.g' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.h' selected></span>
-                    <span ot v-ot-bind="$otColors.vsco" :class='$style.i' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.a' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.b' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.c' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.d' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.e' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.f' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.g' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.h' selected></span>
+                    <span ot v-bind="$otColors.vsco" :class='$style.i' selected></span>
                 </figure>
                 <figure :class="[$style.figure, $style.spinner]" v-else>
                     <svg class="circular" viewBox="25 25 50 50">
                         <circle class="path" cx="50" cy="50" r="20" fill="none"/>
                     </svg>
                 </figure>
-                <div ot v-ot-bind="$otColors.label">
+                <div ot v-bind="$otColors.label">
                     <p :class="$style.label" v-if="text">{{ text }}</p>
                 </div>
             </div>

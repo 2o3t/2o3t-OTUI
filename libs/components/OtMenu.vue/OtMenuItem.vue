@@ -1,6 +1,6 @@
 <template>
-    <li ot :class="$style.root" class="ot-menu-item" v-ot-bind="$otColors" :size="$otSize" :collapse="isCollapse" :selected="isSelected" :disabled="disabled">
-        <ot-background-mask v-ot-bind="$otColors.link" enable :alpha="alphaWhite" :otColors="$otColors.mask" :selected="isSelected" :disabled="disabled">
+    <li ot :class="$style.root" class="ot-menu-item" v-bind="$otColors" :size="$otSize" :collapse="isCollapse" :selected="isSelected" :disabled="disabled">
+        <ot-background-mask v-bind="$otColors.link" enable :alpha="alphaWhite" :otColors="$otColors.mask" :selected="isSelected" :disabled="disabled">
             <ot-link :class="$style.link" :href="href" :to="to" @click="handleClick"
                 :color="color" :selected="isSelected" :disabled="disabled">
                 <ot-icon :class="$style.icon" :icon="icon" v-if="icon"></ot-icon>

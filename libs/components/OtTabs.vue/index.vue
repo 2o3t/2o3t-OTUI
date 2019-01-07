@@ -5,14 +5,14 @@
         </div>
         <div :class="$style.box" :style="{ marginLeft: `${Number(offset)}px` }">
             <ul ot :class="[$style.tabs]" class="ot-tabs">
-                <li ot v-ot-bind="$otColors" :class="[$style.item]"
+                <li ot v-bind="$otColors" :class="[$style.item]"
                     v-ot-title
                     :selected="item.name === select.name" v-for="(item, index) in _list" :key="index" @click="handleTabsActive(item)">
                     <slot name="title" :item="item" :index="index">
                         <ot-icon :class="$style.titleIcon" v-if="item.icon" :icon="item.icon"></ot-icon>
                         <span :class="$style.text">{{item.title}}</span>
                     </slot>
-                    <ot-icon v-if="clearable" v-ot-bind="$otColors.icon" :class="$style.clearable" :size="$otSize" icon="close" v-show="index!==0" @click="handleTabsClose($event, item)"></ot-icon>
+                    <ot-icon v-if="clearable" v-bind="$otColors.icon" :class="$style.clearable" :size="$otSize" icon="close" v-show="index!==0" @click="handleTabsClose($event, item)"></ot-icon>
                 </li>
             </ul>
         </div>
@@ -151,7 +151,6 @@ export default {
 
             .clearable {
                 font-size: 14px;
-                line-height: 32px;
                 margin-right: -14px;
                 transform: scale(0);
                 transition: all .3s;

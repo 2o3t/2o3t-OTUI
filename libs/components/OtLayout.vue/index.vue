@@ -21,9 +21,9 @@ export default {
 </style>
 
 <style lang="scss">
-.root {
+.ot-layout[ot] {
 
-    &[gutter] [ot].ot-row {
+    &[gutter] .ot-row[ot] {
         margin-bottom: 1em;
 
         &:last-child {

@@ -7,15 +7,15 @@
             </ot-link>
         </slot>
         <ot-arrow :class="$style.arrow" v-if="appendArrow || !$slots.default" :placement="bShown ? 'up' : 'down'" animation border></ot-arrow>
-        <div ot v-ot-bind="$otColors.dropdown" :class="$style.dropdown" slot="tip" :size="$otSize" class="ot-dropdown-popper" :style="style" :round="round" v-if="!list">
-            <div ot v-ot-bind="$otColors.list" class="ot-dropdown-popper-list" :custom="custom" @click="handleDropdownCloseClick" :shown="bShown" :round="round" :size="$otSize">
+        <div ot v-bind="$otColors.dropdown" :class="$style.dropdown" slot="tip" :size="$otSize" class="ot-dropdown-popper" :style="style" :round="round" v-if="!list">
+            <div ot v-bind="$otColors.list" class="ot-dropdown-popper-list" :custom="custom" @click="handleDropdownCloseClick" :shown="bShown" :round="round" :size="$otSize">
                 <!-- 无 list 时, 下拉框容器 -->
                 <slot name="dropdown"></slot>
             </div>
         </div>
-        <div ot v-ot-bind="$otColors.dropdown" :class="$style.dropdown" slot="tip" :size="$otSize" class="ot-dropdown-popper" :style="style" :round="round" v-else>
-            <ul ot v-ot-bind="$otColors.list" class="ot-dropdown-popper-list" :custom="custom" @click="handleDropdownCloseClick" :shown="bShown" item :round="round" :size="$otSize">
-                <li ot v-ot-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)">
+        <div ot v-bind="$otColors.dropdown" :class="$style.dropdown" slot="tip" :size="$otSize" class="ot-dropdown-popper" :style="style" :round="round" v-else>
+            <ul ot v-bind="$otColors.list" class="ot-dropdown-popper-list" :custom="custom" @click="handleDropdownCloseClick" :shown="bShown" item :round="round" :size="$otSize">
+                <li ot v-bind="$otColors.item" v-for="(item, index) in list" :key="index" @click="handleSelectClick(item)">
                     <!-- 每条item进行修饰 -->
                     <slot name="item" :item="item">
                         {{ (typeof item !== 'object') ? item : item.value }}
@@ -96,7 +96,7 @@ export default {
         appendArrow: {
             type: [ Boolean ],
             default: false,
-        }
+        },
     },
     watch: {
         value(newV) {

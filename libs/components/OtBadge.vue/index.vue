@@ -2,7 +2,7 @@
     <div ot class="ot-badge" :class="$style.root" :size="$otSize">
         <slot></slot>
         <transition name="fade">
-            <sup ot v-ot-bind="$otColors" :border="border" :round="round" :size="$otSize"
+            <sup ot v-bind="$otColors" :border="border" :round="round" :size="$otSize"
                 v-show="!hidden && (content || content === 0 || dot)"
                 v-text="content" :fixed="!!$slots.default" :dot="dot"
                 :class="$style.content">

@@ -1,5 +1,5 @@
 <template>
-    <div ot v-ot-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
+    <div ot v-bind="$otColors.group" :class="$style.root" class="ot-row-group" :size="$otSize" :round="round">
         <div ot :class="$style.childs" class="ot-row-group__childs" childs :center="center"
             :vertical="vertical" :fixable="fixable" :fill="fill" :flex="flex">
             <!-- 内容 -->
@@ -7,7 +7,7 @@
         </div>
         <ot-button :class="$style.codeBtn" v-if="code" @click="showCode" border dashed>{{ bShow ? 'Hide Code' : 'Show Code'}}</ot-button>
         <ot-collapse-transition>
-            <div ot v-ot-bind="$otColors.code" v-if="code" v-show="bShow" :class="$style.code" border>
+            <div ot v-bind="$otColors.code" v-if="code" v-show="bShow" :class="$style.code" border>
                 <ot-code :lang="lang" :value="code"></ot-code>
             </div>
         </ot-collapse-transition>

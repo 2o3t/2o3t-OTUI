@@ -1,8 +1,8 @@
 <template>
-    <div ot v-ot-bind="$otColors" class="ot-progress" :class="$style.root" :size="$otSize" :type="type">
+    <div ot v-bind="$otColors" class="ot-progress" :class="$style.root" :size="$otSize" :type="type">
         <div :class="$style.bar" class="ot-progress-bar" v-if="type === 'line'" :style="{minWidth: width + 'px'}">
-            <div ot v-ot-bind="$otColors.bg" :class="$style.barOuter" :style="{height: strokeWidth + 'px'}" :round="round">
-                <div ot v-ot-bind="$otColors.bar" :class="$style.barInner" :style="barStyle" selected :round="round">
+            <div ot v-bind="$otColors.bg" :class="$style.barOuter" :style="{height: strokeWidth + 'px'}" :round="round">
+                <div ot v-bind="$otColors.bar" :class="$style.barInner" :style="barStyle" selected :round="round">
                     <div v-if="animation" :class="$style.barAnimal"></div>
                     <div :class="$style.barInnerText" v-if="showText && textInside">{{percentage}}%</div>
                 </div>
@@ -10,8 +10,8 @@
         </div>
         <div :class="$style.circle" class="ot-progress-circle" :style="{height: width + 'px', width: width + 'px'}" v-else>
             <svg viewBox="0 0 100 100">
-                <path ot v-ot-bind="$otColors.circleBg" :class="$style.circleTrack" :d="trackPath" :stroke-width="relativeStrokeWidth"></path>
-                <path ot v-ot-bind="$otColors.bar" selected :class="$style.circlePath" :d="trackPath" stroke-linecap="round" :stroke-width="relativeStrokeWidth" :style="circlePathStyle"></path>
+                <path ot v-bind="$otColors.circleBg" :class="$style.circleTrack" :d="trackPath" :stroke-width="relativeStrokeWidth"></path>
+                <path ot v-bind="$otColors.bar" selected :class="$style.circlePath" :d="trackPath" stroke-linecap="round" :stroke-width="relativeStrokeWidth" :style="circlePathStyle"></path>
             </svg>
         </div>
         <div :class="$style.text" :type="type"

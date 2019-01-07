@@ -15,6 +15,14 @@ function isVNode(node) {
     return node !== null && typeof node === 'object' && hasOwn(node, 'componentOptions');
 }
 
+const COLOR_MAP = {
+    success: 'success',
+    warning: 'warning',
+    info: 'info',
+    error: 'danger',
+    question: 'primary',
+};
+
 export default Vue => {
     const MessageConstructor = Vue.extend(OtMessage);
 
@@ -57,7 +65,7 @@ export default Vue => {
                 };
             }
             options.type = type;
-            options.color = (type !== 'question' ? type : 'default');
+            options.color = options.color || COLOR_MAP[type];
             return Message(options);
         };
     });

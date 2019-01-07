@@ -1,13 +1,13 @@
 <template>
-    <span v-if="type !== 'textarea'" ot v-ot-bind="$otColors" class="ot-input" :class="$style.root"
+    <span v-if="type !== 'textarea'" ot v-bind="$otColors" class="ot-input" :class="$style.root"
         :size="$otSize" :round="round" :circle="circle">
-        <span ot v-ot-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :circle="circle" :fixable="fixable">
+        <span ot v-bind="$otColors.prefix" v-if="$slots.prefix" :class="$style.prefix" :round="round" :circle="circle" :fixable="fixable" :disabled="disabled">
             <slot name="prefix"></slot>
         </span>
-        <span ot v-ot-bind="$otColors.suffix" v-if="$slots.suffix" :class="$style.suffix" :round="round" :circle="circle" :fixable="fixable" ref="suffix">
+        <span ot v-bind="$otColors.suffix" v-if="$slots.suffix" :class="$style.suffix" :round="round" :circle="circle" :fixable="fixable" :disabled="disabled" ref="suffix">
             <slot name="suffix"></slot>
         </span>
-        <input ot v-ot-bind="$otColors.input" :round="round" :circle="circle" :clearable="clearable" :logo="icon" :_type="type"
+        <input ot v-bind="$otColors.input" :round="round" :circle="circle" :clearable="clearable" :logo="icon" :_type="type"
             :class="$style.input" :placeholder="placeholder" :type="_type" :disabled="disabled"
             :autocomplete="autocomplete" :maxlength="_maxlength"
             :readonly="readonly"
@@ -16,17 +16,17 @@
             @input="handleInput" v-on="$listeners"
             :suffix-clearable="$slots.suffix && clearable">
         <span :class="$style.clearable" :type="type" v-if="clearable" @click="handleClearClick" :style="suffixClearableStyle">
-            <ot-icon ot v-ot-bind="$otColors.icon" icon="close"></ot-icon>
+            <ot-icon ot v-bind="$otColors.icon" icon="close"></ot-icon>
         </span>
         <span :class="$style.password" v-if="!$slots.suffix && type === 'password'" @click="handlePasswordEyeClick">
-            <ot-icon ot v-ot-bind="$otColors.icon" :icon="showPwd ? 'eye' : 'eye-slash'"></ot-icon>
+            <ot-icon ot v-bind="$otColors.icon" :icon="showPwd ? 'eye' : 'eye-slash'"></ot-icon>
         </span>
         <span :class="$style.logo" v-if="!$slots.prefix && icon">
-            <ot-icon ot v-ot-bind="$otColors.logo" :icon="icon"></ot-icon>
+            <ot-icon ot v-bind="$otColors.logo" :icon="icon"></ot-icon>
         </span>
     </span>
-    <span v-else ot v-ot-bind="$otColors" class="ot-input ot-textarea" :class="[$style.root]" textarea :size="$otSize" :round="round" :circle="circle">
-        <textarea ot v-ot-bind="$otColors.input" :round="round" :circle="circle" :disabled="disabled"
+    <span v-else ot v-bind="$otColors" class="ot-input ot-textarea" :class="[$style.root]" textarea :size="$otSize" :round="round" :circle="circle">
+        <textarea ot v-bind="$otColors.input" :round="round" :circle="circle" :disabled="disabled"
             :autocomplete="autocomplete" :maxlength="_maxlength"
             :name="name"
             :class="[$style.input, $style.textarea]" :cols="Number(cols)" :rows="Number(rows)"
@@ -36,7 +36,7 @@
             @input="handleInput" v-on="$listeners">
         </textarea>
         <span v-if="lastLength !== null" :class="$style.lastLength">剩余
-            <span ot v-ot-bind="$otColors.msg" v-if="lastLength <= 10">{{ lastLength }}</span>
+            <span ot v-bind="$otColors.msg" v-if="lastLength <= 10">{{ lastLength }}</span>
             <span v-else>{{ lastLength }}</span>
         个字符</span>
     </span>

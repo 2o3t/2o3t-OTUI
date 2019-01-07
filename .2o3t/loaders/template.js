@@ -13,5 +13,6 @@ module.exports = function(source) {
         .replace(deleteRegex2, '>')
         .replace(deleteRegex3, '')
         .replace(deleteRegex4, '');
+
     return source.replace(regex, encodeURIComponent(_sourceCode));
 };

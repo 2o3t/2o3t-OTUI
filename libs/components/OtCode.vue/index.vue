@@ -1,5 +1,5 @@
 <template>
-    <div ot v-ot-bind="$otColors" v-ot-highlight="_hljs" :class="$style.root" class="ot-code" :size="$otSize" :round="round" :border="border">
+    <div ot v-bind="$otColors" v-ot-highlight="_hljs" :class="$style.root" class="ot-code" :size="$otSize" :round="round" :border="border">
         <div :class="$style.title" >
             <ot-icon v-if="showLang" :class="$style.lang" icon="code">{{ lang }}</ot-icon>
             <ot-link v-if="copy" @click="handleCopyClick">
@@ -68,9 +68,11 @@ export default {
             if (!hljs) {
                 return;
             }
-            const value = this.value || '';
-            hljs.__value__ = value;
-            return hljs;
+            const hljsProxy = {
+                code: this.value || '',
+                hljs,
+            };
+            return hljsProxy;
         },
     },
     methods: {

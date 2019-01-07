@@ -11,9 +11,9 @@
                 {{ item }}
             </div>
             <ot-link v-if="id === 'alias'" :class="[$style.title, $style.name]" @click="handleCopyClick(item)">
-                <span ot v-ot-bind="$otColors.name" :class="$style.sLeft">[</span>
+                <span ot v-bind="$otColors.name" :class="$style.sLeft">[</span>
                 <span :class="$style.alias">{{ item }}</span>
-                <span ot v-ot-bind="$otColors.name" :class="$style.sRight">]</span>
+                <span ot v-bind="$otColors.name" :class="$style.sRight">]</span>
             </ot-link>
         </div>
         <ot-table-column name="name" label="Action"></ot-table-column>

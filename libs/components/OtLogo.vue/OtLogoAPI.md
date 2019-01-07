@@ -12,6 +12,7 @@
 | icon | font icon | String | - |
 | url | url | String | - |
 | lib | icon-font lib | String | - |
+| adaptive | 自动适配屏幕 | Boolean | - |
 
 ## Slots
 

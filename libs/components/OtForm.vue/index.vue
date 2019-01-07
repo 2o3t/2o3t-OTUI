@@ -226,7 +226,8 @@ export default {
             this.$emit('update', this.model); // 与 `v-model` 互动更新数据
         },
         _updateAction(action) {
-            this.$emit('event', action, this.model); // 按钮点击动作事件, `action` 是行为动作
+            const model = Object.assign({}, this.model);
+            this.$emit('event', action, model); // 按钮点击动作事件, `action` 是行为动作
         },
         handleClick(action) {
             switch (action) {

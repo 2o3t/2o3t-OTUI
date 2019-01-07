@@ -1,6 +1,6 @@
 <template>
-    <div v-if="!horizontal" ot v-ot-bind="verticalOtColors(value)" class="ot-color-card" :class="$style.root" :size="$otSize" :round="round" :shadow="shadow">
-        <div :class="[$style.main, $style.card]" :style="_valueStyle" v-ot-bind="_valueStyle" :size="$otSize" :only-one="!colorsTabList.length">
+    <div v-if="!horizontal" ot v-bind="verticalOtColors(value)" class="ot-color-card" :class="$style.root" :size="$otSize" :round="round" :shadow="shadow">
+        <div :class="[$style.main, $style.card]" :style="_valueStyle" v-bind="_valueStyle" :size="$otSize" :only-one="!colorsTabList.length">
             <span :class="$style.name">{{ name }}</span>
             <span :class="$style.value">{{ _realValue }}</span>
         </div>
@@ -10,8 +10,8 @@
             <span :class="$style.value">{{String.prototype.toUpperCase.call(item.color)}}</span>
         </div>
     </div>
-    <div v-else ot v-ot-bind="$otColors" class="ot-color-card" :class="$style.root" :horizontal="horizontal" :size="$otSize" :round="round">
-        <div ot v-ot-bind="horizontalOtColors(item.color)" :class="[$style.main, $style.card, $style.link]" :style="horizontalStyle(item.style)" :size="$otSize" :round="round" :horizontal="horizontal"
+    <div v-else ot v-bind="$otColors" class="ot-color-card" :class="$style.root" :horizontal="horizontal" :size="$otSize" :round="round">
+        <div ot v-bind="horizontalOtColors(item.color)" :class="[$style.main, $style.card, $style.link]" :style="horizontalStyle(item.style)" :size="$otSize" :round="round" :horizontal="horizontal"
             v-for="(item, index) in colorsTabList" :key="index" :first="index === 0" :title="copyTitle" @click="handleCopyClick(item.color)">
             <span :class="$style.name">{{item.name}}</span>
             <span :class="$style.value">{{String.prototype.toUpperCase.call(item.color)}}</span>

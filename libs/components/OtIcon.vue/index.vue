@@ -1,6 +1,6 @@
 <template>
-    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="customStyle" :size="$otSize" v-on="$listeners" :loading="loading" v-ot-bind="$otColors" :local-ratio="localRatio"></i>
-    <span ot :class="$style.root" v-else v-on="$listeners" v-ot-bind="$otColors">
+    <i v-if="!$slots.default" ot :class="[$style.root, $style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="customStyle" :size="$otSize" v-on="$listeners" :loading="loading" v-bind="$otColors" :local-ratio="localRatio"></i>
+    <span ot :class="$style.root" v-else v-on="$listeners" v-bind="$otColors">
         <i ot :class="[$style.icon, {[`${lib} ${lib}-${icon}`]: !!icon}, customClass]" :url="!!url" :style="customStyle" :size="$otSize" :loading="loading" :local-ratio="localRatio"></i>
         <span :class="$style.append">
             <!-- 跟随图标后面的容器 -->

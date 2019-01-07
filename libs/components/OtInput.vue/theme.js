@@ -2,8 +2,14 @@ export default {
     otDefaultColors(theme) {
         const defColors = {
             normal: [ 'def-f' ],
-            prefix: [ 'def-bg', 'def-bl', 'def-bt', 'def-bb', 'border' ],
-            suffix: [ 'def-bg', 'def-bt', 'def-br', 'def-bb', 'border' ],
+            prefix: {
+                normal: [ 'def-bg', 'def-bl', 'def-bt', 'def-bb', 'border' ],
+                disabled: [ 'def-bg-dis', 'def-bl-dis', 'def-bt-dis', 'def-bb-dis' ],
+            },
+            suffix: {
+                normal: [ 'def-bg', 'def-bt', 'def-br', 'def-bb', 'border' ],
+                disabled: [ 'def-bg-dis', 'def-bt-dis', 'def-br-dis', 'def-bb-dis' ],
+            },
             icon: {
                 normal: [ 'def-f' ],
                 hover: [ 'def-f-h' ],
@@ -21,7 +27,7 @@ export default {
                         active: [ 'def-b-act' ],
                         focus: [ 'def-b-f' ],
                         selected: [ 'dark-bg-sel', 'selected' ],
-                        disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                        disabled: [ 'grey-bg-dis', 'def-f-dis', 'def-b-dis' ],
                     },
                 });
             case 'light':
@@ -33,7 +39,7 @@ export default {
                         active: [ 'def-b-act' ],
                         focus: [ 'def-b-f' ],
                         selected: [ 'light-bg-sel', 'selected' ],
-                        disabled: [ 'def-bg-dis', 'def-f-dis', 'def-b-dis' ],
+                        disabled: [ 'grey-bg-dis', 'def-f-dis', 'def-b-dis' ],
                     },
                 });
         }

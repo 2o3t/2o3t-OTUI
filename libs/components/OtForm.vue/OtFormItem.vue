@@ -7,7 +7,7 @@
         </ot-label>
         <div :class="$style.row" ot row class="ot-form-item__row" :vertical="_vertical">
             <slot></slot>
-            <div ot v-if="errorMsg" v-ot-bind="$otColors.msg" :class="$style.msg">{{ errorMsg }}</div>
+            <div ot v-if="errorMsg" v-bind="$otColors.msg" :class="$style.msg">{{ errorMsg }}</div>
         </div>
     </ot-row-group>
 </template>
@@ -237,7 +237,7 @@ export default {
     @import '../globals';
     position: relative;
     box-sizing: border-box;
-    display: table;
+    display: block;
 
     &>[ot][childs]:not([vertical]) {
         align-items: baseline;
@@ -246,8 +246,8 @@ export default {
     @include __ot_size__;
 
     .label {
-        display: table-cell;
-        margin-right: 1em;
+        display: inline-block;
+        margin-right: 1rem;
         vertical-align: middle;
 
         &[position=right] {
@@ -264,7 +264,7 @@ export default {
     }
 
     .row[row] {
-        display: table-cell;
+        display: inline-block;
         position: relative;
         box-sizing: border-box;
         vertical-align: middle;

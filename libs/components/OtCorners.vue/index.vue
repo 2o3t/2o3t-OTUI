@@ -2,7 +2,7 @@
     <div ot class="ot-corners" :class="$style.root" :size="$otSize">
         <ot-link :href="href" :to="to" :replace="replace" :append="append" :target="target"
             :class="$style.githubCorner" :title="title" v-on="$listeners">
-            <svg :class="$style.svg" ot v-ot-bind="$otColors" selected :position="position"
+            <svg :class="$style.svg" ot v-bind="$otColors" selected :position="position"
                 viewBox="0 0 250 250"
                 aria-hidden="true">
                 <!-- 可自定义图标 -->

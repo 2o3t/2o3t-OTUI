@@ -1,6 +1,6 @@
 <template>
-    <a ot v-ot-bind="$otColors" class="ot-link" :class="$style.root" :href="currentHref" @click="handleClick" :line="line"
-        v-on="listeners" :disabled="disabled" v-bind="$attrs" :hasClick="hasClick"
+    <a ot v-bind="Object.assign($otColors, $attrs)" class="ot-link" :class="$style.root" :href="currentHref" @click="handleClick" :line="line"
+        v-on="listeners" :disabled="disabled" :hasClick="hasClick" :border="line"
         :target="target">
         <!-- 需要 link 的包裹容器 -->
         <slot></slot>

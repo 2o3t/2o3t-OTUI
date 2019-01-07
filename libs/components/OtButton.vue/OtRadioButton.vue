@@ -1,5 +1,5 @@
 <template>
-    <button ot v-ot-bind="$otColors" @click="handleClick" :size="$otSize" type="button" :class="$style.root" class="ot-radio-button"
+    <button ot v-bind="$otColors" @click="handleClick" :size="$otSize" type="button" :class="$style.root" class="ot-radio-button"
         :selected="selected" :disabled="disabled" :round="round">
         <ot-icon v-if="icon" :icon="icon">
             <!-- 有 icon 时 -->

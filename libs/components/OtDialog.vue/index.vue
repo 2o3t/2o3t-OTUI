@@ -6,7 +6,7 @@
                     <ot-icon :icon="icon" v-if="icon && center"></ot-icon>
                     <span>{{ title }}</span>
                 </div>
-                <ot-icon v-ot-bind="$otColors.closeBtn" :class="$style.closeBtn" :icon="closeText === '' ? 'close' : ''" v-if="closable" @click="hide">
+                <ot-icon v-bind="$otColors.closeBtn" :class="$style.closeBtn" :icon="closeText === '' ? 'close' : ''" v-if="closable" @click="hide">
                     {{closeText}}
                 </ot-icon>
             </div>
@@ -52,12 +52,19 @@ export default {
     },
     computed: {
         _options() { // 自带
-            return {
+            const option = {
+                transition: 'fade',
+                scrollable: true,
+                adaptive: true,
                 width: this.width || '420px',
                 height: 'auto',
                 minHeight: 160,
                 clickToClose: this._type !== 'alert',
             };
+            if (this.option) {
+                Object.assign(option, this.option);
+            }
+            return option;
         },
         _type() {
             return this.name;
@@ -96,6 +103,10 @@ export default {
 <style lang="scss" module>
 @import '../globals';
 .dialog {
+    &[ot] {
+        z-index: 3000;
+    }
+
     .root {
         display: flex;
         flex-direction: column;

@@ -23,6 +23,11 @@ const comps = componentsDev || components;
 const directs = directivesDev || directives;
 const servs = servicesDev || services;
 
+const defaultOptions = {
+    global: true,
+    plugins: { },
+};
+
 export default {
     /* option = {
          theme, size,
@@ -32,6 +37,8 @@ export default {
          }
     } */
     install(Vue, options = {}) {
+        options = Object.assign(defaultOptions, options);
+
         for (const key in directs) {
             if (directs.hasOwnProperty(key)) {
                 const initDirect = directs[key];

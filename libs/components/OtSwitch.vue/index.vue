@@ -1,10 +1,10 @@
 <template>
-    <div ot :class="$style.root" v-ot-bind="$otColors" :size="$otSize" :disabled="disabled">
-        <span ot v-ot-bind="$otColors.activeLabel" v-if="$slots.inactive" :class="[$style.left, $style.label]" :selected="!value" :disabled="disabled">
+    <div ot :class="$style.root" v-bind="$otColors" :size="$otSize" :disabled="disabled">
+        <span ot v-bind="$otColors.activeLabel" v-if="$slots.inactive" :class="[$style.left, $style.label]" :selected="!value" :disabled="disabled">
             <slot name="inactive"></slot>
         </span>
-        <span ot v-ot-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle" :disabled="disabled">
-            <span ot v-ot-bind="$otColors.front" :class="$style.front" :selected="value"></span>
+        <span ot v-bind="$otColors.switch" :class="$style.switch" :selected="value" :style="initStyle" :disabled="disabled">
+            <span ot v-bind="$otColors.front" :class="$style.front" :selected="value"></span>
             <input :class="$style.input" type="checkbox"
                 :name="name"
                 v-on="$listeners"
@@ -12,10 +12,10 @@
                 @change="handleChange"
                 :checked="value">
         </span>
-        <span ot v-ot-bind="$otColors.activeLabel" v-if="$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
+        <span ot v-bind="$otColors.activeLabel" v-if="$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
             <slot name="active"></slot>
         </span>
-        <span ot v-ot-bind="$otColors.activeLabel" v-else-if="$slots.default && !$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
+        <span ot v-bind="$otColors.activeLabel" v-else-if="$slots.default && !$slots.active" :class="[$style.right, $style.label]" :selected="value" :disabled="disabled">
             <slot></slot>
         </span>
     </div>
@@ -77,6 +77,12 @@ export default {
         vertical-align: middle;
         box-sizing: border-box;
         padding: 0 0.5em;
+        opacity: 0.6;
+        transition: opacity .3s;
+
+        &[selected] {
+            opacity: 1;
+        }
     }
 
     .left {

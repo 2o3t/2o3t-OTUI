@@ -1,6 +1,6 @@
 <template>
     <label ot class="ot-label" :class="$style.root" @click="handleForClick" :position="position">
-        <span ot v-ot-bind="$otColors" :class="$style.prefix" v-if="required">{{ prefix }}</span>
+        <span ot v-bind="$otColors" :class="$style.prefix" v-if="required">{{ prefix }}</span>
         <slot></slot>
     </label>
 </template>

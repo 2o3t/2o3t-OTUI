@@ -1,11 +1,11 @@
 <template>
-    <section ot v-ot-bind="$otColors" class="ot-section" :class="$style.root" :indent="indent" :size="$otSize">
-        <h1 :class="$style.label" :level="level" :section="section" v-if="level === 1 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h1>
-        <h2 :class="$style.label" :level="level" :section="section" v-if="level === 2 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h2>
-        <h3 :class="$style.label" :level="level" :section="section" v-if="level === 3 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h3>
-        <h4 :class="$style.label" :level="level" :section="section" v-if="level === 4 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h4>
-        <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
-        <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span ot :class="$style.prefix" v-ot-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
+    <section ot v-bind="$otColors" class="ot-section" :class="$style.root" :indent="indent" :size="$otSize">
+        <h1 :class="$style.label" :level="level" :section="section" v-if="level === 1 && label"><span ot :class="$style.prefix" v-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h1>
+        <h2 :class="$style.label" :level="level" :section="section" v-if="level === 2 && label"><span ot :class="$style.prefix" v-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h2>
+        <h3 :class="$style.label" :level="level" :section="section" v-if="level === 3 && label"><span ot :class="$style.prefix" v-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h3>
+        <h4 :class="$style.label" :level="level" :section="section" v-if="level === 4 && label"><span ot :class="$style.prefix" v-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h4>
+        <h5 :class="$style.label" :level="level" :section="section" v-if="level === 5 && label"><span ot :class="$style.prefix" v-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h5>
+        <h6 :class="$style.label" :level="level" :section="section" v-if="level === 6 && label"><span ot :class="$style.prefix" v-bind="$otColors.prefix" v-if="prefix" @click="handlePrefixClick">{{ prefix }}</span>{{ label }}</h6>
         <p :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-if="desc">{{ desc }}</p>
         <ot-markdown class="markdown" :prefix="prefix" :class="$style.desc" :size="$otSize" :level="level" v-else-if="descHtml" :content="descHtml"></ot-markdown>
         <div :prefix="prefix" :class="$style.childs" class="ot-section_childs">

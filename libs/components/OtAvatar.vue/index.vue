@@ -1,5 +1,5 @@
 <template>
-    <div ot class="ot-avatar" :class="$style.root" v-ot-bind="$otColors" :size="$otSize" :style="fontStyle" :circle="circle">
+    <div ot class="ot-avatar" :class="$style.root" v-bind="$otColors" :size="$otSize" :style="fontStyle" :circle="circle">
         <!-- 内容插槽 -->
         <slot>
             <ot-icon :class="$style.icon" class="ot-avatar__icon" :icon="icon" :lib="lib" :url="url" :fill="fill"></ot-icon>

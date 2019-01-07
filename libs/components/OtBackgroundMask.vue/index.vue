@@ -1,6 +1,6 @@
 <template>
     <div ot class="ot-background-mask" :class="$style.root" v-bind="$attrs" v-on="$listeners">
-        <div ot v-if="enable" :animation="animation" :class="$style.mask" :white="white" :black="black" :style="maskStyle" :selected="selected" :disabled="disabled" v-ot-bind="otColors"></div>
+        <div ot v-if="enable" :animation="animation" :class="$style.mask" :white="white" :black="black" :style="maskStyle" :selected="selected" :disabled="disabled" v-bind="otColors"></div>
         <!-- 容器 -->
         <slot></slot>
     </div>

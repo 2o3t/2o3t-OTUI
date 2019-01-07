@@ -1,6 +1,6 @@
 <template>
-    <button ot v-ot-bind="$otColors" class="ot-button" @click="handleClick" v-on="listeners" :size="$otSize" type="button" :class="$style.root" :custom="custom"
-        :disabled="disabled" :round="round" :circle="circle" :icon="(!!icon || !!url) && !$slots.default" :border="border" :dashed="dashed" v-bind="$attrs">
+    <button ot v-bind="Object.assign($otColors, $attrs)" class="ot-button" @click="handleClick" v-on="listeners" :size="$otSize" type="button" :class="$style.root" :custom="custom"
+        :disabled="disabled" :round="round" :circle="circle" :icon="(!!icon || !!url) && !$slots.default" :border="border" :dashed="dashed">
         <ot-icon v-if="icon || url" :icon="icon" :lib="lib" :url="url" :width="width" :height="height">
             <!-- 有 icon 时显示 -->
             <slot></slot>
@@ -80,7 +80,7 @@ export default {
     @include __ot_size__;
     padding: 0px 2em;
 
-    &:hover {
+    &:hover:not([disabled]) {
         @include __ot_box_shadow__;
     }
 
