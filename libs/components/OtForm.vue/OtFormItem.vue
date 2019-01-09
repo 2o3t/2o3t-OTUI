@@ -166,11 +166,9 @@ export default {
         _onRuleTrigger(e) {
             // 触发验证
             const trigger = e.type;
-            setTimeout(() => {
-                this.$nextTick(() => {
-                    this.validate(trigger);
-                });
-            }, 100);
+            this.$nextTick(() => {
+                this.validate(trigger);
+            });
         },
         _blurAllInput() {
             this.inputElements.forEach(input => {

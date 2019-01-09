@@ -1,0 +1,126 @@
+@import '../../globals';
+
+.ot-button-group[ot],
+.ot-radio-button-group[ot] {
+
+    .ot-button[ot],
+    .ot-radio-button[ot] {
+        float: left;
+        position: relative;
+        box-sizing: border-box;
+        margin-left: -1px;
+
+        &[round] {
+            border-radius: 0;
+
+            &:first-child {
+                border-top-left-radius: $--ot-normal-radius;
+                border-bottom-left-radius: $--ot-normal-radius;
+
+                &[size=mini] {
+                    border-top-left-radius: $--ot-mini-radius;
+                    border-bottom-left-radius: $--ot-mini-radius;
+                }
+
+                &[size=small] {
+                    border-top-left-radius: $--ot-small-radius;
+                    border-bottom-left-radius: $--ot-small-radius;
+                }
+
+                &[size=normal] {
+                    border-top-left-radius: $--ot-normal-radius;
+                    border-bottom-left-radius: $--ot-normal-radius;
+                }
+
+                &[size=big] {
+                    border-top-left-radius: $--ot-big-radius;
+                    border-bottom-left-radius: $--ot-big-radius;
+                }
+            }
+
+            &:last-child {
+                border-top-right-radius: $--ot-normal-radius;
+                border-bottom-right-radius: $--ot-normal-radius;
+
+                &[size=mini] {
+                    border-top-right-radius: $--ot-mini-radius;
+                    border-bottom-right-radius: $--ot-mini-radius;
+                }
+
+                &[size=small] {
+                    border-top-right-radius: $--ot-small-radius;
+                    border-bottom-right-radius: $--ot-small-radius;
+                }
+
+                &[size=normal] {
+                    border-top-right-radius: $--ot-normal-radius;
+                    border-bottom-right-radius: $--ot-normal-radius;
+                }
+
+                &[size=big] {
+                    border-top-right-radius: $--ot-big-radius;
+                    border-bottom-right-radius: $--ot-big-radius;
+                }
+            }
+        }
+
+        &[circle] {
+            border-radius: 0;
+
+            &:first-child {
+                border-top-left-radius: $--ot-normal-height;
+                border-bottom-left-radius: $--ot-normal-height;
+
+                &[size=mini] {
+                    border-top-left-radius: $--ot-mini-height;
+                    border-bottom-left-radius: $--ot-mini-height;
+                }
+
+                &[size=small] {
+                    border-top-left-radius: $--ot-small-height;
+                    border-bottom-left-radius: $--ot-small-height;
+                }
+
+                &[size=normal] {
+                    border-top-left-radius: $--ot-normal-height;
+                    border-bottom-left-radius: $--ot-normal-height;
+                }
+
+                &[size=big] {
+                    border-top-left-radius: $--ot-big-height;
+                    border-bottom-left-radius: $--ot-big-height;
+                }
+            }
+
+            &:last-child {
+                border-top-right-radius: $--ot-normal-height;
+                border-bottom-right-radius: $--ot-normal-height;
+
+                &[size=mini] {
+                    border-top-right-radius: $--ot-mini-height;
+                    border-bottom-right-radius: $--ot-mini-height;
+                }
+
+                &[size=small] {
+                    border-top-right-radius: $--ot-small-height;
+                    border-bottom-right-radius: $--ot-small-height;
+                }
+
+                &[size=normal] {
+                    border-top-right-radius: $--ot-normal-height;
+                    border-bottom-right-radius: $--ot-normal-height;
+                }
+
+                &[size=big] {
+                    border-top-right-radius: $--ot-big-height;
+                    border-bottom-right-radius: $--ot-big-height;
+                }
+            }
+        }
+
+        &:hover,
+        &:active {
+            z-index: 10;
+        }
+    }
+}

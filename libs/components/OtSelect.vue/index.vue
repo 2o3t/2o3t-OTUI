@@ -19,7 +19,7 @@
                 </ul>
             </div>
         </transition>
-        <ot-input :fixable="false" :theme="$otTheme" :size="$otSize"
+        <ot-input ref="otInput" :fixable="false" :theme="$otTheme" :size="$otSize"
             :icon="icon"
             :round="round"
             :placeholder="placeholder"
@@ -148,7 +148,18 @@ export default {
             this.$nextTick(() => {
                 this.bShown = false;
             });
-            this.$emit('close');
+            if (this.bShown) {
+                this.$emit('close');
+                // 重新获取焦点
+                const $input = this.$refs.otInput;
+                if ($input) {
+                    const el = $input.$el.querySelector('input');
+                    if (el) {
+                        el.focus();
+                        el.blur();
+                    }
+                }
+            }
         },
         handleSelectClick(item) {
             if (typeof item === 'object') {
@@ -234,7 +245,7 @@ export default {
         },
         _off(e) {
             const result = this.$el.contains(e.target);
-            if (!result) {
+            if (!result && this.bShown) {
                 this.handleSelectCloseClick();
             }
         },
