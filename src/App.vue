@@ -9,12 +9,12 @@
                 </ot-logo>
             </ot-link>
             <ot-nav-item v-for="(item) in headers" :key="item.name" :to="item.router" :href="item.href">{{item.name}}</ot-nav-item>
-            <ot-row :gutter="10" :class="$style.right" slot="right">
-                <ot-col :span="6">
+            <ot-row :gutter="6" :class="$style.right" slot="right">
+                <ot-col :span="5">
                     <ChangeColor v-if="currentColor !== 'default'"  :theme="$otTheme"></ChangeColor>
                     <div v-else><span style="opacity: 0;">2O3T</span></div>
                 </ot-col>
-                <ot-col :span="6">
+                <ot-col :span="9">
                     <ot-dropdown :list="dropdownList" round text-align="left" @select="handleDropdownSelect" text="THEME" custom>
                         <!-- <ot-button round>Theme</ot-button> -->
                         <div slot="item" slot-scope="{ item }">
@@ -28,7 +28,7 @@
                         </div>
                     </ot-dropdown>
                 </ot-col>
-                <ot-col :span="12" style="text-align: right;">
+                <ot-col :span="10" style="text-align: right;">
                     <ot-corners href="//github.com/2o3t"></ot-corners>
                 </ot-col>
             </ot-row>
@@ -105,6 +105,12 @@ export default {
     &[theme='dark'] {
         background-color: #242424;
     }
+}
+.right {
+    display: flex;
+    position: relative;
+    height: 84px;
+    line-height: 84px;
 }
 .header {
     position: fixed;
